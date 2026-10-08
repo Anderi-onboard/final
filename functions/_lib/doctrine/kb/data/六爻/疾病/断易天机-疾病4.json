@@ -1,0 +1,478 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "断易天机",
+  "chapter": "论神煞、六神、六亲用钤/用变/类象、期日章、何知章(疾病相关各条)",
+  "chapter_en": "Spirits and killings, the six spirits, the six relations, the day of the outcome, how it is known (the entries on illness)",
+  "ranges": {"断易天机": [1, 1000]},
+  "units": [
+    {
+      "id": "LY.ILL.DYTJ.30",
+      "topic": "医药",
+      "chapter": "论神煞·吉神(十四月解、十五日解、十六天医)",
+      "chapter_en": "On spirits and killings: the lucky spirits (14 Month Resolution, 15 Day Resolution, 16 Heavenly Physician)",
+      "title": "月解、日解、天医：病人有月解神天医上卦即病愈；日解戊癸鸡啼官事散、病人无药不须忧；天医正卯二亥…病人有此爻上卦必主名医下药有效",
+      "rule": {
+        "yi": "月解：正月二月起在申，三月四月在酉，五月六月在戌，七月八月在亥，九月十月在午，子丑两月（十一月、十二月）在未。病人有这个解神，天医又上了卦，就病愈了。日解：甲己日逢巳（蛇），乙庚日逢申（猴），丙辛日逢寅（虎），丁壬日逢丑（牛），戊癸日逢酉（鸡），官事就散，病人没有药也不用忧。天医：正月在卯，二月亥，三月丑，四月未，五月巳，六月卯，七月亥，八月丑，九月未，十月巳，十一月卯，十二月亥。病人有这一爻上卦，必定有名医下药有效。",
+        "en": "The Month Resolution: in the first and second months it is at Shen, the third and fourth at You, the fifth and sixth at Xu, the seventh and eighth at Hai, the ninth and tenth at Wu, and in the two months of Zi and Chou (the eleventh and twelfth) at Wei. A sick person who has this resolving spirit, with the Heavenly Physician also in the hexagram, is cured at once. The Day Resolution: on Jia and Ji days it is Si (the snake), on Yi and Geng days Shen (the monkey), on Bing and Xin days Yin (the tiger), on Ding and Ren days Chou (the ox), on Wu and Gui days You (the rooster), and official business scatters, and a sick person without medicine need not worry. The Heavenly Physician: first month Mao, second Hai, third Chou, fourth Wei, fifth Si, sixth Mao, seventh Hai, eighth Chou, ninth Wei, tenth Si, eleventh Mao, twelfth Hai. A sick person who has this line in the hexagram will surely have a famous doctor whose medicine is effective."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [211, 211],
+          "zh": ["月解正二起于申，", "三四还从酉上临，", "五六之月居戌上，", "七八能行亥上存，", "九十之月临午位，", "子丑两月未宫停。", "病人有此解神，", "天医上卦即病愈也。"],
+          "yi": ["月解：正月、二月起在申，", "三月、四月仍在酉上；", "五月、六月在戌上；", "七月、八月行到亥上；", "九月、十月到午位；", "子丑两月（十一月、十二月）停在未宫。", "病人有这个解神，", "天医又上了卦，就病愈了。"],
+          "en": ["The Month Resolution: in the first and second months it starts at Shen,", "in the third and fourth it falls again on You;", "in the fifth and sixth months it sits on Xu;", "in the seventh and eighth it goes on to stay at Hai;", "in the ninth and tenth months it comes to the Wu place;", "in the two months of Zi and Chou (the eleventh and twelfth) it stops at the Wei palace.", "A sick person who has this resolving spirit,", "with the Heavenly Physician also in the hexagram, is cured at once."] },
+        { "by": "经", "book": "断易天机", "range": [214, 214],
+          "zh": ["甲己逢蛇乙庚猴，", "丙辛逢虎丁壬牛，", "戊癸鸡啼官事散，", "病人无药不须忧。", "官事若得旺发即散也。"],
+          "yi": ["日解：甲、己日逢巳（蛇），乙、庚日逢申（猴），", "丙、辛日逢寅（虎），丁、壬日逢丑（牛），", "戊、癸日逢酉（鸡），官事就散；", "病人没有药也不用忧。", "官事如果得旺相发动，就散了。"],
+          "en": ["The Day Resolution: on Jia and Ji days it is Si (the snake), on Yi and Geng days Shen (the monkey),", "on Bing and Xin days Yin (the tiger), on Ding and Ren days Chou (the ox),", "on Wu and Gui days You (the rooster), and official business scatters;", "a sick person without medicine need not worry.", "Official business, if it is strong and moves, scatters at once."] },
+        { "by": "经", "book": "断易天机", "range": [217, 218],
+          "zh": ["天医正卯二猪临，", "三月随丑四未寻，", "五蛇六兔七居亥，", "八丑九羊十巳存，", "十一再来寻卯上，", "十二亥上作医人。", "病人有此爻上卦，", "必主名医下药有效也。"],
+          "yi": ["天医：正月在卯，二月在亥（猪），", "三月随到丑，四月在未，", "五月是巳（蛇），六月是卯（兔），七月居亥，", "八月丑，九月未（羊），十月巳，", "十一月再回到卯上，", "十二月亥上作医人。", "病人有这一爻上卦，", "必定有名医下药有效。"],
+          "en": ["The Heavenly Physician: in the first month at Mao, in the second at Hai (the pig),", "in the third month it follows to Chou, in the fourth it is found at Wei,", "the fifth Si (the snake), the sixth Mao (the rabbit), the seventh it stays at Hai,", "the eighth Chou, the ninth Wei (the sheep), the tenth it stays at Si,", "the eleventh it comes again to Mao,", "and in the twelfth month Hai acts as the physician.", "A sick person who has this line in the hexagram", "will surely have a famous doctor whose medicine is effective."] }
+      ],
+      "note": {
+        "yi": "月解的排法（正二申、三四酉、五六戌、七八亥、九十午、子丑未）和神煞月令表里的「地解」一行完全一样（LY.ILL.DYTJ.34），天医的排法和表里的「天医」一行也一样。两处的断语略有不同：这里说「病人有此解神，天医上卦即病愈」，表里说地解是「病者有此发动即安」。日解「甲己逢蛇乙庚猴……」是按日干取解神所在的地支（甲己取巳、乙庚取申、丙辛取寅、丁壬取丑、戊癸取酉），「官事散」是它对官事的作用，「病人无药不须忧」是对病人的作用。「天医上卦」是天医这个地支落在卦里的爻上。「病人有此爻上卦，必主名医下药有效也」和天玄赋的「月解交重灾渐退，天医发动便回生」（LY.ILL.TXF.05）是同一类说法。",
+        "en": "The way the Month Resolution is laid out (first and second months Shen, third and fourth You, fifth and sixth Xu, seventh and eighth Hai, ninth and tenth Wu, Zi and Chou Wei) is exactly the same as the row 'Earth Resolution' in the table of spirits and killings by month (LY.ILL.DYTJ.34), and the way the Heavenly Physician is laid out is also the same as the row 'Heavenly Physician' in the table. The judgments differ slightly: here it says 'a sick person who has this resolving spirit, with the Heavenly Physician in the hexagram, is cured at once', and the table says of the Earth Resolution 'a sick person who has this moving is at once at ease'. The Day Resolution 'Jia and Ji meet the snake, Yi and Geng the monkey ...' takes the branch where the resolving spirit lies by the day stem (Jia and Ji take Si, Yi and Geng Shen, Bing and Xin Yin, Ding and Ren Chou, Wu and Gui You), and 'official business scatters' is its effect on official business and 'a sick person without medicine need not worry' its effect on a sick person. 'The Heavenly Physician in the hexagram' is the branch of the Heavenly Physician falling on a line of the hexagram. 'A sick person who has this line in the hexagram will surely have a famous doctor whose medicine is effective' is the same kind of saying as the Tianxuan Fu's 'when the Month resolves and the Day moves heavily calamity fades, when the Heavenly Physician moves he recovers at once' (LY.ILL.TXF.05)."
+      },
+      "see": ["LY.ILL.DYTJ.34", "LY.ILL.TXF.05", "LY.ILL.DYTJ.16"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.31",
+      "topic": "生死",
+      "chapter": "论神煞·凶煞",
+      "chapter_en": "On spirits and killings: the fierce killings",
+      "title": "三丘五墓杀：春丑夏辰秋未冬戌为三丘、却与五墓对宫取，病人作福也难留；此占病忌，或有吉神解救方免",
+      "rule": {
+        "yi": "春天是丑、夏天是辰、秋天是未、冬天逢戌，这是三丘；五墓要取三丘的对宫。病人就是作福（祈福）也难留住。这是占病所忌，只有得吉神来解救才能免去。",
+        "en": "In spring Chou, in summer Chen, in autumn Wei and in winter meeting Xu: these are the Three Mounds; the Five Tombs are taken from the opposite palace. The sick person, though he makes offerings for fortune, can hardly be kept. This is a taboo in divining illness, and it is escaped only if a lucky spirit comes to rescue."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [291, 291],
+          "zh": ["春丑夏辰秋即未，", "三冬逢戌是三丘，", "却与五墓对宫取，", "病人作福也难留。", "此占病忌，", "或有吉神解救方免。"],
+          "yi": ["春天是丑、夏天是辰、秋天就是未，", "冬天逢戌，这是三丘；", "五墓却要取三丘的对宫，", "病人就是作福也难留住。", "这是占病所忌，", "或是有吉神来解救才能免去。"],
+          "en": ["In spring Chou, in summer Chen, in autumn Wei,", "in winter meeting Xu: these are the Three Mounds;", "the Five Tombs are taken from the opposite palace;", "the sick person, though he makes offerings for fortune, can hardly be kept.", "This is a taboo in divining illness,", "and it is escaped only if a lucky spirit comes to rescue."] }
+      ],
+      "note": {
+        "yi": "这首「三丘五墓杀」的头四句和卜筮大全、易林补遗（LY.ILL.EL.51）里的三丘五墓歌是同一首，后面两句「此占病忌，或有吉神解救方免」是这里加上的。三丘是春丑、夏辰、秋未、冬戌；五墓「对宫取」，也就是三丘的对冲：春未、夏戌、秋丑、冬辰（这个排法见 LY.ILL.EL.51）。「病人作福也难留」和天玄赋的「二杀俱动，病人作福也难留」（LY.ILL.TXF.08）是同一句。神煞月令表里也有「三丘」「五墓」两行（丑丑丑辰辰辰未未未戌戌戌；未未未戌戌戌丑丑丑辰辰辰），那两行的断语是「坟墓崩，隐为崇凶」「坟墓崩陷凶」，不是专说病，这里不收。",
+        "en": "The first four lines of this 'Three Mounds and Five Tombs killing' are the same verse as the Three Mounds and Five Tombs verse in the Buyi Daquan and the Yilin Buyi (LY.ILL.EL.51), and the last two lines, 'this is a taboo in divining illness, and it is escaped only if a lucky spirit comes to rescue', are added here. The Three Mounds are Chou in spring, Chen in summer, Wei in autumn and Xu in winter; the Five Tombs are 'taken from the opposite palace', that is the clash of the Three Mounds: Wei in spring, Xu in summer, Chou in autumn and Chen in winter (for this layout see LY.ILL.EL.51). 'The sick person, though he makes offerings for fortune, can hardly be kept' is the same sentence as the Tianxuan Fu's 'when both killings move, even if the sick person makes offerings for fortune he can hardly be kept' (LY.ILL.TXF.08). The table of spirits and killings by month also has two rows 'Three Mounds' and 'Five Tombs' (Chou Chou Chou Chen Chen Chen Wei Wei Wei Xu Xu Xu; Wei Wei Wei Xu Xu Xu Chou Chou Chou Chen Chen Chen), and the judgments of those two rows are 'the tomb crumbles, hidden it is an ominous curse' and 'the tomb crumbles and sinks, ominous', which are not specially about illness and are not taken here."
+      },
+      "see": ["LY.ILL.EL.51", "LY.ILL.TXF.08", "LY.ILL.DYTJ.32", "LY.ILL.ZSZ.01"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.32",
+      "topic": "生死",
+      "chapter": "论神煞·凶煞",
+      "chapter_en": "On spirits and killings: the fierce killings",
+      "title": "丧车杀：丧车春鸡夏鼠秋马冬羊、人来占病断兴去、讨钱火急买棺材",
+      "rule": {
+        "yi": "丧车：春天是鸡、夏天是鼠，秋天是马、冬天是羊，好安排。有人来占病，断他是起身离去（去世）了，赶紧去讨钱、火速买棺材。",
+        "en": "The Mourning Cart: in spring it is the rooster, in summer the rat, in autumn the horse and in winter the sheep, which is well arranged. A person who comes to divine illness is judged to be setting off to leave; hurry to ask for money and buy a coffin in all haste."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [294, 294],
+          "zh": ["丧车春鸡夏鼠来，", "秋马冬羊好安排，", "人来占病断兴去，", "讨钱火急买棺材。"],
+          "yi": ["丧车：春天来的是鸡、夏天来的是鼠，", "秋天是马、冬天是羊，好安排；", "有人来占病，断他是起身离去（去世）了，", "赶紧去讨钱、火速买棺材。"],
+          "en": ["The Mourning Cart: in spring it comes as the rooster, in summer as the rat,", "in autumn the horse, in winter the sheep, which is well arranged;", "a person who comes to divine illness is judged to be setting off to leave,", "hurry to ask for money and buy a coffin in all haste."] }
+      ],
+      "note": {
+        "yi": "丧车杀的四季排法是春酉（鸡）、夏子（鼠）、秋午（马）、冬未（羊）。「断兴去」的「兴去」读不确定，「兴」有起身的意思，这里按「起身离去」译，也就是去世；「讨钱火急买棺材」是说要赶紧去讨钱备棺材，是个凶极的断语。「好安排」按字面译，是说四季的排法好排。丧车这个名目也见天玄赋（「丧车」「丧服」「棺椁」，LY.ILL.HZL.03 的申为丧车）。",
+        "en": "The four-season layout of the Mourning Cart killing is You (the rooster) in spring, Zi (the rat) in summer, Wu (the horse) in autumn and Wei (the sheep) in winter. The 'xing qu' of 'divined to be xing qu' is not certain; 'xing' has the sense of setting off, and it is rendered 'setting off to leave', that is, dying; 'hurry to ask for money and buy a coffin' says one must hurry to ask for money and prepare a coffin, an extremely ominous judgment. 'Well arranged' is rendered literally and says the layout by seasons is easy to arrange. The name Mourning Cart also appears in the Huozhu Lin (Shen as the mourning cart, LY.ILL.HZL.03)."
+      },
+      "see": ["LY.ILL.DYTJ.31", "LY.ILL.HZL.03"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.33",
+      "topic": "风险",
+      "chapter": "论神煞·凶煞",
+      "chapter_en": "On spirits and killings: the fierce killings",
+      "title": "占病忌发动的四杀：勾陈杀（正月从辰逆行）占病发动凶；天哭杀占病征发动主大凶；四季小杀占病忌发动；旌旗杀占病忌发动",
+      "rule": {
+        "yi": "勾陈杀：正月从辰起，逆行向卯，轮十二个位置；占病时它发动，凶。天哭杀：正五九月是羊（未）、二六十月是猴（申）、三七十一月是鸡（酉）、四八十二月是犬（戌）；若临在身、世上，就忧愁哭泣；占病时征兆发动，主大凶。四季小杀：春忌羊头（未）、夏是龙（辰）、秋牛（丑）、冬犬（戌）；占病忌它发动。旌旗杀：春兔（卯）、夏鼠（子）、秋鸡（酉）、冬马（午）；占病忌它发动。",
+        "en": "The Hook Earth killing: it starts from Chen in the first month and goes backward towards Mao, rotating through the twelve places; in divining illness, if it moves it is ominous. The Weeping killing: in the first, fifth and ninth months the sheep (Wei), in the second, sixth and tenth the monkey (Shen), in the third, seventh and eleventh the rooster (You), in the fourth, eighth and twelfth the dog (Xu); if it sits on the Body or the Self there is worry and weeping; in divining illness, if the sign moves it means great ill. The Small killing of the four seasons: in spring avoid the sheep's head (Wei), in summer the dragon (Chen), in autumn the ox (Chou), in winter the dog (Xu); in divining illness it must not move. The Banner killing: in spring the rabbit (Mao), in summer the rat (Zi), in autumn the rooster (You), in winter the horse (Wu); in divining illness it must not move."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [306, 306],
+          "zh": ["正月从辰上起，", "逆行向卯轮十二位是也。", "（占病发动凶。）"],
+          "yi": ["勾陈杀：正月从辰上起，", "逆行，向卯，轮过十二个位置。", "（占病时它发动，凶。）"],
+          "en": ["The Hook Earth killing: it starts from Chen in the first month", "and goes backward towards Mao, rotating through the twelve places.", "(in divining illness, if it moves it is ominous.)"] },
+        { "by": "经", "book": "断易天机", "range": [327, 327],
+          "zh": ["哭声正五九羊神，", "二六十月猴上真，", "三七十一鸡鸣处，", "四八十二犬吠声。", "若临身世忧哭泣，", "定知下泪泪沾襟。", "占病征发动，", "主大凶也。"],
+          "yi": ["天哭杀：正月、五月、九月是羊（未）神，", "二月、六月、十月是猴（申），很真切；", "三月、七月、十一月是鸡（酉）鸣的地方，", "四月、八月、十二月是犬（戌）吠的声音。", "如果临在身、世上，就忧愁哭泣，", "一定要落泪、泪湿衣襟。", "占病时，征兆发动，", "就主大凶。"],
+          "en": ["The Weeping killing: in the first, fifth and ninth months the sheep spirit (Wei),", "in the second, sixth and tenth months the monkey (Shen), a true one;", "in the third, seventh and eleventh months where the rooster (You) crows,", "in the fourth, eighth and twelfth months the sound of the dog (Xu) barking.", "If it sits on the Body or the Self, there is worry and weeping,", "surely tears fall and wet the lapel.", "In divining illness, if the sign moves,", "it means great ill."] },
+        { "by": "经", "book": "断易天机", "range": [346, 346],
+          "zh": ["春忌羊头夏月龙，", "秋牛冬犬哭重重，", "卦中有此临身命，", "任是和禳亦主凶。", "（占病忌发动。）"],
+          "yi": ["四季小杀：春天忌羊头（未）、夏天是龙（辰），", "秋天牛（丑）、冬天犬（戌），哭了又哭；", "卦里有这个、临在身和命上，", "就是求和、禳解，也主凶。", "（占病忌它发动。）"],
+          "en": ["The Small killing of the four seasons: in spring avoid the sheep's head (Wei), in summer the dragon (Chen),", "in autumn the ox (Chou), in winter the dog (Xu), weeping upon weeping;", "if the hexagram has this sitting on the Body and the natal line,", "even reconciliation and ward-offs still mean ill.", "(in divining illness it must not move.)"] },
+        { "by": "经", "book": "断易天机", "range": [349, 349],
+          "zh": ["春兔，", "夏鼠，", "秋鸡，", "冬马。", "（占病忌发动。）"],
+          "yi": ["旌旗杀：春天是兔（卯），", "夏天是鼠（子），", "秋天是鸡（酉），", "冬天是马（午）。", "（占病忌它发动。）"],
+          "en": ["The Banner killing: in spring the rabbit (Mao),", "in summer the rat (Zi),", "in autumn the rooster (You),", "in winter the horse (Wu).", "(in divining illness it must not move.)"] }
+      ],
+      "note": {
+        "yi": "这四杀的共同点是括号里的那一句「占病发动凶」「占病征发动主大凶」「占病忌发动」：它们平时（不占病）另有断语（天哭杀是哭泣、四季小杀和旌旗杀不专说病），只有占病时忌它们发动。「猴上真」的「上真」意思读不确定，这里按「是猴，很真切」字面译，原文没有解释。「逆行向卯轮十二位」是从正月的辰起每月倒退一位（二月卯、三月寅……），「向卯」是下一月落在卯。天哭杀的四组（正五九羊、二六十猴、三七十一鸡、四八十二犬）是每四个月一循环，在未、申、酉、戌。「若临身世忧哭泣，定知下泪泪沾襟」是说临身或世就要哭；占病时它发动，主大凶。「（占病忌发动）」是原文括号里的注。",
+        "en": "What these four killings have in common is the sentence in brackets, 'in divining illness, if it moves it is ominous', 'in divining illness, if the sign moves it means great ill' and 'in divining illness it must not move': in ordinary use (when not divining illness) they have other judgments (the Weeping killing is weeping, and the Small killing of the four seasons and the Banner killing are not specially about illness), and only in divining illness is it taboo for them to move. The 'shang zhen' of 'the monkey shang zhen' is not certain in sense, and it is rendered literally as 'the monkey, a true one', and the original does not explain it. 'Goes backward towards Mao, rotating through the twelve places' is going back one place each month from Chen in the first month (Mao in the second, Yin in the third ...), and 'towards Mao' is that the next month falls on Mao. The four groups of the Weeping killing (first, fifth, ninth the sheep; second, sixth, tenth the monkey; third, seventh, eleventh the rooster; fourth, eighth, twelfth the dog) run in a cycle of four months through Wei, Shen, You and Xu. 'If it sits on the Body or the Self there is worry and weeping, surely tears fall and wet the lapel' says that sitting on the Body or the Self means weeping; in divining illness, if it moves it means great ill. The '(in divining illness it must not move)' is a note in brackets in the original."
+      },
+      "see": ["LY.ILL.DYTJ.31", "LY.ILL.DYTJ.35", "LY.ILL.DYTJ.36"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.34",
+      "topic": "医药",
+      "chapter": "神煞月令表",
+      "chapter_en": "The table of spirits and killings by month",
+      "title": "神煞月令表·吉神(天医、地解)：天医有此爻者疾病易愈；地解病者有此发动即安",
+      "rule": {
+        "yi": "神煞月令表的吉神两行：天医（正月起卯、亥、丑、未、巳、卯、亥、丑、未、巳、卯、亥），卦里有这一爻的，疾病容易痊愈；地解（申、申、酉、酉、戌、戌、亥、亥、午、午、未、未），病人有这一爻发动，就安稳了。",
+        "en": "Two lucky rows of the table of spirits and killings by month: the Heavenly Physician (from the first month Mao, Hai, Chou, Wei, Si, Mao, Hai, Chou, Wei, Si, Mao, Hai): if this line is in the hexagram, an illness is easily cured; the Earth Resolution (Shen, Shen, You, You, Xu, Xu, Hai, Hai, Wu, Wu, Wei, Wei): for a sick person, if this moves, he is at once at ease."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [360, 360],
+          "zh": ["神煞", "月令", "一二三四五六七八九十十一十二", "说明"],
+          "yi": ["神煞", "月令（哪个月）", "一、二、三、四、五、六、七、八、九、十、十一、十二（月）", "说明"],
+          "en": ["the spirit or killing", "the month", "first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelfth (month)", "explanation"] },
+        { "by": "经", "book": "断易天机", "range": [368, 368],
+          "zh": ["天医", "卯亥丑未巳卯亥丑未巳卯亥", "有此爻者，疾病易愈。"],
+          "yi": ["天医", "卯、亥、丑、未、巳、卯、亥、丑、未、巳、卯、亥（正月到十二月依次）", "卦里有这一爻的，疾病容易痊愈。"],
+          "en": ["Heavenly Physician", "Mao, Hai, Chou, Wei, Si, Mao, Hai, Chou, Wei, Si, Mao, Hai (from the first month to the twelfth in turn)", "if this line is in the hexagram, an illness is easily cured."] },
+        { "by": "经", "book": "断易天机", "range": [381, 381],
+          "zh": ["地解", "申申酉酉戌戌亥亥午午未未", "病者有此发动即安。"],
+          "yi": ["地解", "申、申、酉、酉、戌、戌、亥、亥、午、午、未、未（正月到十二月依次）", "病人有这一爻发动，就安稳了。"],
+          "en": ["Earth Resolution", "Shen, Shen, You, You, Xu, Xu, Hai, Hai, Wu, Wu, Wei, Wei (from the first month to the twelfth in turn)", "for a sick person, if this moves, he is at once at ease."] }
+      ],
+      "note": {
+        "yi": "这是《断易天机》「神煞月令表」（表头：神煞、月令一到十二、说明）里和病有关的两行吉神。每一行：第一格是名字，接着十二格是它在正月到十二月各落的地支，最后一格是断语。原表分吉神（天德、月德……）和凶神（岁杀、三丘……）两半，病的几行分散在其中。天医这一行的排法和前面「十六、天医」那首歌（LY.ILL.DYTJ.30）一样；地解这一行的排法和「十四、月解」的排法一样（正二申、三四酉、五六戌……），但断语不同：月解说「病人有此解神，天医上卦即病愈」，地解说「病者有此发动即安」。表里别的解神（天解「卦遇此爻恶事解散」、外解「遇此爻灾患消除」、天喜「官事消散」）没有专说病，不收。",
+        "en": "These are the two lucky rows about illness in the 'table of spirits and killings by month' of the Duanyi Tianji (the head of the table: spirit or killing, month one to twelve, explanation). Each row has as its first cell the name, then twelve cells for the branch it falls on from the first to the twelfth month, and last the judgment. The original table is in two halves, lucky spirits (Heavenly Virtue, Month Virtue ...) and fierce spirits (Year Killing, Three Mounds ...), and the rows about illness are scattered through it. The layout of the Heavenly Physician row is the same as the song '16 Heavenly Physician' before it (LY.ILL.DYTJ.30); the layout of the Earth Resolution row is the same as that of '14 Month Resolution' (first and second Shen, third and fourth You, fifth and sixth Xu ...), but the judgment differs: the Month Resolution says 'a sick person who has this resolving spirit, with the Heavenly Physician in the hexagram, is cured at once', and the Earth Resolution says 'a sick person who has this moving is at once at ease'. The other resolving spirits in the table (Heavenly Resolution 'a hexagram meeting this line, ill matters are resolved and scatter', Outer Resolution 'meeting this line calamity is removed', Heavenly Joy 'official business dissolves') do not speak specially of illness and are not taken."
+      },
+      "see": ["LY.ILL.DYTJ.30", "LY.ILL.DYTJ.35", "LY.ILL.TXF.05"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.35",
+      "topic": "风险",
+      "chapter": "神煞月令表",
+      "chapter_en": "The table of spirits and killings by month",
+      "title": "神煞月令表·凶神(病)：岁杀病有官灾凶、飞杀卒病、阴杀阴谋病患、小杀小儿疾患、天杀疾病困厄同丧杀断、地杀疾病凶、天阴女人疾病凶、大月时行疾病凶",
+      "rule": {
+        "yi": "神煞月令表里凶神的八行，断语都说到病：岁杀，病而有官灾，凶，月杀也这样断；飞杀，突然发病又有飞鸟，凶；阴杀，阴谋和病患，凶；小杀，小孩的疾病，凶；天杀，疾病困厄，凶，和丧杀一样断；地杀，疾病凶、恶而凶；天阴，女人的疾病，凶；大月，流行的疾病，凶。",
+        "en": "Eight fierce rows of the table of spirits and killings by month whose judgments speak of illness: the Year Killing, illness with official calamity, ominous, and the Month Killing is judged the same way; the Flying Killing, sudden illness and flying birds, ominous; the Yin Killing, secret schemes and illness, ominous; the Small Killing, illness of small children, ominous; the Heaven Killing, illness and distress, ominous, judged like the Mourning Killing; the Earth Killing, illness is ominous, vicious and ominous; Heaven Yin, illness of a woman, ominous; the Great Month, epidemic illness, ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [384, 384],
+          "zh": ["岁杀", "丑戌未辰丑戌未辰丑戌未辰", "病有官灾凶，月杀同断用。"],
+          "yi": ["岁杀", "丑、戌、未、辰、丑、戌、未、辰、丑、戌、未、辰（正月到十二月依次）", "病而有官灾，凶；月杀也这样断用。"],
+          "en": ["Year Killing", "Chou, Xu, Wei, Chen, Chou, Xu, Wei, Chen, Chou, Xu, Wei, Chen (from the first month to the twelfth in turn)", "illness with official calamity is ominous; the Month Killing is judged the same way."] },
+        { "by": "经", "book": "断易天机", "range": [387, 387],
+          "zh": ["飞杀", "酉子卯午酉子卯午酉子卯午", "卒病飞鸟凶。"],
+          "yi": ["飞杀", "酉、子、卯、午、酉、子、卯、午、酉、子、卯、午（正月到十二月依次）", "突然发病、又有飞鸟（的凶象），凶。"],
+          "en": ["Flying Killing", "You, Zi, Mao, Wu, You, Zi, Mao, Wu, You, Zi, Mao, Wu (from the first month to the twelfth in turn)", "sudden illness and flying birds are ominous."] },
+        { "by": "经", "book": "断易天机", "range": [389, 389],
+          "zh": ["阴杀", "寅子戌申午辰寅子戌申午辰", "阴谋病患凶。"],
+          "yi": ["阴杀", "寅、子、戌、申、午、辰、寅、子、戌、申、午、辰（正月到十二月依次）", "阴谋和病患，凶。"],
+          "en": ["Yin Killing", "Yin, Zi, Xu, Shen, Wu, Chen, Yin, Zi, Xu, Shen, Wu, Chen (from the first month to the twelfth in turn)", "secret schemes and illness are ominous."] },
+        { "by": "经", "book": "断易天机", "range": [390, 390],
+          "zh": ["小杀", "辰巳子丑申酉戌亥午未寅卯", "小儿疾患凶。"],
+          "yi": ["小杀", "辰、巳、子、丑、申、酉、戌、亥、午、未、寅、卯（正月到十二月依次）", "小孩的疾病，凶。"],
+          "en": ["Small Killing", "Chen, Si, Zi, Chou, Shen, You, Xu, Hai, Wu, Wei, Yin, Mao (from the first month to the twelfth in turn)", "illness of small children is ominous."] },
+        { "by": "经", "book": "断易天机", "range": [396, 396],
+          "zh": ["天杀", "未辰丑戌未辰丑戌未辰丑戌", "疾病困厄，凶。同丧杀断。"],
+          "yi": ["天杀", "未、辰、丑、戌、未、辰、丑、戌、未、辰、丑、戌（正月到十二月依次）", "疾病困厄，凶；和丧杀一样断。"],
+          "en": ["Heaven Killing", "Wei, Chen, Chou, Xu, Wei, Chen, Chou, Xu, Wei, Chen, Chou, Xu (from the first month to the twelfth in turn)", "illness and distress are ominous; judge it like the Mourning Killing."] },
+        { "by": "经", "book": "断易天机", "range": [397, 397],
+          "zh": ["地杀", "辰戌丑未辰戌丑未辰戌丑未", "疾病凶，恶凶。"],
+          "yi": ["地杀", "辰、戌、丑、未、辰、戌、丑、未、辰、戌、丑、未（正月到十二月依次）", "疾病凶，恶而凶。"],
+          "en": ["Earth Killing", "Chen, Xu, Chou, Wei, Chen, Xu, Chou, Wei, Chen, Xu, Chou, Wei (from the first month to the twelfth in turn)", "illness is ominous, vicious and ominous."] },
+        { "by": "经", "book": "断易天机", "range": [406, 406],
+          "zh": ["天阴", "子丑寅卯辰巳午未申酉戌亥", "女人疾病凶。"],
+          "yi": ["天阴", "子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥（正月到十二月依次）", "女人的疾病，凶。"],
+          "en": ["Heaven Yin", "Zi, Chou, Yin, Mao, Chen, Si, Wu, Wei, Shen, You, Xu, Hai (from the first month to the twelfth in turn)", "illness of a woman is ominous."] },
+        { "by": "经", "book": "断易天机", "range": [434, 434],
+          "zh": ["大月", "子丑寅卯辰巳午未申酉戌亥", "时行疾病凶。"],
+          "yi": ["大月", "子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥（正月到十二月依次）", "流行的疾病，凶。"],
+          "en": ["Great Month", "Zi, Chou, Yin, Mao, Chen, Si, Wu, Wei, Shen, You, Xu, Hai (from the first month to the twelfth in turn)", "epidemic illness is ominous."] }
+      ],
+      "note": {
+        "yi": "这八行的排法都是每月一个地支，一年十二月，有的三个月一循环（岁杀、天杀：丑戌未辰，四个一组），有的按顺序或逆序排下去（天阴子丑寅卯……、大月子丑寅卯……），有的隔位（飞杀酉子卯午、地杀辰戌丑未）。断语里「岁杀：病有官灾凶，月杀同断用」的「月杀」表里没有列出，原文没有解释，字面译。「天杀：疾病困厄，凶。同丧杀断」的「丧杀」是另一个杀（丧门一类），这里说天杀照丧杀断。「飞杀：卒病飞鸟凶」的「飞鸟」是飞鸟的凶象（飞鸟入宅一类），按字面译。这些行是「卦里这一爻上有这个杀，占病凶」的意思；占病时怎么用，断易天机在「占疾病」一章里没有再展开。这几个杀名（天杀、地杀、天阴……）和易林补遗的星煞值鬼一节（LY.ILL.EL.48 到 EL.52）里讲的不是同一批。",
+        "en": "In these eight rows each month has one branch, over the twelve months of the year: some run in cycles of three months (the Year Killing and the Heaven Killing: Chou, Xu, Wei, Chen, in groups of four), some go on in order or in reverse (Heaven Yin: Zi, Chou, Yin, Mao ...; the Great Month: Zi, Chou, Yin, Mao ...), and some skip places (the Flying Killing: You, Zi, Mao, Wu; the Earth Killing: Chen, Xu, Chou, Wei). The 'Month Killing' of 'the Year Killing: illness with official calamity, ominous; the Month Killing is judged the same way' is not listed in the table, and the original does not explain it, and it is rendered literally. The 'Mourning Killing' of 'the Heaven Killing: illness and distress, ominous; judged like the Mourning Killing' is another killing (of the Mourning Gate kind), and here the Heaven Killing is judged like the Mourning Killing. The 'flying birds' of 'the Flying Killing: sudden illness and flying birds are ominous' is the ominous sign of flying birds (of the flying birds entering the house kind), rendered literally. These rows mean 'this killing on a line of the hexagram makes divining illness ominous'; how to use them in divining illness the Duanyi Tianji does not go on to say in its chapter on illness. These killing names (Heaven Killing, Earth Killing, Heaven Yin ...) are not the same batch as those in the Yilin Buyi's section on stars and killings on the ghost (LY.ILL.EL.48 to EL.52)."
+      },
+      "see": ["LY.ILL.DYTJ.34", "LY.ILL.DYTJ.36", "LY.ILL.DYTJ.33", "LY.ILL.EL.48"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.36",
+      "topic": "生死",
+      "chapter": "神煞月令表",
+      "chapter_en": "The table of spirits and killings by month",
+      "title": "神煞月令表·凶神(死与瘟病)：事气病必死丧凶、吊客病死忧疾凶、哭杀时行瘟病凶",
+      "rule": {
+        "yi": "神煞月令表里凶神的三行：事气（正月起午、未、申、酉、戌、亥、子、丑、寅、卯、辰、巳），病必死，丧事凶；吊客（辰、丑、戌、未循环），病人死亡、忧愁、疾病，凶；哭杀（巳、午、未、申、酉、戌、亥、子、丑、寅、卯、辰），流行的瘟病，凶。",
+        "en": "Three fierce rows of the table of spirits and killings by month: Affair Qi (from the first month Wu, Wei, Shen, You, Xu, Hai, Zi, Chou, Yin, Mao, Chen, Si): in illness surely dead, mourning is ominous; Guest of Condolence (Chen, Chou, Xu, Wei in a cycle): the sick person dies, worry and sickness, ominous; the Weeping Killing (Si, Wu, Wei, Shen, You, Xu, Hai, Zi, Chou, Yin, Mao, Chen): epidemic plague is ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [398, 398],
+          "zh": ["事气", "午未申酉戌亥子丑寅卯辰巳", "病必死，丧凶。"],
+          "yi": ["事气", "午、未、申、酉、戌、亥、子、丑、寅、卯、辰、巳（正月到十二月依次）", "病必死，丧事凶。"],
+          "en": ["Affair Qi", "Wu, Wei, Shen, You, Xu, Hai, Zi, Chou, Yin, Mao, Chen, Si (from the first month to the twelfth in turn)", "in illness surely dead, mourning is ominous."] },
+        { "by": "经", "book": "断易天机", "range": [400, 400],
+          "zh": ["吊客", "辰丑戌未辰丑戌未辰丑戌未", "病死忧疾凶。"],
+          "yi": ["吊客", "辰、丑、戌、未、辰、丑、戌、未、辰、丑、戌、未（正月到十二月依次）", "病人死亡、忧愁、疾病，凶。"],
+          "en": ["Guest of Condolence", "Chen, Chou, Xu, Wei, Chen, Chou, Xu, Wei, Chen, Chou, Xu, Wei (from the first month to the twelfth in turn)", "the sick person dies, worry and sickness, ominous."] },
+        { "by": "经", "book": "断易天机", "range": [408, 408],
+          "zh": ["哭杀", "巳午未申酉戌亥子丑寅卯辰", "时行瘟病凶。"],
+          "yi": ["哭杀", "巳、午、未、申、酉、戌、亥、子、丑、寅、卯、辰（正月到十二月依次）", "流行的瘟病，凶。"],
+          "en": ["Weeping Killing", "Si, Wu, Wei, Shen, You, Xu, Hai, Zi, Chou, Yin, Mao, Chen (from the first month to the twelfth in turn)", "epidemic plague is ominous."] }
+      ],
+      "note": {
+        "yi": "这三行的断语都说到死或瘟病：事气「病必死，丧凶」是最重的一句，吊客是病人死亡和忧愁，哭杀是时行的瘟病。「吊客」这一名和天玄赋里「丧门」「吊客」并提的说法（LY.ILL.TXF.04：「若临丧门、吊客、死符、丧车，持克用爻者，决主不起」）是同一个吊客。「哭杀」在表里的排法（巳午未申酉戌亥子丑寅卯辰）和前面「天哭杀」歌里的排法（正五九羊、二六十猴……，LY.ILL.DYTJ.33）不同，是两个杀。表里另有「大杀」「飞廉」「天丧」「大忌」等几行说到死亡，但都没有说病，这里不收。",
+        "en": "The judgments of these three rows all speak of death or plague: Affair Qi, 'in illness surely dead, mourning is ominous', is the heaviest sentence, Guest of Condolence is the death and worry of the sick person, and the Weeping Killing is the plague of the season. The name 'Guest of Condolence' is the same Guest of Condolence as in the Tianxuan Fu's pairing of 'Mourning Gate' and 'Guest of Condolence' (LY.ILL.TXF.04: 'if it sits on the Mourning Gate, the Guest of Condolence, the Death Talisman or the Mourning Cart and controls the Subject line, it surely means he does not rise'). The layout of the 'Weeping Killing' in the table (Si, Wu, Wei, Shen, You, Xu, Hai, Zi, Chou, Yin, Mao, Chen) differs from that in the song of the 'Heavenly Weeping killing' (first, fifth, ninth the sheep, second, sixth, tenth the monkey ..., LY.ILL.DYTJ.33), and they are two killings. The table has other rows, 'Great Killing', 'Feilian', 'Heavenly Mourning' and 'Great Taboo', that speak of death but do not say illness, and they are not taken here."
+      },
+      "see": ["LY.ILL.DYTJ.35", "LY.ILL.TXF.04", "LY.ILL.DYTJ.33"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.37",
+      "topic": "医药",
+      "chapter": "神煞月令表",
+      "chapter_en": "The table of spirits and killings by month",
+      "title": "神煞月令表·血忌：不家针灸凶",
+      "rule": {
+        "yi": "血忌（正月起丑、未、寅、申、卯、酉、辰、戌、巳、亥、午、子）：不可在家里针灸，凶。",
+        "en": "Blood Taboo (from the first month Chou, Wei, Yin, Shen, Mao, You, Chen, Xu, Si, Hai, Wu, Zi): no needling or moxibustion at home, ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [388, 388],
+          "zh": ["血忌", "丑未寅申卯酉辰戌巳亥午子", "不家针灸凶。"],
+          "yi": ["血忌", "丑、未、寅、申、卯、酉、辰、戌、巳、亥、午、子（正月到十二月依次）", "不可在家里针灸，凶。"],
+          "en": ["Blood Taboo", "Chou, Wei, Yin, Shen, Mao, You, Chen, Xu, Si, Hai, Wu, Zi (from the first month to the twelfth in turn)", "no needling or moxibustion at home; ominous."] }
+      ],
+      "note": {
+        "yi": "血忌按月排：正月丑、二月未、三月寅、四月申、五月卯、六月酉、七月辰、八月戌、九月巳、十月亥、十一月午、十二月子。「不家针灸凶」的「不家」读不确定，这里按「不可在家里（用针灸）」译；意思大概是血忌落在的月份、日子里，不要在家里做针灸放血这类会见血的治疗。这一行是这一章里唯一说到治疗方式的神煞。针灸的宜忌按鬼爻五行定的说法，见天玄赋（LY.ILL.TXF.13）和火珠林（LY.ILL.HZL.09）。",
+        "en": "Blood Taboo is laid out by month: Chou in the first month, Wei in the second, Yin in the third, Shen in the fourth, Mao in the fifth, You in the sixth, Chen in the seventh, Xu in the eighth, Si in the ninth, Hai in the tenth, Wu in the eleventh, Zi in the twelfth. The 'bu jia' of 'bu jia zhen jiu xiong' is not certain, and here it is rendered 'no needling or moxibustion at home'; the sense is probably that in the months and days on which the Blood Taboo falls, one should not do at home the treatments that draw blood, such as needling and moxibustion. This row is the only spirit or killing in this chapter that speaks of a way of treatment. For the rules on what to use and avoid in needling and moxibustion by the phase of the ghost line see the Tianxuan Fu (LY.ILL.TXF.13) and the Huozhu Lin (LY.ILL.HZL.09)."
+      },
+      "see": ["LY.ILL.TXF.13", "LY.ILL.HZL.09"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.38",
+      "topic": "取象",
+      "chapter": "六神",
+      "chapter_en": "The six spirits",
+      "title": "六神与疾病：白虎属金持世及交重者为患病丧死破财；白虎内惊忧疾病；白虎临财损病忧；玄武入土家中有疾病；白虎空亡病无事",
+      "rule": {
+        "yi": "白虎属金，兑旺乾相，旺在秋，属阴，是西方之神；它若持世和交重，是患病、丧死、破财，附在六爻上没有不凶的。日六神内动：白虎内动，惊而忧疾病。白虎临在财上，损害、病和忧愁。玄武入土，家中有疾病。白虎空亡，病没有事。",
+        "en": "The White Tiger belongs to Metal, strong in Dui and helped by Qian, strong in autumn, yin, and the spirit of the west; if it holds the Self or is crossed and heavy it means illness, mourning and death, and loss of wealth, and attached to the six lines it is never not ominous. The day spirit moving inside: the White Tiger moving inside frightens and worries about illness. The White Tiger on Wealth: harm, illness and worry. The Dark Tortoise entering Earth: illness in the house. The White Tiger Void: the illness comes to nothing."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [466, 466],
+          "zh": ["白虎属金。", "兑旺乾相。", "旺于秋，", "属阴，", "西方之神也。", "其神若持世及交重者，", "为患病，", "为丧死，", "为破财。", "附于六爻而无不凶也。"],
+          "yi": ["白虎属金。", "兑卦旺、乾卦相，", "旺在秋天，", "属于阴，", "是西方之神。", "它若持世和交重，", "就是患病，", "就是丧死，", "就是破财。", "附在六爻上没有不凶的。"],
+          "en": ["The White Tiger belongs to Metal.", "Dui is its strong and Qian its helper;", "strong in autumn,", "yin,", "the spirit of the west.", "If it holds the Self or is crossed and heavy,", "it is illness,", "it is mourning and death,", "it is loss of wealth.", "Attached to the six lines it is never not ominous."] },
+        { "by": "经", "book": "断易天机", "range": [469, 469],
+          "zh": ["白虎内惊忧疾病（1），"],
+          "yi": ["白虎内动，惊而忧疾病，"],
+          "en": ["the White Tiger moving inside frightens and worries about illness,"] },
+        { "by": "经", "book": "断易天机", "range": [473, 473],
+          "zh": ["白虎临财损病忧，"],
+          "yi": ["白虎临在财上，损害、病和忧愁，"],
+          "en": ["the White Tiger on Wealth: harm, illness and worry,"] },
+        { "by": "经", "book": "断易天机", "range": [481, 481],
+          "zh": ["入土家中有疾病，"],
+          "yi": ["（玄武）入土，家中有疾病，"],
+          "en": ["the Dark Tortoise entering Earth: illness in the house,"] },
+        { "by": "经", "book": "断易天机", "range": [484, 484],
+          "zh": ["白虎空亡病无事，"],
+          "yi": ["白虎空亡，病没有事，"],
+          "en": ["the White Tiger Void: the illness comes to nothing,"] }
+      ],
+      "note": {
+        "yi": "这里从六神几处的歌里把说到病的句子集在一起。头一段（「白虎属金……」）是六神各自的性质：白虎属金、旺在秋、属阴、西方之神，持世或交重时是患病、丧死、破财；后四句是别处歌诀里的单句：「日六神内动」歌的「白虎内惊忧疾病」（其后的「（1）」是今人注号，不收）、「六神有气吉凶」歌的「白虎临财损病忧」、「六神彖象歌」的「玄武入土家中有疾病」、「六神空亡」歌的「白虎空亡病无事」。「附于六爻而无不凶也」是说白虎附在哪一爻上都凶。「白虎临财损病忧」的「病」是病，「忧」是忧愁，「损」是损害，这一句字面译。这几句和天玄赋「青龙得位终见安康、白虎伤身必成凶咎」（LY.ILL.TXF.04）、火珠林的白虎临父母（LY.ILL.HZL.08）是同一类。",
+        "en": "Here the sentences that speak of illness are gathered from several of the six-spirit songs. The first passage ('The White Tiger belongs to Metal ...') is the nature of each of the six spirits: the White Tiger belongs to Metal, is strong in autumn, yin and the spirit of the west, and holding the Self or crossed and heavy means illness, mourning and death, and loss of wealth; the last four are single lines from other songs: 'the White Tiger moving inside frightens and worries about illness' from the song of the day spirits moving inside (the '(1)' after it is a modern annotation mark and is not quoted), 'the White Tiger on Wealth: harm, illness and worry' from the song on the six spirits having qi and being lucky or ill, 'the Dark Tortoise entering Earth: illness in the house' from the song of the images of the six spirits, and 'the White Tiger Void: the illness comes to nothing' from the song of the six spirits Void. 'Attached to the six lines it is never not ominous' says the White Tiger is ominous on whichever line it is attached to. In 'the White Tiger on Wealth: harm, illness and worry' the words are rendered literally. These lines are of the same kind as the Tianxuan Fu's 'the Azure Dragon in place finally sees health, the White Tiger injuring the Body surely becomes calamity' (LY.ILL.TXF.04) and the Huozhu Lin's 'the White Tiger sitting on Resource' (LY.ILL.HZL.08)."
+      },
+      "see": ["LY.ILL.TXF.04", "LY.ILL.HZL.08", "LY.ILL.DYTJ.15", "LY.ILL.ZSZ.07", "LY.ILL.GLJ.13"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.39",
+      "topic": "他人病",
+      "chapter": "六亲用钤",
+      "chapter_en": "The uses of the six relations",
+      "title": "六亲用钤·疾病：占双亲父母为用爻宜旺不宜空；占子孙父母为恶杀宜静不宜动动则必死；子孙占病为医药当权发动病即安卦无其神服药无效；官鬼占兄弟为克杀旺相发动病必危；官鬼占身命逢凶必丧亡疾病",
+      "rule": {
+        "yi": "父母爻的用处：占双亲的疾病，父母爻是用爻，宜旺不宜空，空就必危；占子孙，父母爻是恶杀，宜静不宜动，动就必死。子孙爻的用处：占病，子孙是医药，当权发动，病就安；卦里没有它，服药无效；占小孩和奴仆，子孙是用爻，不落空亡，终究没有大害。官鬼爻的用处：占兄弟的病，官鬼是克杀，旺相发动，病必危险；占身命，遇凶必定丧亡、疾病。",
+        "en": "The uses of the Resource line: divining the illness of the parents, the Resource line is the Subject line, and it should be strong and not Void, and Void means peril; divining children, the Resource line is an evil killing, and it should be still and not move, and moving means death. The uses of the Output line: divining illness, Output is the medicine, and if it holds power and moves the illness is at ease; if it is not in the hexagram, medicine has no effect; divining small children and servants, Output is the Subject line, and if it does not fall Void there is in the end no great harm. The uses of the Pressure line: divining a brother's illness, the Pressure line is the controlling killing, and if strong and moving the illness is surely dangerous; divining the person's fortune, meeting ill surely means death and illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [740, 741], "literal": ["子孙"],
+          "zh": ["疾病：", "占双亲，", "为用爻，", "宜旺不宜空，", "空则必危。", "占子孙：", "为恶杀，", "宜静不宜动，", "动则必死。"],
+          "yi": ["关于疾病：", "占双亲的病，", "（父母爻）是用爻，", "宜旺不宜空，", "空就必危。", "占子孙（小孩）的病：", "（父母爻）是恶杀，", "宜静不宜动，", "动就必死。"],
+          "en": ["Illness:", "divining the parents,", "the Resource line is the Subject line,", "it should be strong and not Void,", "and Void means peril.", "Divining children:", "it is an evil killing,", "it should be still and not move,", "and moving means death."] },
+        { "by": "经", "book": "断易天机", "range": [777, 778],
+          "zh": ["占病：", "为医药。", "当权发动，", "其病即安；", "卦无其神，", "服药无效。", "占小口及奴仆：", "为用爻。", "不落空亡，", "终无大害。"],
+          "yi": ["占病时：", "（子孙）是医药。", "当权发动，", "他的病就安了；", "卦里没有它，", "服药无效。", "占小孩和奴仆：", "（子孙）是用爻。", "不落空亡，", "终究没有大害。"],
+          "en": ["Divining illness:", "Output is the medicine.", "If it holds power and moves,", "the illness is at ease;", "if it is not in the hexagram,", "taking medicine has no effect.", "Divining small children and servants:", "Output is the Subject line.", "If it does not fall Void,", "there is in the end no great harm."] },
+        { "by": "经", "book": "断易天机", "range": [813, 813], "literal": ["兄弟"],
+          "zh": ["占兄弟：", "为克杀。", "旺相发动，", "其病必危。"],
+          "yi": ["占兄弟的病：", "（官鬼）是克杀。", "旺相发动，", "病必危险。"],
+          "en": ["Divining a brother's illness:", "the Pressure line is the controlling killing.", "If strong and moving,", "the illness is surely dangerous."] },
+        { "by": "经", "book": "断易天机", "range": [804, 804],
+          "zh": ["（遇吉必进禄加官，", "逢凶必丧亡疾病。"],
+          "yi": ["（占身命：遇吉一定进禄加官，", "遇凶一定丧亡、疾病。）"],
+          "en": ["(divining the person's fortune: meeting luck surely brings salary and office added,", "meeting ill surely means death and illness.)"] }
+      ],
+      "note": {
+        "yi": "这一节是《断易天机》「六亲用钤」里的几条，每一条是「占某事：某六亲是什么」的句式。头一条在「父母用」里：占双亲的病，父母爻就是用爻（病人），所以宜旺不宜空；占子孙（小孩）的病，父母爻（生我者）反而成了「恶杀」，动了就死。第二条在「子孙用」里：子孙爻在占病里是医药（和天玄赋的用爻表 LY.ILL.TXF.01 里「父占子看子」不同，那里是占子孙的病看子孙，这里说的是占病时子孙是医药），当权发动病就安，卦里没有子孙，服药无效。第三条在「官鬼用」里：占兄弟的病，官鬼是「克杀」（克兄弟的杀），旺相发动病必危。第四条是「官鬼用」里「占身命」一句后面括号里的注：遇吉进禄加官，逢凶丧亡疾病。原文里每条前面的「占某」是说占什么事，句里的「为」是「是」，我加在括号里的是补出的主语，不是原文有的词。「占兄弟」的「兄弟」是兄弟这个亲人，不是兄弟爻。",
+        "en": "This section takes several entries from the 'uses of the six relations' of the Duanyi Tianji, each in the pattern 'divining such a matter: what such a relation is'. The first is in the 'uses of Resource': divining the illness of the parents, the Resource line is the Subject line (the sick person), so it should be strong and not Void; divining the illness of children, the Resource line (what generates me) becomes an 'evil killing' instead, and if it moves he dies. The second is in the 'uses of Output': the Output line in divining illness is the medicine (different from the table of the Subject line in the Tianxuan Fu, LY.ILL.TXF.01, 'a parent divining a child looks at Output', which is divining a child's illness by Output, while here it is that in divining illness Output is the medicine), and if it holds power and moves the illness is at ease, and if the hexagram has no Output taking medicine has no effect. The third is in the 'uses of the Pressure line': divining a brother's illness, the Pressure line is the 'controlling killing' (the killing that controls the brother), and if strong and moving the illness is surely dangerous. The fourth is the note in brackets after 'divining the person's fortune' in the 'uses of the Pressure line': meeting luck brings salary and office added, meeting ill means death and illness. In the original the 'divining such-and-such' before each entry says what matter is divined, and the 'wei' in the lines is 'is'; what I put in brackets are subjects supplied, not words in the original. The 'brother' of 'divining a brother' is a brother as a relative, not the Peer line."
+      },
+      "see": ["LY.ILL.TXF.01", "LY.ILL.DYTJ.05", "LY.ILL.DYTJ.40"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.40",
+      "topic": "动变",
+      "chapter": "六亲用变",
+      "chapter_en": "The changes of the six relations",
+      "title": "六亲用变·疾病：父动当头克子孙病人无药主沉昏、父化子纵然忧病反为吉；子孙发动伤官鬼占病求医身便痊、子化官占病忧疑；财爻发动病人伤脾腹胃虚；兄弟交重克财病人难愈、兄化官占病难医须见哭；官化官病未安、官鬼病困门庭祸祟来",
+      "rule": {
+        "yi": "父母动而克子孙，病人没有药，主沉重昏迷；父母化子孙，宜退散，纵然忧病，反而是吉。子孙发动、伤克官鬼，占病求医，身体就痊愈；子孙化官鬼，要防祸患，占病的忧疑都不准。财爻发动，病人伤脾胃、腹胃虚。兄弟交重克财，病人难愈、没有离灾；兄化官，不要下状，占病难医、须见哭。官鬼发动：病困在门庭、祸祟来；官化官，病未安。",
+        "en": "The Resource line moving and controlling Output: the sick person has no medicine, and it means heaviness and stupor; Resource changing into Output: it is fit to retreat and scatter, and though there is worry about illness, it is on the contrary lucky. Output moving and injuring the Pressure line: in divining illness and seeking a doctor, the body is cured at once; Output changing into the Pressure line: guard against calamity, and the worries about illness are all off the mark. The Wealth line moving: the sick person injures the spleen and the belly and stomach are deficient. Peer crossing heavily and controlling Wealth: the sick person is hard to cure and has not left the calamity; Peer changing into the Pressure line: do not bring a suit, and divining illness it is hard to treat and weeping will be seen. The Pressure line moving: the illness is trapped at the gate, curses of calamity come; the Pressure line changing into the Pressure line: the illness is not yet at ease."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [818, 818],
+          "zh": ["父动当头克子孙，", "病人无药主沉昏；"],
+          "yi": ["父母动，当头克子孙，", "病人没有药，主沉重昏迷；"],
+          "en": ["The Resource line moving and controlling Output head on,", "the sick person has no medicine, and it means heaviness and stupor;"] },
+        { "by": "经", "book": "断易天机", "range": [819, 819],
+          "zh": ["父化子兮宜退散，", "纵然忧病反为吉。"],
+          "yi": ["父母化子孙，宜退散，", "纵然忧病，反而是吉。"],
+          "en": ["Resource changing into Output: it is fit to retreat and scatter,", "and though there is worry about illness, it is on the contrary lucky."] },
+        { "by": "经", "book": "断易天机", "range": [827, 827],
+          "zh": ["子孙发动伤官鬼，", "占病求医身便痊；"],
+          "yi": ["子孙发动、伤克官鬼，", "占病求医，身体就痊愈；"],
+          "en": ["Output moving and injuring the Pressure line,", "in divining illness and seeking a doctor, the body is cured at once;"] },
+        { "by": "经", "book": "断易天机", "range": [828, 828],
+          "zh": ["子化官兮防祸患，", "占病忧疑尽不中。"],
+          "yi": ["子化官鬼，要防祸患，", "占病的忧疑都不准。"],
+          "en": ["Output changing into the Pressure line: guard against calamity,", "and the worries about illness are all off the mark."] },
+        { "by": "经", "book": "断易天机", "range": [836, 836],
+          "zh": ["病人伤脾腹胃虚"],
+          "yi": ["病人伤了脾，腹和胃虚弱。"],
+          "en": ["the sick person injures the spleen, the belly and stomach are deficient."] },
+        { "by": "经", "book": "断易天机", "range": [845, 845],
+          "zh": ["兄弟交重克了财，", "病人难愈未离灾；"],
+          "yi": ["兄弟交重克财，", "病人难愈、没有离灾；"],
+          "en": ["Peer crossing heavily and controlling Wealth,", "the sick person is hard to cure and has not left the calamity;"] },
+        { "by": "经", "book": "断易天机", "range": [846, 846],
+          "zh": ["兄化官兮休下状，", "占病难医须见哭。"],
+          "yi": ["兄化官，不要下状，", "占病难医，须见哭。"],
+          "en": ["Peer changing into the Pressure line: do not bring a suit,", "and divining illness it is hard to treat and weeping will be seen."] },
+        { "by": "经", "book": "断易天机", "range": [854, 854],
+          "zh": ["病困门庭祸祟来，"],
+          "yi": ["病困在门庭，祸祟来；"],
+          "en": ["the illness is trapped at the gate, curses of calamity come;"] },
+        { "by": "经", "book": "断易天机", "range": [855, 855],
+          "zh": ["官化官兮病未安，"],
+          "yi": ["官化官，病未安；"],
+          "en": ["the official changing into the official: the illness is not yet at ease;"] }
+      ],
+      "note": {
+        "yi": "「用变」是每一类六亲（父母、子孙、妻财、兄弟、官鬼）发动、以及它们变成别的六亲时的断语，每一类有两首歌，这里只收说到病的句子。「父动当头克子孙，病人无药主沉昏」是父母爻发动克子孙（药）：没有药，病人昏沉；「子孙发动伤官鬼，占病求医身便痊」是子孙克鬼：治病有效。「财爻发动……病人伤脾腹胃虚」的「腹胃虚」原文如此，「财」（土）克水，所以「伤脾」这里按字面译，不作解释。「兄弟交重克了财，病人难愈未离灾」是兄弟克财（禄命），病人难愈。「兄化官兮休下状，占病难医须见哭」是兄弟化官鬼。「官鬼发动，病困门庭，祸祟来」是官鬼动：病困在门庭里。这些句子多与前面几章（孙膑歌的六亲、家人占病歌 LY.ILL.DYTJ.05、DYTJ.08）是同一个意思。父母、子孙的用变在求财里也有（LY.WEALTH.DYTJ.32 一带）。",
+        "en": "'Uses by change' are the judgments when each kind of relation (Resource, Output, Wealth, Peer, Pressure) moves and when it changes into another relation, with two songs for each kind, and here only the sentences that speak of illness are taken. 'The Resource line moving and controlling Output head on: the sick person has no medicine, heaviness and stupor' is Resource moving and controlling Output (the medicine): with no medicine the sick person is in a stupor; 'Output moving and injuring the Pressure line: in divining illness and seeking a doctor the body is cured at once' is Output controlling the ghost: the treatment is effective. In 'the Wealth line moving ... the sick person injures the spleen and the belly and stomach are deficient' the 'belly and stomach are deficient' is as in the original, and it is rendered literally with no explanation. 'Peer crossing heavily and controlling Wealth: the sick person is hard to cure and has not left the calamity' is Peer controlling Wealth (salary and life): the sick person is hard to cure. 'Peer changing into the Pressure line: do not bring a suit, divining illness it is hard to treat and weeping will be seen' is Peer changing into the Pressure line. 'The Pressure line moving, the illness trapped at the gate, curses of calamity come' is the Pressure line moving: the illness is trapped in the gate and courtyard. These sentences mostly agree with the earlier chapters (the six relations in Sun Bin's song and the verses on a family member, LY.ILL.DYTJ.05 and DYTJ.08). The uses by change of Resource and Output are also in the wealth domain (around LY.WEALTH.DYTJ.32)."
+      },
+      "see": ["LY.ILL.DYTJ.05", "LY.ILL.DYTJ.08", "LY.ILL.DYTJ.39"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.41",
+      "topic": "取象",
+      "chapter": "六亲类象",
+      "chapter_en": "The images of the six relations",
+      "title": "六亲类象·疾病与医药：福德类象有医药；官鬼独发主病灾、官鬼神邪病崇盗；冲克子孙爻来情为医药",
+      "rule": {
+        "yi": "福德（子孙）所主的类象里，有缉捕、医药、闲人、鱼贩。官鬼是鬼爻，独发主病灾，是损失的兆；官鬼是神、邪、病、祟、盗。来情看冲克哪一爻：冲克子孙爻，是冲福瑞的物件和医药。",
+        "en": "Among the images governed by Output (Fortune-and-Virtue) are arrests, medicine, idlers and fishmongers. The Pressure line is the ghost line, and moving alone it means illness and calamity, a sign of loss; the Pressure line is gods, evil, illness, curses and thieves. The reason for the divination is looked at by which line is clashed or controlled: a clash on the Output line is a clash with lucky things and medicine."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [901, 901],
+          "zh": ["缉捕医药闲鱼侩，"],
+          "yi": ["（福德所主的类象里）缉捕、医药、闲人、鱼贩，"],
+          "en": ["(among the images governed by Output) arrests, medicine, idlers and fishmongers,"] },
+        { "by": "经", "book": "断易天机", "range": [913, 913],
+          "zh": ["（为鬼爻，", "独发主病灾，", "损失之兆）"],
+          "yi": ["（官鬼是鬼爻，", "独发主病灾，", "是损失的兆。）"],
+          "en": ["(the Pressure line is the ghost line,", "moving alone it means illness and calamity,", "a sign of loss.)"] },
+        { "by": "经", "book": "断易天机", "range": [914, 914],
+          "zh": ["官鬼神邪病崇盗，"],
+          "yi": ["官鬼是神、邪、病、祟、盗，"],
+          "en": ["the Pressure line is gods, evil, illness, curses and thieves,"] },
+        { "by": "经", "book": "断易天机", "range": [943, 943],
+          "zh": ["冲克子孙爻：", "冲福瑞物及医药，"],
+          "yi": ["冲克子孙爻：", "冲福瑞的物件和医药，"],
+          "en": ["A clash on the Output line:", "a clash with lucky things and medicine,"] }
+      ],
+      "note": {
+        "yi": "这几处是《断易天机》里六亲各管哪些事物（类象）的歌，这里只收说到病或药的：子孙类里「缉捕医药闲鱼侩」有医药；官鬼类里头一行的括号说「独发主病灾」，歌里说「官鬼神邪病崇盗」；「来情章」里「冲克子孙爻：冲福瑞物及医药」是说占的人来占的缘由是冲克了子孙爻，他问的就是福瑞的东西和医药。「官鬼类」的括号（为鬼爻，独发主病灾，损失之兆）是原文里加在标题后面的说明。「闲鱼侩」的「鱼侩」是鱼贩（牙侩），字面译。这几句的意思和前面「子孙为医药、官鬼为病」的说法（LY.ILL.DYTJ.39、LY.ILL.HZL.06）是一回事。",
+        "en": "These are songs in the Duanyi Tianji about which things (images) each of the six relations governs, and only the lines that speak of illness or medicine are taken: under Output 'arrests, medicine, idlers and fishmongers' has medicine; the first line of the Pressure line's section has in brackets 'moving alone it means illness and calamity', and the song has 'the Pressure line is gods, evil, illness, curses and thieves'; and in the 'chapter on the reason for the divination' 'a clash on the Output line: a clash with lucky things and medicine' says that the reason the person has come to divine is that the Output line has been clashed and controlled, and what he asks about is lucky things and medicine. The bracket in the Pressure line's section (the ghost line, moving alone it means illness and calamity, a sign of loss) is a note added after the heading in the original. The 'yu kuai' of 'idlers and fishmongers' is a fish broker, rendered literally. The sense of these lines is the same as the earlier sayings 'Output is the medicine and the Pressure line is the illness' (LY.ILL.DYTJ.39, LY.ILL.HZL.06)."
+      },
+      "see": ["LY.ILL.DYTJ.39", "LY.ILL.HZL.06"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.42",
+      "topic": "应期",
+      "chapter": "期日章",
+      "chapter_en": "The chapter on the day of the outcome",
+      "title": "期日章·占病应期：子孙生旺为病瘥、鬼爻墓旺病身危；药爻福德寻生旺、日辰遇着是神医",
+      "rule": {
+        "yi": "看病愈的日子：子孙生旺的时候，病好；鬼爻入墓、旺的时候，病人危险。药爻（福德）要找它生旺的日子，遇到那个日辰，就是遇到神医。",
+        "en": "For the day of recovery from illness: when Output is born strong, the illness is cured; when the Pressure line enters a tomb or is strong, the sick person is in danger. For the medicine line (Output) look for the day on which it is born strong, and meeting that day is meeting a divine physician."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [962, 962],
+          "zh": ["子孙生旺为病瘥，", "鬼爻墓旺病身危，"],
+          "yi": ["子孙生旺的时候，病好；", "鬼爻入墓、旺的时候，病人危险。"],
+          "en": ["when Output is born strong, the illness is cured;", "when the Pressure line enters a tomb or is strong, the sick person is in danger."] },
+        { "by": "经", "book": "断易天机", "range": [962, 962],
+          "zh": ["药爻福德寻生旺，", "日辰遇着是神医（6）。"],
+          "yi": ["药爻（福德）要找它生旺的日子，", "遇到那个日辰，就是遇到神医。"],
+          "en": ["For the medicine line (Output) look for the day on which it is born strong,", "and meeting that day is meeting a divine physician."] }
+      ],
+      "note": {
+        "yi": "这是《期日章》这首歌里说到病的两联：歌里一联管一件事的应期，求财、六甲（怀孕生产）、行人、病、失物、婚姻、求官、公事、阴宅、医药、天气各一联。「子孙生旺为病瘥」是子孙爻长生或帝旺的日子病好；「鬼爻墓旺病身危」是鬼爻入墓或旺的日子病重。「药爻福德寻生旺，日辰遇着是神医」是药爻（子孙福德）生旺的日辰，医药有效，「神医」按字面译。歌后有今人写的「（3）」「（6）」注号，那几条注不收。这两联和孙膑歌的「福德持世鬼暂退」（LY.ILL.DYTJ.02）、火珠林「占疾病何日愈」（LY.ILL.DYTJ.18）里子孙福德临月日愈病是同一个道理。",
+        "en": "These are the two couplets on illness in the song of the 'chapter on the day of the outcome': in the song each couplet governs the timing of one matter: wealth, the six jia (pregnancy and birth), a traveller, illness, lost things, marriage, seeking office, official business, a yin house (a grave), medicine and the weather one couplet each. 'When Output is born strong the illness is cured' is that the illness gets better on the day when the Output line is at Long Life or Emperor's Prime; 'when the Pressure line enters a tomb or is strong the sick person is in danger' is that the illness is heavy on the day when the Pressure line enters a tomb or is strong. 'For the medicine line (Output) look for the day on which it is born strong; meeting that day is meeting a divine physician' is the day branch on which the medicine line (Output) is born strong, when the medicine is effective, and 'divine physician' is rendered literally. After the song there are annotation marks such as '(3)' and '(6)' written by a modern hand, and those annotations are not quoted. These two couplets are the same principle as Sun Bin's song, 'Output holding the Self, the ghost retreats for a time' (LY.ILL.DYTJ.02), and the Huozhu Lin's 'on which day an illness will be cured' (LY.ILL.DYTJ.18), in which Output arriving on the month or day cures the illness."
+      },
+      "see": ["LY.ILL.DYTJ.02", "LY.ILL.DYTJ.18"]
+    },
+    {
+      "id": "LY.ILL.DYTJ.43",
+      "topic": "取象",
+      "chapter": "何知章",
+      "chapter_en": "The chapter on how it is known",
+      "title": "何知章·疾病：螣蛇入火瘟气麻痘病、入金怕逢病半死、爻入水病来伤小口退一双；白虎临子孙位子孙今年忌、临财妻妾恐人灾殃、临父母父母切忌讳、临兄弟不久入泉乡；玄武牛猪空亡瘴死为瘟疫；有长病人八纯卦、有妻病身克财、重丧鬼化财、有长不安青龙入水患疮",
+      "rule": {
+        "yi": "螣蛇入火，主瘟气、麻疹、痘疹的病；入金，怕遇上病得半死；若爻入水，病来伤人，小孩要退一双。白虎临在子孙位，子孙今年忌；临在财、妻妾位，恐怕有人灾殃；临在父母位，父母切忌；临在兄弟宫，不久入黄泉。玄武在牛、猪空亡处当着，瘴气死人成为瘟疫。有长期生病的人，是八纯卦；有妻子病，是身克财；重丧，是鬼化财；有长辈不安，是青龙入水、患疮；有聋人，是兑卦入乾。",
+        "en": "The Coiling Snake entering Fire: plague, measles and smallpox; entering Metal: one fears meeting an illness half deadly; if the line enters Water the illness comes to injure, and the children retreat by a pair. The White Tiger sitting on the Output place: Output must beware this year; on Wealth and the wife's or concubine's place: fear a calamity to a person; on Resource: the parents must beware; on Peer: before long he enters the Yellow Springs. The Dark Tortoise standing at Chou and Hai Void: miasma deaths become an epidemic. A long-standing sick person: a pure hexagram; a wife's illness: the Body controlling Wealth; a double mourning: the ghost changing into Wealth; an elder unwell: the Azure Dragon entering Water, with sores; a deaf person: Dui changing into Qian."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [975, 975],
+          "zh": ["鰧蛇入火火烧定，瘟气麻痘病。"],
+          "yi": ["螣蛇入火，主火烧一定，瘟气、麻疹、痘疹的病。"],
+          "en": ["The Coiling Snake entering Fire: fire is sure, plague, measles and smallpox."] },
+        { "by": "经", "book": "断易天机", "range": [975, 975],
+          "zh": ["入金怕逢病半死，口舌重重至。若爻入水病来伤，小口退一双。"],
+          "yi": ["（螣蛇）入金，怕遇上病得半死，口舌重重来；若爻入水，病来伤人，小孩要退一双。"],
+          "en": ["entering Metal, one fears meeting an illness half deadly, and quarrels come thick; if the line enters Water the illness comes to injure, and the children retreat by a pair."] },
+        { "by": "经", "book": "断易天机", "range": [976, 976],
+          "zh": ["白虎若临子孙位，子孙今年忌。", "忽若临财妻妾位，恐怕人灾殃。", "白虎若临父母位，父母切忌讳。", "白虎若临兄弟宫，不久入泉乡。"],
+          "yi": ["白虎若临在子孙位，子孙今年忌；", "忽然临在财、妻妾位，恐怕有人灾殃；", "白虎若临在父母位，父母切忌；", "白虎若临在兄弟宫，不久入黄泉。"],
+          "en": ["If the White Tiger sits on the Output place, Output must beware this year;", "if suddenly on Wealth and the wife's or concubine's place, fear a calamity to a person;", "if the White Tiger sits on the Resource place, the parents must beware;", "if the White Tiger sits on the Peer palace, before long he enters the Yellow Springs."] },
+        { "by": "经", "book": "断易天机", "range": [977, 977],
+          "zh": ["牛猪空亡玄武当，瘴死为瘟疫。"],
+          "yi": ["牛、猪空亡处玄武当着，瘴气死人是瘟疫。"],
+          "en": ["The Dark Tortoise standing at Chou and Hai Void: miasma deaths are an epidemic."] },
+        { "by": "经", "book": "断易天机", "range": [980, 980],
+          "zh": ["有长病人，八纯卦也。", "有妻病，身克财也。"],
+          "yi": ["有长期生病的人，是八纯卦；", "有妻子病，是身克财。"],
+          "en": ["A long-standing sick person: a pure hexagram;", "a wife's illness: the Body controlling Wealth."] },
+        { "by": "经", "book": "断易天机", "range": [980, 980],
+          "zh": ["重丧，鬼化财也。", "有长不安，青龙入水患疮也。", "有聋人，兑卦入乾。"],
+          "yi": ["重丧，是鬼化财；", "有长辈不安，是青龙入水、患疮；", "有聋人，是兑卦入乾。"],
+          "en": ["A double mourning: the ghost changing into Wealth;", "an elder unwell: the Azure Dragon entering Water, with sores;", "a deaf person: Dui changing into Qian."] }
+      ],
+      "note": {
+        "yi": "《何知章》是一首「怎么从卦里知道家里的事」的歌：每一句是「有某某，是某卦某爻」。这里只收说到病、瘟疫、丧的几处。第一联「鰧蛇入火火烧定，瘟气麻痘病」和「入金怕逢病半死……若爻入水病来伤，小口退一双」是螣蛇落在不同五行爻上的情形（火、金、水），原文里前后隔着说家宅、蛇伤、野兽的几句，不收；「入金怕逢病半死」的「入金」承上文「鰧蛇入」。「小口退一双」是小孩要走（死）一对，字面译。第二联是白虎临六亲位：临子孙位子孙忌、临财妻妾恐人灾殃、临父母父母忌讳、临兄弟不久入泉乡（入黄泉）。第三联「牛猪空亡玄武当，瘴死为瘟疫」是玄武在牛（丑）、猪（亥）空亡的位置上，瘴气死人成瘟疫。第四、五联是「怎么知道」的句子：「有长病人」是八纯卦，「有妻病」是身克财，「重丧」是鬼化财，「有长不安」是青龙入水患疮，「有聋人」是兑卦入乾。「有长病人，八纯卦也」和火珠林「凡得八纯游魂卦，病者决主沉重」（LY.ILL.HZL.05）是同一类。这一章的「有多事不成……」等几句不在病的范围，不收。",
+        "en": "The 'chapter on how it is known' is a song on how to know from a hexagram the affairs of a family, and each line is 'there is such-and-such: it is such-and-such hexagram or line'. Here only the passages that speak of illness, plague and mourning are taken. The first couplet, 'the Coiling Snake entering Fire, fire is sure, plague, measles and smallpox' and 'entering Metal one fears meeting an illness half deadly ... if the line enters Water the illness comes to injure, the children retreat by a pair', is the Coiling Snake falling on lines of different phases (Fire, Metal, Water), and in the original the lines about the house, snake bites and wild beasts fall in between them and are not taken; the 'entering Metal' of 'entering Metal one fears meeting an illness half deadly' follows the earlier 'the Coiling Snake enters'. 'The children retreat by a pair' means a pair of children go (die), rendered literally. The second couplet is the White Tiger on the places of the six relations: on Output Output must beware, on Wealth and the wife's or concubine's place fear a calamity to a person, on Resource the parents must beware, on Peer before long he enters the Yellow Springs. The third couplet, 'the Dark Tortoise standing at Chou and Hai Void, miasma deaths are an epidemic', is the Dark Tortoise at the places of the ox (Chou) and the pig (Hai) Void, miasma killing people and becoming an epidemic. The fourth and fifth couplets are sentences of 'how it is known': 'a long-standing sick person' is a pure hexagram, 'a wife's illness' is the Body controlling Wealth, 'a double mourning' is the ghost changing into Wealth, 'an elder unwell' is the Azure Dragon entering Water with sores, and 'a deaf person' is Dui changing into Qian. 'A long-standing sick person: a pure hexagram' is of the same kind as the Huozhu Lin's 'whoever gets a pure or Wandering Soul hexagram, the sick person is surely heavy' (LY.ILL.HZL.05). The other lines of this chapter, 'many affairs not accomplished ...' and so on, are outside illness and are not taken."
+      },
+      "see": ["LY.ILL.HZL.05", "LY.ILL.DYTJ.38", "LY.ILL.DYTJ.15"]
+    }
+  ]
+}

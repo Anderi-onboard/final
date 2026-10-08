@@ -1,0 +1,703 @@
+{
+  "shushu": "六爻",
+  "domain": "官非",
+  "work": "黄金策",
+  "chapter": "词讼",
+  "chapter_en": "Lawsuits",
+  "ranges": {"卜筮正宗": [2835, 2904]},
+  "units": [
+    {
+      "id": "LY.LAWSUIT.HJC.01",
+      "topic": "总则",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·小忿不惩必至争长竞短、大亏既负宁不诉枉申冤，欲定输赢须详世应：卦中世应就是状子里的原告被告，看它们就知两边胜负",
+      "rule": {
+        "yi": "小的怨气不加惩戒，必然争长论短；大的亏已经吃了，怎能不告状申冤？要定输赢，必须详察世爻和应爻。卦中的世应，就是状纸上的原告和被告，详察它们，两边的胜负就可以知道。",
+        "en": "A small grievance not checked leads to quarrelling over who is greater; a great wrong already suffered, how can one not sue to set it right? To settle who wins and who loses, one must examine the Self and the Other. The Self and the Other in the hexagram are the plaintiff and the defendant in the plaint; by examining them one knows the success or failure of both sides."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2837, 2837],
+          "zh": ["小忿不惩，", "必至争长竞短；", "大亏既负，", "宁不诉枉申冤？", "欲定输赢，", "须详世应"],
+          "yi": ["小的怨气不加惩戒，", "必然争长论短；", "大的亏已经吃了，", "怎能不告状申冤？", "要定输赢，", "必须详察世应"],
+          "en": ["A small grievance not checked", "leads to quarrelling over who is greater;", "a great wrong already suffered,", "how can one not sue to set it right?", "To settle who wins and who loses,", "one must examine the Self and the Other"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2837, 2837],
+          "zh": ["卦中世应，即状中原被，详此则两边胜负可知。"],
+          "yi": ["卦中的世应，就是状纸上的原告和被告，详察它们，两边的胜负就可以知道。"],
+          "en": ["The Self and the Other in the hexagram are the plaintiff and the defendant in the plaint; by examining them one knows the success or failure of both sides."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.02",
+      "topic": "胜负",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·应乃对头要休囚死绝、世为自己宜帝旺长生：不论原告被告，占的人以世爻为自己，应爻为对头；应旺世衰他强我弱，世旺应衰他弱我强",
+      "rule": {
+        "yi": "应爻是对头，要休囚死绝才好；世爻是自己，适宜帝旺长生。不论原告被告，占的人都以世爻为自己，应爻为对头：应爻旺而世爻衰，他强我弱；世爻旺而应爻衰，他弱我强。",
+        "en": "The Other is the opponent, and it is best resting, trapped, dead or extinct; the Self is oneself, and it is fit for Emperor Strength or Long Life. Whether one is plaintiff or defendant, the questioner takes the Self as himself and the Other as the opponent: the Other strong and the Self weak, he is strong and I weak; the Self strong and the Other weak, he is weak and I strong."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2839, 2839],
+          "zh": ["应乃对头，", "要休囚死绝；", "世为自己，", "宜帝旺长生"],
+          "yi": ["应爻是对头，", "要休囚死绝才好；", "世爻是自己，", "适宜帝旺长生。"],
+          "en": ["The Other is the opponent,", "and it is best resting, trapped, dead or extinct;", "the Self is oneself,", "and it is fit for Emperor Strength or Long Life."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2839, 2839],
+          "zh": ["不拘原被千，占以世为自己，应为对头。", "应旺世衰，他强我弱，世旺应衰，他弱我强。"],
+          "yi": ["不论原告被告，占的人都以世爻为自己，应爻为对头。", "应爻旺而世爻衰，他强我弱；世爻旺而应爻衰，他弱我强。"],
+          "en": ["Whether one is plaintiff or defendant, the questioner takes the Self as himself and the Other as the opponent.", "The Other strong and the Self weak, he is strong and I weak; the Self strong and the Other weak, he is weak and I strong."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.03",
+      "topic": "胜负",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·相冲相克乃是欺凌之象：世爻刑克应爻不一定是我胜，是欺他之象；必须鬼爻克应爻才是我胜，动爻和月建日辰克它也是一样",
+      "rule": {
+        "yi": "相冲相克，是欺负凌辱的象。世爻刑克应爻，不算我胜，是欺负他的象；必须是官鬼爻克应爻，才算我胜，动爻和月建日辰克它也一样。",
+        "en": "Clash and control are the image of bullying and insult. The Self punishing or controlling the Other does not mean I win; it is the image of bullying him. Only if the Pressure line controls the Other does it mean I win, and so too if a moving line, the Month or the Day controls it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2841, 2841],
+          "zh": ["相冲相克，", "乃是欺凌之象"],
+          "yi": ["相冲相克，", "是欺负凌辱的象。"],
+          "en": ["Clash and control,", "are the image of bullying and insult."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2841, 2841],
+          "zh": ["世爻刑克应爻，未为我胜，乃是欺他之象。", "必是鬼克应爻，方为我胜，动爻与月建日辰克之亦然。"],
+          "yi": ["世爻刑克应爻，不算我胜，是欺负他的象。", "必须是官鬼爻克应爻，才算我胜，动爻和月建日辰克它也一样。"],
+          "en": ["The Self punishing or controlling the Other does not mean I win; it is the image of bullying him.", "Only if the Pressure line controls the Other does it mean I win, and so too if a moving line, the Month or the Day controls it."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.04",
+      "topic": "和解",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·相生相合终成和好之情：世应相生相合，原被告有和解的意思；世生应是我想求和，应生世是他想求和；世应发动落空或化空，都是假意说和",
+      "rule": {
+        "yi": "相生相合，最终成就和好的情意。世爻应爻相生相合，原告被告有和解的意思：世爻生应爻，是我想求和；应爻生世爻，是他想求和；应爻世爻发动落空或化空的，都是假意说和。",
+        "en": "Giving life and combining, they end in a feeling of reconciliation. The Self and the Other giving life to and combining with each other means the parties have a mind to settle: the Self giving life to the Other means I want peace; the Other giving life to the Self means he wants peace; the Other or the Self moving into the Void or changing into the Void means a false pretence of peace."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2843, 2843],
+          "zh": ["相生相合，", "终成和好之情"],
+          "yi": ["相生相合，", "最终成就和好的情意。"],
+          "en": ["Giving life and combining,", "they end in a feeling of reconciliation."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2843, 2843],
+          "zh": ["世应生合，原被有和释之意。", "世生应，我欲求和；", "应生世，他欲求和；", "应世动空化空者，俱是假意言和也。"],
+          "yi": ["世爻应爻相生相合，原告被告有和解的意思：", "世爻生应爻，是我想求和；", "应爻生世爻，是他想求和；", "应爻世爻发动落空或化空的，都是假意说和。"],
+          "en": ["The Self and the Other giving life to and combining with each other means the parties have a mind to settle:", "the Self giving life to the Other means I want peace;", "the Other giving life to the Self means he wants peace;", "the Other or the Self moving into the Void or changing into the Void means a false pretence of peace."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.05",
+      "topic": "和解",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·世应比和官鬼动恐公家捉打官司：世应比和是和解之象，若官鬼发动来克，则官府要办这场官司、不让和议；子孙也动才终成和议",
+      "rule": {
+        "yi": "世应比和而官鬼发动，恐怕官府捉打这场官司。世应比和是和解的象，如果官鬼发动来克，就是官府要办这场官司，不愿意和议；子孙也发动，最终才能成就和议。",
+        "en": "With the Self and the Other in harmony but Pressure moving, I fear the authorities will take up the case and press it. The Self and the Other in harmony is the image of settlement, but if Pressure moves to control, the authorities will pursue the case and do not want a private settlement; only if Output also moves is a settlement in the end achieved."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2845, 2845],
+          "zh": ["世应比和官鬼动，", "恐公家捉打官司"],
+          "yi": ["世应比和而官鬼发动，", "恐怕官府捉打这场官司。"],
+          "en": ["With the Self and the Other in harmony but Pressure moving,", "I fear the authorities will take up the case and press it."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2845, 2845],
+          "zh": ["世应比和是和释之象，倘官鬼动克，主官府捉打官司，不欲和议；", "子孙亦动，终成和议。"],
+          "yi": ["世应比和是和解的象，如果官鬼发动来克，就是官府要办这场官司，不愿意和议；", "子孙也发动，最终才能成就和议。"],
+          "en": ["The Self and the Other in harmony is the image of settlement, but if Pressure moves to control, the authorities will pursue the case and do not want a private settlement;", "only if Output also moves is a settlement in the end achieved."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.06",
+      "topic": "和解",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·卦爻安静子孙兴喜亲友劝和公事：六爻安静，世应虽不生合，而子孙发动，必有亲戚邻居出来劝和",
+      "rule": {
+        "yi": "卦爻安静而子孙发动，喜得亲友劝和这件官事。六爻安静，世应虽然不相生合，但子孙发动，必定有亲戚邻居来劝和。",
+        "en": "With the lines still and Output moving, one is glad to have relatives and friends mediate the official matter. With all six lines still, though the Self and the Other do not give life to or combine with each other, if Output moves there will surely be relatives and neighbours who come to mediate."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2847, 2847],
+          "zh": ["卦爻安静子孙兴，", "喜亲友劝和公事"],
+          "yi": ["卦爻安静而子孙发动，", "喜得亲友劝和这件官事。"],
+          "en": ["With the lines still and Output moving,", "one is glad to have relatives and friends mediate the official matter."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2847, 2847],
+          "zh": ["六爻安静，世应虽不生合而子孙发动者，必有亲邻劝和也。"],
+          "yi": ["六爻安静，世应虽然不相生合，但子孙发动，必定有亲戚邻居来劝和。"],
+          "en": ["With all six lines still, though the Self and the Other do not give life to or combine with each other, if Output moves there will surely be relatives and neighbours who come to mediate."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.07",
+      "topic": "和解",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·世空则我欲息争：世空是我想息争，应空是他想息争，世应都空两边的怨气都消了",
+      "rule": {
+        "yi": "世爻空，是我想平息争端。世爻空是我想平息争端，应爻空是他想平息争端，世爻应爻都空，双方的怨气都消了。",
+        "en": "If the Self is Void, I want to end the dispute. The Self Void means I want to end the dispute, the Other Void means he wants to end it, and both Void means the grievances on both sides are gone."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2849, 2849],
+          "zh": ["世空则我欲息争"],
+          "yi": ["世爻空，是我想平息争端"],
+          "en": ["If the Self is Void, I want to end the dispute"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2849, 2849],
+          "zh": ["世空则我欲息争，应空则他欲息争，世应俱空，两怨销意。"],
+          "yi": ["世爻空是我想平息争端，应爻空是他想平息争端，世爻应爻都空，双方的怨气都消了。"],
+          "en": ["The Self Void means I want to end the dispute, the Other Void means he wants to end it, and both Void means the grievances on both sides are gone."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.08",
+      "topic": "胜负",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·应动则他多机变：世动我必用心谋划，若化官鬼兄弟回头克制反为失计；应动他必有谋，加月建必有贵人依靠，克世则不吉",
+      "rule": {
+        "yi": "应爻发动，他就多有机变。世爻发动，我必定用心谋划，如果化出官鬼或兄弟回头克制，反而失策；应爻发动，他必定有谋划，如果加上月建，必有贵人依靠，克世爻就不吉。",
+        "en": "If the Other moves, he has many tricks and changes. If the Self moves, I surely lay plans with care, but if it changes into Pressure or Peer that turns back to control it, the plan misfires; if the Other moves, he surely has a scheme, and if the Month is added he surely has a noble to lean on, and if it controls the Self it is unlucky."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2851, 2851],
+          "zh": ["应动则他多机变"],
+          "yi": ["应爻发动，他就多有机变"],
+          "en": ["If the Other moves, he has many tricks and changes"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2851, 2851], "literal": ["兄弟"],
+          "zh": ["世动，则我必使心用谋，若化官兄回头克制，反为失计；", "应动，则他必有谋，若加月建，必有贵人依靠，克世则为不吉。"],
+          "yi": ["世爻发动，我必定用心谋划，如果化出官鬼或兄弟回头克制，反而失策；", "应爻发动，他必定有谋划，如果加上月建，必有贵人依靠，克世爻就不吉。"],
+          "en": ["If the Self moves, I surely lay plans with care, but if it changes into Pressure or Peer that turns back to control it, the plan misfires;", "if the Other moves, he surely has a scheme, and if the Month is added he surely has a noble to lean on, and if it controls the Self it is unlucky."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.09",
+      "topic": "人物",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·间伤世位须防硬证同谋、鬼克间爻且喜有司明见：间爻是中证人，生世合世向着我，生应合应向着他；与世冲克的与我有仇；若冲克我的爻反去生合应爻，要防证人同谋陷害；有鬼爻克制或日辰冲克，官府不听他的话，我无事；间爻受刑克中证必遭杖责",
+      "rule": {
+        "yi": "间爻伤害世位，要防备硬证人同谋；鬼爻克间爻，还喜得官府看得明白。间爻是作中证的人：生世合世，必定向着我；生应合应，必定向着他；与世爻冲克，与我有仇；与应爻冲克，与他有隙。如果旺爻生应、衰爻合世，是帮他的有力、帮我的没有功效；或者应爻发动克世，是向着他的人，即使不上前怪我，偏偏会出面。如果冲克我的爻反去生应合应，须防证人同谋陷害；如果得到鬼爻克制或被日辰冲克，是官府不听他的话，我无事。间爻如果受刑克，作证的人必遭杖责；靠近世爻的必是我的干证，靠近应爻的是他的干证。",
+        "en": "If a between line injures the Self position, beware of hard witnesses in a plot; if Pressure controls the between line, one is glad that the court sees clearly. The between lines are the witnesses: one giving life to or combining with the Self surely favours me; one giving life to or combining with the Other surely favours him; one clashing or controlling the Self has a feud with me; one clashing or controlling the Other has a rift with him. If a strong line gives life to the Other and a weak line combines with the Self, those helping him are powerful and those helping me are ineffective; or if the Other moves to control the Self, those on his side, though they do not step forward to blame me, will come out in the open all the same. If a line that clashes or controls me instead gives life to or combines with the Other, beware of witnesses plotting together to frame me; if it is controlled by the Pressure line or clashed and controlled by the Day, the officials will not listen to its words and I come to no harm. If a between line is punished or controlled, the witness is surely beaten with the rod; the one near the Self is surely my witness, and the one near the Other is his witness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2853, 2853],
+          "zh": ["间伤世位，", "须防硬证同谋；", "鬼克间爻，", "且喜有司明见"],
+          "yi": ["间爻伤害世位，", "要防备硬证人同谋；", "鬼爻克间爻，", "还喜得官府看得明白。"],
+          "en": ["If a between line injures the Self position,", "beware of hard witnesses in a plot;", "if Pressure controls the between line,", "one is glad that the court sees clearly."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2853, 2853],
+          "zh": ["间爻为中证之人，生世合世必然向我，生应合应必然向他；", "与世冲克，与我有仇，与应冲克，与彼有隙。", "若旺爻生应，衰爻合世，是助彼者有力，助我者无功；", "或应动克世，是向彼者，虽不上前怪我，偏来出面。", "若冲克我之爻反去生应合应，须证人同谋陷害；", "若得鬼爻克制或被日辰冲克，是官府不听其言，我得无事。", "间爻若受刑克，中证必遭杖责，近世必是我之干证，近应为彼之干证也。"],
+          "yi": ["间爻是作中证的人：生世合世，必定向着我；生应合应，必定向着他。", "与世爻冲克，与我有仇；与应爻冲克，与他有隙。", "如果旺爻生应、衰爻合世，是帮他的有力、帮我的没有功效；", "或者应爻发动克世，是向着他的人，即使不上前怪我，偏偏会出面。", "如果冲克我的爻反去生应合应，须防证人同谋陷害；", "如果得到鬼爻克制或被日辰冲克，是官府不听他的话，我无事。", "间爻如果受刑克，作证的人必遭杖责；靠近世爻的必是我的干证，靠近应爻的是他的干证。"],
+          "en": ["The between lines are the witnesses: one giving life to or combining with the Self surely favours me; one giving life to or combining with the Other surely favours him.", "One clashing or controlling the Self has a feud with me; one clashing or controlling the Other has a rift with him.", "If a strong line gives life to the Other and a weak line combines with the Self, those helping him are powerful and those helping me are ineffective;", "or if the Other moves to control the Self, those on his side, though they do not step forward to blame me, will come out in the open all the same.", "If a line that clashes or controls me instead gives life to or combines with the Other, beware of witnesses plotting together to frame me;", "if it is controlled by the Pressure line or clashed and controlled by the Day, the officials will not listen to its words and I come to no harm.", "If a between line is punished or controlled, the witness is surely beaten with the rod; the one near the Self is surely my witness, and the one near the Other is his witness."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.10",
+      "topic": "起讼",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·身乃根因事体空则情虚：卦身是词讼的根由，旺则事大衰则事小，动则急静则缓；空伏都是编造的虚事，飞伏都没有就一点不实",
+      "rule": {
+        "yi": "卦身是事情的根本缘由，落空就情节虚假。卦身关系到词讼的根由：旺，事大；衰，事小；动，事急；静，事缓；如果空或伏，都是编造的故事；飞神伏神都没有，一丝一毫都不是实情。",
+        "en": "The Body is the root cause and substance of the matter, and if it is Void the facts are false. The Body concerns the root of the lawsuit: strong, the matter is great; weak, small; moving, urgent; still, slow; if it is Void or hidden, it is a made-up story; if neither flying nor hidden spirit is present, not a hair of it is true."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2855, 2855],
+          "zh": ["身乃根因事体，", "空则情虚"],
+          "yi": ["卦身是事情的根本缘由，", "落空就情节虚假。"],
+          "en": ["The Body is the root cause and substance of the matter,", "and if it is Void the facts are false."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2855, 2855],
+          "zh": ["卦身系词讼根由，旺则事大，衰则事小；", "动则事急，静则事缓；", "如空伏，皆是虚捏故事；", "飞伏俱无，毫厘不实。"],
+          "yi": ["卦身关系到词讼的根由：旺，事大；衰，事小；", "动，事急；静，事缓；", "如果空或伏，都是编造的故事；", "飞神伏神都没有，一丝一毫都不是实情。"],
+          "en": ["The Body concerns the root of the lawsuit: strong, the matter is great; weak, small;", "moving, urgent; still, slow;", "if it is Void or hidden, it is a made-up story;", "if neither flying nor hidden spirit is present, not a hair of it is true."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.11",
+      "topic": "文书",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·父为案卷文书伏须未就：卦里没有父母爻，文书还没有写成；带刑临败病必有破绽，化财也一样；化兄会被驳回，月建作合，上司必定调卷，有冲就都不准许",
+      "rule": {
+        "yi": "父母爻是案卷文书，伏藏着就一定还没有办成。卦里没有父母，文书未就；带刑、临败地和病地，必多破绽，化财也一样；化兄弟会被驳回，月建来合，上司必定调案卷，有冲的都不依允。",
+        "en": "The Resource line is the case file and papers, and if it is hidden they are surely not yet done. If the hexagram has no Resource, the papers are not done; if it carries punishment and sits on a place of decay or illness, there are many flaws, and likewise if it changes into Wealth; changing into Peer, it is rejected; if the Month combines it, the superior office will surely call up the file; if it is clashed, none of it is approved."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2857, 2857],
+          "zh": ["父为案卷文书，", "伏须未就"],
+          "yi": ["父母爻是案卷文书，", "伏藏着就一定还没有办成。"],
+          "en": ["The Resource line is the case file and papers,", "and if it is hidden they are surely not yet done."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2857, 2857], "literal": ["父母", "兄弟"],
+          "zh": ["卦无父母，文书未就，带刑临败病，必多破绽，化财亦然。", "化兄有驳，月建作合，上司必调卷，有冲皆不依允。"],
+          "yi": ["卦里没有父母，文书未就；带刑、临败地和病地，必多破绽，化财也一样。", "化兄弟会被驳回，月建来合，上司必定调案卷，有冲的都不依允。"],
+          "en": ["If the hexagram has no Resource, the papers are not done; if it carries punishment and sits on a place of decay or illness, there are many flaws, and likewise if it changes into Wealth.", "Changing into Peer, it is rejected; if the Month combines it, the superior office will surely call up the file; if it is clashed, none of it is approved."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.12",
+      "topic": "人物",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·鬼作问官克应则他遭杖责：官鬼是审案的官，动来克应爻，官司必定我胜；克世爻我败",
+      "rule": {
+        "yi": "官鬼是审问的官，克应爻则他遭杖责。官鬼是审理词讼的官，发动去克应爻，官司必定我胜；克世爻，我败。",
+        "en": "Pressure is the examining magistrate; if it controls the Other, he is beaten with the rod. Pressure is the official who hears the case; if it moves to control the Other, I surely win the suit; if it controls the Self, I lose."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2859, 2859],
+          "zh": ["鬼作问官，", "克应则他遭杖责"],
+          "yi": ["官鬼是审问的官，", "克应爻则他遭杖责。"],
+          "en": ["Pressure is the examining magistrate;", "if it controls the Other, he is beaten with the rod."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2859, 2859],
+          "zh": ["鬼为听讼官，动去克应，讼必我胜，克世我败。"],
+          "yi": ["官鬼是审理词讼的官，发动去克应爻，官司必定我胜；克世爻，我败。"],
+          "en": ["Pressure is the official who hears the case; if it moves to control the Other, I surely win the suit; if it controls the Self, I lose."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.13",
+      "topic": "人物",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·日为书吏伤身则我受刑名：日辰既能救事也能坏事；鬼动克世自然有刑；得日辰制鬼冲鬼，必有旁人一句话解释，问官宽恕我",
+      "rule": {
+        "yi": "日辰是书吏，伤了世身则我要受刑罚。日辰既能救事也能坏事，如果鬼发动克世，自然有刑罚；得到日辰制住鬼、冲掉鬼，必有旁人一句话来解释，问案的官必能宽恕我。",
+        "en": "The Day is the clerk, and if it injures the Self and Body I suffer punishment. The Day can both save and spoil a matter: if Pressure moves and controls the Self there is naturally punishment; if the Day restrains or clashes away Pressure, someone is sure to put in a word of explanation, and the magistrate will surely pardon me."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2861, 2861],
+          "zh": ["日为书吏，", "伤身则我受刑名"],
+          "yi": ["日辰是书吏，", "伤了世身则我要受刑罚。"],
+          "en": ["The Day is the clerk,", "and if it injures the Self and Body I suffer punishment."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2861, 2861],
+          "zh": ["日辰能救事能坏事，如鬼动克世，自必有刑；", "得日辰制鬼冲鬼，必得旁人一言解释，问官必能宽宥于我也。"],
+          "yi": ["日辰既能救事也能坏事，如果鬼发动克世，自然有刑罚；", "得到日辰制住鬼、冲掉鬼，必有旁人一句话来解释，问案的官必能宽恕我。"],
+          "en": ["The Day can both save and spoil a matter: if Pressure moves and controls the Self there is naturally punishment;", "if the Day restrains or clashes away Pressure, someone is sure to put in a word of explanation, and the magistrate will surely pardon me."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.14",
+      "topic": "胜负",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·逢财则理直气壮：以财爻为理，临世我有理，临应他有理；鬼来刑害，虽有理官府也不听，兄弟动不容分辩；如果是下状，则财爻是忌神",
+      "rule": {
+        "yi": "遇到财爻，就理直气壮。以财爻为道理：临在世爻，我有理；临在应爻，他有理；官鬼来刑害，虽然有理，官府不听，兄弟发动，不容分辩。如果是递状告人，财爻就是忌神。",
+        "en": "Meeting Wealth, one's reason is just and one's spirit bold. Wealth stands for being in the right: on the Self, I am in the right; on the Other, he is in the right; if Pressure comes to punish and harm, though one is in the right the officials do not listen, and if Peer moves, one is not allowed to argue. If one is lodging the plaint, Wealth is the Adversary."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2863, 2863],
+          "zh": ["逢财则理直气壮"],
+          "yi": ["遇到财爻，就理直气壮"],
+          "en": ["Meeting Wealth, one's reason is just and one's spirit bold"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2863, 2863], "literal": ["兄弟"],
+          "zh": ["以财为理，临世我有理，临应他有理；", "鬼来刑害，虽有理而官府不听，兄动不容分辩。", "如下状，则财为忌爻。"],
+          "yi": ["以财爻为道理：临在世爻，我有理；临在应爻，他有理；", "官鬼来刑害，虽然有理，官府不听，兄弟发动，不容分辩。", "如果是递状告人，财爻就是忌神。"],
+          "en": ["Wealth stands for being in the right: on the Self, I am in the right; on the Other, he is in the right;", "if Pressure comes to punish and harm, though one is in the right the officials do not listen, and if Peer moves, one is not allowed to argue.", "If one is lodging the plaint, Wealth is the Adversary."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.15",
+      "topic": "钱财",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·遇兄则财散人离：兄弟爻在世身爻上，事必牵连众人，发动则要广花钱财；加白虎必倾家荡产；临应爻则按赔偿来断",
+      "rule": {
+        "yi": "遇到兄弟爻，就财散人离。兄弟爻如果在世爻身爻上，事情必然牵连众人，发动就要大量花费钱财；如果再加白虎，必定倾家荡产；临在应爻上，就按赔偿来断。",
+        "en": "Meeting a Peer line, wealth is scattered and people part. If the Peer line is on the Self or Body line, the matter surely involves many people, and if it moves a great deal of money will be spent; if the White Tiger is added, it surely means the ruin of the household; on the Other line, judge it as compensation."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2865, 2865],
+          "zh": ["遇兄则财散人离"],
+          "yi": ["遇到兄弟爻，就财散人离"],
+          "en": ["Meeting a Peer line, wealth is scattered and people part"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2865, 2865], "literal": ["兄弟"],
+          "zh": ["兄弟若在世身爻上，事必干众，动则广费资财；", "或加白虎，必主倾家荡产。", "临应爻则以赔断之。"],
+          "yi": ["兄弟爻如果在世爻身爻上，事情必然牵连众人，发动就要大量花费钱财；", "如果再加白虎，必定倾家荡产；", "临在应爻上，就按赔偿来断。"],
+          "en": ["If the Peer line is on the Self or Body line, the matter surely involves many people, and if it moves a great deal of money will be spent;", "if the White Tiger is added, it surely means the ruin of the household;", "on the Other line, judge it as compensation."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.16",
+      "topic": "狱囚",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·世入墓爻难免狱囚之系：世爻入墓、化墓或临鬼墓，卦象凶的必有牢狱之灾；临白虎，在狱中有病",
+      "rule": {
+        "yi": "世爻入墓，难免被关进牢狱。世爻入墓、化墓，或临在鬼墓上，卦象凶的必有牢狱之灾；临白虎，在狱中生病。",
+        "en": "If the Self enters the tomb, imprisonment can hardly be avoided. The Self entering the tomb, changing into the tomb, or sitting on the tomb of Pressure, with an ill hexagram, surely means the calamity of prison; on the White Tiger, he falls ill in prison."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2867, 2867],
+          "zh": ["世入墓爻，", "难免狱囚之系"],
+          "yi": ["世爻入墓，", "难免被关进牢狱。"],
+          "en": ["If the Self enters the tomb,", "imprisonment can hardly be avoided."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2867, 2867],
+          "zh": ["世爻入墓化墓或临鬼墓，卦象凶者必有牢狱之灾；", "临白虎，在狱中有病。"],
+          "yi": ["世爻入墓、化墓，或临在鬼墓上，卦象凶的必有牢狱之灾；", "临白虎，在狱中生病。"],
+          "en": ["The Self entering the tomb, changing into the tomb, or sitting on the tomb of Pressure, with an ill hexagram, surely means the calamity of prison;", "on the White Tiger, he falls ill in prison."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.17",
+      "topic": "人物",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·官逢太岁必非州县之词：官鬼在第五爻，若值太岁，这事必牵涉朝廷；遇月建必涉及台宪",
+      "rule": {
+        "yi": "官鬼逢太岁，必定不是州县的案子。官鬼在第五爻，如果值太岁，这件事必定牵涉朝廷；遇月建，必定涉及台宪。",
+        "en": "Pressure meeting Tai Sui surely means this is not a case for a prefecture or county. If Pressure is on the fifth line and sits on Tai Sui, the matter surely concerns the court; meeting the Month, it surely involves the censorate and the provincial authorities."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2869, 2869],
+          "zh": ["官逢太岁，", "必非州县之词"],
+          "yi": ["官鬼逢太岁，", "必定不是州县的案子。"],
+          "en": ["Pressure meeting Tai Sui", "surely means this is not a case for a prefecture or county."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2869, 2869],
+          "zh": ["官居第五爻，若值太岁，此事必干朝廷，逢月建必涉台宪。"],
+          "yi": ["官鬼在第五爻，如果值太岁，这件事必定牵涉朝廷；遇月建，必定涉及台宪。"],
+          "en": ["If Pressure is on the fifth line and sits on Tai Sui, the matter surely concerns the court; meeting the Month, it surely involves the censorate and the provincial authorities."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.18",
+      "topic": "人物",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·内外有官事涉一司终不了：官鬼不上卦就没有主事的官；内外卦都有官鬼，权不归一，事情反复，必经两个衙门才了结",
+      "rule": {
+        "yi": "内外卦都有官鬼，事情牵涉一个衙门也终究了不了。官鬼不上卦，没有官员主张；内外都有官鬼，权力不归一人，主事情反复，必定经过两个衙门然后了事。",
+        "en": "With Pressure both inside and outside, a matter that touches one office cannot be finished in the end. If Pressure is not on the hexagram there is no official to take charge; with Pressure inside and outside, authority is not in one hand, which means the matter goes back and forth and must pass through two offices before it is settled."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2871, 2871],
+          "zh": ["内外有官，", "事涉一司终不了"],
+          "yi": ["内外卦都有官鬼，", "事情牵涉一个衙门也终究了不了。"],
+          "en": ["With Pressure both inside and outside,", "a matter that touches one office cannot be finished in the end."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2871, 2871],
+          "zh": ["官不上卦，无官主张；", "内外有官，权不归一，主事体反复，必经两司然后了事。"],
+          "yi": ["官鬼不上卦，没有官员主张；", "内外都有官鬼，权力不归一人，主事情反复，必定经过两个衙门然后了事。"],
+          "en": ["If Pressure is not on the hexagram there is no official to take charge;", "with Pressure inside and outside, authority is not in one hand, which means the matter goes back and forth and must pass through two offices before it is settled."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.19",
+      "topic": "起讼",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·上下有父词兴两度始能成：官鬼和父母两爻不宜重复出现，主有转变不定的象，事情缠绵，最终难了结；占告状遇到这个象，必要再告一次才能成",
+      "rule": {
+        "yi": "上下卦都有父母，状词要递两次才能成。官鬼、父母两爻不适宜重复出现，主有转变不定的象，事情一定缠绵，最终难以了结。比如占告状，遇到这个象，必定再告一次才成。",
+        "en": "With Resource in both upper and lower trigrams, the plaint must be lodged twice before it succeeds. The Pressure and Resource lines should not appear twice over, for that means an unsettled image of change; the matter will surely drag on and in the end be hard to finish. For example, in divining for lodging a complaint, meeting this image, it must be lodged once more before it succeeds."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2873, 2873],
+          "zh": ["上下有父，", "词兴两度始能成"],
+          "yi": ["上下卦都有父母，", "状词要递两次才能成。"],
+          "en": ["With Resource in both upper and lower trigrams,", "the plaint must be lodged twice before it succeeds."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2873, 2873], "literal": ["父母"],
+          "zh": ["官父两爻不宜重见，主有转变不定之象，其事必主缠绵，卒难了结。", "如占告诉，遇此象必再告之成也。"],
+          "yi": ["官鬼、父母两爻不适宜重复出现，主有转变不定的象，事情一定缠绵，最终难以了结。", "比如占告状，遇到这个象，必定再告一次才成。"],
+          "en": ["The Pressure and Resource lines should not appear twice over, for that means an unsettled image of change; the matter will surely drag on and in the end be hard to finish.", "For example, in divining for lodging a complaint, meeting this image, it must be lodged once more before it succeeds."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.20",
+      "topic": "起讼",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·官父两强词讼表章皆准理、妻财一动申呈诉告总徒劳：凡是要上表、申奏、递状、告诉，官鬼和父母都要有气不空才准理；最怕财爻动伤父母，必不成",
+      "rule": {
+        "yi": "官鬼和父母两爻都强，词讼和表章都能被受理；妻财一发动，申呈和诉告全是白费。凡是要上表、申奏、递呈子、告诉这类事，都要官鬼和父母两样齐全，有气不空，就能受理；最怕财爻动伤父母，一定不成。",
+        "en": "With Pressure and Resource both strong, lawsuits and memorials alike are accepted; once Wealth moves, petitions and complaints are all in vain. For anything such as presenting a memorial, submitting a report, lodging a petition or making a complaint, Pressure and Resource must both be present, with breath and not Void, and then it is accepted; most to be feared is Wealth moving to injure Resource, in which case it surely fails."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2875, 2875],
+          "zh": ["官父两强，", "词讼表章皆准理；", "妻财一动，", "申呈诉告总徒劳"],
+          "yi": ["官鬼和父母两爻都强，", "词讼和表章都能被受理；", "妻财一发动，", "申呈和诉告全是白费。"],
+          "en": ["With Pressure and Resource both strong,", "lawsuits and memorials alike are accepted;", "once Wealth moves,", "petitions and complaints are all in vain."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2875, 2875], "literal": ["父母"],
+          "zh": ["凡欲上表、申奏、申呈、告诉等事，皆要官父两全，有气不空，则能准理；", "最怕财动伤父，必不可成。"],
+          "yi": ["凡是要上表、申奏、递呈子、告诉这类事，都要官鬼和父母两样齐全，有气不空，就能受理；", "最怕财爻动伤父母，一定不成。"],
+          "en": ["For anything such as presenting a memorial, submitting a report, lodging a petition or making a complaint, Pressure and Resource must both be present, with breath and not Void, and then it is accepted;", "most to be feared is Wealth moving to injure Resource, in which case it surely fails."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.21",
+      "topic": "胜负",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·父旺官衰雀角鼠牙之讼：父母旺相、官鬼休囚，状词说得大、事实却小，是雀角鼠牙的小讼",
+      "rule": {
+        "yi": "父母旺、官鬼衰，是雀角鼠牙的官司。父母旺相，官鬼休囚，状词说得大、事实很小，所以是雀角鼠牙之类的讼事。",
+        "en": "Resource strong and Pressure weak is a lawsuit of sparrow's horn and rat's tooth. With Resource strong and Pressure resting or trapped, the plaint talks big and the facts are small, so it is a petty suit of that kind."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2877, 2877],
+          "zh": ["父旺官衰，", "雀角鼠牙之讼"],
+          "yi": ["父母旺、官鬼衰，", "是雀角鼠牙的官司。"],
+          "en": ["Resource strong and Pressure weak", "is a lawsuit of sparrow's horn and rat's tooth."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2877, 2877], "literal": ["父母"],
+          "zh": ["父母旺相，官鬼休囚，情词若大，事实细，故乃雀角鼠牙之讼。"],
+          "yi": ["父母旺相，官鬼休囚，状词说得大、事实很小，所以是雀角鼠牙之类的讼事。"],
+          "en": ["With Resource strong and Pressure resting or trapped, the plaint talks big and the facts are small, so it is a petty suit of that kind."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.22",
+      "topic": "胜负",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·变衰动旺虎头蛇尾之人：世应旺而发动像要吞并六国的气势；若变入墓绝空亡，是先强后弱、虎头蛇尾；世指自己，应指对方",
+      "rule": {
+        "yi": "变成衰弱、发动时旺，是虎头蛇尾的人。凡是世爻应爻旺而发动，有并吞六国的气势；如果变入墓绝空亡，就是先强后弱、虎头蛇尾的象。世指自己说，应指对方说。",
+        "en": "Changing into weakness after moving strong is a man all tiger-head and snake-tail. Whenever the Self or the Other is strong and moves, it has the force to swallow up six states; if it changes into the tomb, extinction or Void, it is the image of strong first and weak after, tiger-head and snake-tail. The Self speaks of oneself, the Other of the opponent."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2879, 2879],
+          "zh": ["变衰动旺，", "虎头蛇尾之人"],
+          "yi": ["变成衰弱、发动时旺，", "是虎头蛇尾的人。"],
+          "en": ["Changing into weakness after moving strong", "is a man all tiger-head and snake-tail."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2879, 2879],
+          "zh": ["凡世应旺动，是有并吞六国之势；", "若变入墓绝空亡，乃先强后弱，虎头蛇尾之象。", "世以己言，应以彼言也。"],
+          "yi": ["凡是世爻应爻旺而发动，有并吞六国的气势；", "如果变入墓绝空亡，就是先强后弱、虎头蛇尾的象。", "世指自己说，应指对方说。"],
+          "en": ["Whenever the Self or the Other is strong and moves, it has the force to swallow up six states;", "if it changes into the tomb, extinction or Void, it is the image of strong first and weak after, tiger-head and snake-tail.", "The Self speaks of oneself, the Other of the opponent."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.23",
+      "topic": "胜负",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·世若逢生当有贵人倚靠、应衰无助必无奸恶刁唆：世爻衰弱遇月建日辰动爻生合，必有贵人扶持，对方也无可奈何；应爻遇到这些则反过来",
+      "rule": {
+        "yi": "世爻如果逢生，应当有贵人倚靠；应爻衰弱没有帮助，必定没有奸恶刁钻的人唆使。世爻衰弱，遇到月建、日辰、动爻生合，必定有贵人扶持，对方也无可奈何；应爻遇到这些则相反。",
+        "en": "If the Self meets life, there should be a noble to lean on; if the Other is weak and without help, there are surely no wicked and crafty men to egg him on. A weak Self that meets the Month, the Day or a moving line giving it life or combining with it surely has a noble to support it, and the opponent can do nothing; the Other meeting these is the reverse."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2881, 2881],
+          "zh": ["世若逢生，", "当有贵人倚靠；", "应衰无助，", "必无奸恶刁唆"],
+          "yi": ["世爻如果逢生，", "应当有贵人倚靠；", "应爻衰弱没有帮助，", "必定没有奸恶刁钻的人唆使。"],
+          "en": ["If the Self meets life,", "there should be a noble to lean on;", "if the Other is weak and without help,", "there are surely no wicked and crafty men to egg him on."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2881, 2881],
+          "zh": ["世爻衰弱，遇月建日辰动爻生合，必有贵人扶持，彼亦无可奈何。", "应爻遇之反是。"],
+          "yi": ["世爻衰弱，遇到月建、日辰、动爻生合，必定有贵人扶持，对方也无可奈何；", "应爻遇到这些则相反。"],
+          "en": ["A weak Self that meets the Month, the Day or a moving line giving it life or combining with it surely has a noble to support it, and the opponent can do nothing;", "the Other meeting these is the reverse."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.24",
+      "topic": "胜负",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·无合无生纵旺何如独脚虎、有刑有克逢空当效缩头龟：应爻旺动但没有生合，他虽刚强是独脚虎不足畏；世爻没有生合又遇日月动爻刑克，应当学缩头龟，暂且别和他对理",
+      "rule": {
+        "yi": "没有合没有生，即使旺又怎么样，不过是独脚的老虎；有刑有克又逢空，应当学缩头的乌龟。应爻旺而发动、没有生合的，他虽然刚强，是独脚虎不值得怕；世爻没有生合，又遇到日月动爻刑克，应当学缩头龟，暂且不要和他对理。",
+        "en": "With no combination and no life, however strong, what is it but a one-legged tiger? With punishment and control, and also in the Void, one should act like a tortoise drawing in its head. An Other that is strong and moving but has no life or combination is, for all its hardness, a one-legged tiger not worth fearing; a Self with no life or combination that also meets punishment or control from the Month, the Day or a moving line should act like a tortoise drawing in its head and for the time being not argue the case with him."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2883, 2883],
+          "zh": ["无合无生，", "纵旺何如独脚虎？", "有刑有克，", "逢空当效缩头龟"],
+          "yi": ["没有合没有生，", "即使旺又怎么样，不过是独脚的老虎；", "有刑有克又逢空，", "应当学缩头的乌龟。"],
+          "en": ["With no combination and no life,", "however strong, what is it but a one-legged tiger?", "With punishment and control, and also in the Void,", "one should act like a tortoise drawing in its head."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2883, 2883],
+          "zh": ["应爻旺动无生合者，彼虽刚强，是独脚虎不足畏；", "世无生合，又遇日月动爻刑克，当效缩头龟，且勿与对理。"],
+          "yi": ["应爻旺而发动、没有生合的，他虽然刚强，是独脚虎不值得怕；", "世爻没有生合，又遇到日月动爻刑克，应当学缩头龟，暂且不要和他对理。"],
+          "en": ["An Other that is strong and moving but has no life or combination is, for all its hardness, a one-legged tiger not worth fearing;", "a Self with no life or combination that also meets punishment or control from the Month, the Day or a moving line should act like a tortoise drawing in its head and for the time being not argue the case with him."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.25",
+      "topic": "人物",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·兄在间中事必干众：兄弟爻在间爻，状词牵涉的人很多；发动则作证的人贪图贿赂，克应爻会索取赔偿的钱财，克世爻必须花钱托人才能安稳",
+      "rule": {
+        "yi": "兄弟在间爻，事情必然牵涉众人。兄弟在间爻，状词里牵涉的人很多；发动，作证的人就会贪图索取贿赂；克应爻，会索取赔偿的钱财；克世爻，须用财物托人才能安稳。",
+        "en": "With a Peer line among the between lines, the matter surely involves many people. A Peer line among the between lines means many are implicated in the plaint; if it moves, the witnesses grasp at bribes; if it controls the Other, it demands compensation money; if it controls the Self, one must buy security by entrusting money to someone."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2885, 2885],
+          "zh": ["兄在间中，", "事必干众"],
+          "yi": ["兄弟在间爻，", "事情必然牵涉众人。"],
+          "en": ["With a Peer line among the between lines,", "the matter surely involves many people."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2885, 2885], "literal": ["兄弟"],
+          "zh": ["兄弟在间爻，词内干犯众多；", "动则中证人贪索贿赂，克应索赔资财，克世须用财托为安。"],
+          "yi": ["兄弟在间爻，状词里牵涉的人很多；", "发动，作证的人就会贪图索取贿赂，克应爻，会索取赔偿的钱财，克世爻，须用财物托人才能安稳。"],
+          "en": ["A Peer line among the between lines means many are implicated in the plaint;", "if it moves, the witnesses grasp at bribes; if it controls the Other, it demands compensation money; if it controls the Self, one must buy security by entrusting money to someone."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.26",
+      "topic": "起讼",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·父临应上彼欲兴词：父母是文书，临世是我想告理，临应是他想申诉；发动是要进行，安静就不会提起",
+      "rule": {
+        "yi": "父母临在应爻上，他想要起诉。父母是文书，临在世爻上，是我想告理；临在应爻上，是他想申诉；发动是想要进行，安静就不会提起。",
+        "en": "With Resource on the Other, he wants to file a suit. Resource is the papers; on the Self, I want to lodge the case; on the Other, he wants to file his plea; moving, it is going ahead; still, it will not be raised."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2887, 2887],
+          "zh": ["父临应上，", "彼欲兴词"],
+          "yi": ["父母临在应爻上，", "他想要起诉。"],
+          "en": ["With Resource on the Other,", "he wants to file a suit."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2887, 2887], "literal": ["父母"],
+          "zh": ["父母为文书，临世我欲告理，临应他欲申诉；", "动则欲行，静则不举。"],
+          "yi": ["父母是文书，临在世爻上，是我想告理；临在应爻上，是他想申诉；", "发动是想要进行，安静就不会提起。"],
+          "en": ["Resource is the papers; on the Self, I want to lodge the case; on the Other, he wants to file his plea;", "moving, it is going ahead; still, it will not be raised."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.27",
+      "topic": "起讼",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·父动而官化福爻事将成而偶逢兜劝、父空而身临刑煞词未准而先被笞刑：占告状遇官父两动讼事可成；父有气或官化子孙，是人到公门将投状时有人劝止；父化空亡墓绝、官鬼刑克世爻或被日辰刑冲克害，状子不准先挨板子",
+      "rule": {
+        "yi": "父母发动而官鬼化出福神，事情将成时偶然遇到有人拉着劝；父母落空而身爻临刑煞，状词还没批准就先挨笞刑。凡是占告状，遇到官鬼、父母两爻都动，官司可以成；如果父母有气，或官鬼化出子孙，就是人到公门将要投状，有人在旁边劝；如果父母化出空亡墓绝，官鬼刑克世爻，或者被日辰刑冲克害，状告不准，先遭杖责。",
+        "en": "With Resource moving and Pressure changing into Output, just as the matter is about to be done someone happens to pull one back and urge restraint; with Resource Void and the Body on a punishing star, the plaint is not yet accepted and one is beaten first. In divining for lodging a complaint, if Pressure and Resource both move, the suit can go ahead; if Resource has breath, or Pressure changes into Output, then when one reaches the court door about to submit the plaint someone persuades one against it; if Resource changes into the Void, tomb or extinction, Pressure punishes or controls the Self, or is punished, clashed, controlled or harmed by the Day, the complaint is not accepted and one is first beaten with the rod."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2889, 2889],
+          "zh": ["父动而官化福爻，", "事将成而偶逢兜劝；", "父空而身临刑煞，", "词未准而先被笞刑"],
+          "yi": ["父母发动而官鬼化出福神，", "事情将成时偶然遇到有人拉着劝；", "父母落空而身爻临刑煞，", "状词还没批准就先挨笞刑。"],
+          "en": ["With Resource moving and Pressure changing into Output,", "just as the matter is about to be done someone happens to pull one back and urge restraint;", "with Resource Void and the Body on a punishing star,", "the plaint is not yet accepted and one is beaten first."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2889, 2891], "literal": ["父母"],
+          "zh": ["凡占告诉，遇官父两动，讼事可成。", "若父有气或官化子孙，则主身到公门将投词，而有人旁劝。", "若父化空亡墓绝，官鬼刑克世爻，或被日辰刑冲克害，告状且不准，先遭杖责也。"],
+          "yi": ["凡是占告状，遇到官鬼、父母两爻都动，官司可以成；", "如果父母有气，或官鬼化出子孙，就是人到公门将要投状，有人在旁边劝；", "如果父母化出空亡墓绝，官鬼刑克世爻，或者被日辰刑冲克害，状告不准，先遭杖责。"],
+          "en": ["In divining for lodging a complaint, if Pressure and Resource both move, the suit can go ahead;", "if Resource has breath, or Pressure changes into Output, then when one reaches the court door about to submit the plaint someone persuades one against it;", "if Resource changes into the Void, tomb or extinction, Pressure punishes or controls the Self, or is punished, clashed, controlled or harmed by the Day, the complaint is not accepted and one is first beaten with the rod."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.28",
+      "topic": "钱财",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·妻动生官须用赀财嘱托：官司已成而卦有财爻发动，必须花钱托人打点官府；如果遇到子孙冲官鬼，即使花钱也没有用",
+      "rule": {
+        "yi": "妻财发动生官鬼，须用钱财嘱托。如果官司已经成立，卦里有财爻发动，必须用钱财去嘱托官府；如果遇到子孙冲官鬼，即使花钱也没有用。",
+        "en": "Wealth moving to give life to Pressure means money must be used to entrust the matter to someone. If the suit has already been brought and the hexagram has a moving Wealth line, money must be used to entrust the officials; if Output meets and clashes Pressure, spending money is useless."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2893, 2893],
+          "zh": ["妻动生官，", "须用赀财嘱托"],
+          "yi": ["妻财发动生官鬼，", "须用钱财嘱托。"],
+          "en": ["Wealth moving to give life to Pressure", "means money must be used to entrust the matter to someone."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2893, 2893],
+          "zh": ["若讼已成，卦有财动，必须用财嘱托官府；", "如遇子孙冲官，虽费赀财亦无益。"],
+          "yi": ["如果官司已经成立，卦里有财爻发动，必须用钱财去嘱托官府；", "如果遇到子孙冲官鬼，即使花钱也没有用。"],
+          "en": ["If the suit has already been brought and the hexagram has a moving Wealth line, money must be used to entrust the officials;", "if Output meets and clashes Pressure, spending money is useless."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.29",
+      "topic": "罪名",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·世兴变鬼必因官讼亡身：世持鬼是我失理，应持鬼是他失理；世爻变鬼恐怕因为官事丧身，应爻变鬼就按对方来断",
+      "rule": {
+        "yi": "世爻发动变成官鬼，必定因为官司丢了性命。世爻持鬼，是我失理；应爻持鬼，是他失理；世爻变鬼恐怕因官事丧身，应爻变鬼就按对方来断。",
+        "en": "The Self moving and changing into Pressure surely means losing one's life over the lawsuit. The Self holding Pressure means I am in the wrong; the Other holding Pressure means he is in the wrong; the Self changing into Pressure, I fear one may die from the official matter, and the Other changing into Pressure is judged for the opposite party."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2895, 2895],
+          "zh": ["世兴变鬼，", "必因官讼亡身"],
+          "yi": ["世爻发动变成官鬼，", "必定因为官司丢了性命。"],
+          "en": ["The Self moving and changing into Pressure", "surely means losing one's life over the lawsuit."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2895, 2895],
+          "zh": ["世持鬼我失理；", "应持鬼他失理，世变鬼恐因官事而丧身，应变鬼以彼断之。"],
+          "yi": ["世爻持鬼，是我失理；", "应爻持鬼，是他失理，世爻变鬼恐怕因官事丧身，应爻变鬼就按对方来断。"],
+          "en": ["The Self holding Pressure means I am in the wrong;", "the Other holding Pressure means he is in the wrong, the Self changing into Pressure, I fear one may die from the official matter, and the Other changing into Pressure is judged for the opposite party."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.30",
+      "topic": "消散",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·子在身边到底不能结证、官伏世下讼根犹未芟除：卦身临福德出现发动，随即消散；怕官鬼伏在世爻下，讼根还在，眼下虽不成讼，到官鬼旺相透出时会被举发",
+      "rule": {
+        "yi": "子孙在身边，到底不能结成证据；官鬼伏在世下，诉讼的根子还没有除掉。卦身临福德出现并发动，马上就会消散；只怕官鬼伏在世爻下，那么讼根常在，目前虽然不成讼，等官鬼旺相透出来时就会被举发。",
+        "en": "With Output beside the Body, a case can never be made into proof; with Pressure hidden under the Self, the root of the lawsuit has not been pulled out. The Body sitting on Output, appearing and moving, is scattered at once; the only fear is Pressure hidden under the Self, in which case the root of the suit is always there, and though no suit is formed for now, when Pressure is strong and comes out it will be brought up."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2897, 2897],
+          "zh": ["子在身边，", "到底不能结证；", "官伏世下，", "讼根犹未芟除"],
+          "yi": ["子孙在身边，", "到底不能结成证据；", "官鬼伏在世下，", "诉讼的根子还没有除掉。"],
+          "en": ["With Output beside the Body,", "a case can never be made into proof;", "with Pressure hidden under the Self,", "the root of the lawsuit has not been pulled out."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2897, 2897],
+          "zh": ["卦身临福德出现发动，随即消散，唯怕官鬼伏世下，则讼根常在，目下虽不成讼，至官旺出透举发也。"],
+          "yi": ["卦身临福德出现并发动，马上就会消散；只怕官鬼伏在世爻下，那么讼根常在，目前虽然不成讼，等官鬼旺相透出来时就会被举发。"],
+          "en": ["The Body sitting on Output, appearing and moving, is scattered at once; the only fear is Pressure hidden under the Self, in which case the root of the suit is always there, and though no suit is formed for now, when Pressure is strong and comes out it will be brought up."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.31",
+      "topic": "狱囚",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·墓逢日德刑冲目下即当出狱、岁挈福神生合狱中必遇天恩：世墓、鬼墓动是入狱之象，得日辰刑冲克破眼下就出狱；狱中占卦最喜太岁生合世爻有天恩赦宥，月建生合上司审出，日辰生合有司饶恕，父母生合申诉得免",
+      "rule": {
+        "yi": "墓逢日德和刑冲，眼下就该出狱；太岁带着福神来生合，狱中必遇天恩。世墓、鬼墓发动，都是入狱的象，如果得到日辰刑冲克破，眼下就该出狱。在狱中占卦，最喜太岁生合世爻，主有天恩赦免；月建生合，上司审出来；日辰生合，有关官员饶恕；父母爻生合，必须申诉才能免。",
+        "en": "The tomb meeting the Day's virtue and punishment or clash, he should leave prison at once; Tai Sui bringing Output to give life and combine, in prison he surely meets imperial grace. The tomb of the Self or of Pressure moving is the image of entering prison, and if the Day punishes, clashes, controls or breaks it, he should be out at once. Divining in prison, best of all is Tai Sui giving life to or combining with the Self, which means imperial pardon; the Month giving life or combining means the higher office trials him out; the Day giving life or combining, the officials spare him; Resource giving life or combining, he must plead to be let off."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2899, 2899],
+          "zh": ["墓逢日德刑冲，", "目下即当出狱；", "岁挈福神生合，", "狱中必遇天恩"],
+          "yi": ["墓逢日德和刑冲，", "眼下就该出狱；", "太岁带着福神来生合，", "狱中必遇天恩。"],
+          "en": ["The tomb meeting the Day's virtue and punishment or clash,", "he should leave prison at once;", "Tai Sui bringing Output to give life and combine,", "in prison he surely meets imperial grace."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2899, 2899], "literal": ["父母"],
+          "zh": ["世墓、鬼墓爻动，皆是入狱之象，若得日辰刑冲克破，目下即当出狱。", "在狱中占卦，最喜太岁生合世爻，主有天恩赦宥；", "月建生合，上司审出；", "日辰生合，有司饶恕；", "父母生合，必须申诉可得免也。"],
+          "yi": ["世墓、鬼墓发动，都是入狱的象，如果得到日辰刑冲克破，眼下就该出狱。", "在狱中占卦，最喜太岁生合世爻，主有天恩赦免；", "月建生合，上司审出来；", "日辰生合，有关官员饶恕；", "父母爻生合，必须申诉才能免。"],
+          "en": ["The tomb of the Self or of Pressure moving is the image of entering prison, and if the Day punishes, clashes, controls or breaks it, he should be out at once.", "Divining in prison, best of all is Tai Sui giving life to or combining with the Self, which means imperial pardon;", "the Month giving life or combining means the higher office trials him out;", "the Day giving life or combining, the officials spare him;", "Resource giving life or combining, he must plead to be let off."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.32",
+      "topic": "罪名",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·若问罪名须详官鬼：卜罪名轻重看官鬼爻，旺则罪重衰则罪轻；加刑白虎旺动克世，火主极刑、金主充军、木主笞杖、水主从罪；要按衰旺和有制无制来断，不可拘泥",
+      "rule": {
+        "yi": "如果问罪名，必须详察官鬼。凡是占罪名轻重，用官鬼爻来定：旺，罪重；衰，罪轻。再加刑、白虎、旺而发动克世爻，火主受极刑，金主充军，木主笞杖，水主从犯罪。要按衰旺、有制无制来断，不可拘泥。",
+        "en": "If asking about the charge, one must examine Pressure. In judging how heavy or light the charge is, fix it by the Pressure line: strong, the charge is heavy; weak, light. With punishment and the White Tiger added, strong and moving to control the Self, Fire means the extreme penalty, Metal means military exile, Wood means the cane or rod, Water means being an accessory. Judge by strength and weakness and whether it is held in check or not, and do not be rigid."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2901, 2901],
+          "zh": ["若问罪名，", "须详官鬼"],
+          "yi": ["如果问罪名，", "必须详察官鬼。"],
+          "en": ["If asking about the charge,", "one must examine Pressure."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2901, 2901],
+          "zh": ["凡卜罪名轻重，以官爻定之，旺则罪重，衰则罪轻。", "加刑白虎旺动克世，火受极刑，金主充军，木主笞杖，水主从罪。", "须以衰旺，有制无制断之，不可执滞。"],
+          "yi": ["凡是占罪名轻重，用官鬼爻来定：旺，罪重；衰，罪轻。", "再加刑、白虎、旺而发动克世爻，火主受极刑，金主充军，木主笞杖，水主从犯罪。", "要按衰旺、有制无制来断，不可拘泥。"],
+          "en": ["In judging how heavy or light the charge is, fix it by the Pressure line: strong, the charge is heavy; weak, light.", "With punishment and the White Tiger added, strong and moving to control the Self, Fire means the extreme penalty, Metal means military exile, Wood means the cane or rod, Water means being an accessory.", "Judge by strength and weakness and whether it is held in check or not, and do not be rigid."] }
+      ]
+    },
+    {
+      "id": "LY.LAWSUIT.HJC.33",
+      "topic": "消散",
+      "chapter": "词讼",
+      "chapter_en": "Lawsuits",
+      "title": "词讼·要知消散当看子孙：福神发动官鬼安静，按生旺的日月断；官鬼发动福神安静，按官鬼入墓的日月断；卦象一成，胜负明明白白，一部讼庭的是非判得清清楚楚",
+      "rule": {
+        "yi": "要知道怎样消散，应当看子孙。如果福神发动、官鬼安静，按生旺的日月断消散；官鬼发动、福神安静，按官鬼入墓的日月断消散。卦象既然成了，胜负明明白白；一部讼庭的是非，判得清清楚楚。",
+        "en": "To know how the matter will melt away, look at Output. If Output moves and Pressure is still, judge the day it melts by the months and days of life and strength; if Pressure moves and Output is still, judge it by the months and days when Pressure enters the tomb. Once the hexagram is formed, who wins and who loses is plain; the rights and wrongs of the whole lawcourt are decided clearly."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2903, 2903],
+          "zh": ["要知消散，", "当看子孙"],
+          "yi": ["要知道怎样消散，", "应当看子孙。"],
+          "en": ["To know how the matter will melt away,", "look at Output."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2903, 2903],
+          "zh": ["若福动鬼静，以生旺日月断；", "鬼动福静，以官墓日月断。", "卦象既成，胜负了然明白；", "讼庭一部，是非判若昭彰。"],
+          "yi": ["如果福神发动、官鬼安静，按生旺的日月断消散；", "官鬼发动、福神安静，按官鬼入墓的日月断消散。", "卦象既然成了，胜负明明白白；", "一部讼庭的是非，判得清清楚楚。"],
+          "en": ["If Output moves and Pressure is still, judge the day it melts by the months and days of life and strength;", "if Pressure moves and Output is still, judge it by the months and days when Pressure enters the tomb.", "Once the hexagram is formed, who wins and who loses is plain;", "the rights and wrongs of the whole lawcourt are decided clearly."] }
+      ]
+    }
+  ]
+}

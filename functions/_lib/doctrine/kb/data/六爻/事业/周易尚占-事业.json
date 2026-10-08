@@ -1,0 +1,551 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "周易尚占",
+  "chapter": "事业相关各处(八卦断例、六亲断例、六神断例、天符直符断例、六亲章、僧道章、儒业章、六位例、八卦法用例)",
+  "chapter_en": "Career passages (judgments by example for the eight palaces, the six relations, the six spirits, the Year and Month Tallies, the six relations chapter, monks and Daoists, the scholar's calling, the positions of the six lines, uses of the eight trigrams)",
+  "ranges": {"周易尚占": [257, 1302]},
+  "units": [
+    {
+      "id": "LY.CAREER.ZSZ.01",
+      "topic": "成否",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of judgments by example for the eight palaces",
+      "title": "八卦断例·求官吉：姤「求官官荣」、观「求官为上」、渐「求官渐升」、鼎「求官十全」、家人「谒贵求官获福无量」",
+      "rule": {
+        "yi": "占求官时，遇到姤卦（求官，官位荣耀）、观卦（求官最好）、渐卦（求官渐渐升迁）、鼎卦（求官十全）、家人卦（谒见贵人、求官，获福无量），都是求官有利。",
+        "en": "In seeking office, meeting the hexagram Gou ('seeking office: the office is glorious'), Guan ('seeking office: the best'), Jian ('seeking office: gradual promotion'), Ding ('seeking office: complete in all ten parts') or Jiaren ('calling on nobles and seeking office, one wins blessing beyond measure') is favourable to seeking office."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [884, 884],
+          "zh": ["媾者遇也", "谋必有遇", "求官官荣", "求财财遂", "病者难安", "婚姻休娶", "卜筮行人", "端的在路"],
+          "yi": ["媾（姤），就是相遇。", "谋事一定会有所遇。", "求官，官位荣耀。", "求财，财能如愿。", "病人难得平安。", "婚姻，不要娶。", "占问出门在外的人，", "的确还在路上。"],
+          "en": ["Gou (Meeting) means to meet.", "Any plan is sure to meet with an encounter.", "Seeking office: the office is glorious.", "Seeking wealth: the wealth comes as wished.", "The sick will find it hard to be at peace.", "Marriage: do not take the bride.", "As for divining about a traveller,", "he is indeed on the road."] },
+        { "by": "经", "book": "周易尚占", "range": [890, 890],
+          "zh": ["观者望也", "凡事有望", "田蚕进益", "家宅兴旺", "占婚最宜", "求官为上", "财聚病痊", "获福无量"],
+          "yi": ["观，就是观望。", "凡事都有指望。", "田蚕有进益。", "家宅兴旺。", "占婚事，最合适。", "求官，最好。", "钱财聚拢，病痊愈。", "得福无量。"],
+          "en": ["Guan (Viewing) means looking out.", "All matters hold hope.", "Fields and silkworms bring gain.", "The household flourishes.", "Asking about marriage: most fitting.", "Seeking office: the best.", "Wealth gathers and the illness is cured.", "Blessing is won beyond measure."] },
+        { "by": "经", "book": "周易尚占", "range": [1012, 1012],
+          "zh": ["渐者进也", "田蚕进益", "求官渐升", "求财渐得", "病疾渐安", "公讼渐释", "一切所占", "渐则大吉"],
+          "yi": ["渐，就是渐进。", "田蚕有进益。", "求官，慢慢升。", "求财，慢慢得。", "病，慢慢安稳。", "官司慢慢化解。", "一切所占的事，", "循序渐进就大吉。"],
+          "en": ["Jian (Gradual Progress) means advancing step by step.", "Fields and silkworms bring gain.", "Seeking office: gradual promotion.", "Seeking wealth: gained gradually.", "Illness: it gradually settles.", "Lawsuits are gradually resolved.", "In every matter divined,", "gradual progress is greatly auspicious."] },
+        { "by": "经", "book": "周易尚占", "range": [1176, 1176],
+          "zh": ["鼎者器也", "烹饪之器", "求官十全", "生财百倍", "身吉宅荣", "婚成病利", "求事托人", "却宜仔细"],
+          "yi": ["鼎，就是器物。", "是烹煮饮食的器具。", "求官十全十美。", "生财百倍。", "自身吉利，住宅荣耀。", "婚事成，病有利。", "求事要托人，", "却要仔细。"],
+          "en": ["Ding (the Cauldron) means a vessel.", "It is a vessel for cooking.", "Seeking office: complete in all ten parts.", "Making wealth a hundredfold.", "The person is fortunate and the dwelling flourishes.", "Marriage is made and illness fares well.", "Seeking a matter: entrust it to someone,", "but be careful."] },
+        { "by": "经", "book": "周易尚占", "range": [1118, 1118],
+          "zh": ["风火家人", "成家之象", "婚姻和合", "人财兴旺", "病讼无忧", "田蚕有望", "谒贵求官", "获福无量"],
+          "yi": ["风火家人这一卦，", "是成家的象。", "婚姻和合。", "人丁和财运兴旺。", "病和官司都无忧。", "田蚕有指望。", "拜见贵人、求官，", "得福无量。"],
+          "en": ["Wind over Fire, Jiaren (the Household),", "is the image of founding a household.", "Marriage is in harmony.", "People and wealth flourish.", "Neither illness nor lawsuit brings worry.", "Fields and silkworms hold promise.", "Calling on nobles and seeking office,", "one wins blessing beyond measure."] }
+      ],
+      "see": ["LY.CAREER.DYTJ.02", "LY.CAREER.HZL.01"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.02",
+      "topic": "升迁",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of judgments by example for the eight palaces",
+      "title": "八卦断例·升迁加官：乾「占官转职」、晋「进必有升」、大畜「加官转职」、中孚「官贵升迁」、损「官旺财兴」",
+      "rule": {
+        "yi": "占官职、升迁，遇到乾卦（占官转职）、晋卦（进必有升）、大畜卦（加官转职）、中孚卦（官贵升迁）、损卦（官旺财兴），都主官职有转迁、升进。",
+        "en": "In divining office and promotion, meeting the hexagram Qian ('asking about office: a change of post'), Jin ('advancing surely brings promotion'), Daxu ('promotion and transfer of post'), Zhongfu ('officials and nobles are promoted') or Sun ('office flourishes and wealth rises') all point to a change or advance of post."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [882, 882],
+          "zh": ["乾者健也", "事宜专一", "人口安康", "田蚕进益", "问病获安", "占官转职", "所谋必成", "所求皆得"],
+          "yi": ["乾，就是刚健。", "做事适合专一。", "家里人口平安健康。", "田地和养蚕有进益。", "问病，能得平安。", "占官职，会转任调职。", "所谋划的事一定成功。", "所求的都能得到。"],
+          "en": ["Qian (Heaven) means strength.", "In affairs, single-mindedness suits.", "The household is at peace and in health.", "Fields and silkworms bring gain.", "Asking about illness: safety is gained.", "Asking about office: a change of post.", "What is planned will surely succeed.", "All that is sought is obtained."] },
+        { "by": "经", "book": "周易尚占", "range": [894, 894],
+          "zh": ["晋者进也", "进必有升", "进身必遂", "进事有成", "行人未至", "公讼不明", "病者难瘥", "财平稍平"],
+          "yi": ["晋，就是前进。", "进就一定有升。", "求进身一定如愿。", "进取的事有成。", "在外的人还没到。", "官司不明朗。", "病人难痊愈。", "财运平平，只是稍微平顺一点。"],
+          "en": ["Jin (Advance) means to go forward.", "Advancing surely brings promotion.", "Advancing oneself will surely be achieved.", "Ventures that advance succeed.", "The traveller has not yet arrived.", "A lawsuit is unclear.", "The sick will find it hard to recover.", "Wealth is level, only slightly so."] },
+        { "by": "经", "book": "周易尚占", "range": [1002, 1002],
+          "zh": ["畜者聚也", "人财利益", "进喜散忧", "加官转职", "田熟蚕收", "婚成病脱", "事事亨通", "般般大吉"],
+          "yi": ["畜，就是聚。", "人和财都得益。", "喜事进门，忧愁散去。", "加官进职，转任。", "田地成熟，蚕丝收成。", "婚事成，病痊脱。", "事事亨通。", "样样大吉。"],
+          "en": ["Xu (Great Accumulation) means gathering.", "People and wealth both profit.", "Joy enters and worry scatters.", "Promotion and transfer of post.", "Fields ripen and silkworms are harvested.", "Marriage is made and the illness drops away.", "Every matter goes through.", "Everything is greatly auspicious."] },
+        { "by": "经", "book": "周易尚占", "range": [1010, 1010],
+          "zh": ["中孚信也", "二相中实", "虚实相通", "动罔不吉", "官贵升迁", "田蚕进益", "忧散喜生", "灾消福集"],
+          "yi": ["中孚，就是诚信。", "两相对应，中间是实的。", "虚和实相通。", "凡动没有不吉的。", "官员贵人升迁。", "田蚕有进益。", "忧愁散去，喜事生出。", "灾消福聚。"],
+          "en": ["Zhongfu (Inner Truth) means good faith.", "The two aspects have a solid middle.", "Empty and full are connected.", "No movement fails to be auspicious.", "Officials and nobles are promoted.", "Fields and silkworms bring gain.", "Worry scatters and joy arises.", "Calamity vanishes and blessing gathers."] },
+        { "by": "经", "book": "周易尚占", "range": [1004, 1004],
+          "zh": ["损者损也", "身宅平平", "婚成病瘥", "官旺财兴", "人口进益", "家宅利贞", "弗宜公讼", "不利出行"],
+          "yi": ["损，就是减损。", "自身和住宅平平。", "婚事成，病痊愈。", "官运旺，财运兴。", "人口增益。", "家宅有利，守正。", "不宜打官司。", "不利出行。"],
+          "en": ["Sun (Decrease) means decrease.", "The person and dwelling are middling.", "Marriage is made and the illness is cured.", "Office flourishes and wealth rises.", "The household members increase.", "The household is favourable and upright.", "Lawsuits do not suit.", "Travel is unfavourable."] }
+      ],
+      "see": ["LY.CAREER.DYTJ.03", "LY.CAREER.HZL.02"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.03",
+      "topic": "贵人",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of judgments by example for the eight palaces",
+      "title": "八卦断例·官贵相应：丰「利官利贵」、豫「贵喜官荣」、升「见贵得贵、求名得名」、随「官贵随顺」、巽「利官利贵」、无妄「官贵文书重重进益」、离「官贵有喜」、同人「贵官俱遂」、复「利贵利官」、临「财官并吉」、夬「贵官成遂」、比「官贵旺相」",
+      "rule": {
+        "yi": "占官、见贵人，遇到丰、豫、升、随、巽、无妄、离、同人、复、临、夬、比这十二个卦，官职和贵人都顺遂有利：见贵得贵、求名得名、官贵随顺、官贵有喜、贵官俱遂。",
+        "en": "In divining office and calling on nobles, meeting any of the twelve hexagrams Feng, Yu, Sheng, Sui, Xun, Wuwang, Li, Tongren, Fu, Lin, Guai and Bi, office and nobles alike go smoothly and favourably: seeing a noble one gains the noble, seeking fame one gains fame, officials and nobles comply, officials and nobles have joy, nobles and office are both fulfilled."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [950, 950],
+          "zh": ["丰者大也", "利官利贵", "婚姻有成", "行人必至", "孕生女子", "病人沉滞", "凡占家宅", "半明半晦"],
+          "yi": ["丰，就是大。", "利于求官，利于见贵人。", "婚姻能成。", "在外的人一定到。", "怀孕，生女孩。", "病人沉重拖延。", "凡是占家宅，", "一半明朗，一半昏暗。"],
+          "en": ["Feng (Abundance) means great.", "Favourable to office and favourable to nobles.", "Marriage is achieved.", "The traveller will surely arrive.", "Pregnancy: a girl is born.", "The sick one is weighed down and lingering.", "In all divining of the household,", "it is half bright and half dim."] },
+        { "by": "经", "book": "周易尚占", "range": [1058, 1058],
+          "zh": ["豫者悦也", "动以顺豫", "贵喜官荣", "身安财聚", "病者获安", "行人在路", "一切施为", "贤朋相助"],
+          "yi": ["豫，就是喜悦。", "顺着理而动就喜悦。", "贵人欢喜，官职荣耀。", "自身平安，钱财聚拢。", "病人得到平安。", "在外的人在路上。", "一切作为，", "有贤良的朋友相助。"],
+          "en": ["Yu (Delight) means delight.", "Moving in accord brings delight.", "Nobles are pleased and office is glorious.", "The person is safe and wealth gathers.", "The sick gain peace.", "The traveller is on the road.", "In all one does,", "worthy friends help."] },
+        { "by": "经", "book": "周易尚占", "range": [1064, 1064],
+          "zh": ["升者进也", "小集大成", "见贵得贵", "求名得名", "婚姻和合", "公讼和平", "求谋运用", "最利南征"],
+          "yi": ["升，就是上升。", "小的积聚成大的成就。", "见贵人，得贵人相助。", "求名，得名。", "婚姻和合。", "官司和平。", "求谋运作。", "最利于向南远行。"],
+          "en": ["Sheng (Ascent) means rising.", "Small gatherings grow into a great achievement.", "Seeing a noble, one gains the noble.", "Seeking fame, one gains fame.", "Marriage is in harmony.", "A lawsuit is settled in peace.", "Seeking and scheming are put to work.", "Most favourable to go south."] },
+        { "by": "经", "book": "周易尚占", "range": [1070, 1070],
+          "zh": ["随者从也", "阴必从阳", "官贵随顺", "财禄荣昌", "婚姻和睦", "疾病安康", "凡占身命", "福寿无疆"],
+          "yi": ["随，就是跟从。", "阴一定跟从阳。", "官员贵人顺从。", "财禄荣昌。", "婚姻和睦。", "疾病平安康复。", "凡是占自身和命运，", "福寿没有边际。"],
+          "en": ["Sui (Following) means following.", "Yin must follow yang.", "Officials and nobles comply.", "Wealth and salary flourish.", "Marriage is harmonious.", "Illness is eased and health returns.", "In all divining of the person and fate,", "blessing and long life are without limit."] },
+        { "by": "经", "book": "周易尚占", "range": [1114, 1114],
+          "zh": ["巽者顺也", "顺时行事", "利财利婚", "利官利贵", "身泰讼和", "田收蚕遂", "惟占病人", "金神为崇"],
+          "yi": ["巽，就是顺。", "顺着时势行事。", "利于财、利于婚。", "利于官、利于贵人。", "自身安泰，官司和解。", "田有收成，蚕如愿。", "只有占病人，", "是金神作祟。"],
+          "en": ["Xun (Wind) means compliance.", "Act in accord with the time.", "Favourable to wealth and to marriage.", "Favourable to office and to nobles.", "The person is at ease and a lawsuit is settled.", "Fields give harvest and silkworms thrive.", "Only in divining a sick person:", "a Metal spirit is the curse."] },
+        { "by": "经", "book": "周易尚占", "range": [1122, 1122],
+          "zh": ["无妄实也", "凡事从实", "动有灾眚", "守旧元吉", "病瘥讼和", "田收财积", "官贵文书", "重重进益"],
+          "yi": ["无妄，就是真实。", "凡事要按实际。", "一动就有灾祸。", "守旧大吉。", "病痊愈，官司和解。", "田有收成，钱财积聚。", "官贵、文书，", "层层进益。"],
+          "en": ["Wuwang (Without Falsehood) means truthfulness.", "In all matters follow what is real.", "Moving brings calamity and blight.", "Keeping to the old is supremely auspicious.", "The illness is cured and the lawsuit settled.", "Fields give harvest and wealth accumulates.", "Office, nobles, documents:", "gain upon gain."] },
+        { "by": "经", "book": "周易尚占", "range": [1172, 1172],
+          "zh": ["离者丽也", "凡事分明", "不宜占宅", "婚讼九成", "孕双蚕半", "病重财轻", "官贵有喜", "最利行人"],
+          "yi": ["离，就是附丽。", "凡事分明。", "不宜占住宅。", "婚事和官司九成能成。", "怀孕得双胎，蚕收一半。", "病重，财轻。", "官员贵人有喜。", "最利于在外的人。"],
+          "en": ["Li (Fire) means clinging.", "All matters are clear.", "Divining the dwelling does not suit.", "Marriage and lawsuit: nine parts in ten succeed.", "Pregnancy: twins; silkworms: half.", "Illness is heavy and wealth is light.", "Officials and nobles have joy.", "Most favourable to the traveller."] },
+        { "by": "经", "book": "周易尚占", "range": [1186, 1186],
+          "zh": ["同人同也", "同心同意", "婚孕皆成", "贵官俱遂", "田获十分", "财收百倍", "出入行藏", "所求皆至"],
+          "yi": ["同人，就是相同。", "同心同意。", "婚事和怀孕都成。", "贵人和官职都如愿。", "田地收获十成。", "钱财收获百倍。", "出入、行止、隐藏，", "所求的都到。"],
+          "en": ["Tongren (Fellowship) means being alike.", "Of one heart and one mind.", "Marriage and pregnancy both succeed.", "Nobles and office are both fulfilled.", "Fields yield in full.", "Wealth is gathered a hundredfold.", "In going out and coming in, in acting and withdrawing,", "all that is sought arrives."] },
+        { "by": "经", "book": "周易尚占", "range": [1232, 1232],
+          "zh": ["复者反也", "七日来复", "财帛荣昌", "田禾大熟", "失去归还", "公讼和睦", "利贵利官", "宜蚕忌畜"],
+          "yi": ["复，就是返回。", "七天就回来。", "钱财荣昌。", "田里庄稼大熟。", "失去的会归还。", "官司和睦。", "利于贵人，利于官。", "适合养蚕，忌讳养牲畜。"],
+          "en": ["Fu (Return) means returning.", "In seven days it returns.", "Money flourishes.", "Crops in the fields ripen greatly.", "What was lost is returned.", "A lawsuit is reconciled.", "Favourable to nobles and favourable to office.", "Silkworms suit; livestock is to be avoided."] },
+        { "by": "经", "book": "周易尚占", "range": [1234, 1234],
+          "zh": ["临者大也", "克己临人", "宜占家宅", "利问婚姻", "财官并吉", "谋望同伦", "孕生男子", "病犯崇侵"],
+          "yi": ["临，就是大。", "克制自己，面对别人。", "适合占家宅。", "利于问婚姻。", "财、官都吉。", "谋划指望，与同辈同步。", "怀孕，生男孩。", "病，遇到鬼神作祟的侵扰。"],
+          "en": ["Lin (Approach) means great.", "Master oneself to face others.", "Suits divining the household.", "Favourable to asking about marriage.", "Wealth and office are both auspicious.", "Plans and hopes are in step with one's peers.", "Pregnancy: a boy is born.", "Illness meets the encroachment of a curse."] },
+        { "by": "经", "book": "周易尚占", "range": [1240, 1240],
+          "zh": ["夬者决也", "有决定志", "交易称心", "生财如意", "婚孕吉昌", "贵官成遂", "病讼迟延", "文书迟滞"],
+          "yi": ["夬，就是决断。", "有决断的心志。", "交易称心。", "生财如意。", "婚事和怀孕吉利昌盛。", "贵人和官职如愿。", "病和官司拖延。", "文书迟缓阻滞。"],
+          "en": ["Guai (Resolution) means decision.", "There is a resolute will.", "Deals please.", "Making wealth is as wished.", "Marriage and pregnancy are auspicious and prosperous.", "Nobles and office are achieved.", "Illness and lawsuit are delayed.", "Documents are slow and stuck."] },
+        { "by": "经", "book": "周易尚占", "range": [1244, 1244],
+          "zh": ["比者辅也", "阴来辅阳", "官贵旺相", "身宅安康", "讼病解散", "婚姻吉祥", "一切谋运", "和顺乃光"],
+          "yi": ["比，就是辅助。", "阴来辅助阳。", "官员贵人旺相。", "自身和住宅平安健康。", "官司和病解散。", "婚姻吉祥。", "一切谋划运作，", "和顺才光明。"],
+          "en": ["Bi (Union) means support.", "Yin comes to support yang.", "Officials and nobles are thriving and strong.", "The person and dwelling are safe and sound.", "Lawsuit and illness are dissolved.", "Marriage is auspicious.", "In all one plans and works,", "harmony and accord bring brightness."] }
+      ],
+      "see": ["LY.CAREER.DYTJ.34", "LY.CAREER.HZL.03"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.04",
+      "topic": "成否",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of judgments by example for the eight palaces",
+      "title": "八卦断例·吉凶参半：屯「见贵求官先难后易」、师「求官虽吉、见贵遭嗔」、井「求官谒贵（不宜妄为、藏器待时）」",
+      "rule": {
+        "yi": "遇到屯卦，见贵人、求官先难后易；遇到师卦，求官虽吉，见贵人却会遭到嗔怪；遇到井卦，不宜妄动，求官谒贵要藏好器具等待时机。",
+        "en": "Meeting the hexagram Zhun, in seeing a noble and seeking office it is first hard, then easy; meeting Shi, seeking office is auspicious but seeing a noble draws his anger; meeting Jing, rash action does not suit, and in seeking office and calling on nobles one should keep the tools hidden and wait for the time."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [944, 944],
+          "zh": ["屯者难也", "元有亨义", "目下未伸", "到头必遂", "一切经营", "悉皆迟滞", "见贵求官", "先难后易"],
+          "yi": ["屯，就是艰难。", "本来有亨通的意思。", "眼下还伸展不开。", "到头来一定能如愿。", "一切经营谋划，", "全都迟缓阻滞。", "拜见贵人、求官，", "先难后易。"],
+          "en": ["Zhun (Difficulty) means hardship.", "At root it carries the sense of success.", "For now it cannot yet unfold.", "In the end it will surely be achieved.", "All undertakings", "are slow and held up.", "Seeing a noble, seeking office:", "first hard, then easy."] },
+        { "by": "经", "book": "周易尚占", "range": [954, 954],
+          "zh": ["师者众也", "不利占身", "求官虽吉", "见贵遭嗔", "休占财帛", "莫问行人", "病人迟瘥", "家宅灾迍"],
+          "yi": ["师，就是众。", "占自身不利。", "求官虽然吉，", "但见贵人会遭嗔怪。", "不要占财帛。", "不要问行人。", "病人痊愈得迟。", "家宅有灾祸困顿。"],
+          "en": ["Shi (the Army) means the multitude.", "Divining about oneself is unfavourable.", "Seeking office is auspicious,", "but seeing a noble draws his anger.", "Do not divine about wealth.", "Do not ask about the traveller.", "The sick recover late.", "The household has calamity and hardship."] },
+        { "by": "经", "book": "周易尚占", "range": [1066, 1066],
+          "zh": ["井者静也", "不宜妄为", "求官谒贵", "问病稽迟", "田蚕半得", "行人未归", "占婚阻滞", "藏器待时"],
+          "yi": ["井，就是静。", "不宜乱作为。", "求官、拜见贵人，", "问病，拖延迟缓。", "田蚕得一半。", "在外的人没有回来。", "占婚事，阻滞。", "把本事藏起来，等待时机。"],
+          "en": ["Jing (the Well) means stillness.", "Rash action does not suit.", "Seeking office, calling on nobles:", "Asking about illness: delay and slowness.", "Fields and silkworms yield half.", "The traveller has not returned.", "Asking about marriage: obstruction and delay.", "Keep the tools hidden and wait for the time."] }
+      ],
+      "note": {
+        "yi": "井卦那一行里「求官谒贵」后面没有断语，同一行的前后是「不宜妄为」「藏器待时」，这里按整行的口气读成要等待时机，不确定。",
+        "en": "In the line for Jing nothing follows 'seeking office, calling on nobles', and the same line has 'rash action does not suit' before it and 'keep the tools hidden and wait for the time' after it, so it is read here as meaning to wait for the time, which is uncertain."
+      }
+    },
+    {
+      "id": "LY.CAREER.ZSZ.05",
+      "topic": "风险",
+      "chapter": "八卦断例章",
+      "chapter_en": "Chapter of judgments by example for the eight palaces",
+      "title": "八卦断例·求官不利：履「莫问官方」、大过「求官不达」、蹇「官贵艰难」、归妹「贵官休问」、小过「官阻病忧」、坤「功名特远」",
+      "rule": {
+        "yi": "遇到履卦（莫问官方）、大过卦（求官不达）、蹇卦（官贵艰难）、归妹卦（贵官休问）、小过卦（官阻病忧）、坤卦（功名特远），求官不利，要安分守常。",
+        "en": "Meeting the hexagram Lü ('do not ask about official business'), Daguo ('seeking office does not succeed'), Jian ('officials and nobles are hard to reach'), Guimei ('do not ask about nobles or office'), Xiaoguo ('office is blocked and illness is a worry') or Kun ('fame and rank are especially distant'), seeking office is unfavourable and one should keep to one's lot."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [1008, 1008],
+          "zh": ["履者礼也", "以柔履刚", "危中有救", "险处无妨", "弗占疾病", "莫问官方", "一切谋运", "谨始营昌"],
+          "yi": ["履，就是礼。", "用柔去踩刚。", "危险之中有救。", "险处没有妨碍。", "不要占疾病。", "不要问官府的事。", "一切谋划运作，", "开头谨慎，经营才昌盛。"],
+          "en": ["Lü (Treading) means ritual propriety.", "The soft treads on the hard.", "In danger there is rescue.", "In a perilous place there is no harm.", "Do not divine illness.", "Do not ask about official business.", "In all one plans and works,", "be careful at the start and the venture will prosper."] },
+        { "by": "经", "book": "周易尚占", "range": [1068, 1068],
+          "zh": ["过者过也", "刚过乎中", "行船见阻", "涉险无功", "求官不达", "问信难通", "安常守分", "庶免灾凶"],
+          "yi": ["过，就是过分。", "刚强过了中。", "行船受阻。", "涉险没有功效。", "求官不能达成。", "问消息，难以通达。", "安于平常，守本分，", "或许能免除灾凶。"],
+          "en": ["Guo (Great Excess) means excess.", "Hardness goes past the middle.", "Travel by boat meets obstruction.", "Wading into danger yields no merit.", "Seeking office does not succeed.", "Asking for news: it is hard to get through.", "Rest in the ordinary and keep to one's lot,", "and one may perhaps escape calamity and ill-fortune."] },
+        { "by": "经", "book": "周易尚占", "range": [1296, 1296],
+          "zh": ["蹇者难也", "凡事蹇钝", "官贵艰难", "出行休问", "莫卜身财", "休占婚孕", "出险如何", "守常安分"],
+          "yi": ["蹇，就是艰难。", "凡事蹇滞迟钝。", "官员贵人艰难。", "出行不要问。", "不要占自身和钱财。", "不要占婚姻、怀孕。", "怎样才能走出险境？", "守常安分。"],
+          "en": ["Jian (Obstruction) means hardship.", "All matters are halting and dull.", "Officials and nobles are hard to reach.", "Do not ask about travel.", "Do not divine the person or wealth.", "Do not divine marriage or pregnancy.", "How is one to come out of danger?", "Hold to the usual and keep to one's lot."] },
+        { "by": "经", "book": "周易尚占", "range": [1302, 1302],
+          "zh": ["归妹归也", "女归之象", "公讼不明", "贵官休问", "身宅少忧", "婚姻为上", "守之则宜", "动之弗当"],
+          "yi": ["归妹，就是出嫁。", "是女子出嫁的象。", "官司不明朗。", "贵人和官职不要问。", "自身与住宅少有忧虑。", "婚姻最好。", "守着就合适。", "动就不妥当。"],
+          "en": ["Guimei (the Marrying Maiden) means a girl going home to marry.", "It is the image of a girl being married.", "A lawsuit is unclear.", "Do not ask about nobles or office.", "The person and dwelling have little worry.", "Marriage is the best.", "To hold still suits.", "To move does not fit."] },
+        { "by": "经", "book": "周易尚占", "range": [1300, 1300],
+          "zh": ["小过过也", "所过不远", "身宅微灾", "交易财鲜", "官阻病忧", "孕惊婚免", "凡百所占", "悉皆俴俴"],
+          "yi": ["小过，就是小有过越。", "所过之处不远。", "自身与住宅有小灾。", "交易，钱财很少。", "官路受阻，病有忧。", "怀孕有惊，婚事免了。", "凡是所占的一切，", "全都浅浅薄薄。"],
+          "en": ["Xiaoguo (Small Excess) means a small excess.", "What is passed over is not far.", "The person and dwelling have a small calamity.", "Trade: wealth is scant.", "Office is blocked and illness is a worry.", "Pregnancy has a fright; marriage is to be avoided.", "In all that is divined,", "all is thin and shallow."] },
+        { "by": "经", "book": "周易尚占", "range": [1230, 1230],
+          "zh": ["坤者地也", "厚载无疆", "家宅俱顺", "婚孕乃良", "田蚕半吉", "财帛荣昌", "功名特远", "其道乃光"],
+          "yi": ["坤，就是地。", "厚厚地承载，没有边界。", "家宅都顺。", "婚事和怀孕才好。", "田蚕一半吉。", "钱财荣昌。", "功名特别遥远。", "它的道就光明。"],
+          "en": ["Kun (Earth) means the earth.", "It carries thickly, without limit.", "The household is smooth throughout.", "Marriage and pregnancy are good.", "Fields and silkworms are half auspicious.", "Money flourishes.", "Fame and rank are especially distant.", "Its way is then bright."] }
+      ],
+      "see": ["LY.CAREER.DYTJ.33"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.06",
+      "topic": "成否",
+      "chapter": "六亲断例",
+      "chapter_en": "Judgments by example for the six relations",
+      "title": "六亲断例·持世：官鬼持世必得官（官化官为禄、求官宜疾速、化子必伤官）；子孙持世谒贵求官反不亨；父母持世旺相文书喜信通（化鬼身迁举）",
+      "rule": {
+        "yi": "官鬼持世，必定得官，文书、印信两样一起看；官化官是得禄，求官宜赶快；化财，占病凶；化父，文书相随；化子，必伤官；化兄，家里不和。子孙持世是福神，事成忧散，占胎问病重重吉利，谒见贵人、求官反而不亨通。父母持世及身宫，旺相，文书、喜信通达；父母化父母，文书一定应许；化子添人口；化鬼，自身得迁升荐举；化财，住宅长忧；兄弟，要从本身去取。",
+        "en": "With Pressure holding the Self one is sure to get office, and the documents and the seal are looked at together; Pressure turning into Pressure is gaining emolument, and in seeking office one should be swift; turning into Wealth, in illness it is bad; turning into Resource, the documents follow one after another; turning into Output, it surely injures office; turning into Peer, the household is not harmonious. Output holding the Self is the spirit of blessing: matters succeed and worries scatter, and in pregnancy and illness it is good upon good, but in calling on a noble or seeking office it does not go through. With Resource holding the Self and the palace of the Body, strong, documents and glad news go through; Resource turning into Resource, the documents are sure to be granted; turning into Output, people are added; turning into Pressure, one is promoted and recommended; turning into Wealth, the dwelling long worries; for Peer, take it from oneself."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [477, 477],
+          "zh": ["官鬼持世必得官，", "文书印信两相看，", "占婚问病俱凶犯，", "破宅伤财身不荣。", "官化官为禄，", "求官宜疾速，", "化财占病凶，", "化父文书逐，", "化子必伤官，", "化兄家不睦。"],
+          "yi": ["官鬼持世，必定得官；", "文书、印信两样一起看；", "占婚姻、问疾病，都会犯凶；", "破宅、伤财，自身不荣。", "官化官，是得禄；", "求官宜赶快；", "化成财，占病凶；", "化成父，文书相随而来；", "化成子，必伤官；", "化成兄，家里不和睦。"],
+          "en": ["Pressure holding the Self, one is sure to get office;", "look at the documents and the seal together;", "for marriage and illness, both run into ill;", "the dwelling is broken, wealth hurt and the self not flourishing.", "Pressure turning into Pressure is gaining emolument;", "in seeking office, be swift;", "turning into Wealth, in illness it is bad;", "turning into Resource, the documents follow one after another;", "turning into Output, it surely injures office;", "turning into Peer, the household is not harmonious."] },
+        { "by": "经", "book": "周易尚占", "range": [476, 476],
+          "zh": ["子孙持世为福神，", "事成忧散谷财荣，", "占胎问病重重吉，", "谒贵求官反不亨。", "子孙化子孙，", "人情两称情，", "化父田蚕旺，", "化财加倍荣，", "化鬼忧产病，", "兄弟必相争。"],
+          "yi": ["子孙持世，是福神；", "事成，忧愁散去，谷和财荣盛；", "占胎、问病，重重吉利；", "谒见贵人、求官，反而不亨通。", "子孙化子孙，", "人情两边都称心；", "化成父，田蚕旺；", "化成财，加倍荣盛；", "化成鬼，担忧生产、疾病；", "兄弟，必定相争。"],
+          "en": ["Output holding the Self is the spirit of blessing;", "matters succeed, worries scatter, grain and wealth flourish;", "for pregnancy and illness, good upon good;", "for calling on a noble or seeking office, on the contrary it does not go through.", "Output turning into Output,", "human feeling pleases both sides;", "turning into Resource, fields and silkworms thrive;", "turning into Wealth, doubly flourishing;", "turning into Pressure, worry for childbirth and illness;", "Peer, the brothers, will surely quarrel."] },
+        { "by": "经", "book": "周易尚占", "range": [475, 475],
+          "zh": ["父母持世及身宫，", "旺相文书喜信通，", "田宅禾苗皆遂意，", "占身问病却成凶。", "父母化父母，", "文书定相许，", "化子进人丁，", "化鬼身迁举，", "化财宅长忧，", "兄弟本身取。"],
+          "yi": ["父母持世以及身宫，", "旺相，文书、喜信通达；", "田宅、禾苗都遂意；", "占自身、问疾病，却成凶。", "父母化父母，", "文书一定应许；", "化成子，添进人口；", "化成鬼，自身得迁升荐举；", "化成财，住宅长久忧愁；", "兄弟，要从本身去取。"],
+          "en": ["Resource holding the Self and the palace of the Body,", "strong, documents and glad news go through;", "fields, houses and crops all as one wishes;", "but for the self and for illness it turns ill.", "Resource turning into Resource,", "the documents are sure to be granted;", "turning into Output, people are added;", "turning into Pressure, one is promoted and recommended;", "turning into Wealth, the dwelling long worries;", "Peer: take it from oneself."] }
+      ],
+      "note": {
+        "yi": "「化父文书逐」的「逐」没有解释，这里读作「文书相随而来」，不确定；「兄弟本身取」也没有解释，按字面译。这三行各问题通用，这里按次序把官鬼持世、子孙持世、父母持世三行都收了。",
+        "en": "'Turning into Resource, the documents chase' does not explain the 'chase', and it is read here as 'the documents follow one after another', which is uncertain; 'Peer, take it from oneself' is not explained either and is translated literally. These three lines serve every kind of question, and the lines for Pressure, Output and Resource holding the Self are all taken here in order."
+      },
+      "see": ["LY.CAREER.CA.10", "LY.CAREER.HDY.07", "LY.CAREER.TXF.06"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.07",
+      "topic": "成否",
+      "chapter": "六神断例",
+      "chapter_en": "Judgments by example for the six spirits",
+      "title": "六神断例·青龙发动万事通进财进禄；朱雀交重文印旺、杀神相并徒劳功；白虎交重惊怪事、求官临鬼反丰隆",
+      "rule": {
+        "yi": "青龙发动，万事通达，进财进禄，临在凶上、遇杀都无妨碍，只忌落在金上和落空；朱雀交重，文书印绶旺，和杀神并在一起就白劳功夫，是非口舌都由此而来，持水、临空反而有利于公事；白虎交重，是惊恐怪异之事，持金、世上带杀妨碍人口，求官时临在官鬼上，反而丰盛隆盛。",
+        "en": "With the Azure Dragon moving, all matters go through and wealth and emolument come in, and standing on ill or meeting a baleful spirit it meets no obstruction, only avoid its standing on Metal or falling void; with the Vermilion Bird moving heavily the documents and the seal and ribbon are strong, joined with a baleful spirit the labour is spent in vain, quarrels and gossip all come from this, and holding Water or standing in the void it is on the contrary favourable to public business; with the White Tiger moving heavily it is fright and strange things, holding Metal with a baleful spirit on the Self harms the household, and in seeking office, standing on Pressure, it brings abundance and prosperity on the contrary."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [483, 483],
+          "zh": ["发动青龙万事通，", "进财进禄福无穷，", "临凶遇杀都无碍，", "惟忌临金与落空。"],
+          "yi": ["青龙发动，万事通达；", "进财进禄，福气无穷；", "临在凶上、遇杀，都没有妨碍；", "只忌讳落在金上和落空。"],
+          "en": ["With the Azure Dragon moving, all matters go through;", "wealth and emolument come in and blessing has no end;", "standing on ill or meeting a baleful spirit, there is no obstruction;", "only avoid its standing on Metal and falling void."] },
+        { "by": "经", "book": "周易尚占", "range": [484, 484],
+          "zh": ["朱雀交重文印旺，", "杀神相并谩劳功，", "是非口舌皆因此，", "持水临空却利公。"],
+          "yi": ["朱雀交重，文书印绶旺；", "和杀神并在一起，白劳功夫；", "是非口舌都因此而起；", "持水、临空，反而有利于公事。"],
+          "en": ["With the Vermilion Bird moving heavily, the documents and the seal and ribbon are strong;", "joined with a baleful spirit, labour is spent in vain;", "quarrels and gossip all come from this;", "holding Water or standing in the void, it is on the contrary favourable to public business."] },
+        { "by": "经", "book": "周易尚占", "range": [487, 487],
+          "zh": ["白虎交重惊怪事，", "求官临鬼反丰隆，", "持金世杀妨人口，", "遇火加空却不同。"],
+          "yi": ["白虎交重，是惊恐怪异之事；", "求官时临在官鬼上，反而丰盛隆盛；", "持金、世上带杀，妨碍人口；", "遇火再加空，就不一样了。"],
+          "en": ["With the White Tiger moving heavily, it is fright and strange things;", "in seeking office, standing on Pressure, it brings abundance and prosperity on the contrary;", "holding Metal with a baleful spirit on the Self harms the household;", "meeting Fire and Void, it is otherwise."] }
+      ],
+      "note": {
+        "yi": "这三首和海底眼「六神爻动」里的青龙、朱雀、白虎三首是同一首诗，字句基本相同（海底眼多出每句后面的小注）。白虎一般主凶，这里说求官临鬼反而「丰隆」，照原文录。",
+        "en": "These three are the same poems as the Azure Dragon, Vermilion Bird and White Tiger poems in the Haidi Yan's 'The six spirits moving', nearly word for word (the Haidi Yan adds a small note after each line). The White Tiger generally stands for ill, yet here it is said that in seeking office, on Pressure, it brings abundance on the contrary, as the text has it."
+      },
+      "see": ["LY.CAREER.HDY.11", "LY.CAREER.YM.52"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.08",
+      "topic": "升迁",
+      "chapter": "天符、直符断例",
+      "chapter_en": "Judgments by example for the Year Tally and the Month Tally",
+      "title": "天符、直符断例·官禄升迁：年建天符青龙木发动加官禄；月建为青龙外动禄财丰；月建前三为朱雀文书不待约、吉助有升迁、杀交遭系缚",
+      "rule": {
+        "yi": "年建是天符（子年子爻动才断）：天符是青龙木时，发动，加官进禄，在外卦盗去资财，在内卦摇动，忧虑家眷。月建是直符：月建是青龙，动了就不与众相同，在内卦摇动，人口兴旺，在外卦动，禄和财丰厚；月建向前数第三位是朱雀，文书不用等约定，有吉神帮助，就有升迁，杀神交加，遭到拘系束缚。",
+        "en": "The Year branch is the Year Tally (judge when the line of the year branch moves, as in a Zi year with the Zi line moving): when the Year Tally is the Azure Dragon of Wood and moves, it adds office and emolument, outside wealth is stolen, and shaking inside there is worry for the family. The Month branch is the Month Tally: if the Month is the Azure Dragon, when it moves it is unlike the common run, shaking inside the household prospers, moving outside emolument and wealth are abundant; the third place ahead of the Month is the Vermilion Bird, the documents need not wait to be agreed, helped by auspicious spirits there is promotion, and with baleful spirits crossing one is bound and confined."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [492, 492],
+          "zh": ["年建为天符（子年子爻动方断。", "假如子年子爻动，", "临青龙木神也。）"],
+          "yi": ["年建是天符（子年子爻动才下断。", "比如子年子爻动，", "落在青龙木神上。）"],
+          "en": ["The Year branch is the Year Tally (judged only when, in a Zi year, the Zi line moves.", "For example, in a Zi year if the Zi line moves,", "it is on the Wood spirit, the Azure Dragon.)"] },
+        { "by": "经", "book": "周易尚占", "range": [493, 493],
+          "zh": ["天符青龙木，", "发动加官禄，", "在外盗资财，", "内摇忧眷属。"],
+          "yi": ["天符是青龙木时，", "发动，加官进禄；", "在外，盗去资财；", "在内摇动，忧虑家眷。"],
+          "en": ["When the Year Tally is the Azure Dragon of Wood,", "moving, it adds office and emolument;", "outside, wealth is stolen;", "shaking inside, there is worry for the family."] },
+        { "by": "经", "book": "周易尚占", "range": [501, 501],
+          "zh": ["月建为直符"],
+          "yi": ["月建是直符。"],
+          "en": ["The Month branch is the Month Tally."] },
+        { "by": "经", "book": "周易尚占", "range": [502, 502],
+          "zh": ["月建为青龙，", "动则不雷同，", "内摇人口旺，", "外动禄财丰。"],
+          "yi": ["月建是青龙，", "一动就不与众相同；", "在内摇动，人口兴旺；", "在外动，禄和财丰厚。"],
+          "en": ["If the Month is the Azure Dragon,", "when it moves it is unlike the common run;", "shaking inside, the household prospers;", "moving outside, emolument and wealth are abundant."] },
+        { "by": "经", "book": "周易尚占", "range": [503, 503],
+          "zh": ["前三为朱雀，", "文书不待约，", "吉助有升迁，", "杀交遭系缚。"],
+          "yi": ["月建向前数第三位是朱雀，", "文书不用等约定；", "有吉神帮助，就有升迁；", "杀神交加，遭到拘系束缚。"],
+          "en": ["The third place ahead of the Month is the Vermilion Bird,", "the documents need not wait to be agreed;", "helped by auspicious spirits there is promotion;", "with baleful spirits crossing, one is bound and confined."] }
+      ],
+      "note": {
+        "yi": "这里的「天符」是年建（年支），「直符」是月建，和卜筮大全阐奥歌章里的「唐符」「国印」（按年支取巳亥、寅申等）不是同一样东西。周易尚占自己说明了取法：子年子爻动、临青龙木神之类。",
+        "en": "The 'Year Tally' here is the year branch and the 'Month Tally' the month branch, which is not the same thing as the 'Tangfu' and 'State Seal' of the Chan'ao Ge in the Bushi Daquan (taken by the year branch as Si and Hai, Yin and Shen and so on). The Zhouyi Shangzhan itself explains the method: in a Zi year with the Zi line moving and standing on the Wood spirit, the Azure Dragon, and so on."
+      },
+      "see": ["LY.CAREER.YM.52"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.09",
+      "topic": "成否",
+      "chapter": "六亲章",
+      "chapter_en": "Chapter on the six relations",
+      "title": "六亲章·玄武当官奸与盗、两重官鬼必忧丧；若占官府反为吉，福厚官高名誉扬",
+      "rule": {
+        "yi": "玄武落在官鬼上，是奸和盗；两重官鬼，必有忧愁丧事；但如果占的是官府（的事），反而是吉：福气厚、官位高、名誉远扬。",
+        "en": "The Dark Tortoise on Pressure means treachery and theft, and two layers of Pressure bring worry and mourning; but if one divines about officialdom it is on the contrary auspicious: blessing thick, office high and fame spread."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [636, 636],
+          "zh": ["玄武当官奸与盗，", "两重官鬼必忧丧，", "若占官府反为吉，", "福厚官高名誉扬。"],
+          "yi": ["玄武当了官（落在官鬼上），是奸和盗；", "两重官鬼，必有忧愁丧事；", "如果占的是官府（的事），反而是吉；", "福气厚、官位高、名誉远扬。"],
+          "en": ["the Dark Tortoise on Pressure means treachery and theft;", "two layers of Pressure bring worry and mourning;", "but if one divines about officialdom it is on the contrary auspicious;", "blessing thick, office high and fame spread."] }
+      ],
+      "note": {
+        "yi": "这一句在「六亲章」里，前后讲的是家人、婚姻、讼事；「占官府」在这里指占做官、官场的事，不是占官司。",
+        "en": "This line stands in the chapter on the six relations among lines about family, marriage and lawsuits; 'divining about officialdom' here means divining a career in office and not a lawsuit."
+      },
+      "see": ["LY.CAREER.HDY.11", "LY.CAREER.CA.12"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.10",
+      "topic": "总则",
+      "chapter": "僧道章",
+      "chapter_en": "Chapter on monks and Daoists",
+      "title": "僧道章（周易尚占）·道士缁流问卜：身安世静最先；身爻克世可用、世应比和自然乐；世克身退守、财克世好求缘；六爻不动清福、一位交重事变迁；官鬼交好谒官员；世临白虎官司挠、身遇勾陈心事缠；父母克身师接引、青龙持世贵周全；勾陈带杀多魔障；兄弟勾陈同位动防法眷勾连；父母重重身受克被俗家牵；财空注疏徒劳、鬼旺营谋枉费钱",
+      "rule": {
+        "yi": "道士、僧人来问卜：身安稳、世安静最要紧；身爻克世，可以信用；世、应比和，自然安乐；世去克身，当退守；财来克世，好求缘；六爻不动是清福，一位交重，事就变迁；财扶助世，能够施舍行利；官鬼交动，偏好去谒见官员；世临白虎，官司纠缠扰乱；身遇勾陈，心事牵缠；父母克身，有师父接引；青龙持世，有贵人周全；勾陈带杀，多有魔障；官鬼临在财上，被贼人冤害；兄弟和勾陈同位发动，谨防法眷在外勾连；贵人和父母交动，师父通达圣道；青龙并上子孙，徒弟贤能；父母重重、身受克，断定是被俗家牵累；财空，注解经疏徒劳力；鬼旺，谋求营运白费钱。",
+        "en": "For Taoist priests and monks asking by divination: the Body at ease and the Self still comes first; the Body line controlling the Self, one may be trusted and used; Self and Other in accord, ease comes of itself; the Self controlling the Body, one should withdraw and hold; Wealth coming to control the Self is good for seeking alms; the six lines still is pure blessing, one line moving means change; with Wealth supporting the Self one can dispense benefit; Pressure moving is especially good for calling on officials; the Self on the White Tiger, a lawsuit disturbs one; the Body meeting Hook Earth, worries entangle the heart; Resource controlling the Body, a master receives and leads one on; the Azure Dragon holding the Self, a patron sees one through; Hook Earth carrying a baleful spirit, there are many demonic obstructions; Pressure on Wealth, one is wronged by thieves; Peer and Hook Earth moving together in the same place, beware of Dharma kin colluding with outsiders; the Noble and Resource moving together, the master is versed in the sacred; the Dragon joined to Output, the disciples are worthy; Resource upon Resource and the Body controlled, it is certain one is dragged back by one's lay family; Wealth void, annotating the scriptures is wasted labour; Pressure strong, scheming is money wasted."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [672, 672],
+          "zh": ["道士缁流来问卜，", "身安世静最为先，", "身爻克世堪谌用，", "世应比和乐自然。"],
+          "yi": ["道士、僧人来问卜，", "身安稳、世安静，最要紧；", "身爻克世，可以信用；", "世、应比和，自然安乐。"],
+          "en": ["Taoist priests and black-robed monks coming to ask by divination:", "the Body at ease and the Self still comes first;", "the Body line controlling the Self, one may be trusted and used;", "Self and Other in accord, ease comes of itself."] },
+        { "by": "经", "book": "周易尚占", "range": [673, 673],
+          "zh": ["世若克身当退守，", "财来克世好求缘，", "六爻不动为清福，", "一位交重事变迁。"],
+          "yi": ["世若克身，应当退守；", "财来克世，适合去求缘。", "六爻不动，是清福；", "有一位交重发动，事情就有变迁。"],
+          "en": ["If the Self controls the Body, one should withdraw and hold;", "Wealth coming to control the Self is good for seeking alms.", "With the six lines still it is pure blessing;", "one line moving, the matter changes."] },
+        { "by": "经", "book": "周易尚占", "range": [674, 674],
+          "zh": ["财扶世上能施利，", "鬼交偏好谒官员，", "世临白虎官司挠，", "身遇勾陈心事缠。"],
+          "yi": ["财扶助世，能够施舍行利；", "官鬼发动，偏适合去谒见官员。", "世临白虎，官司纠缠扰乱；", "身遇勾陈，心事牵缠。"],
+          "en": ["Wealth supporting the Self, one can dispense benefit;", "Pressure moving is especially good for calling on officials.", "the Self on the White Tiger, a lawsuit disturbs one;", "the Body meeting Hook Earth, worries entangle the heart."] },
+        { "by": "经", "book": "周易尚占", "range": [675, 675],
+          "zh": ["父母克身师接引，", "青龙持世贵周全，", "勾陈带杀多魔障，", "官鬼临财被戝冤。"],
+          "yi": ["父母克身，有师父来接引；", "青龙持世，有贵人周全。", "勾陈带杀，多有魔障；", "官鬼临在财上，被贼人冤害。"],
+          "en": ["Resource controlling the Body, a master receives and leads one on;", "the Azure Dragon holding the Self, a patron sees one through.", "Hook Earth carrying a baleful spirit, there are many demonic obstructions;", "Pressure on Wealth, one is wronged by thieves."] },
+        { "by": "经", "book": "周易尚占", "range": [676, 676],
+          "zh": ["兄弟勾陈同位动，", "谨防法眷外勾连，", "贵交父母师通圣，", "龙并子孙徒弟贤。"],
+          "yi": ["兄弟和勾陈同在一位发动，", "要谨防同门法眷在外面勾结牵连。", "贵人和父母交动，师父通达圣道；", "青龙并上子孙，徒弟贤能。"],
+          "en": ["Peer and Hook Earth moving together in the same place,", "beware of Dharma kin colluding and entangling you from outside.", "the Noble and Resource moving together, the master is versed in the sacred;", "the Dragon joined to Output, the disciples are worthy."] },
+        { "by": "经", "book": "周易尚占", "range": [677, 677],
+          "zh": ["父母重重身受克，", "断然身被俗家牵，", "财空注疏徒劳力，", "鬼旺营谋枉费钱。"],
+          "yi": ["父母重重叠叠、身受克，", "断定是身被俗家牵累。", "财落空，注解经疏是白费力气；", "官鬼旺，谋求营运是白白费钱。"],
+          "en": ["Resource upon Resource while the Body is controlled,", "it is certain one is dragged back by one's lay family.", "Wealth void, annotating the scriptures is wasted labour;", "Pressure strong, scheming and managing is money wasted."] }
+      ],
+      "note": {
+        "yi": "这一首和卜筮大全阐奥歌章的僧道章是同一首歌诀（后者有「羽士缁流来问占」），只有少数字句不同：「道士缁流来问卜」（「羽士缁流来问占」）；「堪谌用」（「堪谋用」，「谌」疑是「谋」之误）；「财扶世上能施利」（「财旺正宜收布施」，意思有出入：一说财扶世能施舍行利，一说财旺宜收布施）；「官司挠」（「官司绕」）；「多魔障」（「遭魔障」）；「官鬼临财被贼冤」（「玄武临财被贼冤」）；「贵交父母」「龙并子孙」（「贵临父母」「福德龙交」）。",
+        "en": "This is the same song as the chapter on monks and Daoists in the Chan'ao Ge of the Bushi Daquan (which has 'Yushi zi liu lai wen zhan'), with only a few differences in wording: 'coming to ask by divination' for 'coming to ask by prognostication'; 'may be trusted and used' for 'may plan and act' (the 'chen' probably a slip for 'mou'); 'Wealth supporting the Self one can dispense benefit' for 'Wealth strong is just right for receiving alms', which differs in sense (one says Wealth supports the Self so one may give and benefit, the other that Wealth strong suits receiving alms); 'a lawsuit disturbs' for 'a lawsuit entangles'; 'many demonic obstructions' for 'meets demonic obstruction'; 'Pressure on Wealth, wronged by thieves' for 'the Dark Tortoise on Wealth, wronged by thieves'; and 'the Noble and Resource moving together', 'the Dragon joined to Output' for 'the Noble on Resource', 'Output and the Dragon moving together'."
+      },
+      "see": ["LY.CAREER.CA.26", "LY.CAREER.CA.27", "LY.CAREER.CA.28", "LY.CAREER.CA.29"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.11",
+      "topic": "取象",
+      "chapter": "僧道章",
+      "chapter_en": "Chapter on monks and Daoists",
+      "title": "僧道章（周易尚占）·乱动切须休入宝、八纯好参玄、艮坤栖岩谷、离巽隐市廛；龙虎交驰宜访道、坎离辐辏好安禅；游魂带杀休云水、一世休囚莫置田",
+      "rule": {
+        "yi": "爻乱动，务必不要入宝；八纯卦倒好去参玄；艮、坤只好栖身岩穴山谷；离、巽偏适合隐居市井；龙虎交驰，适合访道；坎、离汇聚，适合安心坐禅；游魂卦带杀，别去云游；一世卦休囚，不要置买田产。",
+        "en": "With lines moving in disorder, by all means do not enter the 'treasure'; an Eight-Pure hexagram is on the contrary good for studying the mysteries; Gen and Kun are fit only for dwelling among crags and valleys; Li and Xun are better for hiding in the marketplace; the Dragon and Tiger racing against each other suit seeking the Way; Kan and Li converging suit settling into meditation; a Wandering Soul hexagram with a baleful spirit, do not go wandering like cloud and water; a First-Generation hexagram resting or trapped, do not buy fields."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [678, 678],
+          "zh": ["乱动切须休入宝，", "八纯却好去参玄，", "艮坤只好栖岩谷，", "离巽偏宜隐市廛。"],
+          "yi": ["爻乱动，务必不要入宝；", "八纯卦，倒好去参玄。", "艮、坤只好栖身岩穴山谷；", "离、巽偏适合隐居市井。"],
+          "en": ["with lines moving in disorder, by all means do not enter the 'treasure';", "an Eight-Pure hexagram is on the contrary good for studying the mysteries.", "Gen and Kun are fit only for dwelling among crags and valleys;", "Li and Xun are better for hiding in the marketplace."] },
+        { "by": "经", "book": "周易尚占", "range": [679, 679],
+          "zh": ["龙虎交驰宜访道，", "坎离辐辏好安禅，", "游魂带杀休云水，", "一世休囚莫置田。"],
+          "yi": ["龙虎交驰，适合访道；", "坎、离汇聚，适合安心坐禅。", "游魂卦带杀，不要云游；", "一世卦休囚，不要置买田产。"],
+          "en": ["With the Dragon and Tiger racing against each other, it suits seeking the Way;", "with Kan and Li converging, it suits settling into meditation.", "A Wandering Soul hexagram with a baleful spirit, do not go wandering like cloud and water;", "a First-Generation hexagram resting or trapped, do not buy fields."] }
+      ],
+      "note": {
+        "yi": "「乱动切须休入宝」的「入宝」不可解，卜筮大全作「乱动坐关为大忌」，「入宝」疑是「入定」一类的误字，这里照字面译，不确定。「栖岩谷」卜筮大全作「栖岩壑」。",
+        "en": "The 'enter the treasure' of 'with lines moving in disorder do not enter the treasure' cannot be made out; the Bushi Daquan reads 'with lines moving in disorder, going into retreat is the great taboo', and 'enter the treasure' looks like a wrong character for something like entering meditation, but it is translated literally and this is uncertain. 'Dwell among crags and valleys' reads in the Bushi Daquan 'among crags and ravines'."
+      },
+      "see": ["LY.CAREER.CA.30"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.12",
+      "topic": "成否",
+      "chapter": "僧道章",
+      "chapter_en": "Chapter on monks and Daoists",
+      "title": "僧道章（周易尚占）·子动妻交还俗汉；世空身旺地行仙、身空不动头头道、应旺无魔处处禅；应偶世持生又合神清身静寿绵绵；负结财身动填还俗债；世应不和身妄动待驴年；本身太岁临身命即日逢神得正传；太岁火神加父母天边恩命定来宣",
+      "rule": {
+        "yi": "子孙发动、妻财交动，是要还俗的汉子；世空、身旺，是地上的行仙；身空而不动，事事都是道；应旺而没有魔，处处都是禅；应落偶位、世持住，又生又合，精神清明、身体安静，寿命绵长；忽然有负债纠结、财和身一起发动，免不了去偿还俗世的债和冤；世、应不和、身又乱动，想了身达命要等到驴年（永远等不到）；本身、太岁落在身和命上，当天就遇上神人、得到真传；太岁、火神加在父母上，天边的恩命一定会来宣布。",
+        "en": "Output moving with Wealth also moving: a man who will return to lay life; the Self void and the Body strong makes an earth-wandering immortal; the Body void and still, every single thing is the Way; the Other strong with no demon, Chan is everywhere; the Other on an even place and the Self holding, generating and combining, the spirit clear and the body at peace, life is long; if suddenly there is a debt-knot and Wealth and the Body move, one cannot avoid paying back worldly debts and grievances; with Self and Other at odds and the Body moving wildly, to finish with the body and reach one's destiny one must wait for the Year of the Donkey; the person himself and Tai Sui on the Body and one's fate, on that very day one meets a divine person and receives the true transmission; Tai Sui and the Fire spirit added to Resource, a favour commanded from the edge of heaven will surely be proclaimed."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [680, 680],
+          "zh": ["子动妻交还俗汉，", "世空身旺地行仙，", "身空不动头头道，", "应旺无魔处处禅。"],
+          "yi": ["子孙发动、妻财交动，是要还俗的汉子；", "世空、身旺，是地上的行仙；", "身空而不动，事事都是道；", "应旺而没有魔，处处都是禅；"],
+          "en": ["Output moving and Wealth also moving: a man who will return to lay life;", "the Self void and the Body strong, an earth-wandering immortal;", "the Body void and still, every single thing is the Way;", "the Other strong with no demon, Chan is everywhere;"] },
+        { "by": "经", "book": "周易尚占", "range": [681, 681],
+          "zh": ["应偶世持生又合，", "神清身静寿绵绵，", "忽然负结财身动，", "未免填还俗债冤。"],
+          "yi": ["应落偶位、世持住，又生又合，", "精神清明、身体安静，寿命绵长。", "忽然有负债纠结、财和身一起发动，", "免不了要偿还俗世的债和冤。"],
+          "en": ["the Other on an even place and the Self holding, generating and combining,", "the spirit clear and the body at peace, life is long.", "If suddenly there is a debt-knot and Wealth and the Body move,", "one cannot avoid paying back worldly debts and grievances."] },
+        { "by": "经", "book": "周易尚占", "range": [682, 682],
+          "zh": ["世应不和身妄动，", "了身达命待驴年，", "本身太岁临身命，", "即日逢神得正传。"],
+          "yi": ["世、应不和，身又乱动，", "想了身达命，要等到驴年。", "本身、太岁落在身和命上，", "当天就遇上神人，得到真传。"],
+          "en": ["Self and Other at odds and the Body moving wildly,", "to finish with the body and reach one's destiny, wait for the Year of the Donkey.", "the person himself and Tai Sui on the Body and one's fate,", "on that very day one meets a divine person and receives the true transmission."] },
+        { "by": "经", "book": "周易尚占", "range": [683, 683],
+          "zh": ["太岁火神加父母，", "天边恩命定来宣，", "问予末后天机事，", "拈起笔来画个圈。"],
+          "yi": ["太岁、火神加在父母上，", "天边的恩命一定会来宣布。", "问我最后这件天机之事，", "拈起笔来，画一个圈。"],
+          "en": ["Tai Sui and the Fire spirit added to Resource,", "a favour commanded from the edge of heaven will surely be proclaimed.", "If you ask me about this last matter of heaven's secret,", "I take up my brush and draw a circle."] }
+      ],
+      "note": {
+        "yi": "「应偶世持生又合」卜筮大全作「应偶世奇生又合」（一个「持」一个「奇」）；「本身太岁临身命」卜筮大全作「木神太岁临身命」；末句「拈起笔来画个圈」卜筮大全作「拈笔书将一个缘」。「负结」「驴年」的说明同阐奥歌章（CA.31）。",
+        "en": "'The Other on an even place and the Self holding' reads in the Bushi Daquan 'the Other on an even place and the Self on an odd one' (a 'hold' for an 'odd'); 'the person himself and Tai Sui on the Body and one's fate' reads there 'the Wood spirit and Tai Sui on the Body and one's fate'; and the last line 'I take up my brush and draw a circle' reads there 'I take up my brush and write down a single yuan'. The remarks on 'debt-knot' and 'the Year of the Donkey' are as for the Chan'ao Ge (CA.31)."
+      },
+      "see": ["LY.CAREER.CA.31", "LY.CAREER.CA.32", "LY.CAREER.CA.33"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.13",
+      "topic": "升迁",
+      "chapter": "儒业章",
+      "chapter_en": "Chapter on the scholar's calling",
+      "title": "儒业章·功名仕途：青龙持世功名大、天喜同官道业亨、朱雀并财宜作馆；世应和身旺上书献策必成、日辰龙德生旺县宰州官力主盟；禄马贵人临月建公侯任责；朝君忌屯蹇、面圣宜晋升、天符持木高迁重任禄光荣",
+      "rule": {
+        "yi": "青龙持世，功名大；天喜同官，道业亨通；朱雀并财，宜开馆；勾陈同鬼，不要出游。世、应既和睦、身又旺，上书献策必定能成；日辰、龙德都得生旺，县令、州官会出力相助。禄、马、贵人落在月建上，公侯担任重责，官职不轻；天符值土，应当没有阻碍；月建持金，必有惊恐。父母最宜逢六合，世、身切忌犯三刑；刑、杀克身又克世，会陷身受辱、耽误一生。朝见君主，不可遇上屯、蹇；面圣偏适宜见到晋、升；更何况天符持木德，高升、担重任，俸禄光荣。",
+        "en": "With the Azure Dragon holding the Self, fame and rank are great; with the Joy star together with the office, the Way and its work go through; the Vermilion Bird joined to Wealth suits opening a school; Hook Earth with Pressure, do not go travelling about. With the Self and the Other in accord and the Body strong as well, submitting a memorial or a plan is sure to be accomplished; with the Day and Dragon Virtue both born and strong, the county magistrate and prefect will lend their strength. With the Emolument, the Horse and the Noble standing on the Month, dukes and marquises bear heavy charge and the post is weighty; with the Year Tally on Earth there is probably no hindrance; with the Month holding Metal there is sure to be fright. Resource is best meeting the six combinations, and the Self and the Body must avoid the three punishments; punishment and baleful spirits controlling the Body and the Self, one falls into disgrace and ruins one's life. To attend the sovereign one must not meet Zhun or Jian; to face the sage ruler it suits meeting Jin or Sheng; and moreover the Year Tally holding Wood virtue, there is high promotion, heavy charge and glorious emolument."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [691, 691],
+          "zh": ["青龙持世功名大，", "天喜同官道业亨，", "朱雀并财宜作馆，", "勾陈同鬼莫游行。"],
+          "yi": ["青龙持世，功名大；", "天喜同官，道业亨通；", "朱雀并财，宜开馆；", "勾陈同鬼，不要出游行走。"],
+          "en": ["With the Azure Dragon holding the Self, fame and rank are great;", "with the Joy star together with the office, the Way and its work go through;", "the Vermilion Bird joined to Wealth suits opening a school;", "Hook Earth with Pressure, do not go travelling about."] },
+        { "by": "经", "book": "周易尚占", "range": [692, 692],
+          "zh": ["世应既和身又旺，", "上书献策必图成，", "日辰龙德俱生旺，", "县宰州官力主盟。"],
+          "yi": ["世、应既然和睦、身又旺，", "上书献策，必定能图谋成功；", "日辰、龙德都得生旺，", "县令、州官会出力主盟。"],
+          "en": ["With the Self and the Other in accord and the Body strong as well,", "submitting a memorial or a plan is sure to be accomplished;", "with the Day and Dragon Virtue both born and strong,", "the county magistrate and prefect will lend their strength and take the lead."] },
+        { "by": "经", "book": "周易尚占", "range": [693, 693],
+          "zh": ["禄马贵人临月建，", "公侯任责职非轻，", "天符值土应非阻，", "月建持金必有惊。"],
+          "yi": ["禄、马、贵人落在月建上，", "公侯担任重责，官职不轻；", "天符值土，应当没有阻碍；", "月建持金，必有惊恐。"],
+          "en": ["With the Emolument, the Horse and the Noble standing on the Month,", "dukes and marquises bear heavy charge and the post is weighty;", "with the Year Tally on Earth there is probably no hindrance;", "with the Month holding Metal there is sure to be fright."] },
+        { "by": "经", "book": "周易尚占", "range": [694, 694],
+          "zh": ["父母最宜逢六合，", "世身切忌犯三刑，", "刑杀克身兼克世，", "陷身取辱误平生。"],
+          "yi": ["父母最适宜遇上六合；", "世、身切忌犯三刑；", "刑、杀克身又克世，", "就会陷身受辱，耽误一生。"],
+          "en": ["Resource is best meeting the six combinations;", "the Self and the Body must avoid the three punishments;", "punishment and baleful spirits controlling the Body and the Self,", "one falls into disgrace and ruins one's life."] },
+        { "by": "经", "book": "周易尚占", "range": [695, 695],
+          "zh": ["朝君不可逢屯蹇，", "面圣偏宜见晋升，", "那更天符持木德，", "高迁重任禄光荣。"],
+          "yi": ["朝见君主，不可遇上屯、蹇；", "面见圣上偏适宜遇到晋、升；", "更何况天符持木德，", "高升、担重任，俸禄光荣。"],
+          "en": ["To attend the sovereign one must not meet Zhun or Jian;", "to face the sage ruler it suits meeting Jin or Sheng;", "and moreover the Year Tally holding Wood virtue,", "there is high promotion, heavy charge and glorious emolument."] }
+      ],
+      "note": {
+        "yi": "儒业章前半（「凡占儒业究诸身……」到「青龙持世功名大」之前）讲读书、学业、功名，归考试一类，这里不收；从「青龙持世功名大」起，讲到上书、县宰州官、公侯任责、朝君面圣、高迁重任，是仕途，收在这里。「天符」是年建（见 ZSZ.08）。",
+        "en": "The first part of the chapter on the scholar's calling (from 'in divining the scholar's calling, examine the Body' up to the line before 'with the Azure Dragon holding the Self, fame and rank are great') speaks of study, learning and examination success and is for the examination domain, not taken here; from 'with the Azure Dragon holding the Self' on it speaks of memorials, magistrates and prefects, dukes and marquises, attending and facing the sovereign and high promotion, which is a career in office and is taken here. The 'Year Tally' is the year branch (see ZSZ.08)."
+      },
+      "see": ["LY.CAREER.TXF.05", "LY.CAREER.EL.89", "LY.CAREER.YM.106"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.14",
+      "topic": "取象",
+      "chapter": "六位例",
+      "chapter_en": "The positions of the six lines",
+      "title": "六位例·仕宦、占事、转官、僧道：六爻到初爻各主什么——仕宦（隐逸、王公、诸侯、大夫、士人、庶民）；占事（国事、心事、官事、家事、身事、人事）；转官（任所、宣命、差遣、保举、己身、解由）；僧道（祖师、师父、檀越、法眷、己身、徒弟）",
+      "rule": {
+        "yi": "六位例按六爻到初爻的次序列各行：仕宦——六爻隐逸、五爻王公、四爻诸侯、三爻大夫、二爻士人、初爻庶民；占事——六爻国事、五爻心事、四爻官事、三爻家事、二爻身事、初爻人事；转官——六爻任所、五爻宣命、四爻差遣、三爻保举、二爻己身、初爻解由；僧道——六爻祖师、五爻师父、四爻檀越、三爻法眷、二爻己身、初爻徒弟。",
+        "en": "The table of the positions of the six lines lists each row in order from the sixth line down to the first: official careers: the sixth line the recluse, the fifth princes and dukes, the fourth feudal lords, the third grandees, the second scholars, the first commoners; matters divined: the sixth the state, the fifth the heart, the fourth officials, the third the household, the second oneself, the first dealings with people; transfer of office: the sixth the place of the post, the fifth the proclaimed commission, the fourth the assignment, the third the sponsorship, the second oneself, the first the discharge; monks and Daoists: the sixth the patriarch, the fifth the master, the fourth the donor, the third the Dharma kin, the second oneself, the first the disciple."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [257, 257],
+          "zh": ["横看", "六爻", "五爻", "四爻", "三爻", "二爻", "初爻"],
+          "yi": ["横着看", "第六爻（最上）", "第五爻", "第四爻", "第三爻", "第二爻", "第一爻（最下）"],
+          "en": ["Read across:", "the sixth line (top),", "the fifth line,", "the fourth,", "the third,", "the second,", "the first (bottom)."] },
+        { "by": "经", "book": "周易尚占", "range": [267, 267],
+          "zh": ["仕宦", "隐逸", "王公", "诸侯", "大夫", "士人", "庶民"],
+          "yi": ["仕途做官", "隐居不仕的人", "王和公", "分封的诸侯", "大夫（高级官员）", "读书的士人", "平民百姓"],
+          "en": ["Official careers:", "the recluse,", "princes and dukes,", "feudal lords,", "grandees,", "scholars,", "commoners."] },
+        { "by": "经", "book": "周易尚占", "range": [278, 278],
+          "zh": ["占事", "国事", "心事", "官事", "家事", "身事", "人事"],
+          "yi": ["占问的事类", "国家的事", "心里的事", "官府的事", "家里的事", "自身的事", "人情往来的事"],
+          "en": ["Matters divined:", "the state,", "the heart,", "officials,", "the household,", "oneself,", "dealings with people."] },
+        { "by": "经", "book": "周易尚占", "range": [288, 288],
+          "zh": ["转官", "任所", "宣命", "差遣", "保举", "己身", "解由"],
+          "yi": ["调转官职", "任职的地方", "宣读的任命", "差遣的委派", "保荐推举", "自己本人", "解任的文书"],
+          "en": ["Transfer of office:", "the place of the post,", "the proclaimed commission,", "the assignment,", "the sponsorship,", "oneself,", "the discharge."] },
+        { "by": "经", "book": "周易尚占", "range": [266, 266],
+          "zh": ["僧道", "祖师", "师父", "檀越", "法眷", "己身", "徒弟"],
+          "yi": ["僧人道士", "开山祖师", "传授的师父", "施主檀越", "同门法眷", "自己本人", "门下弟子"],
+          "en": ["Monks and Daoists:", "the patriarch,", "the master,", "the donor,", "the Dharma kin,", "oneself,", "the disciple."] }
+      ],
+      "dispute": {
+        "yi": "「占事」一行，周易尚占的六位例是：六爻国事、五爻心事、四爻官事、三爻家事、二爻身事、初爻人事；断易天机的「鬼谷辨爻法·占求事」是：初心事、二身事、三家事、四人事、五官事、六国事。国事（六）、家事（三）、身事（二）两处位置相同，心事、官事、人事的位置不同：心事一个在五爻、一个在初爻，官事一个在四爻、一个在五爻，人事一个在初爻、一个在四爻。两书都没有解释，本库各照原书录，不裁定。另外，「仕宦」一行是按王公、诸侯、大夫的等级排的，断易天机的「占仕宦」（初吏人、二曹官、三长官、四监司、五朝仕、六执政）是按官署的层级排的，是两种分法。",
+        "en": "On the row for matters divined, the table of the Zhouyi Shangzhan reads: the sixth line the state, the fifth the heart, the fourth officials, the third the household, the second oneself, the first dealings with people; the Duanyi Tianji's 'Guigu method for divining an undertaking' reads: the first the heart, the second oneself, the third the household, the fourth dealings with people, the fifth officials, the sixth the state. The state (sixth), household (third) and oneself (second) stand in the same places, while the heart, officials and dealings with people differ: the heart is on the fifth in one and the first in the other, officials on the fourth in one and the fifth in the other, and dealings with people on the first in one and the fourth in the other. Neither book explains it, and each is recorded as it stands, without adjudication. The row for official careers is ordered by the rank of princes, dukes and grandees, while the Duanyi Tianji's 'divining official careers' (first clerk, second bureau officer, third head of office, fourth supervising commissioner, fifth court official, sixth minister in power) is ordered by the levels of the offices; these are two different schemes."
+      },
+      "note": {
+        "yi": "这是一张表，原书把每一行排成「标题 + 六格」，六格依次对应六爻、五爻、四爻、三爻、二爻、初爻（第一行「横看」给出了这个次序）。",
+        "en": "This is a table, which the book sets out as a heading and six cells, the six cells corresponding in order to the sixth, fifth, fourth, third, second and first lines (the first row, 'read across', gives this order)."
+      },
+      "see": ["LY.CAREER.DYTJ.01", "LY.CAREER.DYTJ.33", "LY.CAREER.DYTJ.47", "LY.CAREER.YM.50"]
+    },
+    {
+      "id": "LY.CAREER.ZSZ.15",
+      "topic": "取象",
+      "chapter": "八卦法用例",
+      "chapter_en": "Uses of the eight trigrams",
+      "title": "八卦法用例·君臣、人事、各业、寻访、转官：乾坤震巽坎离艮兑各主什么——君臣（王公、宰相、诸侯、大夫、公吏、士人、庶民、伶伦）；转官（朝廷、任所、差遣、宣命、印绶、保明、复任、解田）等",
+      "rule": {
+        "yi": "八卦法用例里和事业有关的几行，按乾、坤、震、巽、坎、离、艮、兑的次序：君臣——王公、宰相、诸侯、大夫、公吏、士人、庶民、伶伦；人事——官事、家事、身事、公事、忧事、心事、闲事、喜事；各业——士、农、工、商、武、文、医、卜；寻访——贵人、主人、客人、行人、吏人、士人、商人、匠人；转官——朝廷、任所、差遣、宣命、印绶、保明、复任、解田。",
+        "en": "The rows of the 'uses of the eight trigrams' bearing on careers, in the order Qian, Kun, Zhen, Xun, Kan, Li, Gen, Dui: lord and ministers: prince and duke, chancellor, feudal lord, grandee, public clerk, scholar, commoner, musician; human affairs: officials, household, oneself, public business, worries, the heart, idle matters, joyful matters; trades: scholar, farmer, artisan, merchant, soldier, literary man, doctor, diviner; seeking and visiting: the noble, the host, the guest, the traveller, the clerk, the scholar, the merchant, the craftsman; transfer of office: the court, the place of the post, the assignment, the proclaimed commission, the seal and ribbon, the certification, reinstatement, discharge."
+      },
+      "quotes": [
+        { "by": "经", "book": "周易尚占", "range": [333, 333],
+          "zh": ["乾", "坤", "震", "巽", "坎", "离", "艮", "兑"],
+          "yi": ["乾卦", "坤卦", "震卦", "巽卦", "坎卦", "离卦", "艮卦", "兑卦"],
+          "en": ["Qian:", "Kun:", "Zhen:", "Xun:", "Kan:", "Li:", "Gen:", "Dui:"] },
+        { "by": "经", "book": "周易尚占", "range": [335, 335],
+          "zh": ["君臣", "王公", "宰相", "诸侯", "大夫", "公吏", "士人", "庶民", "伶伦"],
+          "yi": ["君与臣", "王与公", "辅政的宰相", "分封的诸侯", "大夫官员", "衙门公吏", "读书的士人", "平民百姓", "乐工伶人"],
+          "en": ["Lord and ministers:", "prince and duke,", "chancellor,", "feudal lord,", "grandee,", "public clerk,", "scholar,", "commoner,", "musician."] },
+        { "by": "经", "book": "周易尚占", "range": [336, 336],
+          "zh": ["人事", "官事", "家事", "身事", "公事", "忧事", "心事", "闲事", "喜事"],
+          "yi": ["人事的类别", "官府之事", "家中之事", "自身之事", "公家之事", "忧愁之事", "心中之事", "闲杂之事", "喜庆之事"],
+          "en": ["Human affairs:", "officials,", "the household,", "oneself,", "public business,", "worries,", "the heart,", "idle matters,", "joyful matters."] },
+        { "by": "经", "book": "周易尚占", "range": [337, 337],
+          "zh": ["各业", "士", "农", "工", "商", "武", "文", "医", "卜"],
+          "yi": ["各行各业", "读书的士", "务农的农", "做工的工", "经商的商", "习武的武", "从文的文", "行医的医", "占卜的卜"],
+          "en": ["Trades:", "the scholar,", "the farmer,", "the artisan,", "the merchant,", "the soldier,", "the literary man,", "the doctor,", "the diviner."] },
+        { "by": "经", "book": "周易尚占", "range": [338, 338],
+          "zh": ["寻访", "贵人", "主人", "客人", "行人", "吏人", "士人", "商人", "匠人"],
+          "yi": ["寻找拜访", "显贵的人", "做东的主人", "来访的客人", "出门的人", "衙门的吏员", "读书的士人", "经商的人", "手艺匠人"],
+          "en": ["Seeking and visiting:", "the noble,", "the host,", "the guest,", "the traveller,", "the clerk,", "the scholar,", "the merchant,", "the craftsman."] },
+        { "by": "经", "book": "周易尚占", "range": [339, 339],
+          "zh": ["转官", "朝廷", "任所", "差遣", "宣命", "印绶", "保明", "复任", "解田"],
+          "yi": ["调转官职", "朝廷上", "任职的地方", "差遣的委派", "宣读的任命", "印信绶带", "保证查明", "重新任职", "解田（疑是解由）"],
+          "en": ["Transfer of office:", "the court,", "the place of the post,", "the assignment,", "the proclaimed commission,", "the seal and ribbon,", "the certification,", "reinstatement,", "discharge (the 'jietian' is probably a slip for 'jieyou')."] }
+      ],
+      "note": {
+        "yi": "这是一张表，每一行是「标题 + 八格」，八格依次对应乾、坤、震、巽、坎、离、艮、兑。「转官」一行最后一格「解田」，六位例的「转官」行里相应的是「解由」（离任的文书），「解田」疑是「解由」之误。",
+        "en": "This is a table, each row being a heading and eight cells corresponding in order to Qian, Kun, Zhen, Xun, Kan, Li, Gen and Dui. The last cell of the 'transfer of office' row, 'jietian', corresponds in the 'transfer of office' row of the table of the six positions to 'jieyou' (the certificate of discharge), and 'jietian' is probably a slip for it."
+      },
+      "see": ["LY.CAREER.ZSZ.14", "LY.CAREER.HDY.01"]
+    }
+  ]
+}

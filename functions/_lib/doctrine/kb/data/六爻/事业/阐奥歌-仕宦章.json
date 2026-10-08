@@ -1,0 +1,608 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "阐奥歌章",
+  "chapter": "仕宦章",
+  "chapter_en": "Verse on holding office",
+  "ranges": {"卜筮大全": [3724, 3806]},
+  "units": [
+    {
+      "id": "LY.CAREER.CA.01",
+      "topic": "升迁",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "占进职升官：先看父母发动，其次看官鬼；父鬼旺相才有份，兄财子动是空欢喜",
+      "rule": {
+        "yi": "占进职、升官，先看父母爻发动，其次看官鬼；父母和官鬼旺相兴盛，这事才有你的份；兄弟、妻财、子孙发动，只是白欢喜一场。",
+        "en": "To divine advance in post or promotion in rank, look first for Resource moving and then at Pressure; where Resource and Pressure are strong and flourishing there is a share for you, and where Peer, Wealth or Output moves the joy is in vain."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3727, 3727],
+          "zh": ["凡占进职与升官，", "父动为先鬼次看。", "父鬼旺兴须有分，", "兄财子动枉心欢。"],
+          "yi": ["凡是占进职、升官，", "先看父母发动，官鬼排在其次；", "父母、官鬼旺相兴盛，才有你的份；", "兄弟、妻财、子孙发动，只是白欢喜。"],
+          "en": ["In divining advance in post or promotion in rank,", "look first at Resource moving, with Pressure next;", "when Resource and Pressure are strong and flourishing there must be a share for you;", "if Peer, Wealth or Output moves, the joy is for nothing."] }
+      ],
+      "see": ["LY.CAREER.HJC.05", "LY.CAREER.ZS.02"]
+    },
+    {
+      "id": "LY.CAREER.CA.02",
+      "topic": "取象",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "求官而官鬼落在初爻（吏位）来克世身：主将来是廉察慈惠的贤官",
+      "rule": {
+        "yi": "求官时，初爻代表吏；官鬼落在初爻、来克世身，说明这人将来是廉明、慈惠、贤明的官员。",
+        "en": "In seeking office the first line stands for the clerk; Pressure on the first line, coming to control the self, marks one who will be an upright, merciful and discerning official."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3730, 3730],
+          "zh": ["求官鬼吏克身贤，"],
+          "yi": ["求官时，官鬼落在吏位（初爻）来克身，是贤官之象；"],
+          "en": ["In seeking office, Pressure on the clerk line (the first) and controlling the self is the sign of a worthy official;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3731, 3731],
+          "zh": ["初爻是吏，若鬼临初爻，来克本身，却主为廉察慈惠贤明官员也。"],
+          "yi": ["初爻是吏，若官鬼落在初爻、来克本人，就主他是廉察、慈惠、贤明的官员。"],
+          "en": ["The first line is the clerk; if Pressure falls on the first line and comes to control the man himself, it marks an official who is upright, kind and wise."] }
+      ],
+      "see": ["LY.CAREER.YY.27", "LY.CAREER.DYTJ.02"]
+    },
+    {
+      "id": "LY.CAREER.CA.03",
+      "topic": "升迁",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "驿马扶身或临官位，官职必迁；世应与驿马相合，求官大利",
+      "rule": {
+        "yi": "驿马去扶助世身，或者落在官位上，一定升迁；世、应和驿马相合，求官大吉大利。",
+        "en": "The Post Horse supporting the self, or standing on the seat of office, means promotion for sure; Self and Other combining with the Post Horse is greatly favourable for seeking office."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3733, 3733],
+          "zh": ["驿马相扶官职迁。"],
+          "yi": ["驿马前来扶助，官职就会迁动。"],
+          "en": ["With the Post Horse lending support, the post is moved up."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3734, 3734],
+          "zh": ["若驿马扶身，或临官位，定主升迁也。"],
+          "yi": ["若是驿马扶助世身，或者落在官位上，一定主升迁。"],
+          "en": ["If the Post Horse supports the self, or stands on the seat of office, it surely means promotion."] },
+        { "by": "经", "book": "卜筮大全", "range": [3739, 3739],
+          "zh": ["世应驿马相合吉，"],
+          "yi": ["世、应和驿马相合，是吉；"],
+          "en": ["Self and Other combining with the Post Horse is auspicious;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3740, 3740],
+          "zh": ["世应与驿马合，求官大利也。"],
+          "yi": ["世、应与驿马相合，求官大有利。"],
+          "en": ["Self and Other combining with the Post Horse is greatly favourable for seeking office."] }
+      ],
+      "see": ["LY.CAREER.ZS.11", "LY.CAREER.YY.07", "LY.CAREER.DYTJ.02"]
+    },
+    {
+      "id": "LY.CAREER.CA.04",
+      "topic": "应期",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "坎离二卦宜冬三月，震巽二卦应在申酉年（官星旺）",
+      "rule": {
+        "yi": "占得坎、离二卦，宜在冬季三个月（坎阳离阴，水火相济）；占得震、巽二卦，应在申、酉年——震、巽属木，得申、酉的金作官，官星旺。",
+        "en": "With the two trigrams Kan and Li, the three winter months suit (Kan is yang and Li is yin, water and fire balancing each other); with Zhen and Xun, look to the years of Shen and You, for Zhen and Xun are Wood and the Metal of Shen and You gives them a strong official."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3735, 3735],
+          "zh": ["坎离二卦冬三月，"],
+          "yi": ["坎、离二卦，宜在冬天三个月；"],
+          "en": ["the two trigrams Kan and Li: the three months of winter;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3736, 3736],
+          "zh": ["坎阳离阴，水火既济，宜于冬三月也。"],
+          "yi": ["坎是阳、离是阴，水火相济，所以宜在冬天三个月。"],
+          "en": ["Kan is yang and Li is yin, water and fire balance each other, so the three winter months suit."] },
+        { "by": "经", "book": "卜筮大全", "range": [3737, 3737],
+          "zh": ["震巽明知申酉年。"],
+          "yi": ["震、巽二卦，明白知道应在申、酉年。"],
+          "en": ["Zhen and Xun: know plainly that it falls in the years of Shen and You."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3738, 3738],
+          "zh": ["震巽木，得申酉金，官旺也。"],
+          "yi": ["震、巽属木，得到申、酉的金，官星就旺。"],
+          "en": ["Zhen and Xun are Wood; getting the Metal of Shen and You, the official is strong."] }
+      ],
+      "note": {
+        "yi": "原文只说「坎离二卦」「震巽」，没说是整个卦、内卦还是外卦；旧注也只解释了为什么是冬天、为什么是申酉年，没有解释这一点，本库不替它补。",
+        "en": "The verse says only 'the two trigrams Kan and Li' and 'Zhen and Xun', without saying whether the whole hexagram, the inner trigram or the outer one is meant; the note explains why winter and why the years Shen and You but not this, and it is not supplied here."
+      },
+      "see": ["LY.CAREER.DYTJ.02"]
+    },
+    {
+      "id": "LY.CAREER.CA.05",
+      "topic": "风险",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "坎、咸、复三卦，求官主心中狐疑不定",
+      "rule": {
+        "yi": "占得坎、咸、复这三个卦，求官的人心里疑惑、犹豫不决。",
+        "en": "With the hexagrams Kan, Xian or Fu, the seeker of office is left in doubt and hesitation."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3741, 3741],
+          "zh": ["坎咸复卦定狐疑。"],
+          "yi": ["坎、咸、复这三卦，一定是狐疑不决。"],
+          "en": ["Kan, Xian and Fu: it is settled that there is doubt and hesitation."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3742, 3742],
+          "zh": ["此三卦主心中疑惑。"],
+          "yi": ["这三个卦主心中疑惑。"],
+          "en": ["These three hexagrams point to doubt in the mind."] }
+      ],
+      "see": ["LY.CAREER.DYTJ.02"]
+    },
+    {
+      "id": "LY.CAREER.CA.06",
+      "topic": "成否",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "申酉辰戌持世为吉；当官遇禄好施为（申酉持世兼得禄最吉）",
+      "rule": {
+        "yi": "申、酉、辰、戌的爻持世是吉；做官又遇上禄，正好施展；其中申、酉持世又得禄，最吉。",
+        "en": "The branches Shen, You, Chen and Xu holding the Self are auspicious; taking office and meeting the Emolument gives room to act; Shen or You holding the Self and getting the Emolument is the most auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3743, 3743],
+          "zh": ["申酉辰戌持世吉，", "任官遇禄好施为。"],
+          "yi": ["申、酉、辰、戌持世是吉，", "做官又遇到禄，好施展作为。"],
+          "en": ["Shen, You, Chen and Xu holding the Self is auspicious;", "taking office and meeting the Emolument, there is room to act well."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3744, 3744],
+          "zh": ["申酉持世及得禄，最吉也。"],
+          "yi": ["申、酉持世，再得到禄，最吉。"],
+          "en": ["Shen or You holding the Self and also getting the Emolument is the most auspicious."] }
+      ],
+      "see": ["LY.CAREER.DYTJ.02"]
+    },
+    {
+      "id": "LY.CAREER.CA.07",
+      "topic": "成否",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "官鬼临身世、卦爻旺相才是得官的真兆；驿马空亡徒费力，卦遭胎没枉劳神",
+      "rule": {
+        "yi": "官鬼落在卦身或世爻上、卦里各爻旺相，才是真的得官，可喜；驿马落空亡，白费力气；卦遇胎、没，白白劳神。",
+        "en": "Pressure standing on the Body or the Self, with the lines of the hexagram thriving, is the true sign of getting the office and is cause for joy; the Post Horse Void means effort spent for nothing; a hexagram meeting Embryo or Sunk means wearying the mind in vain."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3745, 3745],
+          "zh": ["鬼临身世得官真，", "卦爻旺相为欢欣。", "驿马空亡徒费力，", "卦遭胎没枉劳神。"],
+          "yi": ["官鬼落在身、世上，得到官才是真的；", "卦里的爻旺相，是欢喜的事。", "驿马空亡，白费力气；", "卦遇胎、没，白白劳神。"],
+          "en": ["Pressure on the Body or the Self, and the office is truly gained;", "the lines of the hexagram strong and thriving, there is cause for joy.", "the Post Horse Void, effort is spent for nothing;", "the hexagram meeting Embryo or Sunk, the mind is wearied in vain."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3746, 3746],
+          "zh": ["若卦遇胎没，定枉劳神。", "立春后巽胎离没，若得家人卦之类是也。"],
+          "yi": ["若是卦遇到胎、没，必定白白劳神。", "立春之后，巽是胎、离是没，如果得到家人卦这一类，就是这种情形。"],
+          "en": ["If the hexagram meets Embryo or Sunk, it surely means wearing the mind in vain.", "After the Beginning of Spring, Xun is Embryo and Li is Sunk; getting a hexagram such as Jiaren is a case of it."] }
+      ],
+      "note": {
+        "yi": "胎、没是八卦随节气轮转的八个状态（旺、相、胎、没、死、囚、休、废）里的两个，这里的旧注只举了立春后的一例。大易断例卜筮元龟目说「胎没二卦，春巽离，夏坤兑，秋乾坎，冬艮震」，春天是巽、离，和旧注的例子相合。",
+        "en": "Embryo and Sunk are two of the eight states through which the trigrams turn with the solar terms (thriving, mutual, embryo, sunk, dead, trapped, resting, abandoned); the note here gives only one example, after the Beginning of Spring. The Dayi Duanli says 'the two trigrams of embryo and sunk: in spring Xun and Li, in summer Kun and Dui, in autumn Qian and Kan, in winter Gen and Zhen', which agrees with the note's example for spring."
+      },
+      "see": ["LY.CAREER.YY.51", "LY.CAREER.DYTJ.03"]
+    },
+    {
+      "id": "LY.CAREER.CA.08",
+      "topic": "风险",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "旺爻克应不良，应入墓忧死亡；世爻受克遭贬谪，世克他爻倍俸粮",
+      "rule": {
+        "yi": "旺相的爻去克应，不好；应入墓的时候，要担心有人死亡；世爻被克，遭贬谪、责罚；世爻去克别的爻，俸禄加倍。",
+        "en": "A strong line controlling the Other is not good; when the Other enters its tomb, beware of death; the Self being controlled brings demotion and banishment, and the Self controlling another line doubles one's pay."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3747, 3747],
+          "zh": ["旺爻克应是不良，", "应入墓时忧死亡。", "世爻受克遭贬谪，", "若克他爻倍俸粮。"],
+          "yi": ["旺相的爻克应，是不好的；", "应入墓的时候，要担心死亡；", "世爻被克，会遭贬谪；", "如果世爻去克别的爻，俸禄加倍。"],
+          "en": ["A strong line controlling the Other is not good;", "when the Other enters its tomb, worry about death;", "the Self line being controlled, one is demoted and exiled;", "if the Self controls another line, the salary is doubled."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3748, 3748],
+          "zh": ["世受克，遭贬罚，世克他爻，主倍得俸粮。"],
+          "yi": ["世爻受克，遭贬谪责罚；世爻克他爻，主俸禄加倍。"],
+          "en": ["The Self being controlled brings demotion and punishment; the Self controlling another line means the salary is doubled."] }
+      ],
+      "note": {
+        "yi": "原文没有说在求官里「应」代表谁（上司、君、还是对方），旧注也只解释了后两句；本库照字面译，不补主语。",
+        "en": "The text does not say whom the Other stands for in seeking office (a superior, the sovereign, or the other party), and the note explains only the last two lines; it is translated literally and no subject is supplied."
+      },
+      "see": ["LY.CAREER.DYTJ.03"]
+    },
+    {
+      "id": "LY.CAREER.CA.09",
+      "topic": "风险",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "初爻（人吏）空亡难立脚；内外卦纯阴名不扬",
+      "rule": {
+        "yi": "初爻是人吏，落空亡，即使做官清正，吏员没力量，谁替他奉行，所以难以立足；内外卦全是阴，阴柔立不起来，怎么振作？所以名声不扬。",
+        "en": "The first line is the clerk; if it falls Void, even an upright official has clerks without strength to carry out his orders, like a tree without branches, and it is hard to stand firm; if the inner and outer trigrams are both wholly yin, the soft cannot stand up and the name is not spread abroad."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3749, 3749],
+          "zh": ["人吏空亡难立脚，"],
+          "yi": ["吏爻落空亡，难以立足；"],
+          "en": ["the clerk line Void, it is hard to find a footing;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3750, 3750],
+          "zh": ["初为人吏爻，若值空亡，纵使为官清正，吏人无气，谁与奉行？", "如树无枝，所以难立。"],
+          "yi": ["初爻是人吏爻，若落空亡，即使为官清正，吏员没有力量，谁来替他奉行？", "好比树没有枝，所以难以立足。"],
+          "en": ["The first line is the clerk line; if it falls Void, even if the official is upright and clean, the clerks have no strength, and who will carry out his orders?", "It is like a tree without branches, so it is hard to stand."] },
+        { "by": "经", "book": "卜筮大全", "range": [3751, 3751],
+          "zh": ["内外纯阴名不扬。"],
+          "yi": ["内外卦都是纯阴，名声不扬。"],
+          "en": ["Inner and outer wholly yin, the name is not made known."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3752, 3752],
+          "zh": ["阴柔不立之象，若内外卦俱阴，安能振作？", "是以名不扬也。"],
+          "yi": ["阴柔立不起来的象，如果内外卦都是阴，怎么能振作？", "所以名声不扬。"],
+          "en": ["A sign of softness that cannot stand: if the inner and outer trigrams are both yin, how can one rouse oneself?", "Hence the name is not spread abroad."] }
+      ],
+      "see": ["LY.CAREER.DYTJ.04"]
+    },
+    {
+      "id": "LY.CAREER.CA.10",
+      "topic": "风险",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "子孙克鬼无官禄、福德动反不昌、子孙持世必隳官：子孙发动是求官大忌",
+      "rule": {
+        "yi": "子孙爻克伤官鬼，就没有官禄；福德（子孙）爻发动，反而不昌盛；子孙持世、子孙发动，是求官的大忌，一定落到毁官的地步。",
+        "en": "Output controlling Pressure leaves no official emolument; with the Output line stirring there is on the contrary no flourishing; Output holding the Self, or moving, is the great taboo in seeking office and surely ruins the post."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3753, 3753],
+          "zh": ["子爻克鬼无官禄，", "福德爻交反不昌。"],
+          "yi": ["子孙爻克官鬼，就没有官禄；", "福德爻发动，反而不昌盛。"],
+          "en": ["Output controlling Pressure, there is no official emolument;", "with the Output line stirring, on the contrary there is no flourishing."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3754, 3754],
+          "zh": ["子动克伤官鬼，故不昌也。"],
+          "yi": ["子孙发动，克伤官鬼，所以不昌盛。"],
+          "en": ["Output moving damages Pressure, so there is no flourishing."] },
+        { "by": "经", "book": "卜筮大全", "range": [3761, 3761],
+          "zh": ["子孙持世必隳官。"],
+          "yi": ["子孙持世，一定毁掉官职。"],
+          "en": ["Output holding the Self surely wrecks the post."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3763, 3763],
+          "zh": ["子动，乃求官大忌，必至隳坏也。"],
+          "yi": ["子孙发动，是求官的大忌，一定到毁坏的地步。"],
+          "en": ["Output moving is the great taboo in seeking office, and it will surely come to ruin."] }
+      ],
+      "see": ["LY.CAREER.ZS.02", "LY.CAREER.ZS.39", "LY.CAREER.DYTJ.04"]
+    },
+    {
+      "id": "LY.CAREER.CA.11",
+      "topic": "任所",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "卦克世身则职位不安；身克人吏则吏皆退避、百忧聚集",
+      "rule": {
+        "yi": "卦（宫）所属的五行去克世爻和身位，职位不得安稳；身、世去克初爻（人吏），吏员都躲避退让，各样事业都有忧患聚集的征兆。",
+        "en": "If the element the hexagram belongs to controls the Self line and the Body place, the post cannot be held in peace; if Body and Self control the first line, the clerk, all the clerks draw back, and anxieties gather over every undertaking."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3755, 3755],
+          "zh": ["卦克世身职不安，"],
+          "yi": ["卦克世、身，职位不安；"],
+          "en": ["the hexagram controlling the Self and the Body, the post is not secure;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3756, 3756],
+          "zh": ["若卦身所属，克世爻并身位，定主不能安职。", "如乾宫遁卦，本属金，遇世属火是也。"],
+          "yi": ["若是卦身所属的五行，克了世爻和身的位置，一定主不能安于职位。", "比如乾宫的遁卦，本来属金，遇到世爻属火，就是这样。"],
+          "en": ["If the element the Body of the hexagram belongs to controls the Self line and the place of the Body, it surely means one cannot rest secure in the post.", "For example the hexagram Dun in the palace of Qian belongs to Metal, and meeting a Self line that is Fire is such a case."] },
+        { "by": "经", "book": "卜筮大全", "range": [3757, 3757],
+          "zh": ["身克人吏百忧攒。"],
+          "yi": ["身去克人吏，百样忧愁聚到一起。"],
+          "en": ["the Body controlling the clerk, a hundred anxieties gather together."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3758, 3758],
+          "zh": ["太刚则折，若身世克初人吏爻，定主吏皆退避。", "凡百事业，主有忧攒之兆。"],
+          "yi": ["太刚就会折断，如果身、世去克初爻的人吏爻，一定主吏员都退避。", "各样事业，都主有忧患聚集的兆头。"],
+          "en": ["What is too hard breaks; if Body and Self control the first line, the clerk line, it surely means all the clerks draw back.", "In all undertakings it gives a sign of anxieties gathering."] }
+      ],
+      "see": ["LY.CAREER.YY.27", "LY.CAREER.DYTJ.04"]
+    },
+    {
+      "id": "LY.CAREER.CA.12",
+      "topic": "风险",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "白虎动时惊恐至",
+      "rule": {
+        "yi": "白虎爻旺相发动，惊恐的事马上就到。",
+        "en": "With the White Tiger line strong and moving, fright and alarm arrive at once."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3759, 3759],
+          "zh": ["白虎动时惊恐至，"],
+          "yi": ["白虎发动的时候，惊恐就来了；"],
+          "en": ["When the White Tiger moves, fright and alarm come;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3760, 3760],
+          "zh": ["若白虎旺动，惊恐立至也。"],
+          "yi": ["如果白虎旺相发动，惊恐立刻就到。"],
+          "en": ["If the White Tiger is strong and moving, fright and alarm come at once."] }
+      ],
+      "see": ["LY.CAREER.YM.52", "LY.CAREER.DYTJ.04"]
+    },
+    {
+      "id": "LY.CAREER.CA.13",
+      "topic": "成否",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "问文官武职，求官必须用唐符、国印：按太岁年支取——寅申年巳亥、巳亥年寅申、子午年卯酉、卯酉年子午、辰戌年丑未、丑未年辰戌",
+      "rule": {
+        "yi": "不论文官武职，求官都要看唐符、国印。按年支取：寅、申年，巳是唐符、亥是国印（旧注）；巳、亥年取寅、申；子、午年取卯、酉；卯、酉年取子、午；辰、戌年取丑、未；丑、未年取辰、戌。旧注说「以下类推」，这里按此读成每一对里前一支是唐符、后一支是国印。",
+        "en": "Whether it is a civil or a military post, in seeking office one must look to Tangfu and the State Seal. By the year branch: in the years Yin and Shen, Si is the Tangfu and Hai the State Seal (the note); in Si and Hai years take Yin and Shen; in Zi and Wu years, Mao and You; in Mao and You years, Zi and Wu; in Chen and Xu years, Chou and Wei; in Chou and Wei years, Chen and Xu. The note says the rest follow by analogy, which is read here as the first branch of each pair being the Tangfu and the second the State Seal."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3763, 3763],
+          "zh": ["若问文官并武职，", "唐符国印求端的。"],
+          "yi": ["若是问文官和武职，", "唐符、国印是求得确实答案的地方。"],
+          "en": ["If the question is a civil post or a military one,", "Tangfu and the State Seal are where the sure answer is found."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3763, 3763],
+          "zh": ["唐符国印，求官必须用之。"],
+          "yi": ["唐符、国印，求官必须用上。"],
+          "en": ["Tangfu and the State Seal: in seeking office they must be used."] },
+        { "by": "经", "book": "卜筮大全", "range": [3764, 3764],
+          "zh": ["寅申之年巳亥为，"],
+          "yi": ["寅、申年，取巳、亥。"],
+          "en": ["In the years Yin and Shen, it is Si and Hai;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3765, 3765],
+          "zh": ["寅申之年，巳为唐符，亥为国印，以下类推。"],
+          "yi": ["寅、申年，巳是唐符，亥是国印，以下依此类推。"],
+          "en": ["In the years Yin and Shen, Si is the Tangfu and Hai the State Seal; the rest follow by analogy."] },
+        { "by": "经", "book": "卜筮大全", "range": [3766, 3766],
+          "zh": ["巳亥之年寅申觅。", "子午之年卯酉求，", "卯酉之年子午出。", "辰戌之年丑未方，", "丑未之年在辰戌。"],
+          "yi": ["巳、亥年，到寅、申里找。", "子、午年，到卯、酉里求；", "卯、酉年，子、午出现。", "辰、戌年，在丑、未的方位；", "丑、未年，在辰、戌。"],
+          "en": ["In the years Si and Hai, look among Yin and Shen.", "In the years Zi and Wu, seek among Mao and You;", "in the years Mao and You, Zi and Wu appear.", "In the years Chen and Xu, it is in the place of Chou and Wei;", "in the years Chou and Wei, it is in Chen and Xu."] }
+      ],
+      "see": ["LY.CAREER.YY.22", "LY.CAREER.DYTJ.05"]
+    },
+    {
+      "id": "LY.CAREER.CA.14",
+      "topic": "升迁",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "官鬼临唐符国印最佳，可作朝中辅翼；符印二爻发动，诏书立至；宜静而动必升迁，宜动而静多掩抑",
+      "rule": {
+        "yi": "官鬼落在唐符、国印上最好，日后可在朝中做辅佐；唐符、国印这两爻在上卦发动，一定符印到手，不久随诏书起用；「宜静而动必升迁，宜动而静多掩抑」。",
+        "en": "Pressure standing on the Tangfu or the State Seal is the best, one who will serve as a support at court; when these two lines move in the upper trigram the tally and seal are surely in hand and one will soon be raised by imperial edict; 'what should be still but moves will surely rise; what should move but stays still is mostly held down'."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3766, 3766],
+          "zh": ["鬼临符印最为佳，", "当作朝中资辅翼。", "宜静而动必升迁，", "宜动而静多掩抑。"],
+          "yi": ["官鬼落在唐符、国印上，最好，", "可以在朝中做辅佐。", "该静的偏动，必定升迁；", "该动的偏静，多半被压住。"],
+          "en": ["Pressure standing on the Tangfu or the State Seal is the best,", "one who will serve as a support at court.", "What should be still but moves will surely rise in post;", "what should move but stays still is mostly held down."] },
+        { "by": "经", "book": "卜筮大全", "range": [3779, 3779],
+          "zh": ["就多符印两爻权，"],
+          "yi": ["再看唐符、国印两爻来推。"],
+          "en": ["Then reckon from the two lines, Tangfu and State Seal."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3780, 3780],
+          "zh": ["更以唐符国印二爻推之，若果上卦发动，定主符印入手。", "符印爻所系重，故再言。"],
+          "yi": ["再用唐符、国印两爻来推：如果上卦里发动，一定是符、印到手。", "符、印这两爻关系重大，所以再说一遍。"],
+          "en": ["Reckon further from the two lines, Tangfu and State Seal: if they move in the upper trigram, the tally and seal will surely come into one's hand.", "These two lines carry great weight, so they are mentioned again."] },
+        { "by": "经", "book": "卜筮大全", "range": [3781, 3781],
+          "zh": ["早晚当随诏书起。"],
+          "yi": ["早晚会随着诏书起用。"],
+          "en": ["Sooner or later one will be raised on the strength of an imperial edict."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3782, 3782],
+          "zh": ["符印既动，诏书立至。"],
+          "yi": ["符、印既然发动，诏书立刻就到。"],
+          "en": ["Once the tally and seal move, the edict arrives at once."] }
+      ],
+      "note": {
+        "yi": "「宜静而动」「宜动而静」没有交代是哪一爻，旧注也没有解释，本库不替它补主语。「就多符印两爻权」的「就多」疑是「就中」之误（断易天机的同一句作「就中苻印两爻推」），这里按旧注的解释读成「再用符、印两爻推」。",
+        "en": "'What should be still but moves' and 'what should move but stays still' do not say which line, and the note does not explain, so no subject is supplied here. The 'jiu duo' of 'jiu duo fu yin liang yao quan' looks like a slip for 'jiu zhong' (the same line in the Duanyi Tianji reads 'from among these, reckon the two lines tally and seal'), and it is read here as 'reckon from the two lines tally and seal', following the note."
+      },
+      "see": ["LY.CAREER.YY.22", "LY.CAREER.DYTJ.05"]
+    },
+    {
+      "id": "LY.CAREER.CA.15",
+      "topic": "任所",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "巽动指东与南，乾位交重出西北（任所方位；原文未说由哪一爻动）",
+      "rule": {
+        "yi": "巽象发动时，方位在东和南；乾位上有动爻，出在西北。",
+        "en": "With Xun stirring the direction is east and south; with moving lines in the Qian place it goes out to the northwest."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3767, 3767],
+          "zh": ["巽象摇时东与南，", "乾位交重出西北。"],
+          "yi": ["巽象发动的时候，是东方和南方；", "乾位上有动爻，出在西北。"],
+          "en": ["When the Xun image stirs, it is the east and the south;", "with moving lines in the Qian place, it goes out to the northwest."] }
+      ],
+      "note": {
+        "yi": "旧注对这两句没有解释：没说是官鬼落在巽、乾，还是别的爻动，也没说指任所、出行还是别的。这里只照字面译方位，不补。",
+        "en": "The note gives no explanation of these two lines: it does not say whether it is Pressure falling in Xun or Qian or some other line moving, nor whether it means the post, travel or something else. Only the directions are translated literally and nothing is added."
+      },
+      "see": ["LY.CAREER.DYTJ.06"]
+    },
+    {
+      "id": "LY.CAREER.CA.16",
+      "topic": "国朝",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "君臣世应上下交：世为君、应为臣，上为君、下为臣，上下相生则君臣相得；世应相生而奉命训练出行，往则必建功",
+      "rule": {
+        "yi": "世是君、应是臣，上卦是君、下卦是臣；如果上下相生，君臣唱和，满堂和气；卦中世、应相生，又有奉命去训练士卒的差事，去了必定建功。",
+        "en": "The Self is the lord and the Other the minister, the upper trigram the lord and the lower the minister; if upper and lower generate each other, lord and ministers answer one another in song and the whole hall is in warm accord; when Self and Other generate each other and there is an order to go and drill troops, going will surely win merit."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3767, 3767],
+          "zh": ["君臣世应上下交，"],
+          "yi": ["君臣、世应、上下相交，"],
+          "en": ["Lord and minister, Self and Other, upper and lower, meeting each other,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3768, 3768],
+          "zh": ["世为君、应为臣，上为君、下为臣。", "若上下相生，主君臣赓歌，嘘沸一堂也。"],
+          "yi": ["世是君、应是臣，上面是君、下面是臣。", "如果上下相生，主君臣相互唱和，满堂和气融融。"],
+          "en": ["The Self is the lord and the Other the minister; the upper is the lord and the lower the minister.", "If upper and lower generate each other, it means lord and ministers answer each other in song and the whole hall is in a warm stir."] },
+        { "by": "经", "book": "卜筮大全", "range": [3769, 3769],
+          "zh": ["练行宜往兴功绩。"],
+          "yi": ["训练的差事适宜前往，可以兴起功绩。"],
+          "en": ["for a training mission it is fitting to go, and merit will arise."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3770, 3770],
+          "zh": ["练者，训练士卒也。", "遇卦中世应相生，有命训练之行，往之，必建功也。"],
+          "yi": ["练，就是训练士卒。", "遇到卦中世、应相生，有奉命训练的差事，前往就一定建功。"],
+          "en": ["'Lian' means drilling the soldiers.", "When Self and Other generate each other in the hexagram and there is an order to go and drill troops, going there will surely win merit."] }
+      ],
+      "see": ["LY.CAREER.DYTJ.06"]
+    },
+    {
+      "id": "LY.CAREER.CA.17",
+      "topic": "取象",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "卦内作何官：火为文章喉舌（翰苑）、土为守令、水为江滨巡守、金带兵刑生杀权、木主工科建创；官爵大小随动爻衰旺",
+      "rule": {
+        "yi": "要知道卦里是做什么官，先仔细看身：火是文章、喉舌之位（翰林一类）；土是守、令（修治城垒）；水是江边巡守的职事；金带兵、刑和生杀之权；木主工科，管建造创设；官爵大小都随动爻的休囚旺相来说。",
+        "en": "To know what office the hexagram holds, first look carefully at the Body: Fire is the place of letters and of the throat and tongue of the court (an office of the Hanlin kind); Earth is the prefect or magistrate (repairing city walls); Water is a patrol-and-guard post along rivers and shores; Metal carries soldiers, punishments and the power of life and death; Wood governs the works section, in charge of building and founding; and the rank, high or low, follows whether the moving line is thriving or weak."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3771, 3771],
+          "zh": ["欲知卦内作何官，", "先向身中仔细看，", "火是文章喉舌位，"],
+          "yi": ["要知道卦里做什么官，", "先到「身」里仔细看；", "火是文章、喉舌的位置，"],
+          "en": ["To know what office the hexagram holds,", "first look carefully into the Body;", "Fire is the place of letters and of the throat and tongue,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3772, 3772],
+          "zh": ["火乃文明之象，故主翰苑之官。"],
+          "yi": ["火是文明的象，所以主翰林院的官。"],
+          "en": ["Fire is the image of civilization and brightness, so it stands for an office of the Hanlin Academy."] },
+        { "by": "经", "book": "卜筮大全", "range": [3773, 3773],
+          "zh": ["土为守令渐盘桓。"],
+          "yi": ["土是守、令，渐渐在那里盘桓。"],
+          "en": ["Earth is the prefect and the magistrate, who little by little tarries there."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3774, 3774],
+          "zh": ["盘桓者，修治城垒。", "土爻持世，故应此职也。）"],
+          "yi": ["盘桓，就是修治城垒。", "土爻持世，所以应这个职务。）"],
+          "en": ["'Panhuan' means repairing and building city walls and ramparts.", "With an Earth line holding the Self, it answers to this post.)"] },
+        { "by": "经", "book": "卜筮大全", "range": [3775, 3775],
+          "zh": ["水是江滨巡守职，", "金带兵刑生杀权。", "木主工科司建创，", "大小皆随衰旺言。"],
+          "yi": ["水是江边巡守的职事，", "金带着兵、刑和生杀的权力，", "木主工科，管建造创设，", "官职大小，都随爻的衰旺来说。"],
+          "en": ["Water is the post of patrol and guard along the rivers and shores,", "Metal carries the soldiers, the punishments and the power of life and death,", "Wood governs the works section, in charge of building and founding,", "and whether the post is large or small is said by the weakness or strength of the line."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3776, 3776],
+          "zh": ["随动爻之休囚旺相，而定其官爵之尊卑也。"],
+          "yi": ["随动爻的休囚旺相，来定官爵的尊卑。"],
+          "en": ["The rank, high or low, is fixed by whether the moving line is at rest, trapped, strong or thriving."] }
+      ],
+      "see": ["LY.CAREER.YY.05", "LY.CAREER.YM.50", "LY.CAREER.DYTJ.07"]
+    },
+    {
+      "id": "LY.CAREER.CA.18",
+      "topic": "贵人",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "喜神驿马临官鬼：荐举的文书一封接一封，知己多",
+      "rule": {
+        "yi": "喜神、驿马落在官鬼上，荐举的文书一封接一封，知己很多。",
+        "en": "With the Joy spirit and the Post Horse on Pressure, recommending letters come one after another and those who know you are many."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3777, 3777],
+          "zh": ["喜神驿马临官鬼，", "美削重重有知己。"],
+          "yi": ["喜神、驿马落在官鬼上，", "荐举的文书一封又一封，有知己。"],
+          "en": ["The Joy spirit and the Post Horse on Pressure,", "recommending letters follow one another, and there are those who know you."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3778, 3778],
+          "zh": ["美削者，举纸笺也。", "因有喜神驿马临于官鬼，故美削重重，得知己之多也。"],
+          "yi": ["美削，就是用纸笺举荐。", "因为有喜神、驿马落在官鬼上，所以举荐的文书一封接一封，得到的知己多。"],
+          "en": ["'Meixiao' means recommending by letters on paper.", "Because the Joy spirit and the Post Horse are on Pressure, the letters of recommendation come one after another and the friends who know you are many."] }
+      ],
+      "see": ["LY.CAREER.EL.80", "LY.CAREER.DYTJ.08"]
+    },
+    {
+      "id": "LY.CAREER.CA.19",
+      "topic": "国朝",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "卦无太岁只升迁，太岁与世爻、身位相合则入朝见天子",
+      "rule": {
+        "yi": "太岁上卦，主入朝；卦里没有太岁，只能迁调；太岁与世爻合、与身位合，主入朝觐见天子。",
+        "en": "With Tai Sui in the hexagram there is entry to court; without Tai Sui one can only be moved or promoted; Tai Sui combining with the Self line and with the Body place means going into court and seeing the Son of Heaven."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3783, 3783],
+          "zh": ["卦无太岁只升迁，"],
+          "yi": ["卦里没有太岁，只能升迁；"],
+          "en": ["With no Tai Sui in the hexagram, only promotion;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3784, 3784],
+          "zh": ["太岁上卦，则主入朝，若无，但能迁改。"],
+          "yi": ["太岁上卦，就主入朝；如果没有，只能迁调改任。"],
+          "en": ["With Tai Sui in the hexagram it means entering court; without it, one can only be transferred or moved."] },
+        { "by": "经", "book": "卜筮大全", "range": [3785, 3785],
+          "zh": ["太岁合时见天子。"],
+          "yi": ["太岁相合的时候，能见天子。"],
+          "en": ["when Tai Sui combines, one sees the Son of Heaven."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3786, 3786],
+          "zh": ["太岁若与世爻合，身位合，主入朝而见天子也。"],
+          "yi": ["太岁如果与世爻相合、与身位相合，主入朝而见到天子。"],
+          "en": ["If Tai Sui combines with the Self line and with the place of the Body, it means entering court and seeing the Son of Heaven."] }
+      ],
+      "see": ["LY.CAREER.HJC.07", "LY.CAREER.EL.91", "LY.CAREER.YM.106", "LY.CAREER.DYTJ.09"]
+    },
+    {
+      "id": "LY.CAREER.CA.20",
+      "topic": "升迁",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "再得雷火杀重重（逢动）：大吉，名位将至王公；雷火杀有两种起法，旧注并存",
+      "rule": {
+        "yi": "卦里再得雷火杀、重重叠叠，又逢发动，是大吉的征兆，眼看名位将到王公。旧注给了雷火杀的起法，但前后有两种说法并存。",
+        "en": "If the hexagram further gets the Thunder-Fire baleful spirit, layer upon layer, and it moves, it is a sign of great fortune, and soon rank and position reach prince and duke. The note gives the method for finding the Thunder-Fire spirit, but two accounts of it stand side by side."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3787, 3787],
+          "zh": ["更得雷火杀重重，"],
+          "yi": ["再得到雷火杀，重重叠叠，"],
+          "en": ["And if one further gets the Thunder-Fire baleful spirit, layer upon layer,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3788, 3790],
+          "zh": ["雷火寅猪申巳求，四孟从之遍一周。", "即时冲破为天后，便见求官驿马流。", "其法正月起寅，二月丑，逆数十二位是也。", "不欲赘言，故以四孟提起。", "遇动，大吉之兆，应如下文："],
+          "yi": ["雷火要在寅、亥、申、巳里找，四孟之支依次轮转，绕满一周。", "一旦立刻被冲破，就成了天后，便能看到求官的驿马流动。", "它的算法：正月起寅，二月是丑，逆着数遍十二位就是。", "不想啰嗦，所以只拿四孟来提纲。", "遇到发动，是大吉的征兆，应验的情形如下文："],
+          "en": ["Look for the Thunder-Fire among Yin, Hai, Shen and Si, going through the four Meng branches in turn until one full circuit is made.", "Once it is at once clashed and broken it becomes Tianhou, and one then sees the Post Horse of the seeker of office flow on.", "Its method: begin at Yin in the first month, Chou in the second, and count backwards through the twelve places.", "Not wishing to say more than needed, only the four Meng are raised as the head.", "When it moves, it is a sign of great fortune, and the result is as in the text that follows:"] },
+        { "by": "经", "book": "卜筮大全", "range": [3793, 3793],
+          "zh": ["看看名位至王公。"],
+          "yi": ["眼看着名位就到王公。"],
+          "en": ["soon rank and position reach prince and duke."] }
+      ],
+      "note": {
+        "yi": "旧注里同时给了两套雷火杀的起法：第一句按「寅、亥、申、巳」四孟轮转一周；第三句又说「正月起寅，二月丑，逆数十二位」。两套到二月就对不上（一个是亥，一个是丑）。「即时冲破为天后」一句也没有解释。本库照录，不裁定。",
+        "en": "The note gives two accounts of how to find the Thunder-Fire spirit side by side: the first sentence runs through the four Meng branches Yin, Hai, Shen and Si in one circuit, while the third says 'begin at Yin in the first month, Chou in the second, counting backwards through the twelve places'. The two part company already at the second month (Hai in one, Chou in the other), and the sentence 'once clashed and broken it becomes Tianhou' is not explained. It is recorded as it stands and not adjudicated."
+      },
+      "see": ["LY.CAREER.YY.22", "LY.CAREER.DYTJ.10"]
+    },
+    {
+      "id": "LY.CAREER.CA.21",
+      "topic": "贵人",
+      "chapter": "仕宦章",
+      "chapter_en": "Verse on holding office",
+      "title": "天乙贵人再来相合：不止自己享禄，子孙代代为官受封赠（旧注的天乙贵人按月份取巳申亥寅轮转）",
+      "rule": {
+        "yi": "天乙贵人再来相合，不只自己享俸禄，而且世世代代都能做官、受封赠。旧注里的天乙贵人按月份取：正月在巳、二月在申、三月在亥、四月在寅，五、九月仍在巳，往后三位轮转；逢动一定吉，子孙代代做公卿。",
+        "en": "If the Tianyi Noble further combines, one enjoys the emolument oneself and, generation after generation, holds office and receives imperial honours. The note finds the Tianyi Noble by the month: Si in the first month, Shen in the second, Hai in the third, Yin in the fourth, Si again in the fifth and ninth, the three places turning on after that; if it moves it is surely auspicious, and descendants will be dukes and ministers generation after generation."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3793, 3793],
+          "zh": ["天乙贵人更相合，"],
+          "yi": ["天乙贵人再来相合，"],
+          "en": ["And if the Tianyi Noble further combines,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3794, 3794], "literal": ["子孙"],
+          "zh": ["天乙贵人：正月在巳二月申，三月在亥四月寅。", "五九依然居巳上，未月至丑三位轮。", "若还遇动定为吉，子孙代代作公卿。", "其法只以巳申亥寅四位，周而复始轮行十二位，正月巳，二月申，余仿此。"],
+          "yi": ["天乙贵人：正月在巳，二月在申，三月在亥，四月在寅。", "五月、九月依然居在巳上，从未月到丑月是三位轮转。", "如果还逢发动，一定是吉，子孙代代做公卿。", "它的算法只用巳、申、亥、寅四个位置，周而复始轮行十二位：正月巳，二月申，其余依此类推。"],
+          "en": ["The Tianyi Noble: Si in the first month, Shen in the second, Hai in the third, Yin in the fourth.", "In the fifth and ninth months it again stands at Si, and from the Wei month to the Chou month the three places turn in turn.", "If it also meets movement it is surely auspicious, and descendants will be dukes and ministers generation after generation.", "Its method uses only the four places Si, Shen, Hai and Yin, going round and round through the twelve places: Si in the first month, Shen in the second, and the rest likewise."] },
+        { "by": "经", "book": "卜筮大全", "range": [3796, 3796],
+          "zh": ["代代为官受赠封。"],
+          "yi": ["世世代代做官，受朝廷的赠封。"],
+          "en": ["generation after generation holding office and receiving imperial honours."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3797, 3797],
+          "zh": ["雷火贵人既合，非惟己身享禄，主代代受封赠也。"],
+          "yi": ["雷火、贵人既然相合，不只是自己享俸禄，主世世代代受封赠。"],
+          "en": ["With the Thunder-Fire spirit and the Noble combined, not only does one enjoy the emolument oneself, it means honours received generation after generation."] },
+        { "by": "经", "book": "卜筮大全", "range": [3798, 3798],
+          "zh": ["此是天纲玄妙诀，", "劝君紬绎莫匆匆。"],
+          "yi": ["这是天纲的玄妙诀窍，", "劝你仔细抽绎，不要匆忙。"],
+          "en": ["This is the profound secret of Tiangang,", "I urge you to unravel it carefully and not in haste."] }
+      ],
+      "dispute": {
+        "yi": "旧注里的天乙贵人按月份取（巳申亥寅轮转），而卜筮大全另一处、卜筮正宗、增删卜易、易林补遗等讲的天乙贵人都是按日干取：甲戊（庚）牛羊、乙己鼠猴、丙丁猪鸡、壬癸兔蛇、庚辛（六辛）马虎。两种起法不同，本库各照原书录，不裁定。",
+        "en": "The note here finds the Tianyi Noble by the month (turning through Si, Shen, Hai, Yin), while elsewhere in the Bushi Daquan itself, and in the Bushi Zhengzong, the Zengshan Buyi and the Yilin Buyi, the Tianyi Noble is found by the day stem: Jia and Wu (and Geng) ox and sheep, Yi and Ji rat and monkey, Bing and Ding pig and rooster, Ren and Gui hare and snake, Geng and Xin (or the six Xin) horse and tiger. The two methods differ; each is recorded as its book gives it and neither is adjudicated."
+      },
+      "note": {
+        "yi": "「天纲」在这里没有交代是谁；断易天机的今人注读作袁天纲。本库照字面译成 Tiangang，不替它定。",
+        "en": "'Tiangang' is not identified here; a modern note in the Duanyi Tianji reads it as Yuan Tiangang. It is rendered literally as Tiangang and nothing is decided."
+      },
+      "see": ["LY.CAREER.DYTJ.10"]
+    }
+  ]
+}

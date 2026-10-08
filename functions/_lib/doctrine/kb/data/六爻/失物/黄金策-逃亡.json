@@ -1,0 +1,577 @@
+{
+  "shushu": "六爻",
+  "domain": "失物",
+  "work": "黄金策",
+  "chapter": "逃亡",
+  "chapter_en": "Runaways",
+  "ranges": {"卜筮正宗": [2905, 2961]},
+  "units": [
+    {
+      "id": "LY.LOST.HJC.01",
+      "topic": "总则",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·须察用爻方知实迹：占奴婢妻妾逃亡，用爻就是财爻，看它才知道人的实际去向",
+      "rule": {
+        "yi": "宽容待人，众人会生出侮慢；严厉管人，逃亡就会发生，所以即使大圣人有容人的度量，也说小人难养。要知道逃走的人的实际去向，必须察看用爻。用爻，比如占奴仆、妻妾逃亡，就看财爻这一类。",
+        "en": "Treat people with leniency and the crowd turns insolent; manage them with severity and flight begins; hence even the great sage, for all his tolerance, said that petty people are hard to keep. To learn where the runaway has really gone, one must examine the Subject line; for example, in divining for the flight of a servant or a wife or concubine, one looks at the Wealth line and the like."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2907, 2907],
+          "zh": ["宽以御众侮慢斯加，", "严以治人逃亡遂起，", "故虽大圣之有容，", "尚谓小人之难养。", "须察用爻，", "方知实迹"],
+          "yi": ["宽容地对待众人，轻慢侮辱就会加上来；", "严厉地管人，逃亡就因此发生，", "所以即使是大圣人有容人的度量，", "还说小人难以养。", "必须察看用爻，", "才知道实际的踪迹。"],
+          "en": ["Treat the crowd with leniency and insolence is added;", "manage people with severity and flight arises from it,", "so even the great sage, for all his tolerance,", "said that petty people are hard to keep.", "One must examine the Subject line,", "and only then knows the true trail."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2907, 2907],
+          "zh": ["用爻者，如占奴卜妻妾逃亡，看财爻类也。"],
+          "yi": ["用爻，比如占奴仆、妻妾逃亡，就看财爻这一类。"],
+          "en": ["The Subject line: for example, in divining for the flight of a servant or a wife or concubine, one looks at the Wealth line and the like."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.02",
+      "topic": "处所",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·若临午地必往南方、或化寅爻转移东北：用爻安静以所临之地定方向，用爻发动以变爻定方向",
+      "rule": {
+        "yi": "用爻若落在午，逃的人必往南方；或者化出寅爻，就转移到东北。用爻安静，以它所临的地支作逃去的方向，所以说临午是南方；用爻发动，以变出的爻定方向；转移的意思是转往另一方，比如午变寅爻，一定先往正南，后往东北。",
+        "en": "If the Subject line sits on Wu, the runaway has gone south; or if it changes into a Yin line, he moves on to the northeast. A still Subject takes the branch it sits on as the direction of flight, hence Wu means south; a moving Subject takes the changed line to fix the direction; moving on means turning toward another quarter, so that Wu changing to Yin means he surely goes due south first and then to the northeast."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2909, 2909],
+          "zh": ["若临午地，", "必往南方；", "或化寅爻，", "转移东北"],
+          "yi": ["如果落在午地，", "必定往南方；", "或者化出寅爻，", "就转移到东北。"],
+          "en": ["If it sits on Wu,", "he has surely gone south;", "or if it changes into a Yin line,", "he moves on to the northeast."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2909, 2911],
+          "zh": ["用爻安静，以所临之地为逃去之卦，故云临午是南方。", "如用爻发动，以变爻定向；", "转移者转往一方也，即如午变寅爻，定然先往正南，后往东北。"],
+          "yi": ["用爻安静，以它所临的地支作逃去的方向，所以说临午是南方。", "如果用爻发动，以变出的爻定方向；", "转移的意思是转往另一方，比如午变寅爻，一定先往正南，后往东北。"],
+          "en": ["A still Subject line takes the branch it sits on as the direction of flight, hence \"Wu means south\".", "If the Subject moves, the changed line fixes the direction;", "moving on means turning toward another quarter, so that Wu changing to Yin means he surely goes due south first and then to the northeast."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.03",
+      "topic": "处所",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·木属震宫都邑京城之内、金居兑象庵观寺院之中：用爻临震宫木爻必在都邑，临九五必往京城，临兑宫金爻必躲在庵院寺观",
+      "rule": {
+        "yi": "用爻属木、在震宫，人在都邑京城之内；属金、居兑宫，人在庵观寺院之中。用神如果临震宫木爻，必在都邑；如果临九五，必往京城；如果临兑宫金爻，必躲在庵院寺观之中。",
+        "en": "A Subject of Wood in the Zhen palace means he is in a city or the capital; of Metal in the Dui palace, in a nunnery, temple or monastery. If the Subject sits on a Wood line of the Zhen palace, he must be in a city; if it sits on the ninth in the fifth place, he must have gone to the capital; if it sits on a Metal line of the Dui palace, he must be hiding in a nunnery, temple or monastery."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2913, 2913],
+          "zh": ["木属震宫，", "都邑京城之内；", "金居兑象，", "庵观寺院之中"],
+          "yi": ["木属震宫，", "在都邑京城之内；", "金居兑象，", "在庵观寺院之中。"],
+          "en": ["Wood belongs to the Zhen palace,", "in a city or the capital;", "Metal sits in the Dui image,", "in a nunnery, temple or monastery."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2913, 2913],
+          "zh": ["用神如临震宫木爻，必在都邑；", "如临九五，必往京城，如临兑宫金象，必避在庵院寺观之中。"],
+          "yi": ["用神如果临震宫木爻，必在都邑；", "如果临九五，必往京城，如果临兑宫金象，必躲在庵院寺观之中。"],
+          "en": ["If the Subject sits on a Wood line of the Zhen palace, he must be in a city;", "if it sits on the ninth in the fifth place, he must have gone to the capital, and if it sits on a Metal image of the Dui palace, he must be hiding in a nunnery, temple or monastery."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.04",
+      "topic": "处所",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·鬼墓交重庙宇中间隐匿、休囚死绝坟陵左右潜藏：用爻持鬼墓必隐在庙宇，用爻临死绝必藏在坟墓左右",
+      "rule": {
+        "yi": "用爻带着鬼墓、交重发动，人在庙宇中隐藏；用爻休囚死绝，人在坟陵左右潜藏。用爻持鬼墓，人必隐在庙宇之中；用爻临死绝，必藏身在坟墓左右。",
+        "en": "A Subject carrying the tomb of Pressure and moving means he hides within a temple; a Subject resting, trapped, dead or extinct means he lurks about the graves and mounds. A Subject holding the tomb of Pressure means he is hidden in a temple; a Subject on death or extinction means he is hiding by the graves."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2915, 2915],
+          "zh": ["鬼墓交重，", "庙宇中间隐匿；", "休囚死绝，", "坟陵左右潜藏"],
+          "yi": ["鬼墓交重，", "在庙宇中间隐藏；", "休囚死绝，", "在坟陵左右潜藏。"],
+          "en": ["With the tomb of Pressure crowded with movement,", "he hides within a temple;", "resting, trapped, dead or extinct,", "he lurks about the graves and mounds."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2915, 2915],
+          "zh": ["用持鬼墓，其人必隐庙宇之中；", "用临死绝，必藏身于坟墓左右也。"],
+          "yi": ["用爻持鬼墓，人必隐在庙宇之中；", "用爻临死绝，必藏身在坟墓左右。"],
+          "en": ["A Subject holding the tomb of Pressure means he is hidden in a temple;", "a Subject on death or extinction means he is hiding by the graves."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.05",
+      "topic": "处所",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·如逢四库当究五行：四库是辰戌丑未，辰是水土之库必在水边，戌是火库在寺庙旁，丑是金库在银铁匠家，未是木库在园林柴草间或木工竹匠家；遇墓爻要等冲破墓爻的日月才见得到",
+      "rule": {
+        "yi": "如果遇到四库，要追究它的五行。四库就是辰戌丑未四个地支，用爻属木，卦里有未动一类。辰是水和土的库，人必在水边；戌是火库，在寺庙旁边；丑是金库，在银铁匠家；未是木库，在园林柴草之间，或木工竹匠家。凡是占逃亡盗贼，如果遇到墓爻，一定很难找到，要等冲破墓爻的日月才能见到。",
+        "en": "If the four storehouses are met, examine their element. The four storehouses are the branches Chen, Xu, Chou and Wei; the Subject line is of Wood, and the hexagram has something like an unmoved Wei. Chen is the storehouse of Water and Earth, and he must be by the water; Xu is the storehouse of Fire, by a temple; Chou is the storehouse of Metal, at the house of a silver or iron smith; Wei is the storehouse of Wood, among gardens, woods and brushwood, or at the house of a carpenter or bamboo worker. In divining for a runaway or a thief, if a tomb line is met he is surely hard to find, and he can be seen only in the month or day that clashes the tomb line open."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2917, 2917],
+          "zh": ["如逢四库，", "当究五行"],
+          "yi": ["如果遇到四库，", "应当追究五行。"],
+          "en": ["If the four storehouses are met,", "one should examine the element."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2917, 2917],
+          "zh": ["四库即辰戌丑未四支，用爻属木，卦有未动类。", "如辰为水土库，必在水边；", "戌为火库，在寺庙侧；", "丑为金库，在银铁匠家；", "未为木库，在园林柴草间，或木工蔑匠之家。", "凡占逃亡盗贼，若遇墓爻，决难寻见，直待冲破墓爻日月，方可得见也。"],
+          "yi": ["四库就是辰戌丑未四个地支，用爻属木，卦里有未动一类。", "辰是水和土的库，人必在水边；", "戌是火库，在寺庙旁边；", "丑是金库，在银铁匠家；", "未是木库，在园林柴草之间，或木工竹匠家。", "凡是占逃亡盗贼，如果遇到墓爻，一定很难找到，要等冲破墓爻的日月才能见到。"],
+          "en": ["The four storehouses are the four branches Chen, Xu, Chou and Wei; the Subject line is of Wood, and the hexagram has something like an unmoved Wei.", "Chen is the storehouse of Water and Earth, and he must be by the water;", "Xu is the storehouse of Fire, by a temple;", "Chou is the storehouse of Metal, at the house of a silver or iron smith;", "Wei is the storehouse of Wood, among gardens, woods and brushwood, or at the house of a carpenter or bamboo worker.", "In divining for a runaway or a thief, if a tomb line is met he is surely hard to find, and he can be seen only in the month or day that clashes the tomb line open."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.06",
+      "topic": "处所",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·倘伏五乡岂宜一类：卦里没有用神就看它伏在哪一爻之下，伏在鬼、父母、兄弟、财、子孙下，以及伏在鬼墓、财库下，各是不同的去处",
+      "rule": {
+        "yi": "如果用神伏在五种六亲之下，怎么能一概而论。卦里没有用神，就要看它伏在哪一爻之下，才知道那个人在什么地方。伏在鬼爻下，在官仓官库之中，旺相又逢月建，在官户家，休囚无气，在公差吏役家；伏在父母下，在叔伯父母家，不然在手艺人家；伏在兄弟下，在兄弟姊妹和熟识朋友家；伏在财爻下，在奴婢妻妾家；伏在子孙下，在寺观和年幼辈那里。又比如伏在鬼墓之下，不在庙宇中就在寺庵内；伏在财库之下，不在仓库中，就在富豪家。",
+        "en": "If the Subject is hidden under one of the five relations, how can they all be judged alike? When the hexagram has no Subject, look at which line it is hidden under, and one learns where the person is. Hidden under Pressure, he is in a government granary or storehouse; if strong and also on the Month, in the house of an official family, if resting or without breath, in the house of a clerk or runner. Hidden under Resource, he is at the house of an uncle or parent, otherwise at a craftsman's. Hidden under Peer, he is at the house of brothers and sisters or of acquaintances and friends. Hidden under Wealth, he is at the house of servants, wives or concubines. Hidden under Output, he is at a temple or among the young. Again, hidden under the tomb of Pressure, he is either in a temple or in a nunnery; hidden under the storehouse of Wealth, he is either in a warehouse or at a wealthy family's."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2919, 2919],
+          "zh": ["倘伏五乡，", "岂宜一类"],
+          "yi": ["倘若伏在五种六亲之下，", "怎么能一概而论？"],
+          "en": ["If it is hidden under one of the five relations,", "how can they all be judged alike?"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2919, 2919], "literal": ["父母", "兄弟"],
+          "zh": ["卦无用神，须看伏在何爻下，便知其人在于何处。", "如伏鬼爻，在官仓官库之中，旺加月建在官户家，休囚无气在公吏家；", "伏父母下，在叔伯父母家，不然在手艺人家；", "伏兄下，在兄弟姊妹及相识朋友家；", "伏财下，在奴婢妻妾家；", "伏子下在寺观及卑幼处也。", "又如伏于鬼墓下，不在庙宇中则在寺庵内；", "又如伏于财库下，不在仓库中，即在富豪家也。"],
+          "yi": ["卦里没有用神，就要看它伏在哪一爻之下，才知道那个人在什么地方。", "伏在鬼爻下，在官仓官库之中，旺相又逢月建，在官户家，休囚无气，在公差吏役家；", "伏在父母下，在叔伯父母家，不然在手艺人家；", "伏在兄弟下，在兄弟姊妹和熟识朋友家；", "伏在财爻下，在奴婢妻妾家；", "伏在子孙下，在寺观和年幼辈那里。", "又比如伏在鬼墓之下，不在庙宇中就在寺庵内；", "又比如伏在财库之下，不在仓库中，就在富豪家。"],
+          "en": ["When the hexagram has no Subject, look at which line it is hidden under, and one learns where the person is.", "Hidden under Pressure, he is in a government granary or storehouse; if strong and also on the Month, in the house of an official family, if resting or without breath, in the house of a clerk or runner;", "hidden under Resource, he is at the house of an uncle or parent, otherwise at a craftsman's;", "hidden under Peer, he is at the house of brothers and sisters or of acquaintances and friends;", "hidden under Wealth, he is at the house of servants, wives or concubines;", "hidden under Output, he is at a temple or among the young.", "Again, hidden under the tomb of Pressure, he is either in a temple or in a nunnery;", "hidden under the storehouse of Wealth, he is either in a warehouse or at a wealthy family's."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.07",
+      "topic": "逃亡",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·木兴水象定乘舟楫而逃：用爻属木在坎宫发动必乘船逃去，木化水、水化木、木在水宫动、水在木宫动都是",
+      "rule": {
+        "yi": "木发动而见水象，一定是乘船逃走。用爻属木在坎宫发动的，必定乘船逃去；木化水，水化木，或者木在水宫发动，水在木宫发动，都是这样。",
+        "en": "If Wood moves and a Water image appears, he has surely fled by boat. A Subject of Wood moving in the Kan palace means he has gone by boat; so too Wood changing to Water, Water changing to Wood, Wood moving in a Water palace, or Water moving in a Wood palace."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2921, 2921],
+          "zh": ["木兴水象，", "定乘舟楫而逃"],
+          "yi": ["木发动而见水象，", "一定是乘船逃走。"],
+          "en": ["If Wood moves and a Water image appears,", "he has surely fled by boat."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2921, 2921],
+          "zh": ["用爻属木在坎宫动者，必乘舟逃去；", "木化水，水化木，或木在水宫动，水在木宫动者皆然。"],
+          "yi": ["用爻属木在坎宫发动的，必定乘船逃去；", "木化水，水化木，或者木在水宫发动，水在木宫发动，都是这样。"],
+          "en": ["A Subject of Wood moving in the Kan palace means he has gone by boat;", "so too Wood changing to Water, Water changing to Wood, Wood moving in a Water palace, or Water moving in a Wood palace."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.08",
+      "topic": "人物",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·动合伏财必拐妇人而去：用爻发动去合本宫的财爻，那人必定拐带妇人逃走；财伏在世爻下是妻妾，伏在应爻下是邻家妇女",
+      "rule": {
+        "yi": "用爻发动，去和伏着的财爻相合，一定是拐带妇人逃走。用爻发动来与本宫的财爻合，那人必定拐带妇人逃去；财爻如果伏在世爻之下，必是自己的妻妾；伏在应爻之下，是邻居家的妇女。",
+        "en": "If the Subject moves and combines with a hidden Wealth line, he has surely run off with a woman. A Subject that moves to combine with the Wealth line of its own palace means he has run off with a woman; if Wealth is hidden under the Self, it is surely his own wife or concubine, and if under the Other, a woman of a neighbouring family."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2923, 2923],
+          "zh": ["动合伏财，", "必拐妇人而去"],
+          "yi": ["动而合伏着的财爻，", "必定拐带妇人而去。"],
+          "en": ["Moving to combine with a hidden Wealth line,", "he has surely run off with a woman."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2923, 2923],
+          "zh": ["用爻动来与本宫财爻作合，其人必拐妇人逃去。", "财若伏于世下，必是妻妾；", "在应爻下，乃是邻家妇女。"],
+          "yi": ["用爻发动来与本宫的财爻合，那人必定拐带妇人逃去。", "财爻如果伏在世爻之下，必是妻妾；", "伏在应爻之下，是邻居家的妇女。"],
+          "en": ["A Subject that moves to combine with the Wealth line of its own palace means he has run off with a woman.", "If Wealth is hidden under the Self, it is surely a wife or concubine;", "if under the Other, a woman of a neighbouring family."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.09",
+      "topic": "寻得",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·内近外远生世则终有归期：用爻在本宫内卦人在本地，本宫外卦在别府别县，他宫内卦在外县交界，他宫外卦在他府外县，在六爻则去远方；最喜生合持世，人虽去，日后自己回来，寻也容易见到",
+      "rule": {
+        "yi": "内卦近、外卦远；用爻生世爻，终究有回来的日子。用爻在本宫内卦，人在本地；在本宫外卦，在别的府县；在他宫内卦，在外县交界处；在他宫外卦，在他府外县；如果在上爻，已经去了远方。最喜欢用爻生合持世，那人虽然走了，日后会自己回来，去找也容易找到。",
+        "en": "The inner trigram is near and the outer far; if the Subject gives life to the Self, there is in the end a day of return. A Subject in the inner trigram of its own palace means he is still in the locality; in the outer trigram of its own palace, in another prefecture or county; in the inner trigram of another palace, at the border of another county; in the outer trigram of another palace, in another prefecture and county; if on the top line, he has gone far away. Best of all is the Subject giving life to or combining with the Self or holding the Self: though he has gone, he will come back of himself later, and a search finds him easily."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2925, 2925],
+          "zh": ["内近外远，", "生世则终有归期"],
+          "yi": ["内卦近外卦远，", "用爻生世爻，终究有回来的日子。"],
+          "en": ["The inner trigram is near and the outer far,", "and if the Subject gives life to the Self, there is in the end a day of return."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2925, 2925],
+          "zh": ["用爻在本宫卦内，人在本地；", "在本宫外卦，在别府别县；", "他宫内卦，在外县交界处；", "他宫外卦，在他府外县；", "如在六爻，远方去矣。", "最喜生合持世，其人虽去，日后当自归来，寻亦易见也。"],
+          "yi": ["用爻在本宫内卦，人在本地；", "在本宫外卦，在别的府县；", "在他宫内卦，在外县交界处；", "在他宫外卦，在他府外县；", "如果在上爻，已经去了远方。", "最喜欢用爻生合持世，那人虽然走了，日后会自己回来，去找也容易找到。"],
+          "en": ["A Subject in the inner trigram of its own palace means he is still in the locality;", "in the outer trigram of its own palace, in another prefecture or county;", "in the inner trigram of another palace, at the border of another county;", "in the outer trigram of another palace, in another prefecture and county;", "if on the top line, he has gone far away.", "Best of all is the Subject giving life to or combining with the Self or holding the Self: though he has gone, he will come back of himself later, and a search finds him easily."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.10",
+      "topic": "寻得",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·静易动难坐空则必无寻路：用爻不动人容易找，动了就迁移无常、指东说西或改名换姓，难找；落旬空则杳无踪迹",
+      "rule": {
+        "yi": "用爻静容易找，动则难找；用爻落空就一定没有找的门路。用爻不动，那人容易找到；发动则迁移不定，指东说西，甚至改名换姓，必然难找。如果落了空亡，杳无踪迹。",
+        "en": "A still Subject is easy and a moving one hard; a Subject that falls into the Void leaves no way to search at all. If the Subject does not move, the man is easy to find; if it moves, he shifts about without fixed course, pointing east and saying west or even changing his name, and he is surely hard to find. If it falls into the Void, there is no trace of him."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2927, 2927],
+          "zh": ["静易动难，", "坐空则必无寻路"],
+          "yi": ["用爻静容易找，动则难找；", "落了空，则一定没有可找的路。"],
+          "en": ["A still Subject is easy and a moving one hard;", "if it falls into the Void, there is no way to search at all."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2927, 2927],
+          "zh": ["用爻不动，其人易寻，动则迁移无常，指东言西，或更改名姓，必难寻觅。", "若落空亡，杳无踪迹。"],
+          "yi": ["用爻不动，那人容易找到；发动则迁移不定，指东说西，甚至改名换姓，必然难找。", "如果落了空亡，杳无踪迹。"],
+          "en": ["If the Subject does not move, the man is easy to find; if it moves, he shifts about without fixed course, pointing east and saying west or even changing his name, and he is surely hard to find.", "If it falls into the Void, there is no trace of him."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.11",
+      "topic": "人物",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·合起合住若非容隐即相留：用爻静逢合是合起、动逢合是合住，日辰动爻合起用神，必有窝藏容留的人，看合爻定是什么人，合爻与世冲克的决不会来报",
+      "rule": {
+        "yi": "合起或合住，不是容留隐藏就是挽留他。用爻静遇合是合起，用爻动遇合是合住；如果日辰或动爻合起用神，必有窝藏容忍留住他的人。要知道留他的是什么人，用合爻来定，比如合爻在子孙是僧道，在父母是尊长一类。合爻与世爻冲克的，决不会来报信。",
+        "en": "Combined up or combined shut, either he is sheltered and hidden or he is held. A still Subject meeting a combination is combined up; a moving Subject meeting a combination is combined shut; if the Day or a moving line combines the Subject up, someone must be sheltering, tolerating and keeping him. To know who keeps him, fix it by the combining line: on Output it is a monk or Daoist, on Resource an elder, and so on. A combining line that clashes or controls the Self will never come to report."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2929, 2929],
+          "zh": ["合起合住，", "若非容隐即相留"],
+          "yi": ["合起合住，", "不是容留隐藏就是挽留他。"],
+          "en": ["Combined up or combined shut,", "either he is sheltered and hidden or he is held."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2929, 2929],
+          "zh": ["用静逢合则合起，用动逢合则合住；", "若日辰动爻合起用神，必有窝藏容忍相留。", "要知相留容忍之人，以合爻定之，如在子孙为僧道，父母为尊长类。", "合爻与世冲克，决不来报。"],
+          "yi": ["用爻静遇合是合起，用爻动遇合是合住；", "如果日辰或动爻合起用神，必有窝藏容忍留住他的人。", "要知道留他的是什么人，用合爻来定，比如合爻在子孙是僧道，在父母是尊长一类。", "合爻与世爻冲克的，决不会来报信。"],
+          "en": ["A still Subject meeting a combination is combined up; a moving Subject meeting a combination is combined shut;", "if the Day or a moving line combines the Subject up, someone must be sheltering, tolerating and keeping him.", "To know who keeps him, fix it by the combining line: on Output it is a monk or Daoist, on Resource an elder, and so on.", "A combining line that clashes or controls the Self will never come to report."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.12",
+      "topic": "人物",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·冲动冲开不是使令当败露：静爻逢冲是冲动、动爻逢冲是冲开，用爻被动爻日辰冲动，家里必有人指使他逃，比如父母是尊长一类",
+      "rule": {
+        "yi": "冲动或冲开，不是有人使唤他逃的，就是事情要败露。静爻遇冲是冲动，动爻遇冲是冲开。用爻被动爻或日辰冲动，家里必有人指使他逃亡，比如是父母，就是尊长一类。",
+        "en": "Clashed into motion or clashed open, either someone sent him off or the matter will be exposed. A still line meeting a clash is clashed into motion, and a moving line meeting a clash is clashed open. If the Subject is clashed into motion by a moving line or the Day, someone in the household must have put him up to running off; if it is Resource, an elder and the like."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2931, 2931],
+          "zh": ["冲动冲开，", "不是使令当败露"],
+          "yi": ["冲动冲开，", "不是有人使唤他逃的，就是事情要败露。"],
+          "en": ["Clashed into motion or clashed open,", "either someone sent him off or the matter will be exposed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2931, 2931], "literal": ["父母"],
+          "zh": ["静爻逢冲为冲动，动爻逢冲为冲开。", "用爻遇动爻日辰冲动，家中必有人使令逃亡者，如父母，是尊长类。"],
+          "yi": ["静爻遇冲是冲动，动爻遇冲是冲开。", "用爻被动爻或日辰冲动，家里必有人指使他逃亡，比如是父母，就是尊长一类。"],
+          "en": ["A still line meeting a clash is clashed into motion, and a moving line meeting a clash is clashed open.", "If the Subject is clashed into motion by a moving line or the Day, someone in the household must have put him up to running off; if it is Resource, an elder and the like."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.13",
+      "topic": "人物",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·动爻刑克有人阻彼登程、日建生扶有伴纠他同去：用爻逢冲是被人喝破，遇克是被人捉住，有扶有并有生是有人约他同去；这些刑克之爻与世有情的必定来报信",
+      "rule": {
+        "yi": "动爻刑克用爻，有人阻止他上路；日建生扶用爻，有同伴拉他一起走。用爻遇冲，是被人喝破；遇克，是被人捉住；有扶、有并、有生，是有人约他同去。以上这些刑克的爻如果和世爻有情，必定来告诉我。",
+        "en": "If a moving line punishes or controls the Subject, someone stops him from setting out; if the Day Branch gives life to or supports it, a companion draws him along. A Subject meeting a clash means he is shouted down; meeting control, he is caught; with support, with parity, or with life, someone invites him to go along. If the punishing and controlling lines above have feeling toward the Self, they will surely come to tell me."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2933, 2933],
+          "zh": ["动爻刑克，", "有人阻彼登程；", "日建生扶，", "有伴纠他同去"],
+          "yi": ["动爻刑克用爻，", "有人阻止他上路；", "日建生扶用爻，", "有同伴拉他一起走。"],
+          "en": ["If a moving line punishes or controls the Subject,", "someone stops him from setting out;", "if the Day Branch gives life to or supports it,", "a companion draws him along."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2933, 2933],
+          "zh": ["用爻逢冲，被人喝破；", "遇克，被人捉住；", "有扶有并有生，有人纠他同去。", "以上刑克等爻与世有情，必来报我。"],
+          "yi": ["用爻遇冲，是被人喝破；", "遇克，是被人捉住；", "有扶、有并、有生，是有人约他同去。", "以上这些刑克的爻如果和世爻有情，必定来告诉我。"],
+          "en": ["A Subject meeting a clash means he is shouted down;", "meeting control, he is caught;", "with support, with parity, or with life, someone invites him to go along.", "If the punishing and controlling lines above have feeling toward the Self, they will surely come to tell me."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.14",
+      "topic": "人物",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·间爻作合原中必定知情：间爻是原来的保人，没有保人就看邻里，间爻与用爻相合必知内情，再与世爻冲克，必是这个人诱他走的",
+      "rule": {
+        "yi": "间爻与用爻相合，当初的中人必定知道内情。间爻是原来的保人，没有保人，就按邻居来断。间爻如果和用爻相合，必定知道内情；再和世爻冲克，一定是这个人把他诱走的。",
+        "en": "If a line between the Self and the Other combines with the Subject, the original go-between surely knows what happened. The between lines are the original guarantor; where there was no guarantor, judge by the neighbours. If a between line combines with the Subject, it surely knows the inside story; and if it also clashes or controls the Self, this person must be the one who lured him away."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2935, 2935],
+          "zh": ["间爻作合，", "原中必定知情"],
+          "yi": ["间爻作合，", "当初的中人必定知道内情。"],
+          "en": ["If a between line forms a combination,", "the original go-between surely knows what happened."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2935, 2935],
+          "zh": ["间爻为原保人，无保，以邻里断之。", "如与用爻相合，必知其情，更与世爻冲克，必是此人诱去。"],
+          "yi": ["间爻是原来的保人，没有保人，就按邻居来断。", "如果和用爻相合，必定知道内情，再和世爻冲克，一定是这个人把他诱走的。"],
+          "en": ["The between lines are the original guarantor; where there was no guarantor, judge by the neighbours.", "If one combines with the Subject, it surely knows the inside story; and if it also clashes or controls the Self, this person must be the one who lured him away."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.15",
+      "topic": "捕获",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·世应相生路上须当撞见：世应都动而相冲，在路上撞见，用爻与世爻动冲也一样；世爻动克用爻或世旺应衰必然擒拿，应旺世衰或用爻克世，即使遇见也捉不住",
+      "rule": {
+        "yi": "世爻和应爻相生，路上应当会撞见。世应都动而相冲，在路上撞见；用爻和世爻发动相冲也是这样。世爻动而克用爻，或者世旺应衰，必然擒获；应旺世衰，或者用爻克世，即使能遇见，也捉不住他。",
+        "en": "If the Self and the Other give life to each other, you should run into him on the road. Self and Other both moving and clashing: you meet on the road; so too when the Subject and the Self move and clash. If the Self moves and controls the Subject, or the Self is strong and the Other weak, he is surely seized; if the Other is strong and the Self weak, or the Subject controls the Self, though you may meet him you cannot catch him."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2937, 2937],
+          "zh": ["世应相生，", "路上须当撞见"],
+          "yi": ["世爻和应爻相生，", "路上应当会撞见。"],
+          "en": ["If the Self and the Other give life to each other,", "you should run into him on the road."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2937, 2937],
+          "zh": ["世应俱动相冲，在途撞见，用爻与世动冲亦然。", "世爻动克用爻或世旺应衰，必然擒拿；", "应旺世衰或用爻克世，虽能遇见，不能捕之。"],
+          "yi": ["世应都动而相冲，在路上撞见，用爻和世爻发动相冲也是这样。", "世爻动而克用爻，或者世旺应衰，必然擒获；", "应旺世衰，或者用爻克世，即使能遇见，也捉不住他。"],
+          "en": ["Self and Other both moving and clashing: you meet on the road; so too when the Subject and the Self move and clash.", "If the Self moves and controls the Subject, or the Self is strong and the Other weak, he is surely seized;", "if the Other is strong and the Self weak, or the Subject controls the Self, though you may meet him you cannot catch him."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.16",
+      "topic": "寻得",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·无冲无破居六位则一去不回、有克有生在五爻则半途仍走：用爻不受刑冲克害又不生合世爻、世爻也不克它，逃者不想回、找的人也见不到；动爻日辰克制用爻是可擒之兆，变出的爻反生合用爻则被捕后仍逃走",
+      "rule": {
+        "yi": "用爻没有冲没有破、落在上爻，就一去不回；有克有生、在五爻，就半路上仍然会走。用爻不受刑冲克害，又不生合世爻，世爻也不克它，是逃的人不想念着回来、找的人见不到的象，是一去不回之象。如果动爻或日辰克制用爻，是能擒获的兆头；如果变出的爻反过来生合用爻，捕获之后仍会逃走。",
+        "en": "With no clash and no break and the Subject on the top line, he goes and never returns; with control and life and the Subject on the fifth line, he slips away again halfway. A Subject that suffers no punishment, clash, control or harm, gives no life or combination to the Self, and is not controlled by the Self, is the image of a runaway who does not think of returning and a searcher who cannot see him, the image of going and never coming back. If a moving line or the Day controls the Subject, it is a sign he can be seized; if a changed line gives life to or combines with the Subject, he escapes again even after being caught."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2939, 2939],
+          "zh": ["无冲无破居六位，", "则一去不回，", "有克有生在五爻，", "则半途仍走"],
+          "yi": ["没有冲没有破，落在上爻，", "就一去不回；", "有克有生，在五爻，", "就半路上仍然会走。"],
+          "en": ["With no clash and no break, on the top line,", "he goes and never returns;", "with control and life, on the fifth line,", "he slips away again halfway."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2939, 2939],
+          "zh": ["用爻不受刑冲克害，又不生合世爻，而世爻不克用爻者，是逃者不思妇，寻者不得见，乃一去不回之象。", "若动爻日辰克制用爻，是可擒之兆；", "若遇变出之爻反生合用爻者，诸生捕后仍被逃走。"],
+          "yi": ["用爻不受刑冲克害，又不生合世爻，世爻也不克它，是逃的人不想念着回来、找的人见不到的象，是一去不回之象。", "如果动爻或日辰克制用爻，是能擒获的兆头；", "如果变出的爻反过来生合用爻，捕获之后仍会逃走。"],
+          "en": ["A Subject that suffers no punishment, clash, control or harm, gives no life or combination to the Self, and is not controlled by the Self, is the image of a runaway who does not think of returning and a searcher who cannot see him, the image of going and never coming back.", "If a moving line or the Day controls the Subject, it is a sign he can be seized;", "if a changed line gives life to or combines with the Subject, he escapes again even after being caught."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.17",
+      "topic": "捕获",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·主象化出主象归亦难留：卦里有用爻不宜化退神，叫化去，难以捕获；被世爻、动爻、日辰克制，即使捉回来也留不久",
+      "rule": {
+        "yi": "用神变出用神，就是回来也难留住。卦里有用爻，不宜化出退神，叫做化去，必定难以捕获；如果被世爻、动爻、日辰克制，即使捉回来之后也难以长久留住。",
+        "en": "If the Subject changes into the Subject, even if he returns he is hard to keep. When the hexagram has a Subject line, it should not change into a Retreating spirit, which is called changing away, and he is surely hard to catch; if it is controlled by the Self, a moving line or the Day, even after he is brought back he is hard to keep for long."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2941, 2941],
+          "zh": ["主象化出主象，", "归亦难留"],
+          "yi": ["用神变出用神，", "回来也难以留住。"],
+          "en": ["If the Subject changes into the Subject,", "even if he returns he is hard to keep."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2941, 2941],
+          "zh": ["卦有用爻，不宜化退神，谓之化去，必难捕获；", "若被世爻、动爻、日辰克制，纵捉回之后亦难久留。"],
+          "yi": ["卦里有用爻，不宜化出退神，叫做化去，必定难以捕获；", "如果被世爻、动爻、日辰克制，即使捉回来之后也难以长久留住。"],
+          "en": ["When the hexagram has a Subject line, it should not change into a Retreating spirit, which is called changing away, and he is surely hard to catch;", "if it is controlled by the Self, a moving line or the Day, even after he is brought back he is hard to keep for long."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.18",
+      "topic": "处所",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·本宫化入本宫去应不远：本宫卦变成本宫卦（如乾变姤、遁、否、观），人逃在本地，必不远走；用爻在他宫发动又化入他宫，是走远了又转了方向",
+      "rule": {
+        "yi": "本宫变入本宫，逃去的地方应当不远。本宫仍然变成本宫的卦，比如乾卦变姤、遁、否、观等本宫卦，主那人逃在本地，必不会走远；如果用爻在他宫发动，又变入他宫，是远去之后又转了方向。",
+        "en": "If the palace changes into its own palace, the place he fled to should not be far. A palace changing into a hexagram of its own palace, for example Qian changing into Gou, Dun, Pi or Guan and the like, means the man fled within the locality and surely has not gone far; if the Subject moves in another palace and changes into yet another palace, he has gone far and then turned in another direction."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2943, 2943],
+          "zh": ["本宫化入本宫，", "去应不远"],
+          "yi": ["本宫变入本宫，", "逃去的地方应当不远。"],
+          "en": ["If the palace changes into its own palace,", "the place he fled to should not be far."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2943, 2943],
+          "zh": ["本宫仍化本宫卦者，譬如乾卦化入姤、遵、否、观等本宫卦也，主其人逃在本处地方，必不远出；", "若用爻在他宫动而又化入他宫者，远去又转方也。"],
+          "yi": ["本宫仍然变成本宫的卦，比如乾卦变姤、遁、否、观等本宫卦，主那人逃在本地，必不会走远；", "如果用爻在他宫发动，又变入他宫，是远去之后又转了方向。"],
+          "en": ["A palace changing into a hexagram of its own palace, for example Qian changing into Gou, Dun, Pi or Guan and the like, means the man fled within the locality and surely has not gone far;", "if the Subject moves in another palace and changes into yet another palace, he has gone far and then turned in another direction."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.19",
+      "topic": "寻得",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·归魂卦用遇生合不捕而自回、游魂卦应又交重能潜而会遁：得归魂卦他回家心切，生合世爻他自己会回来，寻也容易见；得游魂卦他没有回来的意思，能躲会逃，寻必难见",
+      "rule": {
+        "yi": "归魂卦、用神遇到生合，不用捕他自己会回来；游魂卦、应爻又交重发动，他能潜伏，会逃遁。得归魂卦，他回来的心意急切，如果生合世爻，他一定自己回来，找他容易见到；遇到游魂卦，那人必定没有回来的意思，能潜伏会逃遁，找他必定难见。",
+        "en": "In a Returning Soul hexagram, if the Subject meets life or combination, he comes back by himself without being caught; in a Wandering Soul hexagram, with the Other also crowded with movement, he can lie low and slip away. In a Returning Soul hexagram his mind is eager to return, and if it gives life to or combines with the Self he surely comes back himself and is easily found; in a Wandering Soul hexagram the man surely has no mind to return, he can lie low and slip away, and a search for him is surely in vain."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2945, 2945],
+          "zh": ["归魂卦用遇生合，", "不捕而自回；", "游魂卦应又交重，", "能潜而会遁"],
+          "yi": ["归魂卦，用神遇到生合，", "不用捕他自己会回来；", "游魂卦，应爻又交重发动，", "他能潜伏，会逃遁。"],
+          "en": ["In a Returning Soul hexagram, if the Subject meets life or combination,", "he comes back by himself without being caught;", "in a Wandering Soul hexagram, with the Other also crowded with movement,", "he can lie low and slip away."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2945, 2945],
+          "zh": ["得归魂卦，彼意归切，若生合世爻者，彼必自归，寻之易见；", "遇游魂卦，其人必无归意，能潜会遁，寻必难见。"],
+          "yi": ["得归魂卦，他回来的心意急切，如果生合世爻，他一定自己回来，找他容易见到；", "遇到游魂卦，那人必定没有回来的意思，能潜伏会逃遁，找他必定难见。"],
+          "en": ["In a Returning Soul hexagram his mind is eager to return, and if it gives life to or combines with the Self he surely comes back himself and is easily found;", "in a Wandering Soul hexagram the man surely has no mind to return, he can lie low and slip away, and a search for him is surely in vain."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.20",
+      "topic": "寻得",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·父母空亡杳无音信：父母主音信，逢空就没有信，若动来生世合世，必有报信的人来",
+      "rule": {
+        "yi": "父母爻落空亡，杳无音信。父母爻主音信，遇空就没有信息；如果父母发动来生世爻、合世爻，一定有报信的人来。",
+        "en": "If the Resource line falls into the Void, there is no word at all. The Resource line governs news, and meeting the Void it brings no news; if it moves to give life to or combine with the Self, someone will surely come to bring word."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2947, 2947],
+          "zh": ["父母空亡杳无音信"],
+          "yi": ["父母爻落空亡，杳无音信"],
+          "en": ["If the Resource line falls into the Void, there is no word at all"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2947, 2947],
+          "zh": ["父母主信，逢空则无信，如动来生世合世，定有报信人来也。"],
+          "yi": ["父母爻主音信，遇空就没有信息；如果父母发动来生世爻、合世爻，一定有报信的人来。"],
+          "en": ["The Resource line governs news, and meeting the Void it brings no news; if it moves to give life to or combine with the Self, someone will surely come to bring word."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.21",
+      "topic": "逃亡",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·子孙发动当有维持：子孙临身世，逃走自然顺利，得日辰生合世爻必有人维持，即使有逆事也不能为害——这是逃亡者自己占",
+      "rule": {
+        "yi": "子孙发动，会有人维持。子孙临在身爻或世爻，逃去自然顺利；如果得到日辰生合世爻，必定有人维持，即使有不顺的事也不能为害。这是说逃亡的人自己占卜。",
+        "en": "When Output moves there will be support. Output on the Body or the Self means his flight goes smoothly of itself; if the Day gives life to or combines with the Self, someone will surely support him, and even adverse things cannot harm him. This speaks of the runaway divining for himself."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2949, 2949],
+          "zh": ["子孙发动当有维持"],
+          "yi": ["子孙爻发动，应当有人维持"],
+          "en": ["When Output moves there should be someone to support him"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2949, 2949],
+          "zh": ["子孙临身世，自然去必顺利；", "如得日辰生合世爻，必有维持，纵有逆事不能为害。", "此言逃亡自卜也。"],
+          "yi": ["子孙临在身爻或世爻，逃去自然顺利；", "如果得到日辰生合世爻，必定有人维持，即使有不顺的事也不能为害。", "这是说逃亡的人自己占卜。"],
+          "en": ["Output on the Body or the Self means his flight goes smoothly of itself;", "if the Day gives life to or combines with the Self, someone will surely support him, and even adverse things cannot harm him.", "This speaks of the runaway divining for himself."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.22",
+      "topic": "逃亡",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·众煞伤身窃恐反遭刑辱：动爻、变爻、日月刑冲克害世爻是重煞伤身，反而遭受刑罚，不逃的好——逃亡者自己占",
+      "rule": {
+        "yi": "许多凶煞伤害身，恐怕反而遭受刑罚和羞辱。动爻、变爻、日月刑冲克害世爻，叫做重煞伤身，反而遭受刑罚，不逃为吉。",
+        "en": "With many baleful influences injuring the Body, one fears he will instead suffer punishment and disgrace. When moving lines, changed lines, the Month and the Day punish, clash, control or harm the Self, it is called heavy baleful influences injuring the Body, and he will instead suffer punishment; it is lucky not to flee."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2951, 2951],
+          "zh": ["众煞伤身，", "窃恐反遭刑辱"],
+          "yi": ["许多凶煞伤害身，", "恐怕反而遭受刑罚和羞辱。"],
+          "en": ["With many baleful influences injuring the Body,", "one fears he will instead suffer punishment and disgrace."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2951, 2951],
+          "zh": ["动变日月刑冲克害世爻者，谓重煞伤身也，反遭刑，不逃者吉。"],
+          "yi": ["动爻、变爻、日月刑冲克害世爻，叫做重煞伤身，反而遭受刑罚，不逃为吉。"],
+          "en": ["When moving lines, changed lines, the Month and the Day punish, clash, control or harm the Self, it is called heavy baleful influences injuring the Body, and he will instead suffer punishment; it is lucky not to flee."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.23",
+      "topic": "逃亡",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·动兄持世必然广费赀财：兄弟持世，费钱才能寻到、也要费钱才能逃；再加玄武旺而发动克世，要防有人劫骗",
+      "rule": {
+        "yi": "兄弟动而持世，一定要花费很多钱财。兄弟持世，花钱可以找到，花钱可以逃走；如果再加上玄武旺而发动、克世爻，要防有人劫掠欺骗。",
+        "en": "If a Peer line moves and holds the Self, it will surely cost a great deal of money. With a Peer line holding the Self, spending money lets him be found and spending money lets him flee; if the Dark Tortoise is added, strong and moving to control the Self, beware of someone robbing or cheating."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2953, 2953],
+          "zh": ["动兄持世，", "必然广费赀财"],
+          "yi": ["兄弟动而持世，", "一定要花费很多钱财。"],
+          "en": ["A Peer line moving and holding the Self,", "will surely cost a great deal of money."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2953, 2953],
+          "zh": ["兄弟持世，费财可寻，费财可逃。", "若加玄武旺动克世，须防有人劫骗。"],
+          "yi": ["兄弟持世，花钱可以找到，花钱可以逃走；", "如果再加上玄武旺而发动、克世爻，要防有人劫掠欺骗。"],
+          "en": ["With a Peer line holding the Self, spending money lets him be found and spending money lets him flee;", "if the Dark Tortoise is added, strong and moving to control the Self, beware of someone robbing or cheating."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.24",
+      "topic": "捕获",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·父动变官必得公人捕捉：父母化官鬼、官鬼化父母，或官父都发动，必须写状子告官，差捕快才能捕获",
+      "rule": {
+        "yi": "父母发动变出官鬼，一定要靠公差来捕捉。父母化官鬼、官鬼化父母，或者官鬼父母都发动，必须写状告官，差遣捕快才能捕获。",
+        "en": "If the Resource line moves and changes into Pressure, he must be caught by officers of the law. Resource changing into Pressure, Pressure changing into Resource, or Pressure and Resource both moving, require a complaint to be filed with the officials and constables sent, and then he can be caught."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2955, 2955],
+          "zh": ["父动变官，", "必得公人捕捉"],
+          "yi": ["父母发动变出官鬼，", "一定要靠公差来捕捉。"],
+          "en": ["If the Resource line moves and changes into Pressure,", "he must be caught by officers of the law."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2955, 2955],
+          "zh": ["父化官、官化父，或官父俱动，必须兴词告官，差捕可获也。"],
+          "yi": ["父母化官鬼、官鬼化父母，或者官鬼父母都发动，必须写状告官，差遣捕快才能捕获。"],
+          "en": ["Resource changing into Pressure, Pressure changing into Resource, or Pressure and Resource both moving, require a complaint to be filed with the officials and constables sent, and then he can be caught."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.25",
+      "topic": "捕获",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·世投入墓须防窝主拘留：世爻入墓，反而被拘留人的运气拖住，或日后有灾病",
+      "rule": {
+        "yi": "世爻自己入墓，要提防窝藏的人把你拘留住。凡是遇到世爻入墓，反而被扣留的人的运势拖住，或者后来有灾病。",
+        "en": "If the Self itself enters the tomb, beware of the harbourer detaining you. Whenever the Self enters the tomb, you are instead dragged down by the fortunes of the person held, or fall into calamity or illness later."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2955, 2955],
+          "zh": ["世投入墓，", "须防窝主拘留"],
+          "yi": ["世爻自己入墓，", "要提防窝藏的人把你拘留住。"],
+          "en": ["If the Self itself enters the tomb,", "beware of the harbourer detaining you."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2955, 2955],
+          "zh": ["凡遇世爻入墓者，反被拘留人之运，或后有灾病。"],
+          "yi": ["凡是遇到世爻入墓，反而被扣留的人的运势拖住，或者后来有灾病。"],
+          "en": ["Whenever the Self enters the tomb, you are instead dragged down by the fortunes of the person held, or fall into calamity or illness later."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.26",
+      "topic": "处所",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·世应比和不空必潜于此：占逃的人在不在这里，要世应生合、比合用爻，用爻出现不落空，他就必定潜伏在此",
+      "rule": {
+        "yi": "世应比和而且不空，他必定潜伏在这里。凡是占逃走的人在不在这里，必须世爻应爻生合、比合用爻，用爻出现而且不落空，他必然潜伏在这里。",
+        "en": "If the Self and the Other are in harmony and not Void, he is surely lying low here. In divining whether a runaway is at this place, the Self and the Other must give life to, combine with or match the Subject, and the Subject must appear and not fall into the Void; then he is surely lying low here."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2956, 2956],
+          "zh": ["世应比和不空，", "必潜于此"],
+          "yi": ["世应比和而且不空，", "他必定潜伏在这里。"],
+          "en": ["If the Self and the Other are in harmony and not Void,", "he is surely lying low here."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2956, 2956],
+          "zh": ["凡卜逃人在此处否，须得世应生合、比合用爻，出现不空，必然潜于此也。"],
+          "yi": ["凡是占逃走的人在不在这里，必须世应生合、比合用爻，用爻出现而且不落空，他必然潜伏在这里。"],
+          "en": ["In divining whether a runaway is at this place, the Self and the Other must give life to, combine with or match the Subject, and the Subject must appear and not fall into the Void; then he is surely lying low here."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.27",
+      "topic": "寻得",
+      "chapter": "逃亡",
+      "chapter_en": "Runaways",
+      "title": "逃亡·世应空亡独发徒费乎心：世空则去找的不紧，用空则找也找不到，世应都空必定白跑一趟；兄弟独发是虚假不实，也找不到",
+      "rule": {
+        "yi": "世应都空亡、独自发动，是白费心思。世爻空，去找的人不上心；用爻空，找也找不到；世应都空，必定没有可找的地方，空回一趟。兄弟独自发动，是虚假不实，也找不到。",
+        "en": "With the Self and the Other both Void and one moving alone, it is a waste of effort. If the Self is Void, the searcher does not press the search; if the Subject is Void, he is not found however one searches; with both Void there is surely no place to search and he returns empty-handed. A Peer line moving alone means falsehood and nothing real, and he is not found either."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2958, 2958],
+          "zh": ["世应空亡独发，", "徒费乎心"],
+          "yi": ["世应都空亡、独自发动，", "是白费心思。"],
+          "en": ["With the Self and the Other both Void and one moving alone,", "it is a waste of effort."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2958, 2958],
+          "zh": ["世空则去寻不紧，用空则寻亦不见，世应俱空，必主无可寻处空回。", "兄弟独发，虚诈不实，亦寻不见也。"],
+          "yi": ["世爻空，去找的人不上心；用爻空，找也找不到；世应都空，必定没有可找的地方，空回一趟。", "兄弟独自发动，是虚假不实，也找不到。"],
+          "en": ["If the Self is Void, the searcher does not press the search; if the Subject is Void, he is not found however one searches; with both Void there is surely no place to search and he returns empty-handed.", "A Peer line moving alone means falsehood and nothing real, and he is not found either."] }
+      ]
+    }
+  ]
+}

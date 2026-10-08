@@ -1,0 +1,280 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "总章与他章里的事业断语",
+  "chapter_en": "Career judgments in the general chapters and other chapters",
+  "ranges": {"易冒": [205, 1735]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.102",
+      "topic": "总则",
+      "chapter": "无鬼章第三十二",
+      "chapter_en": "Chapter 32: No Pressure line",
+      "title": "官鬼的名与用：或曰阳为官阴为鬼、旺为官衰为鬼、官鬼为系爻制爻；大凡喜之为官、恶之为鬼，名异而用同，卦不应无亦不宜动（官鬼不必以旺衰阴阳分，用则为官忌则为鬼，官亦可凶鬼亦可吉）",
+      "rule": {
+        "yi": "有人说阳是官、阴是鬼；又说旺是官、衰是鬼；又说官鬼是「系」爻、是「制」爻。大凡喜欢它的叫官，厌恶它的叫鬼；用在阳的一面就是官，用在阴的一面就是鬼：名称不同而用法相同。卦里不该没有它，也不宜发动。官鬼不必按旺衰、阴阳来分：只要取它来用就是官，忌它就是鬼；然而官也可能凶，鬼也可能吉。",
+        "en": "Some say that yang is the official and yin is the demon; some say that thriving is the official and weak is the demon; some say that Pressure is the 'binding' line and the 'controlling' line. In general what one welcomes is called the official and what one dislikes is called the demon; used on the yang side it is the official, used on the yin side it is the demon: the names differ but the use is the same. The hexagram should not lack it, and it should not move. Pressure need not be told apart by strength and weakness or by yin and yang: if it is taken for use it is the official, and if it is feared it is the demon; yet the official may be ominous, and the demon may be auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [548, 548],
+          "zh": ["或曰阳为官，阴为鬼，", "复曰旺为官，衰为鬼，", "又曰官鬼为系（击？）爻，为制爻，", "大凡喜之为官，恶之为鬼，", "用之阳则官，用之阴则鬼，", "名异而用同也，", "卦不应无，亦不宜动。"],
+          "yi": ["有人说阳是官，阴是鬼；", "又说旺是官，衰是鬼；", "又说官鬼是「系」爻（原文此处标有存疑字）、是「制」爻。", "大凡喜欢它的叫官，厌恶它的叫鬼；", "用在阳的一面就是官，用在阴的一面就是鬼：", "名称不同而用法相同。", "卦里不该没有它，也不宜发动。"],
+          "en": ["Some say that yang is the official and yin is the demon;", "some say that thriving is the official and weak is the demon;", "some say that Pressure is the 'binding' line (a doubtful character is marked here in the original) and the 'controlling' line.", "In general what one welcomes is called the official and what one dislikes is called the demon;", "used on the yang side it is the official, used on the yin side it is the demon:", "the names differ but the use is the same.", "The hexagram should not lack it, and it should not move."] },
+        { "by": "易冒注", "book": "易冒", "range": [549, 549],
+          "zh": ["官鬼不必以旺衰阴阳分，但用则为官，", "忌则为鬼，", "然官亦可凶，鬼亦可吉。"],
+          "yi": ["官鬼不必按旺衰、阴阳来分：只要取它来用就是官，", "忌它就是鬼；", "然而官也可能凶，鬼也可能吉。"],
+          "en": ["Pressure need not be told apart by strength and weakness or by yin and yang: if it is taken for use it is the official,", "and if it is feared it is the demon;", "yet the official may be ominous, and the demon may be auspicious."] }
+      ],
+      "note": {
+        "yi": "「官」和「鬼」是同一个爻（官鬼，克我的那一类）的两个名字：本书的办法不按旺衰或阴阳去分，只看当下是取它来用、还是忌它：要它出力（求官、求名）时叫官，怕它为祸（疾病、官司）时叫鬼，所以书里有时写官、有时写鬼。「系爻」是拴住人的爻，「制爻」是管制人的爻（书里没有再解释）；原文「官鬼为系（击？）爻」里的「击？」是书里自己标的存疑字。「卦不应无，亦不宜动」是官鬼在卦里既不该没有，也不宜发动。这一条是读本书里「官」「鬼」两字的钥匙，和 YM.40 的「以官为用神」、YM.41 的「随官入墓、助鬼伤身」对着看。",
+        "en": "'Guan' and 'gui' are two names of one line (Pressure, the kind that controls me): the book's method does not tell them apart by strength or yin and yang, but only by whether it is being taken for use or feared at the moment: when one wants it to exert itself (seeking office or a name) it is called the official, and when one fears it as a source of harm (illness, lawsuits) it is called the demon, so the book sometimes writes 'guan' and sometimes 'gui'. The 'binding line' is the line that ties a man down, and the 'controlling line' is the line that regulates a man (the book does not explain further); the 'ji?' in the original 'guan gui wei xi (ji?) yao' is a doubtful character marked by the book itself. 'The hexagram should not lack it, and it should not move' is that Pressure should be neither absent from the hexagram nor moving. This entry is the key to reading the two words 'guan' and 'gui' in this book, to be read against 'taking Pressure as the Subject' in YM.40 and 'following Pressure into the tomb and helping Pressure to injure the Body' in YM.41."
+      },
+      "see": ["LY.CAREER.YM.40", "LY.CAREER.YM.41", "LY.CAREER.YM.103", "LY.CAREER.HJC.02"]
+    },
+    {
+      "id": "LY.CAREER.YM.103",
+      "topic": "总则",
+      "chapter": "无鬼章第三十二",
+      "chapter_en": "Chapter 32: No Pressure line",
+      "title": "官鬼者事之主、祸之端：出入行藏贵静勿动、兴词构难畏其动而即成；凡防害及身喜其无鬼、求事益己利在有官",
+      "rule": {
+        "yi": "所以官鬼是事情的主，也是祸的起头；出入行藏，贵在静而不动；兴词、构难（打官司、制造灾难），怕它一动就成。大凡防备伤害到自身的，喜欢它没有鬼；求事来对自己有益的，利在有官。要请学的人自己分辨。",
+        "en": "So Pressure is the master of a matter and also the beginning of calamity; in going out and in, going abroad and hiding, it is valued still and not moving; in bringing a suit or contriving a difficulty, one fears that once it moves the thing is done. In general, in guarding against harm to oneself, it is welcome for there to be no Pressure; in seeking a matter to one's own advantage, the benefit lies in having the official. Let the student distinguish them."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [560, 560],
+          "zh": ["故官鬼者，事之主也，祸之端也，", "出入行藏，贵乎静而勿动，", "兴词构难，畏其动而即成。", "盖凡防害及身，喜其无鬼，", "求事益己，利在有官，", "学者辩之。"],
+          "yi": ["所以官鬼是事情的主，也是祸的起头；", "出入行藏，贵在静而不动；", "兴词、构难，怕它一动就成。", "大凡防备伤害到自身的，喜欢它没有鬼；", "求事来对自己有益的，利在有官。", "要请学的人自己分辨。"],
+          "en": ["So Pressure is the master of a matter and also the beginning of calamity;", "in going out and in, going abroad and hiding, it is valued still and not moving;", "in bringing a suit or contriving a difficulty, one fears that once it moves the thing is done.", "In general, in guarding against harm to oneself, it is welcome for there to be no Pressure;", "in seeking a matter to one's own advantage, the benefit lies in having the official.", "Let the student distinguish them."] }
+      ],
+      "note": {
+        "yi": "「事之主」是官鬼是事情的主持者（批准、裁定的一方），「祸之端」是灾祸的起头。「出入行藏」是出门、藏身这类行动。「兴词构难」是打官司、制造灾难。书里的意思：凡是想防备伤害的占问（出入、藏身、防讼），官鬼静才好，动了就一触即发；凡是想求事对自己有益的占问（求官、求名、求事），利在有官。「学者辩之」是请学的人自己分辨这两头。这与 YM.102 的『喜之为官、恶之为鬼』是同一个意思：同一个官鬼，要看这件事是要它还是怕它。",
+        "en": "'Shi zhi zhu' is that Pressure is the one who presides over a matter (the side that approves and decides), and 'huo zhi duan' is the beginning of calamity. 'Chu ru xing cang' is acts such as going out and hiding. 'Xingci gounan' is going to law and contriving a difficulty. The sense of the book: in every divination in which one wants to guard against harm (going out and in, hiding, guarding against a suit), Pressure is good when still, and once it moves the thing is sprung; in every divination in which one wants a matter to one's own advantage (seeking office, a name, a matter), the benefit lies in having the official. 'Xuezhe bian zhi' asks the student to tell the two sides apart himself. This is the same idea as 'what is welcome is called the official, what is disliked the demon' in YM.102: with the same Pressure line, one must see whether in this matter one wants it or fears it."
+      },
+      "see": ["LY.CAREER.YM.102", "LY.CAREER.YM.104"]
+    },
+    {
+      "id": "LY.CAREER.YM.104",
+      "topic": "成否",
+      "chapter": "无鬼章第三十二",
+      "chapter_en": "Chapter 32: No Pressure line",
+      "title": "无鬼章·功名无鬼：功名无鬼则进取无成、升迁未遂（此言用鬼，鬼不宜无）",
+      "rule": {
+        "yi": "功名没有官鬼（官鬼不上卦），进取就没有成就，升迁也不能如愿。这是说取官鬼为用的占问，官鬼不宜没有。",
+        "en": "In seeking a name and office with no Pressure line in the hexagram, advancement comes to nothing and promotion is not achieved. This speaks of divinations in which Pressure is taken as the Subject, and Pressure should not be absent."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [556, 556],
+          "zh": ["功名无鬼，", "进取无成，", "升迁未遂；"],
+          "yi": ["功名没有官鬼，", "进取就没有成就，", "升迁也不能如愿；"],
+          "en": ["In seeking a name and office with no Pressure line,", "advancement comes to nothing", "and promotion is not achieved;"] },
+        { "by": "易冒注", "book": "易冒", "range": [557, 557],
+          "zh": ["此言用鬼，鬼不宜无也。"],
+          "yi": ["这是说取官鬼为用的占问，官鬼不宜没有。"],
+          "en": ["This speaks of divinations in which Pressure is taken as the Subject, and Pressure should not be absent."] }
+      ],
+      "note": {
+        "yi": "「功名无鬼」是占功名时官鬼不上卦（官鬼是功名的用神，见 YM.40）。「进取无成」是想进取没有成就，「升迁未遂」是想升迁不能如愿。书里自注：这是说取鬼（官鬼）为用的占问，鬼不宜没有。「无」要分真无和伏藏：同一章稍前（L550）说，卦中虽然没有、但伏在世爻或动爻之下，或者变出来临在日辰月建之上，就「无犹不无」，所以这里说的是官鬼既不上卦、又没有伏变的真无。同一句里还有身命、家宅、谋望无鬼的断法，分属别的问题域，这里只收功名的一半。和 YM.42 的「毋谓官伏，得助亦升」对着看。",
+        "en": "'Gongming wu gui' is Pressure being absent from the hexagram when divining about a name and office (Pressure is the Subject of fame and office, see YM.40). 'Jinqu wu cheng' is that advancement comes to nothing, and 'shengqian wei sui' is that promotion is not achieved. The book's own gloss: this speaks of divinations in which Pressure is taken as the Subject, and Pressure should not be absent. 'Absent' must be told apart as truly absent and hidden: slightly earlier in the same chapter (L550) it says that though it is not in the hexagram, if it is hidden under the Self line or a moving line, or if it changes out and sits on the Day or Month branch, then 'absent is as if not absent', so what is meant here is Pressure truly absent, neither in the hexagram nor hidden or changed. The same sentence also has judgments for no Pressure in a person's fate, the household and scheming, which belong to other domains, and only the half about fame and office is taken here. Read against 'do not say Pressure hidden means no promotion: with help it is promoted too' in YM.42."
+      },
+      "see": ["LY.CAREER.YM.42", "LY.CAREER.YM.40", "LY.CAREER.HJC.06"]
+    },
+    {
+      "id": "LY.CAREER.YM.105",
+      "topic": "取象",
+      "chapter": "身法章第九",
+      "chapter_en": "Chapter 9: The two bodies",
+      "title": "身法·看二身（功名仕宦）：先宜无病，然后以六亲六神星杀详之；功名仕宦喜文书、官鬼、青龙、朱雀、贵人临之，子孙、勾陈为忌",
+      "rule": {
+        "yi": "凡看（卦身、世身）二身，先要没有病，然后用六亲、六神、星煞来详看；功名仕宦，喜欢文书、官鬼、青龙、朱雀、贵人临在身上，而子孙、勾陈是忌。",
+        "en": "In looking at the two bodies, they should first be free of sickness, and only then are the six relations, the six spirits and the stars examined in detail; for fame and office, it is welcome for Resource, Pressure, the Azure Dragon, the Vermilion Bird and the Noble to rest on the body, and Output and Hook Earth are taboo."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [205, 205],
+          "zh": ["凡看二身，", "先宜无病，", "然后以六亲六神星杀详之，", "功名仕宦，", "喜文书官鬼青龙朱雀贵人临之，", "而子孙勾陈为忌；"],
+          "yi": ["凡看二身，", "先要没有病，", "然后用六亲、六神、星煞来详看；", "功名仕宦，", "喜欢文书、官鬼、青龙、朱雀、贵人临在身上，", "而子孙、勾陈是忌。"],
+          "en": ["In looking at the two bodies,", "they should first be free of sickness,", "and only then are the six relations, the six spirits and the stars examined in detail;", "for fame and office,", "it is welcome for Resource, Pressure, the Azure Dragon, the Vermilion Bird and the Noble to rest on the body,", "and Output and Hook Earth are taboo."] }
+      ],
+      "note": {
+        "yi": "「二身」是卦身（由卦立，又叫月卦）和世身（由世立，看身居哪一爻），见本书身法章（L198 起）。「文书」是父母爻，「贵人」是神煞。这一句在身法章里是分类总说各类占问对身的喜忌：功名仕宦、财利经营、狱讼、忧患四类。事业取的是第一类：功名仕宦喜文书、官鬼、青龙、朱雀、贵人临在身上，忌子孙、勾陈。子孙克官鬼、勾陈主迟滞，所以是忌（按象义推，书里没有说理由）。「先宜无病」是身本身要没有病（空、破、动冲等，见身法章前文）。其余三类（财利、狱讼、忧患）分属求财、官非、风险各域，这里不收。",
+        "en": "The 'two bodies' are the hexagram body (set by the hexagram, also called the month hexagram) and the Self body (set by the Self, by which line the body sits on), see the chapter on the two bodies in this book (from L198). 'Wenshu' is the Resource line, and the 'Noble' is a spirit-star. In the chapter on the two bodies this sentence lists by class what each kind of question welcomes and fears in the body: fame and office, profit and business, lawsuits, and worries. Career takes the first class: for fame and office the Resource line, Pressure, the Azure Dragon, the Vermilion Bird and the Noble resting on the body are welcome, and Output and Hook Earth are feared. Output controls Pressure and Hook Earth governs delay, so they are taboo (inferred from the images, the book gives no reason). 'It should first be free of sickness' is that the body itself should be free of sickness (Void, broken, moving and clashed, and so on, see the earlier part of that chapter). The other three classes (profit, lawsuits, worries) belong to Wealth, Lawsuits and Risk and are not taken here."
+      },
+      "see": ["LY.CAREER.YM.40", "LY.CAREER.HJC.01", "LY.CAREER.HJC.02", "LY.CAREER.YY.02"]
+    },
+    {
+      "id": "LY.CAREER.YM.106",
+      "topic": "国朝",
+      "chapter": "岁君章第二十一",
+      "chapter_en": "Chapter 21: The Tai Sui",
+      "title": "岁君·太岁与仕宦、上疏请封：仕宦则职崇台阁、词讼则事渎宪司；事干朝廷喜太岁生合世爻、忌冲克身象（上疏面圣请封皆喜太岁生合世爻则上合君心、太岁冲身象则忧严谴）",
+      "rule": {
+        "yi": "太岁值福或值鬼的年份：身命有福神持世，一生平安快乐；家宅有鬼会合，岁月多艰难；仕宦，官职高到台阁；词讼，事情惊动宪司。事情关系朝廷，喜太岁生合世爻，忌冲克身象。凡是上疏、面圣、请封等事，都喜太岁生合世爻，就上合君心；太岁冲身象，就担忧受严厉的谴责。",
+        "en": "When the Tai Sui sits on Output or on Pressure: for a person's fate, with the fortune spirit holding the Self one's whole life is peaceful and happy; for the household, with Pressure joining, the months and years are hard; for an official career, the post rises to the cabinet; for a lawsuit, the matter reaches the censorate. For a matter that concerns the court, it is welcome for the Tai Sui to generate or combine with the Self line, and it is feared for it to clash or control the body image. For memorials to the throne, audience with the sovereign, and asking for conferment of titles, it is always welcome for the Tai Sui to generate or combine with the Self line, which accords above with the sovereign's heart; the Tai Sui clashing the body image is a cause to fear severe censure."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [402, 403],
+          "zh": ["身命福持而生平安乐，", "家宅鬼会而岁月迍邅，", "仕宦则职崇台阁，词讼则事渎宪司，", "事干朝廷，喜生合世爻，忌冲克身象。"],
+          "yi": ["身命有福神持世，一生平安快乐；", "家宅有鬼会合，岁月多艰难；", "仕宦，官职高到台阁；词讼，事情惊动宪司。", "事情关系朝廷，喜太岁生合世爻，忌冲克身象。"],
+          "en": ["for a person's fate, with the fortune spirit holding the Self one's whole life is peaceful and happy;", "for the household, with Pressure joining, the months and years are hard;", "for an official career, the post rises to the cabinet; for a lawsuit, the matter reaches the censorate.", "For a matter that concerns the court, it is welcome for the Tai Sui to generate or combine with the Self line, and it is feared for it to clash or control the body image."] },
+        { "by": "易冒注", "book": "易冒", "range": [404, 404],
+          "zh": ["凡上疏面圣请封等事，皆喜太岁生合世爻，", "则上合君心，", "太岁冲身象，则忧严谴。"],
+          "yi": ["凡是上疏、面圣、请封等事，都喜太岁生合世爻，", "就上合君心；", "太岁冲身象，就担忧受严厉的谴责。"],
+          "en": ["For memorials to the throne, audience with the sovereign, and asking for conferment of titles, it is always welcome for the Tai Sui to generate or combine with the Self line,", "which accords above with the sovereign's heart;", "the Tai Sui clashing the body image is a cause to fear severe censure."] }
+      ],
+      "note": {
+        "yi": "「太岁」是当年的地支（岁君）。这一句接在太岁值福、值鬼之后（「值福」是太岁临在子孙上，「值鬼」是临在官鬼上），分说几类占问受到的影响：「身命福持而生平安乐」是身命占里福神持世、一生平安快乐，「家宅鬼会而岁月迍邅」是家宅占里官鬼会合、岁月多艰难，这两样另属身命、家宅各域；「仕宦则职崇台阁」是官职高到台阁（中枢），「词讼则事渎宪司」是官司惊动了宪司（监察、司法的衙门）。「事干朝廷」是事情关系朝廷，这时要太岁生合世爻、忌太岁冲克身象。书里自注：上疏、面圣、请封这类事，都喜太岁生合世爻，就上合君心；太岁冲身象，就忧严谴。与易林补遗朝天面旨（EL.91–93）、本书上书（YM.57）、黄金策仕宦的月建生身（HJC.07）对着看。",
+        "en": "'Taisui' is the branch of the current year (the Year Lord). This sentence follows the Tai Sui sitting on Output or on Pressure ('sitting on Output' is the Tai Sui resting on the Output line, 'sitting on Pressure' is resting on the Pressure line), and says how several kinds of divination are affected: 'with the fortune spirit holding the Self one's whole life is peaceful and happy' is Output holding the Self in a divination about a person's fate, one's whole life peaceful and happy, and 'with Pressure joining, the months and years are hard' is Pressure joining in a divination about the household, the months and years hard, these two belonging to the domains of personal fate and the household; 'the post rises to the cabinet' is the office rising to the cabinet (the centre of government), and 'the matter reaches the censorate' is the lawsuit stirring up the censorate (the supervising and judicial offices). 'Shi gan chaoting' is a matter that concerns the court, in which it is welcome for the Tai Sui to generate or combine with the Self line and feared for it to clash or control the body image. The book's own gloss: memorials, audience with the sovereign and asking for titles are all welcome with the Tai Sui generating or combining with the Self, which accords above with the sovereign's heart, and the Tai Sui clashing the body image is a cause to fear severe censure. Read against the Yilin Buyi on the audience at court (EL.91-93), the memorials in this book (YM.57) and the Month generating the body in the Huangjin Ce on official careers (HJC.07)."
+      },
+      "see": ["LY.CAREER.EL.91", "LY.CAREER.EL.92", "LY.CAREER.YM.57", "LY.CAREER.HJC.07"]
+    },
+    {
+      "id": "LY.CAREER.YM.107",
+      "topic": "风险",
+      "chapter": "随墓章第三十五",
+      "chapter_en": "Chapter 35: Following into the tomb",
+      "title": "随墓章·各占之害：求官履仕途而不反、出行登平道而遭屯、行人病于他乡、产妇厄于暗室、公役有桎梏之辱、兴造有妨犯之凶、偷关逾险而蹈网罗、出族谋差而受羁绁（随墓统忌，兴造偷逾空破稍可）",
+      "rule": {
+        "yi": "（随墓的害处）求官的人走上仕途，就回不来了；出行的人走在平路上却遇到屯难；行人病在他乡，产妇厄在暗室；当差的有枷锁之辱，兴造的有触犯妨碍之凶；偷关越险的陷入罗网，离开宗族谋差使的受羁绊。随墓是通忌；如果是兴造、偷关逾险，空、破还稍微可以。",
+        "en": "(The harm of following into the tomb:) one who seeks office walks the official road and does not return; one who travels walks on a level road and meets trouble; the traveller falls ill in a strange land, the woman in childbirth is in distress in a dark room; the runner suffers the disgrace of fetters, the builder meets the ill-omen of offence; one who slips past a pass and crosses a danger falls into the net, and one who leaves his clan to seek a post is bound. Following into the tomb is a taboo in all cases; but for building and for slipping past a pass and crossing a danger, Void or broken is somewhat tolerable."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [604, 604],
+          "zh": ["求官履仕途而不反，出行登平道而遭屯，", "行人病于他乡，产妇厄于暗室，", "公役有桎梏之辱，兴造有妨犯之凶，", "偷关逾险而蹈网罗，出族谋差而受羁绁。"],
+          "yi": ["求官的人走上仕途，就回不来了；出行的人走在平路上却遇到屯难；", "行人病在他乡，产妇厄在暗室；", "当差的有枷锁之辱，兴造的有触犯妨碍之凶；", "偷关越险的陷入罗网，离开宗族谋差使的受羁绊。"],
+          "en": ["one who seeks office walks the official road and does not return; one who travels walks on a level road and meets trouble;", "the traveller falls ill in a strange land, the woman in childbirth is in distress in a dark room;", "the runner suffers the disgrace of fetters, the builder meets the ill-omen of offence;", "one who slips past a pass and crosses a danger falls into the net, and one who leaves his clan to seek a post is bound."] },
+        { "by": "易冒注", "book": "易冒", "range": [605, 605],
+          "zh": ["随墓统忌，", "若兴造偷逾，空破稍可。"],
+          "yi": ["随墓是通忌；", "如果是兴造、偷关逾险，空、破还稍微可以。"],
+          "en": ["Following into the tomb is a taboo in all cases;", "but for building and for slipping past a pass and crossing a danger, Void or broken is somewhat tolerable."] }
+      ],
+      "note": {
+        "yi": "「求官履仕途而不反」按文意是求官的人走上仕途就回不来、陷在里面（「反」读作返回），和后面「出行登平道而遭屯」（走平路遇到难）同是『随墓』的害。「公役有桎梏之辱」是当差的受枷锁之辱，「兴造」是兴建、营造，「妨犯」是触犯禁忌，「偷关逾险」是偷越关隘、翻越险阻，「出族」是离开宗族，「羁绁」是羁绊束缚。「随墓」（世爻或用神随着官鬼入墓）是本书里的大忌（见 YM.41），这一条列出了各类占问里它带来的害，前两样和后一样（求官、公役、谋差）属事业，其余分属出行、疾病、官非等域，这里整句收，以免拆开。书里自注：随墓是通忌；如果是兴造、偷关逾险，空、破还稍微可以。",
+        "en": "'Qiuguan lü shitu er bu fan' is, by the sense, one who seeks office walking the official road and not being able to come back, caught in it ('fan' is read as return), the same harm of 'following into the tomb' as 'walks on a level road and meets trouble' that follows. 'Gongyi you zhigu zhi ru' is a runner suffering the disgrace of fetters, 'xingzao' is building and construction, 'fangfan' is offending a taboo, 'tou guan yu xian' is slipping past a pass and crossing a danger, 'chu zu' is leaving one's clan, and 'jixie' is being bound by ties. 'Following into the tomb' (the Self line or the Subject following Pressure into the tomb) is a great taboo in this book (see YM.41), and this entry lists the harm it brings in each kind of divination: the first, the fifth and the last (seeking office, runners, seeking a post) belong to Career, and the others belong to Travel, Illness, Lawsuits and other domains; the whole sentence is taken so as not to split it. The book's own gloss: following into the tomb is a taboo in all cases; but for building and for slipping past a pass and crossing a danger, Void or broken is somewhat tolerable."
+      },
+      "see": ["LY.CAREER.YM.41", "LY.CAREER.YM.13", "LY.CAREER.YM.58", "LY.CAREER.HJC.11"]
+    },
+    {
+      "id": "LY.CAREER.YM.108",
+      "topic": "取象",
+      "chapter": "诸星章第三十九",
+      "chapter_en": "Chapter 39: The various stars",
+      "title": "诸星·天马：天马即乾马、正月午始循环行之，此星惟利升迁之卜（正月用乾四爻、二月五爻申；正七午、二八申、三九戌、四十子、五十一寅、六十二辰）",
+      "rule": {
+        "yi": "天马，就是乾马，正月起在午，循环着走；这颗星只利于升迁的占问。正月用乾卦四爻为天马，二月用五爻（申），依次循环使用。口诀说：正月、七月在午，二月、八月在申，三月、九月在戌，四月、十月在子，五月、十一月在寅，六月、十二月在辰。",
+        "en": "The Heavenly Horse is the horse of Qian; it starts at Wu in the first month and goes round in turn; this star is of benefit only in divinations about promotion. In the first month the fourth line of Qian is taken as the Heavenly Horse, in the second month the fifth line, Shen, and so on in turn. The formula says: first and seventh months at Wu, second and eighth at Shen, third and ninth at Xu, fourth and tenth at Zi, fifth and eleventh at Yin, sixth and twelfth at Chen."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [685, 685],
+          "zh": ["天马，即乾马也，", "正月午始，循环行之，", "此星惟利升迁之卜。"],
+          "yi": ["天马，就是乾马，", "正月起在午，循环着走；", "这颗星只利于升迁的占问。"],
+          "en": ["The Heavenly Horse is the horse of Qian;", "it starts at Wu in the first month and goes round in turn;", "this star is of benefit only in divinations about promotion."] },
+        { "by": "易冒注", "book": "易冒", "range": [686, 686],
+          "zh": ["正月用乾四爻为天马，二月五爻申，循环用之。", "法曰：", "正七还骑马，二八向猴申，", "三九须从犬，四十鼠相侵，", "五十一当寅上，六十二定归辰。"],
+          "yi": ["正月用乾卦四爻为天马，二月用五爻（申），依次循环使用。", "口诀说：", "正月、七月还骑马（午），二月、八月向猴（申），", "三月、九月须从狗（戌），四月、十月鼠（子）相侵，", "五月、十一月当在寅上，六月、十二月定归辰。"],
+          "en": ["In the first month the fourth line of Qian is taken as the Heavenly Horse, in the second month the fifth line, Shen, and so on in turn.", "The formula says:", "first and seventh months, back on the horse (Wu); second and eighth, toward the monkey (Shen);", "third and ninth, follow the dog (Xu); fourth and tenth, the rat (Zi) intrudes;", "fifth and eleventh, it falls on Yin; sixth and twelfth, it settles at Chen."] }
+      ],
+      "note": {
+        "yi": "「天马」是神煞，「即乾马」是乾卦象马（乾为马）。「正月午始，循环行之」是从正月起在午，以后逐月循环。书里自注给了推法：正月用乾卦四爻（壬午）为天马，二月用五爻（壬申），以后循环；口诀的意思是正月、七月在午，二月、八月在申，三月、九月在戌，四月、十月在子，五月、十一月在寅，六月、十二月在辰（每两个月一组，相差两位）。「惟利升迁之卜」是这颗星只对升迁有利。驿马是另一颗星（主行人、出行），和天马不同（原文在这句之后紧接着讲驿马）。这里只收天马和它的推法。注文里接下去还有「天马文人用上，丧病者嗔」等句，是天马在文人、丧病中的用法，不属事业，没有收。",
+        "en": "'Tianma' is a spirit-star, and 'ji Qian ma' is that the Qian trigram has the horse as its image (Qian is the horse). 'Starts at Wu in the first month and goes round in turn' is that from the first month it stands at Wu and then goes round month by month. The book's own note gives the way to find it: in the first month the fourth line of Qian (Ren-Wu) is taken as the Heavenly Horse, in the second month the fifth line (Ren-Shen), and so on in turn; the formula means first and seventh months at Wu, second and eighth at Shen, third and ninth at Xu, fourth and tenth at Zi, fifth and eleventh at Yin, sixth and twelfth at Chen (each group of two months, two places apart). 'Of benefit only in divinations about promotion' is that this star is favourable only to promotion. The Post Horse is another star (governing travellers and travelling) and differs from the Heavenly Horse (the original goes on to speak of the Post Horse right after this sentence). Only the Heavenly Horse and the way to find it are taken here. The note goes on with 'the Heavenly Horse is used above by literary men, and those in mourning or ill are angry' and so on, which are uses of the Heavenly Horse for literary men and for mourning and illness, not Career, and are not taken."
+      },
+      "see": ["LY.CAREER.YM.42", "LY.CAREER.YM.43", "LY.CAREER.EL.55"]
+    },
+    {
+      "id": "LY.CAREER.YM.109",
+      "topic": "升迁",
+      "chapter": "出行章第七十六",
+      "chapter_en": "Chapter 76: Travelling",
+      "title": "出行求事于升迁：出行而筮求事者亦察用爻——求事于升迁则考诸官鬼而毋世空（科第考文书、寻访考用爻、货利考财象，盖专于事而不专于出行）",
+      "rule": {
+        "yi": "于是占出去求事的，也察看用爻：求事于科第，就考察文书；求事于升迁，就考察官鬼，而不要世空；求事于寻访，考察用爻；求事于货利，考察财象；这是专就事来占，而不专就出行来占。",
+        "en": "So in divining about going out to seek something, one also examines the Subject line: for seeking something in the examinations, one examines the document line; for seeking something in promotion, one examines Pressure, and the Self must not be Void; for seeking something by searching and visiting, one examines the Subject line; for seeking something in goods and profit, one examines the Wealth image; this goes by the matter and not by the travelling."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1666, 1666],
+          "zh": ["于是而筮求事者，亦察用爻，", "求事于科第，则考诸文书；", "求事于升迁，则考诸官鬼，而毋世空也；", "求事于寻访，考诸用爻；", "求事于货利，考诸财象，", "盖耑于事而不耑于出行也。"],
+          "yi": ["于是占出去求事的，也察看用爻：", "求事于科第，就考察文书；", "求事于升迁，就考察官鬼，而不要世空；", "求事于寻访，考察用爻；", "求事于货利，考察财象，", "这是专就事来占，而不专就出行来占。"],
+          "en": ["So in divining about going out to seek something, one also examines the Subject line:", "for seeking something in the examinations, one examines the document line;", "for seeking something in promotion, one examines Pressure, and the Self must not be Void;", "for seeking something by searching and visiting, one examines the Subject line;", "for seeking something in goods and profit, one examines the Wealth image;", "this goes by the matter and not by the travelling."] }
+      ],
+      "note": {
+        "yi": "「求事」是出门去求一件事。「文书」是父母爻，「财象」是财爻。这一句里四种事分属四个域：科第归考试，升迁归事业，寻访（找人、找物）归失物或行人，货利归求财；这里整句收，以免拆开，而升迁一条是事业的：出门求升迁，要看官鬼，不要世空，与 YM.42 的「专考官爻」「世空则占不遂」一致。「盖耑于事而不耑于出行也」（「耑」同「专」）是说这类占问要按所求的那件事取用爻，不按出行取。与出行章后面的求事各节对着看。",
+        "en": "'Qiushi' is going out to seek a matter. 'Wenshu' is the document line (the Resource line), and the 'Wealth image' is the Wealth line. The four matters in this sentence belong to four domains: the examinations to Examinations, promotion to Career, searching and visiting (looking for a person or a thing) to Lost Things or Travellers, and goods and profit to Wealth; the whole sentence is taken here so as not to split it, and the promotion clause is the one that belongs to Career: going out to seek promotion, one looks at Pressure and the Self must not be Void, which agrees with 'look only at the Pressure line' and 'with the Self Void the divination does not come to pass' in YM.42. 'Gai zhuan yu shi er bu zhuan yu chuxing ye' ('zhuan' here is the same as the usual 'zhuan') says that such divinations take the line by the matter sought and not by the travelling. Read against the later sections on seeking matters in the chapter on travelling."
+      },
+      "see": ["LY.CAREER.YM.42", "LY.CAREER.YM.43", "LY.CAREER.YM.41"]
+    },
+    {
+      "id": "LY.CAREER.YM.110",
+      "topic": "差役",
+      "chapter": "治筑章第七十九",
+      "chapter_en": "Chapter 79: Building and repair works",
+      "title": "治筑·官吏奉差治河：大官奉敕、小官奉命、吏民奉差，官爻不可病并冲克世位；官吏因河工而筮利钝反以官为重——官旺世实则纪录升荐、官伤世空及随墓助伤则罪戾降责",
+      "rule": {
+        "yi": "如果是大官奉敕命、小官奉上司之命、吏民奉派出差，官爻不可有病，并且不可冲克世位。如果是官吏因河工（治河工程）占利不利，就反过来以官为重：官旺、世实，就被记功、升荐；官伤、世空，以及随墓、助伤，就有罪过、降责。",
+        "en": "If a great official acts on an imperial edict, a lesser official on an order, or clerks and commoners on an assignment, the Pressure line must not be sick, nor clash with or control the Self's place. If an official or clerk asks about gain or loss in connection with river works, then on the contrary Pressure counts for most: with Pressure thriving and the Self solid, he is recorded for merit and recommended for promotion; with Pressure injured and the Self Void, and following into the tomb and helping the injury, there is guilt and demotion."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1732, 1732],
+          "zh": ["若大官奉勅、小官奉命、吏民奉差，", "官爻不可病，", "并冲克世位。"],
+          "yi": ["如果是大官奉敕命、小官奉上司之命、吏民奉派出差，", "官爻不可有病，", "并且不可冲克世位。"],
+          "en": ["If a great official acts on an imperial edict, a lesser official on an order, or clerks and commoners on an assignment,", "the Pressure line must not be sick,", "nor clash with or control the Self's place."] },
+        { "by": "经", "book": "易冒", "range": [1733, 1733],
+          "zh": ["若官吏因河工而筮利钝，则反以官为重，", "官旺世实则纪录升荐，", "官伤世空，及随墓助伤，则罪戾降责。"],
+          "yi": ["如果是官吏因河工占利不利，就反过来以官为重：", "官旺、世实，就被记功、升荐；", "官伤、世空，以及随墓、助伤，就有罪过、降责。"],
+          "en": ["If an official or clerk asks about gain or loss in connection with river works, then on the contrary Pressure counts for most:", "with Pressure thriving and the Self solid, he is recorded for merit and recommended for promotion;", "with Pressure injured and the Self Void, and following into the tomb and helping the injury, there is guilt and demotion."] }
+      ],
+      "note": {
+        "yi": "「治筑」是治河筑堤一类的工程，「河工」是治河工程。治筑章前面讲的是堤岸能不能修成（用父母为用，不属事业域）；这几句讲的是被派去办这件事的人：大官奉勅、小官奉命、吏民奉差，官爻不可病、不可冲克世；官吏因河工占利钝（得失），这时反过来以官爻为重——官旺世实则被记功、升荐，官伤、世空、随墓助伤则获罪降责。「奉勅」是奉皇帝的敕命，「奉差」是奉派差使。「纪录」是记功。「罪戾」是罪过。与易林补遗谋差顶役（EL.106–108）、黄金策仕宦的巡察四方（HJC.23）对着看。",
+        "en": "'Zhizhu' is works such as managing a river and building embankments, and 'hegong' is river works. The earlier part of the chapter on building and repair speaks of whether the embankments can be completed (taking Resource as the Subject, which is not Career); these sentences speak of the people sent to carry it out: a great official on an imperial edict, a lesser one on an order, clerks and commoners on an assignment, for whom the Pressure line must not be sick and must not clash with or control the Self; and for an official or clerk asking about gain and loss in connection with river works, Pressure then counts for most the other way round: with Pressure thriving and the Self solid he is recorded for merit and recommended, and with Pressure injured, the Self Void, and following into the tomb and helping the injury he is found guilty and demoted. 'Fengchi' is acting on an imperial edict, and 'fengchai' is acting on an assignment. 'Jilu' is recording merit. 'Zuili' is guilt. Read against the Yilin Buyi on seeking a commission and taking a place (EL.106-108) and the Huangjin Ce on touring and inspecting the regions (HJC.23)."
+      },
+      "see": ["LY.CAREER.EL.106", "LY.CAREER.HJC.23", "LY.CAREER.YM.111", "LY.CAREER.YM.80"]
+    },
+    {
+      "id": "LY.CAREER.YM.111",
+      "topic": "差役",
+      "chapter": "治筑章第七十九",
+      "chapter_en": "Chapter 79: Building and repair works",
+      "title": "治筑·民夫苦役：民夫苦役筮吉凶以官为忌——旺动克世则劳苦无期、命墓助伤则忧虞不测；忧妨犯及苦徭役者皆以鬼为忌象、旺动克世及随助而凶",
+      "rule": {
+        "yi": "如果是民夫服苦役占吉凶，就以官为忌：官旺动克世，劳苦没有尽头；命墓、助伤，忧虑难测。如果担忧触犯妨碍，以及受苦于徭役的，都以鬼为忌象：旺动克世，以及随墓助伤，就凶。",
+        "en": "If a labourer in hard service divines about good and ill, Pressure is the taboo: Pressure thriving, moving and controlling the Self, the toil has no end; the life in the tomb and helping the injury, there is fear of the unforeseen. If one worries about offending and obstruction, and for those who suffer under labour service, Pressure is the taboo image in all cases: thriving, moving and controlling the Self, and following into the tomb and helping the injury, are ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1734, 1734],
+          "zh": ["若民夫苦役而筮吉凶，则以官为忌，", "旺动克世，劳苦无期，", "命墓助伤，忧虞不测。"],
+          "yi": ["如果是民夫服苦役占吉凶，就以官为忌：", "官旺动克世，劳苦没有尽头；", "命墓、助伤，忧虑难测。"],
+          "en": ["If a labourer in hard service divines about good and ill, Pressure is the taboo:", "Pressure thriving, moving and controlling the Self, the toil has no end;", "the life in the tomb and helping the injury, there is fear of the unforeseen."] },
+        { "by": "经", "book": "易冒", "range": [1735, 1735],
+          "zh": ["如忧妨犯，及苦徭役者，", "皆以鬼为忌象，", "旺动克世，及随助而凶。"],
+          "yi": ["如果担忧触犯妨碍，以及受苦于徭役的，", "都以鬼为忌象：", "旺动克世，以及随墓助伤，就凶。"],
+          "en": ["If one worries about offending and obstruction, and for those who suffer under labour service,", "Pressure is the taboo image in all cases:", "thriving, moving and controlling the Self, and following into the tomb and helping the injury, are ominous."] }
+      ],
+      "note": {
+        "yi": "「民夫苦役」是被征去服苦役的民夫。「旺动克世」是官鬼旺相、发动、克世；「劳苦无期」是辛苦没有尽头；「命墓助伤」是世爻（命）入墓、并助官鬼伤世；「忧虞不测」是忧虑难以预料的祸事。「忧妨犯」是担忧触犯禁忌或遭妨碍，「徭役」是官府摊派的劳役。这两处都是以官鬼为忌：受役的人希望官鬼静、弱、不克世（与 YM.80 的问役轻重、YM.84 的『役而免害恶鬼旺』同一个意思）。同一章里的修塘修坪、治水兴营等工程则以父为用爻，不属事业域，没有收。",
+        "en": "'Minfu kuyi' is the labourers conscripted for hard service. 'Thriving, moving and controlling the Self' is Pressure thriving, moving and controlling the Self; 'toil without end' is hardship that does not end; 'the life in the tomb and helping the injury' is the Self line (the life) entering the tomb and also helping Pressure to injure the Self; 'fear of the unforeseen' is anxiety about a calamity that cannot be foreseen. 'Worrying about offending and obstruction' is worrying about offending a taboo or meeting obstruction, and 'yaoyi' is labour service assigned by the government. In both places Pressure is the taboo: one who serves hopes Pressure will be still, weak and not controlling the Self (the same idea as asking how heavy the duty is in YM.80 and 'for one who serves a duty to escape harm, Pressure thriving is hated' in YM.84). The works in the same chapter, such as repairing ponds and embankments, controlling water and building fortifications, take the father line as the Subject, are not Career, and are not taken."
+      },
+      "see": ["LY.CAREER.YM.80", "LY.CAREER.YM.84", "LY.CAREER.YM.110", "LY.CAREER.YM.112"]
+    },
+    {
+      "id": "LY.CAREER.YM.112",
+      "topic": "差役",
+      "chapter": "治筑章第七十九",
+      "chapter_en": "Chapter 79: Building and repair works",
+      "title": "治筑·差委雇工：凡筮差委雇工皆以应为用，应旺实则有成、克世则无良、六冲则难成",
+      "rule": {
+        "yi": "凡是占差委、雇工，都以应为用：应旺实，就有成；克世，就不良善；六冲，就难成。",
+        "en": "In all divinations about commissioned workmen and hired labour, the Other is the Subject: with the Other thriving and solid it comes off; controlling the Self, it is not good; a six-clash, it is hard to accomplish."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1735, 1735],
+          "zh": ["凡筮差委雇工，皆以应为用，", "应旺实则有成，克世则无良，六冲则难成也。"],
+          "yi": ["凡是占差委、雇工，都以应为用：", "应旺实，就有成；克世，就不良善；六冲，就难成。"],
+          "en": ["In all divinations about commissioned workmen and hired labour, the Other is the Subject:", "with the Other thriving and solid it comes off; controlling the Self, it is not good; a six-clash, it is hard to accomplish."] }
+      ],
+      "note": {
+        "yi": "「差委」是被官府差遣、委派的人工，「雇工」是出钱雇来的工。以应为用，是因为这两种都是『别人替我（或替官府）做事』，做事的人是对方。「应旺实」是应爻旺相又不空，「克世则无良」是应克世就不是良善。「六冲」按本书的说法是冲散、不成。这一条和本卷收雇章的雇倩人工（YM.72）是同一个断法：雇工以应为用神，应破绝、空散、三冲、克世都不成。",
+        "en": "'Chaiwei' is workmen dispatched and commissioned by the government, and 'gugong' is labour hired for pay. The Other is taken as the Subject because in both cases it is 'another person doing the work for me (or for the government)', and the one who does it is the other side. 'The Other thriving and solid' is the Other line thriving and not Void, and 'controlling the Self, it is not good' is the Other controlling the Self and not being good. A 'six-clash', in the book's sense, is scattering and failure. This entry is the same judgment as hiring labour in the chapter on taking on and hiring in this book (YM.72): hired labour takes the Other as the Subject, and the Other broken or extinct, Void or scattered, the three clashes and controlling the Self all do not come off."
+      },
+      "see": ["LY.CAREER.YM.72", "LY.CAREER.YM.111", "LY.CAREER.EL.134"]
+    }
+  ]
+}

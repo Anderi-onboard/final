@@ -1,0 +1,124 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "易林补遗",
+  "chapter": "易林总断章第一",
+  "chapter_en": "Chapter 1: general judgments",
+  "ranges": {"易林补遗": [82, 1028]},
+  "units": [
+    {
+      "id": "LY.MARRY.YL.28",
+      "topic": "总则",
+      "chapter": "易林总断章第一",
+      "chapter_en": "Chapter 1: general judgments",
+      "title": "婚姻卦男占妇以财为主、女占夫以鬼为先：单看用爻，不可将卦名而断、不可凭星煞而推；「结婚推财鬼」是俗言，用神只有一爻，不是二象",
+      "rule": {
+        "yi": "占卜不要乱说：一不可以按卦名来断，二不可以凭星煞来推，只看用爻，就一点疑惑也没有。婚姻卦里，男子占女子以财爻为主，女子占男子以官鬼为先。俗话说「结婚推财鬼」（财、鬼两样都要看），这不对：用神只有一个爻，怎么能说是两个象？",
+        "en": "In divining do not speak wildly: one must not judge by the hexagram's name, nor reckon by stars and spirits; look only at the Subject line and there is no doubt at all. In a marriage hexagram, when a man divines a woman Wealth is the chief, and when a woman divines a man Pressure comes first. The common saying 'for marriage reckon Wealth and Pressure' (look at both) is wrong: the Subject is one line, so how can one speak of two images?"
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [82, 82],
+          "zh": ["人间占卜切莫乱言，一不可将卦名而断，又不可凭星煞而推，单看用爻，丝毫无惑。", "如婚姻卦内，男占妇，以财为主，女占夫，以鬼为先。", "儒学以文书为用，仕宦以官鬼为凭。", "俗言考试看官父，结婚推财鬼。", "凡用神只有一爻，岂云二象？"],
+          "yi": ["人们占卜不要乱说话：一不可以按卦名来断，二不可以凭星煞来推，单看用爻，就一点疑惑也没有。", "比如婚姻卦里，男子占女子，以财爻为主；女子占男子，以官鬼为先。", "读书人求学问，以文书（父母爻）为用；做官的，以官鬼为凭。", "俗话说考试看官爻和父母爻，结婚推财爻和官鬼爻。", "用神只有一个爻，怎么能说是两个象呢？"],
+          "en": ["In divining, do not speak wildly: one must not judge by the hexagram's name, nor reckon by stars and spirits; look only at the Subject line and there is no doubt at all.", "For instance in a marriage hexagram, when a man divines a woman, Wealth is the chief; when a woman divines a man, Pressure comes first.", "For study, documents (the Resource line) are the Subject; for office, Pressure is what to rely on.", "The common saying is that for examinations one looks at Pressure and Resource, and for marriage one reckons Wealth and Pressure.", "The Subject is only one line; how can one speak of two images?"] }
+      ],
+      "dispute": {
+        "yi": "这一段直接反对两件在别处通行的做法：一是「占婚财鬼双全」——《天玄赋》的注说「占婚用爻首要财鬼，二者俱全称为大吉」（LY.MARRY.TXF.02），阐奥歌章说「财鬼双全便可成」（LY.MARRY.HZL.22），而这里说用神只有一爻；二是按卦名断婚——《易冒》以咸、恒、节、泰为吉、睽、革、解、离为凶（LY.MARRY.YM.03），《增删卜易》里觉子引它（LY.MARRY.ZS.14），而这里说一不可将卦名而断。",
+        "en": "This passage plainly opposes two practices that were current elsewhere. One is 'a marriage needs both Wealth and Pressure': the note to the Tianxuan Fu says 'in divining marriage the Subject lines are first Wealth and Pressure, and having both is greatly lucky' (LY.MARRY.TXF.02), and the Chan Ao Ge Zhang says 'with both Wealth and Pressure complete it can be made' (LY.MARRY.HZL.22), while this passage says the Subject is one line. The other is judging marriage by the hexagram's name: the Yi Mao takes Xian, Heng, Jie and Tai as lucky and Kui, Ge, Xie and Li as ill (LY.MARRY.YM.03), quoted by Juezi in the Zengshan Buyi (LY.MARRY.ZS.14), while this passage says one must not judge by the name."
+      },
+      "note": {
+        "yi": "卜筮全书里男占婚、女占婚各以哪一爻为用神，各书大同小异：男占取财、女占取鬼是最通行的（LY.MARRY.ZS.01）。这里的特别处是把它说成「唯一」，并且反对「财鬼并看」。",
+        "en": "Which line the books take as the Subject for a man's or a woman's marriage divination differs little from book to book: Wealth for a man and Pressure for a woman is the most common (LY.MARRY.ZS.01). What is distinctive here is that it is said to be the only one, and looking at Wealth and Pressure together is opposed."
+      },
+      "see": ["LY.MARRY.TXF.02", "LY.MARRY.HZL.22", "LY.MARRY.YM.03", "LY.MARRY.ZS.14", "LY.MARRY.ZS.01"]
+    },
+    {
+      "id": "LY.MARRY.YL.29",
+      "topic": "风险",
+      "chapter": "涓选日时章第四十八",
+      "chapter_en": "Chapter 48: choosing days and hours",
+      "title": "选日子办事：结婚、承继（过继立嗣）都忌六冲",
+      "rule": {
+        "yi": "选日子办各种事，忌讳各不相同：结婚和承继（过继立嗣）这两件事，占到的卦都忌六冲。",
+        "en": "In choosing a day for undertakings the taboos differ from matter to matter: for marrying and for adopting an heir, a Six-clash in the hexagram is to be avoided in both."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [1028, 1028],
+          "zh": ["结婚承继，皆忌六冲。"],
+          "yi": ["结婚、承继（过继立嗣），都忌讳六冲。"],
+          "en": ["For marrying and for adopting an heir, a Six-clash is to be avoided in each case."] }
+      ],
+      "note": {
+        "yi": "同一段里还有别的事的忌讳：各样吉日以官鬼为先忌，接寿停忌白虎，做生意不宜兄弟动；上任的官员不怕鬼发、反忌子孙动而官爻空。这些与婚姻无关，没有收。六冲对婚姻的坏处在别的书里说得更细（LY.MARRY.ZS.13、LY.MARRY.YM.24、LY.MARRY.TXF.11）。",
+        "en": "The same passage gives the taboos of other matters: for all lucky days Pressure is the first thing to avoid, for receiving longevity or a coffin the White Tiger, for business a moving Peer line; an official going to his post need not fear Pressure moving, and fears instead Output moving with Pressure Void. These have nothing to do with marriage and are not included. Other books say more exactly what a Six-clash does to a marriage (LY.MARRY.ZS.13, LY.MARRY.YM.24, LY.MARRY.TXF.11)."
+      },
+      "see": ["LY.MARRY.ZS.13", "LY.MARRY.YM.24", "LY.MARRY.TXF.11", "LY.MARRY.YL.02"]
+    },
+    {
+      "id": "LY.MARRY.YL.30",
+      "topic": "取象",
+      "chapter": "易林总断章第一",
+      "chapter_en": "Chapter 1: general judgments",
+      "title": "青龙动处无不为祥：管嫁娶喜庆善事生育，问喜即成、问财即得；但不宜冲（冲则失半）、不宜空（空则永无嘉兆）；月建青龙与戊辰青龙同断",
+      "rule": {
+        "yi": "青龙这个神，管僧道、嫁娶喜庆、善事、生育等。它如果遇到发动的地方，没有不吉祥的，即使带着凶神恶煞也不会因此止歇；问喜事就成，问钱财就得。但是不宜被冲，被冲就失去一半；也不宜落空，落空就永远没有好兆头。月建上的青龙和戊辰的青龙，断法相同。书上说：卦中吉利的神将叫青龙，做事求财喜气浓，求名和嫁娶都遂意，即使有忧愁的事也没有凶险。",
+        "en": "The Azure Dragon governs monks and Taoists, marriages and celebrations, good deeds and childbirth, and the like. If it meets a place where it moves, nothing fails to be auspicious, and even carrying ill spirits and fierce stars it is not stopped by them; ask about joy and it is made, ask about wealth and it is gained. But it must not be clashed, for clashed it loses half, and it must not be Void, for Void there is never a good omen. The Azure Dragon of the Month and that of a Wuchen day are judged alike. The books say: the lucky general in a hexagram is called the Azure Dragon; in undertakings and seeking wealth joy is thick, for fame and marrying all goes as wished, and even with a worrying matter there is no ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [120, 120],
+          "zh": ["僧道、嫁娶喜庆善事生育、竹木青缘、发作，此神若遇动处，无不为祥，纵带凶神恶煞亦不为歇，病遇得和病遇得解，问喜即成、问财即得，但不宜冲，冲则其神失半，又不宜空，空则永无嘉兆也。", "凡月建青龙与戊辰青龙同断。", "书云：卦中吉将号青龙，作事求财喜气浓，名则嫁娶皆遂意，假饶忧事也无凶。"],
+          "yi": ["（青龙管）僧道、嫁娶喜庆、善事、生育、竹木、青绿之缘、发作；这个神如果遇到发动的地方，没有不吉祥的，即使带着凶神恶煞也不会因此止歇，病遇到它得以缓和、得以化解，问喜事就成、问钱财就得；但是不宜被冲，被冲这个神就失去一半，又不宜落空，落空就永远没有好兆头。", "凡是月建上的青龙和戊辰日的青龙，断法相同。", "书上说：卦中吉利的神将叫青龙，做事求财喜气浓，求名和嫁娶都遂意，即使有忧愁的事也没有凶险。"],
+          "en": ["(The Azure Dragon governs) monks and Taoists, marriages and celebrations, good deeds, childbirth, bamboo and timber, green things and stirring into action; if this spirit meets a place where it moves, nothing fails to be auspicious, and even carrying ill spirits and fierce stars it is not stopped by them; in illness it brings ease and relief; ask about joy and it is made, ask about wealth and it is gained; but it must not be clashed, for clashed the spirit loses half, and it must not be Void, for Void there is never a good omen.", "The Azure Dragon of the Month and the Azure Dragon of the Wuchen day are judged alike.", "The books say: the lucky general in a hexagram is called the Azure Dragon; in undertakings and seeking wealth joy is thick, for fame and marrying all goes as wished, and even with a worrying matter there is no ill."] }
+      ],
+      "note": {
+        "yi": "第一句没有主语：它接在上一行「龙为良善清高喜气利名之兆」和一段讲青龙属木、应甲乙寅卯日的解说后面（上一行文字有讹脱，没有收），主语是青龙。「竹木青缘」的意思书里没有解释，译文照字面。",
+        "en": "The first sentence has no subject: it follows the line 'the Dragon is a sign of goodness, purity, joy and fame' and a note that the Azure Dragon belongs to Wood and answers to Jia, Yi, Yin and Mao days (that line is corrupt and is not included); the subject is the Azure Dragon. The meaning of 'bamboo and wood, green fringes' is not explained and is translated literally."
+      },
+      "see": ["LY.MARRY.TXF.25", "LY.MARRY.BSYG.02", "LY.MARRY.DYTJ.22", "LY.MARRY.DYTJ.25"]
+    },
+    {
+      "id": "LY.MARRY.YL.31",
+      "topic": "成否",
+      "chapter": "易林总断章第一",
+      "chapter_en": "Chapter 1: general judgments",
+      "title": "用爻值三合，见贵谋事、嫁娶、求财、科甲、田蚕诸般逐意",
+      "rule": {
+        "yi": "用爻遇到三合成局，求见贵人、谋事、嫁娶、求财、科举、田蚕这些事，件件都称心如意。",
+        "en": "When the Subject line meets a three-harmony frame, seeing a great man, undertakings, marriage, seeking wealth, examinations, fields and silkworms all go as one wishes."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [186, 186],
+          "zh": ["凡用爻值三合者，见贵谋事、嫁娶、求财、科甲、田蚕诸般逐意也。"],
+          "yi": ["凡是用爻遇到三合成局，求见贵人谋事、嫁娶、求财、科举、田蚕这些事，件件都称心如意。"],
+          "en": ["Whenever the Subject line meets a three-harmony frame, seeing a great man to plan, marriage, seeking wealth, examinations, fields and silkworms all go as one wishes."] }
+      ],
+      "note": {
+        "yi": "这一句前面讲的是三合怎样才算成局：三个字全叫真三合，缺一字断为半吉，缺了中间的字就不成（申子辰缺子不成，亥卯未缺卯不成）。「缺一字为半吉」这条和《增删卜易》「两爻动一爻不动也成局」不同（LY.MARRY.ZS.36），后者要求等月日把缺的补上。",
+        "en": "The lines before it say when a three-harmony counts as formed: all three characters make a true one, one missing is judged half lucky, and if the middle one is missing it does not form (Shen-Zi-Chen without Zi does not, nor Hai-Mao-Wei without Mao). 'One missing is half lucky' differs from the Zengshan Buyi's 'two lines moving and one still also forms a frame' (LY.MARRY.ZS.36), which requires a later month or day to supply what is missing."
+      },
+      "see": ["LY.MARRY.ZS.36", "LY.MARRY.ZS.28", "LY.MARRY.YL.02"]
+    },
+    {
+      "id": "LY.MARRY.YL.32",
+      "topic": "总则",
+      "chapter": "身命造化章第七",
+      "chapter_en": "Chapter 7: person and fate",
+      "title": "询妻妾奴婢及情人皆用财爻，遇子为祥、见兄成咎；探夫主看官爻，旺增荣耀、衰减光辉，子动为凶、财兴为吉",
+      "rule": {
+        "yi": "问妻妾、奴婢和情人，都用财爻，遇到子孙是吉祥，见到兄弟就成灾祸。探问丈夫和文武官员的身命，要察看官爻：旺就增加荣耀，衰就减少光辉；子孙动是凶，财爻兴旺是吉。",
+        "en": "In asking about a wife or concubine, maids and servants, or a lover, the Wealth line is always the Subject; meeting Output is lucky, meeting Peer brings blame. In inquiring after a husband and the person and fate of civil and military officials, look at the Pressure line: strong, it adds honor; weak, it dims the luster; Output moving is ill and Wealth rising is lucky."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [483, 483],
+          "zh": ["询妻妾奴婢及情人者，皆用财爻，遇子为祥，见兄成咎。", "探夫主及文武官员身命，其察官爻旺增荣耀，衰减光辉。", "子动云凶，财兴曰吉。"],
+          "yi": ["问妻妾、奴婢和情人的，都用财爻，遇到子孙是吉祥，见到兄弟就成灾祸。", "探问丈夫和文武官员的身命，要察看官爻：旺就增加荣耀，衰就减少光辉。", "子孙动就说凶，财爻兴旺就说吉。"],
+          "en": ["In asking about a wife or concubine, maids and servants, or a lover, the Wealth line is always the Subject; meeting Output is lucky, meeting a Peer line brings blame.", "In inquiring after a husband and the person and fate of civil and military officials, look at the Pressure line: strong, it adds honor; weak, it dims the luster.", "Output moving is called ill; Wealth rising is called lucky."] }
+      ],
+      "note": {
+        "yi": "「夫主」是丈夫；「子动云凶，财兴曰吉」是说官鬼这个用神怕子孙来克、喜财爻来生。同一段的前面是父母、尊长、子侄、僧道、兄弟朋友的用爻，后面是自身和他人，没有收。",
+        "en": "'Fu zhu' is the husband; 'Output moving is ill, Wealth rising is lucky' means that Pressure, as the Subject, fears being controlled by Output and is glad to be generated by Wealth. The earlier part of the passage gives the lines for parents and elders, sons and nephews, monks and Taoists, brothers and friends, and the later part oneself and others, none of which is included."
+      },
+      "see": ["LY.MARRY.ZS.01", "LY.MARRY.DYTJ.20", "LY.MARRY.YY.01"]
+    }
+  ]
+}

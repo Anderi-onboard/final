@@ -1,0 +1,260 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "袭求武弁章第三十",
+  "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+  "ranges": {"易林补遗": [770, 786]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.62",
+      "topic": "军旅",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁总纲：以官爻为主、世象为凭；动业赞皇猷鹰扬渭水、簪缨绳祖武虎拜枫宸；大凡袭爵承官皆沐君恩祖荫，欲识利名显晦远凭卦象推详",
+      "rule": {
+        "yi": "占承袭爵位、谋求武职，以官爻为主，以世爻为凭据。承袭爵位、接任官职，都是沾受君王的恩典和祖先的荫庇；想知道利和名是显达还是暗淡，要靠卦象去推详。",
+        "en": "In divining about inheriting a title or seeking a military rank, take the Pressure line as the chief and the Self image as the ground. Inheriting a title and succeeding to an office are all through the sovereign's grace and the shade of one's ancestors; to know whether gain and name will be bright or dim, one must work it out from the images of the hexagram."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [772, 772],
+          "zh": ["以官爻为主，世象为凭。"],
+          "yi": ["以官爻为主要看的，以世爻为凭据。"],
+          "en": ["Take the Pressure line as the chief to be looked at, and the Self image as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [773, 773],
+          "zh": ["动业赞皇猷，鹰扬渭水；", "簪缨绳租武，虎拜枫宸。"],
+          "yi": ["建立功业，辅佐皇上的谋略，像在渭水边鹰扬奋起的吕尚；", "世代簪缨的官宦子弟，继承祖先的武功，像虎臣那样在枫宸（宫廷）叩拜君王。"],
+          "en": ["Doing deeds to assist the sovereign's plans, like the eagle soaring at the Wei river;", "the sons of capped and tasselled officials follow in the footsteps of their ancestors' martial deeds, and bow like tiger-vassals in the Maple Court."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [773, 773],
+          "zh": ["大凡袭爵承官，皆沐君恩祖阴，欲识利名显晦，远凭卦象推详。"],
+          "yi": ["凡是承袭爵位、接任官职，都沾受君王的恩典和祖先的荫庇；要知道利和名是显达还是暗淡，须靠卦象从远处推详。"],
+          "en": ["Whenever one inherits a title or succeeds to an office, it is all through the sovereign's grace and the shade of one's ancestors; to know whether gain and name will be bright or dim, one must rely on the images of the hexagram and reckon it out in detail from afar."] }
+      ],
+      "note": {
+        "yi": "「鹰扬渭水」用的是吕尚（姜太公）在渭水边遇周文王、后来在牧野《诗经》称他「维师尚父，时维鹰扬」的典故；「虎拜」用的是《诗经》「虎拜稽首」，召虎受命后叩拜周王；「枫宸」指宫廷。「绳租武」的「租」是「祖」的误写，「绳祖武」是继承祖先的足迹；「祖阴」是「祖荫」，祖先的庇荫。「弁」是武弁，指武官。这一章讲的是承袭武爵和谋求武职两件事，取法与前面的仕宦升迁章一样：官爻为主、世爻为凭。",
+        "en": "'Yingyang Weishui' alludes to Lü Shang (the Grand Duke Jiang), who met King Wen by the Wei river and of whom the Book of Odes says 'the Grand Teacher Shangfu, here the eagle soaring'; 'hu bai' alludes to the Odes' 'the tiger bows and touches his head to the ground', Shao Hu bowing to the Zhou king after receiving his charge; 'fengchen', the Maple Court, is the imperial court. The 'zu' of 'sheng zu wu' is written with the character for 'rent' and is a miswriting of the character for 'ancestor': 'to follow the ancestors' footsteps'; the 'yin' of 'zu yin' is written with the character for 'yin and yang' and is a miswriting of 'yin', shade or protection, the shelter of ancestors. 'Bian' in the chapter title is a military officer. The chapter deals with two things, inheriting a military title and seeking a military post, and takes the same method as the preceding chapter on official promotion: the Pressure line as chief and the Self line as ground."
+      },
+      "see": ["LY.CAREER.EL.63", "LY.CAREER.EL.55", "LY.CAREER.EL.12", "LY.CAREER.HJC.24"]
+    },
+    {
+      "id": "LY.CAREER.EL.63",
+      "topic": "军旅",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁：献策请缨父象要兴财忌动；献策论者专看文书，父旺必然高中、父空岂得成名，父若不空又嫌财动",
+      "rule": {
+        "yi": "向朝廷献策、自请从军，要看父母爻：父爻旺相，一定高中；父爻落空，怎么能成名？父爻即使不空，还忌讳财爻发动。",
+        "en": "To submit a plan to the court and volunteer for service, look at Resource: if Resource is thriving, one will surely pass high; if Resource is Void, how can one make a name? Even if Resource is not Void, one still dislikes Wealth moving."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [773, 773],
+          "zh": ["献策请缨，父象要兴财忌动。"],
+          "yi": ["献策、请缨，父爻之象要兴旺，财爻忌发动。"],
+          "en": ["To submit a plan and ask for the tassel, the image of Resource must flourish and Wealth must not move."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [775, 776],
+          "zh": ["献策论者，专看文书，父旺必然高中，父空，岂得成名？", "父若不空又嫌财动。"],
+          "yi": ["献策、论事的人，专看文书爻：父爻旺相，一定高中；父爻落空，怎么能成名？", "父爻如果不空，又嫌财爻发动。"],
+          "en": ["For those who present plans and discuss policy, look especially at the document line: if Resource is thriving, one will surely pass high; if Resource is Void, how can one make a name?", "If Resource is not Void, one still dislikes Wealth moving."] }
+      ],
+      "note": {
+        "yi": "「请缨」出自终军「愿受长缨，必羁南越王而致之阙下」，是自请出征；「献策」是向朝廷上策论。武职这条路上献策请缨看文书爻（父母爻），因为文书就是策论、章奏。财爻忌动，是因为财克父（五行相克），书里没有明说。「高中」是考中高第。",
+        "en": "'Qingying', to ask for the tassel, comes from Zhong Jun's 'I wish to receive a long tassel and surely bind the king of Southern Yue and bring him to the palace', and means volunteering for a campaign; 'xiance' is presenting a policy memorial to the court. On this path to a military post, presenting a plan and volunteering is read from the document line, Resource, because the document is the memorial and the policy paper. That Wealth must not move is because Wealth controls Resource (five-element control); the book does not say so. 'Gao zhong' is passing with a high place."
+      },
+      "see": ["LY.CAREER.EL.62", "LY.CAREER.EL.64", "LY.CAREER.HJC.05"]
+    },
+    {
+      "id": "LY.CAREER.EL.64",
+      "topic": "军旅",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁：从戎比试世爻喜旺应宜衰；若交锋者又凭世应——世旺应衰他必弱、世衰应旺彼当强，世克应则大胜、应克世则难赢",
+      "rule": {
+        "yi": "从军、比试武艺，世爻喜欢旺相，应爻适宜衰弱。如果是临阵交锋，又凭世、应：世旺应衰，对方一定弱；世衰应旺，对方就强；世克应是大胜，应克世就难以取胜。",
+        "en": "For joining the army or a military trial, the Self line likes to be thriving and the Other should be weak. For those who cross swords in battle, rely again on the Self and the Other: if the Self is thriving and the Other weak, the other side is surely weak; if the Self is weak and the Other thriving, the other side is strong; if the Self controls the Other it is a great victory, and if the Other controls the Self it is hard to win."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [773, 773],
+          "zh": ["从戎比试，世爻喜旺应宜衰。"],
+          "yi": ["从军、比试，世爻喜欢旺相，应爻适宜衰弱。"],
+          "en": ["For joining the army or a military trial, the Self line likes to be thriving and the Other should be weak."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [775, 776],
+          "zh": ["若交锋者，又凭世应，世旺应衰他必弱，世衰应旺彼当强。", "世克应则大胜，应克世则难赢。"],
+          "yi": ["如果是交锋（临阵交战）的，又凭世、应：世旺应衰，对方一定弱；世衰应旺，对方就强。", "世爻克制应爻，就是大胜；应爻克制世爻，就难以取胜。"],
+          "en": ["For those who cross swords in battle, rely again on the Self and the Other: if the Self is thriving and the Other weak, the other side is surely weak; if the Self is weak and the Other thriving, the other side is strong.", "If the Self controls the Other it is a great victory; if the Other controls the Self it is hard to win."] }
+      ],
+      "note": {
+        "yi": "「又凭」在上一行末，「世应」在下一行首，这里连起来读。「交锋」是两军交战。这一条与易隐征战占「世为我帅应为彼将；世旺应衰宜攻、世衰应旺宜守；世克应可战」（YY.54）、黄金策征战「观世应之旺衰，以决两家之胜负」（HJC.86）取同一个关系：世为己方，应为对方。",
+        "en": "'You ping' is at the end of the previous line and 'shi ying' at the start of the next, and they are read joined up here. 'Jiaofeng' is two armies meeting in battle. This entry takes the same relation as 'the Self is my commander and the Other the enemy general; with the Self thriving and the Other weak, attack; with the Self weak and the Other thriving, defend; if the Self controls the Other, one can fight' in the Yi Yin war divination (YY.54) and 'watch the strength of the Self and the Other to decide the victory of the two houses' in the Huangjin Ce (HJC.86): the Self is one's own side and the Other the opposing side."
+      },
+      "see": ["LY.CAREER.EL.63", "LY.CAREER.EL.65", "LY.CAREER.YY.54", "LY.CAREER.HJC.86", "LY.CAREER.EL.12"]
+    },
+    {
+      "id": "LY.CAREER.EL.65",
+      "topic": "军旅",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁：受荫袭封喜遇贵乘禄马、买官进爵喜逢龙聚财官；所忌者六冲世陷空徒费力，所喜者六合官兴财旺总如心；军中占袭职民间卜官各忌世空官空六冲之卦，得官与世旺定显威风，官世带青龙贵人及卦逢六合威福更加",
+      "rule": {
+        "yi": "靠祖荫承袭封爵，喜欢遇到贵人乘着禄、马；捐买官职、进升爵位，喜欢遇到青龙聚着财爻、官爻。所忌讳的是六冲、世爻落陷落空，白费力气；所喜欢的是六合、官鬼兴旺、财爻旺相，事事称心。军中占承袭职位、民间卜官职，各自都忌世爻空、官空和六冲的卦；如果官与世都旺相，一定显出威风；官爻或世爻带青龙、贵人，以及卦遇六合，威势和福分更加增添。",
+        "en": "To inherit a title by ancestral privilege, one is glad to meet the Noble riding on the Emolument and the Horse; to buy an office and advance in rank, one is glad to meet the Dragon gathering Wealth and the star of office. What is feared is a six-clash with the Self sunk or Void, which is wasted effort; what is welcomed is a six-combine with Pressure flourishing and Wealth thriving, everything as one wishes. In the army divining for inheriting a post, or among the people divining for office, each fears the Self Void, the star of office Void, and a six-clash hexagram; if the star of office and the Self are both thriving, one will surely show authority; if the Pressure line or the Self line carries the Azure Dragon or the Noble, or the hexagram meets a six-combine, authority and fortune are further increased."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [777, 777],
+          "zh": ["受荫袭封，喜遇贵乘禄马。", "买官进爵，恢逢龙聚财官。", "所忌者六冲世陷空徒费力，", "所喜者六合官兴财旺总如心。"],
+          "yi": ["靠祖荫承袭封爵，喜欢遇到贵人乘着禄、马；", "捐买官职、进升爵位，喜欢遇到青龙聚着财爻、官爻。", "所忌讳的是六冲、世爻落陷落空，白费力气；", "所喜欢的是六合、官鬼兴旺、财爻旺相，总是称心如意。"],
+          "en": ["To inherit a title by ancestral privilege, one is glad to meet the Noble riding on the Emolument and the Horse;", "to buy an office and advance in rank, one is glad to meet the Dragon gathering Wealth and the star of office.", "What is feared is a six-clash with the Self sunk or Void, which is wasted effort;", "what is welcomed is a six-combine with Pressure flourishing and Wealth thriving, everything as one wishes."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [778, 778],
+          "zh": ["军中占袭职，民间卜官，各忌世空官空、六冲之卦，若得官与世旺，定显威风。", "官爻或世爻若带青龙贵人、及卦逢六合，威福更加。"],
+          "yi": ["军中占承袭职位、民间卜官职，各自都忌讳世爻空、官空和六冲的卦；如果官与世都旺相，一定显出威风。", "官爻或者世爻如果带青龙、贵人，以及卦遇六合，威势和福分更加增添。"],
+          "en": ["In the army divining for inheriting a post, or among the people divining for office, each fears the Self Void, the star of office Void, and a six-clash hexagram; if the star of office and the Self are both thriving, one will surely show authority.", "If the Pressure line or the Self line carries the Azure Dragon or the Noble, or the hexagram meets a six-combine, authority and fortune are further increased."] }
+      ],
+      "note": {
+        "yi": "「受荫」是靠祖先的功劳取得封爵；「买官进爵」是捐纳。「恢逢」疑是「喜逢」（上一联是「喜遇」），译作「喜欢遇到」。「贵乘禄马」是贵人、禄、驿马这几样同时遇上（见术语表）。「官空」的「官」是官鬼。「六合」「六冲」指卦的六合、六冲。这一条与易隐官禄占「何官」一组里的「世持官贵禄马」（YY.03、YY.04）取同一类象。",
+        "en": "'Shou yin' is obtaining a title through the merit of one's ancestors; 'mai guan jin jue' is buying office and rank by contribution. The 'hui' of 'hui feng' is presumably 'xi', glad (the couplet before has 'xi yu'), and is translated 'glad to meet'. 'Gui cheng lu ma' is the Noble, the Emolument and the Post Horse met together (see the glossary). The 'guan' of 'guan kong' is Pressure. 'Six-combine' and 'six-clash' are the hexagram patterns. This entry takes the same kind of image as 'the Self holds the Noble, Emolument and Horse' in the 'which office' group of the Yi Yin divination on official salary (YY.03, YY.04)."
+      },
+      "see": ["LY.CAREER.EL.64", "LY.CAREER.EL.66", "LY.CAREER.YY.03", "LY.CAREER.YY.04"]
+    },
+    {
+      "id": "LY.CAREER.EL.66",
+      "topic": "军旅",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁：鬼在酉申耀武扬威膺世禄、官临乾兑攘夷发夏树奇功；官爻或世爻如临乾兑卦中或在酉申爻内俱当名振华夷",
+      "rule": {
+        "yi": "官鬼在酉爻、申爻，显耀武功、扬起威风，享受世袭的俸禄；官爻落在乾卦、兑卦，抵御外族、振奋华夏，树立非凡的功劳。官爻或者世爻如果落在乾、兑卦中，或者在酉、申爻上，都会名声震动华夏和外族。",
+        "en": "If Pressure is on a You or Shen line, one displays martial prowess and raises one's awe, and receives a hereditary emolument; if the star of office is in the Qian or Dui trigram, one drives out the barbarians, raises up the Hua-Xia, and sets up extraordinary merit. If the Pressure line or the Self line falls in the Qian or Dui trigram, or is on a You or Shen line, in every case one's name shakes both the Chinese and the barbarians."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [779, 779],
+          "zh": ["鬼在酉申，耀武扬威膺世禄。", "官临乾兑，攘夷发夏树奇功。"],
+          "yi": ["官鬼在酉爻、申爻，显耀武功、扬起威风，享受世袭的俸禄；", "官爻落在乾卦、兑卦，抵御外族、振奋华夏，树立非凡的功劳。"],
+          "en": ["If Pressure is on a You or Shen line, one displays martial prowess and raises one's awe, and receives a hereditary emolument;", "if the star of office is in the Qian or Dui trigram, one drives out the barbarians, raises up the Hua-Xia, and sets up extraordinary merit."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [780, 780],
+          "zh": ["官爻或世爻如临乾兑卦中，或在酉申爻内，俱当名振华夷。"],
+          "yi": ["官爻或者世爻如果落在乾、兑卦中，或者在酉、申爻上，都会名声震动华夏和外族。"],
+          "en": ["If the Pressure line or the Self line falls in the Qian or Dui trigram, or is on a You or Shen line, in every case one's name shakes both the Chinese and the barbarians."] }
+      ],
+      "note": {
+        "yi": "酉、申属金，乾、兑也属金；金主兵刃，所以取武职要看它们（黄金策征战「金为刀箭」，HJC.111）。「世禄」是世代承袭的俸禄。「攘夷发夏」的「发夏」疑是「发扬华夏」，译作「振奋华夏」；「华夷」是华夏和外族。",
+        "en": "You and Shen belong to Metal, and Qian and Dui also belong to Metal; Metal governs blades and weapons, which is why they are looked at for military posts (the Huangjin Ce on campaigns says 'Metal is knife and arrow', HJC.111). 'Shi lu' is an emolument handed down from generation to generation. The 'fa xia' of 'rang yi fa xia' is presumably 'fayang Huaxia', to bring glory to the Chinese, and is translated 'raises up the Hua-Xia'; 'hua yi' is the Chinese and the barbarians."
+      },
+      "see": ["LY.CAREER.EL.65", "LY.CAREER.EL.67", "LY.CAREER.HJC.111", "LY.CAREER.YY.66"]
+    },
+    {
+      "id": "LY.CAREER.EL.67",
+      "topic": "军旅",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁：内外卦得兴隆则功高誉远、世旺逢生勇冠三军蒙上赏、官兴得助爵尊一品沐殊恩、身遇岁君生合战征场内作高魁；武职行中得内外卦兴隆世应旺相势压旁疆，世旺再逢太岁或日辰月建生扶者勇冠三军",
+      "rule": {
+        "yi": "武职之中，内卦、外卦都兴旺，功劳就高、名誉就远；世爻旺相又逢生，勇冠三军、蒙受上司的赏赐；官爻兴旺又得帮助，爵位尊到一品、沐浴特殊的恩典；卦身遇到太岁生合，在战场上拔得头魁。内外卦兴旺、世应旺相，威势一定压倒邻近的疆界；世旺再遇太岁，或者日辰、月建生扶的，勇冠三军。",
+        "en": "Among military posts, if the inner and outer trigrams are both flourishing, merit is high and fame far; if the Self is thriving and is generated, one's courage tops the three armies and one receives the superior's reward; if the star of office flourishes and gains aid, one's rank is of the first grade and one bathes in special favour; if the Body meets generation or combination from Tai Sui, one becomes the top man in the field of war. With the inner and outer trigrams flourishing and the Self and the Other thriving, one's power will surely overawe the neighbouring borders; if the Self is thriving and also meets Tai Sui, or the Day and the Month generate and support it, one's courage tops the three armies."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [781, 781],
+          "zh": ["内外卦得兴隆，则功高誉远。"],
+          "yi": ["内卦、外卦都兴旺，功劳就高、名誉就远。"],
+          "en": ["If the inner and outer trigrams are flourishing, then merit is high and fame travels far."] },
+        { "by": "经", "book": "易林补遗", "range": [781, 781],
+          "zh": ["世旺逢生，勇冠三军蒙上赏，官兴得助爵尊一品沐殊恩。"],
+          "yi": ["世爻旺相又逢生，勇气冠绝三军、蒙受上司的赏赐；官爻兴旺又得帮助，爵位尊到一品、沐浴特殊的恩典。"],
+          "en": ["If the Self is thriving and meets generation, one's courage tops the three armies and receives the superior's reward; if the star of office flourishes and gains aid, one's rank is of the first grade and one bathes in special favour."] },
+        { "by": "经", "book": "易林补遗", "range": [781, 781],
+          "zh": ["身遇岁君生合，战征场内作高魁。"],
+          "yi": ["卦身遇到太岁生合，在战场上拔得头魁。"],
+          "en": ["If the Body meets generation or combination from Tai Sui, in the field of war one becomes the top man."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [782, 782],
+          "zh": ["武职行中，若得内卦外卦兴隆，世爻应爻旺相，定然势压旁疆。", "世旺再逢太岁，或日辰月建生扶者，勇冠三军。"],
+          "yi": ["在武职之中，如果内卦、外卦兴旺，世爻、应爻旺相，威势一定压倒邻近的疆界。", "世爻旺相，又遇太岁，或者日辰、月建生扶它的，勇冠三军。"],
+          "en": ["Among the military posts, if the inner and outer trigrams are flourishing and the Self and the Other lines are thriving, one's power will surely overawe the neighbouring borders.", "If the Self is thriving and also meets Tai Sui, or the Day and the Month generate and support it, one's courage tops the three armies."] }
+      ],
+      "note": {
+        "yi": "这一首诀有五联，这一条取其中好的三联和解里前两句，坏的两联放在下一条（EL.68）。「身」是卦身（见术语表），「岁君」是太岁。「戈戟」「三军」是军队。「魁」是第一名。「内外卦」是内卦（下卦）和外卦（上卦）。这一条与易隐征战占「世持虎福旺相决胜千里，加日辰生扶百战百胜」（YY.55）是同一类断语。",
+        "en": "This verse has five couplets; this entry takes the three auspicious ones and the first two sentences of the explanation, and the two ominous couplets are in the next entry (EL.68). 'Shen' is the Body of the hexagram (see the glossary), and 'suijun' is Tai Sui. 'Sanjun' is the armies. 'Kui' is the first place. The 'inner and outer trigrams' are the inner (lower) and outer (upper) trigrams. This entry is the same kind of judgment as 'the Self holds the Tiger and Output, thriving, decides victory a thousand miles away; with the Day generating and supporting it, a hundred battles, a hundred victories' in the Yi Yin war divination (YY.55)."
+      },
+      "see": ["LY.CAREER.EL.66", "LY.CAREER.EL.68", "LY.CAREER.YY.55"]
+    },
+    {
+      "id": "LY.CAREER.EL.68",
+      "topic": "军旅",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁：身世爻当衰弱则力怯机疏、世逢日月克冲戈戟最为下辈；世若休囚卦不旺相当推无力无能，又被日辰月建冲克世爻者提拔全无反遭弹劾，其中又看官爻旺则声名显赫空则劾削兵权",
+      "rule": {
+        "yi": "身爻、世爻衰弱，就力量怯弱、机会稀少；世爻遇到日、月克制或冲，在拿戈戟的人当中也是最下等的。世爻如果休囚、卦又不旺相，就该断为没有力量、没有才能；又被日辰、月建冲克世爻的，完全没有提拔，反而遭到弹劾，哪里能在军队中出名？这中间还要看官爻：旺相就声名显赫，落空就被弹劾、削去兵权。",
+        "en": "If the Body and Self lines are weak, one's strength is timid and one's chances sparse; if the Self meets control or clash from the Day and the Month, even among bearers of spear and halberd one is of the lowest rank. If the Self is at rest or imprisoned and the hexagram is not thriving, one should be judged as without strength or ability; if the Self line is again clashed or controlled by the Day and the Month, there is no advancement at all and on the contrary impeachment, so how could one win fame in the ranks? Among these, look also at the Pressure line: if it is thriving, fame is eminent; if it is Void, one is impeached and stripped of military power."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [781, 781],
+          "zh": ["身世爻当衰弱，则力怯机疏。"],
+          "yi": ["身爻、世爻衰弱，就力量怯弱、机会稀少。"],
+          "en": ["If the Body and Self lines are weak, then one's strength is timid and one's chances sparse."] },
+        { "by": "经", "book": "易林补遗", "range": [781, 781],
+          "zh": ["世逢日月克冲，戈戟最为下辈。"],
+          "yi": ["世爻遇到日、月克制或冲，拿戈戟的人当中也是最下等的。"],
+          "en": ["If the Self meets control or clash from the Day and the Month, even among bearers of spear and halberd one is of the lowest rank."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [782, 782],
+          "zh": ["世若休囚，卦不旺相，当推无力无能。", "又被日辰月建冲克世爻者，提拔全无，反遭弹劾，岂得驰名于军伍？", "其中又看官爻，旺则声名显赫，空则劾削兵权。"],
+          "yi": ["世爻如果休囚，卦又不旺相，就该断为没有力量、没有才能。", "又被日辰、月建冲克世爻的，完全没有提拔，反而遭到弹劾，哪里能在军队中出名？", "这中间还要看官爻：旺相就声名显赫，落空就被弹劾、削去兵权。"],
+          "en": ["If the Self is at rest or imprisoned and the hexagram is not thriving, one should be judged as without strength or ability.", "If the Self line is again clashed or controlled by the Day and the Month, there is no advancement at all and on the contrary impeachment, so how could one win fame in the ranks?", "Among these, look also at the Pressure line: if it is thriving, fame is eminent; if it is Void, one is impeached and stripped of military power."] }
+      ],
+      "note": {
+        "yi": "「休囚」是休、囚两种不得令的状态（见术语表）。「戈戟最为下辈」是拿戈戟的兵卒里也是最低的一等。「劾削兵权」是被弹劾、削去兵权。这一条与增删卜易防参劾「身衰鬼克，贬责凌呵」（ZS.41）、黄金策仕宦「日辰冲克，定然诽谤之多招」（HJC.12）取同一个关系：日月冲克世爻，有祸。",
+        "en": "'Xiu qiu' are the two states of 'at rest' and 'imprisoned', both out of season (see the glossary). 'Ge ji zui wei xia bei' is the lowest grade even among the soldiers who carry spears and halberds. 'Hexue bingquan' is being impeached and stripped of military power. This entry takes the same relation as 'a weak Self controlled by Pressure brings demotion and rebuke' in the Zengshan Buyi on guarding against impeachment (ZS.41) and 'if the Day clashes or controls, there will surely be much slander' in the Huangjin Ce on official careers (HJC.12): the Day and Month clashing or controlling the Self line means trouble."
+      },
+      "see": ["LY.CAREER.EL.67", "LY.CAREER.EL.69", "LY.CAREER.ZS.41", "LY.CAREER.HJC.12"]
+    },
+    {
+      "id": "LY.CAREER.EL.69",
+      "topic": "军旅",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁：世带青龙名驰朝野、官居白虎威振华夷；青龙为大贵之星、白虎乃兵权之煞，此二兽若得临世临官定主威扬海内",
+      "rule": {
+        "yi": "世爻带青龙，名声传遍朝廷和民间；官爻坐着白虎，威势震动华夏和外族。青龙是大贵的星，白虎是兵权的煞，这两兽如果能临在世爻上、官爻上，一定主威名传扬海内。",
+        "en": "If the Self carries the Azure Dragon, one's name runs through court and countryside; if the star of office sits on the White Tiger, one's might shakes the Chinese and the barbarians. The Azure Dragon is the star of great nobility and the White Tiger is the baleful spirit of military power; if these two beasts come to the Self or to the star of office, one's might will surely spread throughout the land."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [783, 783],
+          "zh": ["世带青龙，名驰朝野。", "官居白虎，威振华夷。"],
+          "yi": ["世爻带青龙，名声传遍朝廷和民间；", "官爻坐着白虎，威势震动华夏和外族。"],
+          "en": ["If the Self carries the Azure Dragon, one's name runs through court and countryside;", "if the star of office sits on the White Tiger, one's might shakes the Chinese and the barbarians."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [784, 784],
+          "zh": ["青龙为大贵之星，白虎乃兵权之煞，此二兽若得临世临官，定主威扬海内。"],
+          "yi": ["青龙是大贵的星，白虎是兵权的煞，这两兽如果能临在世爻上、官爻上，一定主威名传扬海内。"],
+          "en": ["The Azure Dragon is the star of great nobility and the White Tiger is the baleful spirit of military power; if these two beasts come to the Self or to the star of office, one's might will surely spread throughout the land."] }
+      ],
+      "note": {
+        "yi": "「二兽」是青龙、白虎。白虎在别的断法里多是凶煞（黄金策、易隐里常见），这里因为问的是武职，把它看作兵权之煞，与青龙并取；这是这一章的取法，不是白虎的通例。「海内」是天下。",
+        "en": "The 'two beasts' are the Azure Dragon and the White Tiger. In other methods the White Tiger is mostly a baleful spirit (as often seen in the Huangjin Ce and the Yi Yin), but since the question here is about a military post it is taken as the baleful spirit of military power and is taken together with the Azure Dragon; this is the method of this chapter and not the general rule for the White Tiger. 'Hainei' is all under heaven."
+      },
+      "see": ["LY.CAREER.EL.68", "LY.CAREER.EL.70", "LY.CAREER.YY.55"]
+    },
+    {
+      "id": "LY.CAREER.EL.70",
+      "topic": "升迁",
+      "chapter": "袭求武弁章第三十",
+      "chapter_en": "Chapter 30: Inheriting and seeking military rank",
+      "title": "袭求武弁：子动伤官难遂参谋之策、财兴助鬼能成赞尽之功、鬼变福乡循降调、官之财地渐升迁；鬼为官职最嫌子动来伤，偏喜财兴助鬼，官变子孙非降即调，鬼之财象迭迭高升",
+      "rule": {
+        "yi": "子孙发动伤克官爻，难以实现参谋的计策；财爻兴旺帮助官鬼，能成就辅佐到底的功劳。官鬼变到福乡（子孙），就顺着降职、调动；官爻变到财地（财爻），就渐渐升迁。官鬼是官职，最怕子孙发动来伤它，偏偏喜欢财爻兴旺帮助官鬼；官鬼变成子孙，不是降职就是调走；官鬼变成财的象，就一再高升。细细玩味占易道理的玄妙精微，就可以断定武官的吉凶。",
+        "en": "If Output moves to hurt the star of office, it is hard to carry out one's counsel as a staff adviser; if Wealth flourishes and aids Pressure, one can accomplish the merit of assisting to the end. If Pressure changes into the fortune quarter, Output, it follows that one is demoted or transferred; if the star of office changes into the Wealth ground, one is gradually promoted. Pressure is the official post, and it most dislikes Output moving to hurt it but particularly likes Wealth flourishing to aid it; if Pressure changes into Output, it is either demotion or transfer; if Pressure changes into the Wealth image, one is promoted again and again. By savouring the subtle principles of the Yi divination, one can decide the good and ill of a military officer."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [785, 785],
+          "zh": ["子动伤官，难遂参谋之策。", "财兴助鬼，能成赞尽之功。", "鬼变福乡循降调，官之财地渐陛迁。"],
+          "yi": ["子孙发动伤克官爻，难以实现参谋的计策；", "财爻兴旺帮助官鬼，能成就辅佐到底的功劳。", "官鬼变到福乡，顺着就是降职、调动；官爻变到财地，渐渐升迁。"],
+          "en": ["If Output moves to hurt the star of office, it is hard to carry out one's counsel as a staff adviser;", "if Wealth flourishes and aids Pressure, one can accomplish the merit of assisting to the end.", "If Pressure changes into the fortune quarter, it follows that one is demoted or transferred; if the star of office changes into the Wealth ground, one is gradually promoted."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [786, 786],
+          "zh": ["鬼为官职，最嫌子动来伤，偏喜财兴助鬼，官变子孙，非降即调。", "鬼之财象，迭迭高迁也。", "玩占易理玄微，可决戎官之休咎。"],
+          "yi": ["官鬼是官职，最怕子孙发动来伤它，偏偏喜欢财爻兴旺帮助官鬼；官鬼变成子孙，不是降职就是调走。", "官鬼变成财的象，就一再高升。", "细细玩味占易道理的玄妙精微，就可以断定武官的吉凶。"],
+          "en": ["Pressure is the official post, and it most dislikes Output moving to hurt it but particularly likes Wealth flourishing to aid it; if Pressure changes into Output, it is either demotion or transfer.", "If Pressure changes into the Wealth image, one is promoted again and again.", "By savouring the subtle principles of the Yi divination, one can decide the good and ill of a military officer."] }
+      ],
+      "note": {
+        "yi": "「福乡」是子孙（福神）所在，「财地」是财爻所在。「赞尽之功」书里就是这几个字，按字面译作「辅佐到底的功劳」。「戎官」是武官。末句是全章的结语。这一条与前面仕宦升迁章「官化子孙非降即调」「官若化财平升品级」（EL.56）是同一类断语，这里换到武职上。",
+        "en": "'Fuxiang', the fortune quarter, is where Output (the fortune spirit) stands, and 'caidi', the Wealth ground, is where the Wealth line stands. 'Zanjin zhi gong' is exactly these characters in the book and is translated literally as 'the merit of assisting to the end'. 'Rongguan' is a military officer. The last sentence is the closing line of the whole chapter. This entry is the same kind of judgment as 'if Pressure changes into Output it is demotion or transfer' and 'if Pressure changes into Wealth, a level promotion' in the preceding chapter on official promotion (EL.56), here moved to military posts."
+      },
+      "see": ["LY.CAREER.EL.69", "LY.CAREER.EL.56", "LY.CAREER.HJC.03", "LY.CAREER.YY.22"]
+    }
+  ]
+}

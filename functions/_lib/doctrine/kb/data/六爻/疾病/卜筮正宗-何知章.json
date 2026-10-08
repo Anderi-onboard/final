@@ -1,0 +1,134 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "卜筮正宗",
+  "chapter": "赋文三篇·何知章",
+  "chapter_en": "Three rhapsodies: the \"how to know\" rhyme",
+  "ranges": {"卜筮正宗": [3566, 3570], "卜筮大全": [9841, 9845]},
+  "units": [
+    {
+      "id": "LY.ILL.BSZZ.34",
+      "topic": "他人病",
+      "chapter": "赋文三篇·何知章",
+      "chapter_en": "Three rhapsodies: the \"how to know\" rhyme",
+      "title": "何知章·亲人的病灾：父母疾（白虎临爻兼刑克）、父母殃（财爻发动煞神伤）、子孙疾（父母爻动相克）、子孙灾、小儿死（子孙空亡加白虎）、兄弟亡（用落空亡白虎伤）",
+      "rule": {
+        "yi": "「何知」口诀里关于亲人病灾的六问：父母有病，是白虎临着（父母）这一爻，再加刑克；父母有灾殃，是财爻发动、煞神来伤；子孙有病，是父母爻发动来克制子孙；子孙有灾，卜筮大全说是白虎落到福德（子孙）上，卜筮正宗说是父母落到福德上；小孩要死，是子孙落空亡再加白虎；兄弟去世，是用神落空亡又被白虎所伤。",
+        "en": "Six questions of the 'how to know' rhyme about illness and calamity among kin. A parent is ill when the White Tiger sits on the (Resource) line together with punishment and control; a parent meets calamity when the Wealth line moves and a killing spirit wounds; a child is ill when the Resource line moves and controls Output; a child meets misfortune when, in the Bushi Daquan, the White Tiger arrives upon Output, or, in the Bushi Zhengzong, Resource arrives upon Output; a small child will die when Output is Void and the White Tiger is added; a brother dies when the Subject falls into Void and the White Tiger wounds it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3566, 3566], "literal": ["父母"],
+          "zh": ["何知人家父母疾？", "白虎临爻兼刑克；", "何知人家父母殃？", "财爻发动煞神伤；"],
+          "yi": ["怎么知道这家的父母有病？", "白虎临着（父母）这一爻，再加刑克；", "怎么知道这家的父母有灾殃？", "财爻发动，煞神来伤；"],
+          "en": ["How can one know that a household's parents are ill?", "The White Tiger sits on the line (the Resource line), together with punishment and control;", "How can one know that a household's parents meet calamity?", "the Wealth line moves and a killing spirit wounds;"] },
+        { "by": "经", "book": "卜筮正宗", "range": [3566, 3566], "literal": ["子孙", "兄弟"],
+          "zh": ["何知人家子孙疾？", "父母动爻来相克；", "何知人家子孙灾？", "父母当临福德来；", "何知人家小儿死？", "子孙空亡加白虎；", "何知人家兄弟亡？", "用落空亡白虎伤；"],
+          "yi": ["怎么知道这家的子孙有病？", "父母爻这个动爻来克制（子孙）；", "怎么知道这家的子孙有灾？", "父母落到福德（子孙）上来；", "怎么知道这家的小孩会死？", "子孙落空亡，再加白虎；", "怎么知道这家的兄弟会死？", "用神落空亡，又被白虎所伤；"],
+          "en": ["How can one know that a household's children are ill?", "the Resource line, a moving line, comes to control them;", "How can one know that a household's children meet misfortune?", "Resource arrives upon Output;", "How can one know that a small child will die?", "Output is Void and the White Tiger is added;", "How can one know that a household's brother will die?", "the Subject falls into Void and the White Tiger wounds it;"] },
+        { "by": "经", "book": "卜筮大全", "range": [9841, 9841], "literal": ["父母"],
+          "zh": ["何知人家父母疾？", "白虎临爻兼刑克。", "何知人家父母殃？", "财爻发动杀神伤。"],
+          "yi": ["怎么知道这家的父母有病？", "白虎临着（父母）这一爻，再加刑克。", "怎么知道这家的父母有灾殃？", "财爻发动，煞神来伤。"],
+          "en": ["How can one know that a household's parents are ill?", "The White Tiger sits on the line (the Resource line), together with punishment and control.", "How can one know that a household's parents meet calamity?", "The Wealth line moves and a killing spirit wounds."] },
+        { "by": "经", "book": "卜筮大全", "range": [9843, 9843], "literal": ["子孙", "兄弟"],
+          "zh": ["何知人家子孙疾？", "父母爻动来相克。", "何知人家子孙灾？", "白虎当临福德来。", "何知人家小儿死？", "子孙空亡加白虎。", "何知人家兄弟亡？", "用落空亡白虎伤。"],
+          "yi": ["怎么知道这家的子孙有病？", "父母爻发动来克制（子孙）。", "怎么知道这家的子孙有灾？", "白虎落到福德（子孙）上来。", "怎么知道这家的小孩会死？", "子孙落空亡，再加白虎。", "怎么知道这家的兄弟会死？", "用神落空亡，又被白虎所伤。"],
+          "en": ["How can one know that a household's children are ill?", "The Resource line moves and comes to control them.", "How can one know that a household's children meet misfortune?", "The White Tiger arrives upon Output.", "How can one know that a small child will die?", "Output is Void and the White Tiger is added.", "How can one know that a household's brother will die?", "The Subject falls into Void and the White Tiger wounds it."] }
+      ],
+      "dispute": {
+        "yi": "子孙有灾看什么：卜筮大全答「白虎当临福德来」，白虎落到子孙爻上；卜筮正宗答「父母当临福德来」，父母爻落到子孙爻上。两本一个说白虎、一个说父母，书里没有说哪个对（白虎是六神，父母是六亲，两条不是一回事）。",
+        "en": "What to look at for a child's misfortune: the Bushi Daquan answers 'the White Tiger arrives upon Output', the White Tiger falling on the Output line; the Bushi Zhengzong answers 'Resource arrives upon Output', the Resource line falling on the Output line. One says the White Tiger and the other Resource, and the books do not say which is right (the White Tiger is one of the six spirits and Resource one of the six relations, so the two are not the same thing)."
+      },
+      "note": {
+        "yi": "「何知章」一问一答，一共问了三四十件事（父母子孙的病、有没有子孙、讼事、财富、田地、屋宇、坟墓、六畜、口舌、盗贼……），都是一家的事；这里只收与病、死、鬼怪有关的。卜筮大全里它是「十六、何知章」，卜筮正宗里它在《赋文三篇》中；两本字句略有出入。「杀神」「煞神」是同一个字的两种写法。「用落空亡」的「用」是用神。",
+        "en": "The 'how to know' rhyme asks and answers some thirty or forty things (illnesses of parents and children, whether there are children, lawsuits, wealth, land, houses, graves, livestock, quarrels, thieves and more), all affairs of a household; only those to do with illness, death and ghostly happenings are taken here. In the Bushi Daquan it is chapter 16, 'the how-to-know rhyme'; in the Bushi Zhengzong it is among the three rhapsodies; the two texts differ a little in wording. 'Sha' in the two forms of 'killing spirit' is one word written two ways. The 'yong' of 'yong falls into Void' is the Subject."
+      },
+      "see": ["LY.ILL.HJC.02", "LY.ILL.BSZZ.35", "LY.ILL.BSZZ.36", "LY.ILL.BSZZ.37"]
+    },
+    {
+      "id": "LY.ILL.BSZZ.35",
+      "topic": "痘疹",
+      "chapter": "赋文三篇·何知章",
+      "chapter_en": "Three rhapsodies: the \"how to know\" rhyme",
+      "title": "何知章·痘疹病：螣蛇爻被火烧定（螣蛇入火）",
+      "rule": {
+        "yi": "怎么知道这家有痘疹的病：螣蛇爻遇到火，被火烧着，就断定了。",
+        "en": "How to know that a household has the pox: the Coiling Snake line is burned by Fire, and that settles it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3570, 3570],
+          "zh": ["何知人家痘疹病？", "螣蛇爻被火烧定；"],
+          "yi": ["怎么知道这家有痘疹的病？", "螣蛇爻被火烧着，就断定了；"],
+          "en": ["How can one know that a household has the pox?", "the Coiling Snake line is burned by Fire, and that settles it;"] },
+        { "by": "经", "book": "卜筮大全", "range": [9845, 9845],
+          "zh": ["何知人家痘疹病？", "鰧蛇爻被火烧定。"],
+          "yi": ["怎么知道这家有痘疹的病？", "螣蛇爻被火烧着，就断定了。"],
+          "en": ["How can one know that a household has the pox?", "The Coiling Snake line is burned by Fire, and that settles it."] }
+      ],
+      "note": {
+        "yi": "「何知章」一问一答，一共问了三四十件事（父母子孙的病、有没有子孙、讼事、财富、田地、屋宇、坟墓、六畜、口舌、盗贼……），都是一家的事；这里只收与病、死、鬼怪有关的。卜筮大全里它是「十六、何知章」，卜筮正宗里它在《赋文三篇》中；两本字句略有出入。这一句口诀只说螣蛇遇火，没有说是螣蛇落在火爻上还是火爻克螣蛇的爻位；断易天机的《何知章》里有一句「鰧蛇入火火烧定，瘟气麻痘病」，是同一个意思，说得更明白（螣蛇落在火上）。",
+        "en": "The 'how to know' rhyme asks and answers some thirty or forty things (illnesses of parents and children, whether there are children, lawsuits, wealth, land, houses, graves, livestock, quarrels, thieves and more), all affairs of a household; only those to do with illness, death and ghostly happenings are taken here. In the Bushi Daquan it is chapter 16, 'the how-to-know rhyme'; in the Bushi Zhengzong it is among the three rhapsodies; the two texts differ a little in wording. This line of the rhyme says only that the Coiling Snake meets Fire and does not say whether the Snake falls on a Fire line or a Fire line burns the Snake's place; the Duanyi Tianji's version of the rhyme has 'the Coiling Snake entering Fire, burned by fire: epidemic qi, measles and pox', the same meaning said more plainly (the Snake falls on Fire)."
+      },
+      "see": ["LY.ILL.BSZZ.30", "LY.ILL.BSZZ.34", "LY.ILL.BSZZ.36", "LY.ILL.ZS.19"]
+    },
+    {
+      "id": "LY.ILL.BSZZ.36",
+      "topic": "生死",
+      "chapter": "赋文三篇·何知章",
+      "chapter_en": "Three rhapsodies: the \"how to know\" rhyme",
+      "title": "何知章·病要死：卜筮正宗答用神无救又入墓；卜筮大全答身命世鬼入墓",
+      "rule": {
+        "yi": "怎么知道这家有人病得要死：卜筮正宗说是用神没有救护又入了墓；卜筮大全说是身、命、世、鬼入了墓，照这样推断。",
+        "en": "How to know that someone in a household is ill unto death: the Bushi Zhengzong says the Subject has no rescue and enters a tomb; the Bushi Daquan says the Body, the destiny, the Self and the ghost enter a tomb, and one judges by that."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3570, 3570],
+          "zh": ["何知人家病要死？", "用神无救又入墓；"],
+          "yi": ["怎么知道这家有人病得要死？", "用神没有救护，又入了墓；"],
+          "en": ["How can one know that someone in a household is ill unto death?", "the Subject has no rescue and enters a tomb;"] },
+        { "by": "经", "book": "卜筮大全", "range": [9845, 9845],
+          "zh": ["何知人家病要死？", "身命世鬼入墓推。"],
+          "yi": ["怎么知道这家有人病得要死？", "身、命、世、鬼入了墓，就这样推断。"],
+          "en": ["How can one know that someone in a household is ill unto death?", "If the Body, the destiny, the Self and the ghost enter a tomb, judge it so."] }
+      ],
+      "dispute": {
+        "yi": "凭什么断病要死：卜筮正宗答「用神无救又入墓」，只看用神一爻；卜筮大全答「身命世鬼入墓推」，看身、命、世、鬼四样入墓。两本不一样，书里没有裁决。",
+        "en": "What decides that the illness is unto death: the Bushi Zhengzong answers 'the Subject has no rescue and enters a tomb', looking only at the Subject line; the Bushi Daquan answers 'the Body, the destiny, the Self and the ghost enter a tomb', looking at four things entering a tomb. The two texts differ and the books do not decide."
+      },
+      "note": {
+        "yi": "「何知章」一问一答，一共问了三四十件事（父母子孙的病、有没有子孙、讼事、财富、田地、屋宇、坟墓、六畜、口舌、盗贼……），都是一家的事；这里只收与病、死、鬼怪有关的。卜筮大全里它是「十六、何知章」，卜筮正宗里它在《赋文三篇》中；两本字句略有出入。「身命世鬼」的「身」按其他章的说法是卦身，「命」在这里没有再解释，按字面译作命。用神入墓的说法在增删卜易里有更多的讨论（LY.ILL.ZS.07：动墓绝、化墓绝须逢生旺）。",
+        "en": "The 'how to know' rhyme asks and answers some thirty or forty things (illnesses of parents and children, whether there are children, lawsuits, wealth, land, houses, graves, livestock, quarrels, thieves and more), all affairs of a household; only those to do with illness, death and ghostly happenings are taken here. In the Bushi Daquan it is chapter 16, 'the how-to-know rhyme'; in the Bushi Zhengzong it is among the three rhapsodies; the two texts differ a little in wording. The 'Body' of 'Body, destiny, Self and ghost' is, by the other chapters' usage, the hexagram Body, and 'destiny' is not explained here and is rendered literally. The Subject entering a tomb is discussed at more length in the Zengshan Buyi (LY.ILL.ZS.07: moving into or changing into a tomb or extinction needs generation and strength)."
+      },
+      "see": ["LY.ILL.BSZZ.35", "LY.ILL.BSZZ.37", "LY.ILL.ZS.07"]
+    },
+    {
+      "id": "LY.ILL.BSZZ.37",
+      "topic": "神祟",
+      "chapter": "赋文三篇·何知章",
+      "chapter_en": "Three rhapsodies: the \"how to know\" rhyme",
+      "title": "何知章·怪与死：多梦寐（螣蛇带鬼持世）、出鬼怪（螣蛇白虎临门）、人投水（玄武入水煞临鬼）、有吊颈（螣蛇木鬼临世爻）、孝服来（白虎临鬼；大全作丧门吊客临鬼）",
+      "rule": {
+        "yi": "怎么知道这家的人多做噩梦：螣蛇带着鬼来持世；出鬼怪：螣蛇、白虎临在门上；有人投水：玄武入水，煞神临在鬼上；有人上吊：螣蛇、木鬼落在世爻上；要有孝服（丧事）来：卜筮正宗说是白虎交重（发动）、排在鬼上，卜筮大全说是丧门、吊客两颗星排在鬼上。",
+        "en": "How to know that a household is troubled by dreams: the Coiling Snake carrying the ghost holds the Self position; that ghosts and strange things appear: the Coiling Snake and White Tiger sit at the door; that someone will throw himself into water: the Dark Tortoise enters Water and a killing spirit sits on the ghost; that someone will hang himself: the Coiling Snake and a Wood ghost sit on the Self line; that mourning dress will come: in the Bushi Zhengzong the White Tiger moves and is set upon the ghost, in the Bushi Daquan the stars Mourning Gate and Guest of Condolence are set upon the ghost."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3570, 3570],
+          "zh": ["何知人家多梦寐？", "螣蛇带鬼来持世；", "何知人家出鬼怪？", "螣蛇白虎临门在；", "何知人家人投水？", "玄武入水煞临鬼；", "何知人家有吊颈？", "螣蛇木鬼世爻临；", "何知人家孝服来？", "交重白虎临鬼排；"],
+          "yi": ["怎么知道这家的人多梦寐（做噩梦）？", "螣蛇带着鬼来持世；", "怎么知道这家出鬼怪？", "螣蛇、白虎临在门上；", "怎么知道这家有人投水？", "玄武入水，煞神临在鬼上；", "怎么知道这家有人上吊？", "螣蛇、木鬼落在世爻上；", "怎么知道这家会有孝服（丧事）来？", "白虎交重（发动），排在鬼上；"],
+          "en": ["How can one know that a household is troubled by dreams?", "the Coiling Snake carrying the ghost holds the Self position;", "How can one know that ghosts and strange things appear in a household?", "the Coiling Snake and the White Tiger sit at the door;", "How can one know that someone in a household will throw himself into water?", "the Dark Tortoise enters Water and a killing spirit sits on the ghost;", "How can one know that someone in a household will hang himself?", "the Coiling Snake and a Wood ghost sit on the Self line;", "How can one know that mourning dress will come to a household?", "the White Tiger moving, set upon the ghost;"] },
+        { "by": "经", "book": "卜筮大全", "range": [9845, 9845],
+          "zh": ["何知人家多梦寐？", "鰧蛇带鬼来持世。", "何知人家出鬼怪？", "鰧蛇白虎临门在。", "何知人家人投水？", "玄武入水杀临鬼。", "何知人家有吊颈？", "鰧蛇木鬼世爻临。", "何知人家孝服来？", "丧门吊客临鬼排。"],
+          "yi": ["怎么知道这家的人多梦寐（做噩梦）？", "螣蛇带着鬼来持世。", "怎么知道这家出鬼怪？", "螣蛇、白虎临在门上。", "怎么知道这家有人投水？", "玄武入水，煞神临在鬼上。", "怎么知道这家有人上吊？", "螣蛇、木鬼落在世爻上。", "怎么知道这家会有孝服（丧事）来？", "丧门、吊客两颗星排在鬼上。"],
+          "en": ["How can one know that a household is troubled by dreams?", "The Coiling Snake carrying the ghost holds the Self position.", "How can one know that ghosts and strange things appear in a household?", "The Coiling Snake and the White Tiger sit at the door.", "How can one know that someone in a household will throw himself into water?", "The Dark Tortoise enters Water and a killing spirit sits on the ghost.", "How can one know that someone in a household will hang himself?", "The Coiling Snake and a Wood ghost sit on the Self line.", "How can one know that mourning dress will come to a household?", "The stars Mourning Gate and Guest of Condolence are set upon the ghost."] }
+      ],
+      "dispute": {
+        "yi": "孝服来（有丧事）看什么：卜筮正宗答「交重白虎临鬼排」，白虎发动排在鬼爻上；卜筮大全答「丧门吊客临鬼排」，丧门、吊客两颗神煞排在鬼爻上。一个用六神白虎，一个用神煞丧门吊客，书里没有裁决。",
+        "en": "What tells that mourning is coming: the Bushi Zhengzong answers 'the White Tiger moving, set upon the ghost', the White Tiger of the six spirits moving on the Pressure line; the Bushi Daquan answers 'Mourning Gate and Guest of Condolence set upon the ghost', two spirit-stars on the Pressure line. One uses the White Tiger among the six spirits and the other the spirit-stars Mourning Gate and Guest of Condolence, and the books do not decide."
+      },
+      "note": {
+        "yi": "「何知章」一问一答，一共问了三四十件事（父母子孙的病、有没有子孙、讼事、财富、田地、屋宇、坟墓、六畜、口舌、盗贼……），都是一家的事；这里只收与病、死、鬼怪有关的。卜筮大全里它是「十六、何知章」，卜筮正宗里它在《赋文三篇》中；两本字句略有出入。「梦寐」是睡着做梦，这里是不好的梦；「吊颈」是上吊；「孝服」是丧服，指家里有丧事。丧门、吊客是两颗神煞，书里没有再解释。",
+        "en": "The 'how to know' rhyme asks and answers some thirty or forty things (illnesses of parents and children, whether there are children, lawsuits, wealth, land, houses, graves, livestock, quarrels, thieves and more), all affairs of a household; only those to do with illness, death and ghostly happenings are taken here. In the Bushi Daquan it is chapter 16, 'the how-to-know rhyme'; in the Bushi Zhengzong it is among the three rhapsodies; the two texts differ a little in wording. 'Mengmei' is dreaming in sleep, here bad dreams; 'diaojing' is hanging oneself; 'mourning dress' (xiaofu) means a death in the family. Mourning Gate and Guest of Condolence are two spirit-stars that the book does not explain further."
+      },
+      "see": ["LY.ILL.HJC.118", "LY.ILL.BSZZ.34", "LY.ILL.BSZZ.36"]
+    }
+  ]
+}

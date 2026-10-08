@@ -1,0 +1,162 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "易隐",
+  "chapter": "疾病占",
+  "chapter_en": "Divining illness",
+  "ranges": {"易隐": [3011, 3041]},
+  "units": [
+    {
+      "id": "LY.ILL.YY.21",
+      "topic": "医药",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "医药·药效：内卦世爻用爻是病人、外卦应爻子孙是医药；外克内、应与子孙克世克用则药效；内克外则药不效；外生合内则药对症效迟；无子孙不遇良医；子孙两动换医而愈；鬼子俱空不治自愈；鬼子俱动医祷兼用；子财两动鬼得助病难治",
+      "rule": {
+        "yi": "内卦的世爻、用爻是病人，外卦的应爻、子孙是医生和药。外卦克内卦，应爻和子孙克世、克用的，药有效；内卦克外卦，世爻、用爻克应、克子孙的，药没有效；外卦生合内卦，应爻和子孙生合世的，药对症但见效慢；外卦应爻克内卦世爻而卦里没有子孙的，遇不到好医生。应爻带子孙发动来克世的，药有效；世克应和子孙的，是名医但药没有效；子孙克世而外卦应爻不克内卦世爻的，药没效也没害。应爻带鬼发动、刑害克冲世爻的，是用错药伤了人；子孙落在辰午酉亥自刑之地的，用药有差错；日辰、动爻冲伤子孙的，药没有效；子孙变出父母或鬼的，药收不到功；子孙变出子孙的，药杂不精；子孙带白虎煞发动的，是庸医误人。世下伏官、遇子孙发动的，药虽好而病根除不掉；世持衰鬼的，病轻而药难治。世应比和而卦无子孙、或子孙空绝的，宜换药换医；子孙有两个都动的，换医就好；鬼和子孙都落空的，不治自愈；鬼和子孙都发动的，医药和祈祷一起用；子孙和财爻都动，鬼得到帮助，病难治。",
+        "en": "The Self line and Subject line in the inner trigram are the patient, and the Other line and Output in the outer trigram are the doctor and medicine. If the outer controls the inner, and the Other and Output control the Self and the Subject, the medicine is effective; if the inner controls the outer, and the Self and Subject control the Other and Output, it is not effective; if the outer generates and combines with the inner, and the Other and Output generate and combine with the Self, the medicine fits the illness but works slowly; if the Other in the outer trigram controls the Self in the inner and there is no Output in the hexagram, one does not meet a good doctor. If the Other line carries Output and moves to control the Self, the medicine is effective; if the Self controls the Other and Output, the doctor is famous but the medicine does not work; if Output controls the Self but the Other in the outer trigram does not control the Self, the medicine has no effect and does no harm. If the Other line carries the ghost and moves to punish, harm, control or clash the Self, wrong medicine harms the person; if Output stands on Chen, Wu, You or Hai, which punish themselves, the medicine is mistaken; if the Day or a moving line clashes with and wounds Output, it does not work; if Output changes into Resource or a ghost, it does not bring completion; if Output changes into Output, the medicines are mixed and not refined; if Output carries the Tiger and a killing star and moves, a mediocre doctor harms people. If Pressure is hidden beneath the Self and Output moves, the medicine is good but the root of the illness is not removed; if the Self holds a weak ghost, the illness is light but the medicine has difficulty curing it. If the Self and Other are in harmony and there is no Output, or Output is Void or in Extinction, change the medicine and doctor; if two Output lines both move, changing the doctor leads to recovery; if the ghost and Output are both Void, he recovers without treatment; if the ghost and Output both move, use doctors and prayers together; if Output and Wealth both move, the ghost is helped and the illness is hard to treat."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3013, 3013],
+          "zh": ["内卦世爻用爻为病人，外卦应爻子孙为医药。", "外克内应与子孙克世克用者，药效也。", "内克外，世爻用爻克应克子孙者，药不效也。", "外生合内，应与子孙生合世者，药对症而效迟也。", "外应克内世，卦无子孙者，不遇良医也。", "父兄俱动者，子叨生而医善也。", "父官双静，而子临应动者，良医到也。", "应加子动克世者，药有效也。", "世克应子者，名医而药不效也。", "子克世，而外应不克内世者，药不效而无害也。", "应加鬼动刑害克冲世者，误药伤人也。", "子孙值辰午酉亥自刑者，用药差误也。", "日辰动爻冲伤子孙者，药不效也。", "子化父鬼者，药不收功也。", "子化子者，杂药不精也。", "子加虎杀动者，庸医误人也。", "世下伏官，逢子动者，药虽好而病根不除也。", "世持衰鬼者，病虽轻而药难疗也。", "世应比而卦无子，或子空绝者，宜换药医。", "子孙两动者，换医而愈也。", "鬼子俱空者，不治自愈也。", "鬼子俱动者，医祷兼用也。", "子财两动，则鬼得助而病难治也。"],
+          "yi": ["内卦的世爻、用爻是病人，外卦的应爻、子孙是医生和药。", "外卦克内卦，应和子孙克世、克用的，药有效。", "内卦克外卦，世爻、用爻克应、克子孙的，药没有效。", "外卦生合内卦，应和子孙生合世的，药对症，但见效慢。", "外卦的应爻克内卦的世爻，而卦里没有子孙的，遇不到好医生。", "父母爻、兄爻都发动的，子孙沾光得到生，医生就好。", "父母爻、官爻都安静，而子孙临在应爻上发动的，好医生来了。", "应爻带子孙发动来克世爻的，药有效。", "世爻克应爻、克子孙的，是名医，但药没有效。", "子孙克世爻，而外卦的应爻不克内卦的世爻的，药没有效，但也没有害。", "应爻带鬼发动、刑害克冲世爻的，是用错了药，伤了人。", "子孙落在辰、午、酉、亥这四个自刑的地支上，用药有差错。", "日辰、动爻冲伤子孙的，药没有效。", "子孙变出父母、鬼的，药收不到功效。", "子孙变出子孙的，药杂而不精。", "子孙带白虎、煞发动的，是庸医误人。", "世爻下面伏着官，遇到子孙发动的，药虽好，病根却除不掉。", "世爻持着衰弱的鬼的，病虽轻，药却难以治疗。", "世爻、应爻比和，而卦里没有子孙，或者子孙空、绝的，应当换药换医生。", "子孙有两个都发动的，换个医生就会好。", "鬼和子孙都落空的，不治疗也会自己好。", "鬼和子孙都发动的，医药和祈祷一起用。", "子孙和财爻都动，鬼就得到帮助，病难治。"],
+          "en": ["The Self line and Subject line in the inner trigram are the patient, and the Other line and Output in the outer trigram are the doctor and medicine.", "If the outer controls the inner, and the Other and Output control the Self and the Subject, the medicine is effective.", "If the inner controls the outer, and the Self and Subject lines control the Other and Output, the medicine is not effective.", "If the outer generates and combines with the inner, and the Other and Output generate and combine with the Self, the medicine fits the illness but works slowly.", "If the Other in the outer trigram controls the Self in the inner, and there is no Output in the hexagram, one does not meet a good doctor.", "If Resource and Peer both move, Output gains from being generated and the doctor is good.", "If Resource and Pressure are both still, and Output sits on the Other line and moves, a good doctor arrives.", "If the Other line carries Output and moves to control the Self, the medicine is effective.", "If the Self controls the Other and Output, the doctor is famous but the medicine is not effective.", "If Output controls the Self but the Other in the outer trigram does not control the Self in the inner, the medicine has no effect but does no harm.", "If the Other line carries the ghost and it moves to punish, harm, control or clash the Self, wrong medicine harms the person.", "If Output stands on Chen, Wu, You or Hai, which punish themselves, the medicine is mistaken.", "If the Day or a moving line clashes with and wounds Output, the medicine is not effective.", "If Output changes into Resource or a ghost, the medicine does not bring completion.", "If Output changes into Output, the medicines are mixed and not refined.", "If Output carries the Tiger and a killing star and moves, a mediocre doctor harms people.", "If Pressure is hidden beneath the Self and Output moves, the medicine is good but the root of the illness is not removed.", "If the Self holds a weak ghost, the illness is light but the medicine has difficulty curing it.", "If the Self and Other are in harmony and there is no Output in the hexagram, or Output is Void or in Extinction, the medicine and doctor should be changed.", "If two Output lines both move, changing the doctor leads to recovery.", "If the ghost and Output are both Void, he recovers without treatment.", "If the ghost and Output both move, doctors and prayers should be used together.", "If Output and Wealth both move, the ghost is helped and the illness is hard to treat."] },
+        { "by": "书中例", "book": "易隐", "range": [3033, 3033],
+          "zh": ["庚寅年戊寅月己巳日，代占人病，得坎之蹇。", "应爻相气，岁月生之，日辰比之，但嫌化出申金，冲刑寅木子孙，服药不效。", "辰宫化午财，刑应上午，是以多进食而受伤也。", "官属土，脾胃病。", "子旺官衰，卦虽六冲，新病不死，只是难痊耳。"],
+          "yi": ["庚寅年戊寅月己巳日，替别人占病，得到坎卦变蹇卦。", "应爻旺相，岁、月生它，日辰扶它，只嫌变出申金，冲刑寅木子孙，所以服药没有效。", "辰（土）变出午财，刑到应爻上的午，所以吃得多而受了伤。", "官爻属土，是脾胃的病。", "子孙旺、官爻衰，卦虽然是六冲，新病不会死，只是难以痊愈。"],
+          "en": ["In the Gengyin year, the Wuyin month, on the Jisi day, someone divined for another's illness and obtained Kan changing into Jian.", "The Other line is in season and is generated by the Year and Month and supported by the Day, but it is unfortunate that it changes into Shen Metal, which clashes with and punishes Yin Wood Output, so taking medicine had no effect.", "The Chen line changes into Wu Wealth, which punishes the Wu on the Other line, and so he was harmed by eating too much.", "The Pressure line is Earth: an ailment of the spleen and stomach.", "Output is strong and Pressure weak; although the hexagram is Six-Clash, a recent illness does not kill, it is only hard to cure."] },
+        { "by": "书中例", "book": "易隐", "range": [3041, 3041],
+          "zh": ["庚寅年甲申月乙丑日，夫占妻病，得震之豫。", "世下戌财，正值旬空，日辰丑又刑戌，应爻辰财又自刑，初下子水动，化未土，与世下戌土又相刑，用爻受制，病必重也，子孙为药，午为自刑，用药差误，所以病剧也。", "逢巳午日，子旺生财，始病退。", "若至日病加重，必难疗也。"],
+          "yi": ["庚寅年甲申月乙丑日，丈夫占妻子的病，得到震卦变豫卦。", "世爻下面的戌财，正好值旬空，日辰丑又刑戌；应爻的辰财又自刑；初爻下的子水发动，变出未土，和世爻下的戌土又相刑；用爻受制，病一定重；子孙是药，午是自刑，用药有差错，所以病加剧。", "逢到巳日、午日，子孙旺相来生财，病才开始退。", "如果到了（那一）日病加重，就一定难治。"],
+          "en": ["In the Gengyin year, the Jiashen month, on the Yichou day, a husband divined about his wife's illness and obtained Zhen changing into Yu.", "The Xu Wealth beneath the Self is exactly in Void, the Chou Day further punishes Xu, and the Chen Wealth on the Other line punishes itself; the Zi Water on the first line moves and changes into Wei Earth, which again punishes the Xu Earth beneath the Self; the Subject line is restrained, so the illness is surely heavy; Output is the medicine and Wu punishes itself, so the medicine was mistaken, and that is why the illness worsened.", "On a Si or Wu day, Output is strong and generates Wealth, and only then does the illness retreat.", "If on reaching that day the illness grows heavier, it will surely be hard to cure."] }
+      ],
+      "note": {
+        "yi": "两个断例挂在这里：坎之蹇（应爻旺相本可服药，却变出申金冲刑寅木子孙，服药不效；子旺官衰，新病不死只是难痊）、震之豫（子孙是药而午自刑，用药差误，巳午日子旺生财病才退）。书里最后一句「若至日病加重」缺了是哪一日，译文按上下文译作「那一日」，不猜是哪天。「自刑」是辰午酉亥四个地支遇到自己（如午见午）。「六冲」的新病与久病的不同，见 LY.ILL.YY.07。「良医」「名医而药不效」这一组和黄金策讲医药（LY.ILL.HJC.58 起）、增删卜易讲延医（LY.ILL.ZS.26 起）是三家各说各的一套：黄金策以应爻为医、子孙为药，易隐同；增删卜易另有以子孙为忧神解药、应爻为医人的说法。",
+        "en": "Two cases hang here: Kan into Jian (the Other line strong and so medicine should work, but it changes into Shen Metal which clashes with and punishes Yin Wood Output and the medicine fails; Output strong and Pressure weak, so a recent illness does not kill and is only hard to cure) and Zhen into Yu (Output is the medicine but Wu punishes itself, the medicine was mistaken, and the illness retreated only on a Si or Wu day when Output strong generated Wealth). The last sentence of the second case, 'if on reaching the day the illness grows heavier', lacks which day, and the translation renders it 'that day' without guessing. 'Self-punishment' (zixing) is the four branches Chen, Wu, You and Hai meeting themselves (Wu meeting Wu). For the difference between a recent illness and a long one under Six-Clash, see LY.ILL.YY.07. This group on the good doctor and 'famous doctor, ineffective medicine' is a set of its own beside the Huangjin Ce's treatment of medicine (from LY.ILL.HJC.58) and the Zengshan Buyi's on calling a doctor (from LY.ILL.ZS.26): the Huangjin Ce takes the Other line as the doctor and Output as the medicine, as the Yi Yin does; the Zengshan Buyi also has its own account of Output as the spirit that relieves worry and the Other line as the doctor."
+      },
+      "see": ["LY.ILL.YY.20", "LY.ILL.YY.22", "LY.ILL.YY.26", "LY.ILL.HJC.58", "LY.ILL.HJC.32", "LY.ILL.ZS.26", "LY.ILL.ZS.29", "LY.ILL.ZS.30", "LY.ILL.WWJQ.01", "LY.ILL.HDY.13"]
+    },
+    {
+      "id": "LY.ILL.YY.22",
+      "topic": "医药",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "医药·天医（《法法赋》）：天医生世是良医、克世是庸医；日辰克医医学不精、医克日辰用药不当；世爻用爻属金天医在巳、木在亥、火在寅、水土在申则效",
+      "rule": {
+        "yi": "《法法赋》说：天医生世爻的，是好医生；天医克世爻的，是庸医；日辰克医生的，医术不精；医生克日辰的，用药不恰当。世爻、用爻属金的，天医在巳有效；属木的，天医在亥有效；属火的，天医在寅有效；属水、土的，天医在申有效。",
+        "en": "The Fafa Fu says: if the Heavenly Doctor generates the Self, he is a good doctor; if it controls the Self, a mediocre one; if the Day controls the doctor, his medical learning is not refined; if the doctor controls the Day, the medicine used is not fitting. If the Self line and Subject line are Metal, the Heavenly Doctor at Si is effective; if Wood, at Hai; if Fire, at Yin; if Water or Earth, at Shen."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3013, 3013],
+          "zh": ["法法赋曰，天医生世者，良医。", "天医克世者，庸医。", "日辰克医者，医学不精。", "医克日辰者，用药不当也。", "世爻用爻属金，天医在巳者效也。", "属木，天医在亥者效也。", "属火，天医在寅者效。", "属水土，天医在申者效也。"],
+          "yi": ["《法法赋》说：天医生世的，是好医生。", "天医克世的，是庸医。", "日辰克医生的，医术不精。", "医生克日辰的，用药不恰当。", "世爻、用爻属金的，天医在巳有效。", "属木的，天医在亥有效。", "属火的，天医在寅有效。", "属水、土的，天医在申有效。"],
+          "en": ["The Fafa Fu says: if the Heavenly Doctor generates the Self, he is a good doctor.", "If the Heavenly Doctor controls the Self, a mediocre doctor.", "If the Day controls the doctor, his medical learning is not refined.", "If the doctor controls the Day, the medicine used is not fitting.", "If the Self line and the Subject line are Metal, the Heavenly Doctor at Si is effective.", "If Wood, the Heavenly Doctor at Hai is effective.", "If Fire, the Heavenly Doctor at Yin is effective.", "If Water or Earth, the Heavenly Doctor at Shen is effective."] }
+      ],
+      "note": {
+        "yi": "「天医」是一颗神煞。这里的天医按世爻用爻的五行取，取的是那一行长生的地支（金长生在巳、木在亥、火在寅、水土在申）；易冒讲的天医是按月取（丁神），不是这一个（见易冒的天医，书里另有说明）。「法法赋」是易隐引的一部书，书里没有再介绍。",
+        "en": "The 'Heavenly Doctor' is a spirit-star. Here it is taken by the element of the Self and Subject lines, using the branch where that element is born (Metal is born at Si, Wood at Hai, Fire at Yin, Water and Earth at Shen); the Heavenly Doctor the Yi Mao speaks of is taken by the month (the Ding spirit) and is not this one (the Yi Mao explains its own). The 'Fafa Fu' is a work the Yi Yin quotes and the book does not introduce."
+      },
+      "see": ["LY.ILL.YY.21", "LY.ILL.YY.23"]
+    },
+    {
+      "id": "LY.ILL.YY.23",
+      "topic": "医药",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "医药·脉（《董和筮秘》）：脉宜细察，身爻为主；月卦临金脉弦紧代革、临木洪长虚动、临水芤滑濡动、值火数大促短、值土沉实滞涩",
+      "rule": {
+        "yi": "《董和筮秘》说：脉要仔细察，以身爻为主。月卦临在金上，脉一定是弦、紧、代、革；临在木上，脉一定是洪、长、虚、动；临在水上，脉一定是芤、滑、濡、动；值火，脉一定是数、大、促、短；值土，脉一定是沉、实、滞、涩。",
+        "en": "The Dong He Shimi says: the pulse should be examined carefully, with the Body line as the master. If the month-hexagram falls on Metal, the pulse is surely wiry, tight, intermittent and leathery; on Wood, surging, long, vacuous and stirring; on Water, hollow, slippery, soft and stirring; on Fire, rapid, large, hurried and short; on Earth, deep, full, sluggish and rough."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3013, 3013],
+          "zh": ["董和筮秘曰，脉宜细察，身爻为主。", "月卦临金，脉必弦紧代革也。", "临木，脉必洪长虚动也。", "临水，脉必芤滑濡动也。", "值火，脉必数大促短也。", "值土，脉必沉实滞涩也。"],
+          "yi": ["《董和筮秘》说：脉要仔细察，以身爻为主。", "月卦临在金上，脉一定是弦、紧、代、革。", "临在木上，脉一定是洪、长、虚、动。", "临在水上，脉一定是芤、滑、濡、动。", "值火，脉一定是数、大、促、短。", "值土，脉一定是沉、实、滞、涩。"],
+          "en": ["The Dong He Shimi says: the pulse should be examined carefully, with the Body line as the master.", "If the month-hexagram falls on Metal, the pulse is surely wiry, tight, intermittent and leathery.", "On Wood, the pulse is surely surging, long, vacuous and stirring.", "On Water, the pulse is surely hollow, slippery, soft and stirring.", "On Fire, the pulse is surely rapid, large, hurried and short.", "On Earth, the pulse is surely deep, full, sluggish and rough."] }
+      ],
+      "note": {
+        "yi": "弦、紧、代、革、洪、长、虚、动、芤、滑、濡、数、大、促、短、沉、实、滞、涩都是中医脉名，译文用通行的英文脉名的字面。「身爻」「月卦」书里没有在这里解释（月卦身法，见 LY.ILL.HJC.35）。这一段是易隐引的《董和筮秘》，不是易隐自己的话。",
+        "en": "Xian, jin, dai, ge, hong, chang, xu, dong, kou, hua, ru, shu, da, cu, duan, chen, shi, zhi and se are all names of pulses in Chinese medicine, rendered by the usual literal English pulse names. The 'Body line' and 'month-hexagram' are not explained here (for the month-body method see LY.ILL.HJC.35). This passage is the Dong He Shimi as quoted in the Yi Yin, not the Yi Yin's own words."
+      },
+      "see": ["LY.ILL.YY.22", "LY.ILL.YY.24", "LY.ILL.HJC.35"]
+    },
+    {
+      "id": "LY.ILL.YY.24",
+      "topic": "医药",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "医药·推医是何人：子孙为用，五行定方位姓氏——金宜西方金旁姓氏、木宜东方草木旁、水宜北方点水旁、火宜南方日火旁、土宜土旁及丹散医人；子孙带贵人宜有官职人、带华盖宜僧道",
+      "rule": {
+        "yi": "推断请来的医生是什么样的人，拿子孙做用：子孙属金，适合西方的、姓氏带金字旁的人；属木，适合东方的、姓氏带草头或木字旁的人；属水，适合北方的、姓氏带三点水的人；属火，适合南方的、姓氏带日字旁或火字旁的人；属土，适合姓氏带土字旁的，以及用丹药散剂的医生。子孙带贵人，适合有官职的人；子孙带华盖，适合僧人道士。",
+        "en": "To work out what kind of person the doctor is, Output is the Subject: if Output is Metal, it suits the west, a person whose surname has the metal radical; if Wood, the east, a surname with the grass or wood radical; if Water, the north, a surname with the water radical; if Fire, the south, a surname with the sun or fire radical; if Earth, a surname with the earth radical, and a doctor who works with cinnabar and powders. If Output carries the Noble, a person holding an official post; if Output carries the Canopy, a monk or Daoist."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3013, 3013],
+          "zh": ["又推医是何人，子孙为用。", "子孙属金，宜西方，金傍姓氏人也。", "属木，宜东方，草木傍姓氏也。", "属水，宜北方，点水傍姓氏人也。", "属火，宜南方，日火傍姓氏人也。", "属土，宜土傍姓氏，及丹散医人也。", "子孙带贵人，宜有官职人。", "子孙带华盖，宜僧道也。"],
+          "yi": ["又，推断请来的医生是什么样的人，拿子孙做用。", "子孙属金，适合西方的、姓氏带金字旁的人。", "属木，适合东方的、姓氏带草头或木字旁的人。", "属水，适合北方的、姓氏带三点水的人。", "属火，适合南方的、姓氏带日字旁或火字旁的人。", "属土，适合姓氏带土字旁的，以及用丹药散剂的医生。", "子孙带贵人，适合有官职的人。", "子孙带华盖，适合僧人道士。"],
+          "en": ["Again, to work out what kind of person the doctor is, Output is the Subject.", "If Output is Metal, it suits the west, a person whose surname has the metal radical.", "If Wood, the east, a person whose surname has the grass or wood radical.", "If Water, the north, a person whose surname has the water radical.", "If Fire, the south, a person whose surname has the sun or fire radical.", "If Earth, a person whose surname has the earth radical, and a doctor who works with cinnabar and powders.", "If Output carries the Noble, a person holding an official post.", "If Output carries the Canopy, a monk or Daoist."] }
+      ],
+      "note": {
+        "yi": "这一条和增删卜易讲的「延医于子孙之方，姓名按五行：水点水、火象火、木草头木旁、土有土」（LY.ILL.ZS.34）几乎一样，是同一个说法两本书都有。「华盖」是一颗神煞，主僧道孤高；「贵人」也是神煞，主有人扶助。",
+        "en": "This entry is almost the same as the Zengshan Buyi's 'calling the doctor in the direction of Output, the surname by the element: Water with the water radical, Fire with the fire image, Wood with the grass or wood radical, Earth with earth' (LY.ILL.ZS.34); the two books have the same saying. The 'Canopy' (Huagai) is a spirit-star for monks and Daoists and the solitary and aloof; the 'Noble' is also a spirit-star, for help from others."
+      },
+      "see": ["LY.ILL.YY.23", "LY.ILL.YY.25", "LY.ILL.ZS.34"]
+    },
+    {
+      "id": "LY.ILL.YY.25",
+      "topic": "医药",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "医药·治法与用药：官鬼属金宜灸不宜丸药、属木宜针不宜汤药、属水宜温药丸药不宜针、属火宜凉药汤药不宜草头药饮片、属土宜咬咀不宜灸（取克鬼者、忌生鬼者）；鬼伤二间宜宽胸膈；财外动合用宜吐、内动宜泻；鬼在外卦宜外表、伏内卦宜内表",
+      "rule": {
+        "yi": "用药不要轻易乱投。官鬼属金的，适合灸，不适合丸药（火能克金，土生金）；鬼属木的，适合针，不适合汤药（金能克木，水生木）；鬼属水的，适合温药、丸药，不适合针（土克水，金生水）；鬼属火的，适合凉药、汤药，不适合草头药和饮片（水克火，木生火）；鬼属土的，适合咬咀，不适合灸（木克土，火生土）。此外，鬼伤到两个间爻的，适合宽胸膈；世爻旺又有扶助的，不妨再进补；财爻在外卦发动合用爻的，适合吐法，在内卦发动合用爻的，适合泻法；用爻、鬼爻出现或在外卦的，适合治外表，伏藏在内卦的，适合治内。",
+        "en": "Medicine is not to be given lightly. If the Pressure line is Metal, moxibustion suits and pills do not (Fire can control Metal, while Earth generates Metal); if the ghost is Wood, acupuncture suits and decoctions do not (Metal can control Wood, while Water generates Wood); if Water, warm medicines and pills suit and acupuncture does not (Earth controls Water, while Metal generates Water); if Fire, cool medicines and decoctions suit and herbal medicines and sliced drugs do not (Water controls Fire, while Wood generates Fire); if Earth, crushed herbs suit and moxibustion does not (Wood controls Earth, while Fire generates Earth). Besides: if the ghost harms the two between lines, ease the chest and diaphragm; if the Self is strong and supported, there is no harm in tonics again; if Wealth moves in the outer trigram and combines with the Subject line, an emetic suits, and in the inner trigram, a purgative; if the Subject line and the Pressure line appear openly or are in the outer trigram, treat the exterior, and if hidden in the inner trigram, treat the interior."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3013, 3013],
+          "zh": ["至于君臣佐使药莫轻投。", "官鬼属金，宜灸，不宜丸药也(火可克金，土则生金)。", "鬼属木，宜针，不宜汤药也(金能克木，水则生木)。", "鬼属水，宜温药，丸药，不宜针也(土克水，金生水)。", "鬼属火，宜凉药，汤药，不宜草头药，与饮片也(以水克火，而木生火)。", "鬼属土，宜咬咀，不宜灸也(以木克土，而火生土)。", "他若鬼伤二间者，宜宽胸膈也。", "世旺有扶者，不妨再补也。", "财外动合用者，宜吐。", "财内动合用者，宜泻。", "用爻鬼爻出现，与在外卦者，宜外表。", "伏藏在内卦者，宜内表也。"],
+          "yi": ["至于君臣佐使这些配药的讲究，药不要轻易乱投。", "官鬼属金的，适合灸，不适合丸药（火能克金，土生金）。", "鬼属木的，适合针，不适合汤药（金能克木，水生木）。", "鬼属水的，适合温药、丸药，不适合针（土克水，金生水）。", "鬼属火的，适合凉药、汤药，不适合草头药和饮片（以水克火，而木生火）。", "鬼属土的，适合咬咀，不适合灸（以木克土，而火生土）。", "另外，鬼伤到两个间爻的，适合宽胸膈。", "世爻旺又有扶助的，不妨再进补。", "财爻在外卦发动合用爻的，适合吐法。", "财爻在内卦发动合用爻的，适合泻法。", "用爻和鬼爻出现，或者在外卦的，适合治外表。", "伏藏在内卦的，适合治内。"],
+          "en": ["As for the 'sovereign, minister, assistant and envoy' of compounding, medicine should not be given lightly.", "If the Pressure line is Metal, moxibustion suits and pills do not (Fire can control Metal, while Earth generates Metal).", "If the ghost is Wood, acupuncture suits and decoctions do not (Metal can control Wood, while Water generates Wood).", "If the ghost is Water, warm medicines and pills suit and acupuncture does not (Earth controls Water, while Metal generates Water).", "If the ghost is Fire, cool medicines and decoctions suit and herbal medicines and sliced drugs do not (Water controls Fire, while Wood generates Fire).", "If the ghost is Earth, crushed herbs suit and moxibustion does not (Wood controls Earth, while Fire generates Earth).", "Again, if the ghost harms the two between lines, ease the chest and diaphragm.", "If the Self is strong and supported, there is no harm in tonics again.", "If Wealth moves in the outer trigram and combines with the Subject line, an emetic suits.", "If Wealth moves in the inner trigram and combines with the Subject line, a purgative suits.", "If the Subject line and the Pressure line appear openly, or are in the outer trigram, treat the exterior.", "If they are hidden in the inner trigram, treat the interior."] }
+      ],
+      "dispute": {
+        "yi": "治法与药性要不要按鬼的五行来选：易隐说得很具体——鬼属金宜灸、属木宜针、属水宜温药丸药、属火宜凉药汤药、属土宜咬咀，原则是用克鬼的、避开生鬼的；黄金策也有火鬼旺宜大寒药、水鬼旺宜大热药的说法（LY.ILL.HJC.82、LY.ILL.HJC.84），方向一致。增删卜易的李我平驳这些说法拘泥，说子孙不是针灸之药，胶柱鼓瑟会坑陷人命（LY.ILL.ZS.40）。三家意见不同，书里没有裁决。",
+        "en": "Whether the way of treatment and the nature of the drug is chosen by the element of the ghost: the Yi Yin is very specific — Metal, moxibustion; Wood, acupuncture; Water, warm medicines and pills; Fire, cool medicines and decoctions; Earth, crushed herbs — the principle being to use what controls the ghost and avoid what generates it; the Huangjin Ce also has the sayings that a strong Fire ghost suits very cold medicine and a strong Water ghost very hot medicine (LY.ILL.HJC.82 and LY.ILL.HJC.84), in the same direction. Li Woping of the Zengshan Buyi rejects these as rigid, saying Output is not the medicine of acupuncture and moxibustion and that sticking to the letter pits and drowns lives (LY.ILL.ZS.40). The three differ and the books do not decide."
+      },
+      "note": {
+        "yi": "「君臣佐使」是配药时药的四种分工。「咬咀」（也写作㕮咀）是把药切碎或捣成粗末，用来煎汤。「表」是身体的表层，「外表」「内表」书里没有再解释，译文按字面译作治外表、治内。「二间」是世应之间的两爻（间爻）。括号里的话是书里自己的理由。",
+        "en": "'Sovereign, minister, assistant and envoy' are the four divisions of labour among the drugs in compounding. 'Yaozu' (also written fu zu) is cutting medicine up or pounding it into coarse powder for decoction. 'Biao' is the surface layer of the body, and 'outer biao' and 'inner biao' are not explained further and are rendered literally as treating the exterior and the interior. The 'two between' are the two lines between the Self and Other (the between lines). The words in brackets are the book's own reasons."
+      },
+      "see": ["LY.ILL.YY.24", "LY.ILL.YY.26", "LY.ILL.HJC.82", "LY.ILL.HJC.84", "LY.ILL.ZS.40"]
+    },
+    {
+      "id": "LY.ILL.YY.26",
+      "topic": "医药",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "医药·受病在此所治在彼（周杰）：金虎鬼冲伤用是肝受病然治肺不治肝，木虎鬼脾受病治肝，水虎鬼心受病治肾，火虎鬼肺受病治心，土虎鬼肾受病治脾；颗师：子孙动者误服药",
+      "rule": {
+        "yi": "周杰说：有的病是在这里受的，该治的却在那里。比如金的虎鬼冲伤用爻，是肝经受了病（金来克木），但应当治肺，不能治肝（这就是所说的去掉害我的那一个，其余照这个办法推）；木的虎鬼冲伤用爻，是脾经受病（木来伤土），该治肝，不能治脾；水的虎鬼冲伤用爻，是心经受病（水来伤火），该治肾，不能治心；火的虎鬼冲伤用爻，是肺经受病（火来伤金），该治心，不能治肺；土的虎鬼冲伤用爻，是肾经受病（土来伤水），该治脾，不能治肾（出自《松径玄谈》）。颗师说：子孙发动的，是吃错了药。",
+        "en": "Zhou Jie says: in some cases the illness is received in one place while the treatment lies in another. For example, if a Metal Tiger ghost clashes with and wounds the Subject line, the liver channel has received the illness (Metal comes to control Wood), yet one may treat the lungs and must not treat the liver (this is what is meant by removing what harms me; the rest follow this); a Wood Tiger ghost wounding the Subject line: the spleen channel has received the illness (Wood comes to wound Earth), treat the liver, not the spleen; a Water Tiger ghost: the heart channel (Water wounds Fire), treat the kidneys, not the heart; a Fire Tiger ghost: the lung channel (Fire wounds Metal), treat the heart, not the lungs; an Earth Tiger ghost: the kidney channel (Earth wounds Water), treat the spleen, not the kidneys (from the Songjing Xuantan). Master Ke says: when Output moves, the wrong medicine has been taken."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3013, 3015],
+          "zh": ["周杰曰，有受病在此，所治在彼者。", "如金虎鬼冲伤用，乃肝经受病(金来克木)。", "然可治肺，不可治肝也(所云去其害我者，余仿此)。", "木虎鬼冲伤用，乃脾经受病(木来伤土)。", "然可治肝，不可治脾也。", "水虎鬼冲伤用，乃心经受病(水来伤火)。", "然可治肾，不可治心也。", "火虎鬼冲伤用，乃肺经受病(火来伤金)。", "然可治心，不可治肺也。", "土虎鬼冲伤用，乃肾经受病(土来伤水)。", "然可治脾，不可治肾也(出松径玄谈)。", "颗师曰，子孙动者误服药。"],
+          "yi": ["周杰说：有的病是在这里受的，该治的却在那里。", "比如金的虎鬼冲伤用爻，是肝经受了病（金来克木）。", "但是应当治肺，不能治肝（所说的去掉害我的那一个，其余照这个办法推）。", "木的虎鬼冲伤用爻，是脾经受病（木来伤土）。", "但是应当治肝，不能治脾。", "水的虎鬼冲伤用爻，是心经受病（水来伤火）。", "但是应当治肾，不能治心。", "火的虎鬼冲伤用爻，是肺经受病（火来伤金）。", "但是应当治心，不能治肺。", "土的虎鬼冲伤用爻，是肾经受病（土来伤水）。", "但是应当治脾，不能治肾（出自《松径玄谈》）。", "颗师说：子孙发动的，是吃错了药。"],
+          "en": ["Zhou Jie says: in some cases the illness is received in one place while the treatment lies in another.", "For example, if a Metal Tiger ghost clashes with and wounds the Subject line, the liver channel has received the illness (Metal comes to control Wood).", "But one may treat the lungs and must not treat the liver (this is what is meant by removing what harms me; the rest follow this).", "If a Wood Tiger ghost clashes with and wounds the Subject line, the spleen channel has received the illness (Wood comes to wound Earth).", "But one may treat the liver and must not treat the spleen.", "If a Water Tiger ghost clashes with and wounds the Subject line, the heart channel has received the illness (Water comes to wound Fire).", "But one may treat the kidneys and must not treat the heart.", "If a Fire Tiger ghost clashes with and wounds the Subject line, the lung channel has received the illness (Fire comes to wound Metal).", "But one may treat the heart and must not treat the lungs.", "If an Earth Tiger ghost clashes with and wounds the Subject line, the kidney channel has received the illness (Earth comes to wound Water).", "But one may treat the spleen and must not treat the kidneys (from the Songjing Xuantan).", "Master Ke says: when Output moves, the wrong medicine has been taken."] },
+        { "by": "书中例", "book": "易隐", "range": [3038, 3038],
+          "zh": ["庚寅年戊寅月戊寅日，妻占夫病，得剥之观。", "官爻受三传生合，人皆云吉。", "不知本宫午官自刑，伏墓戌土下，傍爻子动冲克官，极凶。", "子动，误服药。", "子又化绝于巳，必始因药不投而后不延医也。", "只有三传生合官鬼，不过暂时少甦，至甲申日，元神绝而忌神生，果死也。"],
+          "yi": ["庚寅年戊寅月戊寅日，妻子占丈夫的病，得到剥卦变观卦。", "官爻受到三传（年、月、日）的生、合，大家都说吉。", "不知道本宫的午官自己刑自己，伏在墓上的戌土下面，旁边的子孙爻发动来冲克官爻，极凶。", "子孙动，是吃错了药。", "子孙又变出巳而绝，一定是起初因为药不对症，后来就不请医生了。", "只有三传生合官鬼，不过让他暂时稍微苏醒一下；到甲申日，原神绝、忌神生，果然死了。"],
+          "en": ["In the Gengyin year, the Wuyin month, on the Wuyin day, a wife divined about her husband's illness and obtained Bo changing into Guan.", "The Pressure line was generated and combined by the three rulers (Year, Month and Day), and everyone said it was auspicious.", "They did not know that the Wu Pressure of the home palace punishes itself and lies hidden beneath Xu Earth, its tomb, while the Output line beside it moves and clashes with and controls Pressure — extremely ominous.", "Output moves: wrong medicine was taken.", "Output further changes into Si, where it is in Extinction; surely at first the medicine did not fit, and afterwards no doctor was called.", "Only the three rulers generating and combining with Pressure gave him a brief revival; on the Jiashen day the Support was extinct and the Adversary born, and he indeed died."] }
+      ],
+      "dispute": {
+        "yi": "子孙发动是好是坏：颗师说「子孙动者误服药」，子孙一动就是吃错了药，断例（剥之观）也照这个断，子孙发动冲克官爻、又变出巳绝，药不对症；黄金策、卜筮正宗、增删卜易都是另一个方向——子孙发动制鬼，是药能见效、甚至不药自愈（LY.ILL.HJC.32、LY.ILL.BSZZ.12、LY.ILL.ZS.30）。同一个爻象，两个相反的说法，书里没有裁决。周杰讲的「受病在此所治在彼」则是易隐这一组里独有的说法，别处没有。",
+        "en": "Whether a moving Output line is good or bad: Master Ke says 'when Output moves, the wrong medicine has been taken', and the case (Bo into Guan) is judged the same way — Output moving to clash with and control Pressure and then changing into Si in Extinction, the medicine did not fit; the Huangjin Ce, the Bushi Zhengzong and the Zengshan Buyi go the other way — Output moving to restrain the ghost means the medicine will take effect, even that he recovers without medicine (LY.ILL.HJC.32, LY.ILL.BSZZ.12 and LY.ILL.ZS.30). The same line-image has two opposite sayings and the books do not decide. Zhou Jie's 'the illness is received here and the treatment lies there' is a saying peculiar to this group in the Yi Yin and is found nowhere else."
+      },
+      "note": {
+        "yi": "「虎鬼」是白虎带鬼。周杰讲的是一种间接的治法：病是某一行的鬼伤了用爻所在的那一脏引起的，治的却不是被伤的那一脏，而是「去掉那个害我的」，也就是鬼那一行自己所属的脏——金鬼伤木（肝），治肺；木鬼伤土（脾），治肝；水鬼伤火（心），治肾；火鬼伤金（肺），治心；土鬼伤水（肾），治脾。书里只给了这张对应表和一句「去其害我者，余仿此」，没有再解释。「颗师」「松径玄谈」都是易隐引的人名书名，书里没有再介绍。",
+        "en": "The 'Tiger ghost' is the White Tiger carrying the ghost. Zhou Jie gives an indirect way of treatment: the illness is caused by a ghost of one element wounding the viscus that the Subject line stands for, yet what is treated is not the viscus wounded but 'what harms me is removed', that is, the viscus belonging to the ghost's own element — a Metal ghost wounding Wood (the liver), treat the lungs; a Wood ghost wounding Earth (the spleen), treat the liver; a Water ghost wounding Fire (the heart), treat the kidneys; a Fire ghost wounding Metal (the lungs), treat the heart; an Earth ghost wounding Water (the kidneys), treat the spleen. The book gives only this table and the phrase 'remove what harms me; the rest follow this' and no further explanation. 'Master Ke' and the 'Songjing Xuantan' are a person and a work the Yi Yin cites and the book does not introduce."
+      },
+      "see": ["LY.ILL.YY.25", "LY.ILL.YY.27", "LY.ILL.HJC.32", "LY.ILL.HJC.42", "LY.ILL.BSZZ.12", "LY.ILL.ZS.30", "LY.ILL.ZS.37"]
+    }
+  ]
+}

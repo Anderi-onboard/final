@@ -1,0 +1,468 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "黄金策",
+  "chapter": "身命·家宅章·出行章·总断千金赋·年时·国朝·产育",
+  "chapter_en": "Person and fate; the household; travel; the Rhapsody of a Thousand Golden Judgements; the year; the state; childbirth",
+  "ranges": {"卜筮大全": [4599, 6550], "卜筮正宗": [1233, 3040]},
+  "units": [
+    {
+      "id": "LY.ILL.HJC.121",
+      "topic": "总则",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "身命章·鬼爻持世，疾病缠绵（旧注：鬼为殃祸，遇之则一生疾病缠身，或带疾或常招官讼，贵人见之不以此断）",
+      "rule": {
+        "yi": "《黄金策》身命章说：「鬼爻持世，疾病缠绵。」旧注解释：官鬼是殃祸，遇到它，一生疾病缠身，或者带着病，或者常常招来官司；如果是贵人遇到，就不这样断。王洪绪说：官是祸殃，遇到主带疾病、招官讼，贵人并临则贵。",
+        "en": "The Huangjin Ce's chapter on the person and fate says: 'With the ghost line holding the Self line, illness lingers.' The old commentary explains: Pressure is calamity, and meeting it means illness clinging to the body for a whole life, either carrying an illness or often drawing a lawsuit; if a person of rank meets it, it is not judged this way. Wang Hongxu says: Pressure is calamity, and meeting it means carrying illness or drawing a lawsuit, but if a noble star is on it as well, it means rank."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6030, 6030],
+          "zh": ["鬼爻持世，疾病缠绵。"],
+          "yi": ["鬼爻持世，疾病缠绵不断。"],
+          "en": ["With the Pressure line holding the Self line, illness lingers."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6031, 6031],
+          "zh": ["鬼为殃祸，遇之，则一生疾病缠身；", "或主带疾，或常招官讼；", "若贵人见之，不以此断。"],
+          "yi": ["官鬼是殃祸，遇到它（持世），这一生就疾病缠身；", "或者主身上带着病，或者常常招来官司；", "如果是贵人遇到它，就不这样断。"],
+          "en": ["The ghost is calamity, and meeting it brings illness clinging to the body for a whole life;", "either one carries an illness, or often draws a lawsuit;", "if a person of rank meets it, it is not judged this way."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1669, 1669],
+          "zh": ["官为祸殃，遇之则主带疾病或招官讼，若贵人并临则贵。"],
+          "yi": ["官鬼是祸殃，遇到它，主带着疾病或者招来官司；如果贵人也同时临上，就是贵。"],
+          "en": ["Pressure is calamity; meeting it means carrying illness or drawing a lawsuit, but if a noble star sits on it as well, it means rank."] }
+      ],
+      "dispute": {
+        "yi": "一生多病落在哪一爻持世上，两本说法不同。《黄金策》身命章是官鬼爻持世（这一条），卜筮全书的阐幽精要身命章是兄弟爻持世「疾病连绵」（LY.ILL.BSQS.24）；两处都说父母持世辛勤劳碌。诸爻持世诀里鬼爻持世是「占身不病也遭官」（LY.ILL.BSQS.04），和黄金策同在鬼爻上，只是没有说一生多病。书里没有裁决。",
+        "en": "The books differ on which line holding the Self line brings a lifetime of illness. The Huangjin Ce's chapter on the person and fate has the Pressure line holding the Self line (this entry); the chapter on the person and life in the Chanyou Jingyao of the Bushi Quanshu has the Peer line holding the Self line, 'illness drags on' (LY.ILL.BSQS.24); both say that Resource holding the Self line means toil and labour. The verse on each line holding the Self line has, for the Pressure line holding the Self line, 'divining about oneself, even if not ill one meets an official case' (LY.ILL.BSQS.04), which agrees with the Huangjin Ce in being on the Pressure line but does not say lifelong illness. The books do not decide."
+      },
+      "note": {
+        "yi": "这是《黄金策》身命章（占一个人一生）里「父母持身辛勤劳碌，鬼爻持世疾病缠绵，遇兄则财莫能聚，见子则身不犯刑」一联的第二句；婚姻域收过第三句（LY.MARRY.HJC.105）。「贵人见之不以此断」是说有官位、有贵人命的人遇到官鬼持世，官鬼是他的官，不当作灾病。「带疾」是带着病，指有慢性的、长期的病。",
+        "en": "This is the second line of the couplet in the Huangjin Ce's chapter on the person and fate (on a person's whole life): 'Resource holding the Self line: toil and labour; Pressure holding the Self line: illness lingers; meeting Peer, wealth cannot gather; meeting Output, one does not run into punishment'; the third line was taken in the marriage domain (LY.MARRY.HJC.105). 'If a person of rank meets it, it is not judged this way' means that for a man with an official post or a noble fate, Pressure holding the Self line is his office and is not read as calamity or illness. 'Carrying an illness' means a long-standing, chronic illness."
+      },
+      "see": ["LY.ILL.BSQS.24", "LY.ILL.BSQS.04"]
+    },
+    {
+      "id": "LY.ILL.HJC.122",
+      "topic": "他人病",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "身命章·正内不利，李密髫龀迍邅（旧注：正卦内三爻乃初限，遇官鬼凶神克战主童年多病）",
+      "rule": {
+        "yi": "《黄金策》身命章说：「正卦的内卦不利，李密儿童时期困顿坎坷。」旧注解释：正卦的内卦三爻是初限（早年）；如果遇到官鬼、凶神来克战，主童年多病，像李密九岁才能走路，是因为幼年多病。",
+        "en": "The Huangjin Ce's chapter on the person and fate says: 'With the inner trigram of the main hexagram unfavourable, Li Mi's childhood was one of hardship.' The old commentary explains: the inner three lines of the main hexagram are the first period of life; if Pressure or an ominous spirit attacks it, it means many illnesses in childhood, as Li Mi could walk only at nine because he was often ill in his early years."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6067, 6067],
+          "zh": ["正内不利，李密髫龀迍邅；"],
+          "yi": ["正卦内卦不利，李密儿童时期困顿坎坷；"],
+          "en": ["With the inner trigram of the main hexagram unfavourable, Li Mi's childhood was one of hardship;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6068, 6068],
+          "zh": ["正卦内三爻，乃初限。", "若逢官鬼凶神克战者，主童年多病。", "如李密九岁方能行，盖幼年多疾故也。"],
+          "yi": ["正卦的内卦三爻，是初限（早年）。", "如果遇到官鬼、凶神来克战，主童年多病。", "比如李密九岁才能走路，是因为幼年多病的缘故。"],
+          "en": ["The inner three lines of the main hexagram are the first period of life.", "If Pressure or an ominous spirit attacks it, it means many illnesses in childhood.", "As Li Mi could walk only at nine, because he was often ill in his early years."] }
+      ],
+      "note": {
+        "yi": "身命章把一个人的一生分成三限：正卦内三爻是初限（约十五年），正卦外三爻加支卦内三爻是中限，支卦外三爻是末限（旧注 L6059）。这里讲初限遇官鬼凶神，童年多病。王洪绪对同一句的注是「正卦者，卜卦前之事」，把正卦读成卜卦之前的事，没有提到多病，所以没有收他的。李密是晋代人，字令伯，幼年多病，九岁才能走路，是旧注举的例子。",
+        "en": "The chapter on the person and fate divides a person's life into three periods: the inner three lines of the main hexagram are the first period (about fifteen years), the outer three lines of the main hexagram with the inner three of the branch hexagram are the middle period, and the outer three lines of the branch hexagram the last period (the old commentary, line 6059). Here, Pressure or an ominous spirit in the first period means many illnesses in childhood. Wang Hongxu's note on the same line reads 'the main hexagram is what came before the divination' and takes the main hexagram as events before the divination, with no mention of illness, so his note is not taken. Li Mi, of the Jin, courtesy name Lingbo, was often ill as a child and could walk only at nine; he is the old commentary's example."
+      },
+      "see": ["LY.ILL.HJC.121"]
+    },
+    {
+      "id": "LY.ILL.HJC.123",
+      "topic": "生死",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "身命章·随官入墓未为有子有孙、助鬼伤身不免多灾多病（占婴孩：世身随官入墓必死、鬼伤克世身刑冲主象必多病、财助鬼大凶、鬼持世临身亦多病）",
+      "rule": {
+        "yi": "《黄金策》身命章占婴孩的一联说：「随官入墓，不算有子有孙；助鬼伤身，免不了多灾多病。」旧注：世爻和身随着官鬼入墓，一定死；鬼伤克世、身，刑冲主象，一定多病，财爻再帮它，是大凶；鬼持世、临身，也主多病。王洪绪：子孙入墓或化官入墓、化官鬼，一定死；鬼伤克兄弟爻、使子孙爻没有根，一定多病难养；财动助鬼克兄，或鬼持世临身，也主多病。",
+        "en": "A couplet in the Huangjin Ce's chapter on the person and fate, on divining an infant, says: 'Following Pressure into the tomb, one cannot be said to have sons and grandsons; helping the ghost to harm the Body, one cannot escape many calamities and illnesses.' The old commentary: if the Self and Body follow Pressure into the tomb, one is sure to die; if a ghost harms and controls the Self or Body, punishing or clashing the principal image, there is sure to be much illness, and still worse if Wealth helps it; a ghost holding the Self line or sitting on the Body also means much illness. Wang Hongxu: Output entering the tomb, or turning into an officer and entering the tomb, or turning into Pressure, is sure death; a ghost harming and controlling Peer so that Output has no root means much illness and a child hard to raise; Wealth moving to help the ghost control Peer, or a ghost holding the Self line or sitting on the Body, also means much illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6207, 6207],
+          "zh": ["随官入墓，未为有子有孙；", "助鬼伤身，不免多灾多病。"],
+          "yi": ["随着官鬼入墓，不算有子有孙；", "帮着鬼来伤身，免不了多灾多病。"],
+          "en": ["Following Pressure into the tomb, one cannot be said to have sons and grandsons;", "helping the ghost to harm the Body, one cannot escape many calamities and illnesses."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6208, 6208],
+          "zh": ["卦中若见世身随官入墓者，必死。", "故曰：未为有子有孙。", "若遇鬼伤克世身，刑冲主象者，必然多病。", "更逢财爻助之，大凶之兆。", "若鬼持世临身，亦主多病。"],
+          "yi": ["卦里如果看到世爻、身随着官鬼入墓，一定死。", "所以说：不算有子有孙。", "如果遇到鬼爻伤克世爻、身，刑冲主象，一定多病。", "再遇到财爻帮它，是大凶的征兆。", "如果鬼爻持世、临在身上，也主多病。"],
+          "en": ["If in the hexagram the Self and the Body are seen following Pressure into the tomb, one is sure to die.", "Hence it says: 'one cannot be said to have sons and grandsons'.", "If a ghost harms and controls the Self or the Body, punishing or clashing the principal image, there is sure to be much illness.", "If a Wealth line helps it as well, it is a sign of great ill.", "If a ghost holds the Self line or sits on the Body, it also means much illness."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1771, 1771],
+          "zh": ["若见子孙入墓，或化官入墓，或化官鬼，必死。", "故曰“未为有子有孙”。", "若遇鬼伤克兄弟爻，致子孙爻无根，必然多病难养。", "财动助鬼克兄，或鬼持世临身，亦主多病。"],
+          "yi": ["如果看到子孙爻入墓，或者化出官爻入墓，或者化成官鬼，一定死。", "所以说「不算有子有孙」。", "如果遇到鬼爻伤克兄弟爻，使子孙爻没有根，一定多病、难养。", "财爻发动帮助鬼爻去克兄，或者鬼持世、临身，也主多病。"],
+          "en": ["If the Output line is seen entering the tomb, or turning into an officer and entering the tomb, or turning into Pressure, one is sure to die.", "Hence it says 'one cannot be said to have sons and grandsons'.", "If a ghost harms and controls the Peer line so that the Output line has no root, there is sure to be much illness and the child is hard to raise.", "If Wealth moves to help the ghost control Peer, or a ghost holds the Self line or sits on the Body, it also means much illness."] }
+      ],
+      "note": {
+        "yi": "这一联在身命章里是占婴孩（小孩的造化）的一段，「有子有孙」是说这个孩子立得住、活得成。「随官入墓」「助鬼伤身」和通玄妙论里同名的两节是同一个说法：随官入墓见 LY.ILL.DYTJ.27，助鬼伤身见 LY.ILL.DYTJ.29（那两节讲的是占病）。旧注「刑冲主象」的主象是所占的那一爻，占婴孩时是子孙爻。「世身」是世爻和身。",
+        "en": "This couplet is in a passage of the chapter on the person and fate that divines an infant (a child's fate), and 'having sons and grandsons' says that the child will stand and live. 'Following Pressure into the tomb' and 'helping the ghost to harm the Body' are the same sayings as the two sections of the same names in the Tongxuan Miaolun: following Pressure into the tomb is in LY.ILL.DYTJ.27 and helping the ghost to harm the Body in LY.ILL.DYTJ.29 (those two sections are about divining illness). The 'principal image' of the old commentary is the line being divined, which in divining an infant is the Output line. 'The Self and the Body' are the Self line and the Body."
+      },
+      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.29", "LY.ILL.HJC.124"]
+    },
+    {
+      "id": "LY.ILL.HJC.124",
+      "topic": "生死",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "身命章·遇令星如风摇干、逢绝地似雨倾花（占婴孩：子孙得地健旺凶神克战无事，死绝之地决难生养）",
+      "rule": {
+        "yi": "《黄金策》身命章占婴孩时说：「遇到令星，像风摇树干；逢到绝地，像雨打落花。」旧注：凡遇凶神来克战，子孙爻得地、健旺，一定无事，即使见一点小小的悔，也像微风摇树干，伤不了它；如果在死绝之地，一定难以生养，一有克战，就像暴雨打花，很少不残败的。",
+        "en": "The Huangjin Ce's chapter on the person and fate says, on divining an infant: 'Meeting the ruling star is like wind shaking a trunk; meeting a place of extinction is like rain beating down flowers.' The old commentary: whenever an ominous spirit attacks, if the Output line holds its ground and is strong, nothing will happen, and even with a slight regret it is like a light breeze shaking a trunk and cannot harm it; if it is in a place of death or extinction, it can hardly be reared, and once attacked it is like a sudden rain beating down flowers, and few escape ruin."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6216, 6216],
+          "zh": ["遇令星，如风摇干；", "逢绝地，似雨倾花。"],
+          "yi": ["遇到令星，像风摇树干；", "逢到绝地，像雨打落花。"],
+          "en": ["Meeting the ruling star is like wind shaking a trunk;", "meeting a place of extinction is like rain beating down flowers."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6217, 6217],
+          "zh": ["凡遇凶神克战，若得子孙得地健旺，则必无事；", "虽见小悔，犹微风摇干，必不能伤。", "若在死绝之地，决难生养；", "一有克战，则如骤雨倾花，鲜不残败。"],
+          "yi": ["凡是遇到凶神来克战，如果子孙爻得地、健旺，就一定没事；", "即使见到一点小小的悔，也像微风摇动树干，一定伤不了它。", "如果在死绝的地方，一定难以生养；", "一旦有克战，就像暴雨打花，很少不残败的。"],
+          "en": ["Whenever an ominous spirit attacks, if the Output line holds its ground and is strong, nothing will happen;", "even if a slight regret appears, it is like a light breeze shaking a trunk and surely cannot harm it.", "If it is in a place of death or extinction, it can hardly be reared;", "once it is attacked, it is like a sudden rain beating down flowers, and few escape ruin."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1777, 1777],
+          "zh": ["凡父母动克子，若得子孙值日辰月建，虽见小晦，犹微风摇干无妨；", "若逢墓绝有克战，如骤雨倾花有损。"],
+          "yi": ["凡是父母爻发动克子孙，如果子孙爻值着日辰、月建，即使见到一点小小的晦暗，也像微风摇动树干，没有妨碍；", "如果遇到墓绝又有克战，就像暴雨打花，有损伤。"],
+          "en": ["Whenever the Resource line moves to control Output, if Output holds the Day or the Month branch, even with a slight dimming it is like a light breeze shaking a trunk and does no harm;", "if it meets tomb and extinction with attack besides, it is like a sudden rain beating down flowers, and there is damage."] }
+      ],
+      "note": {
+        "yi": "「令星」是月建（当令的那个支），所以「遇令星」是子孙爻值月建，得时。「风摇干」「雨倾花」是比喻：前者树干不动，后者花被打落。这一段在身命章占婴孩的几联之间，讲的是孩子养不养得活，所以放在疾病域的生死里。王洪绪的注加了一个条件：是父母发动克子孙的时候。",
+        "en": "The 'ruling star' is the Month branch (the branch that rules the month), so 'meeting the ruling star' is the Output line standing on the Month branch, in season. 'Wind shaking a trunk' and 'rain beating down flowers' are comparisons: in the first the trunk does not move, in the second the flowers are beaten down. The passage stands among the couplets on divining an infant in the chapter on the person and fate and is about whether the child can be raised, which is why it is placed under life and death in the illness domain. Wang Hongxu's note adds a condition: it is when Resource moves to control Output."
+      },
+      "see": ["LY.ILL.HJC.123", "LY.ILL.HJC.125"]
+    },
+    {
+      "id": "LY.ILL.HJC.125",
+      "topic": "生死",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "身命章·子孙化鬼，孝殇十月入冥途；禄贵临爻，拜住童年登相位（旧注：子化出鬼乃九死一生之兆，贵人禄马旺相则异日必贵）",
+      "rule": {
+        "yi": "《黄金策》身命章占婴孩时说：「子孙化成鬼，像汉殇帝才十个月就走进了冥途；禄、贵人临在爻上，像元朝的拜住童年就登上相位。」旧注：子孙爻化出鬼爻，是九死一生的征兆；如果贵人、禄马一起临上、子孙又旺相，将来必定显贵；子孙遇凶而化鬼，是说孩子自己化成了鬼，所以凶，遇吉而化官，是化成了官，所以吉。王洪绪：子孙休囚，化鬼或化父母，都是死的征兆。",
+        "en": "The Huangjin Ce's chapter on the person and fate says, on divining an infant: 'Output turning into a ghost: Emperor Shang of Han went to the underworld at ten months; Salary and the Noble on the line: Baizhu rose to minister in childhood.' The old commentary: the Output line turning into a ghost line is a sign of nine deaths to one life; if the Noble, Salary and Horse all sit on it and Output is strong, he will surely be eminent one day; when Output meets ill and turns into a ghost, the child himself has turned into a ghost, hence ill, and when it meets good and turns into an officer, he has turned into an officer, hence good. Wang Hongxu: Output resting or confined and turning into a ghost or into Resource is a sign of death."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6219, 6219],
+          "zh": ["子孙化鬼，孝殇十月入冥途；", "禄贵临爻，拜住童年登相位。"],
+          "yi": ["子孙化成鬼，像汉殇帝才十个月就走进了冥途；", "禄、贵人临在爻上，像元朝的拜住，童年就登上相位。"],
+          "en": ["Output turning into a ghost: Emperor Shang of Han went down the road to the underworld at ten months;", "Salary and the Noble on the line: Baizhu of the Yuan rose to be minister in childhood."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6220, 6220],
+          "zh": ["子化出鬼，乃九死一生之兆。", "如汉殇帝，生才十月即死也。", "子化出鬼，而贵人禄马交临，子又旺相，异日必贵。", "如元拜住，年十四即为相也。", "盖子逢凶而化鬼，谓身化为鬼，故凶；", "子逢吉而化官，谓身化为官，故吉。"],
+          "yi": ["子孙爻化出鬼爻，是九死一生的征兆。", "比如汉殇帝，生下来才十个月就死了。", "子孙化出鬼爻，但是贵人、禄、马一同临上，子孙又旺相，将来一定显贵。", "比如元朝的拜住，十四岁就做了宰相。", "因为子孙遇凶而化成鬼，是说孩子自己化成了鬼，所以凶；", "子孙遇吉而化成官，是说自己化成了官，所以吉。"],
+          "en": ["The Output line turning into a ghost line is a sign of nine deaths to one life.", "As Emperor Shang of Han, who died when barely ten months old.", "If Output turns into a ghost line but the Noble, Salary and Horse all sit on it and Output is strong, he will surely become eminent.", "As Baizhu of the Yuan, who became minister at fourteen.", "For when Output meets ill and turns into a ghost, it means the child himself has turned into a ghost, hence ill;", "when Output meets good and turns into an officer, it means he himself has turned into an officer, hence good."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1779, 1779],
+          "zh": ["子孙休囚化鬼化父，皆死之兆，似汉殇帝生才十月即亡；", "若临贵人禄马旺相，如元拜住年十四即为相。"],
+          "yi": ["子孙爻休囚，又化成鬼爻或父母爻，都是死的征兆，像汉殇帝才生十个月就死了；", "如果临着贵人、禄、马又旺相，就像元朝的拜住，十四岁就做了宰相。"],
+          "en": ["Output resting or confined and turning into a ghost or into Resource, all are signs of death, like Emperor Shang of Han, who died when barely ten months old;", "if it sits on the Noble, Salary and Horse and is strong, it is like Baizhu of the Yuan, who became minister at fourteen."] }
+      ],
+      "note": {
+        "yi": "汉殇帝（刘隆）生后一百多天即位，不满一岁就死；拜住是元朝人，十四岁做了宰相。「九死一生」是九分死、一分生，不是必死；旧注接着讲了活的条件（贵人禄马交临、子孙旺相）。王洪绪的版本把「休囚」和「化父」也算进去：子孙休囚、化鬼或化父母，都是死的征兆；旺相又带贵人禄马才像拜住。两处说的是同一件事，条件讲得略有不同。",
+        "en": "Emperor Shang of Han (Liu Long) took the throne a little over a hundred days after birth and died before he was a year old; Baizhu was a man of the Yuan who became minister at fourteen. 'Nine deaths to one life' is nine parts death and one part life, not certain death; the old commentary goes on to give the conditions for life (the Noble, Salary and Horse all on it, and Output strong). Wang Hongxu's version counts 'resting or confined' and 'turning into Resource' as well: Output resting or confined and turning into a ghost or into Resource are signs of death, and only when it is strong and carries the Noble, Salary and Horse is it like Baizhu. The two say the same thing with slightly different conditions."
+      },
+      "see": ["LY.ILL.HJC.123", "LY.ILL.HJC.124"]
+    },
+    {
+      "id": "LY.ILL.HJC.126",
+      "topic": "他人病",
+      "chapter": "家宅章",
+      "chapter_en": "The chapter on the household (rhapsody)",
+      "title": "家宅章·内三爻为宅、外三爻为人，宅去克人主病患连年、击括多端；人去克宅主修居创屋（王洪绪：内卦二爻克五爻谓宅去克人凶）",
+      "rule": {
+        "yi": "《黄金策》家宅章说：「要看卦爻的内外，才能知道人和宅的兴衰。」旧注：内三爻是宅，外三爻是人；宅去克人，主病患连年，多有吵闹骚扰；人去克宅，主修缮住房、创建房屋、整旧更新。王洪绪：内卦第二爻克外卦第五爻，叫宅去克人，凶；外卦五爻克二爻，叫人来克宅，吉；内卦二爻生五爻，叫宅去生人，吉。",
+        "en": "The Huangjin Ce's chapter on the household says: 'Look at the inner and outer of the lines to know the rise and fall of the people and the house.' The old commentary: the inner three lines are the house and the outer three the people; when the house controls the people, it means years of illness and disturbances of many kinds; when the people control the house, it means repairing a dwelling or building a house, mending the old and renewing. Wang Hongxu: the second line of the inner trigram controlling the fifth line of the outer trigram is called the house controlling the people, ominous; the fifth line of the outer trigram controlling the second is called the people controlling the house, auspicious; the second line of the inner trigram generating the fifth is called the house generating the people, auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4683, 4683],
+          "zh": ["要察卦爻内外，可知人宅兴衰。"],
+          "yi": ["要看卦爻的内外，才能知道人和宅的兴衰。"],
+          "en": ["Look at the inner and outer of the lines to know the rise and fall of the people and the house."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [4684, 4684],
+          "zh": ["内三爻为宅，外三爻为人。", "宅去克人，主病患连年，击括多端；", "人去克宅，主修居创屋，整旧更新。"],
+          "yi": ["内三爻是宅，外三爻是人。", "宅去克人，主病患连年，吵闹骚扰多端；", "人去克宅，主修缮住房、创建房屋，整治旧的、更新。"],
+          "en": ["The inner three lines are the house, the outer three lines are the people.", "When the house controls the people, it means years of illness and disturbances of many kinds;", "when the people control the house, it means repairing a dwelling or building a house, mending the old and renewing."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3040, 3040],
+          "zh": ["凡内卦二爻克五爻，谓宅去克人，凶；", "或外卦五爻克二爻，谓之人来克宅，吉。", "或内卦二爻生五爻，谓宅去生人，吉。"],
+          "yi": ["凡是内卦第二爻克第五爻，叫宅去克人，凶；", "或者外卦第五爻克第二爻，叫人来克宅，吉。", "或者内卦第二爻生第五爻，叫宅去生人，吉。"],
+          "en": ["When the second line of the inner trigram controls the fifth, it is called the house controlling the people, ominous;", "or when the fifth line of the outer trigram controls the second, it is called the people controlling the house, auspicious.", "or when the second line of the inner trigram generates the fifth, it is called the house generating the people, auspicious."] }
+      ],
+      "dispute": {
+        "yi": "宅和人各取哪几爻，两家不一样。《黄金策》旧注是「内三爻为宅，外三爻为人」（整个内卦是宅、整个外卦是人）；王洪绪是「内卦第二爻为宅舍，外卦第五爻为人口」（各取一爻）。宅去克人，旧注点明是「病患连年」，王洪绪只说「凶」，没有点名是病。书里没有裁决。",
+        "en": "The two commentaries take different lines for the house and the people. The old commentary of the Huangjin Ce has 'the inner three lines are the house and the outer three lines the people' (the whole inner trigram is the house and the whole outer trigram the people); Wang Hongxu has 'the second line of the inner trigram is the dwelling and the fifth line of the outer trigram is the household members' (one line each). On the house controlling the people, the old commentary names 'years of illness', while Wang Hongxu says only 'ominous' without naming illness. The books do not decide."
+      },
+      "note": {
+        "yi": "「击括」二字照原文，指吵闹、骚扰一类的事（柳神经里也有「家门括扰」），译文写作「disturbances」；这里不另作解释。同一章千金赋后面还有一联「丧门加白虎，须忧疾病丧亡」（LY.ILL.HJC.127）。",
+        "en": "The two characters rendered 'disturbances' are kept as in the text and mean clamour and trouble of that kind (the Liushen Jing also has 'the gate of the house is troubled'); no further explanation is given here. A later couplet of the same rhapsody has 'the Mourning Gate with the White Tiger: beware of illness and death' (LY.ILL.HJC.127)."
+      },
+      "see": ["LY.ILL.HJC.127"]
+    },
+    {
+      "id": "LY.ILL.HJC.127",
+      "topic": "风险",
+      "chapter": "家宅章",
+      "chapter_en": "The chapter on the household (rhapsody)",
+      "title": "家宅章·丧门加白虎，须忧疾病丧亡（旧注：丧门、白虎谓之四利三元，乃凶神，此爻动则病患连绵、丧亡叠至）",
+      "rule": {
+        "yi": "《黄金策》家宅章说：「丧门星加上白虎星，要担忧疾病和丧亡。」旧注：丧门、白虎叫作「四利三元」，是凶神，见后面凶煞一节；如果见到这一爻发动，就有病患连绵、丧亡接连而来，种种不吉祥，要仔细审察。",
+        "en": "The Huangjin Ce's chapter on the household says: 'The Mourning Gate joined by the White Tiger: beware of illness and death.' The old commentary: the Mourning Gate and the White Tiger are called the 'Four Gains and Three Origins' and are ominous spirits, to be seen below among the ominous killings; if this line is seen moving, there is illness dragging on, deaths following one on another and all kinds of ill omens, to be examined with care."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4697, 4697],
+          "zh": ["丧门加白虎，须忧疾病丧亡。"],
+          "yi": ["丧门星加上白虎星，要担忧疾病和丧亡。"],
+          "en": ["With the Mourning Gate joined by the White Tiger, one must worry about illness and death."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [4701, 4701],
+          "zh": ["丧门、白虎：谓之四利三元，乃凶神。", "见后凶煞内。", "若见此爻动者，则有病患连绵，丧亡叠至，种种不祥，自当细审。"],
+          "yi": ["丧门、白虎，叫作「四利三元」，是凶神。", "见后面凶煞一节。", "如果见到这一爻发动，就有病患连绵、丧亡接连而来、种种不吉祥，自然要仔细审察。"],
+          "en": ["The Mourning Gate and the White Tiger are called the 'Four Gains and Three Origins' and are ominous spirits.", "See below among the ominous killings.", "If this line is seen moving, there is illness dragging on, deaths following one on another and all kinds of ill omens, to be examined with care."] }
+      ],
+      "note": {
+        "yi": "「四利三元」这个名目也在断易天机里出现（LY.ILL.DYTJ.50），那里是一份十二位的流年神煞名单，丧门排第三、白虎排第九；旧注这里把丧门、白虎两颗叫作四利三元。这里的白虎是流年神煞里的白虎，不是六神里的白虎；卜筮全书的岁前神煞（LY.ILL.BSQS.51）里也有它（第九位）。经文这一联的前一半「月建会青龙，当主婚姻妊喜」讲喜事，不收。",
+        "en": "The name 'Four Gains and Three Origins' also appears in the Duanyi Tianji (LY.ILL.DYTJ.50), where it heads a list of twelve year-stars with the Mourning Gate third and the White Tiger ninth; the old commentary here calls the Mourning Gate and the White Tiger the Four Gains and Three Origins. The White Tiger here is the White Tiger among the year-stars, not the one among the six spirits; it is also in the stars before the Year in the Bushi Quanshu (LY.ILL.BSQS.51, the ninth place). The first half of this couplet in the text, 'the Month meeting the Azure Dragon: surely marriage and the joy of pregnancy', is about joy and is not taken."
+      },
+      "see": ["LY.ILL.DYTJ.50", "LY.ILL.BSQS.51", "LY.ILL.HJC.126"]
+    },
+    {
+      "id": "LY.ILL.HJC.128",
+      "topic": "风险",
+      "chapter": "出行章",
+      "chapter_en": "The chapter on travel",
+      "title": "出行章·鬼临飞位未离门户费趦趄（旧注：鬼加白虎、丧门、吊客、死符、病符，恐有丧亡疾病之事）",
+      "rule": {
+        "yi": "《黄金策》出行章说：「鬼临在飞爻的位置，还没离开门户就迟疑不前。」旧注解释：官鬼加上白虎、丧门、吊客、死符、病符这些星，恐怕有丧亡、疾病的事。",
+        "en": "The Huangjin Ce's chapter on travel says: 'With the ghost on the flying place, one has not yet left the door and hesitates.' The old commentary explains: Pressure joined by the White Tiger, Mourning Gate, Guest of Condolence, Death Tally or Sickness Tally may bring a death or an illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4599, 4599],
+          "zh": ["鬼临飞位，未离门户费趦趄。"],
+          "yi": ["鬼爻临在飞位，还没离开门户就迟疑不前。"],
+          "en": ["With the ghost on the flying place, one has not yet left the door and hesitates."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [4601, 4601],
+          "zh": ["鬼加白虎、丧门、吊客、死符、病符，恐有丧亡疾病之事。"],
+          "yi": ["官鬼加上白虎、丧门、吊客、死符、病符，恐怕有丧亡、疾病的事。"],
+          "en": ["Pressure joined by the White Tiger, Mourning Gate, Guest of Condolence, Death Tally or Sickness Tally may bring a death or an illness."] }
+      ],
+      "note": {
+        "yi": "这是占出行（出远门）一章的旧注，说的是官鬼带着凶星时，出行的人可能遇到丧事或生病。白虎、丧门、吊客、死符、病符都是流年神煞（LY.ILL.DYTJ.50、LY.ILL.BSQS.51 里有名单）；「飞位」是飞神所在的位置。整段旧注的前后讲的是鬼持世、鬼带贵人、鬼加官符朱雀（官事牵连），这里只收讲病的一句。",
+        "en": "This is an old commentary in the chapter on travel (going far from home), saying that when Pressure carries ominous stars the traveller may meet a death or fall ill. The White Tiger, Mourning Gate, Guest of Condolence, Death Tally and Sickness Tally are year-stars (they are listed in LY.ILL.DYTJ.50 and LY.ILL.BSQS.51); the 'flying place' is where the flying line stands. The passages before and after the old commentary are about the ghost holding the Self line, the ghost carrying a noble star and the ghost with the Official Tally and Vermilion Bird (entanglement in official matters); only the sentence on illness is taken here."
+      },
+      "see": ["LY.ILL.DYTJ.50", "LY.ILL.BSQS.51", "LY.ILL.HJC.127"]
+    },
+    {
+      "id": "LY.ILL.HJC.129",
+      "topic": "动变",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·化病兮伤损（旧注：病即长生对冲之神，主象化出病爻则凡事有损，占病未痊；王洪绪：十二长生里只有长生墓绝三件要紧，不可死守「病主伤损」）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「化成病，就有伤损。」旧注：「病」是和长生相冲的那一位；所占的主象化出病爻，凡事都有损伤：占病，病没有好；占物，不合意；占药，无效；占文书，有破绽；占行人，没有回来；占身命，带着病；占妇人，一定不贞洁；占容貌，一定有破相；所以叫伤损。王洪绪提醒：十二长生里卦中只有长生、墓、绝三件要紧，其余各位都按生克冲合、进退神、伏吟反吟来论，不可死抱着「病主伤损」。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'Turning into Illness, there is damage.' The old commentary: 'Illness' is the spirit that clashes the Birth stage; when the principal image being divined turns into the Illness line, all affairs suffer damage: in divining illness, the illness is not cured; a thing, it is not right; medicine, it is ineffective; documents, there is a flaw; a traveller, he has not returned; one's person and fate, one carries illness; a woman, she is surely not chaste; looks, there is surely a blemish; hence it is called damage. Wang Hongxu cautions: of the twelve stages of life only Birth, Tomb and Extinction matter in a hexagram, and the others are all to be judged by generation, control, clash and combination, advancing and retreating spirit, Hidden Chant and Reversed Chant, so one must not cling to 'Illness means damage'."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5329, 5329],
+          "zh": ["化病兮伤损，"],
+          "yi": ["化成「病」这一位，就有伤损，"],
+          "en": ["Turning into the Illness stage, there is damage,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5330, 5332],
+          "zh": ["病，即长生对冲之神也。", "主象化出病爻，凡事有损。", "占病未痊；", "占物不中；", "占药无效；", "占文书有破绽；", "占行人未回；", "占身命带疾；", "占妇人必不贞洁；", "占容貌必有破相。", "故曰伤损。"],
+          "yi": ["「病」，就是和长生相冲的那位神。", "所占的主象化出病爻，凡事都有损伤。", "占病，病没有好；", "占物，不合意；", "占药，没有效；", "占文书，有破绽；", "占行人，还没有回来；", "占身命，带着病；", "占妇人，一定不贞洁；", "占容貌，一定有破相。", "所以说伤损。"],
+          "en": ["'Illness' is the spirit opposite, clashing, the Birth stage.", "When the principal image being divined turns into the Illness line, all affairs suffer damage.", "In divining illness, the illness is not cured;", "in divining a thing, it is not right;", "in divining medicine, it is ineffective;", "in divining documents, there is a flaw;", "in divining a traveller, he has not returned;", "in divining one's person and fate, one carries illness;", "in divining a woman, she is surely not chaste;", "in divining looks, there is surely a blemish.", "Hence it is called damage."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1233, 1233],
+          "zh": ["长生、沐浴、冠带、临官、帝旺、衰、病、死、墓、绝、胎、养，此十二神，卦中唯是长生、墓、绝三件，卦卦看，爻爻要查，其余沐浴、冠带、临官、帝旺、衰、病、死、胎、养各神，俱各有生克冲合、进神退神、伏吟反吟论，不可执疑于养主狐疑，病主伤损，胎主勾连。", "《十八论》内已明论之，学者宜自详辨。"],
+          "yi": ["长生、沐浴、冠带、临官、帝旺、衰、病、死、墓、绝、胎、养，这十二位，卦中只有长生、墓、绝三件，每一卦都要看，每一爻都要查；其余沐浴、冠带、临官、帝旺、衰、病、死、胎、养各位，都各有生克冲合、进神退神、伏吟反吟的论法，不可以死抱着「养主狐疑，病主伤损，胎主勾连」不放。", "《十八论》里已经讲明白了，学的人应当自己详细辨别。"],
+          "en": ["Birth, Bathing, Capping, Official Post, Peak, Decline, Illness, Death, Tomb, Extinction, Womb and Nurture: of these twelve spirits only three matter in a hexagram, Birth, Tomb and Extinction, to be looked at in every hexagram and checked on every line; the others, Bathing, Capping, Official Post, Peak, Decline, Illness, Death, Womb and Nurture, are each discussed by generation, control, clash and combination, Advancing spirit and Retreating spirit, Hidden Chant and Reversed Chant, and one must not cling to 'Nurture means doubt, Illness means damage, Womb means entanglement'.", "The Eighteen Discussions have already set it out plainly, and the student should tell them apart in detail himself."] }
+      ],
+      "dispute": {
+        "yi": "「化病主伤损」能不能一概而论，两家看法不同。旧注把它当成通则：主象化出病（长生的对冲），凡事有损，占病未痊、占药无效、占行人未回等；王洪绪提醒：十二长生里，卦中只有长生、墓、绝三件要紧，其余各位（病在内）都要按生克冲合、进退神、伏吟反吟来论，不可死抱着「病主伤损」。书里没有裁决。",
+        "en": "The two commentaries differ on whether 'turning into Illness means damage' holds in every case. The old commentary takes it as a general rule: the principal image turning into Illness (the clash of Birth) damages everything, with the illness not cured, medicine ineffective, the traveller not returned and so on; Wang Hongxu cautions that of the twelve stages of life only Birth, Tomb and Extinction matter in a hexagram, and the rest (Illness among them) must be judged by generation, control, clash and combination, advancing and retreating spirit, Hidden Chant and Reversed Chant, without clinging to 'Illness means damage'. The books do not decide."
+      },
+      "note": {
+        "yi": "这里的「病」是十二长生里的一位（长生、沐浴、冠带、临官、帝旺、衰、病、死、墓、绝、胎、养），不是疾病；旧注说它是「长生对冲之神」，按十二长生的顺序，病正好在长生的对面。「化病」是动爻变出来的那个地支落在所占五行的「病」位上。占病只是旧注一连串应用里的一条（占病未痊），所以放在「动变」里。同一联的下一句「化胎兮勾连」与病无关，没有收。",
+        "en": "The 'Illness' here is one stage of the twelve stages of life (Birth, Bathing, Capping, Official Post, Peak, Decline, Illness, Death, Tomb, Extinction, Womb, Nurture), not a disease; the old commentary calls it 'the spirit that clashes Birth', and in the order of the twelve stages Illness stands exactly opposite Birth. 'Turning into Illness' is the branch a moving line changes into falling on the Illness stage of the element being divined. Divining illness is only one of a run of applications in the old commentary (the illness is not cured), which is why it is placed under moving lines and what they turn into. The next line of the same couplet, 'turning into Womb: entanglement', has nothing to do with illness and is not taken."
+      },
+      "see": ["LY.ILL.HJC.130", "LY.ILL.HJC.152"]
+    },
+    {
+      "id": "LY.ILL.HJC.130",
+      "topic": "轻重",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·刑害不宜临用（旧注：刑爻为主象占病病必死、占人人有疾；王洪绪：占病沉重、占人有病）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「刑和害不适宜临在用爻上。」旧注：凡是刑爻成为主象，一定不利：占事，事不成；占物，物不好；占病，病一定死；占人，这个人有病；占妇人，一定不贞洁；占文书，一定有破绽；占官司，有利也一定有罪责；害爻成为主象，也一定坏事，大致和刑爻相似，化入的也一样，但要按衰旺分它的轻重。王洪绪：用神、身、世遇到日辰相刑，一定不利，占病是病沉重，占人是有病。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'Punishment and harm should not fall on the Subject.' The old commentary: whenever a punishing line becomes the principal image it is sure to be unfavourable: an affair does not come to completion, a thing is not good, in illness the illness is sure to be fatal, in divining a person the person is ill, a woman is surely not chaste, documents are sure to have a flaw, a lawsuit brings blame even with a gain; a harming line as the principal image surely spoils things too, much like a punishing line, and so too one that is changed into, but its weight must be told by strength and weakness. Wang Hongxu: when the Subject, Body or Self meets a Day branch that punishes it, it is sure to be unfavourable, in illness the illness is grave, and in divining a person he is ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5382, 5382],
+          "zh": ["刑害不宜临用，"],
+          "yi": ["刑和害不适宜临在用爻上，"],
+          "en": ["Punishment and harm should not fall on the Subject,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5383, 5383],
+          "zh": ["凡遇刑爻为主象，必主不利。", "占事事不成，占物物不好，占病病必死，占人人有疾，占妇人必不贞洁，占文书必有破绽，占讼利必有罪责。"],
+          "yi": ["凡是遇到刑爻成为主象，一定主不利。", "占事，事不成；占物，物不好；占病，病一定死；占人，这个人有病；占妇人，一定不贞洁；占文书，一定有破绽；占官司，有利也一定有罪责。"],
+          "en": ["Whenever a punishing line becomes the principal image, it is sure to be unfavourable.", "In divining an affair, it does not come to completion; a thing, it is not good; illness, the illness is sure to be fatal; a person, the person is ill; a woman, she is surely not chaste; documents, there is sure to be a flaw; a lawsuit, even a gain brings blame."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5384, 5384],
+          "zh": ["害爻为主象，必坏事。", "大概与刑爻相类。", "化入者亦然。", "然又须以衰旺分其轻重详之。"],
+          "yi": ["害爻成为主象，一定坏事。", "大致和刑爻相似。", "（变）化入的也是这样。", "但又必须按衰旺来分它的轻重，仔细审察。"],
+          "en": ["A harming line as the principal image surely spoils things.", "It is much like a punishing line.", "So too one that is changed into.", "But one must also tell its weight by strength and weakness, and examine it in detail."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1253, 1253],
+          "zh": ["凡用神、身、世遇日辰相刑，必主不利，占事不成，占物不好，占病沉重，占人有病，占妇不贞，占文卷必破绽，占讼有刑害。", "动爻不过坏事，大概相仿，化者亦然，须推衰旺生克，分其轻重详之。"],
+          "yi": ["凡是用神、身、世遇到日辰相刑，一定主不利：占事，事不成；占物，物不好；占病，病沉重；占人，有病；占妇人，不贞；占文卷，必有破绽；占官司，有刑害。", "动爻不过是坏事，大致相仿，（变）化出来的也一样，要推衰旺生克，分它的轻重，仔细审察。"],
+          "en": ["Whenever the Subject, the Body or the Self meets a Day branch that punishes it, it is sure to be unfavourable: an affair does not come to completion, a thing is not good, in illness the illness is grave, in divining a person he is ill, a woman is unchaste, a document is sure to have a flaw, a lawsuit brings punishment and harm.", "A moving line brings only spoilt affairs, much the same, and so does one that is changed into; one must reckon strength, weakness, generation and control, tell its weight, and examine it in detail."] }
+      ],
+      "dispute": {
+        "yi": "刑爻为主象，占病断到什么程度，两家不同。旧注说「占病病必死」；王洪绪说「占病沉重」（病重，没有说死）。两处都说占人是「人有疾（有病）」，都要再按衰旺分轻重。书里没有裁决。",
+        "en": "The two commentaries differ on how far to take illness when a punishing line is the principal image. The old commentary says 'in divining illness the illness is sure to be fatal'; Wang Hongxu says 'in divining illness the illness is grave' (grave, without saying death). Both say that in divining a person he is ill, and both say to tell the weight by strength and weakness. The books do not decide."
+      },
+      "note": {
+        "yi": "「主象」是所占的那一爻（占病时是用神）。「刑」是三刑一类的相刑，「害」是六害。王洪绪的这一句后面还有一句「死绝于日辰之爻临持世身用神者，诸占不利，变动化入」，原文到「变动化入」就断了，不收。原文写「刑害不宜临用」的下一句是「死绝岂可持身」，是另一联。",
+        "en": "The 'principal image' is the line being divined (in divining illness, the Subject). 'Punishment' is the mutual punishment of the three-punishment kind, and 'harm' is the six harms. Wang Hongxu's text goes on with another sentence, 'a line of death or extinction by the Day branch sitting on the Self, Body or Subject: no divination is favourable, in moving and changing into', but the text breaks off at 'in moving and changing into' and it is not taken. The next line after 'punishment and harm should not fall on the Subject' in the text is 'death and extinction, how can they hold the Body', which is another couplet."
+      },
+      "see": ["LY.ILL.HJC.129", "LY.ILL.HJC.156"]
+    },
+    {
+      "id": "LY.ILL.HJC.131",
+      "topic": "生死",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·疾病大宜天喜，若临凶杀必生悲（旧注：天喜吉星，占病遇之虽大象凶恶不以死断，临所忌之爻动则以为悲）",
+      "rule": {
+        "yi": "《黄金策》总断千金赋说：「疾病最适宜见天喜，如果天喜临在凶杀上，一定生出悲伤。」旧注：天喜是吉星，占病遇到它，即使整个卦象凶恶，也不按死来断，因为它是喜神；如果它临在所忌的爻上发动，就认为是悲，不认为是喜。王洪绪的说法一样，把「所忌的爻」写成「忌神」。",
+        "en": "The Huangjin Ce's Rhapsody of a Thousand Golden Judgements says: 'For illness the Tianxi star is greatly helpful, but if it sits on an ominous killing there is sure to be grief.' The old commentary: the Tianxi star is a lucky star, and in divining illness, meeting it, even if the whole image is ominous one does not judge death, because it is a spirit of joy; if it sits on a taboo line and moves, I take it as grief and not as joy. Wang Hongxu says the same, writing the 'taboo line' as the Adversary."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5426, 5426],
+          "zh": ["疾病大宜天喜，若临凶杀必生悲；"],
+          "yi": ["疾病最适宜见天喜星，如果天喜临在凶杀上，一定生出悲伤；"],
+          "en": ["Illness is greatly helped by the Tianxi star, but if it sits on an ominous killing there is sure to be grief;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5429, 5429],
+          "zh": ["又如天喜，吉星也。", "占病遇之，虽大象凶恶，不以死断，喜神故也。", "若临于所忌之爻动，吾必以为悲，而不以为喜。"],
+          "yi": ["再如天喜，是吉星。", "占病遇到它，即使整个卦象凶恶，也不按死来断，因为它是喜神。", "如果它临在所忌的爻上发动，我一定认为是悲，不认为是喜。"],
+          "en": ["Again, the Tianxi star is a lucky star.", "In divining illness, meeting it, even if the whole image is ominous, one does not judge it as death, because it is a spirit of joy.", "If it sits on a taboo line and moves, I will surely take it as grief and not as joy."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1282, 1282],
+          "zh": ["又如天喜吉星也，占病遇之虽大象凶恶，竟不以死断，因天喜故也，若临忌神，我必以为悲而不以为喜。"],
+          "yi": ["再如天喜是吉星，占病遇到它，即使整个卦象凶恶，竟然不按死来断，是因为有天喜；如果它临在忌神上，我一定认为是悲，不认为是喜。"],
+          "en": ["Again, the Tianxi star is a lucky star: in divining illness, meeting it, even if the whole image is ominous one does not judge death, because of the Tianxi star; but if it sits on the Adversary, I will surely take it as grief and not as joy."] }
+      ],
+      "note": {
+        "yi": "这一句是总断千金赋里一连串「神煞要看它临在哪一爻」的例子之一：同一联接着讲往亡（出行最怕往亡，如系吉神终获利）。旧注、王洪绪借它说明「神煞之权轻而五行之权重」：神煞吉凶要看它临的是喜爻还是忌爻。所以天喜对占病是好东西，但天喜临在忌神（克用神的那一类）上发动，反而是悲。原文「凶杀」「凶煞」是同一个字的两种写法。「天喜」这颗星婚姻域也出现过（LY.MARRY.HJC.107 里的天喜星）。",
+        "en": "This sentence is one of a run of examples in the Rhapsody of a Thousand Golden Judgements of 'a spirit-star must be looked at for the line it sits on': the same couplet goes on to the Fleeing Death star (for travel the Fleeing Death star is feared most, but if it is a lucky spirit one finally gains). The old commentary and Wang Hongxu use it to show that 'the power of spirit-stars is light and that of the five elements heavy': whether a spirit-star is good or ill depends on whether it sits on a line one welcomes or one that is a taboo. So the Tianxi star is good for illness, but when it sits on the Adversary (the kind of line that controls the Subject) and moves, it is grief instead. 'Ominous killing' and 'ominous killing' are two writings of the same word in the text. The Tianxi star also appeared in the marriage domain (the Tianxi star in LY.MARRY.HJC.107)."
+      },
+      "see": ["LY.ILL.HJC.129", "LY.ILL.HJC.156"]
+    },
+    {
+      "id": "LY.ILL.HJC.132",
+      "topic": "病因",
+      "chapter": "二、年时",
+      "chapter_en": "Chapter 2: The year",
+      "title": "年时·更嫌值土，千门疫疠若符同（旧注：土鬼发动其年多瘟疫，生旺为甚，在艮宫动瘴气亦重，克世人多疫死，鬼带白虎亦是瘟疫之兆）",
+      "rule": {
+        "yi": "《黄金策》年时章（占一年的事）说：「更嫌遇到土（鬼），千家万户的疫病就像符契一样相同。」旧注：土鬼发动，这一年多瘟疫，生旺的更厉害，休囚的稍轻；在艮宫发动，瘴气也重；克世爻，人多死于疫病，世爻克它就不妨；鬼带白虎，也是瘟疫的征兆。王洪绪：土鬼发动，或者临白虎，都主瘟疫，如果克世，人多病死，有制伏就不妨。",
+        "en": "The Huangjin Ce's chapter on the year (divining a whole year) says: 'Still worse if it meets Earth: the epidemics in a thousand households tally as one.' The old commentary: an Earth ghost moving, the year has many epidemics, worse if strong and thriving, lighter if resting or confined; moving in the Gen palace, the miasma is heavy too; controlling the Self line, many people die of the epidemic, but if the Self line controls it, it does no harm; a ghost carrying the White Tiger is also a sign of epidemic. Wang Hongxu: an Earth ghost moving, or sitting on the White Tiger, both mean epidemic; if it controls the Self line many people fall ill and die, but if it is restrained, no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5710, 5710],
+          "zh": ["更嫌值土，千门疫疠若符同。"],
+          "yi": ["更嫌遇到土（鬼），千家万户的疫病就像符契一样相同。"],
+          "en": ["Still worse if it meets Earth: the epidemics in a thousand households tally as one."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5711, 5711],
+          "zh": ["土鬼发动，其年多瘟疫。", "生旺为甚，休囚稍可。", "在艮宫动，瘴气亦重。", "克世，人多疫死，世克不妨。", "鬼带白虎，亦是瘟疫兆也。"],
+          "yi": ["土鬼发动，这一年多瘟疫。", "生旺的更厉害，休囚的稍轻。", "在艮宫发动，瘴气也重。", "克世爻，人多死于疫病，世爻克它就不妨。", "鬼带着白虎，也是瘟疫的征兆。"],
+          "en": ["An Earth ghost moving, the year has many epidemics.", "Worse if strong and thriving, somewhat lighter if resting or confined.", "Moving in the Gen palace, the miasma is heavy too.", "Controlling the Self line, many people die of the epidemic, but if the Self line controls it, it does no harm.", "A ghost carrying the White Tiger is also a sign of epidemic."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1410, 1410],
+          "zh": ["土鬼发动或临白虎，皆主瘟疫，若克世人多病死，有制不妨。"],
+          "yi": ["土鬼发动，或者临在白虎上，都主瘟疫，如果克世，人多病死，有制伏就不妨。"],
+          "en": ["An Earth ghost moving, or sitting on the White Tiger, both mean epidemic; if it controls the Self line, many people fall ill and die, but if it is restrained, no harm."] }
+      ],
+      "note": {
+        "yi": "这是占流年（一年的吉凶）一章里讲时疫的一联，看的是这一年的气运，不是占一个人的病。「千门疫疠若符同」是千家万户的疫病像合符契一样一样。「瘴气」是南方山林湿热之地的恶气，艮宫（山）发动特别重。同一章里讲鬼的其他联（旱蝗、火灾、雷）不收。",
+        "en": "This couplet in the chapter on divining the year speaks of epidemics, and what is read is the year's fortune, not a single person's illness. 'The epidemics in a thousand households tally as one' says the epidemics in thousands of households match like the two halves of a tally. 'Miasma' is the bad air of the hot, damp mountains and forests of the south, and it is particularly heavy when Gen (the mountain) moves. The other couplets on the ghost in the same chapter (drought and locusts, fire, thunder) are not taken."
+      },
+      "see": ["LY.ILL.HJC.127"]
+    },
+    {
+      "id": "LY.ILL.HJC.133",
+      "topic": "他人病",
+      "chapter": "三、国朝",
+      "chapter_en": "Chapter 3: The state",
+      "title": "国朝·年伤弱世，鼎湖龙去不多时（旧注：太岁刑冲克害世爻主国君疾病，世爻衰弱必有君崩之忧）",
+      "rule": {
+        "yi": "《黄金策》国朝章（占国家的事）说：「年克伤衰弱的世爻，国君驾崩就不会多久了。」旧注：太岁刑、冲、克、害世爻，主国君生病，或者内乱将要发作；如果克世爻、而世爻又衰弱，一定有国君驾崩的忧虑。王洪绪：以下是国君自己占卜的情形，太岁刑冲克害世爻，主疾病或内乱将作。",
+        "en": "The Huangjin Ce's chapter on the state (divining matters of the state) says: 'The Year harming a weak Self line: the dragon leaves Dinghu before long.' The old commentary: Tai Sui punishing, clashing, controlling or harming the Self line means the ruler falls ill, or domestic trouble is about to break out; if it controls the Self line and the Self line is weak, there is sure to be fear for the ruler's death. Wang Hongxu: what follows is the case of the ruler divining for himself; Tai Sui punishing, clashing, controlling or harming the Self line means illness or domestic trouble about to break out."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5825, 5825],
+          "zh": ["年伤弱世，鼎湖龙去不多时。"],
+          "yi": ["年克伤衰弱的世爻，国君驾崩就不会多久了。"],
+          "en": ["The Year harming a weak Self line: the dragon leaves Dinghu before long."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5827, 5827],
+          "zh": ["太岁刑冲克害世爻，主国君疾病，或内难将作。", "若克世爻，而世爻衰弱，必有君崩之忧。"],
+          "yi": ["太岁刑、冲、克、害世爻，主国君生病，或者内乱将要发作。", "如果克世爻，而世爻衰弱，一定有国君驾崩的忧虑。"],
+          "en": ["Tai Sui punishing, clashing, controlling or harming the Self line means the ruler falls ill, or domestic trouble is about to break out.", "If it controls the Self line and the Self line is weak, there is sure to be fear for the ruler's death."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1470, 1470],
+          "zh": ["以下指言国君自卜。", "如太岁刑冲克害世爻，主疾病或内难将作。"],
+          "yi": ["以下是国君自己占卜的情形。", "如果太岁刑冲克害世爻，主疾病，或者内乱将要发作。"],
+          "en": ["What follows is the case of the ruler divining for himself.", "If Tai Sui punishes, clashes, controls or harms the Self line, it means illness, or domestic trouble about to break out."] }
+      ],
+      "note": {
+        "yi": "「鼎湖龙去」用黄帝在鼎湖乘龙升天的典故，指帝王去世（旧注后面引《史记》说明，这里不收）。国朝章里世爻是国君，所以世爻受太岁克害，是国君生病、将崩。王洪绪点明这一联是「国君自卜」的情形。这条是占他人（国君）的病，放在「他人病」里。",
+        "en": "'The dragon leaves Dinghu' alludes to the Yellow Emperor riding a dragon up to heaven at Dinghu, and means a ruler's death (the old commentary goes on to cite the Shiji to explain it, which is not taken here). In the chapter on the state the Self line is the ruler, so the Self line harmed by Tai Sui means the ruler falls ill and is about to die. Wang Hongxu makes clear that this couplet is the case of 'the ruler divining for himself'. This is a divination about another's (the ruler's) illness, and is placed under the illness of others."
+      },
+      "see": ["LY.ILL.HJC.127"]
+    },
+    {
+      "id": "LY.ILL.HJC.134",
+      "topic": "他人病",
+      "chapter": "七、产育",
+      "chapter_en": "Chapter 7: Childbirth",
+      "title": "产育·胎临官鬼，怀胎便有采薪忧；财化子孙，分娩即当勿药喜（旧注：鬼临胎爻其妇怀胎常有疾，化出子孙则分娩安泰）",
+      "rule": {
+        "yi": "《黄金策》产育章说：「胎爻临着官鬼，怀孕时就有生病的忧虑；财化成子孙，分娩时就是不用吃药的喜事。」旧注：鬼临在胎爻上，这个妇人怀孕期间常常有病；胎爻被官鬼冲克也一样；如果胎爻虽然临着官鬼，但化出子孙，或者财化成福爻，怀孕时虽然多病，分娩就安泰。王洪绪：鬼临胎爻，主孕妇有病，或者财合福爻，分娩就安泰。",
+        "en": "The Huangjin Ce's chapter on childbirth says: 'With the Womb line on Pressure, there is the worry of illness from the moment of pregnancy; Wealth turning into Output, at delivery there is the joy of needing no medicine.' The old commentary: a ghost on the Womb line means the woman is often ill during pregnancy, and so too if the Womb line is clashed or controlled by Pressure; if the Womb line, though on Pressure, turns into Output, or Wealth turns into a fortune line, she is often ill during pregnancy but delivery is safe and sound. Wang Hongxu: a ghost on the Womb line means the pregnant woman is ill, or if Wealth combines with the fortune line, delivery is safe and sound."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6494, 6494],
+          "zh": ["胎临官鬼，怀胎便有采薪忧；", "财化子孙，分娩即当勿药喜。"],
+          "yi": ["胎爻临着官鬼，怀孕时就有生病的忧虑；", "财化成子孙，分娩时就是不用吃药的喜事。"],
+          "en": ["With the Womb line on Pressure, there is the worry of illness from the moment of pregnancy;", "Wealth turning into Output, at delivery there is the joy of needing no medicine."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6495, 6495],
+          "zh": ["鬼临胎爻，其妇怀胎常有疾；", "胎爻被官冲克亦然。", "若胎爻虽临官鬼，化出子孙，或财化福爻，则怀胎时固多疾，分娩即安泰。"],
+          "yi": ["鬼临在胎爻上，这个妇人怀孕期间常常有病；", "胎爻被官鬼冲克也一样。", "如果胎爻虽然临着官鬼，但化出子孙，或者财化成福爻，那么怀孕时虽然多病，分娩就平安。"],
+          "en": ["A ghost on the Womb line means the woman is often ill during pregnancy;", "and so too if the Womb line is clashed or controlled by Pressure.", "If the Womb line, though on Pressure, turns into Output, or Wealth turns into a fortune line, then she is often ill during pregnancy but delivery is safe and sound."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2092, 2092],
+          "zh": ["鬼临胎爻主孕妇有疾，或财合福爻，则分娩安泰。"],
+          "yi": ["鬼临在胎爻上，主孕妇有病，或者财合福爻，分娩就安泰。"],
+          "en": ["A ghost on the Womb line means the pregnant woman is ill, or if Wealth combines with the fortune line, delivery is safe and sound."] }
+      ],
+      "note": {
+        "yi": "「采薪忧」（采薪之忧）是生病的婉辞，古人说「负薪之忧」「采薪之忧」，意思是病得不能去砍柴。「勿药喜」是病好了不用吃药的喜，出自《周易·无妄》「无妄之疾，勿药有喜」。这一联是占产育的：官鬼临胎爻是孕妇孕中多病，化出子孙则分娩平安；放在「他人病」里。",
+        "en": "The 'worry of gathering firewood' is a polite word for being ill: the ancients said 'the worry of carrying firewood' or 'the worry of gathering firewood', meaning too ill to go and cut wood. 'The joy of needing no medicine' is the joy of recovering without medicine, from the Yijing's Wuwang, 'illness without cause: no medicine and there is joy'. This couplet is about childbirth: Pressure on the Womb line means the woman is often ill during pregnancy, and if it turns into Output, delivery is safe; it is placed under the illness of others."
+      },
+      "see": ["LY.ILL.HJC.135"]
+    },
+    {
+      "id": "LY.ILL.HJC.135",
+      "topic": "他人病",
+      "chapter": "七、产育",
+      "chapter_en": "Chapter 7: Childbirth",
+      "title": "产育·官空官伏，定然遗腹之儿（旧注：若有鬼伏在白虎爻下或龙伏鬼墓爻下，则主夫病卧在床非死也；旺空则是有病，鬼爻入墓若非有病只在狱）",
+      "rule": {
+        "yi": "《黄金策》产育章说：「官鬼落空、伏藏，一定是遗腹子。」旧注：卦里没有官鬼或者官鬼落空亡，主产妇的丈夫已经死了，这必是遗腹子；但是没有财、福、白虎就不要这样断；如果有鬼伏在白虎爻下，或者青龙伏在鬼墓爻下，就主丈夫病卧在床，不是死；旺相而落空，是有病；鬼爻入墓，或者身临鬼墓，如果不是有病，就只是在狱里。王洪绪只讲了遗腹子一层：卦没有官鬼，或者官鬼在真空墓绝的地方，主产妇的丈夫已死；官爻伏着而旺相、有提拔的，是父亲远出，背生儿。",
+        "en": "The Huangjin Ce's chapter on childbirth says: 'With the officer Void or hidden, surely a posthumous child.' The old commentary: if the hexagram has no Pressure line or it is Void, the husband of the woman in childbirth is already dead and it is surely a posthumous child; but without Wealth, a fortune line or the White Tiger one does not judge so; if a ghost is hidden under the White Tiger line, or the Azure Dragon is hidden under the ghost's tomb line, it means the husband is bedridden with illness and not dead; strong but Void, he is ill; a ghost line in the tomb, or the Body on the ghost's tomb, if not illness it is only imprisonment. Wang Hongxu gives only the posthumous child: a hexagram without Pressure, or Pressure in a place of true Void, tomb or extinction, means the woman's husband is already dead; a Pressure line hidden but strong and with help means the father has gone far away, a child born behind his back."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6549, 6549],
+          "zh": ["官空官伏，定然遗腹之儿。"],
+          "yi": ["官鬼落空、伏藏，一定是遗腹的孩子。"],
+          "en": ["With the officer Void or hidden, surely a posthumous child."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6550, 6550],
+          "zh": ["卦无官鬼或在空亡，主产妇丈夫己死，此必遗腹子也。", "然非财福白虎则勿断。", "若有鬼伏在白虎爻下，或龙伏鬼墓爻下，则主夫病卧在床，非死也。", "旺空，则是有病；", "鬼爻入墓，或身临鬼墓，若非有病，只在狱。"],
+          "yi": ["卦里没有官鬼，或者官鬼落空亡，主产妇的丈夫已经死了，这必是遗腹子；", "但是没有财、福、白虎就不要这样断；", "如果有鬼伏在白虎爻下，或者青龙伏在鬼墓爻下，就主丈夫病卧在床，不是死；", "旺相而落空，就是有病；", "鬼爻入墓，或者身临在鬼墓上，如果不是有病，就只是在狱里。"],
+          "en": ["If the hexagram has no Pressure line or it is Void, the husband of the woman in childbirth is already dead, and this is surely a posthumous child;", "but without Wealth, a fortune line or the White Tiger one should not judge so;", "if a ghost is hidden under the White Tiger line, or the Azure Dragon is hidden under the ghost's tomb line, it means the husband is bedridden with illness and is not dead;", "strong but Void, he is ill;", "with the Pressure line in the tomb, or the Body on the ghost's tomb, if it is not illness it is only imprisonment."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2122, 2122],
+          "zh": ["如旁人及孕妇来占，遇卦无官鬼，或在真空墓绝之处，主产妇之丈夫已死，是遗腹子也。"],
+          "yi": ["如果是旁人或孕妇来占，遇到卦里没有官鬼，或者官鬼在真空、墓、绝的地方，主产妇的丈夫已经死了，是遗腹子。"],
+          "en": ["If another person or the pregnant woman comes to divine and the hexagram has no Pressure line, or Pressure is in a place of true Void, tomb or extinction, it means the woman's husband is already dead and it is a posthumous child."] }
+      ],
+      "note": {
+        "yi": "这一段在占产育的章里，官鬼代表产妇的丈夫（女占看官鬼为夫）。旧注在「官鬼空伏是遗腹」之外，又说了一层：官鬼伏在白虎或青龙下、旺而空的，是丈夫有病卧床、不是死；入墓的，不是病就是入狱。这是旧注自己加的，王洪绪没有这一层，所以只收他讲遗腹子的第一句。「青龙伏鬼墓爻下」「身临鬼墓」的取法书里没有展开。",
+        "en": "This passage is in the chapter on divining childbirth, where Pressure stands for the husband of the woman (for a woman, Pressure is the husband). Beyond 'Pressure Void or hidden means a posthumous child', the old commentary adds a layer: Pressure hidden under the White Tiger or Azure Dragon, or strong and Void, means the husband is bedridden and not dead; Pressure in the tomb means illness or prison. This is the old commentary's own addition, and Wang Hongxu does not have it, so only his first sentence, on the posthumous child, is taken. The book does not spell out how to find 'the Azure Dragon hidden under the ghost's tomb line' or 'the Body on the ghost's tomb'."
+      },
+      "see": ["LY.ILL.HJC.134"]
+    }
+  ]
+}

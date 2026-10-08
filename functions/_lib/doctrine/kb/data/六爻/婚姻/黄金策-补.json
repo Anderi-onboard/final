@@ -1,0 +1,118 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "总断千金赋",
+  "chapter_en": "General judgments: the Qianjin Fu",
+  "ranges": {"卜筮大全": [5200, 9709], "卜筮正宗": [1187, 1189]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.93",
+      "topic": "风险",
+      "chapter": "总断千金赋",
+      "chapter_en": "General judgments: the Qianjin Fu",
+      "title": "刑合克合，终见乖淫：合中有刑有克，合而有克毕竟不和、合而有刑终成乖戾；午带自刑名刑合，占妻妾多不正；克合如丑子，占妻妾始合终背",
+      "rule": {
+        "yi": "合是和合，凡占见到都吉利。但人不知道合里面还有刑有克：合而有克，终究不和；合而有刑，终究乖戾。比如财爻是未、福德是午，午和未合，但午带自刑，叫刑合；又如财爻是子，子和丑合，丑土能克子水，叫克合。占妻妾，遇到刑合、克合，旧注说「多不正」，王洪绪说「始合终背，诸事终乖戾」。",
+        "en": "A combination is a harmony and is lucky whenever it is seen in a divination. But people do not know that within a combination there are punishments and controls: a combination with a control is in the end not in accord; a combination with a punishment ends in perversity. For example, if Wealth is Wei and Output is Wu, Wu and Wei combine, but Wu carries self-punishment, which is called a punishing combination; or if Wealth is Zi, Zi and Chou combine, but Chou Earth can control Zi Water, which is called a controlling combination. In divining a wife or concubine, the old commentary says a punishing combination means she is 'mostly improper', and Wang Hongxu says a controlling combination means 'combined at first and turning against in the end, everything going perversely'."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5200, 5200],
+          "zh": ["刑合克合，终见乖淫。"],
+          "yi": ["刑合克合，终究会出现乖张和淫乱。"],
+          "en": ["A punishing combination or a controlling combination ends in perversity and lewdness."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5201, 5202],
+          "zh": ["合者：合和也。", "凡占见之，无不吉利。", "然人不知，合中有刑有克。", "合而有克，毕竟不和；", "合而有刑，终成乖戾。", "且如用午字为财爻，未字为褔爻，午与未合，然午带自刑，名为刑合。", "占妻妾多不正，占财亦是不正之财也。", "克合，如丑子之类是也。", "余俱仿上。"],
+          "yi": ["合是和合的意思。", "凡是占卜见到它，没有不吉利的。", "但是人不知道，合里面有刑，有克。", "合了却带着克，毕竟不和；", "合而有刑，终究成为乖戾。", "比如用午字做财爻，未字做福爻，午和未合，但午带着自刑，叫做刑合。", "占妻妾多半不正，占钱财也是不正当的钱财。", "克合，就像丑和子这一类。", "其余的都照上面这样。"],
+          "en": ["'Combination' means harmony.", "Whenever it is seen in a divination it is always lucky.", "But people do not know that within a combination there are punishments and controls.", "A combination with a control is in the end not in accord;", "a combination with a punishment ends in perversity.", "For example, if Wu is taken as Wealth and Wei as Output, Wu and Wei combine, but Wu carries self-punishment, and this is called a punishing combination.", "In divining a wife or concubine, she is mostly improper; in divining money, it is money improperly got.", "A controlling combination is like Chou and Zi.", "The rest follow this."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1187, 1189],
+          "zh": ["合者和合也，凡占见之无不吉利。", "然人不知合中有刑有克；", "合而有克，终见不和合，而有刑终见乖戾。", "且如用神未字为财爻，午字为福爻，午与未合，然午带自刑，名为刑合。", "又如子字为财爻，子与丑合，丑土能克子水，谓之克合。", "如占妻妾，始合终背，诸事终乖戾也。"],
+          "yi": ["合是和合的意思，凡是占卜见到它，没有不吉利的。", "但是人不知道合里面有刑有克；", "合而有克，终究不能和合，合而有刑，终究乖戾。", "比如用神未字做财爻，午字做福爻，午和未合，但午带着自刑，叫做刑合。", "又比如子字做财爻，子和丑合，丑土能克子水，叫做克合。", "如果占妻妾，先合后背离，诸事终究乖戾。"],
+          "en": ["'Combination' means harmony, and whenever it is seen in a divination it is always lucky.", "But people do not know that within a combination there are punishments and controls;", "a combination with a control ends in not being in accord, and a combination with a punishment ends in perversity.", "For example, if the Subject Wei is Wealth and Wu is Output, Wu and Wei combine, but Wu carries self-punishment, and this is called a punishing combination.", "Or if Zi is Wealth, Zi and Chou combine, but Chou Earth can control Zi Water, and this is called a controlling combination.", "If divining a wife or concubine, combined at first and turning against in the end, everything goes perversely."] }
+      ],
+      "dispute": {
+        "yi": "同样的意思，旧注把「占妻妾多不正」说在刑合上，并且把例子里的午、未身份说反了（午火生未土，午应是福爻、未应是财爻）；王洪绪改对了身份，把「占妻妾始合终背」说在克合上。",
+        "en": "The two notes attach the wife-or-concubine sentence to different cases: the old commentary puts 'mostly improper' on the punishing combination, and reverses the roles of Wu and Wei in its example (Wu Fire generates Wei Earth, so Wu should be Output and Wei Wealth); Wang Hongxu corrects the roles and puts 'combined at first and turning against in the end' on the controlling combination."
+      },
+      "note": {
+        "yi": "「自刑」是辰午酉亥各自相刑的那一类：午遇午就是自刑。旧注里的「褔」是「福」的异体字。这一条讲的是一般的合，占妻妾只是它的一个用处，收在这里是因为它给了合并非都吉的理由，可以和 LY.MARRY.DYTJ.03（合处逢冲）、LY.MARRY.BSZZ.02 一起读。",
+        "en": "'Self-punishment' is the kind in which Chen, Wu, You and Hai each punish themselves: Wu meeting Wu is self-punishment. The character used for 'fortune' in the old commentary is a variant form. This entry is about combinations in general, with the wife or concubine only one of its uses; it is included because it gives the reason a combination is not always lucky, and can be read with LY.MARRY.DYTJ.03 (a combination meeting a clash) and LY.MARRY.BSZZ.02."
+      },
+      "see": ["LY.MARRY.DYTJ.03", "LY.MARRY.BSZZ.02", "LY.MARRY.YM.25", "LY.MARRY.ZS.28"]
+    },
+    {
+      "id": "LY.MARRY.HJC.94",
+      "topic": "媒妁",
+      "chapter": "总断千金赋",
+      "chapter_en": "General judgments: the Qianjin Fu",
+      "title": "占婚以间爻为媒，两个间爻要分主次：先看衰旺动静，俱静俱动或无旺衰取动爻而日辰冲之者为正，无冲看并起者，再无则看日辰生扶之爻，使事归于一",
+      "rule": {
+        "yi": "占婚姻，以间爻为媒人。间爻有两个的时候，也照这个办法定主次：先分衰旺、辨动静——两爻都静，旺的在先；有动，动的为急。如果两个都静、都动，或者既不旺也不衰，就取动的爻，被日辰冲的那一个为正；没有被冲的，就看并起的爻为媒；又没有合并的，然后看日辰生扶的爻。这样事情就归于一个人，没有两头的疑惑。",
+        "en": "In divining a marriage, the between line is the go-betweens. When there are two between lines, decide which is primary in the same way: first tell strong from weak and moving from still; with both still, the strong one comes first, and with one moving, the moving one is urgent. If both are still, or both moving, or neither strong nor weak, take the moving line, the one clashed by the Day being the primary; if none is clashed, look at the line that arises together with the Day as the go-between; if there is no such combination or arising either, only then look at the line generated or supported by the Day. In this way the matter comes to one person and there is no doubt between two ends."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [5233, 5233],
+          "zh": ["别衰旺以明克合，辨动静以定刑冲。"],
+          "yi": ["要分辨衰旺来弄清克合，要辨别动静来定下刑冲。"],
+          "en": ["Tell strong from weak to make clear the control and combination; tell moving from still to fix the punishment and clash."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5236, 5236],
+          "zh": ["或问：静与衰爻伤不得动与旺，若遇动爻反衰，静爻反旺，则如之何。", "曰：两爻俱静，以旺为先；", "有动，以动为急。", "盖动，犹人之起；", "静，犹人之伏。", "彼虽旺，何畏哉。", "故曰：动爻急如火。"],
+          "yi": ["有人问：静的和衰的爻伤不了动的和旺的，如果遇到动的爻反而衰、静的爻反而旺，那该怎么办？", "回答：两个爻都静，以旺的为先；", "有动的，以动的为急。", "因为动就像人站起来，", "静就像人伏着。", "那个爻虽然旺，有什么可怕的呢？", "所以说：动爻急如火。"],
+          "en": ["Someone asks: a still or weak line cannot harm a moving or strong one; what if the moving line is weak and the still line strong?", "The answer: with both still, the strong one comes first;", "if one moves, the moving one is urgent.", "For moving is like a person standing up,", "and stillness like a person lying down.", "However strong that line is, what is there to fear?", "So it is said: a moving line is urgent as fire."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [5237, 5237],
+          "zh": ["如占婚，以间爻为媒。", "间有两爻，亦当以此定之。", "若俱静俱动，或无旺无衰，则当取动爻，日辰冲之者为正，无冲，则看并起者为媒也。", "又无合并，然后看日辰生扶之爻。", "如此，则事归于一，而无两端之疑也。"],
+          "yi": ["比如占婚姻，以间爻为媒人。", "间爻有两个爻，也应当照这个办法来定。", "如果两个都静、都动，或者没有旺没有衰，就应当取动的爻，被日辰冲的那个为正；没有冲的，就看并起的爻当媒人。", "又没有合并的，然后看日辰生扶的爻。", "这样，事情就归到一个人身上，没有两头的疑惑了。"],
+          "en": ["For example, in divining a marriage, the between line is the go-between.", "When there are two between lines, decide in the same way.", "If both are still, or both moving, or neither strong nor weak, take the moving line, the one clashed by the Day being the primary; if none is clashed, look at the line that arises together with the Day as the go-between.", "If there is no such combination or arising either, only then look at the line generated or supported by the Day.", "In this way the matter comes to one person and there is no doubt between two ends."] }
+      ],
+      "note": {
+        "yi": "「并」是爻和日辰同一个地支；「并起」是爻本身发动、又和日辰同支。这一段是旧注对「别衰旺以明克合，辨动静以定刑冲」两句的发挥，只有第 5237 行谈到婚姻，前面的问答是它用的原则。",
+        "en": "'Arising together' means a line that has the same branch as the Day; 'arising' here is a line that moves and also shares the Day's branch. The passage is the old commentary's elaboration of the two lines 'tell strong from weak to make clear control and combination, tell moving from still to fix punishment and clash'; only line 5237 speaks of marriage, and the question and answer before it give the principle it uses."
+      },
+      "see": ["LY.MARRY.HJC.33", "LY.MARRY.HJC.34", "LY.MARRY.HJC.35", "LY.MARRY.ZS.34"]
+    },
+    {
+      "id": "LY.MARRY.HJC.95",
+      "topic": "成否",
+      "chapter": "家宅秘诀",
+      "chapter_en": "Secrets of the household",
+      "title": "财鬼一同生合，庆及婚姻：财爻官鬼一同来生合，家里有婚姻的喜庆；兄弟爻两处见刑冲，灾祸牵连眷属",
+      "rule": {
+        "yi": "财爻和官鬼一同来生合（世身），家里有婚姻的喜庆；兄弟爻在两处被刑冲，灾祸就牵连到家眷。",
+        "en": "If the Wealth line and the Pressure line together come to generate and combine (with the Self and Body), there is the joy of a marriage in the household; if the Peer line meets punishment and clash in two places, calamity extends to the family members."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9707, 9707],
+          "zh": ["财鬼一同生合，", "庆及婚姻；", "兄弟两见刑冲，", "灾连眷属。"],
+          "yi": ["财爻、官鬼一同来生合，", "家里有婚姻的喜庆；", "兄弟爻两处见到刑冲，", "灾祸牵连到家眷。"],
+          "en": ["Wealth and Pressure together generating and combining,", "there is the joy of a marriage in the household;", "the Peer line meeting punishment and clash in two places,", "calamity extends to the family members."] }
+      ],
+      "note": {
+        "yi": "这一句夹在一首家宅口诀里，前后没有注。原文没有说生合的是谁，按家宅口诀的惯例，是财、鬼一起生合世爻和宅爻（见同书家宅部分「财鬼二爻同动来生合世爻宅爻者，皆主婚姻之喜」），括号里的「世身」是译者补的。",
+        "en": "The sentence is in a household rhyme with no note before or after. The text does not say what the Wealth and Pressure lines generate and combine with; by the convention of the household rhymes they generate and combine with the Self line and the household line (the Yiyin says in its household section that when the Wealth and Pressure lines move together to generate and combine with the Self and household lines, it always means the joy of a marriage), and 'Self and Body' in brackets is the translator's addition."
+      },
+      "see": ["LY.MARRY.TXF.11"]
+    },
+    {
+      "id": "LY.MARRY.HJC.96",
+      "topic": "风险",
+      "chapter": "家宅秘诀",
+      "chapter_en": "Secrets of the household",
+      "title": "子卯夫妻，日下当遭反目：子卯相刑，夫妻当天就反目；辰戌相冲，兄弟当月就阋墙",
+      "rule": {
+        "yi": "（夫妻两爻是）子和卯，互相刑，当天就会夫妻反目；（兄弟两爻是）辰和戌，互相冲，当月就一定兄弟争吵。",
+        "en": "If the husband and wife lines are Zi and Mao, punishing each other, husband and wife fall out that very day; if the brother lines are Chen and Xu, clashing each other, brothers surely quarrel within the month."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9709, 9709],
+          "zh": ["子卯夫妻，", "日下当遭反目；", "辰戌兄弟，", "月中定见阋墙。"],
+          "yi": ["子和卯做夫妻，", "当天就会夫妻反目；", "辰和戌做兄弟，", "这个月里一定兄弟争吵。"],
+          "en": ["Zi and Mao as husband and wife:", "on that very day they fall out;", "Chen and Xu as brothers (the Peer lines):", "within the month they surely quarrel."] }
+      ],
+      "note": {
+        "yi": "子卯相刑（无礼之刑）、辰戌相冲，是用地支之间的刑冲来断夫妻、兄弟不和；原文没有解释，也没有说「夫妻」「兄弟」在卦里是哪两爻，只能照字面译。「日下」是当日，「月中」是当月。",
+        "en": "Zi and Mao punish each other (the punishment of rudeness) and Chen and Xu clash, so the branches' punishment and clash are used to judge discord between husband and wife and between brothers; the text does not explain this or say which two lines stand for husband and wife or for brothers in the hexagram, and is translated as written. 'Under the day' is that day and 'in the month' is that month."
+      },
+      "see": ["LY.MARRY.HJC.73", "LY.MARRY.YY.06"]
+    }
+  ]
+}

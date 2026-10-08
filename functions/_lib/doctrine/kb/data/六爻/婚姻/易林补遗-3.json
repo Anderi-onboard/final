@@ -1,0 +1,36 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "易林补遗",
+  "chapter": "忧疑损害",
+  "chapter_en": "Worries and harms",
+  "ranges": {"易林补遗": [1187, 1190]},
+  "units": [
+    {
+      "id": "LY.MARRY.YL.33",
+      "topic": "风险",
+      "chapter": "忧疑损害章第六十一",
+      "chapter_en": "Chapter 61: Worries and harms",
+      "title": "官鬼与青龙同位发动：休来新保为媒，或往喜庆之家，反招殃祸",
+      "rule": {
+        "yi": "官鬼爻发动，看它临着哪一位六神，就知道什么事招祸：临朱雀，不要去传话送信；临青龙（同位），不要新去做保人、做媒人，也不要去花酒、喜庆的场合，反而招来祸殃。",
+        "en": "When the Pressure line moves, look at which of the six spirits it sits with to know what brings misfortune: with the Vermilion Bird, do not go carrying messages or letters; with the Azure Dragon, do not newly come forward as guarantor or matchmaker, and do not go to wine parties or houses of celebration, which instead bring misfortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [1187, 1187],
+          "zh": ["鬼值六神兴，", "定六般之患难。", "官临八卦动，", "分八向之忧危。", "朱雀同宫，", "莫去传音附信，", "青龙并位，", "休来新保为媒。"],
+          "yi": ["官鬼碰上六神而发动，", "一定有六样患难；", "官鬼在八卦里发动，", "分出八个方向的忧危。", "和朱雀在同一宫，", "不要去传话送信；", "和青龙并在一位，", "不要新去做保人、做媒人。"],
+          "en": ["When Pressure meets one of the six spirits and stirs,", "six kinds of hardship are fixed;", "when Pressure moves in one of the eight trigrams,", "the danger divides among eight directions.", "With the Vermilion Bird in the same palace,", "do not go carrying messages or letters;", "with the Azure Dragon in the same place,", "do not newly come forward as guarantor and matchmaker."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [1190, 1190],
+          "zh": ["青龙鬼动，", "事主花酒或行善原或往喜庆之家，", "反招殃祸。"],
+          "yi": ["青龙临着官鬼发动，", "事情关系到花酒、行善事，或者去喜庆人家，", "反而招来祸殃。"],
+          "en": ["When Pressure moves on the Azure Dragon,", "the matter concerns flowers and wine, or good works, or going to a house of celebration;", "it brings misfortune instead."] }
+      ],
+      "note": {
+        "yi": "这一段在「忧疑损害」一章里，讲的是探病、送殡、问讼这些去和不吉的事打交道时，官鬼临哪一位六神要避开什么；它不是专讲婚姻，这里只收和「保媒」「喜庆」有关的青龙一条。「新保为媒」是新去担保、说媒；「行善原」多半是「行善愿」，即还愿行善，译文照「行善事」译。后面勾陈、白虎、螣蛇、玄武各条讲拆改、修棺、连累、盗窃，与婚姻无关，没有收。",
+        "en": "This passage is in the chapter on worries and harms, about what to avoid when one goes to deal with unlucky matters such as visiting the sick, attending a funeral or asking about lawsuits, according to which of the six spirits Pressure sits with; it is not about marriage in particular, and only the Azure Dragon clause, concerning acting as guarantor and matchmaker and going to celebrations, is taken here. 'Come forward as guarantor and matchmaker' means newly standing surety or making a match; 'doing good works' is probably a miswriting for 'fulfilling a vow of good works', and it is translated as good works. The clauses that follow on the Hook Earth, White Tiger, Coiling Snake and Dark Tortoise, about pulling down and rebuilding, coffins, being implicated and theft, have nothing to do with marriage and are not taken."
+      },
+      "see": ["LY.MARRY.YM.38", "LY.MARRY.YL.01"]
+    }
+  ]
+}

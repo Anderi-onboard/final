@@ -1,0 +1,316 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "卜筮元龟",
+  "chapter": "总例门与六神门",
+  "chapter_en": "The General Rules and the Six Spirits",
+  "ranges": {"大易断例卜筮元龟目": [340, 480]},
+  "units": [
+    {
+      "id": "LY.ILL.BSYG.01",
+      "topic": "总则",
+      "chapter": "总例门·易卦发蒙歌",
+      "chapter_en": "The General Rules: Song for Opening the Mind on the Hexagrams",
+      "title": "易卦发蒙歌·克我者为鬼：如金宫见巳午火；凡疾病皆视此爻，知鬼神情状",
+      "rule": {
+        "yi": "易卦发蒙歌说：克我的是鬼（官鬼）。自注说：凡是疾病，都看这一爻，从它知道鬼神的情状；比如金宫的卦，见到巳、午的火爻就是。",
+        "en": "The Yigua Fameng Ge says: what controls me is the ghost (Pressure). Its own note adds: in all illness look to this line, and from it know the state of the ghosts and spirits; in a Metal-palace hexagram, for instance, the Fire lines of Si and Wu are it."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [364, 364],
+          "zh": ["克我者为鬼，"],
+          "yi": ["克我的是鬼，"],
+          "en": ["what controls me is the ghost,"] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [364, 364],
+          "zh": ["如金宫见巳午火是。", "凡疾病皆视此爻，", "知鬼神情状。"],
+          "yi": ["比如金宫的卦，见到巳、午的火爻就是。", "凡是疾病，都看这一爻，", "从它知道鬼神的情状。"],
+          "en": ["In a Metal-palace hexagram, the Fire lines of Si and Wu are it.", "In all illness, look to this line,", "and from it know the state of the ghosts and spirits."] }
+      ],
+      "note": {
+        "yi": "「金宫」是属金的卦宫（乾宫、兑宫）；火克金，所以金宫卦里的巳、午火爻是克我者，也就是官鬼（「鬼」是六亲里的官鬼）。「知鬼神情状」只有这五个字，书里没有展开，按字面译；黄金策把官鬼说成得病根由、虚实、安危、鬼神情状都决于它（LY.ILL.HJC.49），说法相近。这首「易卦发蒙歌」每一句后面都有括号小注，书里没有标注者，是这部书自己的小注，不是今人的虎易注，所以这里引。",
+        "en": "'Metal palace' is a palace of the Metal phase (the Qian palace and the Dui palace); Fire controls Metal, so the Fire lines of Si and Wu in a Metal-palace hexagram are what controls me, that is, Pressure (the 'ghost' being Pressure among the six relations). 'Know the state of the ghosts and spirits' is only five characters in the book and is not expanded, and is translated literally; the Huangjin Ce says of Pressure that the cause, the strength or weakness, the safety or danger and the state of ghosts and spirits of the illness are all decided by it (LY.ILL.HJC.49), which is close. Every line of this 'Yigua Fameng Ge' has a bracketed small note after it, with no author named in the book, which is the book's own note and not the modern Hu Yi notes, and is therefore quoted."
+      },
+      "see": ["LY.ILL.HJC.49", "LY.ILL.EL.29", "LY.ILL.BSYG.02"]
+    },
+    {
+      "id": "LY.ILL.BSYG.02",
+      "topic": "他人病",
+      "chapter": "总例门·易卦发蒙歌",
+      "chapter_en": "The General Rules: Song for Opening the Mind on the Hexagrams",
+      "title": "易卦发蒙歌·六亲各忧：父母爻动忧子孙；财爻动合杀忧父母病；比和为兄弟，此爻动忌妻妾疾病",
+      "rule": {
+        "yi": "易卦发蒙歌的自注给了三条六亲发动时要担心的事：父母爻动，担心子孙；财爻动、又合上杀，担心父母生病；兄弟爻动，忌妻妾的疾病。",
+        "en": "The notes to the Yigua Fameng Ge give three things to worry about when a relation line moves: when the Resource line moves, worry for Output (the children); when the Wealth line moves and joins a killing, worry that the Resource (the parents) will fall ill; when the Peer line moves, the illness of wife and concubine is to be feared."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [361, 361],
+          "zh": ["生我为父母，"],
+          "yi": ["生我的是父母，"],
+          "en": ["what generates me is Resource (the parents),"] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [361, 361],
+          "zh": ["如金宫卦见土爻者是。", "凡卦中父母爻动，", "忧子孙。"],
+          "yi": ["比如金宫的卦，见到土爻就是。", "凡是卦里父母爻动，", "要为子孙担忧。"],
+          "en": ["In a Metal-palace hexagram, an Earth line is it.", "when the Resource line in a hexagram moves,", "worry for Output (the children)."] },
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [362, 362],
+          "zh": ["我克者为财，"],
+          "yi": ["我克的是财，"],
+          "en": ["what I control is Wealth,"] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [362, 362],
+          "zh": ["如金宫卦见木爻者是。", "凡占财爻动合杀，", "忧父母病。"],
+          "yi": ["比如金宫的卦，见到木爻就是。", "凡是占的时候，财爻动、又合上杀，", "要担心父母生病。"],
+          "en": ["In a Metal-palace hexagram, a Wood line is it.", "In any divination, when the Wealth line moves and joins a killing,", "worry that the Resource (the parents) will fall ill."] },
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [366, 366],
+          "zh": ["比和为兄弟，", "盖因同类取。"],
+          "yi": ["比和的是兄弟，", "这是因为取的是同类。"],
+          "en": ["what is level with me is Peer (the brothers),", "because it is taken from the same kind."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [366, 366],
+          "zh": ["如金宫见申酉爻，", "此爻动，", "忌妻妾疾病。"],
+          "yi": ["比如金宫的卦，见到申、酉的爻，", "这一爻动，", "要忌妻妾生病。"],
+          "en": ["In a Metal-palace hexagram, a line of Shen or You,", "when this line moves,", "the illness of wife and concubine is to be feared."] }
+      ],
+      "note": {
+        "yi": "三条自注都是从五行相克来的：父母克子孙，财克父母，兄弟克财（也就是克妻妾）。例子都举金宫：土生金所以是父母，木是金所克所以是财，金同金所以是兄弟。「合杀」的杀书里没有指明是哪一种杀，按字面译成「joins a killing」。这几条在书里同一首歌诀里，和 LY.ILL.BSYG.09 讲的那一串（财动忧父母、父母动忧子孙……）是同一个道理，那一条更完整。",
+        "en": "All three notes come from control among the five phases: Resource controls Output, Wealth controls Resource, Peer controls Wealth (that is, controls wife and concubine). The examples are all given in a Metal palace: Earth generates Metal so it is Resource, Wood is controlled by Metal so it is Wealth, Metal is the same as Metal so it is Peer. The killing of 'joins a killing' is not specified in the book as to which killing, and is rendered literally as 'joins a killing'. These notes are in the same song as the longer chain of LY.ILL.BSYG.09 (Wealth moves, worry for Resource; Resource moves, worry for Output ...), and are the same reasoning, which that entry gives more fully."
+      },
+      "see": ["LY.ILL.BSYG.09", "LY.ILL.BSYG.01", "LY.ILL.BSQS.06", "LY.ILL.DYTJ.40"]
+    },
+    {
+      "id": "LY.ILL.BSYG.03",
+      "topic": "病因",
+      "chapter": "总例门·易卦发蒙歌",
+      "chapter_en": "The General Rules: Song for Opening the Mind on the Hexagrams",
+      "title": "易卦发蒙歌·六神自注：玄武动克身世应，主女多疾病、盗贼；勾陈动克身世应，主有疾病、官司、争田土屋宅山林；刑世应主坟墓不安",
+      "rule": {
+        "yi": "易卦发蒙歌说六神的自注里有两条讲到病：玄武这个神，发动、克到身、世、应，主女的多有疾病、还有盗贼的事；勾陈这个神，发动、克到身、世、应，主有疾病、官司、争夺田土房屋山林的事，如果刑到世、应，主坟墓不安宁。",
+        "en": "Two of the notes on the six spirits in the Yigua Fameng Ge speak of illness: the Dark Tortoise spirit, when it moves and controls the Body, Self or Other, means much illness among women and matters of thieves; the Hook Earth spirit, when it moves and controls the Body, Self or Other, means illness, lawsuits and quarrels over fields, houses, hills and forests, and if it punishes the Self or Other, the graves are unquiet."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [370, 370],
+          "zh": ["阴私验玄武，"],
+          "yi": ["阴私的事，看玄武来验证，"],
+          "en": ["for private and hidden matters, the Dark Tortoise is the test,"] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [370, 370],
+          "zh": ["属水，", "冬旺。", "其神动克身世应，", "主女多疾病，", "盗贼事。"],
+          "yi": ["它属水，", "冬天旺。", "这个神发动、克到身、世、应时，", "主女的多有疾病，", "还有盗贼的事。"],
+          "en": ["it belongs to Water,", "flourishing in winter.", "when this spirit moves and controls the Body, Self or Other,", "it means much illness among women,", "and matters of thieves."] },
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [372, 372],
+          "zh": ["勾陈事田土。"],
+          "yi": ["勾陈管田土的事。"],
+          "en": ["Hook Earth governs matters of land."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [372, 372],
+          "zh": ["属土，", "四季旺。", "其神动克身世应，", "主有疾病，", "官司，", "相争田土屋宅山林之事。", "若刑世应，", "主坟墓不安。"],
+          "yi": ["它属土，", "四季都旺。", "这个神发动、克到身、世、应时，", "主有疾病，", "还有官司，", "还有争夺田土、房屋、山林的事。", "如果刑到世、应，", "主坟墓不安宁。"],
+          "en": ["it belongs to Earth,", "flourishing in all four seasons.", "when this spirit moves and controls the Body, Self or Other,", "it means illness,", "lawsuits,", "and quarrels over fields, houses, hills and forests.", "and if it punishes the Self or Other,", "the graves are unquiet."] }
+      ],
+      "note": {
+        "yi": "这两条自注都以「其神动克身世应」为条件：六神动了、又克到卦身、世或应，才断主某事。同一部书在月建六神吉凶一段的末尾（第 415 行）明说「右爻动或克世应断之，不动不克不断」。「主女多疾病」可读作「主女的多生病」，也可读作「主在女人那里多有疾病」，书里没有展开，译文取前一种说法。这一整首歌诀里别的六神（青龙、白虎、朱雀、螣蛇）的自注讲的是喜庆、丧服、口舌、怪梦，与病无关，没有收；白虎的病见 LY.ILL.BSYG.05。",
+        "en": "Both notes take 'when this spirit moves and controls the Body, Self or Other' as the condition: the spirit must move and also control the Body, Self or Other before it is judged to mean such and such. The same book at the end of the passage on the omens of the spirits of the Month (line 415) says outright 'judge by a line to the right when it moves or controls the Self or Other; if it does not move or control, do not judge'. 'Much illness among women' can be read as 'women fall ill often' or as 'much illness on the women's side'; the book does not expand, and the translation takes the first. The notes on the other spirits in the same song (Azure Dragon, White Tiger, Vermilion Bird, Coiling Snake) speak of joy, mourning dress, quarrels and strange dreams and are not about illness, so are not taken; for the White Tiger's illness see LY.ILL.BSYG.05."
+      },
+      "see": ["LY.ILL.BSYG.05", "LY.ILL.DYTJ.38", "LY.ILL.DYTJ.43", "LY.ILL.EL.05"]
+    },
+    {
+      "id": "LY.ILL.BSYG.04",
+      "topic": "取象",
+      "chapter": "六神门·月建六神吉凶",
+      "chapter_en": "The Six Spirits: Omens of the Spirits of the Month",
+      "title": "月建直符·破为白虎：月内有人疾，阴女阳男；子孙兄弟父母妻财并可预断；带杀同鬼主孝服",
+      "rule": {
+        "yi": "月建直符这一段说：月破的那个位置是白虎，这个月里有人生病，阴是女的、阳是男的；子孙、兄弟、父母、妻财这几类亲人，都可以预先判断是谁；如果又带着杀、和鬼在一起，主孝服；在外象，是出远路的人的事。",
+        "en": "The passage on the on-duty spirit of the Month says: the break of the Month is the White Tiger, and within that month someone is ill, yin being a woman and yang a man; the relatives of the four kinds Output, Peer, Resource and Wealth can all be judged in advance; if it also carries a killing and sits with the ghost, it means mourning dress; in the outer image it concerns a traveller on a far road."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [410, 410],
+          "zh": ["破为白虎，", "月内有人疾，", "阴女阳男。", "子孙兄弟父母妻财，", "并可预断之。", "若带杀同鬼，", "孝服。", "外象远路行人之事。"],
+          "yi": ["月破的位置是白虎，", "这个月里有人生病，", "阴是女的，阳是男的。", "子孙、兄弟、父母、妻财，", "都可以预先判断。", "如果带着杀、又和鬼在一起，", "主孝服。", "在外象，是出远路的人的事。"],
+          "en": ["the break is the White Tiger,", "within the month someone is ill,", "yin is a woman, yang a man.", "Output, Peer, Resource, Wealth:", "all can be judged in advance.", "if it carries a killing and sits with the ghost,", "it means mourning dress.", "in the outer image it concerns a traveller on a far road."] }
+      ],
+      "note": {
+        "yi": "「破」是和月建相冲的那个地支：这一段前面有一张月建六神表（本库没有收表），白虎在正月是申、二月是酉……正好是月建寅、卯……的对冲，所以「破为白虎」就是月破那一位是白虎。「阴女阳男」按字面译，书里没有说阴阳是指爻还是别的；「子孙兄弟父母妻财并可预断之」是说生病的是哪一类亲人，可以按这四类六亲来断。「内象」「外象」书里没有解释。「若带杀同鬼」的「鬼」可以是官鬼，也可以是鬼神，书里没有标明。这一段前面讲月建青龙的一句（婚姻、添人进口）在 LY.MARRY.BSYG.03。",
+        "en": "'Break' is the branch that clashes with the Month: before this passage the book has a table of the six spirits by month (the table is not included in this library), in which the White Tiger is at Shen in the first month, You in the second and so on, exactly the clash of the Month branches Yin, Mao and so on, so 'the break is the White Tiger' means the place of the Month-break is the White Tiger. 'Yin is a woman, yang a man' is translated literally and the book does not say whether yin and yang refer to lines or something else; 'Output, Peer, Resource, Wealth can all be judged in advance' says that the relation of the person who is ill can be judged by these four of the six relations. 'Inner image' and 'outer image' are not explained in the book. The 'ghost' of 'sits with the ghost' could be Pressure or a ghost of the spirits, and the book does not say which. The line before this passage on the Azure Dragon of the Month (marriage, people added to the household) is in LY.MARRY.BSYG.03."
+      },
+      "see": ["LY.ILL.DYTJ.38", "LY.ILL.BSYG.05", "LY.ILL.BSQS.09", "LY.MARRY.BSYG.03"]
+    },
+    {
+      "id": "LY.ILL.BSYG.05",
+      "topic": "生死",
+      "chapter": "六神门·日六神内动",
+      "chapter_en": "The Six Spirits: Spirits of the Day Moving in the Inner Trigram",
+      "title": "日六神内动·白虎内惊忧疾病：白虎是金神；落在水爻上，水为白虎入墓占疾大凶；两重入墓必见死亡；秋申酉爻上动旺相尤凶，休囚吉",
+      "rule": {
+        "yi": "日六神内动的歌说：白虎在内卦发动，忧惊、疾病。自注说：白虎是金神；白虎也可以落在水爻上，这时水爻就是白虎，入了墓，占病大凶；例如庚、辛日得乾卦，甲子水爻动，变辛丑土，水墓在辰，白虎又是金神，叫两重入墓，必见死亡；白虎在秋天申、酉爻上动，旺相，更凶，休囚则吉。",
+        "en": "The song on the spirits of the Day moving within says: when the White Tiger moves in the inner trigram, there is worry, fright and illness. Its own note says: the White Tiger is the Metal spirit; it can also come on a Water line, and then the Water line is the White Tiger; if it enters the tomb, illness is greatly ominous; for example, on a Geng or Xin day, casting Qian, the Water line Jiazi moves and turns into Xinchou Earth, the Water tomb is at Chen, and since the White Tiger is also the Metal spirit, it is called entering the tomb twice, and death is sure to be seen; when the White Tiger moves on a Shen or You line in autumn it is thriving and strong and still more ominous, and when resting or trapped it is auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [434, 434],
+          "zh": ["白虎内惊忧疾病，"],
+          "yi": ["白虎在内卦发动，忧惊、疾病，"],
+          "en": ["when the White Tiger moves within, worry, fright and illness,"] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [434, 434],
+          "zh": ["白虎，金神。", "或在水爻上来，是水为白虎，入墓，占疾大凶。", "如庚辛日卜得乾卦，甲子水动，是水为白虎，化为辛丑土，内见巽，水墓在辰，又曰白虎金神，名两重入墓，必见死亡。", "他皆仿此。", "秋申酉爻上动，为旺相尤凶，休囚吉。"],
+          "yi": ["白虎是金神。", "也可以落在水爻上，这时水爻就是白虎，入了墓，占病大凶。", "例如庚、辛日卜得乾卦，甲子水爻动，这时水就是白虎，变成辛丑土，里面见到巽，水的墓在辰，又说白虎是金神，叫两重入墓，必然见到死亡。", "别的都照这个类推。", "在秋天申、酉爻上动，是旺相，尤其凶；休囚就吉。"],
+          "en": ["The White Tiger is the Metal spirit.", "It may also come on a Water line; then Water is the White Tiger, and if it enters the tomb, illness is greatly ominous.", "For example, on a Geng or Xin day, casting Qian, the Water line Jiazi moves, so Water is the White Tiger, and turns into Xinchou Earth; within is seen Xun, and the Water tomb is at Chen; and since the White Tiger is also called the Metal spirit, it is called entering the tomb twice, and death is sure to be seen.", "The rest follow this.", "Moving on a Shen or You line in autumn, it is thriving and strong and especially ominous; resting or trapped, it is auspicious."] }
+      ],
+      "note": {
+        "yi": "这是这部书自注里最长的一个病例。「是水为白虎」是说白虎这个神附在水爻上；白虎本来是金神，所以又叫「两重入墓」——按字面，是金神白虎、和它所附的水爻，两个都入了墓（水墓在辰）。例子里「内见巽」的「巽」书里没有解释，译文照字面。「秋申酉爻上动，为旺相尤凶，休囚吉」是说白虎旺的时候凶得更重，衰了反而吉；这是白虎自己的旺衰，不是病人的。断易天机里同一句歌诀（LY.ILL.DYTJ.38）后面只有今人的注号（1），没有这段自注。",
+        "en": "This is the longest case on illness in this book's own notes. 'Water is the White Tiger' says that the spirit of the White Tiger is attached to a Water line; the White Tiger is by nature the Metal spirit, so it is also called 'entering the tomb twice' — literally, both the Metal spirit White Tiger and the Water line it is attached to enter the tomb (the Water tomb is at Chen). The 'Xun' of 'within is seen Xun' in the example is not explained in the book and is translated literally. 'Moving on a Shen or You line in autumn, thriving and strong and especially ominous; resting or trapped, auspicious' says that the White Tiger is more ominous when it is strong and, when it is weak, on the contrary auspicious; this is the strength of the White Tiger itself and not of the sick person. The same line of the song in the Duanyi Tianji (LY.ILL.DYTJ.38) has after it only a modern note number (1) and not this note."
+      },
+      "see": ["LY.ILL.DYTJ.38", "LY.ILL.BSYG.03", "LY.ILL.BSYG.04", "LY.ILL.TXF.04", "LY.ILL.HZL.08", "LY.ILL.ZSZ.07", "LY.ILL.GLJ.13"]
+    },
+    {
+      "id": "LY.ILL.BSYG.06",
+      "topic": "风险",
+      "chapter": "六神门·日六神内动",
+      "chapter_en": "The Six Spirits: Spirits of the Day Moving in the Inner Trigram",
+      "title": "日下大杀：甲乙亥、丙丁未、戊己戌、庚辛寅、壬癸巳；父母子孙逢此杀必悲号入内堂；此杀推占病忌，爻动方断",
+      "rule": {
+        "yi": "日下大杀按日干排：甲乙日在亥（猪），丙丁日在未（羊），戊己日在戌（狗），庚辛日在寅（虎），壬癸日在巳（蛇）；父母、子孙遇到这个杀，必有悲伤号哭进到内堂。自注说：占病要忌这个杀，爻动了才断。",
+        "en": "The Great Killing under the Day is laid out by the Day stem: Hai (the pig) on Jia and Yi days, Wei (the sheep) on Bing and Ding days, Xu (the dog) on Wu and Ji days, Yin (the tiger) on Geng and Xin days, Si (the snake) on Ren and Gui days; if Resource or Output meets this killing, wailing and grief are sure to enter the inner hall. Its own note says: this killing is to be avoided in an illness divination, and is judged only when the line moves."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [439, 439],
+          "zh": ["日下大杀更推详，", "甲乙猪兮丙丁羊，", "戊己犬处庚辛虎，", "父母子孙逢此杀，", "必定悲号入内堂。"],
+          "yi": ["日下的大杀要再详细推算：", "甲、乙日是猪，丙、丁日是羊，", "戊、己日是狗，庚、辛日是虎，", "父母、子孙遇到这个杀，", "必定有悲伤号哭进到内堂。"],
+          "en": ["The Great Killing under the Day should be worked out in detail:", "on Jia and Yi days the pig, on Bing and Ding days the sheep,", "on Wu and Ji days the dog, on Geng and Xin days the tiger,", "if Resource or Output meets this killing,", "wailing and grief will surely enter the inner hall."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [439, 439],
+          "zh": ["甲乙亥，", "丙丁未，", "戊己戌，", "庚辛寅，", "壬癸巳。", "此杀推占病忌，", "爻动方断。"],
+          "yi": ["甲、乙日是亥，", "丙、丁日是未，", "戊、己日是戌，", "庚、辛日是寅，", "壬、癸日是巳。", "这个杀，推占病时要忌，", "爻动了才断。"],
+          "en": ["Jia and Yi: Hai;", "Bing and Ding: Wei;", "Wu and Ji: Xu;", "Geng and Xin: Yin;", "Ren and Gui: Si.", "This killing is to be avoided in reckoning an illness divination,", "and is judged only when the line moves."] }
+      ],
+      "note": {
+        "yi": "这一本的歌诀里没有「壬癸蛇为大杀方」那一句（卜筮全书、断易天机有），第五个日干（壬癸巳）是在自注里补出来的。五个日干的位置各书一致，但各书说的用处不同：卜筮全书的神煞歌例（第 10073 行起）只写「凡事忌之」；断易天机（第 323 行）写「父母兄弟并妻子，杀临杀动主悲伤」；易隐的日煞表（第 1023 行）写「占家宅凶百事不吉」；只有大易断例这里的自注点明「占病忌」。「兮」「处」是歌诀里的衬字。「悲号入内堂」是丧事的征兆。同一个歌诀前面的「杀阴」「大杀」（按月排的）是另外两个煞，讲的是亡殁、伤亡，没有提病，这里不收。",
+        "en": "In this copy of the song the line 'Ren and Gui: the snake is the Great Killing' (found in the Bushi Quanshu and the Duanyi Tianji) is absent, and the fifth day stem (Ren and Gui: Si) is supplied in the note. The positions for the five day stems agree among the books, but the books name different uses: the verses of spirit-stars in the Bushi Quanshu (from line 10073) write only 'avoid it in everything'; the Duanyi Tianji (line 323) writes 'Resource, Peer and wife and children: where the killing arrives or moves, it means grief'; the table of day stars of the Yi Yin (line 1023) writes 'in divining the household, ominous, and nothing is auspicious'; only the note here in the Dayi Duanli makes plain 'avoid it in illness'. 'Xi' and 'chu' are filler words of the song. 'Wailing and grief entering the inner hall' is an omen of mourning. The 'Yin Killing' and 'Great Killing' laid out by month earlier in the same song are two other killings that speak of death and injury and make no mention of illness, and are not taken here."
+      },
+      "see": ["LY.ILL.BSQS.52", "LY.ILL.BSQS.53", "LY.ILL.DYTJ.33"]
+    },
+    {
+      "id": "LY.ILL.BSYG.07",
+      "topic": "风险",
+      "chapter": "六神门·推占来情休旺吉凶要决章",
+      "chapter_en": "The Six Spirits: Essential Verses on Reading the Purpose of the Asker and Strength and Weakness",
+      "title": "推占来情·身居世上欲行游，鬼更当门官病忌：鬼在第三四爻是「当门」",
+      "rule": {
+        "yi": "推占来情的歌里有一联：卦身在世爻上、想出门远行的时候，鬼又正好当门，官司、疾病都要忌。自注说，「当门」指鬼在第三、四爻。",
+        "en": "In the verses on reading the purpose of the asker there is a couplet: when the Body is on the Self line and one wants to go travelling, and the ghost stands at the door as well, official trouble and illness are to be feared. Its own note says that 'at the door' means the ghost is on the third or fourth line."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [463, 463],
+          "zh": ["身居世上欲行游，", "鬼更当门官病忌，"],
+          "yi": ["卦身落在世爻上，想出门远行，", "鬼又正好当门，官司、疾病都要忌，"],
+          "en": ["with the Body on the Self line, wishing to go travelling,", "and the ghost stands at the door as well: official trouble and illness are to be feared,"] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [463, 463],
+          "zh": ["鬼在第三四爻是也。"],
+          "yi": ["鬼在第三、四爻就是。"],
+          "en": ["The ghost is on the third or fourth line."] }
+      ],
+      "note": {
+        "yi": "「官病忌」的「官」和「病」分开读：官司（或官事）和疾病，都是要忌的。这一联在断易天机里也有（第 502 行），那里的括号是今人的注。自注后面还讲了怎么找「身」（子午世身在初、丑未在二、寅申在三、卯酉在四、辰戌在五、巳亥在六）和另一种只取驿马的断法，那是找卦身的办法，不管病，这里不收。",
+        "en": "The 'official' and 'illness' of 'official trouble and illness are to be feared' are read separately: lawsuits (or official affairs) and illness are both to be feared. This couplet is also in the Duanyi Tianji (line 502), where the brackets are the modern commentator's notes. After this the note goes on to explain how to find the 'Body' (Zi and Wu: Body on the first line, Chou and Wei the second, Yin and Shen the third, Mao and You the fourth, Chen and Xu the fifth, Si and Hai the sixth) and another way of judging by the Post Horse alone; those are ways of finding the Body, have nothing to do with illness, and are not taken here."
+      },
+      "see": ["LY.ILL.BSYG.08", "LY.ILL.BSYG.11"]
+    },
+    {
+      "id": "LY.ILL.BSYG.08",
+      "topic": "病因",
+      "chapter": "六神门·推占来情休旺吉凶要决章",
+      "chapter_en": "The Six Spirits: Essential Verses on Reading the Purpose of the Asker and Strength and Weakness",
+      "title": "推占来情·胎没怀胎犯鬼神：值胎、没二卦多是占孕病，鬼神为祟，或逃窜、失财；囚死之卦必占官司囚系、并犯疾厄及亲戚丧亡",
+      "rule": {
+        "yi": "推占来情的歌说：胎、没两个卦（春天巽、离，夏天坤、兑，秋天乾、坎，冬天艮、震）出现，多半是占怀孕和病，是鬼神作祟，或者逃走、或者失财；凡是囚、死的卦，一定是占官司囚禁的事，并且犯到疾病灾厄和亲戚的丧亡。",
+        "en": "The verses on reading the purpose of the asker say: when the two hexagrams Embryo and Sunk appear (in spring Xun and Li, in summer Kun and Dui, in autumn Qian and Kan, in winter Gen and Zhen), it is mostly a divination of pregnancy or illness, with ghosts and spirits afflicting, or flight, or loss of wealth; a hexagram in the trapped or dead state is surely a divination of lawsuits and imprisonment, and runs into illness, calamity and the death of relatives."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [464, 464],
+          "zh": ["胎没怀胎犯鬼神，", "阴私逃避失财人。"],
+          "yi": ["胎、没两卦，怀胎的触犯鬼神，", "有隐私、逃避、失财的人。"],
+          "en": ["Embryo and Sunk: the pregnant offend ghosts and spirits,", "there are secrets, flight, a person who loses wealth."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [464, 464],
+          "zh": ["胎没二卦，春巽离，夏坤兑，秋乾坎，冬艮震。", "值者多是占孕病，", "鬼神为祟，", "或逃窜，", "或失财。", "凡囚死之卦，", "必占官司囚系事，", "并犯疾厄及亲戚丧亡。"],
+          "yi": ["胎、没两个卦：春天是巽、离，夏天是坤、兑，秋天是乾、坎，冬天是艮、震。", "遇到的，多半是占怀孕和病，", "是鬼神作祟，", "或者逃走，", "或者失财。", "凡是囚、死的卦，", "一定是占官司、囚禁的事，", "并且犯到疾病灾厄和亲戚的丧亡。"],
+          "en": ["The two hexagrams Embryo and Sunk: in spring Xun and Li, in summer Kun and Dui, in autumn Qian and Kan, in winter Gen and Zhen.", "Those who meet them are mostly divining pregnancy or illness,", "with ghosts and spirits afflicting,", "or flight,", "or loss of wealth.", "A hexagram in the trapped or dead state", "is surely a divination of lawsuits and imprisonment,", "and runs into illness, calamity and the death of relatives."] }
+      ],
+      "note": {
+        "yi": "「胎」「没」是八卦按季节排的旺相休囚的几个状态（这部书前面的八卦旺废表里有「旺相胎没死休囚废」），这里的「胎没二卦」是各季处在胎、没状态的两个卦：春是巽、离，夏是坤、兑，秋是乾、坎，冬是艮、震。「囚死之卦」是处在囚、死状态的卦。「疾厄」是疾病灾厄。「怀胎」译作「the pregnant」，书里没有说是谁的怀胎，按字面。",
+        "en": "'Embryo' and 'Sunk' are two of the states of the strength cycle of the eight trigrams by season (the table of the strength and weakness of the eight trigrams earlier in this book has 'thriving, strong, embryo, sunk, dead, resting, trapped, abandoned'); here 'the two hexagrams Embryo and Sunk' are the two trigrams that are in the embryo or sunk state in each season: Xun and Li in spring, Kun and Dui in summer, Qian and Kan in autumn, Gen and Zhen in winter. 'A hexagram in the trapped or dead state' is a trigram in those states. 'Illness and calamity' is the pair illness and misfortune. 'The pregnant' translates the word 'carrying an embryo', and the book does not say whose pregnancy, so it is literal."
+      },
+      "see": ["LY.ILL.BSYG.07", "LY.ILL.BSYG.11", "LY.ILL.BSQS.18"]
+    },
+    {
+      "id": "LY.ILL.BSYG.09",
+      "topic": "他人病",
+      "chapter": "六神门·推占来情休旺吉凶要决章",
+      "chapter_en": "The Six Spirits: Essential Verses on Reading the Purpose of the Asker and Strength and Weakness",
+      "title": "推占来情·身在财乡欲觅财，亦忧父母及妻灾：财动忧父母、父母动忧子孙、子孙动忧官事、官鬼动忧兄弟、兄弟动忧失财及妻妾；空亡带杀主丧亡",
+      "rule": {
+        "yi": "推占来情的歌说：卦身在财的位置上、想求财，也要担心父母和妻子的灾，变进空亡奴婢会逃，要知道生死，占的是新来的事。自注说：财爻持世，或在别的爻上动，主妻妾有灾、要担心父母；落了空亡又带杀，主有丧亡的事；一串担忧是：财爻动担心父母，父母爻动担心子孙，子孙爻动担心官事，官鬼爻动担心兄弟，兄弟爻动担心失财和妻妾，这是取五行相克的道理。",
+        "en": "The verses on reading the purpose of the asker say: with the Body at the place of Wealth, wishing to seek wealth, one must also worry for the parents and for the wife's calamity; if it changes into Void, the servants run off; to know life and death, it is a divination of what has newly come. Its own note says: when the Wealth line holds the Self, or moves on another line, it means calamity for wife and concubine and worry for the parents; if it falls Void and carries a killing, it means a death; and the chain of worries is: when the Wealth line moves, worry for the Resource; when the Resource line moves, worry for Output; when the Output line moves, worry for official affairs; when the Pressure line moves, worry for Peer; when the Peer line moves, worry for loss of wealth and for wife and concubine; this takes the sense of control among the five phases."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [466, 466],
+          "zh": ["身在财乡欲觅财，", "亦忧父母及妻灾，", "变入空亡奴婢走，", "定知生死占新来。"],
+          "yi": ["卦身在财的位置上，想求财，", "也要担心父母和妻子的灾，", "变进空亡，奴婢会逃走，", "要确定知道生死，占的是新来的事。"],
+          "en": ["With the Body at the place of Wealth, wishing to seek wealth,", "one must also worry for the Resource (the parents) and the wife's calamity;", "if it changes into Void, the servants run off;", "to know life and death for certain, it is a divination of what has newly come."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [466, 466],
+          "zh": ["财爻持世，或在他爻动，主妻妾灾及忧父母。", "如空亡带杀，主丧亡事。", "凡财爻动忧父母，", "父母爻动忧子孙，", "子孙爻动忧官事，", "官鬼爻动忧兄弟，", "兄弟爻动忧失财及妻妾。", "盖取五行相克之义。"],
+          "yi": ["财爻持世，或者在别的爻上动，主妻妾有灾，并要担心父母。", "如果落了空亡又带杀，主有丧亡的事。", "凡是财爻动，担心父母；", "父母爻动，担心子孙；", "子孙爻动，担心官事；", "官鬼爻动，担心兄弟；", "兄弟爻动，担心失财和妻妾。", "这是取五行相克的道理。"],
+          "en": ["When the Wealth line holds the Self, or moves on another line, it means calamity for wife and concubine and worry for the Resource (the parents).", "If it falls Void and carries a killing, it means a death.", "When the Wealth line moves, worry for the Resource (the parents);", "when the Resource line moves, worry for Output (the children);", "when the Output line moves, worry for official affairs;", "when the Pressure line moves, worry for Peer (the brothers);", "when the Peer line moves, worry for loss of wealth and for wife and concubine.", "This takes the sense of control among the five phases."] }
+      ],
+      "note": {
+        "yi": "这一条讲的是六亲发动时要担心谁，没有一个字说「病」，只说「忧」和「灾」；收在疾病域，是因为占病时代人占亲人（儿占父母、夫占妻）要用这套相克去看谁受累，而且歌里有「定知生死」一句。「父母爻动忧子孙」一类的串和 LY.ILL.BSYG.02 的几条自注一致，这里更完整。「忧官事」的「官事」是官司公事，不是官鬼。「奴婢走」是奴婢逃走。「占新来」的「新来」是新近来的事，按字面译。",
+        "en": "This entry is about whom to worry for when a relation line moves, and does not say 'illness' in a single word, only 'worry' and 'calamity'; it is taken in the illness domain because in divining for a relative (a son for a parent, a husband for a wife) this chain of control is used to see who is burdened, and because the song has the phrase 'to know life and death for certain'. The chain 'when the Resource line moves, worry for Output' agrees with the notes of LY.ILL.BSYG.02, and is fuller here. The 'official affairs' of 'worry for official affairs' are lawsuits and public business and not the Pressure line. 'The servants run off' is servants fleeing. The 'newly come' of 'divining what has newly come' is what has recently arrived, and is literal."
+      },
+      "see": ["LY.ILL.BSYG.02", "LY.ILL.BSYG.10", "LY.ILL.BSQS.06", "LY.ILL.DYTJ.40"]
+    },
+    {
+      "id": "LY.ILL.BSYG.10",
+      "topic": "生死",
+      "chapter": "六神门·推占来情休旺吉凶要决章",
+      "chapter_en": "The Six Spirits: Essential Verses on Reading the Purpose of the Asker and Strength and Weakness",
+      "title": "推占来情·世应日月破并刑，官灾盗贼死亡惊：世应居月破月刑、又来刑本日，定有官司盗贼死亡惊恐；洞林曰世应三刑并杀阴，十死一生",
+      "rule": {
+        "yi": "推占来情的歌说：世、应碰上日、月的破和刑，有官灾、盗贼、死亡、惊恐；如果不是和人争讼的事，就有死亡、盗贼和哭泣的声音。自注说：凡是世、应落在月破、月刑上、又来刑到本日的，一定有官司、盗贼、死亡、惊恐；再看有没有刑杀。《洞林》说，世应三刑又并着杀阴，是十死一生。",
+        "en": "The verses on reading the purpose of the asker say: when the Self and the Other meet the break and punishment of the Day and Month, there is official calamity, thieves, death and fright; if it is not a matter of quarrelling with others, there are death, thieves and the sound of weeping. Its own note says: whenever the Self and Other sit in the Month-break or Month-punishment and also come to punish the day itself, there are surely lawsuits, thieves, death and fright; then look also for punishment and killing. The Dongling says: when the Self and Other meet the three punishments together with the Yin Killing, it is ten deaths to one life."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [470, 470],
+          "zh": ["世应日月破并刑，", "官灾盗贼死亡惊，", "若不人与相争事，", "却有亡贼哭泣声。"],
+          "yi": ["世、应碰上日破、月破和刑，", "有官灾、盗贼、死亡、惊恐；", "如果不是和人争讼的事，", "就有死亡、盗贼、哭泣的声音。"],
+          "en": ["When the Self and Other meet the Day-break, the Month-break and punishment,", "there are official calamity, thieves, death and fright;", "if it is not a matter of quarrelling with others,", "there are death, thieves and the sound of weeping."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [470, 470],
+          "zh": ["凡世应居月破月刑，来刑本日者，定有官司、盗贼、死亡、惊恐，", "故也。", "或公讼喧争事，", "或失财、孝服、悲泣声。", "更看有无刑杀，", "洞林曰：", "世应三刑并杀阴，", "十死一生也。"],
+          "yi": ["凡是世、应落在月破、月刑上，又来刑到本日的，一定有官司、盗贼、死亡、惊恐，", "就是这个缘故。", "或者是打官司、喧闹争吵的事，", "或者是失财、孝服、悲哭的声音。", "还要看有没有刑和杀，", "《洞林》上说：", "世、应遇三刑、又并着杀阴，", "是十死一生。"],
+          "en": ["Whenever the Self and Other sit in the Month-break or Month-punishment and also come to punish the day itself, there are surely lawsuits, thieves, death and fright,", "for this reason.", "or matters of public litigation and noisy dispute,", "or loss of wealth, mourning dress, the sound of grief.", "Look further for punishment and killing.", "The Dongling says:", "when the Self and Other meet the three punishments together with the Yin Killing,", "it is ten deaths to one life."] }
+      ],
+      "note": {
+        "yi": "这一联讲的是世、应碰到凶的时候会有什么事，死亡只是其中一项，并不专指病；收在疾病域是因为它给了「十死一生」这个最重的断语，而这个断语在占病里最常被引。「洞林曰」引的是《洞林》（书名，书里没有说是哪个人的《洞林》）；「杀阴」大概就是前面（第 437 行自注）按月排的杀阴（正午、二巳、三辰……逐月下），这里书里没有指明。「月刑」是和月建相刑的地支。「亡贼哭泣声」的「亡贼」读作「死亡、盗贼」。「若不人与相争事」的「人与」是别人，书里字序如此，按字面。",
+        "en": "This couplet is about what happens when the Self and Other meet ill omens, and death is only one item among them, not particular to illness; it is taken in the illness domain because it gives the heaviest verdict 'ten deaths to one life', which is most often quoted in divining illness. 'The Dongling says' quotes the Dongling (a book title; the book does not say whose Dongling); the 'Yin Killing' is probably the Yin Killing set by month spoken of earlier (the note at line 437: Wu in the first month, Si in the second, Chen in the third, going down by months), which the book does not specify here. 'Month-punishment' is the branch that punishes the Month branch. The 'death and thieves' of 'the sound of death and thieves and weeping' is read as 'death, thieves'. The 'person with' of 'if it is not a matter of quarrelling with others' is 'others', in the character order of the book, and is literal."
+      },
+      "see": ["LY.ILL.BSYG.11", "LY.ILL.BSQS.36", "LY.ILL.TXF.06"]
+    },
+    {
+      "id": "LY.ILL.BSYG.11",
+      "topic": "病因",
+      "chapter": "六神门·推占来情休旺吉凶要决章",
+      "chapter_en": "The Six Spirits: Essential Verses on Reading the Purpose of the Asker and Strength and Weakness",
+      "title": "推占来情·应来克世人谋己，世动克应己谋人：克害之爻旺相带官鬼官符是公讼；克害之爻休囚带杀、死符，病即主病",
+      "rule": {
+        "yi": "推占来情的歌说：应来克世，是别人谋我；世动克应，是我谋别人；旺相又生着官，会成阻碍；休囚又带着杀、鬼，就是互相侵犯。自注说：彼此相克相害，也要看爻的旺衰；克害的爻旺相、又带官鬼官符，是官司；克害的爻休囚、又带着杀和死符，病就是主病，也就是这件事主的是病。",
+        "en": "The verses on reading the purpose of the asker say: when the Other comes to control the Self, others are scheming against me; when the Self moves to control the Other, I am scheming against others; if strong and generating officials, it makes obstruction; if resting or trapped and carrying a killing and a ghost, they encroach on each other. Its own note says: where each controls and harms the other, one must also look at whether the line is strong or weak; if the line that controls and harms is thriving and strong and carries Pressure or the Official Tally, it is a lawsuit; if the line that controls and harms is resting or trapped and carries killings and the Death Tally, the illness is the main matter, that is, what it signals is illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "大易断例卜筮元龟目", "range": [471, 471],
+          "zh": ["应来克世人谋己，", "世动克应己谋人，", "旺相与生官作碍，", "休囚带杀鬼相侵。"],
+          "yi": ["应来克世，是别人谋我，", "世动克应，是我谋别人，", "旺相、又生着官，会成阻碍，", "休囚、又带着杀和鬼，是互相侵犯。"],
+          "en": ["when the Other comes to control the Self, others are scheming against me,", "when the Self moves to control the Other, I am scheming against others,", "if strong and generating officials, it makes obstruction,", "if resting or trapped and carrying a killing and a ghost, they encroach on each other."] },
+        { "by": "元龟目自注", "book": "大易断例卜筮元龟目", "range": [471, 471],
+          "zh": ["所言相克者，即相克相害也。", "又彼此相克害，亦当视爻休旺。", "如克害旺相，而带官鬼官符者，即公讼也。", "如克害之爻休囚，带杀诸死符，病即主病也。"],
+          "yi": ["这里说的相克，就是相克、相害。", "又彼此相克相害，也要看爻是休囚还是旺相。", "如果克害的是旺相的，又带着官鬼、官符，就是官司。", "如果克害的爻休囚，又带着杀和死符，病就是主病了。"],
+          "en": ["What is called control here is control and harm.", "Where each controls and harms the other, one must also look at whether the line is resting or strong.", "If what controls and harms is thriving and strong and carries Pressure or the Official Tally, it is a lawsuit.", "If the line that controls and harms is resting or trapped and carries killings and the Death Tally, the illness is the main matter."] }
+      ],
+      "note": {
+        "yi": "「病即主病也」读作：克害的爻休囚、又带杀和死符的时候，这件事主的就是病。「旺相与生官作碍」的「官」书里没有说是官鬼还是官司，按字面译成「officials」。「应来克世人谋己」一联前半讲的是应克世、世克应，也是看「谁在谋谁」，后半才讲旺衰带杀，所以收一联四句，没有只取讲病的一句。",
+        "en": "'The illness is the main matter' is read as: when the line that controls and harms is resting or trapped and carries killings and the Death Tally, what the matter signals is illness. The 'official' of 'if strong and generating officials' is not said in the book to be Pressure or a lawsuit, and is rendered literally as 'officials'. The first half of the couplet 'when the Other comes to control the Self, others scheme against me' is about the Other controlling the Self and the Self controlling the Other, that is, who is scheming against whom, and only the second half about strength and killings, so the four lines of the couplet are taken and not only the line on illness."
+      },
+      "see": ["LY.ILL.BSYG.07", "LY.ILL.BSYG.08", "LY.ILL.BSYG.10", "LY.ILL.HJC.109"]
+    }
+  ]
+}

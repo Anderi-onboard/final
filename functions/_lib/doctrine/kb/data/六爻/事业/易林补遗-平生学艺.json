@@ -1,0 +1,148 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "平生学艺章第二十三",
+  "chapter_en": "Chapter 23: Learning a craft or art for one's whole life",
+  "ranges": {"易林补遗": [675, 691]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.140",
+      "topic": "求职",
+      "chapter": "平生学艺章第二十三",
+      "chapter_en": "Chapter 23: Learning a craft or art for one's whole life",
+      "title": "平生学艺总纲：以妻财为主、世应为凭；业无大小贤愚岂不从师，事有败成去就还须问卜；凡习三教之流师同伯叔，椿萱旺相法必训详，逢旺相或来合世生身者必获全传；习诸般技艺先观兄弟次看应爻，此二象若一空亡便无承受",
+      "rule": {
+        "yi": "学艺（学一门手艺、行业），以妻财为主，以世爻、应爻为凭据。行业没有大小、贤愚之分，哪能不拜师；事情有败有成、有去有留，还须占卜。凡是学三教一类的，师父如同伯叔：如果椿萱（父母爻）旺相，教法必定讲解详细；如果逢旺相，或者来合世、生身，必定得到全传。学各种技艺，先看兄弟爻，再看应爻，这两个象如果有一个空亡，就没有所承受。",
+        "en": "In learning a craft or art, take Wealth as the chief and the Self and the Other as the ground. No trade is great or small, wise or foolish, yet how can one not follow a teacher; matters have failure and success, leaving and staying, and one must still consult the oracle. In learning among the Three Teachings, the teacher is like an uncle: if Resource, the parents, is thriving, the method will surely be taught in detail; if it meets thriving, or comes to combine with the Self or generate the Body, one will surely receive the whole transmission. In learning the various crafts, look first at Peer and then at the Other line; if either of these two images is Void, there is nothing to be received."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [677, 677],
+          "zh": ["以妻财为主，世应为凭。"],
+          "yi": ["以妻财为主要看的，以世爻、应爻为凭据。"],
+          "en": ["Take Wealth as the chief to be looked at, and the Self and the Other as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [678, 678],
+          "zh": ["业无大小贤愚，岂不从师；", "事有败成去就，还须问卜。"],
+          "yi": ["行业没有大小、贤愚之分，哪能不拜师；", "事情有败有成、有去有留，还须占卜。"],
+          "en": ["No trade is great or small, wise or foolish, yet how can one not follow a teacher;", "matters have failure and success, leaving and staying, and one must still consult the oracle."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [679, 679],
+          "zh": ["凡习三教之流师同伯叔，如得椿萱旺相，法必训详父田，如逢旺相或来合世生身者，必获全传。", "或习诸般技艺，先观兄弟次看应爻，此二象若一空亡便无承受。"],
+          "yi": ["凡是学三教一类的，师父如同伯叔；如果椿萱（父母爻）旺相，教法必定讲解详细；如果逢旺相，或者来合世、生身，必定得到全传。", "或者学各种技艺，先看兄弟爻，再看应爻，这两个象如果有一个空亡，就没有所承受。"],
+          "en": ["In learning among the Three Teachings the teacher is like an uncle; if Resource, the parents, is thriving, the method will surely be taught in detail; if it meets thriving, or comes to combine with the Self or generate the Body, one will surely receive the whole transmission.", "In learning the various crafts, look first at Peer and then at the Other line; if either of these two images is Void, there is nothing to be received."] }
+      ],
+      "note": {
+        "yi": "「三教之流」是儒、释、道三教的学问和行当。「椿萱」是父母。「法必训详父田」文字有误，「父田」不通，这里按「法必训详」译，不译「父田」。「全传」是完整的传授。这一章问的是终身学一门手艺、行业（「平生学艺」），所以要拜师，取妻财为主；后面的五经定肄、求师训迪讲的是读书应考，是另一件事。",
+        "en": "'Sanjiao zhi liu' is the learning and callings of the three teachings of Confucians, Buddhists and Daoists. 'Chunxuan' is the parents. 'Fa bi xunxiang futian' is corrupt in its characters and 'futian' makes no sense, so it is translated as 'the method will surely be taught in detail' and 'futian' is left untranslated. 'Quanchuan' is the complete transmission. This chapter asks about learning a craft or trade for one's whole life, so one must follow a teacher and Wealth is taken as the chief; the following chapters on settling on one of the five Classics and on seeking a teacher to instruct are about studying for examinations, which is another matter."
+      },
+      "see": ["LY.CAREER.EL.141", "LY.CAREER.EL.144"]
+    },
+    {
+      "id": "LY.CAREER.EL.141",
+      "topic": "取象",
+      "chapter": "平生学艺章第二十三",
+      "chapter_en": "Chapter 23: Learning a craft or art for one's whole life",
+      "title": "平生学艺：金银铜钱之工值乾兑酉申而最吉，竹木芦藤之匠得震巽寅卯以为佳，造贩鱼盐酒醋利入坎宫，裁成袖绢绫罗喜临离象，采石樵山须见艮、土工泥作要逢坤",
+      "rule": {
+        "yi": "做金、银、铜、钱的工匠，遇到乾、兑、酉、申最吉；做竹、木、芦、藤的匠人，得到震、巽、寅、卯为好；制造、贩卖鱼、盐、酒、醋，利益进入坎宫；裁制衣袖、绢帛、绫罗的，喜欢遇到离象；采石、上山砍柴，须见艮；做土工、泥作，要逢坤。",
+        "en": "For metalworkers in gold, silver, copper and coin, meeting Qian, Dui, You and Shen is the most auspicious; for craftsmen in bamboo, wood, reed and rattan, getting Zhen, Xun, Yin and Mao is good; in making and selling fish, salt, wine and vinegar, profit enters the Kan palace; for cutting garments and silks, one is glad to meet the Li image; for quarrying stone and cutting wood on the mountain one must see Gen; for earthwork and plastering one must meet Kun."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [680, 680],
+          "zh": ["金银铜钱之工，值乾兑酉申而最吉。", "竹木芦藤之匠，得震巽寅卯以为佳。", "造败鱼盐酒醋，利入坎宫。", "裁成袖绢绫罗，喜临离象，", "采石樵山须见艮，土工泥作要逢坤！"],
+          "yi": ["做金、银、铜、钱的工匠，遇到乾、兑、酉、申最吉；", "做竹、木、芦、藤的匠人，得到震、巽、寅、卯为好；", "制造、贩卖鱼、盐、酒、醋，利益进入坎宫；", "裁制衣袖、绢帛、绫罗的，喜欢遇到离象；", "采石、上山砍柴，须见艮；做土工、泥作，要逢坤！"],
+          "en": ["For metalworkers in gold, silver, copper and coin, meeting Qian, Dui, You and Shen is the most auspicious;", "for craftsmen in bamboo, wood, reed and rattan, getting Zhen, Xun, Yin and Mao is good;", "in making and selling fish, salt, wine and vinegar, profit enters the Kan palace;", "for cutting garments and silks, one is glad to meet the Li image;", "for quarrying stone and cutting wood on the mountain one must see Gen; for earthwork and plastering one must meet Kun!"] }
+      ],
+      "note": {
+        "yi": "这一联把行业对到卦宫：金属工匠对乾、兑和酉、申，竹木匠对震、巽和寅、卯，鱼盐酒醋对坎，裁缝绫罗对离，采石樵山对艮，土工泥作对坤。书里没有说缘故：金、木、水、土几项是按五行对的，裁缝对离书里没有解释。「造败鱼盐酒醋」的「败」疑是「贩」，译作「制造贩卖」；「樵山」是上山砍柴。这一联后面没有解说。",
+        "en": "This couplet matches trades to the palaces: metalworkers to Qian and Dui and You and Shen, bamboo and wood craftsmen to Zhen and Xun and Yin and Mao, fish, salt, wine and vinegar to Kan, tailoring and silks to Li, quarrying and woodcutting to Gen, earthwork and plastering to Kun. The book does not give the reason: the metal, wood, water and earth items go by the five elements, and the book does not explain tailoring going with Li. The 'bai' of 'zao bai yu yan jiu cu' is presumably 'fan', to trade, and it is translated 'making and selling'; 'qiaoshan' is going up the mountain to cut wood. No explanation follows this couplet."
+      },
+      "see": ["LY.CAREER.EL.140", "LY.CAREER.EL.142"]
+    },
+    {
+      "id": "LY.CAREER.EL.142",
+      "topic": "求职",
+      "chapter": "平生学艺章第二十三",
+      "chapter_en": "Chapter 23: Learning a craft or art for one's whole life",
+      "title": "平生学艺：将本营生子动财明终发达、空拳技艺财摇鬼旺必兴家，身佐官僚世怕鬼爻冲克、名开行次身宜福德生扶；凡人习业各有所分，将本者财为主象子作元神，空拳者官是用爻财为助主，若在官人役虽宜官鬼兴隆冲克世身大忌，牙行生理最要子孙旺则广招千里空则门可罗雀，卦中虽有子孙应若逢空亦无客至",
+      "rule": {
+        "yi": "靠本钱做生意谋生的，子孙发动、财爻分明，终究发达；靠空手手艺谋生的，财爻发动、官鬼旺相，必定兴家；给官僚当助手的，世爻怕官鬼爻冲克；在行会里开名头的，身爻适宜福德生扶。凡人学业各有各的分别：靠本钱的，财是主象，子孙是元神；空手的，官是用爻，财爻帮助主象；如果是在官府当差役的，虽然适宜官鬼兴旺，但官鬼冲克世身是大忌；牙行生意，最要子孙旺：旺就能广招千里的客人，空就门可罗雀；卦中虽然有子孙，应爻如果逢空，也没有客人上门。",
+        "en": "Those who live by trade with capital will in the end prosper if Output moves and Wealth is clear; those who live by bare-handed skill will surely make the household prosper if Wealth sways and Pressure is thriving; for one who serves as an assistant to officials, the Self fears the Pressure line clashing with or controlling it; for one who opens his name in a trade guild, the Body should be generated and supported by Output, the fortune virtue. In learning a business each person has his own division: for those with capital, Wealth is the chief image and Output the Support; for those with bare hands, the star of office is the Subject line and Wealth aids the chief image; if one serves as a runner in an office, though it is fitting for Pressure to flourish, Pressure clashing with or controlling the Self or the Body is the great taboo; in the brokerage trade, Output thriving is what matters most: if thriving one draws guests from a thousand miles, and if Void the gate is empty enough to net sparrows; even if there is Output in the hexagram, if the Other meets Void no customer comes."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [681, 681],
+          "zh": ["将本营生，子动财明终发达，", "空拳技艺，财摇鬼旺必兴家。", "身佐官僚，世怕鬼爻冲克。", "名开行次，身宜福德生扶。"],
+          "yi": ["靠本钱做生意谋生的，子孙发动、财爻分明，终究发达；", "靠空手手艺谋生的，财爻发动、官鬼旺相，必定兴家；", "给官僚当助手的，世爻怕官鬼爻冲克；", "在行会里开名头的，身爻适宜福德生扶。"],
+          "en": ["Those who live by trade with capital will in the end prosper if Output moves and Wealth is clear;", "those who live by bare-handed skill will surely make the household prosper if Wealth sways and Pressure is thriving;", "for one who serves as an assistant to officials, the Self fears the Pressure line clashing with or controlling it;", "for one who opens his name in a trade guild, the Body should be generated and supported by Output, the fortune virtue."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [682, 682],
+          "zh": ["凡人习业，各有所分，将本者，财为主象，子作元神。", "空拳者，官是用爻，财为助主，郑在官人役，虽宜官鬼兴隆，冲克世身大忌。", "牙行生理，最要子孙旺则广招千里，空则门纲雀罹。", "卦中虽有子孙，应若逢空，亦无客至。"],
+          "yi": ["凡人学业，各有各的分别：靠本钱的，财是主象，子孙是元神。", "空手的，官是用爻，财爻帮助主象；如果是在官府当差役的，虽然适宜官鬼兴旺，但官鬼冲克世身是大忌。", "牙行生意，最要子孙旺：旺就能广招千里的客人，空就门可罗雀。", "卦中虽然有子孙，应爻如果逢空，也没有客人上门。"],
+          "en": ["In learning a business each person has his own division: for those with capital, Wealth is the chief image and Output is the Support.", "For those with bare hands, the star of office is the Subject line and Wealth aids the chief image; if one serves as a runner in an office, though it is fitting for Pressure to flourish, Pressure clashing with or controlling the Self or the Body is the great taboo.", "In the brokerage trade, Output thriving is what matters most: if thriving one draws guests from a thousand miles, and if Void the gate is empty enough to net sparrows.", "Even if there is Output in the hexagram, if the Other meets Void no customer comes."] }
+      ],
+      "note": {
+        "yi": "「将本」是拿本钱做生意，「空拳」是空手（靠手艺）。「身佐官僚」是在官员身边做佐助；「名开行次」是在行会里挂名开业；「牙行」是替买卖双方说合、抽佣的行当（经纪）。「郑在官人役」的「郑」疑是「若」，「门纲雀罹」疑是「门网雀罗」，即门可罗雀，按文意译。「元神」是生用神的爻（见术语表）：这里财是主象，生财的子孙是元神。",
+        "en": "'Jiang ben' is doing business with capital, and 'kongquan' is bare-handed (living by a skill). 'Shen zuo guanliao' is serving as an assistant beside officials; 'ming kai hangci' is hanging out one's name and opening business in a trade guild; 'yahang' is the brokerage trade of bringing buyer and seller together for a commission. The 'zheng' of 'zheng zai guan ren yi' is presumably 'ruo', if, and 'men gang que li' is presumably 'men wang que luo', a gate where sparrows can be netted, that is a deserted door, translated by the sense. 'Yuanshen', the Support, is the line that generates the Subject (see the glossary): here Wealth is the chief image and Output, which generates Wealth, is the Support."
+      },
+      "see": ["LY.CAREER.EL.141", "LY.CAREER.EL.143"]
+    },
+    {
+      "id": "LY.CAREER.EL.143",
+      "topic": "取象",
+      "chapter": "平生学艺章第二十三",
+      "chapter_en": "Chapter 23: Learning a craft or art for one's whole life",
+      "title": "平生学艺：凡习经书父须生旺、若求官职鬼莫空无、祝巫大利官兴僧道惟宜子旺；习儒业者父母为用，求功名者官鬼为用，祝巫迎神召将照马关亡之类亦用官爻，僧道之流子孙为用，凡用爻皆宜旺相各忌空亡；诸般道术一应生涯皆把财为衣禄养命之源兼推子乃福神发家之主，诸般艺业皆宜财神兴隆财若空亡利资必绝望",
+      "rule": {
+        "yi": "学经书，父爻必须生旺；求官职，官鬼不可空无；祝巫大利官爻兴旺，僧道只适宜子孙旺。学儒业的，父母爻是用爻；求功名的，官鬼是用爻；祝巫一类，迎神召将、照马、关亡之类，也用官爻；只有僧道一流，以子孙为用。凡是用爻都适宜旺相，各自忌空亡：旺就事事有成，空就样样不成。各种道术、一切生计，都把财当作衣食俸禄、养命的源头，并且要推子孙是福神、发家的主；各种艺业，都适宜财神（财爻）兴隆；财如果空亡，利润资财一定没有指望了。",
+        "en": "In studying the classics, Resource must be thriving; in seeking office, Pressure must not be empty; for diviner-priests and shamans it is greatly favourable for the star of office to flourish, and for monks and Daoists only Output thriving is fitting. For the scholarly calling, Resource is the Subject line; for those seeking fame and office, Pressure is the Subject; for shamans, those who greet gods and summon generals, 'look at the horse' and 'close the gate on the dead' and the like, the Pressure line is also used; only for the monks and Daoists is Output the Subject. Every Subject line should be thriving and each fears Void: if thriving everything succeeds, and if Void nothing is accomplished. For every kind of Daoist art and every livelihood, Wealth is taken as the source of food, clothing, pay and the sustaining of life, and Output must also be reckoned as the fortune spirit and the master of making a household prosper; in every kind of art and trade it is fitting for Wealth to flourish, and if Wealth is Void, profit and funds are surely without hope."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [683, 683],
+          "zh": ["凡习经书，父须生旺。", "若求官职，鬼莫空无。", "祝巫大利官兴，僧道惟宜子旺。"],
+          "yi": ["学经书，父爻必须生旺；", "求官职，官鬼不可空无；", "祝巫大利官爻兴旺，僧道只适宜子孙旺。"],
+          "en": ["In studying the classics, Resource must be thriving;", "in seeking office, Pressure must not be empty;", "for diviner-priests and shamans it is greatly favourable for the star of office to flourish, and for monks and Daoists only Output thriving is fitting."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [684, 685],
+          "zh": ["习儒业者，父母为用。", "求功名者，官鬼为用。", "祝巫者，迎神召将照马关亡之类，亦用官爻。", "惟僧道之流，子孙为用。", "凡用爻皆宜值旺相，各忌空亡，旺则事事有成，空则般般不就。", "诸般道术一应生涯，皆把财为衣禄养命之源兼推子乃福神发家之主。"],
+          "yi": ["学儒业的，父母爻是用爻。", "求功名的，官鬼是用爻。", "祝巫一类，迎神召将、照马、关亡之类，也用官爻。", "只有僧道一流，以子孙为用。", "凡是用爻都适宜旺相，各自忌空亡：旺就事事有成，空就样样不成。", "各种道术、一切生计，都把财当作衣食俸禄、养命的源头，并且要推子孙是福神、发家的主。"],
+          "en": ["For the scholarly calling, Resource is the Subject line.", "For those seeking fame and office, Pressure is the Subject.", "For shamans, those who greet gods and summon generals, 'look at the horse' and 'close the gate on the dead' and the like, the Pressure line is also used.", "Only for the monks and Daoists is Output the Subject.", "Every Subject line should be thriving and each fears Void: if thriving everything succeeds, and if Void nothing is accomplished.", "For every kind of Daoist art and every livelihood, Wealth is taken as the source of food, clothing, pay and the sustaining of life, and Output must also be reckoned as the fortune spirit and the master of making a household prosper."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [686, 686],
+          "zh": ["诸般艺业，皆宜财神兴隆。", "财若空亡，利资必绝望矣！"],
+          "yi": ["各种艺业，都适宜财神（财爻）兴隆。", "财如果空亡，利润资财一定没有指望了！"],
+          "en": ["In every kind of art and trade it is fitting for Wealth to flourish.", "If Wealth is Void, profit and funds are surely without hope!"] }
+      ],
+      "note": {
+        "yi": "「祝巫」是祝由、巫术一类的行当；「照马」「关亡」是民间神道里的两种法事，书里没有细说。「儒业」是读书应试的业。这一条是看行业取什么用神：儒业取父母，功名取官鬼，祝巫取官爻，僧道取子孙，其余一切生计取财。僧道取子孙与黄金策「僧道医官，岂可文书发动」（HJC.27）、增删卜易僧官医官（ZS.53）说的是同一个取法。",
+        "en": "'Zhuwu' is the callings of invocation and healing by charms and of shamanism; 'zhaoma' and 'guanwang' are two kinds of rite of the folk religion, and the book does not go into them. 'Ruye' is the calling of studying for examinations. This entry looks at what Subject each calling takes: the scholarly calling takes Resource, fame and office take Pressure, shamans take the Pressure line, monks and Daoists take Output, and every other livelihood takes Wealth. That monks and Daoists take Output is the same method as 'for monk, Daoist and medical officials, how could the document move' in the Huangjin Ce (HJC.27) and the Zengshan Buyi on monk-officials and medical officials (ZS.53)."
+      },
+      "see": ["LY.CAREER.EL.142", "LY.CAREER.EL.144", "LY.CAREER.HJC.27", "LY.CAREER.ZS.53"]
+    },
+    {
+      "id": "LY.CAREER.EL.144",
+      "topic": "成否",
+      "chapter": "平生学艺章第二十三",
+      "chapter_en": "Chapter 23: Learning a craft or art for one's whole life",
+      "title": "平生学艺：无鬼必无头无绪、游魂必游去游回，世犯旬空自有更张之意、应遭月破师无传授之心，蹇遇六冲彼我无情难习业、幸逢六合师徒相得却成功；一应徒师习业不宜卦内无官鬼，世为己应为师皆不可值旬空月破又不宜六冲，世应不空又遇六合定主师徒相得事必成功；欲择明师未知曲直当占易卦便见虚真",
+      "rule": {
+        "yi": "没有官鬼，必定没有头绪；游魂，必定游去游回。世爻犯旬空，自己有改弦更张的意思；应爻遭月破，师父没有传授的心。不幸遇到六冲，彼此无情，难以学业；幸而逢六合，师徒相得，反倒成功。凡是徒弟向师父学业，不适宜卦内没有官鬼；如果逢空，事情没有头绪；卦值游魂，往返不定；又看世爻是自己、应爻是师父，都不可值旬空、月破，又不适宜卦值六冲；世应如果不空亡，又遇到爻逢六合，一定主师徒相得、事必成功。想选择明师，不知道曲直好坏，应当占一个易卦，就能看到真假。",
+        "en": "With no Pressure there is surely no clue to the matter, and a Wandering Soul surely means going off and returning; if the Self falls on the ten-day Void one is inclined to change one's course, and if the Other meets Month-break the teacher has no heart to pass on his teaching; meeting a six-clash is unlucky, for the two have no feeling for each other and it is hard to learn the trade; luckily meeting a six-combine, master and pupil suit each other and succeed. For all pupils learning under masters, it is not fitting for the hexagram to have no Pressure line in it; if it meets Void, the matter has no clue; if the hexagram falls on a Wandering Soul, one goes back and forth and nothing is settled; look also at the Self as oneself and the Other as the teacher, neither of which may fall on the ten-day Void or Month-break, and it is also unfitting for the hexagram to be a six-clash; if the Self and the Other are not Void and the lines also meet a six-combine, master and pupil will surely suit each other and the matter will surely succeed. To choose a bright teacher when one does not know the crooked from the straight, one should divine a hexagram, and the false and true will be seen at once."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [688, 689],
+          "zh": ["无鬼必无头无绪，游魂必游去游回。", "世犯旬空，自有更张之意。", "应遭月破，师无传授之心。", "蹇遇六冲，彼我无情难习业。", "幸逢六合，师徒相得却成功。"],
+          "yi": ["没有官鬼，必定没有头绪；游魂，必定游去游回。", "世爻犯旬空，自己有改弦更张的意思；", "应爻遭月破，师父没有传授的心。", "不幸遇到六冲，彼此无情，难以学业；", "幸而逢六合，师徒相得，反倒成功。"],
+          "en": ["With no Pressure there is surely no clue to the matter, and a Wandering Soul surely means going off and returning.", "If the Self falls on the ten-day Void, one is inclined to change one's course;", "if the Other meets Month-break, the teacher has no heart to pass on his teaching.", "Meeting a six-clash is unlucky, for the two have no feeling for each other and it is hard to learn the trade;", "luckily meeting a six-combine, master and pupil suit each other and succeed."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [690, 690],
+          "zh": ["一应徒师习业，不宜卦内无官鬼。", "若逢空，事无头绪，卦值游魂，往返不定。", "又看世为己应为师，皆不可值旬空月破，又不宜卦值六冲。", "世应若不空亡，又遇爻逢六合，定主师徒相得事必成功。"],
+          "yi": ["凡是徒弟向师父学业，不适宜卦内没有官鬼。", "如果逢空，事情没有头绪；卦值游魂，往返不定。", "又看世爻是自己、应爻是师父，都不可值旬空、月破，又不适宜卦值六冲。", "世应如果不空亡，又遇到爻逢六合，一定主师徒相得、事必成功。"],
+          "en": ["For all pupils learning under masters, it is not fitting for the hexagram to have no Pressure line in it.", "If it meets Void, the matter has no clue; if the hexagram falls on a Wandering Soul, one goes back and forth and nothing is settled.", "Look also at the Self as oneself and the Other as the teacher, neither of which may fall on the ten-day Void or Month-break, and it is also unfitting for the hexagram to be a six-clash.", "If the Self and the Other are not Void and the lines also meet a six-combine, master and pupil will surely suit each other and the matter will surely succeed."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [691, 691],
+          "zh": ["欲择明师，未知曲直，当占易卦，便见虚真。"],
+          "yi": ["想选择明师，不知道曲直好坏，应当占一个易卦，就能看到真假。"],
+          "en": ["To choose a bright teacher when one does not know the crooked from the straight, one should divine a hexagram, and the false and true will be seen at once."] }
+      ],
+      "note": {
+        "yi": "「游魂」是八宫卦里每宫的第七卦（见术语表）。「更张」是改变做法。「蹇」在这里是不幸、运气艰难（与下句的「幸」相对），不是蹇卦。「徒师习业」是徒弟跟师父学业；「明师」是高明的师父。这一章后半讲的是学手艺时的师徒关系，与前面几条（EL.140 起）合起来，是学艺从选行业、取用神到选师父的整个过程。",
+        "en": "'Wandering Soul' is the seventh hexagram of each of the eight palaces (see the glossary). 'Gengzhang' is changing one's way of doing things. 'Jian' here is ill luck and a hard fortune (set against the 'luckily' of the next line) and is not the Jian hexagram. 'Tushi xiye' is a pupil learning under a master, and 'mingshi' is a brilliant teacher. The second half of this chapter speaks of the relation of master and pupil in learning a trade, and together with the earlier entries (from EL.140) it is the whole course of learning a craft, from choosing a trade and the Subject to choosing a master."
+      },
+      "see": ["LY.CAREER.EL.143"]
+    }
+  ]
+}

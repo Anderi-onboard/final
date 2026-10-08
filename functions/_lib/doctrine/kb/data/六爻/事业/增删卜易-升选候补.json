@@ -1,0 +1,298 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "增删卜易",
+  "chapter": "升选候补章、升迁何方章",
+  "chapter_en": "Chapters on promotion and on where one will be posted",
+  "ranges": {"增删卜易": [10297, 10535]},
+  "units": [
+    {
+      "id": "LY.CAREER.ZS.01",
+      "topic": "总则",
+      "chapter": "升选候补章",
+      "chapter_en": "Chapter on promotion, selection and waiting for a post",
+      "title": "升选候补·官爵荣身，须宜持世；养廉财禄，最喜生身（旺官持世，日月动爻作官星生合世爻，或世动化官生世，皆吉；财动生官得美缺，官临日月必超迁）",
+      "rule": {
+        "yi": "占升选补缺，官星要旺相、持世，妻财要来生身：旺相的官星持世，或者日月、动爻作官星来生合世爻，或者世爻发动变出官星来生世，都是吉兆；妻财发动生官星，能得到好缺；官星临在日月上，必定越级升迁。",
+        "en": "In a question about promotion or appointment the star of office should be thriving and hold the Self, and Wealth should generate the Body: a thriving star of office holding the Self, or the Day, the Month or a moving line acting as the star of office to generate or combine with the Self, or the Self moving and turning into the star of office to generate the Self, are all auspicious; Wealth moving to generate the star of office wins a fine post; the star of office on the Day or Month means promotion beyond one's rank."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10299, 10300],
+          "zh": ["官爵荣身，须宜持世；", "养廉财禄，最喜生身。", "旺官持世，及日月动爻作官星生合世爻，或世动化官生世，皆为吉兆。", "又曰：“财动生官得美缺，官临日月必超迁。”"],
+          "yi": ["官职爵位要使自身荣耀，官星应当持世；", "靠清廉养身的俸禄钱财，最喜欢来生扶自身。", "旺相的官星持世，以及日月、动爻作官星来生合世爻，或者世爻发动变出官星来生世，都是吉兆。", "又说：「财发动生官星，能得到好缺；官星临在日月上，必定越级升迁。」"],
+          "en": ["For office and rank to bring honour to oneself, the star of office should hold the Self;", "for the salary that keeps an official honest, nothing is better than that it generate the Body.", "A thriving star of office holding the Self, or the Day, the Month or a moving line acting as the star of office to generate or combine with the Self, or the Self moving and turning into the star of office to generate the Self, are all auspicious signs.", "It also says: 'When Wealth moves to generate the star of office one gets a fine post; when the star of office sits on the Day or Month one is surely promoted beyond one's rank.'"] }
+      ],
+      "see": ["LY.CAREER.ZS.02", "LY.CAREER.HJC.01", "LY.CAREER.HJC.02"]
+    },
+    {
+      "id": "LY.CAREER.ZS.02",
+      "topic": "成否",
+      "chapter": "升选候补章",
+      "chapter_en": "Chapter on promotion, selection and waiting for a post",
+      "title": "升选候补·子孙持世，休望荣取；官位破空，勿思升选（子孙持世或动于卦中，升选无期；官临空绝墓破，及动而变凶，补升尚早）",
+      "rule": {
+        "yi": "子孙持世，或者在卦中发动，升迁选官没有指望；官星落在空、绝、墓、破上，或者发动变出凶爻，补缺升迁还早得很。",
+        "en": "If Output holds the Self or moves in the hexagram, promotion and selection have no hope; if the star of office falls on Void, extinction, tomb or break, or moves and turns into a bad line, it is still early for an appointment or promotion."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10301, 10302],
+          "zh": ["子孙持世，休望荣取；", "官位破空，勿思升选。", "子孙持世，或动于卦中，升选无期；", "官临空绝墓破，及动而变凶，补升尚早。"],
+          "yi": ["子孙持世，别指望得到荣耀的官职；", "官位被破、落空，不要想升迁选官。", "子孙持世，或者在卦中发动，升迁选官没有日期；", "官星临在空、绝、墓、破上，以及发动变出凶爻，补缺升迁还早得很。"],
+          "en": ["If Output holds the Self, do not hope for an honourable post;", "if the office position is broken or Void, do not think of promotion or selection.", "if Output holds the Self, or moves in the hexagram, promotion and selection have no date;", "if the star of office falls on Void, extinction, tomb or break, or moves and turns into a bad line, it is still early for an appointment or promotion."] }
+      ],
+      "see": ["LY.CAREER.ZS.01", "LY.CAREER.ZS.05", "LY.CAREER.HJC.03"]
+    },
+    {
+      "id": "LY.CAREER.ZS.03",
+      "topic": "成否",
+      "chapter": "升选候补章",
+      "chapter_en": "Chapter on promotion, selection and waiting for a post",
+      "title": "升选候补·雨露承恩，名中逢合（世与官星三合官局、财局，或局生世、世在局中，或官星持世与日月动爻相合，得六合卦及动变六合，皆主承恩之日；书中例：官局生应不生世，此缺不得）",
+      "rule": {
+        "yi": "世爻与官星三合成官局或财局，或者这个局生世爻，或者世爻在局中，或者官星持世、又与日月动爻相合，得到六合卦，以及发动变成六合卦的，都是得到皇恩的日子。但如果官局生的是应爻、不是世爻，这叫「出现无情」，这个缺得不到。",
+        "en": "If the Self and the star of office form a three-harmony Pressure frame or Wealth frame, or the frame generates the Self, or the Self is within the frame, or the star of office holds the Self and combines with the Day, the Month or a moving line, or one gets a Six-Combine hexagram or a hexagram that moves into Six-Combine, it is the day of receiving the ruler's favour. But if the Pressure frame generates the Other and not the Self, this is called 'appearing but without feeling', and the post cannot be had."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10303, 10304],
+          "zh": ["雨露承恩，名中逢合。", "世与官星三合官局、财局，或局生世、或世在局中，或官星持世与日月动爻相合，得逢六合卦，及动变六合者，皆主承恩之日。"],
+          "yi": ["像雨露一样承受皇恩，要在功名里逢到合。", "世爻与官星三合成官局、财局，或者这个局生世爻，或者世爻在局中，或者官星持世、与日月动爻相合，得到六合卦，以及发动变成六合卦的，都主得到皇恩的日子。"],
+          "en": ["To receive favour like rain and dew, one must meet a combination in the matter of rank.", "If the Self and the star of office form a three-harmony Pressure frame or Wealth frame, or the frame generates the Self, or the Self is within the frame, or the star of office holds the Self and combines with the Day, the Month or a moving line, or one gets a Six-Combine hexagram or a hexagram that moves into Six-Combine, all mean the day of receiving favour."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10305, 10305],
+          "zh": ["如：申月乙亥日(旬空：辰巳)，占缺得否？", "得“井之节”"],
+          "yi": ["例如：申月乙亥日（旬空：辰、巳），占这个缺能不能得到？", "得到井卦变节卦。"],
+          "en": ["For example: in the Shen month on a Yihai day (void: Chen and Si), a divination on whether he would get a vacant post;", "the hexagram was Jing changing into Jie."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10350, 10350],
+          "zh": ["断曰：内卦巳酉丑合成官局，不生世而生应，正所谓“出现无情”也，此缺不得。", "彼问：如何不得？", "余曰：官生应，如何能得？", "后果另选别人。"],
+          "yi": ["断语说：内卦巳、酉、丑合成官局，不生世爻而生应爻，正是所谓「出现无情」，这个缺得不到。", "他问：为什么得不到？", "我说：官星生的是应爻，怎么能得到？", "后来果然另选了别人。"],
+          "en": ["The judgment said: the inner trigram Si, You and Chou combines into a Pressure frame, which does not generate the Self but generates the Other, which is just what is meant by 'appearing but without feeling', and this post cannot be had.", "He asked: why can it not be had?", "I said: the star of office generates the Other, so how could he get it?", "In the end someone else was indeed chosen."] }
+      ],
+      "note": {
+        "yi": "「出现无情」书里只用在这个例子上，没有另外解释；按断语的意思，是官局出现了，却不生世、去生了应爻。",
+        "en": "The book uses 'appearing but without feeling' only in this example and does not explain it elsewhere; from the judgment, it means that the Pressure frame appears but does not generate the Self and instead generates the Other."
+      },
+      "see": ["LY.CAREER.ZS.01", "LY.CAREER.ZS.04"]
+    },
+    {
+      "id": "LY.CAREER.ZS.04",
+      "topic": "成否",
+      "chapter": "升选候补章",
+      "chapter_en": "Chapter on promotion, selection and waiting for a post",
+      "title": "升选候补·风云未际，冲上逢冲（世官不旺又得六冲，或官被日月冲，或六冲变冲，元神衰静、泄气爻摇，问升选无期；世动官化进神，升迁在即）",
+      "rule": {
+        "yi": "时机未到的征兆：世爻、官星都不旺，又得六冲卦，或者官星被日月相冲，或者六冲变六冲；元神衰弱安静，或者泄元神之气的爻发动，问升选就没有日期。反过来，世爻发动、官星变成进神，升迁就在眼前；世爻发动或变吉，或禄、马、贵人临世，或官星发动变吉、生合世爻，都可以收拾行装等着。",
+        "en": "Signs that the moment has not come: the Self and the star of office are not thriving and the hexagram is Six-Clash, or the star of office is clashed by the Day or Month, or a Six-Clash hexagram turns into Six-Clash; or the Support is weak and still, or the line that drains it moves, and then promotion has no date. The reverse: if the Self moves and the star of office turns into an Advancing line, promotion is at hand; if the Self moves, or turns auspicious, or Emolument, the Horse and a Noble sit on the Self, or the star of office moves, turns auspicious and generates or combines with the Self, one may pack one's bags and wait."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10351, 10352],
+          "zh": ["风云未际，冲上逢冲。", "世官不旺，又得六冲，或官被日月相冲，或六冲变冲，乃风云未际之时。", "元神衰静，泄气爻摇，问升选则无期。", "如官爻属木，水爻衰而不动，火爻发动是也。", "余以类推。", "世爻发动，官化进神，望荣升而在即。", "世爻发动，或动而化吉，或禄马贵人临世，及官动化吉生合世爻，皆可束装以待。"],
+          "yi": ["风云际会的时机还没到，是冲上又逢冲。", "世爻和官星都不旺，又得到六冲卦，或者官星被日月相冲，或者六冲卦变六冲卦，就是风云际会的时机还没到的时候。", "元神衰弱安静，或者泄气的爻在动，问升选就没有日期。", "比如官爻属木，水爻衰弱而不动，火爻发动，就是这种情形。", "其余的依此类推。", "世爻发动，官星变成进神，盼望的荣升就在眼前。", "世爻发动，或者发动变吉，或者禄、马、贵人临世，以及官星发动变吉、生合世爻，都可以收拾行装等着。"],
+          "en": ["The moment of wind and cloud has not yet come: a clash upon a clash.", "If the Self and the star of office are not thriving and one gets a Six-Clash hexagram, or the star of office is clashed by the Day or Month, or a Six-Clash hexagram turns into Six-Clash, it is a time when the moment of wind and cloud has not yet come.", "If the Support is weak and still, or the line that drains it is moving, then for promotion and selection there is no date.", "For example, the Pressure line is Wood, the Water line is weak and does not move, and the Fire line moves: that is the case.", "The rest follow by analogy.", "If the Self moves and the star of office turns into an Advancing line, the longed-for promotion is at hand.", "If the Self moves, or moves and turns auspicious, or Emolument, the Horse or a Noble sits on the Self, or the star of office moves, turns auspicious and generates or combines with the Self, one may pack one's bags and wait."] }
+      ],
+      "see": ["LY.CAREER.ZS.03", "LY.CAREER.ZS.05", "LY.CAREER.HJC.06"]
+    },
+    {
+      "id": "LY.CAREER.ZS.05",
+      "topic": "成否",
+      "chapter": "升选候补章",
+      "chapter_en": "Chapter on promotion, selection and waiting for a post",
+      "title": "升选候补·世官破而休望，世福空而亦升（世临月破纵官星持世亦不能升；子孙持世值旬空亦不当升，但占两三日之内者许必得，因子孙未出空、不克官；书中例三个）",
+      "rule": {
+        "yi": "世爻或官星被破就不要指望，世爻上的子孙落空却也能升。世爻落在月破上，即使官星持世也升不了，还要防别的变故；子孙持世又遇旬空，也不该升。但如果占的是两三天之内的事，可以答应一定得到，因为子孙还没有出空、没有克官星。作者占过三个人，都得了官，得官后随即死了。",
+        "en": "If the Self or the star of office is broken, give up hope; if the Self sits on an Output line that is Void, one is promoted all the same. If the Self is Month-broken, one cannot be promoted even when the star of office holds the Self, and one must guard against other changes; if Output holds the Self and meets Void, one should not be promoted either. But if the question concerns the next two or three days, one may grant that it will surely be had, since Output has not yet left the Void and does not yet control the star of office. The author divined for three men; all got office, and all died soon after getting it."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10354, 10354],
+          "zh": ["世官破而休望，世福空而亦升。", "世临月破，纵官星持世，亦不能升，而犹防他变。", "子孙持世值旬空，亦不当升。", "若占两三日之内者，许之必得，其故由子孙尚未出空，不克官也。", "余占过三人，俱皆得官，得后随死。"],
+          "yi": ["世爻和官星被破就不要指望，世爻上的福神落空却也能升。", "世爻落在月破上，即使官星持世，也不能升迁，而且还要防备别的变故。", "子孙持世而遇旬空，也不该升。", "如果占的是两三天之内的事，可以答应他一定得到，原因是子孙还没有出空，没有克官星。", "我占过三个人，都得了官，得官之后随即死了。"],
+          "en": ["If the Self and the star of office are broken, give up hope; if the Self sits on an Output line that is Void, one is promoted all the same.", "If the Self sits in Month-break, even if the star of office holds the Self one cannot be promoted, and one must still guard against other changes.", "If Output holds the Self and meets Void, one should not be promoted either.", "If the question is about the next two or three days, one may grant that he will surely get it, because Output has not yet left the Void and so does not control the star of office.", "I have divined for three men, all of whom got office and all of whom died soon after getting it."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10355, 10355],
+          "zh": ["如：申月戊寅日(旬空：申酉)，占得差否？", "得“泽天夬”"],
+          "yi": ["例如：申月戊寅日（旬空：申、酉），占能不能得到差事？", "得到夬卦。"],
+          "en": ["For example: in the Shen month on a Wuyin day (void: Shen and You), a divination on whether he would get a commission;", "the hexagram was Guai."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10386, 10386],
+          "zh": ["子孙持世，此差不得；", "世空，亦不能得。", "岂知不出三日得差，行至中途而死。", "寻其故，盖三日之内而得差者，子孙未出空也；", "中途而死者，世爻空也。"],
+          "yi": ["子孙持世，这个差事得不到；", "世爻落空，也得不到。", "哪知道不出三天就得了差事，走到半路上死了。", "追究它的缘故，三天之内得到差事，是因为子孙还没有出空；", "半路上死，是因为世爻落空。"],
+          "en": ["Output holds the Self, so this commission cannot be had;", "the Self is Void, so it cannot be had either.", "Who would have thought that within three days he got the commission, and died on the road halfway there.", "Looking for the reason: getting the commission within three days was because Output had not yet left the Void;", "dying on the road was because the Self was Void."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10387, 10387],
+          "zh": ["又：寅月庚辰日(旬空：申酉)，占得缺否？", "得“水天需”"],
+          "yi": ["又例：寅月庚辰日（旬空：申、酉），占能不能得缺？", "得到需卦。"],
+          "en": ["Another: in the Yin month on a Gengchen day (void: Shen and You), a divination on whether he would get a post;", "the hexagram was Xu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10394, 10394],
+          "zh": ["子孙持世遇旬空，与前卦同，亦是只在三两日命下之事。", "又悟前占卦之差，余竟许之，果得缺，不出两月而亡。"],
+          "yi": ["子孙持世、遇旬空，和前一个卦相同，也是只在三两天内命令就下来的事。", "又因为看出了前一次占断的差错，我就答应他能得，结果果然得了缺，不到两个月就死了。"],
+          "en": ["Output holds the Self and meets Void, the same as the previous hexagram, so again the order will come down within two or three days.", "Having also seen where the earlier judgment went wrong, I granted it, and he did get the post, but died in less than two months."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10395, 10395],
+          "zh": ["又：辰月丁丑日(旬空：申酉)，占起用，已列名矣，得“渐之观”"],
+          "yi": ["又例：辰月丁丑日（旬空：申、酉），占起用，已经列了名，得到渐卦变观卦。"],
+          "en": ["Another: in the Chen month on a Dingchou day (void: Shen and You), a divination on reinstatement, his name already being listed, gave Jian changing into Guan."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10422, 10422],
+          "zh": ["此与前二卦大同小异，前二卦子孙持世遇旬空，未曾发动，此卦动而变官，况亦系两三日内事，子孙尚未出空，竟许必得。", "果得起用，行六日而家内子死，抵任八阅月而疾终。", "身死子亡者，乃是世与子孙同变鬼也。", "余于后二卦之得验者，实因前卦点差，时刻留心故耳！", "今人占过即忘，何由精奥。"],
+          "yi": ["这个卦和前面两个卦大同小异：前两个卦子孙持世、遇旬空，没有发动，这个卦是发动后变出官星，何况也是两三天之内的事，子孙还没有出空，我就答应他一定得到。", "结果果然得到起用，上路六天后家里的儿子死了，到任八个月后他自己病故。", "自己死、儿子也死，是因为世爻和子孙一起变成了官鬼。", "我在后面两个卦能断准，实在是因为前一个卦让我发现了差错，时刻留心的缘故！", "现在的人占过就忘，哪能精通其中的奥妙。"],
+          "en": ["This hexagram is much the same as the two before, with small differences: in the previous two Output held the Self and met Void without moving, while in this one it moves and turns into the star of office; moreover it too concerned the next two or three days, and Output had not yet left the Void, so I granted that he would surely get it.", "He did get reinstated; six days after setting out his son at home died, and eight months after he took up his post he himself died of illness.", "That he and his son both died was because the Self and Output both turned into Pressure.", "That I judged the latter two hexagrams correctly was really because the former hexagram showed me my error and I kept it constantly in mind!", "People today forget as soon as they have divined, so how could they master its depths?"] }
+      ],
+      "note": {
+        "yi": "「世福空而亦升」按注文的意思是：世爻持子孙又落旬空，一般不该升，只有占两三天之内的事才许得，因为子孙没出空就克不了官。「前卦点差」「又悟前占卦之差」是说第一例让他看出了自己断错的地方，后两例才断准。",
+        "en": "'The Self on a Void Output line is promoted all the same' means, by the note, that when the Self holds Output and it falls in Void one is generally not due for promotion, and may be granted it only for a question of two or three days, since Output cannot control the star of office while it has not left the Void. 'The former hexagram pointed out the error' and 'also realized the error of the earlier divination' mean that the first example showed him where his own judgment had been wrong, and he judged the next two correctly."
+      },
+      "see": ["LY.CAREER.ZS.02", "LY.CAREER.ZS.04", "LY.CAREER.ZS.06", "LY.CAREER.HJC.08", "LY.CAREER.HJC.09"]
+    },
+    {
+      "id": "LY.CAREER.ZS.06",
+      "topic": "动变",
+      "chapter": "升选候补章",
+      "chapter_en": "Chapter on promotion, selection and waiting for a post",
+      "title": "升选候补·随官入墓，世旺者官升；助鬼伤身，身衰者祸至（古以随官入墓、助鬼伤世为凶，作者屡试：世旺反升、世衰不吉，助鬼伤身而元神同动者官必升，世休囚必有祸）",
+      "rule": {
+        "yi": "古人把「随官入墓」「助鬼伤世」一概当凶，作者多次试验，结果是：世爻旺相的反而升官；世爻衰弱的不吉；助鬼伤身而元神同时发动的，官职必定升；世爻如果休囚，必有灾祸。",
+        "en": "The ancients took 'following the star of office into the tomb' and 'helping Pressure to injure the Self' as ominous without exception; the author tested it many times and found: where the Self is thriving the man is promoted instead; where the Self is weak it is not auspicious; where one helps Pressure to injure the Body but the Support moves at the same time, the office is surely raised; if the Self is resting or trapped, disaster is sure to come."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10423, 10424],
+          "zh": ["随官入墓，世旺者官升。", "助鬼伤身，身衰者祸至。", "古以随官入墓、助鬼伤世，皆以为凶。", "余屡试之，世旺者竞升；", "世衰者不吉；", "助鬼伤身，元神同动者，其官必升；", "世若休囚者，必有祸至。"],
+          "yi": ["随着官星入墓，世爻旺相的，官职升迁。", "帮助官鬼来伤害自身，自身衰弱的，灾祸就到。", "古人认为随官入墓、助鬼伤世，都是凶。", "我多次试验，世爻旺相的，竟然都升了；", "世爻衰弱的，不吉；", "助鬼伤身，但元神同时发动的，他的官职必定升；", "世爻如果休囚，必定有灾祸到来。"],
+          "en": ["If the Self follows the star of office into the tomb and the Self is thriving, the office is raised.", "If one helps Pressure to injure the Body and the Body is weak, disaster arrives.", "The ancients took following the star of office into the tomb, and helping Pressure to injure the Self, both as ominous.", "I tested it many times: where the Self was thriving, the man was promoted;", "where the Self was weak, it was not auspicious;", "where one helps Pressure to injure the Body but the Support moves at the same time, his office will surely be raised;", "if the Self is resting or trapped, disaster will surely come."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10425, 10425],
+          "zh": ["如：寅月乙未日(旬空：辰巳)，占升，得“比之观”"],
+          "yi": ["例如：寅月乙未日（旬空：辰、巳），占升官，得到比卦变观卦。"],
+          "en": ["For example: in the Yin month on a Yiwei day (void: Chen and Si), a divination on promotion gave Bi changing into Guan."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10472, 10472],
+          "zh": ["卯木旺官持世，子水财动相生，虽曰墓于未日，幸世爻得助，无妨，果升于亥月。"],
+          "yi": ["卯木旺相的官星持世，子水财爻发动来生它，虽然说在未日入墓，幸好世爻得到帮助，没有妨碍，结果在亥月升了官。"],
+          "en": ["The Mao Wood star of office is thriving and holds the Self, and the Zi Water Wealth line moves to generate it; though it is said to enter the tomb on the Wei day, the Self is fortunately helped, so there is no harm, and he was indeed promoted in the Hai month."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10472, 10472],
+          "zh": ["又如：戍月辛酉日(旬空：子丑)，占何月补官？", "得“蹇之需”"],
+          "yi": ["又例：戌月辛酉日（旬空：子、丑），占哪个月补官？", "得到蹇卦变需卦。"],
+          "en": ["Another: in the Xu month on a Xinyou day (void: Zi and Chou), a divination on which month he would be given an office;", "the hexagram was Jian changing into Xu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10479, 10479],
+          "zh": ["寅木财爻生助午火之鬼，火鬼克世，乃为助鬼伤身，幸辰土生申金，午火贪生忘克，今年冬月必升。", "果得升于冬月。", "应冬月者，辰土化子水空亡，至十一月则不空矣。"],
+          "yi": ["寅木财爻生助午火官鬼，火官鬼克世爻，这就是助鬼伤身；幸好辰土生申金，午火贪着去生而忘了去克，所以今年冬月必定升官。", "结果果然在冬月升了官。", "应在冬月，是因为辰土变成子水，而子水落空亡，到十一月就不空了。"],
+          "en": ["The Yin Wood Wealth line generates and helps the Wu Fire Pressure line, and the Fire Pressure line controls the Self, which is helping Pressure to injure the Body; fortunately Chen Earth generates Shen Metal, and Wu Fire, greedy to generate, forgets to control, so he will surely be promoted this winter month.", "He was indeed promoted in the winter month.", "It came due in the winter month because Chen Earth turned into Zi Water, which was Void, and in the eleventh month it is no longer Void."] }
+      ],
+      "dispute": {
+        "yi": "古人把「随官入墓」「助鬼伤世」都当作凶；增删卜易说自己多次试验，世爻旺的反而升官，元神同时发动的官必升，只有世爻休囚才有祸。这是作者对古说的修正，不是两本书的分歧。",
+        "en": "The ancients took 'following the star of office into the tomb' and 'helping Pressure to injure the Self' as ominous; the Zeng Shan Bu Yi says that after many tests the man whose Self was thriving was promoted instead, that where the Support moves at the same time the office is surely raised, and that only a resting or trapped Self brings disaster. This is the author's correction of the old teaching, not a disagreement between two books."
+      },
+      "note": {
+        "yi": "原文第二个例子的月份写作「戍月」，应是「戌月」，译文按戌月。",
+        "en": "The second example gives the month as 'Shu' in the text, which should be 'Xu'; the translation reads the Xu month."
+      },
+      "see": ["LY.CAREER.ZS.04", "LY.CAREER.ZS.07"]
+    },
+    {
+      "id": "LY.CAREER.ZS.07",
+      "topic": "总则",
+      "chapter": "升选候补章",
+      "chapter_en": "Chapter on promotion, selection and waiting for a post",
+      "title": "升选候补·野鹤：古以晋、升为吉，屯、蹇为凶，晋升也要世爻得地，屯蹇世旺无妨",
+      "rule": {
+        "yi": "看升选不能只看卦名：古人以晋、升两卦为吉，屯、蹇两卦为凶；野鹤说晋、升两卦确实屡次应验，但也要世爻得地，世爻失陷也不吉；屯、蹇两卦，只要世爻旺相就没有妨碍，他有一次世爻旺相占到屯卦，照样越级升迁。",
+        "en": "Promotion cannot be read from the hexagram name alone: the ancients took Jin and Sheng as auspicious and Zhun and Jian as ominous; the Old Man of Yehe says Jin and Sheng have indeed proved right many times, but the Self must also be well placed, and a Self that is lost or sunk is not auspicious; for Zhun and Jian there is no harm so long as the Self is thriving, and once he got Zhun with a thriving Self and was promoted beyond rank all the same."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [10480, 10483],
+          "zh": ["野鹤曰：古以晋、升为吉，屯、蹇为凶，余于晋升二卦，果得屡验，亦要世爻得地，若失陷，亦不为吉。", "屯蹇二卦，世爻旺者何妨。", "前篇亥月丙寅日之占验，世爻旺者，竟得超升，岂非屯卦耶？"],
+          "yi": ["野鹤说：古人认为晋、升两卦吉，屯、蹇两卦凶；我对晋、升两卦，确实屡次应验，但也要世爻得地，如果世爻失陷，也不吉。", "屯、蹇两卦，世爻旺相的有什么妨碍。", "前一篇亥月丙寅日的占验，世爻旺相，竟然得了越级升迁，那不就是屯卦吗？"],
+          "en": ["The Old Man of Yehe says: the ancients took Jin and Sheng as auspicious and Zhun and Jian as ominous; for Jin and Sheng I have indeed found them confirmed many times, but the Self must also be well placed, and if it is lost or sunk, they are not auspicious either.", "For Zhun and Jian, what harm is there if the Self is thriving?", "In the divination of the Hai month on a Bingyin day in the earlier section the Self was thriving and he was promoted beyond rank after all; was that not the Zhun hexagram?"] }
+      ],
+      "note": {
+        "yi": "「前篇亥月丙寅日之占验」指本书前面求名各章里的一个例子，不在本章，这里没有收。",
+        "en": "'The divination of the Hai month on a Bingyin day in the earlier section' refers to an example in the earlier chapters of the book on seeking a name, not in this chapter, and it is not collected here."
+      },
+      "see": ["LY.CAREER.ZS.06"]
+    },
+    {
+      "id": "LY.CAREER.ZS.08",
+      "topic": "升迁",
+      "chapter": "升迁何方章",
+      "chapter_en": "Chapter on where one will be posted",
+      "title": "升迁何方·官金而应西土，木官必应东方，水北火南，土升中土（野鹤：此古法也，验过的有出入：木官应山东亦有应广东，金官应山西亦有江西、广西，又有以住处分东西南北）",
+      "rule": {
+        "yi": "按官星的五行断去哪个方位上任：金官应西，木官应东，水应北，火应南，土官升到中土。野鹤说这是古法，他验证过的有出入：木官应在山东，也有应在广东的；金官应在山西，也有应在江西、广西的；还有按所住的地方来分东西南北的。",
+        "en": "To judge in which direction the post lies from the element of the star of office: a Metal one is due in the west, a Wood one in the east, Water in the north, Fire in the south, and an Earth one is promoted to the central land. The Old Man of Yehe says this is the old method and that what he has confirmed does not quite agree: a Wood star of office is due in Shandong, but sometimes in Guangdong; a Metal one in Shanxi, but sometimes in Jiangxi or Guangxi; and sometimes the directions are divided according to the place where one lives."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10488, 10488],
+          "zh": ["官金而应西土，木官必应东方，水北火南，土升中土。"],
+          "yi": ["官星属金，就应在西方；官星属木，必定应在东方；水应北方，火应南方，土官就升在中土。"],
+          "en": ["If the star of office is Metal it is due in the west; a Wood star of office is due in the east; Water north, Fire south; an Earth one is promoted to the central land."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10488, 10488],
+          "zh": ["野鹤曰：此古法也。", "余之得验：木官而应山东，亦有应广东者；", "金官应山西，亦有江西、广西者；", "又有以住处而分东西南北者。"],
+          "yi": ["野鹤说：这是古法。", "我验证过的：木官应在山东，也有应在广东的；", "金官应在山西，也有应在江西、广西的；", "又有按所住的地方来分东西南北的。"],
+          "en": ["The Old Man of Yehe says: this is the old method.", "What I have found confirmed: a Wood star of office is due in Shandong, but sometimes in Guangdong;", "a Metal one in Shanxi, but sometimes in Jiangxi or Guangxi;", "and sometimes the directions are divided according to the place where one lives."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10489, 10489],
+          "zh": ["如：未月己巳日(旬空：戌亥)，在京师占地方，得“归妹之解”"],
+          "yi": ["例如：未月己巳日（旬空：戌、亥），在京城占赴任的地方，得到归妹卦变解卦。"],
+          "en": ["For example: in the Wei month on a Jisi day (void: Xu and Hai), a divination in the capital on where he would be posted gave Guimei changing into Jie."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10496, 10496],
+          "zh": ["彼时有山东、真定两缺，此卦巳火官星，许得真定。", "彼曰：何也？", "余曰：巳火官星乃南方也，真定乃都门之南故耳。", "果得真定。"],
+          "yi": ["当时有山东、真定两个缺，这个卦是巳火官星，答应他能得真定。", "他问：为什么？", "我说：巳火官星属南方，真定在京城的南面。", "结果得了真定。"],
+          "en": ["At the time there were two posts, Shandong and Zhending; in this hexagram the star of office is Si Fire, and I granted that he would get Zhending.", "He asked: why?", "I said: the Si Fire star of office is the south, and Zhending lies south of the capital.", "He did get Zhending."] }
+      ],
+      "see": ["LY.CAREER.ZS.09", "LY.CAREER.ZS.10"]
+    },
+    {
+      "id": "LY.CAREER.ZS.09",
+      "topic": "升迁",
+      "chapter": "升迁何方章",
+      "chapter_en": "Chapter on where one will be posted",
+      "title": "升迁何方·初爻为内地，五六为边方（野鹤：世与官星都在初爻为应内地；世在五、官在六，或相反，或官星持世同在五六爻为应边方；在二三四爻仍以五行决之）",
+      "rule": {
+        "yi": "看是内地还是边远：初爻代表内地，五爻、六爻代表边远地方。野鹤解释：「应在初爻」是世爻和官星都在初爻；「应在五、六爻」是世在五爻官在六爻，或世在六爻官在五爻，或官星持世、一起在五、六爻上；如果在二、三、四爻，仍然按五行来决断。",
+        "en": "To tell whether the post is inland or on the frontier: the first line is the inner land and the fifth and sixth lines are the frontier. The Old Man of Yehe explains: 'due in the first line' means the Self and the star of office are both in the first line; 'due in the fifth or sixth line' means the Self is in the fifth line and the star of office in the sixth, or the Self in the sixth and the star of office in the fifth, or the star of office holds the Self and both are in the fifth or sixth line; if they are in the second, third or fourth line, one still decides by the five elements."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10497, 10498],
+          "zh": ["初爻为内地，五六为边方。"],
+          "yi": ["初爻代表内地，五爻、六爻代表边远地方。"],
+          "en": ["The first line is the inner land, and the fifth and sixth lines are the frontier."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10497, 10498],
+          "zh": ["野鹤曰：应初爻者，世与官星皆在初爻者是也；", "应五六爻者，或世在五爻、官在六爻，或世在六爻，官在五爻，或官星持世，同在五六爻上是也。", "若在二、三、四爻，仍以五行决之。"],
+          "yi": ["野鹤说：应在初爻，指世爻和官星都在初爻；", "应在五、六爻，指世在五爻、官在六爻，或者世在六爻、官在五爻，或者官星持世、一起在五、六爻上；", "如果在二、三、四爻，仍然按五行来决断。"],
+          "en": ["The Old Man of Yehe says: 'due in the first line' means the Self and the star of office are both in the first line;", "'due in the fifth or sixth line' means the Self is in the fifth line and the star of office in the sixth, or the Self in the sixth and the star of office in the fifth, or the star of office holds the Self and both are in the fifth or sixth line;", "if they are in the second, third or fourth line, one still decides by the five elements."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10499, 10499],
+          "zh": ["如：丑月癸亥日(旬空：子丑)，占升于何方？", "得“山风蛊”"],
+          "yi": ["例如：丑月癸亥日（旬空：子、丑），占升到哪个方位？", "得到蛊卦。"],
+          "en": ["For example: in the Chou month on a Guihai day (void: Zi and Chou), a divination on in which direction he would be posted;", "the hexagram was Gu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10523, 10523],
+          "zh": ["此卦酉官持世，许任西方。", "至次年，临期见选。"],
+          "yi": ["这个卦酉金官星持世，答应他任职在西方。", "到第二年，到了日子被选上。"],
+          "en": ["In this hexagram the You Metal star of office holds the Self, and I granted that he would hold office in the west.", "In the following year, when the time came, he was selected."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10524, 10524],
+          "zh": ["又于：寅月甲戌日(旬空：申酉)，占升何地？", "得“震卦”"],
+          "yi": ["又例：寅月甲戌日（旬空：申、酉），占升到什么地方？", "得到震卦。"],
+          "en": ["Another: in the Yin month on a Jiaxu day (void: Shen and You), a divination on to what place he would be promoted;", "the hexagram was Zhen."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10531, 10531],
+          "zh": ["余犹律前卦酉金持世曾许西方，今此卦仍是金官，西方必矣，但世在六爻，必是边缺。", "彼曰：有庆阳。", "余曰：即此缺。", "果升庆阳。"],
+          "yi": ["我仍然依照前一个卦酉金持世曾答应他在西方的例子，这个卦仍然是金官，西方是肯定的，但世爻在六爻，一定是边远的缺。", "他说：有庆阳。", "我说：就是这个缺。", "结果升到了庆阳。"],
+          "en": ["I still followed the previous hexagram, in which the You Metal on the Self had been granted as the west; in this one the star of office is again Metal, so the west is certain, but the Self is in the sixth line, so it must be a frontier post.", "He said: there is Qingyang.", "I said: that is the post.", "He was indeed promoted to Qingyang."] }
+      ],
+      "note": {
+        "yi": "两个例子的卦名后面，原文还紧接着卦宫的标题（「巽宫：山风蛊（归魂）」「震宫：震为雷（六冲）」），是排盘的格式，这里只引到卦名。",
+        "en": "After the hexagram names in the two examples the text runs straight on into the palace headings of the charts ('Xun palace: Mountain over Wind, Gu (Returning Soul)' and 'Zhen palace: Thunder, Zhen (Six-Clash)'), which are chart formatting, and only the hexagram names are quoted here."
+      },
+      "see": ["LY.CAREER.ZS.08", "LY.CAREER.ZS.10"]
+    },
+    {
+      "id": "LY.CAREER.ZS.10",
+      "topic": "升迁",
+      "chapter": "升迁何方章",
+      "chapter_en": "Chapter on where one will be posted",
+      "title": "升迁何方·野鹤：问地方不如指其缺而问（此缺我得否？我得词林、部属、科道、正印否？官星持世、官动生合世、三合官局生世皆必得；世空世破、官破官空、子孙持世或发动、官临应爻、官局生应皆不得）",
+      "rule": {
+        "yi": "占升选，与其问「升到哪个方向」，不如指明具体的缺来问：这个缺我能得吗？我能进翰林吗？我能做部属吗？我能做科道官吗？我能做正印官吗？官星持世、官星发动生合世爻、三合官局生世，都主必得；世爻落空落破、官星落破落空、子孙持世、子孙发动、官星临在应爻上、三合官局生应爻，都主得不到。指明了缺就已经知道在哪里，不必多此一举。",
+        "en": "In a question about promotion, rather than asking 'in which direction', it is better to name the post and ask: can I get this post? Can I enter the Hanlin Academy? Can I get a post in a ministry? Can I become a supervising censor? Can I become the chief official holding the seal? If the star of office holds the Self, or the star of office moves to generate or combine with the Self, or a three-harmony Pressure frame generates the Self, it will surely be had; if the Self is Void or broken, the star of office is broken or Void, Output holds the Self, Output moves, the star of office sits on the Other, or a three-harmony Pressure frame generates the Other, it will not be had. Once the post is named its place is already known, and the extra step is unnecessary."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [10532, 10534],
+          "zh": ["野鹤曰：大概问其地方，虽则有验，然不如指其地而问之，此缺我得否？", "我得词林否？", "我得部属否？", "我得科道否？", "我得正印否？", "如官星持世者、官动生合世爻者、三合官局而生世者，皆主必得；", "世空世破、官破官空、子孙持世、子孙发动、官临应爻、三合官局而生应爻，皆主不得。", "野鹤曰：指其缺而问之，不失为便捷之法。", "指其缺即已知其缺在何方，而不必多此一举也。"],
+          "yi": ["野鹤说：大致问是哪个地方，虽然也有应验，但不如指明那个地方来问：这个缺我能得吗？", "我能进翰林院吗？", "我能做部属吗？", "我能做科道官吗？", "我能做正印官吗？", "像官星持世的、官星发动生合世爻的、三合成官局而生世的，都主必得；", "世爻落空落破、官星落破落空、子孙持世、子孙发动、官星临在应爻上、三合成官局而生应爻的，都主得不到。", "野鹤说：指明那个缺来问，不失为一个简便快捷的办法。", "指明了那个缺，就已经知道那个缺在哪个方位，不必再多此一举。"],
+          "en": ["The Old Man of Yehe says: asking in general which place does sometimes prove right, but it is better to name the place and ask: can I get this post?", "Can I enter the Hanlin Academy?", "Can I get a post in one of the ministries?", "Can I become a supervising censor?", "Can I become the chief official holding the seal?", "Where the star of office holds the Self, or the star of office moves to generate or combine with the Self, or a three-harmony Pressure frame generates the Self, all mean it will surely be had;", "where the Self is Void or broken, the star of office is broken or Void, Output holds the Self, Output moves, the star of office sits on the Other, or a three-harmony Pressure frame generates the Other, all mean it will not be had.", "The Old Man of Yehe says: naming the post and asking is not a bad quick method.", "Once the post is named the place of the post is already known, and there is no need for the extra step."] }
+      ],
+      "note": {
+        "yi": "词林、部属、科道、正印是清朝官的类别：词林是翰林院，部属是各部的属官，科道是六科给事中和各道监察御史，正印是主官（掌印的正职）。书里没有逐个解释，这里是按通行的意思注的。原文这一段最后还有一句「今人测占工作调动，职务升迁何方亦可仿此」，是今人加的话，不收。",
+        "en": "Cilin, bushu, kedao and zhengyin are categories of official in the Qing: the Hanlin Academy, the subordinate officials of the ministries, the supervising secretaries and investigating censors, and the chief officials who hold the seal. The book does not explain them one by one; this is the usual sense. The paragraph ends in the text with a sentence 'for people today who divine job transfers and the direction of promotion the same method may be followed', which is a modern editor's addition and is not quoted."
+      },
+      "see": ["LY.CAREER.ZS.08", "LY.CAREER.ZS.09"]
+    }
+  ]
+}

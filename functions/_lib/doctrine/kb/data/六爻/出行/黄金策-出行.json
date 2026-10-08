@@ -1,0 +1,584 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "黄金策",
+  "chapter": "出行",
+  "chapter_en": "Setting out on a journey",
+  "ranges": {"卜筮正宗": [3423, 3478]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.HJC.01",
+      "topic": "总则",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·父为行李带刑则破损不中、妻作盘缠生旺则丰盈足用：出行以父母爻为行李，妻财爻为盘缠",
+      "rule": {
+        "yi": "占出行，父母爻是行李：旺相就多，休囚就少，带着刑害就是破损的旧东西；妻财爻是盘缠（路费、本钱）：旺相就丰足，休囚就微少，从兄弟爻变出来的是合伙的本钱或借来的。为名为利出门免不了奔波，路上的休咎，神灵能给准信。",
+        "en": "In divining for a journey the Resource line is the baggage — much if strong, little if resting or trapped, worn and damaged things if it carries punishment or harm — and the Wealth line is the travelling money and capital — full if strong, slight if resting or trapped, and a joint stake or borrowed money if it comes out of the Peer line by change. One who goes out for fame or gain cannot avoid the roads, and the spirits give a sure report of good and ill on the way."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3425, 3425],
+          "zh": ["人非富贵，", "焉能坐享荣华？", "苟为名利，", "宁免奔驰道路？", "然或千里之迢遥，", "夫岂一朝之跋涉？", "途中休咎，", "若个能知？", "就里灾祥，", "神灵有准。", "父为行李，", "带刑则破损不中；", "妻作盘缠，", "生旺则丰盈足用"],
+          "yi": ["人不是富贵的人，", "怎么能够坐着享受荣华？", "只要是为了名利，", "哪里能避免在道路上奔波？", "可是有时路程远隔千里，", "哪里是一天就能跋涉到的？", "路上的吉凶，", "有谁能够知道？", "其中的灾祸和吉祥，", "神灵是准确的。", "父母爻是行李，", "带着刑，就是破损不中用；", "妻财爻是盘缠，", "生旺就丰足够用"],
+          "en": ["Unless a man is rich and honoured,", "how can he sit and enjoy glory?", "If it is for fame and gain,", "how can he avoid hurrying along the roads?", "Yet at times the way is a thousand li away,", "and it is not to be trudged in a single morning.", "The good and ill on the road —", "who can know them?", "The calamity and blessing within —", "the spirits are accurate.", "the Resource line is the baggage,", "and if it carries punishment it is damaged and unfit;", "the Wealth line is the travelling money,", "and if strong it is plentiful and enough to use"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3425, 3425],
+          "zh": ["出行以父母为行李，旺相多休囚少类，旺空虽有而不多，带刑害破损旧物。", "妻财为财物本钱类，旺相充满，休囚微少；", "若从兄弟化出必合本，或是借来非已之物也。"],
+          "yi": ["出行以父母爻为行李：旺相就多，休囚就少；旺相而落空，虽有也不多；带着刑害，就是破损的旧东西。", "妻财爻是财物、本钱一类：旺相就充足，休囚就微少；", "如果是从兄弟爻变出来的，必定是合伙的本钱，或者是借来的、不是自己的东西。"],
+          "en": ["In travelling the Resource line is the baggage: strong, there is much; resting or trapped, little; strong but Void, there is some but not much; carrying punishment or harm, it is worn and damaged old things.", "The Wealth line is goods and capital: strong, it is full; resting or trapped, it is slight;", "if it comes out of the Peer line by change, it is a joint stake, or something borrowed that is not one's own."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.02",
+      "topic": "总则",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·世若衰弱哪堪水宿风餐：世为自己，生旺则健，休囚则倦",
+      "rule": {
+        "yi": "世爻代表出门的自己：世爻生旺，身体健壮；世爻衰弱（休囚），人就经不起路上风餐水宿的劳苦。",
+        "en": "The Self line is the traveller himself: if it is strong he is robust; if it is weak (resting or trapped) he cannot bear the toil of eating in the wind and sleeping on the water."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3427, 3427],
+          "zh": ["世若衰弱，", "哪堪水宿风餐"],
+          "yi": ["世爻如果衰弱，", "哪里经受得起露宿水上、风里吃饭"],
+          "en": ["If the Self is weak,", "how can one bear lodging on the water and eating in the wind"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3427, 3427],
+          "zh": ["世为自己，生旺则健，休囚则倦，所以不堪劳碌于风霜中也。"],
+          "yi": ["世爻是自己：生旺就健壮，休囚就疲倦，所以经不起在风霜里劳碌。"],
+          "en": ["The Self is oneself: strong, one is robust; resting or trapped, one is weary; therefore one cannot bear toil in wind and frost."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.03",
+      "topic": "去留",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·应若空亡难望谋成事就：应爻是所去的地方，最怕空亡，主地头寂寞、谋事难成",
+      "rule": {
+        "yi": "应爻代表所去的地方，最怕落空亡：空了，那个地方冷落寂寞，谋事难成，不能称心如意地回来。",
+        "en": "The Other line is the place one goes to and most fears Void: if it is Void the place is desolate and quiet, the plan is hard to make good, and one cannot return satisfied."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3429, 3429],
+          "zh": ["应若空亡，", "难望谋成事就"],
+          "yi": ["应爻如果落空亡，", "就难指望谋事成功"],
+          "en": ["If the Other is Void,", "it is hard to hope that the plan will be made good"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3429, 3429],
+          "zh": ["应爻为所往之所，最怕空亡，主地头寂寞，谋事难成，不能得意而回。"],
+          "yi": ["应爻是所去的地方，最怕空亡，主那个地方冷落寂寞，谋事难成，不能称心如意地回来。"],
+          "en": ["The Other line is the place one goes to and most fears Void, which means the place is desolate and quiet, the plan is hard to make good, and one cannot return satisfied."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.04",
+      "topic": "路途",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·间爻安静往来一路平安：间爻是往来经过的地方，动则途中阻滞，安静则平安无阻",
+      "rule": {
+        "yi": "间爻代表往来经过的地方：动了，途中有阻滞；安静，往来平安没有阻碍；间爻临着财爻或福神发动，途中谋求的反比到了地头还好。",
+        "en": "The between lines are the places passed through going and coming: if they move there is obstruction on the way; if they are still, the going and coming is safe and unobstructed; if a between line carrying Wealth or Output moves, what is sought on the road is better than at the destination."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3431, 3431],
+          "zh": ["间爻安静，", "往来一路平安"],
+          "yi": ["间爻安静，", "往来一路平安"],
+          "en": ["If the between lines are still,", "the going and coming is safe all the way"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3431, 3431],
+          "zh": ["间爻为往来经历所在，动则途中阻滞；", "若得安静，则往来平安无阻。", "临财福动，途中谋望胜于地头。"],
+          "yi": ["间爻是往来经过的地方，动了就是途中受阻滞；", "如果安静，往来就平安没有阻碍。", "间爻临着财爻或福神发动，途中谋求的比在地头还好。"],
+          "en": ["The between lines are the places passed through going and coming; if they move, there is obstruction on the way;", "if they are still, the going and coming is safe and unobstructed.", "If a between line carrying Wealth or Output moves, what is sought on the road is better than at the destination."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.05",
+      "topic": "风险",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·太岁克冲行止终年挠括：太岁发动冲克世爻，出外终年不利，再加白虎更非吉兆",
+      "rule": {
+        "yi": "太岁发动，冲克世爻，这个人出外一年到头不顺利；再加上白虎这样的凶煞，更不是吉兆。",
+        "en": "If the Tai Sui moves and clashes with or controls the Self, the man abroad has ill fortune the whole year; with the White Tiger, a baleful star, added, it is the more inauspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3433, 3433],
+          "zh": ["太岁克冲，", "行止终年挠括"],
+          "yi": ["太岁冲克世爻，", "走动和停留一年到头都受阻碍"],
+          "en": ["If the Tai Sui clashes with or controls the Self,", "going and staying are hampered all year"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3433, 3433],
+          "zh": ["太岁发动冲克世爻，其人出外终年不利，更加白虎凶煞，尤非吉兆也。"],
+          "yi": ["太岁发动冲克世爻，这个人出外一年到头不顺利；再加上白虎这样的凶煞，尤其不是吉兆。"],
+          "en": ["If the Tai Sui moves and clashes with or controls the Self, the man abroad has ill fortune the whole year; with the White Tiger, a baleful star, added, it is the more inauspicious."] }
+      ],
+      "note": {
+        "yi": "「挠括」是受阻碍、被束缚的意思。《增删卜易》的千金赋一节讲太岁时说，太岁只在占官事、年运、乡会试、仕宦等几类事里才要紧，出行不在其内（LY.EXAM.ZS.59）；这里却把太岁克冲世爻当作出外终年不利的信号。",
+        "en": "\"Hampered\" translates a word meaning being obstructed and bound. The Zengshan Buyi, in its section on the Thousand-Gold Rhapsody, says the Tai Sui matters only in a few kinds of divination — official affairs, the fortune of the year, the examinations, taking office — and travel is not among them (LY.EXAM.ZS.59); here the Tai Sui clashing with or controlling the Self is taken as a sign of ill fortune abroad all year."
+      },
+      "see": ["LY.EXAM.ZS.59"]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.06",
+      "topic": "去留",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·世伤应位不拘远近总宜行、应克世爻无问公私皆不利：世克应则所向通达，应克世则所向闭塞",
+      "rule": {
+        "yi": "世爻克应位，是我制住对方，所去的方向通达，去了没有阻隔，不论远近都适宜出行；应爻克世爻，所去的方向闭塞，不论公事私事都不利，再遇到动爻、日辰刑克，更不吉利。",
+        "en": "The Self controlling the Other position is my controlling the other side: the way I go is open and I go without hindrance, and it is fit to set out however far or near; the Other controlling the Self closes the way I go and is unfavourable for public and private business alike, and with a moving line or the Day punishing or controlling as well it is the more inauspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3435, 3435],
+          "zh": ["世伤应位，", "不拘远近总宜行；", "应克世爻，", "无问公私皆不利"],
+          "yi": ["世爻克伤应位，", "不论远近都适宜出行；", "应克世爻，", "不论公事私事都不利"],
+          "en": ["If the Self injures the Other position,", "it is fit to go however far or near;", "if the Other controls the Self,", "it is unfavourable whether on public or private business"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3435, 3435],
+          "zh": ["世克应，是我制他，所向通达，去无阻节；", "应克世，所向闭塞，更遇动爻日辰刑克，更不吉利。"],
+          "yi": ["世克应，是我制住他，所去的方向通达，去了没有阻隔；", "应克世，所去的方向闭塞，再遇到动爻、日辰刑克，更不吉利。"],
+          "en": ["The Self controlling the Other is my controlling him: the way I go is open and I go without hindrance;", "the Other controlling the Self closes the way I go, and with a moving line or the Day punishing or controlling as well, it is the more inauspicious."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.07",
+      "topic": "动变",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·八纯乱动到处皆凶：八纯卦就是六冲卦，六爻不和又乱动，没有吉",
+      "rule": {
+        "yi": "八纯卦就是六冲卦，六爻不和，再碰上乱动，到处都凶。",
+        "en": "A pure-palace hexagram is a six-clash hexagram, its six lines at odds, and with disorderly movement besides, everywhere is ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3437, 3437],
+          "zh": ["八纯乱动到处皆凶"],
+          "yi": ["八纯卦六爻乱动，到处都凶"],
+          "en": ["In a pure-palace hexagram with the lines moving in disorder, everywhere is ill"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3437, 3437],
+          "zh": ["八纯乃六冲之卦，六爻不和又遇乱动，何吉之有？"],
+          "yi": ["八纯卦就是六冲卦，六爻不和，又碰上乱动，哪里还有吉？"],
+          "en": ["A pure-palace hexagram is a six-clash hexagram, its six lines at odds, and meeting disorderly movement besides, where is the luck?"] }
+      ],
+      "note": {
+        "yi": "「八纯」是八个纯卦（乾为天、坤为地、震为雷、巽为风、坎为水、离为火、艮为山、兑为泽），上下卦相同，都是六冲卦。",
+        "en": "The \"eight pure\" hexagrams are the eight hexagrams doubled from one trigram (Qian, Kun, Zhen, Xun, Kan, Li, Gen, Dui), whose upper and lower trigrams are the same; all are six-clash hexagrams."
+      },
+      "see": ["LY.EXAM.BSZZ.08"]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.08",
+      "topic": "同行",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·两间齐空独行则吉：间爻代表同伴，两间都落旬空，宜自己单独走",
+      "rule": {
+        "yi": "间爻如果空，主途中没有阻滞；间爻又代表同伴，两个间爻都落旬空，宜自己单独走，免得被同伴拖累。",
+        "en": "If a between line is Void there is no obstruction on the way; the between lines also stand for companions, and if both are in the Void of their ten-day period it is fit to travel alone, so as to escape being burdened by companions."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3439, 3439],
+          "zh": ["两间齐空独行则吉"],
+          "yi": ["两个间爻都空，独自一人走就吉"],
+          "en": ["If the two between lines are both Void, travelling alone is lucky"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3439, 3439],
+          "zh": ["间爻若空，主无阻滞，又为伴侣，若二爻皆值旬空，宜自独行，庶免同伴之累。"],
+          "yi": ["间爻如果空，主没有阻滞；间爻又代表同伴，如果两爻都在旬空，宜自己单独走，才免得被同伴拖累。"],
+          "en": ["If a between line is Void there is no obstruction; the between lines also stand for companions, and if both are in the Void of their ten-day period it is fit to travel alone, so as to escape being burdened by companions."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.09",
+      "topic": "去留",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·世动订期变鬼则自投罗网、官临畏宿化福则终脱樊笼：世动则行期已定，变鬼爻去后遭祸，鬼持世是想走不走，鬼化子孙虽有灾不足畏",
+      "rule": {
+        "yi": "世爻发动，行期就定了；世爻、应爻都动宜赶快走；世爻动而变出鬼爻，去后必遭祸患，等于自投罗网；鬼爻持世，是犹豫畏缩、想走又不走的样子；鬼爻化出子孙，即使有灾患也不足畏惧，最终能脱身。",
+        "en": "When the Self moves the date of departure is fixed; if the Self and the Other both move it is fit to set out quickly; if the Self moves and changes into a Pressure line, one meets misfortune after going and walks into the net oneself; Pressure holding the Self is the look of hesitation and shrinking, wanting to go and not going; and if Pressure changes into Output, though there is calamity it is not to be feared, and one at last escapes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3441, 3441],
+          "zh": ["世动订期，", "变鬼则自投罗网；", "官临畏宿，", "化福则终脱樊笼"],
+          "yi": ["世爻发动，行期就定了，", "如果变出鬼爻，就是自投罗网；", "官鬼临在世上，是畏缩不前的星宿，", "如果化出福神，最后能脱出牢笼"],
+          "en": ["When the Self moves the date of departure is fixed;", "if it changes into a Pressure line, one walks into the net oneself;", "when Pressure sits on the Self it is a star of shrinking back,", "and if it changes into Output, one at last escapes the cage"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3441, 3441],
+          "zh": ["世爻不动行期不定，动则期已定矣。", "世应俱动宜速行。", "若世动变出鬼爻，去后必遭祸患。", "或鬼持世，乃是逡巡畏缩，欲行不行之象。", "鬼化子孙，虽有灾患不足畏也。"],
+          "yi": ["世爻不动，行期不定；动了，日期就已经定了。", "世爻、应爻都动，宜赶快出行。", "如果世爻动而变出鬼爻，去了之后必遭祸患。", "或者鬼爻持世，就是犹豫畏缩、想走又不走的样子。", "鬼爻化出子孙，虽然有灾患也不足畏惧。"],
+          "en": ["If the Self does not move the date of departure is not fixed; if it moves the date is already fixed.", "If the Self and the Other both move, it is fit to set out quickly.", "If the Self moves and changes into a Pressure line, one will surely meet misfortune after going.", "Or if a Pressure line holds the Self, it is the look of hesitation and shrinking, wanting to go and not going.", "If Pressure changes into Output, though there is calamity it is not to be feared."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.10",
+      "topic": "去留",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·静遇日冲必为他人而去、动逢间合定因同伴而留：世静被日冲是替别人去，世动被合住是有牵绊，间爻合住才是同伴挽留",
+      "rule": {
+        "yi": "世爻安静而被日辰、动爻暗冲，是别人托他去的，不是为自己谋事；世爻发动而被日辰、动爻合住，是将走而有牵绊，不能起程，只有间爻合住才是同伴把他留住。要断起程的日期，要逢到冲开的日子。",
+        "en": "If the Self is still and is stirred in secret by the clash of the Day or a moving line, someone else has asked him to go and it is not for his own business; if the Self moves and is held by a combination from the Day or a moving line, he is about to go but is tied down and cannot set out, and only when a between line holds it is a companion keeping him back. To fix the day of departure one must wait for the day that clashes it open."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3443, 3443],
+          "zh": ["静遇日冲，", "必为他人而去；", "动逢间合，", "定因同伴而留"],
+          "yi": ["世爻安静而遇日辰冲，", "一定是为了别人而去；", "世爻发动而遇到间爻合住，", "一定是因为同伴而留下"],
+          "en": ["If the Self is still and meets the clash of the Day,", "one goes for another's sake;", "if the Self moves and meets a combination from a between line,", "one stays because of a companion"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3443, 3443],
+          "zh": ["世爻安静，遇日辰动爻暗冲者，他人浼去，非为自己谋也，日辰并起合起皆然。", "若世爻发动，遇日辰动爻合住者，是将行而有羁绊，未能起程；", "间爻方是同伴羁留。", "欲断行期，须逢冲日。"],
+          "yi": ["世爻安静，被日辰、动爻暗中冲动的，是别人托他去的，不是为自己谋事；日辰把它冲起、合起的都是这样。", "如果世爻发动，被日辰、动爻合住，是将要走而有牵绊，不能起程；", "只有间爻合住，才是同伴把他留住。", "要断起程的日期，要逢到冲开的日子。"],
+          "en": ["If the Self is still and is stirred in secret by the clash of the Day or a moving line, someone else has asked him to go and it is not for his own business; the same holds when the Day rouses it by clash or by combination.", "If the Self moves and is held by a combination from the Day or a moving line, he is about to go but is tied down and cannot set out;", "only when a between line holds it is a companion keeping him back.", "To fix the day of departure, one must wait for the day that clashes it open."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.11",
+      "topic": "去留",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·世爻逢空最利九流出往：世空去不成，强去难得意，只有九流、艺术、公门之人空手问利反吉",
+      "rule": {
+        "yi": "世爻逢空，出行去不成，勉强去了也终究难以得意，白白奔波；只有九流、技艺和公门里的人，空着手去求利，反而吉。",
+        "en": "If the Self meets Void the journey cannot be made, and going by force one still finds it hard to succeed and runs about in vain; only for people of the nine trades, arts and crafts, and the yamen, going empty-handed to seek profit, is it on the contrary lucky."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3445, 3445],
+          "zh": ["也右逢空，", "最利九流出往"],
+          "yi": ["世爻逢空（原文此处误作「也右」），", "最有利于九流、技艺的人出外"],
+          "en": ["If the Self meets Void (the text here has two garbled characters),", "it is most favourable to people of the nine trades and the arts going out"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3445, 3445],
+          "zh": ["世空去不成，强去终难得意，徒劳奔走。", "若九流艺术及公门等人，是空拳问利，反吉。"],
+          "yi": ["世爻空，去不成；勉强去了也终究难以得意，白白奔波。", "如果是九流、艺术和公门里的人，是空手去求利，反而吉。"],
+          "en": ["If the Self is Void the journey cannot be made; going by force one still finds it hard to succeed and runs about in vain.", "But for people of the nine trades, arts and crafts, and the yamen, it is going empty-handed to seek profit, and so is lucky."] }
+      ],
+      "note": {
+        "yi": "「也右」两字在这个本子里是「世爻」的误写（注文接着说「世空去不成」），译文按「世爻」翻。「九流」本指儒、道、阴阳、法、名、墨、纵横、杂、农九家，旧时也泛指各行各业靠本事、手艺谋生的人；这是通行的说法，不是本书的定义。",
+        "en": "The two characters \"also right\" in this edition are a miswriting of \"the Self line\" (the note goes on \"if the Self is Void the journey cannot be made\"), and the translation follows that. The \"nine trades\" originally meant the nine schools (Confucian, Daoist, yin-yang, legalist, logician, Mohist, diplomatic, eclectic, agrarian) and in old usage also loosely all those who live by skill or craft; this is the usual sense, not a definition given in this book."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.12",
+      "topic": "方位",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·土如遇福偏宜陆地行程：卦中火土爻是陆路，水木爻是水路，临财福则吉、临兄鬼则凶",
+      "rule": {
+        "yi": "卦中火爻、土爻是陆路，水爻、木爻是水路；走哪条路，要看那条路上的爻：临着财爻、福神就吉，临着兄弟、官鬼就凶。土爻遇到福神，特别适宜走陆路。",
+        "en": "In the hexagram the Fire and Earth lines are the land road and the Water and Wood lines the water road; which road to take depends on the lines on it: if they carry Wealth or Output it is lucky, if Peer or Pressure it is ill. Earth meeting Output is especially fit for going by land."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3447, 3447],
+          "zh": ["土如遇福，", "偏宜陆地行程"],
+          "yi": ["土（爻）如果遇到福神，", "特别适宜走陆路"],
+          "en": ["If Earth meets Output,", "it is especially fit to go by land"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3447, 3447],
+          "zh": ["卦中火土爻乃是陆路，水木爻是水路。", "若临财福吉，兄鬼凶。"],
+          "yi": ["卦中火爻、土爻是陆路，水爻、木爻是水路。", "如果临着财爻、福神就吉，临着兄弟、官鬼就凶。"],
+          "en": ["In the hexagram the Fire and Earth lines are the land road and the Water and Wood lines the water road.", "If they carry Wealth or Output it is lucky, if Peer or Pressure it is ill."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.13",
+      "topic": "方位",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·鬼地墓乡岂宜践履、财方父向动可登临：官鬼所在方位和它的墓方、世的墓方、克世的方位是凶方不可去，宜去财福所在的方位",
+      "rule": {
+        "yi": "自己占出行，方位都从世爻所在的位置说：官鬼所在的方位，鬼爻的墓方、世爻的墓方，以及克世的方位，都是凶方，不可去踏足；应当去财爻、福神所在的方位，大吉利。",
+        "en": "In one's own divination for a journey the quarters are all spoken of from the position of the Self: the quarter of Pressure, the quarter of Pressure's tomb, the quarter of the Self's tomb and the quarter that controls the Self are ill quarters where one must not tread; it is fit to go to the quarter of Wealth and Output, which is greatly auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3449, 3449],
+          "zh": ["鬼地墓乡岂宜践履，", "财方父向动可登临"],
+          "yi": ["官鬼所在的地方和它的墓乡，怎么适宜去踩踏？", "财爻所在的方向、父母所向的方位，可以动身去登临"],
+          "en": ["How is it fit to tread on the ground of Pressure and the home of its tomb?", "The direction of Wealth and the quarter faced by Resource: one may set out and climb there"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3449, 3449],
+          "zh": ["鬼地木乡，财方父向，如自占卜，皆以世位而言。", "官鬼之方及鬼之墓方、世之墓方并克世之方，此等凶方不可践履；", "宜往财福之方，为大吉利也。"],
+          "yi": ["鬼地、墓乡（原文作「木乡」）、财方、父向，如果是自己占，都是就世爻所在的位置说的。", "官鬼所在的方位，以及鬼的墓方、世的墓方，还有克世的方位，这些凶方不可去踏足；", "宜去财爻、福神所在的方位，最吉利。"],
+          "en": ["The ground of Pressure, the tomb quarter (the text has \"Wood quarter\"), the quarter of Wealth and the facing of Resource are all, in one's own divination, spoken of from the position of the Self.", "The quarter of Pressure, the quarter of Pressure's tomb, the quarter of the Self's tomb and the quarter that controls the Self are ill quarters where one must not tread;", "it is fit to go to the quarter of Wealth and Output, which is greatly auspicious."] }
+      ],
+      "note": {
+        "yi": "注文第一句里「木乡」应是「墓乡」（正文是「鬼地墓乡」），译文按「墓乡」翻。这里的方位是按八卦、五行、地支定的方向，书里没有再列方位表。",
+        "en": "In the first sentence of the note \"Wood quarter\" should be \"tomb quarter\" (the couplet reads \"the ground of Pressure and the home of its tomb\"), and the translation follows that. The quarters are those fixed by trigram, element and branch, and the book gives no table of them here."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.14",
+      "topic": "路途",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·官挈玄爻刑克盗贼惊忧：官鬼临玄武本是盗贼，与世爻刑克则为盗贼担忧",
+      "rule": {
+        "yi": "官鬼临着玄武，本来就是盗贼；如果和世爻相刑克，免不了为盗贼担惊受忧。",
+        "en": "Pressure on the Dark Tortoise is by nature thieves; if it punishes or controls the Self, one cannot escape fright and worry over thieves."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3451, 3451],
+          "zh": ["官挈玄爻刑克，", "盗贼惊忧"],
+          "yi": ["官鬼带着玄武，又刑克（世爻），", "要为盗贼担惊受忧"],
+          "en": ["If Pressure carries the Dark Tortoise and punishes or controls the Self,", "one will be frightened and troubled by thieves"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3451, 3451],
+          "zh": ["官鬼临玄武本是盗贼，若与世爻刑克，不免盗贼之忧。"],
+          "yi": ["官鬼临玄武本来就是盗贼，如果和世爻刑克，免不了为盗贼担忧。"],
+          "en": ["Pressure on the Dark Tortoise is by nature thieves; if it punishes or controls the Self, one cannot escape worry over thieves."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.15",
+      "topic": "路途",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·兄乘虎煞交重风波险阻：兄弟加白虎或忌神发动，或鬼在巽宫发动克世，都有风波险阻",
+      "rule": {
+        "yi": "兄弟爻加上白虎、或忌神发动，或者鬼爻在巽宫发动来克世，都有风波险阻。",
+        "en": "If Peer with the White Tiger, or an Adversary, moves, or if Pressure in the Xun palace moves and controls the Self, there are storms and perilous obstruction."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3453, 3453],
+          "zh": ["兄乘虎煞交重，", "风波险阻"],
+          "yi": ["兄弟爻乘着白虎凶煞、发动，", "会有风波险阻"],
+          "en": ["If Peer rides the White Tiger, a baleful star, and moves,", "there will be storms and perilous obstruction"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3453, 3453],
+          "zh": ["兄加白虎及忌神动，或鬼在巽宫，动来克世，皆有风波险阻。"],
+          "yi": ["兄弟爻加上白虎以及忌神发动，或者鬼爻在巽宫、发动来克世，都有风波险阻。"],
+          "en": ["If Peer with the White Tiger, or an Adversary, moves, or if Pressure in the Xun palace moves and controls the Self, there are storms and perilous obstruction."] }
+      ],
+      "note": {
+        "yi": "巽为风，所以鬼爻在巽宫发动被当作风波的信号。",
+        "en": "Xun is wind, which is why Pressure moving in the Xun palace is taken as a sign of storm."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.16",
+      "topic": "风险",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·妻来克世莫贪无义之财、财合变官勿恋有情之妇：财动克世恐因财致祸，世财相合而财变鬼克恐因色致殃",
+      "rule": {
+        "yi": "财爻发动刑克世爻，恐怕因财招祸，所以说不要贪不义之财；如果世爻和财爻相合，而财爻变出鬼爻来刑克，恐怕因女色招灾，所以说不要留恋有情的女人；不贪不恋就可以免祸，最终吉利。",
+        "en": "If Wealth moves and punishes or controls the Self, one fears coming to grief over money, hence \"do not covet unrighteous wealth\"; if the Self combines with Wealth and Wealth changes into Pressure that punishes or controls, one fears disaster through a woman, hence \"do not cling to a woman of feeling\"; by not coveting and not clinging one escapes, and it ends well."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3455, 3455],
+          "zh": ["妻来克世，", "莫贪无义之财；", "财合变官，", "勿恋有情之妇"],
+          "yi": ["财爻来克世爻，", "不要贪不义之财；", "财爻与世合又变出官鬼，", "不要留恋有情的女人"],
+          "en": ["If Wealth comes to control the Self,", "do not covet wealth gained unrighteously;", "if Wealth combines with the Self and then changes into Pressure,", "do not cling to a woman of feeling"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3455, 3455],
+          "zh": ["财动刑克世爻，恐因财致祸；", "若世与财爻相合，而财爻变出鬼来刑克者，恐因色致殃。", "故言“勿贪无义之财”，勿恋可免，于终吉利也。"],
+          "yi": ["财爻发动刑克世爻，恐怕因财招祸；", "如果世爻与财爻相合，而财爻变出鬼爻来刑克，恐怕因女色招灾。", "所以说「不要贪不义之财」，不留恋就可以免祸，最终吉利。"],
+          "en": ["If Wealth moves and punishes or controls the Self, one fears coming to grief over money;", "if the Self combines with the Wealth line and the Wealth line changes into Pressure that punishes or controls, one fears disaster through a woman.", "Hence the saying \"do not covet unrighteous wealth\": by not clinging one can escape, and it ends well."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.17",
+      "topic": "舟行",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·父遭风雨之淋漓舟行尤忌：父母爻是辛劳之神又代表船，动来刑克世爻，必被风雨所阻，坐船尤其忌",
+      "rule": {
+        "yi": "父母爻是辛勤劳苦的神，动了就要跋涉路程、不能安稳；刑克世爻，必定被风雨阻住；父母爻又代表船，克世，行船不利，所以坐船出行尤其忌讳。",
+        "en": "The Resource line is the spirit of toil and hardship; if it moves one must trudge the road and cannot be at ease; if it punishes or controls the Self, one will surely be stopped by wind and rain; the Resource line is also the boat, and controlling the Self makes travel by boat unfavourable, so it is especially to be avoided when travelling by boat."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3457, 3457],
+          "zh": ["父遭风雨之淋漓，", "舟行尤忌"],
+          "yi": ["父母爻遭遇风雨淋漓，", "坐船行路尤其忌讳"],
+          "en": ["The Resource line meeting drenching wind and rain", "is especially to be avoided when travelling by boat"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3457, 3457],
+          "zh": ["父为辛勤劳苦之神，动则跋涉程途，不能安利；", "刑克世爻，必遭风雨所阻。", "父为舟，克世行船不利，故尤忌。"],
+          "yi": ["父母爻是辛勤劳苦的神，动了就要跋涉路程，不能安稳顺利；", "刑克世爻，必定被风雨阻住。", "父母爻又代表船，克世，行船不利，所以尤其忌讳。"],
+          "en": ["The Resource line is the spirit of toil and hardship; if it moves one must trudge the road and cannot be at ease;", "if it punishes or controls the Self, one will surely be stopped by wind and rain.", "The Resource line is also the boat; controlling the Self, travelling by boat is unfavourable, so it is especially to be avoided."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.18",
+      "topic": "同行",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·福遇和同之伴侣谒贵反凶：子孙持世最吉，遇好同伴路上平安；但为谒贵而出行则不宜，子动伤官反不利",
+      "rule": {
+        "yi": "子孙爻持世最吉，主碰上好同伴，路上平安；但如果是为了拜见贵人而出行就不适宜，因为子孙发动叫伤官，反而不利。",
+        "en": "Output holding the Self is the best omen: one meets good companions and the road is safe; but if one travels to call on a patron it is unfit, since Output moving is called wounding the official and is on the contrary unfavourable."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3459, 3459],
+          "zh": ["福遇和同之伴侣，", "谒贵反凶"],
+          "yi": ["福神遇到和睦同心的同伴，", "去拜见贵人反而凶"],
+          "en": ["Output meeting a harmonious companion", "is ill for calling on a patron"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3459, 3459],
+          "zh": ["子孙持世最吉，主逢好侣，行路平安；", "若为谒贵而出行则不宜。", "子动谓之伤官，反不利矣。"],
+          "yi": ["子孙持世最吉，主碰上好同伴，路上平安；", "如果是为了拜见贵人而出行就不适宜。", "子孙发动叫做伤官，反而不利。"],
+          "en": ["Output holding the Self is the best omen: one meets good companions and the road is safe;", "but if one travels to call on a patron it is unfit.", "Output moving is called wounding the official, and is on the contrary unfavourable."] }
+      ],
+      "see": ["LY.EXAM.ZS.52"]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.19",
+      "topic": "取象",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·艮宫鬼坐寅爻虎狼仔细：艮为山、寅属虎，艮宫见寅木鬼爻是虎狼，不伤世无害，伤应则伤别人",
+      "rule": {
+        "yi": "艮是山，寅属虎，如果在艮宫见到寅木的鬼爻，就是虎狼；它如果不伤世爻，对我没有害处，如果伤到应爻，就是伤到别人。",
+        "en": "Gen is the mountain and Yin belongs to the tiger; if Pressure on Yin is seen in the Gen palace it means tigers and wolves; if it does not injure the Self it does me no harm, but if it injures the Other it injures someone else."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3461, 3461],
+          "zh": ["艮宫鬼坐寅爻，", "虎狼仔细"],
+          "yi": ["艮宫的鬼爻坐在寅爻上，", "要仔细提防虎狼"],
+          "en": ["If Pressure of the Gen palace sits on the Yin line,", "beware carefully of tigers and wolves"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3461, 3461],
+          "zh": ["艮为山，寅属虎，若艮宫见寅鬼，是虎狼也，若不伤世，与我无害，倘或伤应，即伤他人。"],
+          "yi": ["艮是山，寅属虎，如果艮宫见到寅木鬼爻，就是虎狼；如果不伤世，对我没有害处，如果伤到应，就是伤到别人。"],
+          "en": ["Gen is the mountain and Yin belongs to the tiger; if Pressure on Yin is seen in the Gen palace it means tigers and wolves; if it does not injure the Self, it does me no harm, but if it injures the Other it injures someone else."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.20",
+      "topic": "路途",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·卦见兄逢蛇煞光棍宜防：兄弟爻主劫财，加螣蛇发动必有光棍劫损财物，无制宜防、有制无妨",
+      "rule": {
+        "yi": "兄弟爻主劫财，如果加上螣蛇又发动，必有光棍抢劫、损耗财物；没有制伏要提防，有制伏就无妨。",
+        "en": "Peer governs robbery of wealth; if with the Coiling Snake it moves, rogues will surely rob and damage one's goods; without restraint be on guard, with restraint there is no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3463, 3463],
+          "zh": ["卦见兄逢蛇煞，", "光棍宜防"],
+          "yi": ["卦里见到兄弟爻遇到螣蛇凶煞，", "要提防光棍"],
+          "en": ["If the hexagram shows Peer meeting the Coiling Snake, a baleful star,", "guard against rogues"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3463, 3463],
+          "zh": ["兄主劫财，若加螣蛇动，必有光棍劫损财物，无制宜防，有制无妨。"],
+          "yi": ["兄弟爻主劫财，如果加上螣蛇又发动，必有光棍抢劫损耗财物；没有制伏要提防，有制伏就无妨。"],
+          "en": ["Peer governs robbery of wealth; if with the Coiling Snake it moves, rogues will surely rob and damage one's goods; without restraint be on guard, with restraint there is no harm."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.21",
+      "topic": "同行",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·鬼动间中不谐同侣：鬼爻在间爻发动，不是同伴不和，就是同伴里有人生病，克世则自己会后悔",
+      "rule": {
+        "yi": "鬼爻在间爻上发动，不是同伴之间不和，就是同伴里有人生病；如果克世，自己会后悔。",
+        "en": "If Pressure moves on a between line, either the companions are at odds or one of them is ill; if it controls the Self, one will regret it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3465, 3465],
+          "zh": ["鬼动间中不谐同侣"],
+          "yi": ["鬼爻在间爻上发动，与同伴不和谐"],
+          "en": ["Pressure moving on a between line: no harmony with one's companions"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3465, 3465],
+          "zh": ["鬼在间爻动，若非伴侣不和，即是伴中有病，克世主自有悔。"],
+          "yi": ["鬼爻在间爻上发动，如果不是同伴不和，就是同伴里有人生病；克世的话，自己会后悔。"],
+          "en": ["If Pressure moves on a between line, either the companions are at odds or one of them is ill; if it controls the Self, one will regret it."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.22",
+      "topic": "路途",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·兄兴世上我费盘缠：兄弟爻主耗费钱财，持世多半白白花费，不在世上而从别人发动则是损耗我",
+      "rule": {
+        "yi": "兄弟爻主耗费钱财：持世，多半是白白花费；不在世位上、从别人那里发动，是损耗我的钱。",
+        "en": "The Peer line governs the wasting of money: holding the Self it means mostly useless expense; if it is not on the Self but moves from another place, it wastes my money."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3467, 3467],
+          "zh": ["兄兴世上我费盘缠"],
+          "yi": ["兄弟爻在世位上兴旺发动，我要多花路费"],
+          "en": ["With Peer thriving on the Self, I spend more on travelling money"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3467, 3467],
+          "zh": ["兄弟爻主耗费赀财，持世则多虚费；", "不临世上，动自他人，损耗我也。"],
+          "yi": ["兄弟爻主耗费钱财，持世就多半是白白花费；", "不在世位上，从别人那里发动，是损耗我的钱。"],
+          "en": ["The Peer line governs the wasting of money; holding the Self it means mostly useless expense;", "if it is not on the Self but moves from another place, it wastes my money."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.23",
+      "topic": "总则",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·一卦如无鬼煞方得如心：官鬼主祸灾，不宜见到；即使出现，安静或有制伏，也无妨",
+      "rule": {
+        "yi": "官鬼主祸灾，所以整个卦最好没有鬼煞；即使出现了，只要安静或者有制伏，见到也无妨。",
+        "en": "Pressure governs calamity, so the best hexagram has no baleful Pressure at all; even if it appears, if it is still or restrained there is no harm in seeing it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3469, 3469],
+          "zh": ["一卦如无鬼煞，", "方得如心"],
+          "yi": ["整个卦如果没有鬼煞，", "才能称心如意"],
+          "en": ["If the whole hexagram has no baleful Pressure,", "only then will it go as one wishes"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3469, 3469],
+          "zh": ["官鬼主祸灾，故不宜见之；", "即如出现，或得安静或有制伏，纵见无妨。"],
+          "yi": ["官鬼主祸灾，所以不宜见到；", "即使出现了，只要安静或者有制伏，见到也无妨。"],
+          "en": ["Pressure governs calamity, so it is unfit to see it;", "even if it appears, if it is still or restrained, there is no harm in seeing it."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.24",
+      "topic": "总则",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·六爻不见福神焉能称意：子孙是福德又是解神，不上卦或落空亡就制不住鬼，鬼煞专权恐有灾祸",
+      "rule": {
+        "yi": "子孙爻是福德，又是解除灾祸的神；如果不上卦，或者落空亡，就制不住鬼，鬼煞专权，恐怕有灾祸，所以出行六爻里不见子孙就难以称心。",
+        "en": "The Output line is virtue and fortune and also the spirit that loosens calamity; if it is not in the hexagram or falls into Void it cannot control Pressure, then the baleful Pressure holds sole power and one fears calamity, so a journey whose six lines show no Output can hardly go as one wishes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3471, 3471],
+          "zh": ["六爻不见福神，", "焉能称意"],
+          "yi": ["六爻里不见福神，", "怎么能称心如意？"],
+          "en": ["If no Output is seen among the six lines,", "how can things go as wished?"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3471, 3473],
+          "zh": ["子为福德，又为解神，若不上卦或落空亡，不能制鬼，则鬼煞专权，恐有灾祸。"],
+          "yi": ["子孙是福德，又是解神，如果不上卦或者落空亡，就不能制住鬼，鬼煞就专权，恐怕有灾祸。"],
+          "en": ["Output is virtue and fortune and also the loosening spirit; if it is not in the hexagram or falls into Void it cannot control Pressure, then the baleful Pressure holds sole power and one fears calamity."] }
+      ],
+      "note": {
+        "yi": "这一联的注文在原书里分在两行，「鬼煞」后面断开，「专权，恐有灾祸」接在下一行，这里合起来引。",
+        "en": "In the book the note to this couplet is split over two lines, breaking after \"baleful Pressure\", with \"holds sole power, one fears calamity\" on the next line; the two are quoted together here."
+      },
+      "see": ["LY.EXAM.ZS.52"]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.25",
+      "topic": "去留",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·主人动遇空亡半途而返：隔手来占要看谁出行，用神发动遇空亡，走到半路又回来，动化退神也是这样",
+      "rule": {
+        "yi": "别人替人占出行，要看是谁出行：占子孙就看子孙爻，出行的人（主人）就是用神；用神发动遇到空亡，走到半路又回来，发动化出退神也是这样。",
+        "en": "If someone divines on another's behalf one must see who is setting out: for a child look at the Output line, and the one who goes (the principal) is the Subject; if the Subject moves and meets Void, he goes halfway and returns, and moving and changing into a Retreating spirit is the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3475, 3475],
+          "zh": ["主人动遇空亡，", "半途而返"],
+          "yi": ["主人（用神）发动遇到空亡，", "走到半路就回来"],
+          "en": ["If the principal (the Subject) moves and meets Void,", "he turns back halfway"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3475, 3475],
+          "zh": ["隔手来占，须看何人出行，如卜子孙则看子孙，主人者用神也，余仿此。", "如动遇空亡，行至半路复回；", "动化退神亦然。"],
+          "yi": ["隔手（别人代）来占，要看是谁出行：如果占子孙就看子孙爻，「主人」就是用神，其余仿此。", "如果发动遇到空亡，走到半路又回来；", "发动化出退神也是这样。"],
+          "en": ["If someone divines on another's behalf, one must see who is setting out: if it is a child, look at the Output line; the \"principal\" is the Subject, and the rest follow this.", "if it moves and meets Void, he goes halfway and returns;", "moving and changing into a Retreating spirit is the same."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.26",
+      "topic": "总则",
+      "chapter": "出行",
+      "chapter_en": "Setting out on a journey",
+      "title": "出行·财旺临月建满载而归：财爻旺相临月建，生合持世、不受刑克，必定满载回家",
+      "rule": {
+        "yi": "出行如果财爻旺相、临在月建上，生合持世爻，又不受刑克，一定满载而归；只要能趋吉避凶，就不必担心登高涉险。",
+        "en": "In travelling, if the Wealth line is strong and stands on the Month, gives life to or combines with the Self, and is not punished or controlled, one will surely return home with a full load; if one can seek the lucky and avoid the ill, there is no need to fear climbing high or crossing danger."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3477, 3477],
+          "zh": ["财旺临月建，", "满载而归"],
+          "yi": ["财爻旺相，又临在月建上，", "满载而归"],
+          "en": ["If Wealth is strong and stands on the Month,", "one returns with a full load"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3477, 3477],
+          "zh": ["出行若得财爻旺临月建，生合持世，不受刑克，定主满载回家。", "但能趋吉避凶，何虑登高涉险。"],
+          "yi": ["出行如果财爻旺相、临在月建上，生合持世，不受刑克，一定满载回家。", "只要能趋吉避凶，还担心什么登高涉险？"],
+          "en": ["In travelling, if the Wealth line is strong and stands on the Month, gives life to or combines with the Self, and is not punished or controlled, one will surely return home with a full load.", "If one can seek the lucky and avoid the ill, why worry about climbing high or crossing danger?"] }
+      ]
+    }
+  ]
+}

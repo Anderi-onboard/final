@@ -77,14 +77,19 @@ assert.ok(iOffline > iCrisis,
 assert.match(engine, /CRISIS_PATTERNS\[i\]\.test\(question\)/,
   'crisis is still decided in code, which is why switching the model off cannot disable it');
 
-/* ── 4 · no outbound call ────────────────────────────────────────────────*/
-assert.match(
-  api,
-  /buildSystemPrompt\(question, product, offline \? null : utility, \{ mode \}\)/,
-  'offline hands routeQuestion no completion function'
-);
+/* ── 4 · no outbound call ────────────────────────────────────────────────
+   ⚠️ 这一条 2026-09-14 改了检法。原来查的是「离线时给 buildSystemPrompt 传 null
+   而不是一个会联网的 utility」—— 那条装配已作废封存(owner:「老的作废封存」)。
+   要成立的事没变,而且现在更强:**四节点的 buildNode 压根不接受 completion
+   函数,所以它不可能在返回罐头之前打一个出站请求。** 从「传了 null」变成
+   「连那个参数都没有」,是一条靠构造保证的规则。 */
+assert.match(api, /const built = buildNode\(role, body\)/,
+  '四节点不再用 buildNode 装配 —— 这条契约指着的东西没了');
+const fill = read('functions/_lib/nodes/fill.js');
+assert.ok(!/fetch\(|claudeComplete|completion/.test(fill),
+  'fill.js 里出现了出站调用的影子 —— 四节点的装配必须整段是本地的');
 assert.match(engine, /if \(!claudeComplete\) return Promise\.resolve\("general"\)/,
-  'routeQuestion answers locally when it has none — this is what keeps the assembly offline');
+  'routeQuestion answers locally when it has none — utility 角色仍然走它');
 
 /* ── 5 · the fixture lights up every element ─────────────────────────────
    Read the renderer for what it can produce, then require the fixture to

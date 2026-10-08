@@ -1,0 +1,277 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "增删卜易",
+  "chapter": "行人章",
+  "chapter_en": "The chapter on travellers away",
+  "ranges": {"增删卜易": [12003, 12283]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.ZS.23",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，占母在外何时来：用神伏藏受克而不来，六合卦变成冲也不来；若问平安，父母被日月动爻冲克则必不安，问来不来不能这样断",
+      "rule": {
+        "yi": "问行人在外平安与否，要看用神有没有病；问回来的日期，只看卦象断来不来。用神被冲被克、卦变克绝的，难盼其回。书中例：酉月戊申日占母亲在外面什么时候来，得旅卦变艮卦：这一卦如果问母亲平安与否，父母卯木被日月和动爻冲克，必定不平安；现在问的是来不来，不这样断，只能断用神伏藏又受克所以不来，六合卦变成六冲也不来，后来果然没有来，她在外面平安。",
+        "en": "In asking whether a traveller is well abroad, look at whether the Subject is ill; in asking the day of return, judge from the hexagram alone whether he comes or not. A Subject that is clashed or controlled, or a hexagram that changes into control or extinction, gives little hope of return. Worked example: in the You month, on a Wushen day, a man divined when his mother abroad would come and got Lü (the Traveller) changing to Gen. Had the question been her safety, the Resource Mao-wood, clashed and controlled by the Month, the Day and the moving lines, would surely have meant she was unwell; but the question was whether she would come, so it is not judged that way: the Subject is hidden and controlled, so she does not come, and a six-combine hexagram changing into a clash also does not come; in the end she did not come, and she was safe abroad."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [12002, 12002],
+          "zh": ["来人问行人在外平安否？", "须看有病无病；", "若问归期，只看卦象而断来与不来也。"],
+          "yi": ["来人问行人在外平安与否？", "要看用神有病没病；", "如果问回来的日期，只看卦象来断来不来。"],
+          "en": ["When a visitor asks whether the traveller is well abroad,", "look at whether the Subject is ill;", "if asked when he will return, look only at the hexagram to judge whether he comes or not."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11999, 11999],
+          "zh": ["惟恐卦变克绝，及反吟、用神被冲被克者，皆难望其回也。"],
+          "yi": ["就怕卦变到克、绝，或变成反吟，或用神被冲被克，这些都很难盼到他回来。"],
+          "en": ["but if the hexagram changes into control or extinction, or into Reversed Chant, or the Subject is clashed or controlled, there is little hope of his return."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12003, 12003],
+          "zh": ["如：酉月戊申日(旬空：寅卯)，占母在外何时来？", "得“旅之艮”"],
+          "yi": ["如：酉月戊申日（旬空寅、卯），占母亲在外面什么时候来？", "得旅卦变艮卦。"],
+          "en": ["For example: in the You month, on a Wushen day (Void: Yin and Mao), divining when a mother abroad would come:", "the hexagram Lü (the Traveller) changing to Gen."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12008, 12008],
+          "zh": ["此卦若问母平安否，父母卯木日月动爻冲克，必不安矣！", "今问来否，不以此断，只可断用神伏藏受克而不来，六合变冲亦不来，后果不来，在外平安。"],
+          "yi": ["这一卦如果问母亲平安与否，父母卯木被日月和动爻冲克，一定不平安！", "现在问的是来不来，不这样断，只能断用神伏藏又受克所以不来，六合卦变成冲也不来，后来果然没有来，她在外面平安。"],
+          "en": ["Had this hexagram been asked about the mother's safety, the Resource Mao-wood, clashed and controlled by the Month, the Day and the moving lines, would surely have meant she was unwell!", "But the question now is whether she comes, so it is not judged that way: one can only judge that the Subject is hidden and controlled and so does not come, and a six-combine hexagram changing into a clash also does not come; in the end she did not come, and she was safe abroad."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.22", "LY.TRAVEL.ZS.20"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.24",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，占仆人何日回：世爻空者速至，应在冲空之日；若问仆人在外吉凶，用神财爻伏藏又被日月克，必不回，但问归期不以此断",
+      "rule": {
+        "yi": "世爻空的，行人马上就到，应在冲开空亡的日子。书中例：亥月甲子日占仆人哪天回来，得革卦变夬卦：如果问仆人在外面吉凶，午火财爻伏藏又被日月克，一定不回来；现在问的是回来的日期，不这样断，断为世爻空，速到，这个人来了，己巳日必到；应在巳日，是冲开空亡的日子，巳火又正是财爻，果然在巳日到。",
+        "en": "When the Self is Void the traveller arrives at once, on the day that clashes the Void open. Worked example: in the Hai month, on a Jiazi day, a man divined on what day his servant would return and got Ge changing to Guai. Had the question been the servant's fortune abroad, the Wealth Wu-fire is hidden and controlled by the Month and the Day, so he would surely not return; but the question was the day of return, so it was not judged so: the Self is Void, so he comes quickly and will surely arrive on the Jisi day, which is the day that clashes the Void open, and Si-fire is also Wealth; he did arrive on the Si day."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11999, 11999],
+          "zh": ["世爻空者，行人即至；"],
+          "yi": ["世爻空的，行人马上就到；"],
+          "en": ["When the Self is Void, the traveller is arriving at once;"] },
+        { "by": "书中例", "book": "增删卜易", "range": [12009, 12009],
+          "zh": ["又如：亥月甲子日(旬空：戌亥)，占仆人何日回？", "得“革之夬”"],
+          "yi": ["又如：亥月甲子日（旬空戌、亥），占仆人哪天回来？", "得革卦变夬卦。"],
+          "en": ["Another example: in the Hai month, on a Jiazi day (Void: Xu and Hai), divining on what day a servant would return:", "the hexagram Ge changing to Guai."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12045, 12045],
+          "zh": ["此卦若问仆人在外吉凶，必不归矣！", "何也？", "午火财爻伏而被日月之克也。", "今问归期，不以此断，断曰：世空者速至，此人来矣，己巳日必到。", "应巳日者，冲空之日也，巳火又是财爻，果到于巳日。"],
+          "yi": ["这一卦如果问仆人在外面的吉凶，一定不回来了！", "为什么？", "午火财爻伏藏，又被日月克。", "现在问的是回来的日期，不这样断，断为：世爻空的速到，这个人来了，己巳日必到。", "应在巳日，是冲开空亡的日子，巳火又是财爻，果然在巳日到。"],
+          "en": ["Had this hexagram been asked about the servant's fortune abroad, he would surely not return!", "Why?", "The Wealth Wu-fire is hidden and controlled by the Month and the Day.", "But the question now is the day of return, so it is not judged that way: it is judged that a Void Self means quick arrival, this man has come, and he will surely arrive on the Jisi day.", "It answers on the Si day because that is the day that clashes the Void open, and Si-fire is also Wealth; he did arrive on the Si day."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.29", "LY.TRAVEL.HJC.36"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.25",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，占伯何日来：父母为用神、克世者速至，断七月必到，实际亥月才到，应在父母化出之爻",
+      "rule": {
+        "yi": "用神克世爻，他一定回来。书中例：未月戊戌日占伯父哪天来，得屯卦变随卦：父母为用神，克世爻的，到得快，断为七月必到；后来在亥月才到，应在亥月，是因为父母化出来的爻在亥。",
+        "en": "When the Subject controls the Self he will surely return. Worked example: in the Wei month, on a Wuxu day, a man divined on what day his uncle would come and got Zhun changing to Sui: the Resource is the Subject and controls the Self, which means a quick arrival, and it was judged that he would surely arrive in the seventh month; he came only in the Hai month, which answered because the line the Resource changed into is in Hai."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11997, 11997],
+          "zh": ["世克用兮人未动，用爻克世必然归。", "占亲人，看所用用神；"],
+          "yi": ["世爻克用神，人还没有动身；用神克世爻，一定会回来。", "占亲人，看所属的用神；"],
+          "en": ["When the Self controls the Subject, the man has not yet moved; when the Subject controls the Self, he will surely return.", "In divining for a kinsman, look at that kinsman's own Subject;"] },
+        { "by": "书中例", "book": "增删卜易", "range": [12046, 12046],
+          "zh": ["又如：未月戊戌日(旬空：辰巳)，占伯何日来，得“屯之随”"],
+          "yi": ["又如：未月戊戌日（旬空辰、巳），占伯父哪天来，得屯卦变随卦"],
+          "en": ["Another example: in the Wei month, on a Wuxu day (Void: Chen and Si), divining on what day an uncle would come, the hexagram Zhun changing to Sui:"] },
+        { "by": "书中例", "book": "增删卜易", "range": [12092, 12092],
+          "zh": ["父母为用神，克世者速至，七月必到。", "后于亥月方到，应亥月者，父母化出之爻也。"],
+          "yi": ["父母为用神，克世爻的到得快，七月必到。", "后来在亥月才到，应在亥月，是父母化出来的爻。"],
+          "en": ["The Resource is the Subject and controls the Self, so he arrives quickly and will surely come in the seventh month.", "He came only in the Hai month, and it answered in the Hai month because that is the line the Resource changed into."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.26",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，占父远行何日始回：午火父母克世，本日午日必到，果然当日申时到",
+      "rule": {
+        "yi": "用神克世爻，一定回来。书中例：丑月庚午日占父亲远行哪天才回来，得履卦：今天正是午日，午火父母克世爻，今天一定到；果然当天申时到。",
+        "en": "When the Subject controls the Self he will surely return. Worked example: in the Chou month, on a Gengwu day, a man divined on what day his father, gone on a long journey, would first come back and got Lü (Treading): today is a Wu day, and the Resource Wu-fire controls the Self, so he will surely arrive today; he did arrive that day, in the Shen hour."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11997, 11997],
+          "zh": ["世克用兮人未动，用爻克世必然归。"],
+          "yi": ["世爻克用神，人还没有动身；用神克世爻，一定会回来。"],
+          "en": ["When the Self controls the Subject, the man has not yet moved; when the Subject controls the Self, he will surely return."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12092, 12092],
+          "zh": ["又如：丑月庚午日(旬空：戌亥)，占父远行何日始回？", "得“天泽履”"],
+          "yi": ["又如：丑月庚午日（旬空戌、亥），占父亲远行哪天才回？", "得到履卦。"],
+          "en": ["Another example: in the Chou month, on a Gengwu day (Void: Xu and Hai), divining on what day a father gone on a long journey would first come back:", "the hexagram Lü (Treading)."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12099, 12099],
+          "zh": ["今日是午日，午火为父母克世，今日必到。", "果于本日申时到。"],
+          "yi": ["今天是午日，午火父母克世爻，今天一定到。", "果然当天申时到。"],
+          "en": ["Today is a Wu day, and the Resource Wu-fire controls the Self, so he will surely arrive today.", "He did arrive that day, in the Shen hour."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.27",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，仆占主人何日回：仆占主人以父母为用神，子水财爻化出巳火父爻，动爻不克变爻，巳日必到",
+      "rule": {
+        "yi": "占亲人，看所属的用神；发动的在逢合的日子回来，伏藏的在出现的日子回来。书中例：寅月癸亥日仆人占主人哪天回，得大畜卦变小畜卦：仆人占主人，以父母爻为用神，这一卦子水财爻发动，化出巳火父母爻，动爻不克变爻，断巳日必到；果然在巳日到。",
+        "en": "In divining for a kinsman, look at that kinsman's own Subject; a moving one returns on the day it meets a combination, and a hidden one on the day it appears. Worked example: in the Yin month, on a Guihai day, a servant divined on what day his master would return and got Daxu changing to Xiaoxu: a servant divining for his master takes the Resource line as the Subject; here the Wealth Zi-water moves and changes into the Resource Si-fire, and the moving line does not control the changed line, so he will surely arrive on the Si day; he did arrive on the Si day."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11997, 11997],
+          "zh": ["占亲人，看所用用神；"],
+          "yi": ["占亲人，看所属的用神；"],
+          "en": ["In divining for a kinsman, look at that kinsman's own Subject;"] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11998, 11998],
+          "zh": ["伏藏者，出现之日；", "动者，逢合之日；"],
+          "yi": ["伏藏的，在它出现的日子回来；", "发动的，在逢合的日子回来。"],
+          "en": ["A hidden one returns on the day it appears;", "a moving one returns on the day it meets a combination."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12100, 12100],
+          "zh": ["如：寅月癸亥日(旬空：子丑)，占主人何日回？", "得“大畜之小畜”"],
+          "yi": ["如：寅月癸亥日（旬空子、丑），占主人哪天回？", "得大畜卦变小畜卦。"],
+          "en": ["For example: in the Yin month, on a Guihai day (Void: Zi and Chou), divining on what day a master would return:", "the hexagram Daxu changing to Xiaoxu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12108, 12108],
+          "zh": ["仆占主人，以父母为用神，此卦子水财爻化出巳火父爻，动爻不克变爻，巳日必到。", "果于巳日到。"],
+          "yi": ["仆人占主人，以父母爻为用神，这一卦子水财爻化出巳火父母爻，动爻不克变爻，巳日必到。", "果然在巳日到。"],
+          "en": ["A servant divining for his master takes the Resource line as the Subject; in this hexagram the Wealth Zi-water changes into the Resource Si-fire, and the moving line does not control the changed line, so he will surely arrive on the Si day.", "He did arrive on the Si day."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.28",
+      "topic": "动变",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，占父何时来：初爻丑父与子合、五爻未父化进神，皆不来，须午年方来，果然午年戌月到",
+      "rule": {
+        "yi": "用神发动化进神，不回来；发动的遇合则被事绊住，逢合之年才来。书中例：辰年未月丁丑日占父亲什么时候来，得大有卦变井卦：初爻丑土父母与子水相合，不来；五爻未土父母化出进神，不来；必须到午年才来；果然午年戌月到。应在午年，是因为未爻的父母发动，午年合它，正是发动的爻逢合之年；又因为初爻子水与丑土相合，合住要冲开，午年冲开了它。",
+        "en": "A Subject that moves and changes into an Advancing spirit does not return; a moving one that meets a combination is held up, and comes in the year it meets the combination. Worked example: in a Chen year, in the Wei month, on a Dingchou day, a man divined when his father would come and got Dayou changing to Jing: the Resource Chou-earth in the first line is combined with Zi-water, so he does not come; the Resource Wei-earth in the fifth line changes into an Advancing spirit, so he does not come; he must come only in a Wu year; and he arrived in a Wu year, in the Xu month. It answered in the Wu year because the Wei-line Resource moves and the Wu year combines it, the year in which a moving line meets a combination; and also because Zi in the first line combines with Chou, and a combination must be clashed open, which the Wu year does."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11998, 11998],
+          "zh": ["动者，逢合之日；", "动化进神不返，用神化退必归；"],
+          "yi": ["发动的，在逢合的日子回来；", "动化进神不返，用神化退神必定回来；"],
+          "en": ["a moving one returns on the day it meets a combination;", "a moving Subject that changes into an Advancing spirit does not return, and one that changes into a Retreating spirit surely returns;"] },
+        { "by": "书中例", "book": "增删卜易", "range": [12109, 12109],
+          "zh": ["又如：辰年未月丁丑日(旬空：申酉)，占父何时来？", "得“大有之井”"],
+          "yi": ["又如：辰年未月丁丑日（旬空申、酉），占父亲什么时候来？", "得大有卦变井卦。"],
+          "en": ["Another example: in a Chen year, in the Wei month, on a Dingchou day (Void: Shen and You), divining when a father would come:", "the hexagram Dayou changing to Jing."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12147, 12147],
+          "zh": ["初爻丑父与子作合，不来；", "五爻未化父进神，不来；", "须午年方来。", "果于午年戌月到。", "应午年者，未爻父动，午岁合之，动而逢合之年也。", "又因初爻子与丑作合，合要冲开，午年以冲开也。"],
+          "yi": ["初爻丑土父母与子水相合，不来；", "五爻未土父母化出进神，不来；", "必须午年才来。", "果然午年戌月到。", "应在午年，是未爻的父母发动，午年合它，正是发动的爻逢合之年。", "又因为初爻子水与丑土相合，合住要冲开，午年冲开了它。"],
+          "en": ["The Resource Chou-earth in the first line is combined with Zi-water, so he does not come;", "the Resource Wei-earth in the fifth line changes into an Advancing spirit, so he does not come;", "he must come only in a Wu year.", "He arrived in a Wu year, in the Xu month.", "It answered in the Wu year because the Wei-line Resource moves and the Wu year combines it, the year in which a moving line meets a combination.", "And also because Zi in the first line combines with Chou, and a combination must be clashed open, which the Wu year does."] }
+      ],
+      "dispute": {
+        "yi": "这一例的断法是「化进神不来、等逢合之年才来」，与《黄金策》行人章「用爻化进神行人急回」相反；两书各有书中例，没有交代谁错。",
+        "en": "This example judges that a change into an Advancing spirit means he does not come and arrives only in the year of the combination, which is the opposite of the Huangjin Ce on travellers, where a Subject changing into an Advancing spirit means a quick return; each book has worked examples, and neither says which is wrong."
+      },
+      "see": ["LY.TRAVEL.ZS.19", "LY.TRAVEL.HJC.31"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.29",
+      "topic": "动变",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，占主人往楚平安否、迁往他省否：连占三卦，前两卦用神真空是凶亡之兆，报的是未年之死，第三卦申父生世才报眼前所问（四月必归）；野鹤：占远应近、占近应远，不能一卦竟断",
+      "rule": {
+        "yi": "用神入墓、绝、空、破，回来的消息杳无音信。书中例：寅月庚寅日仆人占主人往楚地平安与否、是否迁往别省，得观卦：父母遇真空，是不祥之兆，不敢直接断，再叫亲人占；同日占兄长，得中孚卦变临卦：前一卦仆人占主人，父母为用神，父母真空；这一卦弟弟占兄长，兄弟为用神，又落真空，是大凶之兆；再叫亲人占；次日辛卯日家人又占，得坎卦变困卦，作者说：得这一卦，现在可以替你放心了——前两卦用神真空是凶亡的兆头，这一卦申金父母生世爻，四月必归；问前面父、兄真空是为什么，是因为此公寿数无多，神灵报的是未年的死，没有说眼下的事；未年死的根据是占主人时父母临未土、占兄长时兄临未土，都被日月克害，因为在旬空所以暂时没有灾祸，未年出空，被日月伤，岂能不危险。辰年占的，果然未年死。野鹤说：连占两卦都报的是没有问的事，第三卦才报眼前所问，所以感叹前人用一卦竟断吉凶，不知道把「占远应近、占近应远」的卦错断了这么多。",
+        "en": "A Subject in the tomb, extinct, Void or broken gives no word of a return. Worked example: in the Yin month, on a Gengyin day, a servant divined whether his master, gone to Chu, was safe and whether he would move to another province, and got Guan: the Resource met true Void, an ominous sign, and I did not dare judge outright, so the household was told to divine again; the same day, divining for the elder brother, they got Zhongfu changing to Lin: in the former hexagram the servant divined for the master with the Resource as the Subject, and the Resource was truly Void; in this one the younger brother divined for the elder with the Peer as the Subject, and it too fell into true Void, a sign of great ill; so they were told to divine again; the next day, a Xinmao day, the family divined once more and got Kan changing to Kun. I said: with this hexagram I can set your mind at ease. The Subject in the first two was truly Void, a sign of death; in this one the Resource Shen-metal gives life to the Self, and he will surely return in the fourth month. When asked why the Resource and the Peer were truly Void before, I said: because this gentleman has not long to live, the spirits report his death in a Wei year and do not speak of what is before us. When asked how I knew it was a Wei year, I said: in divining for the master the Resource sits on Wei-earth, and in divining for the brother the Peer sits on Wei-earth, both controlled and harmed by the Month and the Day; being in the Void they cause no harm for now, but in the Wei year they come out of Void and are injured by the Month and Day, and how could that not be dangerous? Divined in a Chen year, he did die in the Wei year. Yehe says: two hexagrams in a row reported what had not been asked, and only the third reported the present question; hence I sigh that the former worthies judged luck and ill-luck from a single hexagram, not knowing how many hexagrams of \"far matter answered near, near matter answered far\" they have misjudged."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11998, 11998],
+          "zh": ["墓绝空破，归信杳然；"],
+          "yi": ["用神入墓、绝、空、破，回来的消息杳无音信；"],
+          "en": ["When the Subject is in the tomb, extinct, Void or broken, no word of a return comes;"] },
+        { "by": "书中例", "book": "增删卜易", "range": [12148, 12148],
+          "zh": ["又如：寅月庚寅日(旬空：午未)，占主人往楚平安否？", "迁往他省否？", "得“观”卦"],
+          "yi": ["又如：寅月庚寅日（旬空午、未），占主人往楚地平安与否？", "是否迁往别省？", "得到观卦。"],
+          "en": ["Another example: in the Yin month, on a Gengyin day (Void: Wu and Wei), divining whether a master gone to Chu was safe:", "and whether he would move to another province:", "the hexagram Guan."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12154, 12154],
+          "zh": ["父母遇真空，不详之兆，不敢竟断，再令亲人卜之。", "于：同日，占兄得“中孚之临”"],
+          "yi": ["父母遇到真空，是不祥之兆，不敢直接断，再叫亲人占。", "同一天，占兄长，得中孚卦变临卦。"],
+          "en": ["The Resource met true Void, an ominous sign, and I did not dare judge outright, so the household was told to divine again.", "The same day, divining for the elder brother, they got Zhongfu changing to Lin."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12186, 12186], "literal": ["兄弟"],
+          "zh": ["前卦仆占主，父母为用神，父母真空；", "此卦弟占兄，兄弟为用神，又落真空，大凶之兆。", "再命亲人占之。"],
+          "yi": ["前一卦仆人占主人，父母为用神，父母真空；", "这一卦弟弟占兄长，兄弟为用神，又落真空，是大凶之兆。", "再叫亲人占。"],
+          "en": ["In the former hexagram the servant divined for the master with the Resource as the Subject, and the Resource was truly Void;", "in this one the younger brother divined for the elder with the Peer as the Subject, and it too fell into true Void, a sign of great ill.", "So they were told to divine again."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12187, 12187],
+          "zh": ["于：次日辛卯(旬空：午未)，家人又占，得“坎之困”"],
+          "yi": ["第二天辛卯日（旬空午、未），家人又占，得坎卦变困卦。"],
+          "en": ["The next day, a Xinmao day (Void: Wu and Wei), the family divined once more and got Kan changing to Kun."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12233, 12233], "literal": ["兄弟"],
+          "zh": ["余曰：得此卦，今为尔释然矣。", "彼问：何也？", "余曰：前两卦用神真空，乃凶亡之兆，今此卦申父生世，四月必归。", "彼问：若此，则前父兄真空何也？", "余曰：因此公大寿无多，故神报未年之死，不言目下之事耳。", "彼又问：何以知死未年也？", "余曰：占主，父临未土；", "占兄，兄临未土，俱被日月克害，因在旬空，所以无祸，未年出空，被日月之伤，得不危乎？", "辰年占，果未年死。"],
+          "yi": ["我说：得这一卦，现在可以替你放心了。", "他问：为什么？", "我说：前两卦用神真空，是凶亡的兆头，这一卦申金父母生世爻，四月必归。", "他问：这样的话，前面父母、兄弟真空又是为什么？", "我说：因为此公寿数无多，所以神灵报的是未年的死，没有说眼下的事。", "他又问：凭什么知道死在未年？", "我说：占主人，父母临未土；", "占兄长，兄弟临未土，都被日月克害，因为在旬空所以没有灾祸，未年出空，被日月所伤，岂能不危险？", "辰年占的，果然未年死。"],
+          "en": ["I said: with this hexagram I can now set your mind at ease.", "He asked: why?", "I said: in the first two hexagrams the Subject was truly Void, a sign of death; in this one the Resource Shen-metal gives life to the Self, and he will surely return in the fourth month.", "He asked: if so, why were the Resource and the Peer truly Void before?", "I said: because this gentleman has not long to live, the spirits report his death in a Wei year and do not speak of what is before us.", "He asked again: how do you know it is a Wei year?", "I said: in divining for the master, the Resource sits on Wei-earth;", "in divining for the brother, the Peer sits on Wei-earth, both controlled and harmed by the Month and the Day; because they are in the Void they cause no harm for now, but in the Wei year they come out of Void and are injured by the Month and the Day, and how could that not be dangerous?", "Divined in a Chen year, he did die in the Wei year."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [12234, 12234],
+          "zh": ["野鹤曰：连占两卦，俱报未问之事，第三卦方报目前所问，因叹前贤以一卦竟断吉凶，不知将此占远应近、占近应远之卦错断如许矣。", "既不能悟出，尚牵强辨论，留作后人这法，何哉？"],
+          "yi": ["野鹤说：连占两卦，报的都是没有问的事，第三卦才报眼前所问，所以感叹前人用一卦竟断吉凶，不知道把「占远应近、占近应远」的卦错断了这么多。", "既然不能悟出，还牵强辩论，把这样的办法留给后人，是为什么呢？"],
+          "en": ["Yehe says: two hexagrams in a row reported what had not been asked, and only the third reported the present question; hence I sigh that the former worthies judged luck and ill-luck from a single hexagram, not knowing how many hexagrams of \"far matter answered near, near matter answered far\" they have misjudged.", "Since they could not grasp it and still argued with strained reasons, why leave such a method to later men?"] }
+      ],
+      "note": {
+        "yi": "「真空」指用神落在旬空、又没有被冲被填的空，是凶象；连着三卦的前两卦用神真空报的是远应（未年的死），第三卦才答眼前的归期，这一例是野鹤「占远应近、占近应远」的出处。",
+        "en": "\"True Void\" means a Subject in the ten-day Void that is neither clashed nor filled, an ill sign. The first two hexagrams, with the Subject truly Void, reported a far event (a death in a Wei year); only the third answered the present question of return. This example is the source of Yehe's remark that a far matter may be answered near, and a near matter answered far."
+      },
+      "see": ["LY.TRAVEL.ZS.18"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.30",
+      "topic": "归期",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，妻占夫还往他省去否：官为用神、申金动克寅木，夫爻受克则不往他处，日月生官官生世则有归志，应在合住申金的巳日；或曰用爻有病莫问归期，答：问平安则断不利，问去不去断法不同",
+      "rule": {
+        "yi": "用爻有病，在外不安；问归期，只看卦象断来不来。书中例：亥月甲子日妻子占丈夫在外还会不会去别省，得大壮卦变大过卦：妻子占丈夫，官鬼为用神，申金发动克它，寅木夫爻受克，不会往别处去了，眼下一定回来；日月生官鬼，官鬼生世爻，必有归意；巳日必到，应在巳日，是合住申金的日子，果然在巳日到。有人说用爻有病就不要问归期，这一卦申金化进神克寅木，怎么还说回来？答：他若问平安就断不利，现在问的是往不往别处去，夫爻受克就不往别处去，断卦的人各有各的取用。",
+        "en": "If the Subject line is ill, he is uneasy abroad; in asking the day of return, look only at the hexagram to judge whether he comes. Worked example: in the Hai month, on a Jiazi day, a wife divined whether her husband abroad would go on to another province and got Dazhuang changing to Daguo: a wife divining for her husband takes Pressure as the Subject; Shen-metal moves and controls it, so the husband's Yin-wood is controlled and he will not go elsewhere, and he will surely come back soon; the Month and the Day give life to Pressure and Pressure gives life to the Self, so he must have a mind to return; he will surely arrive on the Si day, which answers because it is the day that combines Shen-metal shut, and he arrived on the Si day. Someone objected: if the Subject line is ill, do not ask the day of return, and here Shen-metal changes into an Advancing spirit to control Yin-wood, so how can you allow his return? I said: had they asked about his safety I would have judged it unfavourable, but now they ask whether he goes elsewhere, and when the husband's line is controlled he does not go elsewhere; those who judge hexagrams each take what they need."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12001, 12001],
+          "zh": ["用爻无病，可断归期；", "用爻有病，在外不安。"],
+          "yi": ["用爻没有病，可以断回来的日期；", "用爻有病，他在外面不安。"],
+          "en": ["If the Subject line is free of illness, the day of return can be judged;", "if it is ill, he is uneasy abroad."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12235, 12235],
+          "zh": ["亥月甲子日(旬空：戌亥)，占夫在外，还往他省去否？", "得“大壮之大过”"],
+          "yi": ["亥月甲子日（旬空戌、亥），妻子占丈夫在外还会不会去别省？", "得大壮卦变大过卦。"],
+          "en": ["In the Hai month, on a Jiazi day (Void: Xu and Hai), a wife divined whether her husband abroad would go on to another province:", "the hexagram Dazhuang changing to Daguo."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12273, 12273],
+          "zh": ["妻占夫，官为用神，申动克之，寅木夫爻受克，不往他处矣，目下必回。", "彼问：何以知其回也？", "余曰：日月生官，官生世爻，必有归志。", "彼问：应何日到？", "余曰：巳日必到。", "应巳日者，合住申金之日也，果于巳日到。"],
+          "yi": ["妻子占丈夫，官鬼为用神，申金发动克它，寅木夫爻受克，不会往别处去了，眼下一定回来。", "他问：怎么知道他会回来？", "我说：日月生官鬼，官鬼生世爻，必有回来的心意。", "她问：应在哪天到？", "我说：巳日必到。", "应在巳日，是合住申金的日子，果然在巳日到。"],
+          "en": ["A wife divining for her husband takes Pressure as the Subject; Shen-metal moves and controls it, so the husband's Yin-wood is controlled and he will not go elsewhere, and he will surely come back soon.", "She asked: how do you know he will come back?", "I said: the Month and the Day give life to Pressure and Pressure gives life to the Self, so he must have a mind to return.", "She asked: on what day will he arrive?", "I said: he will surely arrive on the Si day.", "It answers on the Si day because that is the day that combines Shen-metal shut; he did arrive on the Si day."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12274, 12276],
+          "zh": ["或曰：用爻有病，莫问归期，此卦申金化进，以克寅木，如何许回？", "余曰：彼问平安，则断以不利，今问往他处否？", "夫爻受克，不往他乡，断卦者各有取用耳。"],
+          "yi": ["有人说：用爻有病就不要问归期，这一卦申金化进神克寅木，怎么还说回来？", "我说：他若问平安，就断为不利，现在问的是往不往别处去？", "夫爻受克，就不往别处去，断卦的人各有各的取用罢了。"],
+          "en": ["Someone said: if the Subject line is ill, do not ask the day of return, and in this hexagram Shen-metal changes into an Advancing spirit to control Yin-wood, so how can you still say he returns?", "I said: had they asked about his safety I would have judged it unfavourable, but now they ask whether he goes elsewhere;", "when the husband's line is controlled he does not go elsewhere; those who judge hexagrams each take what they need."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.22"]
+    },
+    {
+      "id": "LY.TRAVEL.ZS.31",
+      "topic": "音信",
+      "chapter": "行人章",
+      "chapter_en": "The chapter on travellers away",
+      "title": "行人章·书中例，占差家人取书得否、何日回：人今日酉时必到，书得不到——父母化回头之克；世爻化卯鬼人不到必有忧，酉时冲去卯木则无忧",
+      "rule": {
+        "yi": "动爻化出克它的爻最凶；文书以父母爻为用神，化出回头克就得不到书。书中例：辰月丙申日占派家人去取书能不能取到、哪天回来，得渐卦变剥卦：仆人今天酉时必到，书得不到。问怎么知道的，我说：巳火父母化出回头之克，所以得不到书；甲子持世化出卯木官鬼，人不到必有忧虑，今天酉时冲去卯木，就没有忧了；果然酉时到了，而书没有取到。",
+        "en": "A movement that changes into a controlling line is the most ill; a document is read from the Resource line, and if it changes into a turning-back control the document is not obtained. Worked example: in the Chen month, on a Bingshen day, a man divined whether a household servant sent to fetch a book would get it and on what day he would return, and got Jian changing to Bo: the servant will surely arrive this day in the You hour, but the book will not be had. Asked how I knew, I said: the Resource Si-fire changes into a turning-back control, so the book is not obtained; Jiazi holds the Self and changes into the Pressure Mao-wood, so if he did not arrive there would surely be worry, but this day in the You hour the clash removes the Mao-wood, so there is no worry. He did arrive in the You hour, and the book was not got."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [11998, 11998],
+          "zh": ["动化鬼，在外危灾。", "最忌动而化克，还防卦变反吟。"],
+          "yi": ["发动化出官鬼，在外有危险灾祸。", "最怕发动而化出克它的爻，还要提防卦变成反吟。"],
+          "en": ["one that changes into Pressure meets danger and calamity abroad.", "Most to be feared is a movement that changes into a controlling line, and beware too of the hexagram changing into Reversed Chant."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12277, 12277],
+          "zh": ["辰月丙申日(旬空：辰巳)，占差家人取书得否？", "何日回？", "得“渐之剥”"],
+          "yi": ["辰月丙申日（旬空辰、巳），占派家人去取书能不能取到？", "哪天回来？", "得渐卦变剥卦。"],
+          "en": ["In the Chen month, on a Bingshen day (Void: Chen and Si), divining whether a household servant sent to fetch a book would get it:", "and on what day he would return:", "the hexagram Jian changing to Bo."] },
+        { "by": "书中例", "book": "增删卜易", "range": [12283, 12283],
+          "zh": ["仆人今日酉时必到，书不得。", "彼问：何以知之？", "余曰：巳父化回头之克，不得书矣。", "甲子持世化卯鬼，人不到，必有忧，今日酉时冲去卯木，则无忧也。", "果酉时到，而书不得。"],
+          "yi": ["仆人今天酉时必到，书取不到。", "他问：怎么知道的？", "我说：巳火父母化出回头之克，所以取不到书。", "甲子持世化出卯木官鬼，人不到必有忧，今天酉时冲去卯木，就没有忧了。", "果然酉时到了，而书没有取到。"],
+          "en": ["The servant will surely arrive this day in the You hour, but the book will not be had.", "He asked: how do you know?", "I said: the Resource Si-fire changes into a turning-back control, so the book is not obtained.", "Jiazi holds the Self and changes into the Pressure Mao-wood, so if he did not arrive there would surely be worry, but this day in the You hour the clash removes the Mao-wood, so there is no worry.", "He did arrive in the You hour, and the book was not got."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.19"]
+    }
+  ]
+}

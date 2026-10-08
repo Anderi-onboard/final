@@ -1,0 +1,136 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "卜筮全书",
+  "chapter": "卜筮歌诀",
+  "chapter_en": "Rhyme collection",
+  "ranges": {"卜筮大全": [3040, 3641]},
+  "units": [
+    {
+      "id": "LY.MARRY.BSQS.07",
+      "topic": "取象",
+      "chapter": "二十二、神杀断例",
+      "chapter_en": "No. 22, judgments by the spirit stars",
+      "title": "神杀断例·天喜与咸池：问喜宜用天喜，消愁宜天解星，大杀不要用，咸池星不要用来问婚",
+      "rule": {
+        "yi": "问喜事，要看天喜星；消愁解忧，要看天解星；大杀不能用；有咸池星的时候不要问婚姻。",
+        "en": "To ask about a joyful event, look to the Tianxi star; to dispel sorrow, look to the Tianjie star; do not use the Great Killing star; when the Xianchi star is present, do not ask about marriage."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3161, 3161],
+          "zh": ["问喜宜天喜，", "消愁天解星。", "大杀休施用，", "咸池莫问婚。"],
+          "yi": ["问喜事，适宜用天喜星，", "消愁解忧，要用天解星。", "大杀星不要施用，", "咸池星不要用来问婚姻。"],
+          "en": ["To ask about joy, the Tianxi star is fitting,", "to dispel sorrow, use the Tianjie star.", "The Great Killing star is not to be used,", "and the Xianchi star is not to be used for asking about marriage."] }
+      ],
+      "note": {
+        "yi": "这一句后面还有天医、血忌、往亡、三丘五墓等，都是问病、求雨、出入的口诀，与婚姻无关，没有收。咸池在婚姻里的具体说法见 LY.MARRY.BSQS.01。",
+        "en": "The verse goes on with the Tianyi, Xueji and Wangwang stars, the Three Mounds and Five Tombs and the like, all rhymes on illness, rain-seeking and going out, which have nothing to do with marriage and are not included. What the Xianchi star means in marriage is set out at LY.MARRY.BSQS.01."
+      },
+      "see": ["LY.MARRY.BSQS.01", "LY.MARRY.TXF.15", "LY.MARRY.DYTJ.25"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.08",
+      "topic": "夫妻",
+      "chapter": "三、诸爻持世诀",
+      "chapter_en": "No. 3, rhyme on each line holding the Self",
+      "title": "诸爻持世诀：父母持世夫妻相克不和同、到老要求他姓之子；兄弟持世克妻财",
+      "rule": {
+        "yi": "父母爻持世，事情忧虑阻塞，身上带着文书和官鬼，夫妻互相克、不和睦，到老要去求别姓的儿子（过继）。兄弟爻持世，克妻财，官司之忧没了结又来，鬼旺要防口舌，自身强反而损失钱财。",
+        "en": "With the Resource line holding the Self line, matters are worrying and blocked, one carries documents and Pressure, husband and wife control each other and are not in accord, and in old age one must seek a son of another surname (by adoption). With the Peer line holding the Self line, it controls Wealth, the wife; worry over official matters is not over before more comes; with strong Pressure guard against quarrels; with the Self strong one loses money instead."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3040, 3040],
+          "zh": ["父母持世事忧否，", "身带文书及官鬼；", "夫妻相克不和同，", "到老用求他姓子。"],
+          "yi": ["父母爻持世，事情忧虑阻塞，", "身上带着文书和官鬼；", "夫妻互相克，不和睦，", "到老要去求别姓的儿子。"],
+          "en": ["With the Resource line holding the Self line, matters are worrying and blocked,", "one carries documents and Pressure;", "husband and wife control each other and are not in accord,", "and in old age one must seek a son of another surname."] },
+        { "by": "经", "book": "卜筮大全", "range": [3048, 3048],
+          "zh": ["兄弟持世克妻财，", "忧官未了事还来；", "鬼旺正当防口舌，", "身强必定损其财。"],
+          "yi": ["兄弟爻持世，克妻财，", "官司的忧虑没了结，事情又来；", "鬼旺相，正要防口舌；", "自身强，一定损失钱财。"],
+          "en": ["With the Peer line holding the Self line, it controls Wealth, the wife;", "worry over official matters is not over before more comes;", "with strong Pressure, guard against quarrels;", "with the Self strong, one will surely lose money."] }
+      ],
+      "note": {
+        "yi": "这首歌诀有六句，这里只收和夫妻有关的父母持世、兄弟持世两句；同样的诀在《火珠林》（第 945 行）和《周易尚占》（第 477 行）里也有。「用求他姓子」是过继别姓的儿子，即养子。",
+        "en": "The rhyme has more lines; only the two on the Resource and Peer lines holding the Self line, which bear on husband and wife, are included. The same rhyme is in the Huozhulin (line 945) and the Zhouyi Shangzhan (line 477). 'Seeking a son of another surname' means adopting a son of another family."
+      },
+      "see": ["LY.MARRY.HJC.73", "LY.MARRY.TXF.07", "LY.MARRY.DYTJ.08"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.09",
+      "topic": "风险",
+      "chapter": "二十三、六亲持世歌",
+      "chapter_en": "No. 23, rhyme on each relation holding the Self",
+      "title": "六亲持世歌：官鬼持世得官，占婚问病俱凶兆；财爻持世，阴爻为妻妾、阳爻为财",
+      "rule": {
+        "yi": "官鬼爻持世，一定得官，文书印信两样都看得见；但占婚姻、问疾病都是凶兆，还会破宅伤财、身不安宁。财爻持世：阴爻是妻妾，阳爻是财，持世持身都合心意；经商种田养蚕收成百倍；占病占产，官鬼是胎。",
+        "en": "With the Pressure line holding the Self line one is sure to get office, and documents and seals both show; but a divination on marriage or illness is an ill omen, and there will be a broken house, lost money and no ease. With the Wealth line holding the Self line: a yin line is the wife or concubine and a yang line is wealth, and holding the Self or the Body both please the heart; in trade, farming and silkworms the yield is a hundredfold; in divining illness or birth, Pressure is the womb."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3179, 3179],
+          "zh": ["官鬼持世必得官，", "文书印信两相看；", "占婚问病俱凶兆，", "破宅伤财身不安。"],
+          "yi": ["官鬼持世，一定得官，", "文书印信两样都看得见；", "占婚姻、问疾病都是凶兆，", "破宅伤财，身不安宁。"],
+          "en": ["Pressure holding the Self line: one is sure to get office,", "and documents and seals both show;", "but a divination on marriage or illness is an ill omen,", "with a broken house, lost money and no ease."] },
+        { "by": "经", "book": "卜筮大全", "range": [3181, 3181],
+          "zh": ["阴为妻妾阳为财，", "持世持身总称怀；", "财谷田蚕收百倍，", "若占病产鬼为胎。"],
+          "yi": ["阴爻是妻妾，阳爻是财，", "持世持身都合心意。", "财谷、田地、蚕桑，收成百倍；", "如果占病占产，官鬼就是胎。"],
+          "en": ["A yin line is the wife or concubine, a yang line is wealth;", "holding the Self or the Body both please the heart.", "in grain, fields and silkworms the yield is a hundredfold;", "if divining illness or birth, Pressure is the womb."] }
+      ],
+      "dispute": {
+        "yi": "同样是官鬼持世，这首歌说「占婚问病俱凶兆」，《天玄赋》总论提纲说「官鬼不宜持世，求名婚娶两相宜」（LY.MARRY.TXF.24）。两处都是口诀，没有注，书里不裁断。《增删卜易》按男女分：女占男，官星持世、合世、生世且旺相是良缘（LY.MARRY.ZS.11）。",
+        "en": "For the same Pressure line holding Self, this rhyme says 'a divination on marriage or illness is an ill omen', while the opening summary of the Tianxuan Fu says 'Pressure should not hold the Self line, but for seeking office and for marrying both are fitting' (LY.MARRY.TXF.24). Both are bare rhymes and the books do not decide between them. The Zengshan Buyi divides by sex: when a woman divines about a man, a Pressure line that holds, combines with or generates the Self line and is strong makes a good match (LY.MARRY.ZS.11)."
+      },
+      "note": {
+        "yi": "这首歌其余几句（父母持世、子孙持世、兄弟持世）讲的是文书、谷财、胎病，与婚姻无关，没有收。同一首歌在《火珠林》（第 948 行）和《周易尚占》（第 477 行）里也有。",
+        "en": "The other lines of the rhyme (on the Resource, Output and Peer lines holding the Self) concern documents, grain and money, and pregnancy and illness, and have nothing to do with marriage and are not included. The same rhyme is in the Huozhulin (line 948) and the Zhouyi Shangzhan (line 477)."
+      },
+      "see": ["LY.MARRY.TXF.24", "LY.MARRY.ZS.11", "LY.MARRY.HJC.87"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.10",
+      "topic": "对方",
+      "chapter": "阐奥歌章·六亲章",
+      "chapter_en": "Rhyme chapter on the six relations (Chan Ao Ge Zhang)",
+      "title": "六亲章·妻财：财发动有青龙助因妻致富，临朱雀妻贤慧，犯勾陈妻病，共螣蛇妻拙，同白虎妻性刚，临玄武妻阴暗；两位妻财一妻一妾；妻财合世夫妻顺",
+      "rule": {
+        "yi": "妻财爻发动、有青龙帮助，靠妻子发家致富；财爻临朱雀，妻子贤惠聪明；犯勾陈，妻子有病灾；和螣蛇同位，妻子笨拙；和白虎同行，妻子性子刚烈；临玄武，多有阴暗的事，心思瞒着人，一定不好。两个妻财爻都旺相，是一妻一妾都容貌光彩。卦里如果没有妻财，常独自一人；妻财安静，平安康健。妻财合世爻，夫妻和顺；妻位生身，家道兴旺。",
+        "en": "With the Wealth line moving and the Azure Dragon helping it, one grows rich through the wife; Wealth on the Vermilion Bird, the wife is worthy and clever; offending Hook Earth, the wife has illness and misfortune; together with the Coiling Snake, the wife is clumsy; going with the White Tiger, the wife's temper is hard; on the Dark Tortoise, much is hidden and dark, and she hides her thoughts from others, surely not good. Two Wealth lines both strong mean one wife and one concubine, both radiant. If the hexagram has no Wealth line one is often alone; Wealth quiet keeps peace and health. Wealth combining with the Self line: husband and wife are in accord; the wife's place generating the Body: the household prospers."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3641, 3641],
+          "zh": ["妻财发动青龙助，", "因妻致富妙难量。", "财临朱雀妻贤慧，", "妻犯勾陈妻病殃。", "螣蛇共位妻应拙，", "白虎同行妻性刚。", "妻临玄武多阴暗，", "心意瞒人必不良。", "两位妻财俱旺相，", "一妻一妾美容光。", "卦若无妻常独自，", "妻财安静保安康。", "妻财合世夫妻顺，", "妻位生身家道昌。"],
+          "yi": ["妻财爻发动，有青龙帮助，", "靠妻子发家致富，好处说不尽。", "财爻临朱雀，妻子贤惠聪明；", "妻财犯了勾陈，妻子有病灾。", "和螣蛇同位，妻子应当笨拙；", "和白虎同行，妻子性情刚烈。", "妻财临玄武，多有阴暗的事，", "心思瞒着人，一定不好。", "两个妻财爻都旺相，", "一妻一妾，容貌都有光彩。", "卦里如果没有妻财，常常独自一人；", "妻财安静，保平安康健。", "妻财爻合世爻，夫妻和顺；", "妻位生身，家道兴旺。"],
+          "en": ["When the Wealth line moves and the Azure Dragon helps it,", "one grows rich through the wife, a blessing beyond measure.", "Wealth on the Vermilion Bird: the wife is worthy and clever;", "Wealth offending Hook Earth: the wife has illness and misfortune.", "together with the Coiling Snake, the wife is clumsy;", "going with the White Tiger, the wife's temper is hard.", "Wealth on the Dark Tortoise: much that is hidden and dark,", "she hides her thoughts from others, surely not good.", "Two Wealth lines both strong,", "one wife and one concubine, both radiant.", "If the hexagram has no Wealth line, one is often alone;", "Wealth quiet keeps peace and health.", "Wealth combining with the Self line: husband and wife are in accord;", "the wife's place generating the Body: the household prospers."] }
+      ],
+      "note": {
+        "yi": "这首歌里「妻财」是财爻，不专指某一个妻子；「两位妻财俱旺相」指卦里有两个财爻。歌的前半（父母、子孙）和后半（官鬼、兄弟）讲别的六亲，没有收。同一首歌在《火珠林》阐奥歌章的六亲章里也有（第 1167 行），个别字不同。",
+        "en": "In this rhyme 'Wealth' is the Wealth line and does not point to a particular wife; 'two Wealth lines' means the hexagram has two Wealth lines. The first part of the rhyme (Resource and Output) and the last (Pressure and Peer) are about other relations and are not included. The same rhyme is in the six-relations chapter of the Chan Ao Ge Zhang in the Huozhulin (line 1167), with a few characters differing."
+      },
+      "see": ["LY.MARRY.HJC.76", "LY.MARRY.HJC.77", "LY.MARRY.HJC.80", "LY.MARRY.HJC.81", "LY.MARRY.TXF.20"]
+    },
+    {
+      "id": "LY.MARRY.BSQS.11",
+      "topic": "夫妻",
+      "chapter": "阐奥歌章·身命章",
+      "chapter_en": "Rhyme chapter on person and fate (Chan Ao Ge Zhang)",
+      "title": "身命章：财临阴位妻交（动）妻妾宜；世、命、应、身相刑相克，不伤自己即伤妻",
+      "rule": {
+        "yi": "财爻落在阴位、又动，妻妾相宜；世、命、应、身彼此又刑又克，不伤到自己就伤到妻子。",
+        "en": "Wealth on a yin position and moving suits wife and concubine; if the Self, Life, Other and Body punish and control one another, either oneself or one's wife is harmed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3637, 3637],
+          "zh": ["财临阳位财源广，", "阴位妻交妻妾宜。"],
+          "yi": ["财临阳位，财源广；", "阴位，妻交，妻妾宜。"],
+          "en": ["Wealth on a yang position: the source of wealth is broad;", "on a yin position, with the wife line moving, wife and concubine are fitting."] },
+        { "by": "经", "book": "卜筮大全", "range": [3637, 3637],
+          "zh": ["世命应身刑又克，", "不伤自己即伤妻。"],
+          "yi": ["世、命、应、身彼此又刑又克，", "不伤自己就伤妻。"],
+          "en": ["If the Self, Life, Other and Body punish and control one another,", "either oneself or one's wife is harmed."] }
+      ],
+      "note": {
+        "yi": "「世为身、应为命」和「内卦为身、外卦为命」是这首歌前面的两种取法，「世命应身」指这几样都算进去。同一首歌在《火珠林》阐奥歌章的身命章里也有（第 1162 行）。",
+        "en": "'The Self as the Body and the Other as the Life' and 'the inner trigram as the Body and the outer as the Life' are two ways of taking these earlier in the rhyme, and 'Self, Life, Other, Body' means all of them counted. The same rhyme is in the person-and-fate chapter of the Chan Ao Ge Zhang in the Huozhulin (line 1162)."
+      },
+      "see": ["LY.MARRY.BSQS.10", "LY.MARRY.HJC.73"]
+    }
+  ]
+}

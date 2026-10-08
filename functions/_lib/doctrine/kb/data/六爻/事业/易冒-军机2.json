@@ -1,0 +1,236 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "军机章第四十三(下)",
+  "chapter_en": "Chapter 43: Military affairs (part 2)",
+  "ranges": {"易冒": [856, 870]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.20",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：兵法虽不一而象理只有一个——主帅（世）空则中军折、贼首（应）空则敌人逃；生我之动爻喜有援兵、克我之动爻恶其助敌；彼虽败而不能胜是因有生、己虽伤而不能害是因有扶；全盛而衰指动冲、将靡而起指绝处逢生",
+      "rule": {
+        "yi": "兵法各家说法不一，但象和理只有一个：主帅（世）空，中军就折；贼首（应）空，敌人就逃。生我的动爻，喜它是来援的兵；克我的动爻，厌它是帮敌人的。还有一种：对方虽败而打不垮他，是因为他有生扶；我方虽伤而伤不到根本，是因为我有扶持。全盛而转衰，将倒而复起，进退反复，全看爻神的动静。",
+        "en": "The arts of war differ from school to school, but the image and the principle are one: if the commander (the Self) is Void the centre army is broken, and if the bandit chief (the Other) is Void the enemy flees. A moving line that generates me is welcome, being relief troops; one that controls me is hated, for it helps the enemy. There is also the case where the other side, though beaten, cannot be overcome, because it has generation, and where I, though hurt, am not harmed, because I have support. Fully thriving and then declining, about to fall and then rising, advancing and retreating back and forth: it all depends on the stirring and stilling of the lines."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [856, 856],
+          "zh": ["故兵法不一，象理非二，", "凡主帅空而中军折，贼首空而敌人逃。", "生我之动爻，喜有援兵，克我之动爻，恶其助敌。", "犹有彼虽败而不能胜彼，谓其有生也，己虽伤而不能害己，谓我有扶也。", "全盛而衰，将靡而起，进退反复，存乎神尔。"],
+          "yi": ["所以兵法各家不一，象和理却没有两样。", "凡是主帅空，中军就折；贼首空，敌人就逃。", "生我的动爻，喜欢有援兵；克我的动爻，厌恶它帮助敌人。", "还有对方虽败而打不垮他，是说他有生扶；我方虽伤而伤不到根本，是说我有扶持。", "全盛却衰，将倒却起，进退反复，全在爻神的变化。"],
+          "en": ["So the arts of war are not one, yet the image and the principle are not two.", "Whenever the commander is Void the centre army is broken, and when the bandit chief is Void the enemy flees.", "A moving line that generates me is welcome, for there are relief troops; a moving line that controls me is hated, for it helps the enemy.", "There is also the case where the other side, though beaten, cannot be overcome, which means he has generation; and where I, though hurt, am not harmed, which means I have support.", "Fully thriving yet declining, about to fall yet rising, advancing and retreating back and forth: it all lies in the spirit of the lines."] },
+        { "by": "易冒注", "book": "易冒", "range": [857, 857],
+          "zh": ["主帅谓世，贼首谓应，", "全盛而衰，谓动冲，", "将靡而起，谓绝生。"],
+          "yi": ["主帅说的是世，贼首说的是应；", "全盛而衰，指的是动冲（爻动而遇冲）；", "将靡而起，指的是绝处逢生。"],
+          "en": ["The commander means the Self, the bandit chief means the Other;", "'fully thriving yet declining' refers to moving and clashing (a line that moves and meets a clash);", "'about to fall yet rising' refers to being generated in extinction."] }
+      ],
+      "note": {
+        "yi": "「中军」是主帅所在的主力。「主帅空而中军折」是世空则主帅这一边折损。「全盛而衰」「将靡而起」书里自己注作「动冲」「绝生」，字面是：旺的爻动了遇冲而转衰，将倒的爻在绝处逢生而重起。「存乎神」的「神」指爻神的动静变化。这一条和总纲（YM.11）配套：世是主帅、应是贼首。",
+        "en": "'Zhongjun' is the main body where the commander is; 'the commander Void and the centre army broken' means that when the Self is Void, the commander's side suffers loss. 'Fully thriving yet declining' and 'about to fall yet rising' are glossed by the book itself as 'moving and clashing' and 'extinction and generation'; read literally, a thriving line moves, meets a clash and declines, while a line about to fall is generated in extinction and rises again. The 'spirit' in 'it lies in the spirit' is the stirring and stilling of the lines. This unit goes with the general statement (YM.11): the Self is the commander and the Other is the bandit chief."
+      },
+      "see": ["LY.CAREER.YM.11", "LY.CAREER.YM.21"]
+    },
+    {
+      "id": "LY.CAREER.YM.21",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：官鬼（敌）有五不可——不可得时势恐害成、不可遇长生恐难灭、不可临胎养恐方兴、不可暗动兼伏鬼克世恐谋刺、不可上下（内外）克世恐内应外通",
+      "rule": {
+        "yi": "官鬼是敌，有五件事不可：不可得时得势，怕它妨害成功；不可遇长生，怕它难以消灭；不可临胎、养，怕它正在兴起；不可暗动，再兼伏着的鬼克世，怕它谋划行刺；不可内外卦都有鬼克世，怕它内应外通。",
+        "en": "Pressure is the enemy, and there are five things it must not do: it must not obtain season and momentum, for fear it harms the success; it must not meet Birth, for fear it is hard to destroy; it must not stand at Foetus or Nourishment, for fear it is just rising; it must not move in secret, nor, with a hidden Pressure line, control the Self, for fear of a plot to stab; and it must not control the Self from both the inner and the outer trigram, for fear of collusion between inside and outside."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [858, 858],
+          "zh": ["惟鬼不可得时势，恐其害成，", "不可遇长生，恐其难灭，", "不可临胎养，恐其方兴，", "不可暗动，兼伏鬼克世，恐其谋剌，", "不可上下克世，恐其内应外通。"],
+          "yi": ["只有鬼不可得时得势，恐怕它妨害成功；", "不可遇长生，恐怕它难以消灭；", "不可临胎、养，恐怕它正在兴起；", "不可暗动，再兼伏着的鬼克世，恐怕它谋划行刺；", "不可上下都克世，恐怕它内应外通。"],
+          "en": ["Only Pressure must not obtain season and momentum, for fear it harms the success;", "it must not meet Birth, for fear it is hard to destroy;", "it must not stand at Foetus or Nourishment, for fear it is just rising;", "it must not move in secret, nor, together with a hidden Pressure line, control the Self, for fear of a plot to stab;", "it must not control the Self above and below, for fear of collusion between inside and outside."] },
+        { "by": "易冒注", "book": "易冒", "range": [859, 859],
+          "zh": ["上下鬼克世，即内外鬼也。"],
+          "yi": ["上下鬼克世，就是内外卦都有鬼。"],
+          "en": ["Pressure above and below controlling the Self means Pressure in both the inner and the outer trigram."] }
+      ],
+      "note": {
+        "yi": "「得时势」是当令有力。「长生」「胎」「养」是十二长生里的位置：长生是刚生出来，胎和养是还在孕育，都是正在起来的意思，所以鬼落在这些位上，敌人还在长。「暗动」是静爻被冲起（见术语表的冲）。「伏鬼」是卦里没有官鬼、伏在别的爻下。「谋刺」是谋划行刺。书里自注：「上下鬼克世」就是内外卦都有鬼。与易隐征战占的鬼动一组（YY.54）、本章防刺行刺（YM.15）合着看。",
+        "en": "'Obtaining season and momentum' is being in season and having force. Birth, Foetus and Nourishment are places in the twelve stages of life: Birth is just being born, and Foetus and Nourishment are still being conceived and nursed, all meaning that something is just beginning to rise, so Pressure standing in these places means the enemy is still growing. 'Moving in secret' is a still line being clashed into motion (see the glossary entry on clash). A 'hidden Pressure line' is one absent from the hexagram and hidden under another line. A 'plot to stab' is planning an assassination. The book's own gloss says 'Pressure above and below controlling the Self' means Pressure in both the inner and outer trigrams. Read together with the group on Pressure moving in the Yi Yin war divination (YY.54) and with guarding against and carrying out assassination in this chapter (YM.15)."
+      },
+      "see": ["LY.CAREER.YM.20", "LY.CAREER.YM.15", "LY.CAREER.YM.22", "LY.CAREER.YY.54"]
+    },
+    {
+      "id": "LY.CAREER.YM.22",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：要知贼人布何策、用何兵、进何道，都验五行八卦消息——鬼动内防间谋、发外虑野战；鬼动乾宫伏兵于庙、官兴巽卦匿从于林；坤鬼戒纳降、震鬼不当却叛、艮忌冈陵之困、离忧市井之攻、兑毋信其说口、坎毋听其诱语（鬼之所现即敌之所谋）",
+      "rule": {
+        "yi": "要看贼人布的什么策、用什么兵、走哪条路，我又该怎样应对、怎样克制、怎样夺取，全凭验五行八卦的消息。所以官鬼动在内卦，防间谋；发在外卦，虑野战；动在乾宫，伏兵在庙里；兴在巽卦，藏匿的随从在林中；坤宫的鬼，戒备受降；震宫的鬼，不该当作叛军已退；艮宫忌被困在冈陵；离宫忧市井受攻；兑宫不要信他的说辞；坎宫不要听他的诱语。书里自注：鬼显现之处，就是敌人谋划之处：坤是顺，鬼动则降不是真降；震是振，鬼摇则退下的叛军必变；兑是口、是悦，则说话必诈；坎是耳、是陷，则卑下的言辞必有谋。其余类推。",
+        "en": "To see what plan the bandits lay, what troops they use, what road they advance by, and how I shall answer, control and take them, one tests it all by the news of the five phases and the eight trigrams. So Pressure moving in the inner trigram, guard against spies and schemes; Pressure issuing in the outer trigram, take thought for a battle in the field; Pressure moving in the palace of Qian, troops lie in ambush in the temple; Pressure rising in the trigram Xun, followers lie hidden in the woods; Pressure in Kun, be on guard against accepting surrender; Pressure in Zhen, do not take the rebels as having withdrawn; Gen, beware of being trapped on hills and mounds; Li, fear an attack in the market towns; Dui, do not believe their talk; Kan, do not listen to their enticing words. The book's own gloss: where Pressure appears is what the enemy is planning. Kun is yielding, so when Pressure moves their surrender is not a real surrender; Zhen is shaking, so when Pressure sways the rebels who stood down will surely change; Dui is mouth and delight, so the talk must be deceit; Kan is ear and pit, so humble words must hide a scheme. The rest follows by analogy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [860, 860],
+          "zh": ["欲视贼人之布何策，用何兵，进何道，", "我将何以应之，何以克之，何以取之，", "俱验五行八卦消息而已。", "故鬼动内而防间谋，鬼发外而虑野战，", "鬼动乾宫，伏兵于庙，", "官兴巽卦，匿从于林，", "坤鬼是戒纳降，", "震鬼非当却叛，", "艮忌冈陵之困，", "离忧市井之攻，", "兑毋信其说口，", "坎毋听其诱语也。"],
+          "yi": ["要看贼人布的是什么策略、用的什么兵、走哪条路，", "我又将怎样应对、怎样克制、怎样夺取，", "全凭验五行八卦的消息罢了。", "所以官鬼动在内就防间谋，发在外就虑野战；", "鬼动乾宫，伏兵在庙；", "官兴巽卦，藏匿的随从在林中；", "坤宫的鬼，是要戒备受降；", "震宫的鬼，不该当作叛军已退；", "艮宫忌被困在冈陵；", "离宫忧市井受攻；", "兑宫不要信他的说辞；", "坎宫不要听他的诱语。"],
+          "en": ["To see what plan the bandits lay, what troops they use, what road they advance by,", "and how I shall answer them, how control them, how take them,", "one simply tests it all by the news of the five phases and the eight trigrams.", "So Pressure moving within, guard against spies and schemes; Pressure issuing without, take thought for a battle in the field;", "Pressure moving in the palace of Qian, troops lie in ambush in the temple;", "Pressure rising in the trigram Xun, followers lie hidden in the woods;", "Pressure in Kun, be on guard against accepting surrender;", "Pressure in Zhen, one should not take the rebels as having withdrawn;", "in Gen, beware of being trapped on hills and mounds;", "in Li, fear an attack in the market towns;", "in Dui, do not believe their talk;", "in Kan, do not listen to their enticing words."] },
+        { "by": "易冒注", "book": "易冒", "range": [861, 861],
+          "zh": ["此言八卦取象，盖鬼之所现，即敌之所谋，", "坤顺鬼动，其降非真，", "震振鬼摇，却叛必变，", "兑为口、为悦，则说言必诈，", "坎为耳、为陷，则卑辞必谋也。", "其余类推。"],
+          "yi": ["这是说八卦取象：鬼显现之处，就是敌人谋划之处。", "坤是顺，鬼动则降不是真降；", "震是振，鬼摇则退下的叛军必变；", "兑是口、是悦，则说话必诈；", "坎是耳、是陷，则卑下的言辞必有谋。", "其余类推。"],
+          "en": ["This speaks of taking images from the eight trigrams: where Pressure appears is what the enemy is planning.", "Kun is yielding, so when Pressure moves their surrender is not a real surrender;", "Zhen is shaking, so when Pressure sways the rebels who stood down will surely change;", "Dui is mouth and delight, so the talk must be deceit;", "Kan is ear and pit, so humble words must hide a scheme.", "The rest follows by analogy."] }
+      ],
+      "note": {
+        "yi": "「间谋」是敌方派来的内线。「伏兵于庙」「匿从于林」的庙、林，是敌人把兵藏在庙里、藏在林里。「纳降」是接受投降。「却叛」书里没有注；按它自己的注（「却叛必变」）读作叛军说已经撤了、停了，靠不住，不当作已退。「冈陵」是山冈土丘，「市井」是街市城镇。八卦的象是本章通用的：乾老、坤顺、震动、巽入、坎陷、离丽、艮止、兑悦。这一条是整章里把『鬼落在哪一宫』读成『敌人在谋什么』的一条，下一条（YM.23）接着讲五行八卦的取义。",
+        "en": "'Jianmou' is an inside agent sent by the enemy. The temple and woods of 'ambush in the temple' and 'followers hidden in the woods' are where the enemy hides his troops. 'Naxiang' is accepting surrender. The book does not gloss 'quepan'; following its own note ('the rebels who stood down will surely change') it is read as rebels saying they have withdrawn or stopped, which cannot be relied on, so they are not to be taken as having withdrawn. 'Gangling' is hills and mounds, and 'shijing' is markets and towns. The images of the eight trigrams are those used throughout the chapter: Qian is aged, Kun yielding, Zhen moving, Xun entering, Kan a pit, Li clinging, Gen stopping, Dui delight. This is the entry in the chapter that reads 'which palace the Pressure stands in' as 'what the enemy is planning'; the next entry (YM.23) goes on to the meanings of the five phases and the eight trigrams."
+      },
+      "see": ["LY.CAREER.YM.21", "LY.CAREER.YM.23", "LY.CAREER.YM.14"]
+    },
+    {
+      "id": "LY.CAREER.YM.23",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：鬼动于五行八卦各有所谋——火鬼动非劫寨而谋纵火、水鬼动非水淹而计囊沙，金为流矢之凶、木为胶舟之诈、土（款）为平原之战；起于离从南来、发于坎从北犯、艮坤敌出山阜、震巽寇自丰木；乾以老弱骗军士之心、兑以子女惑兵卒之志；取象取义全凭深心测度官鬼情形",
+      "rule": {
+        "yi": "火鬼动，不是劫寨，是谋划放火；水鬼动，不是水淹，是计谋用沙袋壅水；金是流矢之凶，木是胶舟之诈，「款」（疑是土）是平原之战；起于离的从南边来，发于坎的从北边犯；艮、坤的敌人出自山冈土阜，震、巽的寇从茂盛的树林里来；乾是用老弱来骗我军士的心，兑是用子女来惑我兵卒的志。取象取义，全凭用心去测度官鬼的情形。",
+        "en": "Fire Pressure moving is not a raid on the camp but a plan to set fires; Water Pressure moving is not a flood but a scheme of sandbags; Metal is the harm of flying arrows, Wood the deceit of a boat held fast, and 'Kuan' (presumably Earth) a battle on the open plain; what rises in Li comes from the south, what issues from Kan attacks from the north; with Gen and Kun the enemy comes out of hills and mounds, with Zhen and Xun the raiders come out of thick woods; Qian uses the old and weak to deceive my soldiers' hearts, and Dui uses sons and daughters to confuse my troops' will. Taking the image and taking the meaning all depends on gauging, with a deep mind, the condition of Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [862, 862],
+          "zh": ["火鬼动，非劫寨而谋于纵火，", "水鬼动，非水淹而计于囊沙；", "金为流矢之凶，木为胶舟之诈，款为平原之战；", "起于离而南来，发于坎而北犯；", "艮坤敌出于山阜，震巽寇自于丰木；", "乾以老弱骗吾军士之心，", "兑以子女惑吾兵卒之志也。"],
+          "yi": ["火鬼动，不是劫寨而是谋划放火；", "水鬼动，不是水淹而是计在沙袋；", "金是流矢的凶，木是胶舟的诈，款是平原的战；", "起于离的从南边来，发于坎的从北边犯；", "艮、坤的敌人出自山冈土阜，震、巽的寇来自丰茂的树林；", "乾是用老弱来骗我军士的心，", "兑是用子女来惑我兵卒的志。"],
+          "en": ["When Fire Pressure moves, it is not a raid on the camp but a plan to set fires;", "when Water Pressure moves, it is not a flood but a scheme of sandbags;", "Metal is the harm of flying arrows, Wood is the deceit of a boat held fast, and 'Kuan' is a battle on the open plain;", "what rises in Li comes from the south, what issues from Kan attacks from the north;", "with Gen and Kun the enemy comes out of hills and mounds, with Zhen and Xun the raiders come from thick woods;", "Qian uses the old and weak to deceive my soldiers' hearts,", "and Dui uses sons and daughters to confuse my troops' will."] },
+        { "by": "易冒注", "book": "易冒", "range": [863, 863],
+          "zh": ["复言八卦及五行取义，", "或云木有生兵，土有坑陷。", "夫敌进退布策，惟深心测度官鬼情形，取象取义，可得之矣。"],
+          "yi": ["这是再说八卦和五行的取义，", "也有人说木有生兵，土有坑陷。", "敌人进退布策，只有深心测度官鬼的情形，取象取义，才能得到。"],
+          "en": ["This speaks again of the meanings of the eight trigrams and the five phases;", "some say that Wood has fresh troops and Earth has pits and traps.", "As for the enemy's advance and retreat and the plans he lays, they can be got only by gauging, with a deep mind, the condition of Pressure and taking its image and meaning."] }
+      ],
+      "note": {
+        "yi": "「款为平原之战」的「款」疑是「土」之误：前面是火、水、金、木，到这里正该轮到土，书里下面的注也写「土有坑陷」。「囊沙」是用沙袋壅水（拦水断水，再放水），是水路的计谋。「流矢」是乱飞的箭。「胶舟」字面是船被胶住、搁浅动弹不得，书里没有细说，按字面译，当是用舟船设的诈。「山阜」是土山，「丰木」是丰茂的树木。「子女」字面是儿女；兑是少女，按卦象理解为用年轻女子。「起于离而南来」是鬼起在离宫，敌从南方来；「发于坎而北犯」是鬼发在坎宫，敌从北面来。",
+        "en": "The 'kuan' of 'kuan is a battle on the open plain' is presumably a slip for Earth: Fire, Water, Metal and Wood have come before, and it is Earth's turn, and the note below the text also says 'Earth has pits and traps'. 'Nangsha' is damming water with sandbags (blocking or cutting off water and then releasing it), a scheme on the water. 'Liuzhi' is a stray arrow. 'Jiaozhou' is literally a boat held fast by glue, stranded and unable to move; the book does not explain it, so it is translated literally, and it presumably means a deceit worked with boats. 'Shanfu' is an earth hill, and 'fengmu' is thick, lush trees. 'Zinü' is literally sons and daughters; Dui is the youngest girl, and by the image it is understood as using young women. 'Rising in Li and coming from the south' is Pressure rising in the palace of Li with the enemy coming from the south; 'issuing in Kan and attacking from the north' is Pressure issuing in the palace of Kan with the enemy coming from the north."
+      },
+      "see": ["LY.CAREER.YM.22", "LY.CAREER.YM.24"]
+    },
+    {
+      "id": "LY.CAREER.YM.24",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：子孙（福神）动于五行各有胜法——动水利水战、动火利火攻，土以炮石胜、金以弓矢胜、木以舟车胜",
+      "rule": {
+        "yi": "子孙动在水，利于水战；福神动在火，利于火攻；属土的靠炮石取胜，属金的靠弓箭取胜，属木的靠舟车取胜。",
+        "en": "Output moving in Water favours a battle on the water; Output, the fortune spirit, moving in Fire favours an attack by fire; Earth wins by catapult stones, Metal wins by bow and arrow, Wood wins by boats and carts."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [864, 864],
+          "zh": ["子孙动水，则利于水战，", "福神动火，则利于火攻，", "土以炮石胜，金以弓矢胜，木以舟车胜也。"],
+          "yi": ["子孙动在水，就利于水战；", "福神动在火，就利于火攻；", "土靠炮石取胜，金靠弓箭取胜，木靠舟车取胜。"],
+          "en": ["Output moving in Water favours a battle on the water;", "Output, the fortune spirit, moving in Fire favours an attack by fire;", "Earth wins by catapult stones, Metal wins by bow and arrow, Wood wins by boats and carts."] }
+      ],
+      "note": {
+        "yi": "上一条（YM.22–23）讲官鬼（敌）落在哪一行哪一宫、敌在谋什么；这一条反过来讲子孙（我的兵）落在哪一行、我用什么取胜。「炮石」是古代的抛石机。「舟车」是船和车，木行主它们。",
+        "en": "The previous entries (YM.22–23) speak of which phase and palace Pressure (the enemy) is in and what the enemy is planning; this entry turns it round and speaks of which phase Output (my troops) is in and by what I win. 'Paoshi' is the ancient stone-throwing engine. 'Zhouche' is boats and carts, which the Wood phase governs."
+      },
+      "see": ["LY.CAREER.YM.23", "LY.CAREER.YM.25"]
+    },
+    {
+      "id": "LY.CAREER.YM.25",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：子孙（福）发动于八卦各有取胜之法——坤宫屯兵相助、震卦壮士来归，乾为丈人良谋、艮为少年秘计，坎当外示其弱、离当内示其虚、兑当饰以卑词、巽当勇于趋进，皆发子孙而取胜",
+      "rule": {
+        "yi": "子孙动在坤宫，有屯驻的兵来相助；福神兴在震卦，有壮士来归；乾是老成人的良谋，艮是少年的秘计；坎宫应当对外示弱，离宫应当对内示虚，兑宫应当用卑下的言辞来修饰，巽宫应当勇于进取。这些都是子孙发动才能取胜。",
+        "en": "Output moving in the palace of Kun, stationed troops come to help; Output rising in the trigram Zhen, brave men come over to me; Qian is the good plan of an elder, Gen the secret scheme of a youth; in Kan one should show weakness outwardly, in Li one should show emptiness inwardly, in Dui one should dress up one's words humbly, in Xun one should be bold in pressing forward. All of these win when Output moves."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [866, 866],
+          "zh": ["子动坤宫，屯兵相助，", "福兴震卦，壮士来归，", "乾为丈人之良谋，艮为少年之秘计，", "坎当外示其弱，离当内示其虚，", "兑当餙以卑词，巽当勇于趋进，", "皆发子孙，而取胜也。"],
+          "yi": ["子孙动在坤宫，有屯驻的兵来相助；", "福兴在震卦，有壮士来归；", "乾是老成人的良谋，艮是少年的秘计；", "坎应当对外示弱，离应当对内示虚；", "兑应当用卑下的言辞来修饰，巽应当勇于进取；", "这些都是发动子孙而取胜的。"],
+          "en": ["Output moving in the palace of Kun, stationed troops come to help;", "Output rising in the trigram Zhen, brave men come over to me;", "Qian is the good plan of an elder, Gen is the secret scheme of a youth;", "in Kan one should show weakness outwardly, in Li one should show emptiness inwardly;", "in Dui one should dress up one's words humbly, in Xun one should be bold in pressing forward;", "all of these come from Output moving, and so win."] },
+        { "by": "易冒注", "book": "易冒", "range": [867, 867],
+          "zh": ["兵占福临皆吉，", "或属五行，或现何宫，各以象推。"],
+          "yi": ["兵占里福神临到，都是吉，", "或属哪一行，或落在哪一宫，各按象来推。"],
+          "en": ["In a military divination, when Output arrives it is always auspicious;", "whether it belongs to some phase or appears in some palace, each is worked out by its image."] }
+      ],
+      "note": {
+        "yi": "「丈人」是老成的长者（乾为老父）。「餙」是「饰」的异体，「餙以卑词」是用谦卑的言辞包装、掩饰自己。「示其弱」「示其虚」是对敌人装作弱、装作虚，引他来。坤宫、震卦、乾、艮、坎、离、兑、巽各给一个方略，是本章把八卦象义用在『我这一边』的一条，和上面讲敌人的（YM.22–23）对着读。书里自注：兵占里福神（子孙）临到都吉，属什么五行、落在什么宫，各按象去推。",
+        "en": "'Zhangren' is a seasoned elder (Qian is the aged father). 'Shi' is a variant of 'shi', to dress up, and 'dress up with humble words' is to wrap and disguise oneself in humble speech. 'Showing weakness' and 'showing emptiness' are pretending to the enemy to be weak or empty so as to draw him on. Each of Kun, Zhen, Qian, Gen, Kan, Li, Dui and Xun gets a plan; this is the entry in the chapter that uses the images of the eight trigrams on 'my side', to be read against the entries above on the enemy (YM.22–23). The book's own gloss: in a military divination Output arriving is always auspicious, and which phase it belongs to and which palace it stands in is worked out by the image."
+      },
+      "see": ["LY.CAREER.YM.22", "LY.CAREER.YM.24", "LY.CAREER.YM.26"]
+    },
+    {
+      "id": "LY.CAREER.YM.26",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：六亲在兵占的分工——父母为彼我之机关（计策、军师）、妻财为彼我之兵甲、弟兄为彼我之埋伏、鬼为贼众、子为将士，再考生克衰旺以分美恶",
+      "rule": {
+        "yi": "父母是彼此双方的机关（计策，也是军师），妻财是双方的兵器甲胄，弟兄是双方的埋伏，鬼是贼众，子是将士；再考察生克衰旺，来分辨好坏。",
+        "en": "Resource is the machinery of both sides (the plans, and also the army's counsellor), Wealth is the weapons and armour of both sides, Peer is the ambush of both sides, Pressure is the bandit host and Output is the officers and men; then one examines generation, control, decline and thriving to tell the fine from the bad."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [868, 868],
+          "zh": ["然父母为彼我之机关，", "妻财为彼我之兵甲，", "弟兄为彼我之埋伏，", "鬼为贼众，子为将士，", "考生克衰旺以分美恶也。"],
+          "yi": ["不过，父母是彼我双方的机关，", "妻财是彼我双方的兵器甲胄，", "弟兄是彼我双方的埋伏，", "鬼是贼众，子是将士，", "要考察生克衰旺，来分辨好坏。"],
+          "en": ["However, Resource is the machinery of both sides,", "Wealth is the weapons and armour of both sides,", "Peer is the ambush of both sides,", "Pressure is the bandit host, Output is the officers and men,", "and one examines generation, control, decline and thriving to tell the fine from the bad."] },
+        { "by": "易冒注", "book": "易冒", "range": [869, 869],
+          "zh": ["兵占六亲之分如此，", "父母为计策，亦为军师。"],
+          "yi": ["兵占里六亲的分法就是这样：", "父母是计策，也是军师。"],
+          "en": ["This is how the six relations are divided in a military divination:", "Resource is the plan, and is also the army's counsellor."] }
+      ],
+      "dispute": {
+        "yi": "和易隐征战占的六亲分法（YY.57）比较：父母是军师、兄弟是埋伏、官鬼是敌人，两书一致；分歧在另外两亲——易隐以妻财为粮草、以子孙为先锋，易冒以妻财为兵器甲胄、以子孙为将士。粮草和兵甲都算『物』，先锋和将士都算『人』，所以只是取象的粗细不同；但断粮草缺不缺时，按易隐看妻财，按易冒看的是兵器甲胄，不能把两本书的说法混着用。",
+        "en": "Compared with the division of the six kin in the Yi Yin war divination (YY.57): Resource as counsellor, Peer as ambush and Pressure as enemy agree in the two books; the difference is in the other two kin, where the Yi Yin takes Wealth as provisions and Output as the vanguard, while the Yimao takes Wealth as weapons and armour and Output as officers and men. Provisions and arms both count as things, and vanguard and officers both count as people, so it is only a difference in the fineness of the image; but in judging whether provisions run short, the Yi Yin looks at Wealth for grain and the Yimao for weapons and armour, and the two books' sayings should not be mixed."
+      },
+      "note": {
+        "yi": "「机关」是机要、计谋。「兵甲」是兵器和甲胄，和官鬼（贼众）、子孙（将士）分开：子孙是人，妻财是物。「埋伏」是设伏的兵。「彼我」是双方各有一份，所以同一类爻在我是我的，在敌是敌的，看它落在世这一边还是应这一边。书里自注：父母既是计策也是军师。",
+        "en": "'Jiguan' is key machinery and planning. 'Bingjia' is weapons and armour, kept apart from Pressure (the bandit host) and Output (the officers and men): Output is people, Wealth is things. 'Maifu' is troops set in ambush. 'Both sides' means each side has a share, so the same kind of line is mine when it falls on my side and the enemy's when it falls on his, according to whether it stands on the Self side or the Other side. The book's own gloss: Resource is both the plan and the counsellor."
+      },
+      "see": ["LY.CAREER.YM.25", "LY.CAREER.YM.27", "LY.CAREER.YY.57"]
+    },
+    {
+      "id": "LY.CAREER.YM.27",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：鬼临吉神纵吉而不吉、福居凶煞纵凶而不凶；子化官者叛、官化子者降，飞伏官随减随起、内外子屡战屡捷；阳为正兵阴为奇兵、以子孙官鬼别其利；合则结冲则绝、静应守动应攻",
+      "rule": {
+        "yi": "所以鬼（官鬼）临在吉神上，即使是吉也不吉；福（子孙）落在凶煞上，即使是凶也不凶。还有：子孙化官鬼的，是叛变；官鬼化子孙的，是投降；官鬼伏在飞爻下的，随灭随起；内外卦都有子孙的，屡战屡捷。阳是正兵，阴是奇兵，用子孙、官鬼来分辨它们的利弊。合就是结，冲就是绝；静就该守，动就该攻。",
+        "en": "So when Pressure stands on an auspicious spirit it is not auspicious even though it seems so, and when Output sits on an evil star it is not ominous even though it seems so. Moreover, Output turning into Pressure is mutiny, and Pressure turning into Output is surrender; Pressure hidden beneath a flying line wanes as it rises and rises as it wanes, and Output in both inner and outer trigram means repeated battles and repeated victories. Yang is the regular troops and yin the irregular troops, and Output and Pressure tell where the advantage lies. Combining is binding and clashing is severing; when still, one should hold, and when moving, one should attack."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [870, 870],
+          "zh": ["是以鬼临吉神，纵吉而不吉，", "福居凶煞，纵凶而不凶。", "且有子化官者叛，官化子者降，", "飞伏官而随减随起，内外子而屡战屡捷。", "阳为正兵，阴为奇兵，子孙官鬼以别其利也。", "合则结，冲则绝，", "静应守，动应攻。"],
+          "yi": ["所以鬼临吉神，即使吉也不吉；", "福居凶煞，即使凶也不凶。", "还有子化官的是叛，官化子的是降，", "官鬼飞伏的随减随起，内外卦都有子的屡战屡捷。", "阳是正兵，阴是奇兵，用子孙、官鬼来分辨它们的利弊。", "合就是结，冲就是绝；", "静就该守，动就该攻。"],
+          "en": ["So when Pressure stands on an auspicious spirit, even if it seems auspicious it is not;", "when Output sits on an evil star, even if it seems ominous it is not.", "Moreover, Output turning into Pressure is mutiny, and Pressure turning into Output is surrender;", "Pressure hidden beneath a flying line wanes as it rises and rises as it wanes, and Output in both inner and outer trigram means repeated battles and repeated victories.", "Yang is the regular troops and yin the irregular troops, and Output and Pressure tell where the advantage lies.", "Combining is binding and clashing is severing;", "when still, one should hold; when moving, one should attack."] }
+      ],
+      "note": {
+        "yi": "「子化官者叛，官化子者降」：子孙是我的兵，变成官鬼，是兵变成了敌，所以叛；官鬼是敌，变成子孙，是敌变成了兵，所以降。「飞伏官」是官鬼伏在飞爻下面；「随减随起」是刚消下去又起来，反复。「正兵」是正面交战的兵，「奇兵」是出奇制胜的兵。「静应守，动应攻」的「应」在这里按「该」读（静就该守、动就该攻）；若把它读成应爻（应静则守、应动则攻：对方静就是守、动就是攻），也讲得通，书里没有注明。「合则结」指合住、结盟，「冲则绝」指冲开、断绝。",
+        "en": "'Output turning into Pressure is mutiny, Pressure turning into Output is surrender': Output is my troops, and turning into Pressure it is troops turned enemy, hence mutiny; Pressure is the enemy, and turning into Output it is the enemy turned troops, hence surrender. 'Hidden Pressure beneath a flying line' is Pressure hidden under a flying line; 'wanes as it rises' is rising just after dying down, back and forth. 'Zhengbing' is troops that fight face to face, and 'qibing' is troops that win by surprise. The 'ying' of 'still should hold, moving should attack' is read here as 'should'; read as the Other line (when the Other is still it holds, when it moves it attacks, speaking of the enemy) it also makes sense, and the book does not say which. 'Combining is binding' is being held fast or allied, and 'clashing is severing' is being clashed apart or cut off."
+      },
+      "see": ["LY.CAREER.YM.26", "LY.CAREER.YM.28", "LY.CAREER.YM.11"]
+    },
+    {
+      "id": "LY.CAREER.YM.28",
+      "topic": "总则",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机结语：决策在人而成谋在天——蓍草所从的是鬼神之情，喜直而恶曲、辅仁而伐暴，占者要以此为鉴",
+      "rule": {
+        "yi": "常说决策在人，成谋在天。蓍草所顺从的，是鬼神的情意：喜欢直而厌恶曲，辅助仁者而讨伐暴者。占的人要以此为鉴。",
+        "en": "It is often said that decisions rest with men and the success of schemes with Heaven. What the stalks follow is the feeling of the spirits: they like the straight and dislike the crooked, they aid the benevolent and strike down the violent. Let the diviner take this as a mirror."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [870, 870],
+          "zh": ["常问决策在人，成谋在天。", "盖筮蓍之从，鬼神之情，喜直而恶曲，辅仁而伐暴，", "占者鉴之。"],
+          "yi": ["常说决策在人，成谋在天。", "蓍草所顺从的，是鬼神的情意：喜欢直而厌恶曲，辅助仁者而讨伐暴者，", "占的人要以此为鉴。"],
+          "en": ["It is often said that decision lies with men, and the success of a scheme with Heaven.", "What the stalks follow is the feeling of the spirits: they like the straight and dislike the crooked, they aid the benevolent and strike down the violent;", "let the diviner take this as a mirror."] }
+      ],
+      "note": {
+        "yi": "「常问」按文意读作「常说」。这一句是整章的收尾，不是判断规则：兵占问的是胜负，可『人谋』在人、『成谋』在天，占卦跟着鬼神的情意走，而鬼神的情意是偏向直、仁的一边。所以占出『能胜』并不等于可以逞暴，占出不利也不等于必败；这和易冒其他章末的劝诫是一个口气。",
+        "en": "'Changwen' is read by the sense as 'often said'. This line closes the whole chapter and is not a rule of judgment: a military divination asks about victory and defeat, yet the planning is with men and the success of the scheme is with Heaven, so the divination follows the feeling of the spirits, and that feeling leans to the straight and the benevolent. So a divination of 'one can win' does not license violence, and an unfavourable one does not mean certain defeat; this is of one tone with the closing admonitions of other chapters of the Yimao."
+      },
+      "see": ["LY.CAREER.YM.27", "LY.CAREER.YM.11"]
+    }
+  ]
+}

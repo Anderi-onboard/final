@@ -1,0 +1,106 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "卜筮正宗",
+  "chapter": "散见各篇",
+  "chapter_en": "Passages on office scattered through the book",
+  "ranges": {"卜筮正宗": [197, 1075]},
+  "units": [
+    {
+      "id": "LY.CAREER.BSZZ.01",
+      "topic": "成否",
+      "chapter": "启蒙节要·三十三、诸爻持世诀",
+      "chapter_en": "Qimeng Jieyao, no. 33: the verse on lines holding the Self",
+      "title": "诸爻持世诀·事业句：官动财旺宜赴试，子孙持世求名切忌坐当头，鬼爻持世功名最喜世当权",
+      "rule": {
+        "yi": "官鬼发动财爻旺相，适宜赴考；子孙持世，求名切忌；鬼爻持世，功名最喜欢世爻当权。",
+        "en": "With Pressure moving and Wealth strong, it is fit to go to the examination; with Output holding the Self, seeking a name is strictly to be avoided; with Pressure holding the Self, for office the Self in power is most welcome."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [197, 197],
+          "zh": ["官动财旺宜赴试，"],
+          "yi": ["官鬼发动、财爻旺相，适宜赴考，"],
+          "en": ["with Pressure moving and Wealth strong, it is fit to go to the examination,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [198, 198],
+          "zh": ["求名切忌坐当头，"],
+          "yi": ["求名切忌子孙坐在当头，"],
+          "en": ["in seeking a name, Output seated at the head is strictly to be avoided,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [199, 199],
+          "zh": ["功名最喜世当权，"],
+          "yi": ["功名最喜欢世爻当权，"],
+          "en": ["for office, the Self in power is most welcome,"] }
+      ],
+      "note": {
+        "yi": "这三句分属三联：父母持世、子孙持世、鬼爻持世；每联开头的持世爻没有拆进引文里。「官动」的「官」是官鬼爻，「坐当头」的主语是子孙。",
+        "en": "The three lines belong to three couplets: Resource holding the Self, Output holding the Self, and Pressure holding the Self; the line named at the start of each couplet is not split into the quotation. In \"Pressure moving\" the first word is the Pressure line, and the subject of \"seated at the head\" is Output."
+      },
+      "see": ["LY.CAREER.ZS.57"]
+    },
+    {
+      "id": "LY.CAREER.BSZZ.02",
+      "topic": "升迁",
+      "chapter": "启蒙节要·四十七、六亲变化歌",
+      "chapter_en": "Qimeng Jieyao, no. 47: the song on the changes of the six relations",
+      "title": "六亲变化歌·官鬼变化与求官：官化进神是禄、求官应疾速，化财占病凶，化父文书遂，化子必伤官，化兄家不睦；父母化官鬼迁举",
+      "rule": {
+        "yi": "官鬼变出进神是禄，求官应验快；变成妻财，占病凶；变成父母，文书顺遂；变成子孙，必定伤官；变成兄弟，家里不和睦。父母变出官鬼，有升迁荐举。",
+        "en": "Pressure changing into an Advancing spirit is salary, and seeking office is answered quickly; changing into Wealth, an illness divined is ill; changing into Resource, papers go smoothly; changing into Output, it surely injures the office; changing into Peer, the household is not at peace. Resource changing into Pressure brings promotion and recommendation."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [264, 264], "literal": ["父母", "兄弟"],
+          "zh": ["官化进神禄，", "求官应疾速，", "化财占病凶，", "化父文书遂，", "化子必伤官，", "化兄家不睦。"],
+          "yi": ["官鬼变出进神是禄，", "求官应验快；", "变成妻财，占病凶；", "变成父母，文书顺遂；", "变成子孙，必定伤官；", "变成兄弟，家里不和睦。"],
+          "en": ["Pressure changing into an Advancing spirit is salary,", "and seeking office is answered quickly;", "changing into Wealth, an illness divined is ill;", "changing into Resource, papers go smoothly;", "changing into Output, it surely injures the office;", "changing into Peer, the household is not at peace."] },
+        { "by": "经", "book": "卜筮正宗", "range": [262, 262], "literal": ["父母"],
+          "zh": ["化官鬼迁举，"],
+          "yi": ["父母变出官鬼，有升迁荐举。"],
+          "en": ["Resource changing into Pressure brings promotion and recommendation."] }
+      ],
+      "see": ["LY.CAREER.ZS.57"]
+    },
+    {
+      "id": "LY.CAREER.BSZZ.03",
+      "topic": "成否",
+      "chapter": "启蒙节要·四十六、六亲发动诀",
+      "chapter_en": "Qimeng Jieyao, no. 46: the verse on the moving of the six relations",
+      "title": "六亲发动诀·官讼与求名句：父动论官下状理先分；子孙发动伤官鬼，谒贵求名休进用，劝君守分听乎天",
+      "rule": {
+        "yi": "父母发动，论官司下状，先要分清道理；子孙发动伤了官鬼，谒见贵人、求名不要进用，劝你守本分听从天意。",
+        "en": "When the Resource line moves, in matters of lawsuits and plaints one must first sort out the right and wrong; when Output moves and injures Pressure, in calling on nobles and seeking a name do not press forward, but keep to your station and listen to Heaven."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [254, 254],
+          "zh": ["论官下状理先分，"],
+          "yi": ["论官司下状，先要分清道理，"],
+          "en": ["in matters of lawsuits and plaints, one must first sort out the right and wrong,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [255, 255],
+          "zh": ["谒贵求名休进用，", "劝君守分听乎天。"],
+          "yi": ["谒见贵人、求名不要进用，", "劝你守本分听从天意。"],
+          "en": ["in calling on nobles and seeking a name do not press forward,", "but keep to your station and listen to Heaven."] }
+      ],
+      "note": {
+        "yi": "这两句分别出在「父动」和「子孙发动」两联；每联开头的发动六亲没有拆进引文里。",
+        "en": "The two lines come from the couplets for the Resource moving and for Output moving; the moving relation named at the start of each couplet is not split into the quotation."
+      },
+      "see": ["LY.CAREER.ZS.57"]
+    },
+    {
+      "id": "LY.CAREER.BSZZ.04",
+      "topic": "贵人",
+      "chapter": "八、辩贵人禄马之谬",
+      "chapter_en": "Section 8: Refuting the error about Nobles, Salary and Post Horse",
+      "title": "辩贵人禄马之谬：不能把贵人爻一概当官宦、禄爻当俸禄；贵人禄马临原神用神才以吉断，贵人爻临忌神动来克害不可以为吉，贵人临官鬼爻持世也不可把官鬼当祸患言凶",
+      "rule": {
+        "yi": "现在的人多拿贵人的爻当官宦，拿禄爻当俸禄，拿驿马当来人，一概这样论，不知道贵人禄马临在原神、用神上，才应当以吉断。比如占终身，白虎临官爻持世，又有贵人临它，应当许他武职功名；如果没有贵人并临，应当断为病患强暴。如果贵人的爻临在忌神上动来克害，就不能把贵人当吉；如果贵人临在官鬼爻持世，就不能把官鬼爻当祸患说凶。",
+        "en": "People today mostly take the Noble line for an official, the Salary line for a stipend and the Post Horse for a visitor, and judge across the board; they do not know that a Noble, Salary or Post Horse is judged lucky only when it sits on the Support or the Subject. For example, in divining for a whole life, the White Tiger sits on the Pressure line holding the Self and a Noble sits on it too, so a military office and name should be promised; if no Noble sits with it, it should be judged as illness and violence. If the Noble line sits on the Adversary and moves to control and harm, the Noble cannot be taken as lucky; if the Noble sits on the Pressure line holding the Self, the Pressure line cannot be called a source of calamity and ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1073, 1075],
+          "zh": ["今人多以贵人之爻为官宦，以禄爻为俸禄，以驿马为来人，概以此论，不知贵人禄马临原神用神，当以吉断。", "如卜终身，白虎临官爻持世，得贵人临之，当以武职功名许之；", "如无贵人并临，当以病患强暴断之。", "若贵人之爻临忌神动来克害，不可以贵人为吉；", "如贵人临官鬼爻持世，不可以官鬼爻为祸患言凶。"],
+          "yi": ["现在的人多拿贵人的爻当官宦，拿禄爻当俸禄，拿驿马当来人，一概这样论，不知道贵人禄马临在原神、用神上，才应当以吉断。", "比如占终身，白虎临官爻持世，又有贵人临它，应当许他武职功名；", "如果没有贵人并临，应当断为病患强暴。", "如果贵人的爻临在忌神上动来克害，就不能把贵人当吉；", "如果贵人临在官鬼爻持世，就不能把官鬼爻当祸患说凶。"],
+          "en": ["People today mostly take the Noble line for an official, the Salary line for a stipend and the Post Horse for a visitor, and judge across the board; they do not know that a Noble, Salary or Post Horse is judged lucky only when it sits on the Support or the Subject.", "For example, in divining for a whole life, the White Tiger sits on the Pressure line holding the Self and a Noble sits on it too, so a military office and name should be promised;", "if no Noble sits with it, it should be judged as illness and violence.", "If the Noble line sits on the Adversary and moves to control and harm, the Noble cannot be taken as lucky;", "if the Noble sits on the Pressure line holding the Self, the Pressure line cannot be called a source of calamity and ill."] }
+      ],
+      "see": ["LY.CAREER.ZS.57"]
+    }
+  ]
+}

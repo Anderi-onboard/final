@@ -1,0 +1,54 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "卜筮全书",
+  "chapter": "阐幽精要·搜精六爻、船家宅(补)",
+  "chapter_en": "Chanyou Jingyao: the six lines; boat households (supplement)",
+  "ranges": {"卜筮大全": [9739, 9763]},
+  "units": [
+    {
+      "id": "LY.ILL.BSQS.54",
+      "topic": "他人病",
+      "chapter": "阐幽精要·九、搜精六爻",
+      "chapter_en": "Chanyou Jingyao, no. 9: searching out the essence of the six lines",
+      "title": "搜精六爻·三爻：龙德贵人临添新喜，劫杀鬼相干弟兄疾病苦",
+      "rule": {
+        "yi": "搜精六爻讲第三爻（门户）时说：龙德、贵人临在上面，添上新的喜事、生出新的门户；劫杀和鬼爻互相干犯，兄弟们疾病受苦。",
+        "en": "On the third line (the gate and doors) the essay on searching out the essence of the six lines says: with Dragon Virtue and the Noble on it, new joys are added and a new household arises; with the Robbery killing and the ghost interfering with each other, the brothers suffer from illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9739, 9739],
+          "zh": ["龙德贵人临，", "添新喜生户；", "劫杀鬼相干，", "弟兄疾病苦。"],
+          "yi": ["龙德、贵人临在三爻上，", "添上新的喜事，生出新的门户；", "劫杀和鬼爻互相干犯，", "兄弟们疾病受苦。"],
+          "en": ["With Dragon Virtue and the Noble on the third line,", "new joys are added and a new household arises;", "with the Robbery killing and the ghost interfering with each other,", "the brothers suffer from illness."] }
+      ],
+      "note": {
+        "yi": "搜精六爻里第三爻是门户（「三爻为门户」），这一联是第三爻一段里的几联之一：龙德、贵人临它是添喜，劫杀和鬼爻相干，是家里的兄弟生病。「弟兄」指家里的兄弟（人），不是兄弟爻。「劫杀」是一个神煞。同一篇里初爻、二爻、五爻、六爻各有一条讲病（LY.ILL.BSQS.30）。",
+        "en": "In the essay on searching out the essence of the six lines the third line is the gate and doors ('the third line is the gate and doors'), and this couplet is one of several in the passage on the third line: Dragon Virtue and the Noble on it add joy, and the Robbery killing interfering with the ghost line means the brothers of the house fall ill. 'The brothers' are the brothers of the household (persons), not the Peer line. The 'Robbery killing' is a spirit-star. The first, second, fifth and sixth lines each have an entry on illness in the same essay (LY.ILL.BSQS.30)."
+      },
+      "see": ["LY.ILL.BSQS.30"]
+    },
+    {
+      "id": "LY.ILL.BSQS.55",
+      "topic": "风险",
+      "chapter": "阐幽精要·十、船家宅",
+      "chapter_en": "Chanyou Jingyao, no. 10: houses on boats",
+      "title": "船家宅·螣蛇爻动主暴病之忧",
+      "rule": {
+        "yi": "占船家（以船为家的人家）的一章里说：螣蛇爻发动，主有暴病的忧虑。",
+        "en": "The chapter on divining a boat household says: with the Coiling Snake line moving, there is worry of a sudden illness."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9763, 9763],
+          "zh": ["螣蛇爻动，", "主暴病之忧；"],
+          "yi": ["螣蛇爻发动，", "主有暴病的忧虑；"],
+          "en": ["With the Coiling Snake line moving,", "there is worry of a sudden illness;"] }
+      ],
+      "note": {
+        "yi": "船家宅是占以船为家的人家的一章，按船的各个部位（船头、舵、桅杆、毛缆、橹蓬）和六神断吉凶。这一句只讲螣蛇发动主暴病之忧（「暴病」是来得急的病）；同一联的下半句讲朱雀、断桅之祸，不收。",
+        "en": "The chapter on boat households is about divining the households that live on boats, and judges good and ill by the parts of the boat (the bow, the rudder, the mast, the cables, the sculling oar and awning) and the six spirits. This sentence says only that the Coiling Snake moving means worry of a sudden illness (a 'sudden illness' is one that comes on fast); the second half of the same couplet, on the Vermilion Bird and a broken mast, is not taken."
+      },
+      "see": ["LY.ILL.BSQS.34"]
+    }
+  ]
+}

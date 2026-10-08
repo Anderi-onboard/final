@@ -1,0 +1,386 @@
+{
+  "shushu": "六爻",
+  "domain": "考试",
+  "work": "增删卜易",
+  "chapter": "总序、用神章、三合章、进神退神章等通用章里与考试有关的条文",
+  "chapter_en": "Passages on examinations in the general chapters of the Zengshan Buyi (preface, Subject, three-harmony, Advancing spirits, six spirits and others)",
+  "ranges": {"增删卜易": [20, 6104]},
+  "units": [
+    {
+      "id": "LY.EXAM.ZS.50",
+      "topic": "总则",
+      "chapter": "增删卜易序",
+      "chapter_en": "Preface to the Zengshan Buyi",
+      "title": "序·占功名一眼可断：官旺持世或日月、动爻作官星生合世爻，求名如拾芥；子孙持世或子孙动于卦中，占入场、升迁如水中掬月",
+      "rule": {
+        "yi": "占功名有两种一眼就能断的卦：官爻旺相持世、或者日月动爻作官星来生合世爻，求名像弯腰拾起一根草那样容易；子孙持世、或者子孙在卦中发动，不管问入场（考试）还是升迁，都像水中捞月，捞不着。",
+        "en": "In divining for a title there are two hexagrams that can be read at a glance: a strong Pressure line holding the Self, or the Day, the Month or a moving line acting as the Pressure star and giving life to or combining with the Self, and seeking a name is as easy as picking up a blade of grass; Output holding the Self, or Output moving in the hexagram, and whether one asks about entering the examination hall or about promotion it is like scooping the moon from the water."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [24, 24],
+          "zh": ["假令占功名，若得旺官持世，或日月、动爻作官星生合世爻，求名如拾芥耳；", "倘遇子孙持世，或子孙动于卦中，不拘占入场、占升迁，悉如水中掬月。"],
+          "yi": ["譬如占功名，如果得到旺相的官爻持世，或者日月、动爻作官星来生合世爻，求名就像弯腰拾起一根草那样容易；", "如果遇到子孙持世，或者子孙在卦中发动，不管占入场还是占升迁，全都像水中捞月。"],
+          "en": ["Suppose one divines for a title: if a strong Pressure line holds the Self, or the Day, the Month or a moving line acts as the Pressure star and gives life to or combines with the Self, seeking a name is as easy as picking up a blade of grass;", "if Output holds the Self, or Output moves in the hexagram, whether one divines for entering the examination hall or for promotion, all is like scooping the moon from the water."] }
+      ],
+      "note": {
+        "yi": "「拾芥」是弯腰拾起一根草，比喻毫不费力；「掬月」是用手去捧水里的月亮，比喻白费力气。这一句后面接着讲占求财，不属于考试，没有收。",
+        "en": "Picking up a blade of grass means doing something without effort, and scooping the moon means trying to cup the moon in the water with one's hands, that is, labouring in vain. The next sentences go on to divining for wealth and are outside examinations, so they are not included."
+      },
+      "see": ["LY.EXAM.ZS.53", "LY.EXAM.ZS.52"]
+    },
+    {
+      "id": "LY.EXAM.ZS.51",
+      "topic": "总则",
+      "chapter": "用神章",
+      "chapter_en": "The chapter on the Subject",
+      "title": "用神章：占功名以官鬼爻为用神（忌空破，宜生怕克）；师长、章奏、文书、文章、书馆以父母爻为用神；门徒以子孙爻为用神",
+      "rule": {
+        "yi": "考试里要看的东西各有各的用神：问功名，用神是官鬼爻，最忌落空落破，宜有相生、怕被相克，月日动变四处的生克和别的用神同样看；问师长、奏章、文书、文章、书馆，用神是父母爻；问门徒（学生），用神是子孙爻。",
+        "en": "In an examination reading each thing to be watched has its own Subject: for a title the Subject is the Pressure line, which most fears Void and break, is glad of generation and fears control, and whose generation and control from the four places (Month, Day, moving line, changed line) are read as for any other Subject; for teachers, memorials, documents, essays and the study hall the Subject is the Resource line; for pupils the Subject is the Output line."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [281, 281],
+          "zh": ["占功名者，以官鬼爻为用神。", "此卦午火官星即是用神。", "最忌逢空、逢破，宜木相生，怕水相克。", "亦有四处生克，吉凶与前同看。"],
+          "yi": ["占功名的，以官鬼爻为用神。", "这个卦里午火官星就是用神。", "最忌讳逢空、逢破，宜有木来相生，怕水来相克。", "也有四处的生克，吉凶和前面所说的同样看。"],
+          "en": ["In divining for a title, the Pressure line is the Subject.", "In this hexagram the Wu Fire official star is the Subject.", "It most fears meeting Void or break; being Fire, it is glad of Wood to generate it and fears Water to control it.", "There is also generation and control from the four places, and luck and ill are read in the same way as before."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [433, 433],
+          "zh": ["官鬼爻：占功名、官府、雷霆、鬼神、妻占夫，皆以官鬼爻为用神。", "占乱臣、贼盗、邪崇，亦以官鬼爻为用神。", "物类亦多，一切拘束我身者是也。"],
+          "yi": ["官鬼爻：占功名、官府、雷霆、鬼神、妻子占丈夫，都以官鬼爻为用神。", "占乱臣、贼盗、邪崇，也以官鬼爻为用神。", "这类的东西也很多，凡是约束着我自身的都是。"],
+          "en": ["The Pressure line: for a title, government offices, thunder, ghosts and spirits, or a wife divining for her husband, the Pressure line is in every case the Subject.", "For rebellious ministers, thieves and bandits, and evil hauntings, the Pressure line is likewise the Subject.", "There are many such things besides: all that binds my own person."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [431, 431],
+          "zh": ["祖父母、伯、叔、姑、姨父母，凡在我父母之上，或与我父母同辈之亲，及师长、妻父母、乳拜认之父母、三父、八母，或仆占主人，皆以父母爻为用神。", "占天地、城池、墙垣、宅舍、屋宇、舟车、衣服、雨具、绸缎、布匹、杂货、及章奏、文书、文章、书馆、文契，亦以父母爻为用神。"],
+          "yi": ["祖父母、伯父、叔父、姑母、姨母，凡是在我父母之上的、或和我父母同辈的亲人，以及老师、岳父母、乳母和认拜的父母、三种父亲、八种母亲，或者仆人占主人，都以父母爻为用神。", "占天地、城池、墙垣、宅舍、屋宇、船车、衣服、雨具、绸缎、布匹、杂货，以及奏章、文书、文章、书馆、文契，也以父母爻为用神。"],
+          "en": ["Grandparents, paternal uncles, aunts, any kin above my parents or of my parents' generation, and teachers, parents-in-law, wet-nurses and parents acknowledged by ritual bowing, the three kinds of fathers and eight kinds of mothers, or a servant divining for his master: in every case the Resource line is the Subject.", "For heaven and earth, city walls, enclosing walls, dwellings, houses, boats and carts, clothing, rain gear, silks, cloth, miscellaneous goods, and also memorials, documents, essays, the study hall and written contracts, the Resource line is likewise the Subject."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [441, 441],
+          "zh": ["子孙爻：占子孙、占女、女婿、侄、甥、门徒，凡在我子孙辈中，皆以子孙爻为用神。"],
+          "yi": ["子孙爻：占子孙、女儿、女婿、侄、外甥、门徒，凡是在我子孙辈里的，都以子孙爻为用神。"],
+          "en": ["The Output line: for children and grandchildren, a daughter, a son-in-law, nephews, a sister's son and pupils, anyone in the generation of my own descendants, the Output line is in every case the Subject."] }
+      ],
+      "note": {
+        "yi": "「三父八母」是旧时服丧礼制里对各种名分的父亲、母亲的合称，这里只是说和父母同类的人都归父母爻。卜筮正宗十八论里有同一节的另一种写法，见 LY.EXAM.BSZZ.01。",
+        "en": "The \"three fathers and eight mothers\" is the old mourning-rule term for the various kinds of father and mother by status; here it only says that all in the class of parents belong to the Resource line. The Bushi Zhengzong gives the same assignments in its Eighteen Treatises: see LY.EXAM.BSZZ.01."
+      },
+      "see": ["LY.EXAM.BSZZ.01", "LY.EXAM.ZS.52", "LY.EXAM.ZS.06"]
+    },
+    {
+      "id": "LY.EXAM.ZS.52",
+      "topic": "总则",
+      "chapter": "用神章",
+      "chapter_en": "The chapter on the Subject",
+      "title": "用神章·子孙乃福神，诸事见之为喜，独占功名者忌之（子孙是福德之神、制鬼之神、解忧之神，又是剥官引职之神）",
+      "rule": {
+        "yi": "子孙爻是福神：占别的事见到它是喜，只有占功名要忌它，因为子孙制住官鬼、剥去官位、引走职位。",
+        "en": "The Output line is the spirit of blessing: for every other matter seeing it is welcome, but for a title it is the one to avoid, because Output controls Pressure, strips office and leads away a post."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [443, 444],
+          "zh": ["子孙为福德之神、为制鬼之神、为解忧之神、又为剥官、引职之神，故谓之子孙乃是福神，诸事见之为喜，独占功名者忌之。"],
+          "yi": ["子孙是福德之神、制住官鬼之神、解忧之神，又是剥去官位、引走职位之神，所以说子孙是福神，各种事占到它都是喜，只有占功名的人忌讳它。"],
+          "en": ["Output is the spirit of fortune and virtue, the spirit that controls Pressure, the spirit that dispels worry, and also the spirit that strips office and leads away a post; therefore Output is called the spirit of blessing, and for every matter seeing it is welcome, except for one who divines for a title, to whom it is a taboo."] }
+      ],
+      "note": {
+        "yi": "「剥官引职」是说子孙克官鬼，把官位和职位剥走、引开。",
+        "en": "\"Stripping office and leading away a post\" means that Output controls Pressure and takes the office and the post away."
+      },
+      "see": ["LY.EXAM.ZS.51", "LY.EXAM.BSZZ.03", "LY.EXAM.ZS.15"]
+    },
+    {
+      "id": "LY.EXAM.ZS.53",
+      "topic": "成否",
+      "chapter": "八宫章·简易占法",
+      "chapter_en": "The chapter on the eight palaces: the easy method",
+      "title": "八宫章·占功名秘法（士子）：先占今科，再占下科，再占终身；官鬼持世金榜标名、子孙持世今科失望；孝廉占会试、童生占入学同此法；要节节问去，先问眼前再问久远",
+      "rule": {
+        "yi": "读书人占功名，要一步一步问：先占今科中不中，官鬼持世就金榜标名，子孙持世就知道今科没有指望；改天再占下一科，再另选一天占终身能不能中，官鬼持世终能奋发，仍是子孙持世就改行另谋出路。举人占会试、童生占入学，照这个办法。占事要节节问下去，先问眼前的疑问，不要先问一生久远的事，因为神灵回报的多半是近事。",
+        "en": "A scholar divining for a title should ask step by step: first whether he will pass this year's examination, where Pressure holding the Self means his name is on the golden list and Output holding the Self means this year is hopeless; on another day whether he will pass the next, and on yet another day whether he will ever pass in his life, where Pressure holding the Self means he will in the end rise to success and Output holding the Self again means he should change his occupation. A provincial graduate divining for the metropolitan examination and a boy candidate divining for entry into the school follow the same method. One must ask step by step, the doubt at hand first and the distant future afterwards, because what the spirit reports is mostly the near matter."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [354, 354],
+          "zh": ["又如士子先占一卦，问今科中否？", "若官鬼持世，金榜标名；", "子孙持世，即知今科失望也。", "改日再占下科中否？", "倘又得子孙持世，又知下科不能。", "另择一日，再占终身可能中否？", "若得官鬼持世，终能奋发，仍得子孙持世，改业他图。", "孝廉占会试，童生占入学，皆同此法。"],
+          "yi": ["再如读书人先占一卦，问今科能不能中？", "如果官鬼持世，金榜上标着名字；", "子孙持世，就知道今科没有指望。", "改天再占下一科能不能中？", "如果又得子孙持世，又知道下一科也不行。", "再另选一天，占一生究竟能不能中？", "如果得官鬼持世，终究能够奋发成名；仍是子孙持世，就改行另谋出路。", "举人占会试，童生占入学，都照这个办法。"],
+          "en": ["Again, a scholar first divines one hexagram, asking whether he will pass in this year's examination?", "if Pressure holds the Self, his name will be marked on the golden list;", "if Output holds the Self, he knows at once that this year's examination is hopeless.", "On another day he divines again whether he will pass at the next examination?", "If he again gets Output holding the Self, he knows he cannot pass the next examination either.", "On yet another day he divines whether he can ever pass in his whole life?", "If he gets Pressure holding the Self, he will in the end rise to success; if it is still Output holding the Self, he should change his occupation and plan elsewhere.", "A provincial graduate divining for the metropolitan examination and a boy candidate divining for entry into the school all follow the same method."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [355, 355],
+          "zh": ["以上皆秘法也，占事者，全在节节问去，卦无不灵。", "若未卜目下，先问终身久远之事，殊不知神报近事者多，世人不识此理，胸中如许未决之事，先问终身，而神止报眼下之疑，断卦者亦不能知此神意，竟以终身决之，岂非天坏耶？"],
+          "yi": ["以上这些都是秘法，占事的人，全在于一步一步问下去，这样卦没有不灵的。", "如果还没占眼前的事，就先问一生久远的事，殊不知神灵回报的多半是近事；世人不懂这个道理，心里有这么多没有决定的事，先去问终身，而神灵只回报眼前的疑问，断卦的人也不知道神的这个用意，竟拿终身去断，这岂不是坏得太厉害了吗？"],
+          "en": ["All of the above are secret methods; for one who divines, everything lies in asking step by step, and then no hexagram fails to be borne out.", "If one has not yet divined the matter at hand and first asks about the distant future, one does not realise that what the spirit reports is mostly the near matter; people do not understand this, and with so many matters undecided in their hearts they ask first about their whole life, while the spirit answers only the doubt of the moment, and the one who judges the hexagram, not knowing the spirit's intent, judges it as a whole life; is that not a grievous spoiling?"] }
+      ],
+      "note": {
+        "yi": "「孝廉」是举人的别称，「童生」是还没考中秀才的读书人，「入学」是考中秀才、进县学；这是科举里通行的说法，不是本书的定义。原文末句作「岂非天坏耶」，「天坏」疑为「大坏」之误，译文按「大坏」翻。",
+        "en": "A \"provincial graduate\" is a holder of the second degree, a \"boy candidate\" is a student who has not yet won the first degree, and \"entry into the school\" means passing the first degree and joining the county school; these are the usual examination terms, not definitions given in this book. The last sentence of the original reads \"is that not Heaven-spoiled\", where \"Heaven-spoiled\" is probably a slip for \"greatly spoiled\", and the translation follows that."
+      },
+      "see": ["LY.EXAM.ZS.13", "LY.EXAM.ZS.54"]
+    },
+    {
+      "id": "LY.EXAM.ZS.54",
+      "topic": "风险",
+      "chapter": "八宫章·简易占法",
+      "chapter_en": "The chapter on the eight palaces: the easy method",
+      "title": "八宫章·占功名不可因厌子孙持世而重占：不是官鬼持世就是子孙持世，得其一者得失已知，务必求官鬼持世而后已非理也；只为一事而占，心怀两三事则不灵",
+      "rule": {
+        "yi": "占功名，卦里不是官鬼持世就是子孙持世，得到其中一种，得失就已经知道了，不必再占；不可因为讨厌子孙持世，就一次次重占、非要占到官鬼持世才罢休，这不合道理。占卦只能为一件事而占，心里装着两三件事去占，不灵验。",
+        "en": "In divining for a title the hexagram is either Pressure holding the Self or Output holding the Self; once either is got, gain and loss are known and one should not divine again, and one must not keep re-divining out of dislike for Output holding the Self until Pressure holds it, which is unreasonable. Divine for one matter only; with two or three matters in mind the divination will not be borne out."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [240, 240],
+          "zh": ["不拘早晚，不必焚香，深更半夜亦可占之，只要单为一事而占，不可又占他事。", "但有心怀两三事而占卦者，非一念之诚，决无灵验。", "假令占功名，或是官鬼持世，或是子孙持世，得其一者，得失已知，不必占矣！", "不必厌其子孙持世，务必求官鬼持世而后已，此非理也。"],
+          "yi": ["不论早晚，不必烧香，深更半夜也可以占，只要单为一件事占，不可以又占别的事。", "但是心里装着两三件事而占卦的人，不是一心一念的诚意，绝对不灵验。", "譬如占功名，不是官鬼持世，就是子孙持世，得到其中一种，得失就已经知道，不必再占了！", "不必因为厌恶子孙持世，就非要求得官鬼持世才罢休，这不合道理。"],
+          "en": ["Early or late, there is no need to burn incense, and one may divine even in the dead of night, so long as one divines for one matter only and does not divine another matter besides.", "But one who divines with two or three matters in mind lacks a single sincere thought and will certainly not be borne out.", "Suppose one divines for a title: it is either Pressure holding the Self or Output holding the Self; once one of them is got, gain and loss are known and there is no need to divine again!", "There is no need to dislike Output holding the Self and insist on seeking Pressure holding the Self before stopping; that is unreasonable."] }
+      ],
+      "note": {
+        "yi": "这一段是野鹤答一位朋友的话，朋友问的是：如果卦里一直不出现官鬼持世或子孙持世，怎么办；前面还说了「一卦不见，再占一卦」，这里讲的是另一头：已经出现其中一个，就不要因为不喜欢而再占。",
+        "en": "This passage is Yehe's reply to a friend who asked what to do if neither Pressure nor Output holding the Self ever appears; just before it he said \"if one hexagram does not show it, divine another\", and what is said here is the other end of that: once either has appeared, one must not divine again merely because one dislikes it."
+      },
+      "see": ["LY.EXAM.ZS.53", "LY.EXAM.BSZZ.09"]
+    },
+    {
+      "id": "LY.EXAM.ZS.55",
+      "topic": "风险",
+      "chapter": "八宫章·简易占法",
+      "chapter_en": "The chapter on the eight palaces: the easy method",
+      "title": "八宫章·功名只可自己占：自占功名只有一点功名之念才灵验，有官爵者心怀二念，代人占功名难取用神；例：代卜长辈功名，巽木化乾金回头克，午月削职、七月而终",
+      "rule": {
+        "yi": "占功名和防灾虑患一样，只能自己占、不能替别人占：自己占功名，心里只有一点功名的念头，才自然灵验；若既有怕出事的心、又有求名的念，就难以决断。有官爵的人「心怀二念」（既怕失官又怕获罪），得子孙持世时，说他无事又怕神灵报的是失名，说功名有碍又怕神灵报的是无忧，所以说「自占必验，代卜不灵，不是卦不灵，是别人的心不专于一」。书中例：有人替长辈卜功名，野鹤说功名必须亲占、代占难取用神，从不敢断，幸而这个卦显而易见——巽木化出乾金，是变出来的爻回头来克，为绝卦，不必问功名，寿数也不长；果然午月被削职，七月去世。",
+        "en": "Divining for a title, like divining against calamity, should be done only for oneself and not by proxy: when one divines one's own title with only a single thought of the title in mind, the divination is naturally borne out; if one has both a fear of mishap and a wish for fame, it is hard to decide. A man holding rank is \"of two minds\" (afraid of losing office and afraid of blame): if Output holds the Self, to promise him safety risks the spirit reporting the loss of his name, and to call his title obstructed risks the spirit reporting no worry; hence the saying \"one's own divination is always borne out, a proxy's is not; it is not that the hexagram fails, but that the other person's mind is not set on one thing\". The case in the book: someone divined an elder's title by proxy; Yehe said a title must be divined in person, since by proxy the Subject is hard to choose, and he never dares to judge, but luckily this hexagram was plain: Xun Wood changing into Qian Metal is a changed line coming back to control, a hexagram of cutting-off, so there was no need to ask about the title and life would not be long; indeed the man was stripped of rank in the Wu month and died in the seventh month."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [347, 347],
+          "zh": ["余又以占卜秘法，再行教人。", "曰：防灾虑患及占功名，只可自己决疑，不可代人占卜。", "自占防患者，独萌一点防患之心；", "占功名者，止有一点功名之念，自然灵验。", "恐人人不知子孙与官鬼之理，既有虑祸之心，复有求名之念，便难决断。"],
+          "yi": ["我又拿占卜的秘法，再教给大家。", "说：防灾虑患和占功名，只能自己决疑，不能替别人占。", "自己占防灾的人，只有一点防患的心；", "占功名的人，只有一点功名的念头，自然灵验。", "怕的是人人不懂得子孙和官鬼的道理，既有担忧祸事的心，又有求名的念头，就难以决断。"],
+          "en": ["I will also teach, once more, a secret method of divination.", "It is this: divining against calamity and divining for a title can only be done by oneself to settle one's own doubt, and not for another.", "One who divines against calamity for himself has only a single thought of guarding against it;", "one who divines for a title has only a single thought of the title, and so it is naturally borne out.", "The fear is that people do not all understand the principle of Output and Pressure: with both a worry about misfortune and a wish for fame, it becomes hard to decide."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [348, 348],
+          "zh": ["譬如上书谏言，此人若无官者，未必不欲借此以求名，而防祸之心亦所不免；", "有官爵者，既快功名之有失，又虑言出而祸随；", "又如身有前程者，或已仕，或未仕，目今而误，事尚未结，既虑失官，又防获罪，此三种人皆谓之“心怀二念”，卦中倘得子孙持世，欲许其无事，又恐神报失名；", "若断其功名有碍，又恐神报无忧，故曰：“自占必验，代卜不灵，非卦不灵，他心不专于一也。”"],
+          "yi": ["譬如上书进谏，这个人如果没有官职，未必不想借这件事求名，而防祸的心也不免有；", "有官爵的人，既为功名有失而不快，又担心话一出口祸事就跟着来；", "又比如身上有前程的人，不管已经做官还是没做官，眼下出了差错，事情还没了结，既担心丢官，又担心获罪，这三种人都叫「心怀二念」，卦里如果得子孙持世，想许他无事，又怕神灵报的是失名；", "如果断他功名有碍，又怕神灵报的是无忧，所以说：「自己占必定灵验，替人卜不灵，不是卦不灵，是别人的心思不专一。」"],
+          "en": ["For instance, a man who submits a memorial of remonstrance, if he holds no office, may well wish to seek a name through it, and yet cannot help also having a fear of misfortune;", "a man with rank is both vexed at the loss of his title and afraid that disaster will follow once he has spoken;", "or again a man with prospects, whether already in office or not, who has erred at present with the matter not yet settled, fears both losing office and being found guilty; these three kinds of men are all called \"of two minds\", and if the hexagram gives Output holding the Self, to promise him safety risks the spirit reporting the loss of his name;", "and to say his title is obstructed risks the spirit reporting no worry; hence the saying: \"one's own divination is always borne out and a proxy's is not; it is not that the hexagram fails, but that the other person's mind is not set on one thing.\""] },
+        { "by": "书中例", "book": "增删卜易", "range": [2091, 2091],
+          "zh": ["如：卯月辛巳日(旬空：申酉)，来人不言何事，占得“巽之乾”"],
+          "yi": ["例：卯月辛巳日（旬空：申酉），来人不说占什么事，占得巽卦变乾卦："],
+          "en": ["For example: in the Mao month, on a Xin-Si day (Void: Shen and You), a man came without saying what matter he was divining, and the hexagram got was Xun changing to Qian:"] },
+        { "by": "书中例", "book": "增删卜易", "range": [2096, 2096],
+          "zh": ["问之所占何事，彼曰：“代卜长辈功名。”", "余曰：功名须要亲占，代占难取用神，从不敢断。", "幸此卦显而易见，巽木化乾金，即为化来，回头来克，为绝卦也，不必问名，寿亦不久。", "果于午月削职，七月而终。"],
+          "yi": ["问他占的是什么事，他说：「替长辈占功名。」", "我说：功名必须亲自占，替人占难以取用神，我从来不敢断。", "幸好这个卦显而易见，巽木化出乾金，就是化来，回头来克，是绝卦，不必问功名，寿数也不长。", "果然午月被削职，七月去世。"],
+          "en": ["Asked what matter he was divining, he said: \"I am divining an elder's title on his behalf.\"", "I said: a title must be divined in person; by proxy the Subject is hard to choose, and I have never dared to judge.", "Luckily this hexagram was plain: Xun Wood changing into Qian Metal is a change in which what comes by transformation returns to control, a hexagram of cutting-off, so there was no need to ask about the title and his life would not be long.", "Indeed he was stripped of rank in the Wu month and died in the seventh month."] }
+      ],
+      "note": {
+        "yi": "最后一个卦例不在这一章里，是书中别处（第 2091–2096 行）的卦例，放在这里是因为它正说明「功名必须亲自占」；卦图不收，开头一句「如：卯月辛巳日……」连在上一个例子的结尾那一行里。「化来」是变出来的爻反过来克原来的爻（这里是金克木），也就是回头克。",
+        "en": "The last case is not in this chapter but elsewhere in the book (lines 2091 to 2096); it is placed here because it illustrates \"a title must be divined in person\". Its hexagram diagram is not included, and its opening sentence \"For example: in the Mao month, on a Xin-Si day\" sits on the last line of the preceding case. \"Coming by transformation\" means that the changed line comes back to control the original line (here Metal controlling Wood), that is, the returning control."
+      },
+      "see": ["LY.EXAM.ZS.53"]
+    },
+    {
+      "id": "LY.EXAM.ZS.56",
+      "topic": "成否",
+      "chapter": "三合章",
+      "chapter_en": "The chapter on the three-harmony frames",
+      "title": "三合章·占功名：合成官局为官旺，合成财局为财旺生官，合成子孙局为伤官之神；三合官局生世利我、生应利他",
+      "rule": {
+        "yi": "占功名，三合成官局叫官旺；合成财局叫财旺生官；合成子孙局是伤官的神，不利。三合官局生世爻，对我有利；生应爻，对他人有利。",
+        "en": "In divining for a title, a Pressure frame formed by the three-harmony is called a strong official star; a Wealth frame is Wealth strong and giving life to Pressure; an Output frame is the spirit that wounds Pressure and is unfavourable. A three-harmony Pressure frame that gives life to the Self favours me, and one that gives life to the Other favours someone else."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [1462, 1462],
+          "zh": ["如占功名，合成官局，谓之官旺；", "倘合成财局，谓之财旺生官；", "倘合成子孙局者，乃伤官之神也。"],
+          "yi": ["如占功名，合成官局，叫官旺；", "如果合成财局，叫财旺生官；", "如果合成子孙局，就是伤官的神。"],
+          "en": ["In divining for a title, if the hexagram combines into a Pressure frame, it is called a strong official star;", "if it combines into a Wealth frame, it is Wealth strong and giving life to Pressure;", "if it combines into an Output frame, it is the spirit that wounds Pressure."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [1464, 1464],
+          "zh": ["更有当知者：如占功名，三合官局而生世者，利于我；", "生应者，利于他。"],
+          "yi": ["更有该知道的：如占功名，三合官局而生世爻的，对我有利；", "生应爻的，对他人有利。"],
+          "en": ["There is more that one should know: in divining for a title, a Pressure frame of the three-harmony that gives life to the Self is favourable to me;", "one that gives life to the Other is favourable to someone else."] }
+      ],
+      "note": {
+        "yi": "同一章里讲三合局的另外几句（占求财、占祖茔家宅、占婚姻、占官讼、占出行、占行人）属于别的问题域，这里没有收。",
+        "en": "The other sentences of the same chapter on the three-harmony frames (for wealth, graves and houses, marriage, lawsuits, travel and travellers) belong to other domains and are not included here."
+      },
+      "see": ["LY.EXAM.ZS.30"]
+    },
+    {
+      "id": "LY.EXAM.ZS.57",
+      "topic": "动变",
+      "chapter": "进神退神章",
+      "chapter_en": "The chapter on Advancing and Retreating spirits",
+      "title": "进神退神章：喜者宜化进神、忌者宜化退神，进神八对、退神八对；例：乡试官星持世、五爻官化进神，今秋折桂、明春联捷；乡试世爻未土化进神、巳火官动生世，揭榜中第八名",
+      "rule": {
+        "yi": "动爻变出来的爻是进神或退神，吉凶要分喜忌：所喜的宜化进神，所忌的宜化退神。进神有八对：亥化子、寅化卯、巳化午、申化酉、丑化辰、辰化未、未化戌、戌化丑，退神是它们的反方向；进神像春天的树木越长越旺、像有源头的水，有长久的样子，退神像秋天的花木渐渐凋零。书中例一：申月癸卯日占乡试，得恒卦变大过卦，酉金官星持世、旺相当令，卯日冲动它，又有第五爻官爻化进神扶助，断为今秋折桂、明春占鳌头，后来果然联捷。例二：酉月乙丑日占乡试中不中，得兑卦变讼卦，世爻未土化进神、巳火官爻发动生世，吉兆分明，断为坐等报喜，果然戊寅日揭榜中第八名；书上说古法认为动爻遇破、遇散、变到日月上还不能进，这个卦动爻散了又化空，也照样考中。",
+        "en": "A line that comes out of a moving line when it changes is an Advancing or Retreating spirit, and its luck divides into the welcome and the feared: what is welcome is better changing into an Advancing spirit, and what is feared is better changing into a Retreating spirit. There are eight pairs of Advancing spirits (Hai into Zi, Yin into Mao, Si into Wu, Shen into You, Chou into Chen, Chen into Wei, Wei into Xu, Xu into Chou), and the Retreating spirits are their reverse; an Advancing spirit is like spring trees coming into leaf or water that has a source, the look of what lasts long, and a Retreating spirit is like flowers and trees in autumn withering little by little. First case: on a Gui-Mao day in the Shen month a man divined the provincial examination and got Heng changing to Daguo; the Pressure star in You Metal held the Self, strong and in command, and was stirred by the clash of the Mao day, and the fifth line's Pressure changing into an Advancing spirit supported it, so the judgement was that he would break the laurel that autumn and take first place the next spring, and he indeed passed in consecutive rounds. Second case: on a Yi-Chou day in the You month a man divined whether he would pass the provincial examination and got Dui changing to Song; Wei Earth at the Self changed into an Advancing spirit and the Si Fire Pressure line moved to give life to the Self, an omen plainly good, so the judgement was to sit and wait for the news, and the list was indeed posted on a Wu-Yin day with him at number eight; the book says that by the old rule a moving line that meets a break or a scattering, or changes onto the Day or Month, still cannot advance, yet here the moving line was scattered and changed into Void and he passed all the same."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [3321, 3321],
+          "zh": ["进退神者，爻之动而化也，化进化退，吉凶祸福，有喜忌之分。", "所喜者，宜化进神；", "所忌者，宜化退神。"],
+          "yi": ["进退神，是爻动了而变出来的，化进、化退，吉凶祸福，有喜有忌的分别。", "所喜的，宜化进神；", "所忌的，宜化退神。"],
+          "en": ["The Advancing and Retreating spirits come from a line moving and changing; changing to advance or to retreat, luck and ill divide into the welcome and the feared.", "What is welcome is better changing into an Advancing spirit;", "what is feared is better changing into a Retreating spirit."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [3322, 3322],
+          "zh": ["进神：亥化子，寅化卯，巳化午，申化酉，丑化辰，辰化未，未化戌，戍化丑。", "退神：子化亥，卯化寅，午化巳，酉化申，辰化丑，未化辰，戌化未，丑化戍。", "进神者：由此而前进也，如春木之荣，有源之水，久远长久之象；"],
+          "yi": ["进神（往前进的变化）有八对：亥变子、寅变卯、巳变午、申变酉、丑变辰、辰变未、未变戌、戌变丑。", "退神（往后退的变化）有八对：子变亥、卯变寅、午变巳、酉变申、辰变丑、未变辰、戌变未、丑变戌。", "进神，是由此向前进，如同春天的树木繁荣，有源头的水，是长久不绝的样子；"],
+          "en": ["Advancing spirits (changes that go forward) are eight pairs: Hai changing into Zi, Yin into Mao, Si into Wu, Shen into You, Chou into Chen, Chen into Wei, Wei into Xu, and Xu into Chou.", "Retreating spirits (changes that go backward) are eight pairs: Zi changing into Hai, Mao into Yin, Wu into Si, You into Shen, Chen into Chou, Wei into Chen, Xu into Wei, and Chou into Xu.", "An Advancing spirit goes forward from here, like spring trees coming into leaf or water that has a source, the look of what lasts long;"] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [3323, 3323],
+          "zh": ["退神者：由此而渐退也，如秋天花木，渐渐凋零。"],
+          "yi": ["退神，是由此渐渐后退，如同秋天的花木，渐渐凋零。"],
+          "en": ["a Retreating spirit retreats gradually from here, like flowers and trees in autumn, withering little by little."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3324, 3324],
+          "zh": ["如：申月癸卯日(旬空：辰巳)，占乡试，得“恒之大过”"],
+          "yi": ["例：申月癸卯日（旬空：辰巳），占乡试，得恒卦变大过卦"],
+          "en": ["For example: in the Shen month, on a Gui-Mao day (Void: Chen and Si), a man divined the provincial examination and got Heng changing to Daguo"] },
+        { "by": "书中例", "book": "增删卜易", "range": [3341, 3341],
+          "zh": ["酉金官星持世，旺相当时，卯日冲之而暗动，又得五爻官化进神，拱扶帮助，不独今秋折桂，明春定占鳌头。", "后果得联捷。"],
+          "yi": ["酉金官星持世，旺相当令，卯日冲动它而暗动，又得第五爻官爻化进神，扶助帮衬，不但今秋折桂，明春也一定占鳌头。", "后来果然连捷。"],
+          "en": ["The Pressure star in You Metal holds the Self, strong and in command, and is stirred in secret by the clash of the Mao day, and it gains the support and help of the fifth line, Pressure changing into an Advancing spirit; not only will he break the laurel this autumn, but next spring he will surely take first place.", "In the end he indeed passed in consecutive rounds."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3932, 3932],
+          "zh": ["又如：酉月乙丑日(旬空：戌亥)，占乡试中否，得“兑之讼”"],
+          "yi": ["又如：酉月乙丑日（旬空：戌亥），占乡试中不中，得兑卦变讼卦"],
+          "en": ["Another: in the You month, on a Yi-Chou day (Void: Xu and Hai), a man divined whether he would pass the provincial examination and got Dui changing to Song"] },
+        { "by": "书中例", "book": "增删卜易", "range": [3967, 3967],
+          "zh": ["世爻未土化进神，巳火官动而生世，吉兆显然，坐以待报。", "果于戊寅日揭榜，中第八名。", "古法动破散化日月，尚不能进，此卦动散化空，亦能中矣。"],
+          "yi": ["世爻未土化进神，巳火官爻发动生世，吉兆显然，坐着等报喜。", "果然在戊寅日揭榜，中了第八名。", "古法认为动爻遇破、遇散、变到日月上还不能进，这个卦动爻散了又化空，也能考中。"],
+          "en": ["The Wei Earth at the Self changes into an Advancing spirit and the Si Fire Pressure line moves to give life to the Self; the omen is plainly good, so he could sit and wait for the news.", "Indeed the list was posted on a Wu-Yin day and he passed as number eight.", "By the old rule a moving line that meets a break or a scattering, or changes onto the Day or Month, still cannot advance; in this hexagram the moving line is scattered and changes into Void, yet he could still pass."] }
+      ],
+      "note": {
+        "yi": "「折桂」「占鳌头」「联捷」的意思见 LY.EXAM.BSZZ.07 的注；两个卦例的卦图都不收，第二个例子的开头一句在卦图之前。第二个例子里「动破散化日月，尚不能进」文字简略，大意是：动爻遇到破、被冲散，或变出的爻落在日月的空破上，古法说还不能算进神；译文按这个大意翻，是按上下文的理解，书里没有再解释。进神八对里的「戍化丑」「丑化戍」，书里把「戌」写成了「戍」，原文照录。「乡试」之例与《卜筮正宗》第十问是同一个卦例（LY.EXAM.BSZZ.07），两书的断语文字不同。",
+        "en": "For \"breaking the laurel\", \"taking first place\" and \"consecutive success\" see the note at LY.EXAM.BSZZ.07; the hexagram diagrams of the two cases are not included, and the second case's opening sentence comes before its diagram. The terse phrase in the second case, \"moving, broken, scattered, changing into Day or Month, still cannot advance\", means in sense that a moving line which meets a break or is scattered by a clash, or whose changed line falls on a Void or break of the Day or Month, was held by the old rule not yet to count as Advancing; the translation follows this reading, taken from the context, and the book does not explain it further. In the list of eight pairs the text writes \"Xu\" with a wrong character in two places and is reproduced as it stands. The first case is the same hexagram as the one in the Bushi Zhengzong's tenth question (LY.EXAM.BSZZ.07), though the wording of the judgement differs."
+      },
+      "see": ["LY.EXAM.BSZZ.07", "LY.EXAM.ZS.42", "LY.EXAM.ZS.17"]
+    },
+    {
+      "id": "LY.EXAM.ZS.58",
+      "topic": "取象",
+      "chapter": "六神章",
+      "chapter_en": "The chapter on the six spirits",
+      "title": "六神章·六神只是附和之神：吉卦逢青龙更吉、凶卦逢蛇虎更凶；例：辰月己巳日占会试，青龙加未土、文章持世化回头生、日建作官星，首唱无疑",
+      "rule": {
+        "yi": "六神（青龙、朱雀、勾陈、螣蛇、白虎、玄武）不是不灵，而是「附和之神」：本来吉的遇到青龙更吉，卦本来凶的遇到螣蛇白虎更凶，玄武主盗贼、朱雀主是非，没有不灵验的。书中例：辰月己巳日占会试，得观卦变否卦，青龙加在未土上，文章持世、动而变出回头之生，日辰在第五爻作官星，一起来生世，第一名没有疑问。",
+        "en": "The six spirits (Azure Dragon, Vermilion Bird, Hook Earth, Coiling Snake, White Tiger, Dark Tortoise) are not without effect; they are \"supporting spirits\" that go along with the rest: what was lucky is luckier still when it meets the Azure Dragon, what was ill in the hexagram is worse still when it meets the Snake and the Tiger, the Dark Tortoise governs thieves and the Vermilion Bird governs disputes, and none of this ever fails. The case in the book: on a Ji-Si day in the Chen month a man divined the metropolitan examination and got Guan changing to Pi; the Azure Dragon was added to Wei Earth, the writing held the Self and, moving, changed into a returning generation, and the Day at the fifth line acted as the Pressure star, all coming to give life to the Self, so first place was beyond doubt."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [1211, 1211],
+          "zh": ["然则六神竟而不验耶？", "非也，乃附和之神耳。", "向之吉者，逢青龙而更吉；", "卦之凶者，逢蛇虎而更凶。", "且玄武主盗贼，朱雀主是非，无有不验。", "至于家宅坟茔，尤不可少。"],
+          "yi": ["既然这样，六神就全不灵验了吗？", "不是的，它们只是附和的神罢了。", "本来吉的，遇到青龙就更吉；", "卦本来凶的，遇到螣蛇、白虎就更凶。", "而且玄武主盗贼，朱雀主是非，没有不灵验的。", "至于家宅、坟茔，尤其少不了它们。"],
+          "en": ["Then are the six spirits wholly without effect?", "No, they are merely supporting spirits that go along with the rest.", "What was lucky meets the Azure Dragon and is luckier still;", "what was ill in the hexagram meets the Snake and the Tiger and is worse still.", "Moreover the Dark Tortoise governs thieves and the Vermilion Bird governs disputes, and neither ever fails.", "As for the household and graves, one especially cannot do without them."] },
+        { "by": "书中例", "book": "增删卜易", "range": [1241, 1241],
+          "zh": ["又如：辰月己巳日(戌亥空)，占会试，得“观之否”"],
+          "yi": ["又如：辰月己巳日（戌亥空），占会试，得观卦变否卦"],
+          "en": ["Another: in the Chen month, on a Ji-Si day (Void: Xu and Hai), a man divined the metropolitan examination and got Guan changing to Pi"] },
+        { "by": "书中例", "book": "增删卜易", "range": [1289, 1289],
+          "zh": ["青龙加未土，文章持世，动化回头之生，日建五位作官星，共来生世，首唱无疑。"],
+          "yi": ["青龙加在未土上，文章持世，动而化出回头之生，日辰在第五爻作官星，一起来生世，第一名没有疑问。"],
+          "en": ["The Azure Dragon is added to Wei Earth, the writing holds the Self and, moving, changes into a returning generation, and the Day at the fifth line acts as the Pressure star, all coming to give life to the Self: first place is beyond doubt."] }
+      ],
+      "note": {
+        "yi": "「首唱无疑」大意是名列第一没有疑问；卦图不收，这一段结尾的「又如」以后是下一个例子，不收。《卜筮正宗》里也有一个观卦变否卦的会试例（LY.EXAM.BSZZ.08），日期和断语都不一样。",
+        "en": "The phrase \"first place is beyond doubt\" means in sense that coming first is not in question; the hexagram diagram is not included, and what follows \"another\" at the end of this passage belongs to the next case and is not included. The Bushi Zhengzong also has a metropolitan-examination case of Guan changing to Pi (LY.EXAM.BSZZ.08), with different dates and a different judgement."
+      },
+      "see": ["LY.EXAM.BSZZ.08"]
+    },
+    {
+      "id": "LY.EXAM.ZS.59",
+      "topic": "应期",
+      "chapter": "增删《黄金策·千金赋》·岁君",
+      "chapter_en": "The Zengshan edition of the Huangjin Ce, Thousand-Gold Rhapsody: the Tai Sui",
+      "title": "千金赋·岁君：太岁只在占官事、年运、乡会试、仕宦、面圣上书等事里才要紧，宜生合世爻、最忌刑冲克世，其余按他爻看；例：巳月壬子日占乡试，官星持世旬空，许之卯科，子年占果于卯年登科（太岁填实）",
+      "rule": {
+        "yi": "太岁平常和别的爻一样看，只有占官事、占年运、占乡试会试、做官、面圣、上书、叩阍、诤谏、请封请荫这几类事才要紧：宜太岁生合世爻，动而生世更吉，最忌刑冲克世。原因是太岁虽管一年的令，但尊而不亲，吉凶都比不上日月。书中例：巳月壬子日占乡试，得水地比卦，巳火父爻当月建、文星旺，只嫌官星持世落旬空，许他卯科才能得意；子年占，果然卯年登科，应在卯年，是太岁把空填实了。",
+        "en": "The Tai Sui is read like any other line, and is important only in a few kinds of divination: official affairs, the fortune of the year, the provincial and metropolitan examinations, taking office, an audience with the emperor, submitting a memorial, beating the drum at the palace gate, remonstrating, and petitioning for a title; there it is good for the Tai Sui to give life to or combine with the Self line, better still if it moves to give life to the Self, and most of all one fears it punishing, clashing with or controlling the Self. The reason is that though the Tai Sui rules the command of a year it is honoured but not close, and its luck and ill never match those of the Day and Month. The case in the book: on a Ren-Zi day in the Si month a man divined the provincial examination and got Bi; the Si Fire Resource line stood on the Month and the star of writing was strong, and only the Pressure star held the Self while Void in its ten-day period, so I promised him that the Mao-year examination would bring success; he divined in the Zi year and indeed passed in the Mao year, answering in the Mao year because the Tai Sui filled the void."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [4470, 4470],
+          "zh": ["最恶者岁君，宜静而不宜动。", "岁君乃当年之太岁，或明动暗动冲克世爻，占官事者，必于朝廷；", "占年运者，一年挠括；", "乡会试、仕宦，及面圣、上书、叩阍、诤谏、请封请荫等事，皆宜太岁生合世爻，动而生世更吉，最忌刑冲克世。", "除此数占之外，皆与他爻等也，何也？", "太岁虽司一年之令，尊而不亲，高而难仰，吉凶皆不及乎日月，古以太岁不理家庭琐事，此理是也。"],
+          "yi": ["最凶恶的是岁君，宜静不宜动。", "岁君就是当年的太岁，不管明动还是暗动，冲克世爻，占官事的，一定牵涉朝廷；", "占年运的，一年里受阻碍；", "乡试会试、做官，以及面圣、上书、叩阍、诤谏、请封请荫等事，都宜太岁生合世爻，动而生世更吉，最忌刑冲克世。", "除了这几种占问之外，太岁都和别的爻一样看，为什么呢？", "太岁虽然主管一年的令，但尊贵而不亲近，高远而难以仰望，吉凶都比不上日月，古人因此说太岁不管家庭琐事，这个道理是对的。"],
+          "en": ["The most baleful is the Tai Sui, which is better still than moving.", "The Tai Sui is the year's own Tai Sui; whether it moves openly or in secret, if it clashes with or controls the Self line, one divining an official matter will surely be drawn to the court;", "one divining the fortune of the year will be obstructed through the year;", "for the provincial and metropolitan examinations, taking office, an audience with the emperor, submitting a memorial, beating the drum at the palace gate, remonstrating, and petitioning for a title for oneself or one's descendants, it is good for the Tai Sui to give life to or combine with the Self line, better still if it moves to give life to the Self, and most of all one fears it punishing, clashing with or controlling the Self.", "Apart from these few kinds of divination the Tai Sui is treated like any other line; why?", "Though the Tai Sui rules the command of a year, it is honoured but not close and lofty and hard to look up to, and its luck and ill never match those of the Day and Month; so the ancients said that the Tai Sui does not concern itself with petty household matters, and this reasoning is right."] },
+        { "by": "书中例", "book": "增删卜易", "range": [4472, 4472],
+          "zh": ["如：巳月壬子日(旬空：寅卯)，占乡试，得“水地比”坤宫：水地比(归魂)"],
+          "yi": ["例：巳月壬子日（旬空：寅卯），占乡试，得水地比卦，坤宫的水地比卦（归魂卦）"],
+          "en": ["For example: in the Si month, on a Ren-Zi day (Void: Yin and Mao), a man divined the provincial examination and got Bi, Water over Earth, in the Kun palace (a returning-soul hexagram)"] },
+        { "by": "书中例", "book": "增删卜易", "range": [4478, 4478],
+          "zh": ["巳火父爻当月建，文星旺矣！", "独嫌官星持世，卯木旬空，许之卯科方能得意。", "子年占，果于卯年登科。", "应卯年者，太岁填实而不空也。"],
+          "yi": ["巳火父爻当月建，文星旺相了！", "只嫌官星持世，卯木旬空，许他卯科才能得意。", "子年占的，果然在卯年登科。", "应在卯年，是因为太岁把空填实了，不再是空。"],
+          "en": ["The Si Fire Resource line stands on the Month, so the star of writing is strong!", "Only the Pressure star holds the Self and Mao Wood is Void in its ten-day period, so I promised him that the Mao-year examination would be the one to bring success.", "He divined in the Zi year and indeed passed in the Mao year.", "It answered in the Mao year because the Tai Sui filled the void and it was no longer Void."] }
+      ],
+      "note": {
+        "yi": "「叩阍」是到宫门前击鼓喊冤，「诤谏」是直言规劝君主，「请封请荫」是替自己或子孙请求封赠、荫补官职；这是旧时通行的说法，不是本书的定义。「文星」指父母爻（文章）。卦图不收。这一段后面接着讲岁破、岁合、衰旺等，不属于考试，没有收。",
+        "en": "To \"beat the drum at the palace gate\" is to go to the palace gate and beat the drum to cry out a grievance, to \"remonstrate\" is to admonish the ruler frankly, and to \"petition for a title\" is to ask for a title or an inherited post for oneself or one's descendants; these are the usual old meanings, not definitions given in this book. The \"star of writing\" is the Resource line (the essay). The hexagram diagram is not included. What follows in the book (the Tai Sui's break and combination, strength and weakness) is outside examinations and is not included."
+      },
+      "see": ["LY.EXAM.ZS.34", "LY.EXAM.ZS.24"]
+    },
+    {
+      "id": "LY.EXAM.ZS.60",
+      "topic": "成否",
+      "chapter": "随鬼入墓章",
+      "chapter_en": "The chapter on entering the tomb with Pressure",
+      "title": "随鬼入墓章·占功名：世旺得地，冲开墓库之年月成名；世若休囚空破，始终难成；例：戌月甲寅日占会试能联捷，世爻随官入三墓而日月合成官局，辰年辰月冲开三墓，联捷鼎甲",
+      "rule": {
+        "yi": "世爻入墓只验三种（世爻随鬼入日墓、入动墓、动而化墓），自占看世爻、代占看用神，旺相的不是真入墓，只有休囚被克又入墓才是，墓神被日月动爻冲破的也不算。占功名：世爻旺相得地，冲开墓库的年月成名；世爻休囚空破，始终难成。书中例：戌月甲寅日占会试能不能联捷，得小过卦变艮卦，世爻随官爻入三个墓（动墓、化墓、入月建之墓），断为明年辰年、发榜之时又在辰月，冲开三个墓，不但联捷，必定名列鼎甲，因为日月合成官局、旺相当令，卦象十全；结果果然传胪三唱。",
+        "en": "The Self entering the tomb proves true in only three ways (the Self entering the tomb of the Day with Pressure, entering a moving tomb, and moving and changing into a tomb); in one's own divination watch the Self and in a proxy's watch the Subject; a strong one is not truly entering the tomb, and only a resting or controlled one that also enters the tomb is the real thing, and a tomb spirit broken by the Day, the Month or a moving line does not count either. In divining for a title: if the Self is strong and in place, the name is made in the year or month that clashes open the tomb; if the Self is resting, trapped, Void or broken, success is hard from start to finish. The case in the book: on a Jia-Yin day in the Xu month a man divined whether he would pass the metropolitan examination in consecutive rounds and got Xiaoguo changing to Gen; the Self followed Pressure into three tombs (a moving tomb, a changing tomb and the Month's tomb), and the judgement was that next year is the Chen year and the posting of the list falls again in the Chen month, clashing open all three tombs, so he would not only pass in consecutive rounds but be among the top three, since the Day and Month combine into a Pressure frame, strong and in command, the hexagram perfect; and indeed his name was called out at the palace announcement."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [4168, 4168],
+          "zh": ["余因屡试而得验者，只验世爻入墓有三：一世爻随鬼入日墓，一世爻入动墓，一世爻动而化墓。", "此三墓者，自占看世爻，世爻旺相者非真；", "代占看用神，用神旺相者非真。", "惟世爻、用爻休囚被克，而又入墓者为是也，墓神被日月动爻冲破者，亦不为真。", "盖，墓破即如破网，容易而出也。"],
+          "yi": ["我因为屡次试验而应验了的，只有世爻入墓的三种：一是世爻随鬼入日辰的墓，二是世爻入动爻的墓，三是世爻动而化入墓。", "这三种墓，自己占的看世爻，世爻旺相的不是真入墓；", "替别人占的看用神，用神旺相的也不是真。", "只有世爻、用爻休囚被克，又入了墓的才对；墓神被日月和动爻冲破的，也不是真。", "因为墓破了就像网破了一样，很容易出来。"],
+          "en": ["What I have found to hold after repeated trials is only three kinds of the Self line entering a tomb: the Self line following Pressure into the Day's tomb; the Self line entering a moving line's tomb; and the Self line moving and turning into a tomb.", "For these three tombs: in a divination for oneself look to the Self line, and if the Self line is strong it is not the real thing;", "in a divination for another look to the Subject, and if the Subject is strong it is not the real thing either.", "Only when the Self or Subject line is resting or trapped and controlled and also enters a tomb is it right; if the tomb spirit is clashed and broken by the Day, Month or a moving line, that too is not the real thing.", "For a broken tomb is like a torn net: one can easily get out."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [4169, 4169],
+          "zh": ["占功名，世旺得地，冲开墓库之年月成名；", "世若休囚空破，始终难成之象。"],
+          "yi": ["占功名，世爻旺相得地，冲开墓库的年月成名；", "世爻如果休囚空破，是始终难成的样子。"],
+          "en": ["In divining for a title, if the Self is strong and in place, the name is made in the year or month that clashes open the tomb;", "if the Self is resting, trapped, Void or broken, it is the sign of never succeeding from start to finish."] },
+        { "by": "书中例", "book": "增删卜易", "range": [4115, 4115],
+          "zh": ["又如：戌月甲寅日(旬空：子丑)，占会试能联捷否？", "得“小过之艮”"],
+          "yi": ["又如：戌月甲寅日（旬空：子丑），占会试能不能联捷？", "得小过卦变艮卦"],
+          "en": ["Another: in the Xu month, on a Jia-Yin day (Void: Zi and Chou), a man divined whether he would pass the metropolitan examination in consecutive rounds?", "and got Xiaoguo changing to Gen"] },
+        { "by": "书中例", "book": "增删卜易", "range": [4151, 4151],
+          "zh": ["世爻随官入三墓，动墓、化墓、入月建之墓。", "明岁辰年，冲开墓库，发榜之期，又遇辰月，冲开三墓，不独联捷，定然鼎甲，缘日月合成官局，旺相当时，卦之全美，如玉无暇，果然传胪三唱。"],
+          "yi": ["世爻随官爻入了三个墓：动墓、化墓、入月建之墓。", "明年辰年，冲开墓库，发榜的时候，又遇到辰月，冲开三个墓，不但联捷，必定名列鼎甲，因为日月合成官局，旺相当令，卦象十全，像玉没有瑕疵，结果果然传胪三唱。"],
+          "en": ["The Self follows the Pressure line into three tombs: a moving tomb, a changing tomb and the Month's tomb.", "Next year is the Chen year, which clashes open the tombs, and the posting of the list falls again in the Chen month, clashing open all three tombs; not only will he pass in consecutive rounds, he will surely be among the top three, because the Day and Month combine into a Pressure frame, strong and in command, and the hexagram is perfect, like jade without a flaw; and indeed his name was called out at the palace announcement."] }
+      ],
+      "note": {
+        "yi": "这一章的墓库规则是按问题分行列的，功名只是其中一行（占身命、出仕出行、求财、婚姻、疾病、狱讼、行人、入公门、家宅、讼事等各有一行），别的行属于别的问题域，婚姻一行见 LY.MARRY.ZS.33。「鼎甲」「传胪」按通行说法，指殿试放榜时名列前三、被唱名公布；卦图不收，例子的开头一句在卦图之前。",
+        "en": "The tomb rules in this chapter are laid out line by line by kind of matter, and a title is only one line of them (one each for the body and fate, taking office and travelling, wealth, marriage, illness, lawsuits, travellers, entering a government office, the household, and legal suits); the other lines belong to other domains, and the marriage line is at LY.MARRY.ZS.33. By the usual usage \"the top three\" and \"the announcement of names\" mean standing among the first three when the palace-examination list is posted and the names are called out; the hexagram diagram is not included, and the case's opening sentence comes before its diagram."
+      },
+      "see": ["LY.MARRY.ZS.33", "LY.EXAM.ZS.34"]
+    },
+    {
+      "id": "LY.EXAM.ZS.61",
+      "topic": "风险",
+      "chapter": "占此应彼·举意先后",
+      "chapter_en": "Divining this and being answered that: the order of intent",
+      "title": "占此应彼·举意先后：念头发自谁、卦就应谁，父叫子占功名仍作父占子（例：十五岁孩子，父动克子，妻死申月、子卒未年）；叫人代占须先告知、待他忘怀后自己想起再占；孝廉不明说占会试而混问功名是昧己",
+      "rule": {
+        "yi": "卦应的是动念的那个人的念头：别人的心事，他没有动念去占，是你提醒他、叫他占的，那就是你的念头，卦应你不应他；所以父亲叫孩子占功名，仍按父亲占孩子来断。想让别人为自己的事占，可以先告诉他，等他忘怀了、自己想起来再另起念头去占。占的时候要照直说出来，不要含混：孝廉不明说占会试而混问功名，就是欺瞒自己。书中例：午月辛酉日占功名，得萃卦变遁卦，是一个年仅十五的孩子，父亲叫他占将来有没有功名，若按官星持世、父爻是文章又化进神，功名有望，但因为是父亲叫儿子占，念头是父亲的，仍作父占子：父爻发动克子、兄弟爻发动伤妻，妻子死在申月，儿子死在未年。",
+        "en": "A hexagram answers the thought of the person from whom the thought arose. If a matter is on another's mind but he has not thought of divining it, and I remind him and tell him to divine, then the thought is mine, and the hexagram answers me and not him; so when a father tells his son to divine for a title, it is still judged as the father divining for the son. If one wants someone to divine his own matter, one may first tell him and let him divine later with a fresh thought of his own after he has forgotten it. And one must state the question plainly: a provincial graduate who does not say he is divining the metropolitan examination but asks vaguely about a title is deceiving himself. The case in the book: on a Xin-You day in the Wu month a boy of fifteen, told by his father to divine whether he would have a title in future, got Cui changing to Dun; by the Pressure star holding the Self, with the Resource line as the essay changing into an Advancing spirit, success looked hopeful, but since it was the father who told the son to divine, the thought was the father's and it was read as the father divining for the son: Resource moved and controlled the son, Peer moved and wounded the wife, and the wife died in the Shen month and the son in the Wei year."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [6066, 6066],
+          "zh": ["他事由他动念，慎勿提他。", "他之心事，未曾动念而占，我提醒他，叫他占之，乃我之念也。"],
+          "yi": ["别的事由别人去动念头，千万不要替他提起。", "他的心事，他本来没有动念去占，是我提醒他、叫他占的，那就是我的念头。"],
+          "en": ["Let another's matter arise from another's own thought, and be careful never to bring it up for him.", "If it was a matter on his mind that he had not thought of divining, and I remind him and tell him to divine it, then the thought is mine."] },
+        { "by": "书中例", "book": "增删卜易", "range": [6066, 6066],
+          "zh": ["曾有父叫子占功名。"],
+          "yi": ["曾经有父亲叫儿子占功名。"],
+          "en": ["Once a father told his son to divine for a title."] },
+        { "by": "书中例", "book": "增删卜易", "range": [6067, 6067],
+          "zh": ["于：午月辛酉日(旬空：子丑)，占功名，得“萃之遁”"],
+          "yi": ["于：午月辛酉日（旬空：子丑），占功名，得萃卦变遁卦"],
+          "en": ["In the Wu month, on a Xin-You day (Void: Zi and Chou), divining for a title, the hexagram was Cui changing to Dun"] },
+        { "by": "书中例", "book": "增删卜易", "range": [6102, 6102],
+          "zh": ["此子年仅十五，其父叫他占将来有功名否？", "若以官星持世，夏火当令，未土父爻为文章，父化进神，功名有望。", "岂知父叫子占，乃父之念也，此卦圣意，故仍作父占子也。", "父动克子，兄动伤妻，妻死于申月，子卒于未年。", "未年死子者，未土父动，值未年以克子；", "七月伤妻者，卯木财爻绝于申之故也。"],
+          "yi": ["这个孩子年仅十五，他的父亲叫他占将来有没有功名？", "如果按官星持世，夏天火当令，未土父爻是文章，父爻化进神，功名有望。", "谁知是父亲叫儿子占，这是父亲的念头，这个卦的意思，所以仍作父占子来断。", "父爻发动克子，兄弟爻发动伤妻，妻子死在申月，儿子死在未年。", "未年死儿子，是因为未土父爻发动，值未年来克子；", "七月伤了妻子，是因为卯木财爻在申月绝了。"],
+          "en": ["This boy was only fifteen, and his father told him to divine whether he would have a title in future.", "If judged as the Pressure star holding the Self, with Fire in command in summer, the Wei Earth Resource line being the essay, and Resource changing into an Advancing spirit, success would look hopeful.", "But it was the father who told the son to divine, so the thought was the father's, and the sense of the hexagram is that it should still be read as the father divining for the son.", "Resource moves to control the son, Peer moves to wound the wife; the wife died in the Shen month and the son in the Wei year.", "The son died in the Wei year because Wei Earth, the Resource line, moved and, the Wei year coming, controlled the son;", "the wife was hurt in the seventh month because Mao Wood, the Wealth line, is cut off in the Shen month."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [6103, 6103],
+          "zh": ["野鹤曰：余今亦曾叫人而占，然另有一法，先向其人曰：“尔之某事，须占一卦，以识吉凶。", "但目下念由我起，尔且莫就占，待少刻忘怀，尔忽自想起，另起念而占之，即为尔之念矣，则必无两岐之虑。”", "试之屡验。"],
+          "yi": ["野鹤说：我现在也曾叫人去占，但另有一个办法，先对他说：「你的某件事，需要占一卦，知道吉凶。", "但眼下这个念头是我起的，你先别去占，等一会儿忘掉了，你忽然自己想起来，另起念头去占，就是你的念头了，就一定没有两头的顾虑。」", "试过多次都灵验。"],
+          "en": ["Yehe said: I too have now and then told someone to divine, but I have another method: I first say to him: \"About that matter of yours, you ought to divine one hexagram to learn the luck or ill.", "But for now the thought was started by me, so do not go and divine at once; wait a little until you forget it and then suddenly think of it yourself, and divine with a new thought of your own, which will then be your thought, and there will certainly be no worry about two minds.\"", "I have tried it many times and it has always been borne out."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [6104, 6104],
+          "zh": ["我占必以直告，却莫昧已。", "此等极多，难以枚举。"],
+          "yi": ["我占卦必定照直说出来，千万不要欺瞒自己。", "这样的事极多，没法一一列举。"],
+          "en": ["When I divine I always say it straight out, and one must never deceive oneself.", "Such cases are very many and cannot be listed one by one."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [6104, 6104],
+          "zh": ["有孝廉不显说卜会试，而混问功名；"],
+          "yi": ["有孝廉不明说占会试，而含混地问功名；"],
+          "en": ["Some provincial graduates do not say plainly that they are divining the metropolitan examination but ask vaguely about a title;"] }
+      ],
+      "dispute": {
+        "yi": "同一个卦例，《卜筮正宗》（LY.EXAM.BSZZ.09）说孩子十二岁、未月戌日就去世；这里说孩子年仅十五，妻子死在申月、孩子死在未年。年岁和应期两书对不上，这里还多了妻子去世的一节。",
+        "en": "The same case appears in the Bushi Zhengzong (LY.EXAM.BSZZ.09), where the boy is twelve and dies in the Wei month on a Xu day; here he is only fifteen, the wife dies in the Shen month and the son in the Wei year. The two books disagree on the age and on the timing, and this one adds the wife's death."
+      },
+      "note": {
+        "yi": "这一段在书里没有单独的章名，上接一连几个「占此应彼」的卦例（先占功名后占子病等），本条只取了与考试有关的部分；卦例的卦图不收。「孝廉」是举人的别称，这是通行的说法。",
+        "en": "This passage has no chapter name of its own in the book and follows a run of \"divining this and being answered that\" cases (a title divined first and a child's illness after, and so on); only the part about examinations is taken here, and the case's hexagram diagram is not included. \"Provincial graduate\" is the usual name for the holder of the second degree."
+      },
+      "see": ["LY.EXAM.BSZZ.09", "LY.EXAM.ZS.55"]
+    }
+  ]
+}

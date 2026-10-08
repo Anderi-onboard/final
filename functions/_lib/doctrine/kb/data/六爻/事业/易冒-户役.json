@@ -1,0 +1,206 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "户役章第七十",
+  "chapter_en": "Chapter 70: Service and corvée",
+  "ranges": {"易冒": [1579, 1594]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.77",
+      "topic": "差役",
+      "chapter": "户役章第七十",
+      "chapter_en": "Chapter 70: Service and corvée",
+      "title": "户役总纲：役有我求之役、官派之役、有利之役、不利之役，皆役于官，故喜忌皆用官爻；求而有利者以役为利则财旺官备为吉、官坏克世为凶",
+      "rule": {
+        "yi": "役有不同：有我自己求的役，有官府派的役，有有利的役，有不利的役，都是替官府当役。所以喜忌都用官爻：求而有利的，以役为利，就以财旺、官备为吉，以官坏、克世为凶。",
+        "en": "Service differs: there is service one seeks oneself, service the authorities assign, service that pays, and service that does not, all of it service to the authorities. So what is welcome and what is feared are all taken from the Pressure line: for service one seeks and which pays, taking the service as the profit, thriving Wealth and a complete Pressure line are auspicious, and damaged Pressure and Pressure controlling the Self are ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1580, 1580],
+          "zh": ["役有不同，", "有我求之役，有官派之役，", "有利之役，有不利之役，", "皆役于官也。", "故喜忌皆用官爻，求而有利者以役为利，", "则财旺官备为吉，以官坏克世为凶。"],
+          "yi": ["役有不同：", "有我自己求的役，有官府派的役，", "有有利的役，有不利的役，", "都是替官府当役。", "所以喜忌都用官爻：求而有利的，以役为利，", "就以财旺、官备为吉，以官坏、克世为凶。"],
+          "en": ["Service differs:", "there is service one seeks oneself, service the authorities assign,", "service that pays, and service that does not,", "all of it service to the authorities.", "So what is welcome and what is feared are all taken from the Pressure line: for service one seeks and which pays, the service is taken as the profit,", "and thriving Wealth with a complete Pressure line is auspicious, damaged Pressure and Pressure controlling the Self are ominous."] },
+        { "by": "易冒注", "book": "易冒", "range": [1579, 1579],
+          "zh": ["内详谋差、顶役、脱役、助役、卸役、讼役、避役、防患诸问"],
+          "yi": ["里面详述谋差、顶役、脱役、助役、卸役、讼役、避役、防患这几问。"],
+          "en": ["Within are treated in detail the questions of seeking a duty, taking another's place in a duty, being freed from a duty, getting help with a duty, unloading a duty, litigating about a duty, avoiding a duty, and guarding against trouble."] }
+      ],
+      "note": {
+        "yi": "「役」是官府摊派的差役、徭役。「我求之役」是自己谋求的差使（如衙门里的差事），「官派之役」是官府强派的徭役，「有利之役」「不利之役」是有油水的和白当的。「财旺官备」是财爻旺、官爻齐备（有官有俸）。这一章是易林补遗户役（EL.109 起）、帮户（EL.112 起）、除名脱役（EL.114 起）的同类，用爻也是官鬼。章首目录：谋差、顶役、脱役、助役、卸役、讼役、避役、防患八问。",
+        "en": "'Yi' is service, duties and corvée assigned by the government. 'Service one seeks oneself' is a duty one seeks (such as a post in a yamen), 'service the authorities assign' is corvée forced by the government, and 'service that pays' and 'service that does not' are those with perquisites and those done for nothing. 'Thriving Wealth and a complete Pressure line' is the Wealth line thriving and the Pressure line complete (an office with salary). This chapter is of a kind with the Yilin Buyi on service (from EL.109), on helping households (from EL.112) and on being struck off and freed from duty (from EL.114), and the line used is likewise Pressure. The index at the head of the chapter lists eight questions: seeking a duty, taking another's place, being freed from a duty, getting help, unloading, litigating, avoiding, and guarding against trouble."
+      },
+      "see": ["LY.CAREER.EL.109", "LY.CAREER.EL.112", "LY.CAREER.EL.114", "LY.CAREER.YM.78"]
+    },
+    {
+      "id": "LY.CAREER.YM.78",
+      "topic": "差役",
+      "chapter": "户役章第七十",
+      "chapter_en": "Chapter 70: Service and corvée",
+      "title": "户役·盐漕河赋之差与吏胥吏卒：官能荣之故官不可空、官能辱之故官不可克、官能利之故财不可无；随官入墓助鬼伤身为公门之大忌",
+      "rule": {
+        "yi": "凡是盐、漕、河、赋这些差使，以及吏胥、吏卒一类的人：官能使他荣，所以官不可空；官能使他辱，所以官不可被克；官能使他得利，所以财不可没有。随官入墓、助鬼伤身，是公门的大忌。",
+        "en": "For duties connected with salt, grain transport, river works and taxes, and for clerks, runners and attendants: the official can bring him honour, so Pressure must not be Void; the official can bring him disgrace, so Pressure must not be controlled; the official can bring him profit, so Wealth must not be absent. Following Pressure into the tomb and helping Pressure to injure the Body are the great taboos of the public offices."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1581, 1581],
+          "zh": ["凡盐漕河赋之差，吏胥吏卒之辈，", "官能荣之，故官不可空也，", "官能辱之，故官不可克也，", "官能利之，故财不可无也。", "随官入墓，助鬼伤身，为公门之大忌焉。"],
+          "yi": ["凡是盐、漕、河、赋这些差使，以及吏胥、吏卒一类的人：", "官能使他荣，所以官不可空；", "官能使他辱，所以官不可被克；", "官能使他得利，所以财不可没有。", "随官入墓、助鬼伤身，是公门的大忌。"],
+          "en": ["For duties connected with salt, grain transport, river works and taxes, and for clerks, runners and attendants:", "the official can bring him honour, so Pressure must not be Void;", "the official can bring him disgrace, so Pressure must not be controlled;", "the official can bring him profit, so Wealth must not be absent.", "Following Pressure into the tomb and helping Pressure to injure the Body are the great taboos of the public offices."] }
+      ],
+      "note": {
+        "yi": "「盐漕河赋之差」是盐政、漕运、河工、赋税方面的差使，「吏胥吏卒之辈」是书吏、衙役一类。「官能荣之」是官（官爻）能使他荣耀，所以官不可空；「官能辱之」是官能使他受辱，所以官不可被克；「官能利之」是官能使他得利，所以财不可没有（没有财，有官也没有俸）。「随官入墓，助鬼伤身」是公门的大忌，和本卷军机（YM.13）、功名（YM.41）里的是同一条。",
+        "en": "'Yan cao he fu zhi chai' are duties in the salt administration, grain transport, river works and taxation, and 'lixu lizu zhi bei' are clerks, runners and the like. 'The official can bring him honour' is the official (the Pressure line) being able to bring him glory, so Pressure must not be Void; 'can bring him disgrace' is that the official can make him suffer disgrace, so Pressure must not be controlled; 'can bring him profit' is that the official can make him gain, so Wealth must not be absent (without Wealth, even with an office there is no salary). 'Following Pressure into the tomb and helping Pressure to injure the Body' is the great taboo of the public offices, the same one as in the military chapter (YM.13) and the chapter on fame and office (YM.41) of this book."
+      },
+      "see": ["LY.CAREER.YM.77", "LY.CAREER.YM.79", "LY.CAREER.YM.13", "LY.CAREER.YM.41"]
+    },
+    {
+      "id": "LY.CAREER.YM.79",
+      "topic": "差役",
+      "chapter": "户役章第七十",
+      "chapter_en": "Chapter 70: Service and corvée",
+      "title": "户役·谋差与顶役：谋差贞冲合冲世空官失不就；顶役世空应空贞冲合冲官失不偕",
+      "rule": {
+        "yi": "占谋差使能不能成：本卦六冲、合处逢冲、世空、官失（官爻失去），就是不成。顶替差役能不能成：世空、应空、本卦六冲、合处逢冲、官失，就是合不到一起、办不成。",
+        "en": "In divining whether a bid for a duty will come off: the original hexagram clashed, a combination clashed, the Self Void, or Pressure lost, mean it does not come off. Whether taking another's place in a duty will come off: the Self Void, the Other Void, the original hexagram clashed, a combination clashed, or Pressure lost, mean the two do not tally and it cannot be done."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1582, 1582],
+          "zh": ["筮谋差之成，贞冲、合冲、世空、官失，为不就也。", "顶役之成，世空、应空、贞冲、合冲、官失，而不偕也。"],
+          "yi": ["占谋差使能不能成：本卦六冲、合处逢冲、世空、官失，就是不成。", "顶替差役能不能成：世空、应空、本卦六冲、合处逢冲、官失，就是合不到一起。"],
+          "en": ["In divining whether a bid for a duty will come off: the original hexagram clashed, a combination clashed, the Self Void, or Pressure lost, mean it does not come off.", "Whether taking another's place in a duty will come off: the Self Void, the Other Void, the original hexagram clashed, a combination clashed, or Pressure lost, mean the two do not tally."] }
+      ],
+      "note": {
+        "yi": "「谋差」是谋求差使，「顶役」是顶替别人的差役（两样另见易林补遗谋差顶役 EL.106–108）。「贞冲」是本卦（贞）是六冲卦，「合冲」是合处逢冲，是三冲里的两种（见 YM.07 注）。「官失」是官爻失去（不上卦、落空或被破）。「不偕」是不能相合、不能一同成事：顶役要两边（我和被顶替的人）合得上才成，所以世、应都不能空。",
+        "en": "'Moucai' is seeking a duty, and 'dingyi' is taking another's place in a duty (the two are also treated in the Yilin Buyi on seeking a commission and taking a place, EL.106-108). 'Zhenchong' is the original hexagram (zhen) being a six-clash hexagram, and 'hechong' is a combination meeting a clash, two of the three clashes (see the note to YM.07). 'Guanshi' is the Pressure line being lost (absent from the hexagram, Void or broken). 'Buxie' is not tallying and not accomplishing the matter together: taking another's place needs the two sides (myself and the man replaced) to fit, so neither the Self nor the Other may be Void."
+      },
+      "see": ["LY.CAREER.EL.106", "LY.CAREER.EL.107", "LY.CAREER.EL.108", "LY.CAREER.YM.78", "LY.CAREER.YM.80"]
+    },
+    {
+      "id": "LY.CAREER.YM.80",
+      "topic": "差役",
+      "chapter": "户役章第七十",
+      "chapter_en": "Chapter 70: Service and corvée",
+      "title": "户役·问役轻重：派而不利者以役为害；官克世则役加、官持日月旺相则役必多徭必苛、休囚则少、空散则免、破分动静（动有静无）；随墓助伤亦应大凶、得逢空破反为得免",
+      "rule": {
+        "yi": "被摊派而不利的，以役为害。所以问役的轻重：官克世，役就加重；官持日辰、月建而旺相，役必多、徭必苛；休囚就少，空、散就免。破要分动静：动就有役，静就无役；随墓助伤，也应当大凶，但遇到空、破，反而得免。",
+        "en": "When one is assigned a duty to one's disadvantage, the duty is a harm. So in asking whether the duty is light or heavy: Pressure controlling the Self, the duty is increased; Pressure holding the Day or Month and thriving, the duty is sure to be many and the corvée harsh; resting or imprisoned, it is little; Void or scattered, it is escaped. Broken is divided into moving and still: moving, there is duty; still, there is none; following into the tomb and helping the injury should also be greatly ominous, but meeting Void or broken one escapes instead."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1583, 1585],
+          "zh": ["派而不利者，以役为害，", "是以问役轻重，官克世而役加，官持日月旺相，役必多、徭必苛也，", "休囚则少，空散则免也。", "破分动静，动有而静无也；", "随墓助伤，亦应大凶，得逢空破，反为得免。"],
+          "yi": ["被摊派而不利的，以役为害，", "所以问役的轻重：官克世，役就加重；官持日辰、月建而旺相，役必多、徭必苛；", "休囚就少，空、散就免。", "破要分动静：动就有役，静就无役；", "随墓、助伤，也应当大凶，但遇到空、破，反而得免。"],
+          "en": ["When one is assigned a duty to one's disadvantage, the duty is a harm,", "so in asking whether the duty is light or heavy: Pressure controlling the Self, the duty is increased; Pressure holding the Day or Month and thriving, the duty is sure to be many and the corvée harsh;", "resting or imprisoned, it is little; Void or scattered, it is escaped.", "broken is divided into moving and still: moving, there is duty; still, there is none;", "following into the tomb and helping the injury should also be greatly ominous, but meeting Void or broken one escapes instead."] }
+      ],
+      "note": {
+        "yi": "「派而不利者」是被摊派而没有好处的差役。「役加」是役加重。「徭」是徭役。「官持日月旺相」是官爻临日辰或月建又旺相，力量最大，所以役最多最苛。「破分动静」按文意：官爻破的时候，动的还有役，静的就没有；书里没有再展开。「随墓助伤……得逢空破，反为得免」是说平时的大忌，在躲役的占问里反而变成好事：官入墓、官落空破，差役就摊不到我。这一条里『忌』和『喜』因所问是『求役』还是『躲役』而反过来，总的原则在本章末尾（YM.84）的「用神无执一」。",
+        "en": "'Pai er bu li zhe' is a duty assigned with no benefit. 'Yijia' is the duty becoming heavier. 'Yao' is corvée. 'Pressure holding the Day or Month and thriving' is the Pressure line on the Day or Month branch and thriving, its force being greatest, so that the duty is the most and the harshest. 'Broken is divided into moving and still', by the sense: when the Pressure line is broken, if it is moving there is still duty, and if still there is none; the book does not expand on it. 'Following into the tomb and helping the injury ... meeting Void or broken one escapes instead' says that what is a great taboo in ordinary times becomes a good thing in a divination about avoiding a duty: Pressure entering the tomb or falling into Void or broken means the duty is not assigned to me. In this entry what is feared and what is welcomed are reversed according to whether the question is seeking or avoiding service; the general principle is in 'the Subject is not held to one' at the end of this chapter (YM.84)."
+      },
+      "see": ["LY.CAREER.EL.109", "LY.CAREER.EL.110", "LY.CAREER.EL.111", "LY.CAREER.YM.79", "LY.CAREER.YM.81", "LY.CAREER.YM.84"]
+    },
+    {
+      "id": "LY.CAREER.YM.81",
+      "topic": "差役",
+      "chapter": "户役章第七十",
+      "chapter_en": "Chapter 70: Service and corvée",
+      "title": "户役·脱役除名：官克则不宥、官空破散则嫌释我无主、官临旺相则忌制我方疆，故官不可克、不可极、不可没（极谓极旺、没谓失没）；补遗云官鬼克身难脱役、子孙持世易除名",
+      "rule": {
+        "yi": "脱役、除名：官克（世），就不被宽宥；官空、破、散，又嫌没有主事的人放我；官临旺相，又忌它制住我的范围。所以凡是官，不可被克，不可太旺（极），不可失去（没）。「极」是极旺，「没」是失没。补遗说：官鬼克身，难脱役；子孙持世，易除名。",
+        "en": "For being freed from duty and struck off the rolls: Pressure controlling the Self, one is not pardoned; Pressure Void, broken or scattered, one fears that there is no one in charge to release me; Pressure thriving, one fears it holds my bounds in check. So Pressure must not be controlled, must not be extreme, and must not be lost. 'Extreme' is extremely thriving, and 'lost' is vanished. The Buyi says: when Pressure controls the Body, it is hard to be freed from duty; when Output holds the Self, it is easy to be struck off."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1586, 1587],
+          "zh": ["脱役除名，官克而不宥，", "官空破散，嫌释我无主，", "官临旺相，忌制我方疆。", "故凡官不可克、不可极、不可没也。"],
+          "yi": ["脱役、除名：官克（世），就不被宽宥；", "官空、破、散，又嫌没有主事的人放我；", "官临旺相，又忌它制住我的范围。", "所以凡是官，不可被克，不可太旺（极），不可失去（没）。"],
+          "en": ["For being freed from duty and struck off the rolls: Pressure controlling the Self, one is not pardoned;", "Pressure Void, broken or scattered, one fears that there is no one in charge to release me;", "Pressure thriving, one fears it holds my bounds in check.", "So Pressure must not be controlled, must not be extreme, and must not be lost."] },
+        { "by": "易冒注", "book": "易冒", "range": [1588, 1588],
+          "zh": ["极，谓极旺，", "没，谓失没。", "补遗云：", "官鬼克身难脱役，子孙持世易除名。"],
+          "yi": ["「极」是极旺，", "「没」是失没。", "易林补遗说：", "官鬼克身，难脱役；子孙持世，易除名。"],
+          "en": ["'Extreme' is extremely thriving,", "and 'lost' is vanished.", "The Buyi says:", "when Pressure controls the Body, it is hard to be freed from duty; when Output holds the Self, it is easy to be struck off."] }
+      ],
+      "note": {
+        "yi": "「脱役」是免掉差役，「除名」是把名字从役册上除去。「不宥」是不被宽宥。「释我无主」是没有主事的官放我走。「制我方疆」是限制我的范围。官既不能克（压着我）、也不能极旺（管得太严）、也不能失没（无人放我），这是脱役的『既要有官、又不能太强』的要求。书里自注引「补遗」（易林补遗除名脱役 EL.114）：官鬼克身难脱役，子孙持世易除名，与这里的「官不可克」一致。",
+        "en": "'Tuoyi' is being exempted from duty, and 'chuming' is having one's name struck from the register of service. 'Buyou' is not being pardoned. 'Shi wo wu zhu' is that there is no official in charge to let me go. 'Zhi wo fangjiang' is restricting my bounds. Pressure must not control (press on me), must not be extremely thriving (govern too strictly) and must not be lost (no one to release me), which is the requirement for being freed from duty that there must be an official and he must not be too strong. The book's own note quotes the 'Buyi' (the Yilin Buyi on being struck off and freed from duty, EL.114): Pressure controlling the Body makes it hard to be freed from duty, and Output holding the Self makes it easy to be struck off, in agreement with 'Pressure must not control' here."
+      },
+      "see": ["LY.CAREER.EL.114", "LY.CAREER.EL.115", "LY.CAREER.EL.116", "LY.CAREER.YM.80", "LY.CAREER.YM.82"]
+    },
+    {
+      "id": "LY.CAREER.YM.82",
+      "topic": "差役",
+      "chapter": "户役章第七十",
+      "chapter_en": "Chapter 70: Service and corvée",
+      "title": "户役·助役、卸役、讼官：求人助役须应生世、应空破散者无助；觅人卸役须世克应、应空官克者无门；讼官得理忌官克世、官空破散者无益；公以官而私以应（私处求应生、公断戒官克）",
+      "rule": {
+        "yi": "如果求人帮助服役，须应生世，如应空、破、散的就得不到帮助；如果找人替我卸役，须世克应，如应空、官克的就无门；如果为役告官而求得理，官克世不适宜，如官空、破、散的就无益。因为公事看官，私事看应。口诀说：私下求人要应生世，公断要戒官克世；应空谁来怜惜，应克谁来出力。",
+        "en": "If one asks someone to help with a duty, the Other must generate the Self, and if the Other is Void, broken or scattered there is no help; if one looks for someone to unload a duty for me, the Self must control the Other, and if the Other is Void or Pressure controls, there is no door; if one sues the official over the duty and wants to be in the right, Pressure controlling the Self is unsuitable, and if Pressure is Void, broken or scattered it is no use. For public matters are seen by Pressure and private matters by the Other. The verse says: in a private plea, one needs the Other to generate the Self; in a public judgment, beware of Pressure controlling it; if the Other is Void, who will pity one; if the Other controls, who will exert himself."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1589, 1589],
+          "zh": ["若求人助役，须应生世，如应空破散者无助。", "若觅人卸役，须世克应，如应空官克者无门。", "若讼官得理，克世非宜，如官空破散者无益。", "盖公以官，而私以应也。"],
+          "yi": ["如果求人帮助服役，须应生世，如应空、破、散的就得不到帮助；", "如果找人替我卸役，须世克应，如应空、官克的就无门；", "如果为役告官而求得理，官克世不适宜，如官空、破、散的就无益。", "因为公事看官，私事看应。"],
+          "en": ["If one asks someone to help with a duty, the Other must generate the Self, and if the Other is Void, broken or scattered there is no help;", "if one looks for someone to unload a duty for me, the Self must control the Other, and if the Other is Void or Pressure controls, there is no door;", "if one sues the official over the duty and wants to be in the right, Pressure controlling the Self is unsuitable, and if Pressure is Void, broken or scattered it is no use.", "For public matters are seen by Pressure and private matters by the Other."] },
+        { "by": "易冒注", "book": "易冒", "range": [1590, 1590],
+          "zh": ["私处求应生，公断戒官克，", "应空谁相怜，应克孰为力。"],
+          "yi": ["私下求人要应生世，公断要戒官克世；", "应空谁来怜惜，应克谁来出力。"],
+          "en": ["In a private plea, one needs the Other to generate the Self; in a public judgment, beware of Pressure controlling it;", "if the Other is Void, who will pity one; if the Other controls, who will exert himself."] }
+      ],
+      "note": {
+        "yi": "「助役」是求别人帮我分担差役，「卸役」是找人替我卸掉差役，「讼官」是为役的事和官府打官司。「应生世」是对方生我，才肯帮；「世克应」是我压得住对方，才卸得掉；「官克世」不利于打官司，因为官是公断的一方。「盖公以官，而私以应」是总括：公事（官府的事）看官爻，私事（求人的事）看应爻。书里自注是一首四句的口诀：私下求人看应生世，公断要戒官克世；应空谁来怜惜我，应克世谁来出力。",
+        "en": "'Zhuyi' is asking someone to share a duty with me, 'xieyi' is finding someone to take a duty off me, and 'songguan' is going to law against the officials over a duty. 'The Other generating the Self' is the other side generating me, which is when he is willing to help; 'the Self controlling the Other' is my being able to press on the other side, which is when the duty can be unloaded; 'Pressure controlling the Self' is bad for a lawsuit, because the official is the side that judges. 'Public matters are seen by Pressure and private matters by the Other' is the summing up: public matters (the government's affairs) are seen by the Pressure line, and private matters (asking someone) by the Other line. The book's own note is a four-line verse: in a private plea look for the Other generating the Self, in a public judgment beware of Pressure controlling the Self; if the Other is Void who will pity me, if the Other controls the Self who will exert himself."
+      },
+      "see": ["LY.CAREER.EL.112", "LY.CAREER.EL.113", "LY.CAREER.YM.81", "LY.CAREER.YM.83"]
+    },
+    {
+      "id": "LY.CAREER.YM.83",
+      "topic": "差役",
+      "chapter": "户役章第七十",
+      "chapter_en": "Chapter 70: Service and corvée",
+      "title": "户役·避役与当役防患：卜潜踪避役鬼旺则役来、鬼克世则捕我；卜当役防患官动官克则多累、唯卦静而子动为吉；避役防患皆喜子忌官",
+      "rule": {
+        "yi": "占躲起来逃避差役吗？鬼旺，差役就来；鬼克世，就来抓我了。占当差防备出事吗？官动、官克，就多牵累；只有卦静而子动，才是这两种占的吉。避役、防患，都喜子、忌官。",
+        "en": "In divining about hiding one's tracks to avoid a duty: with Pressure thriving the duty comes; with Pressure controlling the Self, they come to arrest me. In divining about serving a duty and guarding against trouble: with Pressure moving and Pressure controlling there are many entanglements; only with the hexagram still and Output moving are the two divinations auspicious. Avoiding service and guarding against trouble both welcome Output and fear Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1591, 1591],
+          "zh": ["卜潜踪避役乎，鬼旺则役来，鬼克世则捕我矣。", "卜当役防患乎，官动官克则多累矣，唯卦静而子动，二占之吉也。"],
+          "yi": ["占躲起来逃避差役吗？鬼旺，差役就来；鬼克世，就来抓我了。", "占当差防备出事吗？官动、官克，就多牵累；只有卦静而子动，才是这两种占的吉。"],
+          "en": ["In divining about hiding one's tracks to avoid a duty: with Pressure thriving the duty comes; with Pressure controlling the Self, they come to arrest me.", "In divining about serving a duty and guarding against trouble: with Pressure moving and Pressure controlling there are many entanglements; only with the hexagram still and Output moving are the two divinations auspicious."] },
+        { "by": "易冒注", "book": "易冒", "range": [1592, 1592],
+          "zh": ["避役防患，皆喜子忌官。"],
+          "yi": ["避役、防患，都喜子、忌官。"],
+          "en": ["Avoiding service and guarding against trouble both welcome Output and fear Pressure."] }
+      ],
+      "note": {
+        "yi": "「潜踪避役」是躲起来逃避差役，「当役防患」是已经当差、防备出事。「鬼旺则役来」是官鬼旺，差役就找上门；「鬼克世则捕我矣」是鬼克世，官府就来抓我。「卦静而子动」是卦里其他爻都静、只有子孙动：子孙克官鬼，官鬼受制，差役就不来、出事也少。书里自注：避役、防患都喜子孙、忌官鬼。这一条与易隐官禄占的避祸（YY.20）、黄金策仕宦的卦静世空（HJC.16）对着看。",
+        "en": "'Qianzong biyi' is hiding one's tracks to avoid a duty, and 'dangyi fanghuan' is already serving a duty and guarding against trouble. 'With Pressure thriving the duty comes' is that when Pressure is thriving the duty comes looking for one; 'with Pressure controlling the Self, they come to arrest me' is the authorities coming to seize me. 'The hexagram still and Output moving' is every other line being still and only Output moving: Output controls Pressure, Pressure is held in check, and the duty does not come and there is little trouble. The book's own note: avoiding service and guarding against trouble both welcome Output and fear Pressure. Read against the Yi Yin on avoiding trouble in the divination of office (YY.20) and the Huangjin Ce on a still hexagram with a Void Self (HJC.16)."
+      },
+      "see": ["LY.CAREER.YY.20", "LY.CAREER.HJC.16", "LY.CAREER.YM.82", "LY.CAREER.YM.84"]
+    },
+    {
+      "id": "LY.CAREER.YM.84",
+      "topic": "总则",
+      "chapter": "户役章第七十",
+      "chapter_en": "Chapter 70: Service and corvée",
+      "title": "户役·总括：役而趋利好财官、役而免害恶鬼旺及动官克世；避役喜失其鬼、谋役脱役不喜失其鬼，用神无执一（谋役脱役无鬼难为主）",
+      "rule": {
+        "yi": "大抵当役而求利的，喜财、官；当役而求免害的，厌鬼旺，以及官动、官克世。避役的喜欢失去鬼，谋役、脱役的却不喜欢失去鬼。用神不要死守一个爻。谋役、脱役，没有鬼就难以做主。",
+        "en": "Broadly, for one who serves a duty to seek profit, Wealth and Pressure are welcome; for one who serves a duty and seeks to escape harm, Pressure thriving is hated, and so are Pressure moving and Pressure controlling the Self. In avoiding a duty it is welcome for Pressure to be lost; in seeking a duty or being freed from one it is not welcome for Pressure to be lost. The Subject is not held to one line. In seeking a duty or being freed from one, without Pressure it is hard to take charge."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1593, 1593],
+          "zh": ["大抵役而趋利好财官，役而免害恶鬼旺，及动官克世。", "避役而喜失其鬼，", "谋役脱役，而不喜失其鬼，", "用神无执一也。"],
+          "yi": ["大抵当役而求利的，喜财、官；当役而求免害的，厌鬼旺，以及官动、官克世。", "避役的喜欢失去鬼，", "谋役、脱役的却不喜欢失去鬼。", "用神不要死守一个爻。"],
+          "en": ["Broadly, for one who serves a duty to seek profit, Wealth and Pressure are welcome; for one who serves a duty and seeks to escape harm, Pressure thriving is hated, and so are Pressure moving and Pressure controlling the Self.", "In avoiding a duty it is welcome for Pressure to be lost;", "in seeking a duty or being freed from one it is not welcome for Pressure to be lost.", "The Subject is not held to one line."] },
+        { "by": "易冒注", "book": "易冒", "range": [1594, 1594],
+          "zh": ["谋役脱役，无鬼难为主焉。"],
+          "yi": ["谋役、脱役，没有鬼就难以做主。"],
+          "en": ["In seeking a duty or being freed from one, without Pressure it is hard to take charge."] }
+      ],
+      "note": {
+        "yi": "「趋利好财官」是求利的，喜财、官；「免害恶鬼旺」是躲祸的，厌官鬼旺；所以同样是役，求役和躲役对官鬼的取舍相反。「避役而喜失其鬼」是避役时官鬼不上卦或落空是好事；「谋役脱役而不喜失其鬼」是谋役、脱役时要靠官爻做主，没有官爻就办不成（书里自注：无鬼难为主）。「用神无执一」是用神不能死守一个爻，要按所问的是求还是躲来取：这是整章（户役、丁产）的总纲。与易林补遗户役各节（EL.109–116）对着看。",
+        "en": "'Qu li hao cai guan' is, for those seeking profit, Wealth and Pressure being welcome; 'mian hai wu gui wang' is, for those escaping trouble, Pressure thriving being hated; so for the same duty, seeking it and avoiding it take opposite views of Pressure. 'In avoiding a duty it is welcome for Pressure to be lost' is that when avoiding a duty, Pressure absent from the hexagram or Void is a good thing; 'in seeking a duty or being freed from one it is not welcome for Pressure to be lost' is that in seeking a duty or being freed from one the Pressure line must take charge, and without it nothing can be done (the book's own gloss: without Pressure it is hard to take charge). 'The Subject is not held to one' is that the Subject cannot be held to one line but is taken according to whether the question is seeking or avoiding: this is the general principle of the whole chapter (service, and households and holdings). Read against the sections of the Yilin Buyi on service (EL.109-116)."
+      },
+      "see": ["LY.CAREER.EL.109", "LY.CAREER.EL.114", "LY.CAREER.YM.77", "LY.CAREER.YM.83"]
+    }
+  ]
+}

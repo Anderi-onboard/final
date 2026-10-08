@@ -1,0 +1,97 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "断易鬼灵经",
+  "chapter": "卷八·鬼入六神断决;附录·入门来听断",
+  "chapter_en": "Volume 8: Pressure entering the six spirits; Appendix: what is seen and heard on entering the door",
+  "ranges": {"断易鬼灵经": [185, 194]},
+  "units": [
+    {
+      "id": "LY.ILL.GLJ.13",
+      "topic": "神祟",
+      "chapter": "卷八·鬼入六神断决",
+      "chapter_en": "Volume 8: Judgments on Pressure entering the six spirits",
+      "title": "鬼入六神断决·占病：鬼入青龙病渐轻；鬼入朱雀身命危宜求谢；鬼入白虎占病急去买棺材；鬼入玄武占病昏睡耳聋",
+      "rule": {
+        "yi": "官鬼落在六神上，各有各的断法，占病时：鬼入青龙，病渐渐轻了，是堂前讨吃的亡人，或死在外面回来作怪的鬼；鬼入朱雀，身家性命危险，是伤亡鬼、五道，适合祈求酬谢，不谢会损害病人；鬼入白虎，哭声哀哀，占病的话赶紧去买棺材，秋冬多精怪，要提防老人和小孩；鬼入玄武，必定凶，占病昏睡耳聋，是落水死的、伤亡的鬼来讨吃的，赶紧保祷酬谢。",
+        "en": "Pressure falling on each of the six spirits has its own judgment, and in divining illness: Pressure in Azure Dragon, the illness gradually lightens, and it is a dead person asking for food in front of the hall, or one who died outside and has come back to make trouble; Pressure in Vermilion Bird, his person and life are in danger, it is the dead by injury and the Five Ways, and it is fitting to pray and give thanks, for without thanks the sick body is harmed; Pressure in White Tiger, mournful weeping, and in divining illness go quickly and buy the coffin, in autumn and winter there are many sprites, and one should guard the old and the young; Pressure in Dark Tortoise, surely ominous, in divining illness he sleeps heavily and is deaf, the drowned and the dead by injury come asking for food, and he should quickly pray and give thanks."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [185, 185],
+          "zh": ["鬼入六神断决"],
+          "yi": ["鬼落在六神上的断法"],
+          "en": ["Judgments on Pressure entering the six spirits"] },
+        { "by": "经", "book": "断易鬼灵经", "range": [186, 186],
+          "zh": ["鬼入青龙", "鬼入青龙病渐轻", "堂前求食是亡人", "鬼里有人外面死", "归来人作怪妖精"],
+          "yi": ["鬼落在青龙上", "鬼入青龙，病渐渐轻了；", "堂前来讨吃的，是死去的人；", "鬼当中有人是死在外面的；", "回来作怪，成了妖精。"],
+          "en": ["Pressure enters Azure Dragon", "Pressure in Azure Dragon: the illness gradually lightens;", "the one asking for food in front of the hall is a dead person;", "among the ghosts there is one who died outside;", "who has come back and makes trouble as a sprite."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [187, 187],
+          "zh": ["鬼入朱雀", "鬼入朱雀身命危", "伤亡五道梦魂精", "宜用求谢方且吉", "若不谢保损病身"],
+          "yi": ["鬼落在朱雀上", "鬼入朱雀，身家性命危险；", "是伤亡鬼、五道，梦里的魂精；", "适合用祈求酬谢的办法，才吉利；", "如果不酬谢保祷，会损害病人的身体。"],
+          "en": ["Pressure enters Vermilion Bird", "Pressure in Vermilion Bird: his person and life are in danger;", "the dead by injury, the Five Ways, the soul-sprites of dreams;", "it is fitting to use prayer and thanks, and only then is it fortunate;", "if the thanks and protection are not made, the sick body will be harmed."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [190, 190],
+          "zh": ["鬼入白虎", "鬼入白虎哭哀哀", "占病急去买棺材", "秋冬若得多精怪", "须防老幼免心怀"],
+          "yi": ["鬼落在白虎上", "鬼入白虎，哭声哀哀；", "占病的话，赶紧去买棺材；", "秋冬碰上的话，多有精怪；", "要提防老人和小孩，免得挂心。"],
+          "en": ["Pressure enters White Tiger", "Pressure in White Tiger: mournful weeping;", "in divining illness, go quickly and buy the coffin;", "if it comes in autumn or winter there are many sprites;", "guard the old and the young, to spare anxiety."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [191, 191],
+          "zh": ["鬼入玄武", "鬼入玄武定是凶", "占病昏睡耳又聋", "落水伤亡来求食", "急宜保谢免灾忧"],
+          "yi": ["鬼落在玄武上", "鬼入玄武，必定是凶；", "占病的话，昏睡，耳朵又聋；", "落水死的、伤亡的鬼来讨吃的；", "赶紧保祷酬谢，免得灾祸忧患。"],
+          "en": ["Pressure enters Dark Tortoise", "Pressure in Dark Tortoise: surely ominous;", "in divining illness he sleeps heavily and is deaf in the ears;", "the drowned and the dead by injury come asking for food;", "quickly pray and give thanks, to avoid calamity and worry."] }
+      ],
+      "note": {
+        "yi": "这一组在书里有六首（青龙、朱雀、勾陈、螣蛇、白虎、玄武），这里只收四首，因为勾陈那首（「弟兄求」「公婆也容只见愁」）和螣蛇那首没有讲到病，螣蛇那首的字句又残缺不通（「鬼入蛇你莫夸 外面更有神 冤家 不时有愿前时穴 更有宅居有些些」），译不出来，不收。书里的「鬼」就是官鬼那一爻，同时也指它代表的鬼；译文第一次出现写「Pressure」，说「鬼里有人」「亡人」时指鬼魂。「求食」是亡魂来讨祭祀的饭食（要给它祭）；「梦魂精」不知所指，按字面写；「保谢」是保祷酬谢；「须防老幼免心怀」的「心怀」读作挂心，这句不很通，是读法。这四首里直接讲病轻重生死的是：青龙「病渐轻」，朱雀「身命危」，白虎「占病急去买棺材」，玄武「占病昏睡耳又聋」。",
+        "en": "This group has six verses in the book (Azure Dragon, Vermilion Bird, Hook Earth, Coiling Snake, White Tiger, Dark Tortoise), and only four are taken here, because the Hook Earth verse ('seeking brothers', 'the in-laws too can only see sorrow') and the Coiling Snake verse do not speak of illness, and the Coiling Snake verse is also broken and does not make sense (it reads, roughly, 'Pressure enters the snake, you must not boast, outside there is also a spirit, enemies, at times a vow, the earlier grave, and also something about the dwelling'), so it could not be translated and is not taken. The book's 'ghost' is the Pressure line and also the ghosts it stands for; the translation writes 'Pressure' at the first mention and 'ghost' where it says 'among the ghosts there is one' or 'a dead person'. 'Asking for food' means the dead soul has come for the sacrificial food (that is, it is to be given offerings); the book does not explain 'the soul-sprites of dreams' and the translation keeps to the letter; 'pray and give thanks' is the book's 'protect and thank'; 'to spare anxiety' reads the book's 'heart' as being anxious about it, and the line is not smooth, which is a reading. The four verses that speak directly of how light or heavy the illness is, and of life and death, are: Azure Dragon 'the illness gradually lightens', Vermilion Bird 'his person and life are in danger', White Tiger 'divining illness, go quickly and buy the coffin' and Dark Tortoise 'in divining illness he sleeps heavily and is deaf in the ears'."
+      },
+      "see": ["LY.ILL.BSYG.05", "LY.ILL.DYTJ.38", "LY.ILL.EL.47", "LY.ILL.ZSZ.07"]
+    },
+    {
+      "id": "LY.ILL.GLJ.14",
+      "topic": "取象",
+      "chapter": "附录·入门来听断",
+      "chapter_en": "Appendix: Judgments from what is seen and heard on entering the door",
+      "title": "入门来听断·来问时门前所见：慌忙来问官司病者在床中；入门见老男儿病者安然无伤损；孩儿哭啼病患都皆有；入门一灯病者见凶星；三人话病者最是鸟鸡子",
+      "rule": {
+        "yi": "进门的时候看到的人和物、听到的话，先断一个大概，讲到病的几句是：慌慌张张来问事，必凶，病的人躺在床上；进门先见一个老年男子，病人平安，没有损伤，像枯木碰上了春天；进门看见小孩哭哭啼啼，家里不吉利，破财、病患都有；进门见遇三个人说话，官司里官鬼发动，病人最要紧的是（见到）鸟、鸡、子之类，阎王一定要请他回去；进门见一盏灯，病人见凶星，要斋神求福，保祷度过就不相牵连；进门一炷香，家宅大吉大昌，官司马上消散，病人得以离床。",
+        "en": "What is seen and heard on entering the door gives a first rough judgment, and the lines that speak of illness are these: if he comes in a flurry to ask, it is surely ominous, and the sick are in bed; if an old man is seen first on entering, the sick one is safe and unharmed, like a withered tree meeting spring; if a child is seen crying on entering, the household is unlucky, and loss of money and illness are all present; if on entering he meets three people talking, then in an official matter Pressure moves, and the sick one's chief matter is (the sight of) a bird, a hen or a child, and Yama will surely call him back; if on entering he sees a lamp, the sick one meets an ominous star, and he should keep the fast to the spirits and ask for blessing, and with prayer he passes through without being dragged in; if on entering there is a stick of incense, the household is greatly fortunate and prosperous, the official matter dissolves at once, and the sick one gets up from his bed."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [193, 193],
+          "zh": ["入门来听断"],
+          "yi": ["进门时看到听到的断法"],
+          "en": ["Judgments from what is seen and heard on entering the door"] },
+        { "by": "经", "book": "断易鬼灵经", "range": [194, 194],
+          "zh": ["慌忙来问事必凶", "官司病者在床中", "失物无寻产是女", "纵然虽好也惊疑"],
+          "yi": ["慌慌张张来问事，必定凶；", "有官司，有病的人躺在床上；", "失物找不到，生产是女孩；", "纵然看着好，也让人惊疑。"],
+          "en": ["if he comes in a flurry to ask, it is surely ominous;", "a lawsuit, and the sick are in bed;", "lost things are not found, and a birth is a girl;", "even if it looks good, it brings fright and doubt."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [194, 194],
+          "zh": ["入门是大正无悠忧", "大人搁路定不周", "病是凶神为福守", "自宜保度且无愁"],
+          "yi": ["进门是「大正」，没有忧愁；", "有大人物搁在路上，一定不周全；", "病，是凶神，也为福守着；", "自然适合保祷度过，就没有忧愁。"],
+          "en": ["on entering it is 'greatly upright', and there is no worry;", "a great man blocking the road is surely not complete;", "illness: an ominous spirit that keeps guard for blessing;", "it is fitting to pray and pass through, and then there is no worry."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [194, 194],
+          "zh": ["入门便见老男儿", "官司失脱却无寻", "病者安然无伤损", "如喜枯木正逢春"],
+          "yi": ["一进门就看见老年男子；", "官司、失落的东西却找不到；", "病人平安，没有损伤；", "就像枯木正碰上春天。"],
+          "en": ["on entering he sees at once an old man;", "a lawsuit or lost goods will not be found;", "the sick one is safe and unharmed;", "like a withered tree meeting spring."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [194, 194],
+          "zh": ["入门孩儿哭啼啼", "家门不吉有损亏", "破财病患都皆有", "婚姻诸了也相离"],
+          "yi": ["进门看见小孩哭哭啼啼；", "家里不吉利，有损失亏耗；", "破财、病患都有；", "婚姻即使都办妥了也要分离。"],
+          "en": ["on entering a child is seen crying and sobbing;", "the household is unlucky, with loss and deficit;", "loss of money and illness are all present;", "a marriage, even when all is arranged, will part."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [194, 194],
+          "zh": ["入门见遇三人话", "官事鬼动若如何", "病者最是鸟鸡子", "阎王必要请回归"],
+          "yi": ["进门遇见三个人在说话；", "官司的事，鬼动了，会怎么样；", "病人最要紧的是（见到）鸟、鸡、子之类；", "阎王一定要请他回去。"],
+          "en": ["on entering he meets three people talking;", "in an official matter, with Pressure moving, how will it go;", "the sick one's chief matter is (the sight of) a bird, a hen or a child;", "Yama will surely call him back."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [194, 194],
+          "zh": ["入门见一灯", "病者见凶星", "齐神求为福", "保度不相牵"],
+          "yi": ["进门看见一盏灯；", "病人见凶星；", "斋神，求福；", "保祷度过，就不相牵连。"],
+          "en": ["on entering he sees a lamp;", "the sick one meets an ominous star;", "keep the fast to the spirits and ask for blessing;", "with prayer he passes through and is not dragged in."] },
+        { "by": "经", "book": "断易鬼灵经", "range": [194, 194],
+          "zh": ["入门一香", "家宅大吉昌", "官事即消散", "病者得难床"],
+          "yi": ["进门（看见）一炷香；", "家宅大吉大昌；", "官司马上消散；", "病人得以离床。"],
+          "en": ["on entering, a stick of incense;", "the household is greatly fortunate and prosperous;", "an official matter dissolves at once;", "the sick one gets up from his bed."] }
+      ],
+      "note": {
+        "yi": "这是附录里的一首长诗，没有标点，一口气念下来，按「入门见某物」一条一条断：官司、失物、婚姻、买卖、病各条里都有几句，这里只收讲到病的六条（其余：「衣冠来问必婚姻」「入门见一鸡鸭随」「入门见宁纱」「入门见柴木」四条没有讲病，不收）。这一首的字句多处不通，译文是最接近字面的读法，不当作确切的意思：「入门是大正无悠忧」的「大正」「悠忧」，「病是凶神为福守」，「病者最是鸟鸡子」（鸟鸡子是鸟、鸡、子，还是「乌鸡子」，不能定），「齐神」（像是「斋神」），「病者得难床」（「难」疑是「离」之误，读作离床，是读法）都是这样。「病者最是鸟鸡子 阎王必要请回归」是死兆，「病者安然无伤损 如喜枯木正逢春」是吉兆；「入门见一灯」那条里「病者见凶星」后面接的是「齐神求为福 保度不相牵」，是说见凶星要去求神保祷。这里写的「入门」是问卦的人走进门来，还是医者进病家的门，书里没有说，译文写作「进门」，不定主语。",
+        "en": "This is a long poem in the appendix, without punctuation, read off in one breath, judging item by item from 'on entering the door he sees such-and-such': each item has a few lines on a lawsuit, lost goods, marriage, trade and illness, and only the six items that speak of illness are taken here (four others, 'one who comes in robes and cap to ask is surely about marriage', 'on entering he sees a hen and a duck following', 'on entering he sees plain gauze' and 'on entering he sees firewood', do not speak of illness and are not taken). The wording of this poem does not make sense in many places, and the translation is the reading closest to the letter and is not given as the sure sense: 'greatly upright' and 'no worry' in 'on entering it is greatly upright and there is no worry', 'illness: an ominous spirit that keeps guard for blessing', 'the sick one's chief matter is a bird, a hen or a child' (whether it is a bird, a hen and a child or a 'black hen's chick' cannot be settled), 'keep the fast to the spirits' (it looks like the fast to the spirits) and 'the sick one gets up from his bed' (the character printed as 'hard' looks like a misprint of 'leave', and is read as getting up, which is a reading) are all like this. 'The sick one's chief matter is a bird, a hen or a child; Yama will surely call him back' is a sign of death, and 'the sick one is safe and unharmed, like a withered tree meeting spring' a sign of good; in the item 'on entering he sees a lamp', after 'the sick one meets an ominous star' come 'keep the fast to the spirits and ask for blessing, with prayer he passes through and is not dragged in', which says that on meeting an ominous star he should ask the spirits for protection. The book does not say whether the 'entering' is the asker coming in at the door or a healer entering the sick person's house, and the translation writes 'on entering' without fixing the subject."
+      }
+    }
+  ]
+}

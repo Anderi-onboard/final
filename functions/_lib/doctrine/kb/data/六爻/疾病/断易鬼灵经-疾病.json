@@ -1,0 +1,274 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "断易鬼灵经",
+  "chapter": "卷五·论十月将值日要决",
+  "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+  "ranges": {"断易鬼灵经": [118, 128]},
+  "units": [
+    {
+      "id": "LY.ILL.GLJ.01",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·胜光（月建午）占病：怪病气冲天、十生九死；司命溪河伤亡家先作祟宜禳度；午宫卦断大煞临门宜退谢、板木来全替去病",
+      "rule": {
+        "yi": "月建落在午、叫胜光的时候占病：病来得古怪，气往上冲，十个里有九个要死，活下来的也拖得很久；心里结着热，气息紊乱急促，又添疼痛，病情难说。作祟的是司命、溪河一类的神，和横死的亡魂、家里的祖先，要禳解超度。后面「午宫卦断」另有一段：大煞到了门上，适合送走它并还愿答谢；社司和朝鬼拖累病人好几年；板木来齐了替他，病就去了，病人慢慢平安痊愈。",
+        "en": "When the Month falls on Wu, named Shengguang, divining illness: the illness is strange, the breath surging up to the sky, nine of ten die and the one who lives lingers on; heat knots in the heart, the breath is disordered and hurried, pain is added, and the illness is hard to describe. The ones at work are spirits such as Siming and the streams and rivers, the dead by injury, and the household ancestors, and rites of averting and deliverance are called for. A further passage after 'the verdict for the Wu-palace hexagrams' says: the Great Killer is at the door, and it is fitting to dismiss it and give thanks; the Altar Official and the Court ghosts drag on for years; when the wooden boards have come, complete, to stand in for him, the illness goes and the sick person gradually finds peace and cure."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [118, 118],
+          "zh": ["胜光值日", "（月建值午则知胜光上卦所生）", "胜光怪病气冲天", "十生九死生留连", "心中结热气舛急", "更兼助痛病难言", "司命溪河求禳度", "伤亡为祸及家先", "午宫卦断", "大煞临门宜退谢", "社司朝鬼累延年", "板木来全替去病", "病人渐渐得安痊"],
+          "yi": ["胜光当值的日子", "（月建落在午上，就知道胜光在卦上生出的事。）", "胜光当值时得病古怪，气往上冲天；", "十个里有九个要死，活下来的也久久不好；", "心里结着热，气息紊乱急促；", "再加上疼痛加重，病情难以说清；", "司命、溪河这些神鬼，要去禳解超度；", "横死的亡魂作祸，还牵连到家里的祖先；", "午宫的卦这样断：", "大煞到了门上，适合送走它并还愿答谢；", "社司和朝鬼，拖累病人好几年；", "板木来齐了替他，病就去了；", "病人慢慢得到平安痊愈。"],
+          "en": ["When Shengguang rules the day", "(when the Month falls on Wu, know what Shengguang gives rise to in the hexagram)", "Shengguang: the illness is strange, the breath surging up to the sky;", "of ten, nine die, and the one who lives lingers on;", "heat knots in the heart and the breath is disordered and hurried;", "pain is added besides, and the illness is hard to describe;", "Siming and the streams and rivers: seek to avert and release them by rites;", "the dead by injury make trouble, and it reaches the household ancestors;", "The verdict for the Wu-palace hexagrams:", "the Great Killer is at the door: it is fitting to dismiss it and give thanks;", "the Altar Official and the Court ghosts drag on for years;", "the wooden boards come, complete, to stand in for him, and the illness goes;", "and the sick person gradually finds peace and cure."] }
+      ],
+      "note": {
+        "yi": "这一条是「论十月将值日要决」十二首里的第一首。十二首的格式一样：先是小标题（某将值日，括号里写月建），然后是一首七言诗，前半写这个月份占病的症状和作祟的是谁，中间插一句「某宫卦断」，后半是这一宫的卦怎么断、怎么禳解。标题写的是「十月将」，实际列了十二将，从午（胜光）排起，到巳（太乙）为止，每将对着一个月（午=五月……巳=四月）；标题说「值日」，括号里写的却是「月建」「某月之事」，所以这里按月份读，书没有说日和月是怎么换算的。  这一首里的几个词书里都没有解释，译文只照字面：「司命」是掌管命运的神（民间也指灶神，书里另有「灶司」）；「伤亡」是横死、受伤而死的亡魂，「家先」是家里的祖先，「大煞」是一种凶煞，「社司」是社（土地神坛）的神，「朝鬼」不知所指；「板木」不知是什么，按上下文像是做法事时用来替身的木板（下一首说「板木未全凶怪梦」，板木没备齐就凶），这是读法，不是书里写的。「气舛急」的「舛」字按上下文读作气息紊乱，「怪病」的「怪」是说病来得古怪、像撞了什么，不是一个病名。「午宫卦断」书里没有说是指哪些卦，译文只写「午宫的卦」。",
+        "en": "This is the first of the twelve pieces of the 'essentials of the month-generals ruling the day'. All twelve have the same form: a small heading (so-and-so rules the day, with the Month in brackets), then a seven-character verse whose first half gives the symptoms of this month's illness and who is at work, with a line 'the verdict for such-and-such palace hexagrams' in the middle, and a second half on how hexagrams of that palace are judged and how the matter is averted. The title says 'ten month-generals' but twelve are listed, from Wu (Shengguang) to Si (Taiyi), each answering to a month (Wu = the fifth month ... Si = the fourth month); the heading says 'rules the day' but the brackets speak of the Month and of 'the matters of such-and-such month', so the verses are read here by month, and the book does not say how day and month are converted.  Several words in this verse are not explained in the book and are rendered only literally: 'Siming' is the god in charge of fates (in popular religion also the Kitchen God, and the book elsewhere writes 'the Kitchen Official'); 'the dead by injury' are the souls of those who died violently or by wounds, 'the household ancestors' are the family's dead, 'the Great Killer' is a kind of fierce killer, 'the Altar Official' is the spirit of the village altar, and what the 'Court ghosts' are is not known; what the 'wooden boards' are is not known either, and in context they look like boards used as stand-ins in a rite (the next verse says 'when the wooden boards are not complete it is ominous, with strange dreams'), which is a reading and not what the book writes. In 'the breath is disordered and hurried' the character rendered 'disordered' is read from context; the 'strange' of 'strange illness' says the illness comes in an uncanny way, as if something had been run into, and is not the name of a disease. The book does not say which hexagrams 'the Wu-palace hexagrams' are, and the translation says only 'the Wu-palace hexagrams'."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.02",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·小吉（月建未）占病：头痛、三焦热闷腹疼、浑身沉重；墓杀最凶；未宫卦断伤亡死鬼土地作祟、请巫师禳让药方通",
+      "rule": {
+        "yi": "月建落在未、叫小吉的时候占病：头痛，三焦发热发闷，腹中疼痛，全身沉重，难以起身；飞来的墓杀最凶；卯方得的病会绕一圈又回来。「未宫卦断」那一段说：作祟的是横死的亡魂、死去的鬼和土地，让病人说胡话；板木没有备齐，就凶，多怪梦；要请巫师禳解让退，药方才通。",
+        "en": "When the Month falls on Wei, named Xiaoji, divining illness: headache, heat and oppression in the Triple Burner, pain in the belly, the whole body heavy so that he can hardly rise; the Tomb Killer that flies in is the most ominous; an illness taken in the Mao direction goes around and comes back. The passage 'the verdict for the Wei-palace hexagrams' says: the ones at work are the dead by injury, the dead ghosts and the Earth God, making the patient talk deliriously; if the wooden boards are not complete it is ominous, with strange dreams; a shaman should be asked to perform rites of averting and yielding, and then the medicine will work."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [119, 119],
+          "zh": ["小吉值日", "（月建值末各小吉上卦所生）", "小吉占病主头痛", "三焦热闷腹疼中", "浑身沉重难起例", "飞来墓杀最为凶", "卯方得病绕回转", "南北社廊鬼相衡", "未宫卦断", "伤亡死鬼并土地", "作崇令人谵语逢", "板木末全凶怪梦", "巫师禳让药方通"],
+          "yi": ["小吉当值的日子", "（月建落在未上，名叫小吉，在卦上生出的事。）", "小吉当值占病，主头痛；", "三焦发热发闷，腹中疼痛；", "全身沉重，难以起身；", "飞来的墓杀最凶；", "在卯方得的病，会绕一圈又转回来；", "南北方向社庙、廊下的鬼互相抵着；", "未宫的卦这样断：", "横死的亡魂、死去的鬼，和土地；", "作祟，让人说胡话，遇上", "板木没有备齐，就凶，多怪梦；", "请巫师禳解让退，药方才通。"],
+          "en": ["When Xiaoji rules the day", "(when the Month falls on Wei, named Xiaoji, what it gives rise to in the hexagram)", "Xiaoji, divining illness: it means headache;", "the Triple Burner is hot and oppressed, with pain in the belly;", "the whole body is heavy and he can hardly rise;", "the Tomb Killer that flies in is the most ominous;", "an illness taken in the Mao direction goes around and turns back;", "the ghosts of the altar and the corridor in the south and north face each other;", "The verdict for the Wei-palace hexagrams:", "the dead by injury, the dead ghosts, and the Earth God;", "they make trouble and make the patient talk deliriously, and meeting", "wooden boards not complete, it is ominous, with strange dreams;", "have a shaman perform rites of averting and yielding, and the medicine will work."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。这一首里读不顺的地方：「月建值末各小吉」的「末」是「未」、「各」是「名」的误写；「浑身沉重难起例」的「例」按上下文读作倒、卧；「飞来墓杀」「卯方得病绕回转」「南北社廊鬼相衡」书里都没有解释，「相衡」译成「互相抵着」是照字面；「作崇令人谵语逢」最后一个「逢」字和下一句「板木末全凶怪梦」连不上，像是脱了字，译文把它留在句末；「板木末全」的「末」读作「未」（没有备齐），这是读法；「禳让」译成「禳解让退」也是照字面。「三焦」是中医里的三焦（上焦、中焦、下焦），书里没有展开。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. Places in this verse that do not read smoothly: in 'when the Month falls on Wei, named Xiaoji' the book prints the wrong characters for 'Wei' and for 'named', plainly misprints; 'the whole body is heavy and he can hardly rise' has a last character read from context as 'lie down' or 'fall'; the 'flying Tomb Killer', 'an illness taken in the Mao direction goes around and turns back' and 'the ghosts of the altar and the corridor in the south and north face each other' are not explained in the book, and 'face each other' is the literal sense; the final character of 'they make trouble and make the patient talk deliriously, and meeting' does not connect with the next line, 'wooden boards not complete, ominous, strange dreams', and looks as if a character has dropped out, so the translation leaves it at the end of the line; the 'not' of 'boards not complete' is printed with a character that is read as 'not yet' (not provided in full), which is a reading; 'rites of averting and yielding' is again the literal sense. The 'Triple Burner' is the Triple Burner of Chinese medicine (upper, middle and lower), which the book does not expand."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.03",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·传送（月建申）占病：头痛、手脚皮肤见血光、四肢拘急不思食；灶司引外伤亡、犯冤家咒咀；申宫卦断旺神有愿急须解、醮谢星辰祭土主王",
+      "rule": {
+        "yi": "月建落在申、叫传送的时候占病：头痛，手脚和皮肤上见血光，四肢抽紧，不想吃东西。作祟的是灶司引进来的外面的伤亡鬼、冤家和咒咀他的鬼，牵连到香火和家堂。「申宫卦断」那一段说：旺相的神有愿没还，赶紧要解；再适合许愿保平安，做醮酬谢星辰，在本方位祭土主王。",
+        "en": "When the Month falls on Shen, named Chuansong, divining illness: headache, bloodshed on the hands, feet and skin, the limbs cramped and no wish to eat. The ones at work are the dead by injury from outside whom the Kitchen Official has drawn in, enemies and the ghosts of those who cursed him, tied to the incense-fire and the family hall. The passage 'the verdict for the Shen-palace hexagrams' says: a strong spirit has a vow outstanding and it must be released quickly; it is also fitting to make a vow to keep him safe, to perform a thanksgiving offering to the stars, and to make offerings to the Earth Lord, the King, in the quarter concerned."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [120, 120],
+          "zh": ["传送值日", "（中月名曰傅送上卦以断七月之事）", "传送值病主头痛", "脚手皮肤见血光", "四肢拘急不思食", "灶司引透外伤亡", "犯着冤家咒咀鬼", "勾连香火及家堂", "申宫卦断", "旺神有愿急须解", "再宜立愿保安康", "醮谢星辰求福利", "祭设当方土主王"],
+          "yi": ["传送当值的日子", "（申月名叫传送，拿它在卦上断七月的事。）", "传送当值时得病，主头痛；", "手脚、皮肤上见血光；", "四肢抽紧，不想吃东西；", "灶司引着外面的伤亡鬼进来；", "冲犯了冤家和咒咀他的鬼；", "牵连到香火和家堂；", "申宫的卦这样断：", "旺相的神有愿没还，赶紧要解；", "再适合许愿，保平安康健；", "做醮酬谢星辰，求福求利；", "在本方位设祭，祭土主王。"],
+          "en": ["When Chuansong rules the day", "(the Shen month is called Chuansong; use it with the hexagram to judge the matters of the seventh month)", "an illness under Chuansong means headache;", "bloodshed shows on the hands, feet and skin;", "the limbs are cramped and he has no wish to eat;", "the Kitchen Official draws in the dead by injury from outside;", "he has offended enemies and the ghosts of those who cursed him;", "it is tied to the incense-fire and the family hall;", "The verdict for the Shen-palace hexagrams:", "a strong spirit has a vow outstanding, and it must be released quickly;", "it is also fitting to make a vow, to keep him safe and well;", "perform a thanksgiving offering to the stars and ask for blessing and benefit;", "set out offerings in the quarter concerned to the Earth Lord, the King."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。标题括号里的「中月名曰傅送」，「中」是「申」、「傅」是「传」的误写。「灶司引透外伤亡」的「引透」按上下文读作引进来；「咒咀」就是咒诅；「勾连」是牵连；「土主王」书里没有解释，译成「土主王」（当地的土主、那位王），只是字面。「旺神有愿」是说某个旺相的神明有过愿没有还，书里没有说是哪个神；GLJ.11 里有几乎一样的一句。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. In the heading's bracket 'the Shen month is called Chuansong' the character printed for 'Shen' and the one for 'Chuan' are misprints. 'The Kitchen Official draws in' reads the book's 'draws through' as 'draws in' from context; 'cursed' is the book's 'curse'; 'tied to' is 'linked with'; 'the Earth Lord, the King' is not explained in the book and is only the literal sense (the local Earth Lord, that King). 'A strong spirit has a vow outstanding' means that some thriving spirit was promised something that has not been paid; the book does not say which spirit, and GLJ.11 has an almost identical line."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.04",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·从魁（月建酉）占病：肺经炎如青蛇过竹筒、呕吐食不能通、寒热头疼；酉宫卦断犯天罗地网杀、家先十朝、怪神入宅宜设祭则沉病脱体",
+      "rule": {
+        "yi": "月建落在酉、叫从魁的时候占病：肺经发炎，像青蛇钻过竹筒，节节生忧，药难用上；呕吐，吃下去的东西又翻出来；忽冷忽热、头疼、心神不定；病退了一下，吃药也没有功效。「酉宫卦断」那一段说：冲犯了天罗地网煞，家先和十朝都在里面；怪神进了宅，适合设祭，设了祭，沉重的病就像风一样脱身而去。",
+        "en": "When the Month falls on You, named Congkui, divining illness: the lung channel is inflamed, like a green snake passing through a bamboo tube, with worry at every joint and medicine hard to use; he retches and vomits and the food comes back; chills and fever, headache and a restless heart; even when it recedes for a time, taking medicine has no effect. The passage 'the verdict for the You-palace hexagrams' says: he has offended the Heaven's-Net and Earth's-Net Killer, with the household ancestors and the Ten Courts in it; uncanny spirits have entered the house and it is fitting to set out offerings, and then the deep illness leaves the body like the wind."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [121, 121],
+          "zh": ["从魁值日", "（月建值如从上卦酉爻主八月事）", "从魁占病肺经炎", "恰似青蛇过竹筒", "节节生忧难用药", "嗤呕番食不能通", "寒热头疼心不定", "近退服药也无功", "酉宫卦断", "犯着天罗地网杀", "家先十朝在其中", "怪神入宅宜设祭", "沉病脱体去如风"],
+          "yi": ["从魁当值的日子", "（月建落在酉（从魁）上，在卦上看酉爻，管八月的事。）", "从魁当值占病，肺经发炎；", "就像青蛇钻过竹筒；", "节节都是忧患，药难用上；", "呕吐，吃下的东西又翻出来，通不下去；", "忽冷忽热，头疼，心神不定；", "病刚退下去一点，吃药也没有功效；", "酉宫的卦这样断：", "冲犯了天罗地网煞；", "家先和十朝都在里面；", "怪神进了宅，适合设祭；", "沉重的病就脱身而去，像风一样。"],
+          "en": ["When Congkui rules the day", "(when the Month falls on You, Congkui, look at the You line in the hexagram: it governs the matters of the eighth month)", "Congkui, divining illness: the lung channel is inflamed;", "just like a green snake passing through a bamboo tube;", "worry arises at every joint and medicine is hard to use;", "he retches and vomits, the food comes back, and nothing passes through;", "chills and fever, headache, a restless heart;", "even when it recedes a little, taking medicine has no effect;", "The verdict for the You-palace hexagrams:", "he has offended the Heaven's-Net and Earth's-Net Killer;", "the household ancestors and the Ten Courts are in it;", "uncanny spirits have entered the house and it is fitting to set out offerings;", "and the deep illness leaves the body like the wind."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。标题括号「月建值如从上卦酉爻主八月事」里的「如从」两字不通，按上下文像是「从魁」写错了，译文照「酉=从魁」读，这是读法。「肺经炎」的「炎」在这本书里别处常是「灾」的误写，但这里和「青蛇过竹筒」「呕」「寒热」放在一起，读作肺经发炎（发热）更顺，仍是读法。「嗤呕」的「嗤」不知本字，按上下文读作呕吐一类；「近退」译成「刚退下去一点」是照字面。「十朝」书里没有解释，下一首说「十朝鬼判宫」，像是阴间十殿一类，译文照写「十朝」，不下定义。「天罗地网煞」是一种凶煞，书里没有解释。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. In the heading's bracket 'when the Month falls on ... the You line governs the matters of the eighth month' the two characters rendered 'on ... Congkui' do not make sense as printed and look like a miswriting of 'Congkui', and the translation reads 'You = Congkui', which is a reading. The 'inflamed' of 'the lung channel is inflamed' is elsewhere in this book often a misprint for 'calamity', but placed beside 'a green snake passing through a bamboo tube', 'retching' and 'chills and fever' it reads better as the lung channel being inflamed (hot), again a reading. The first character of 'retches' is not known as a word and is read from context as retching or vomiting; 'recedes a little' is the literal sense of 'nearly recedes'. The book does not explain 'the Ten Courts', and the next verse says 'the ghost judge's palace of the Ten Courts', which looks like the Ten Courts of the underworld, and the translation writes 'the Ten Courts' without defining them. 'The Heaven's-Net and Earth's-Net Killer' is a kind of fierce killer, not explained in the book."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.05",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·河魁（月建戌）占病：难安如行船下急滩、烦闷呕逆、头疼作热加寒、骨节拘急；戌宫卦断日中出路骂神鬼、社司咒咀、退西方五墓煞",
+      "rule": {
+        "yi": "月建落在戌、叫河魁的时候占病：难以安稳，像行船冲下急滩；心里烦闷，又呕吐上逆；头疼发热，有时又加上发冷；四肢骨节更加拘紧。冲犯的是十朝的鬼判宫。「戌宫卦断」那一段说：白天在路上骂过神鬼，社司的咒咀名目很多，要把西方的五墓煞退送出去，免得病人的身体重得像山。",
+        "en": "When the Month falls on Xu, named Hekui, divining illness: he cannot be at ease, like a boat running down a rapid; the heart is vexed and oppressed, with retching and counterflow; headache with fever, sometimes with chills added; the joints of the limbs are more cramped still. What has been offended is the ghost judge's palace of the Ten Courts. The passage 'the verdict for the Xu-palace hexagrams' says: he cursed spirits and ghosts on the road at midday, the curses of the Altar Official come in many kinds, and the Five-Tombs Killer of the west is to be driven back, lest the sick body grow heavy as a mountain."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [122, 122],
+          "zh": ["河魁值日", "（月建值戌名河魁主九月之事）", "河魁占疾主难安", "恰似行船下急滩", "心中烦闷又呕逆", "头疼作热或加寒", "四肢骨节更拘急", "触犯十朝鬼判宫", "戌宫卦断", "日中出路骂神鬼", "社司咒咀又多端", "番退西方五墓煞", "免教病体重如山"],
+          "yi": ["河魁当值的日子", "（月建落在戌上，名叫河魁，管九月的事。）", "河魁当值占病，主难以安稳；", "就像行船冲下急滩；", "心里烦闷，又呕吐上逆；", "头疼发热，有时又加上发冷；", "四肢骨节更加拘紧；", "冲犯了十朝的鬼判宫；", "戌宫的卦这样断：", "白天在路上骂过神鬼；", "社司的咒咀，名目又多；", "要把西方的五墓煞翻转退送出去；", "免得病人的身体重得像山。"],
+          "en": ["When Hekui rules the day", "(when the Month falls on Xu, named Hekui, it governs the matters of the ninth month)", "Hekui, divining illness: it means he cannot be at ease;", "just like a boat running down a rapid;", "the heart is vexed and oppressed, and there is retching and counterflow;", "headache with fever, or chills added;", "the joints of the limbs are more cramped still;", "he has offended the ghost judge's palace of the Ten Courts;", "The verdict for the Xu-palace hexagrams:", "he cursed spirits and ghosts on the road at midday;", "the curses of the Altar Official come in many kinds;", "the Five-Tombs Killer of the west is to be turned back and driven off;", "lest the sick body grow heavy as a mountain."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。「日中出路骂神鬼」的「日中」译成白天、中午，「出路」译成在路上，都是照字面。「番退」的「番」读作翻，「番退西方五墓煞」译成「翻转退送」，书里没有给做法。「五墓煞」是一种凶煞，书里没有解释。「十朝鬼判宫」见 LY.ILL.GLJ.04 的说明。这一首在原文里和下一首登明挨在同一行里，没有分行。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. 'Midday' for the book's 'in the middle of the day' and 'on the road' for 'goes out on the road' follow the letter. The 'turned back' of 'the Five-Tombs Killer of the west is to be turned back' reads the book's 'turn' as 'overturn', and the book does not give a method. 'The Five-Tombs Killer' is a kind of fierce killer, not explained in the book. For 'the ghost judge's palace of the Ten Courts' see the note to LY.ILL.GLJ.04. In the original this verse and the next, Dengming, run on in the same line without a break."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.06",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·登明（月建亥）占病：颠狂、乱言、寒热头疼、对神见鬼；触犯山司木下、暗昧女伤亡；亥宫卦断半天午酉草野鬼、子时得疾难安好",
+      "rule": {
+        "yi": "月建落在亥、叫登明的时候占病：癫狂，躺在床上乱说话，忽冷忽热、头疼，心里郁结，对着神像看见鬼，怪异得很。冲犯的是山司和木下，还有暗昧的女性伤亡鬼。「亥宫卦断」那一段说：半空的、午酉方位的、野外的鬼，也是家里的二姓郎；子时得的病难以安好，要赶紧保祷，免得惶恐。",
+        "en": "When the Month falls on Hai, named Dengming, divining illness: madness, babbling in his bed, chills and fever, headache, a knot in the heart, seeing ghosts when facing the spirits, uncanny beyond measure. What has been offended is the Mountain Official and the one under the wood, and there are obscure women dead by injury. The passage 'the verdict for the Hai-palace hexagrams' says: the ghosts of the half-sky, of Wu and You, and of the wild fields, and also the household's 'two-surname lord'; an illness taken at the Zi hour is hard to settle, and he should be quickly prayed for, to spare him distress."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [122, 122],
+          "zh": ["登明值日", "（月建亥名登明主十月事）", "登明得病主颠狂", "乱言论语在高床", "寒热头疼心内结", "对神见鬼怪非常", "触犯山司并木下", "更有暗昧女伤亡", "亥宫卦断", "半天午酉并草野", "亦是家二姓郎", "子时得疾难安好", "急宜保忧免栖惶"],
+          "yi": ["登明当值的日子", "（月建是亥，名叫登明，管十月的事。）", "登明当值得病，主癫狂；", "躺在床上乱说话；", "忽冷忽热，头疼，心里郁结；", "对着神像看见鬼，怪异得很；", "冲犯了山司和木下；", "还有暗昧的女性伤亡鬼；", "亥宫的卦这样断：", "半空的、午酉方位的、野外的鬼；", "也是家里的二姓郎；", "子时得的病，难以安好；", "赶紧要保祷，免得忧虑惶恐。"],
+          "en": ["When Dengming rules the day", "(the Month at Hai is named Dengming and governs the matters of the tenth month)", "Dengming, falling ill: it means madness;", "he babbles confusedly in his high bed;", "chills and fever, headache, a knot in the heart;", "facing the spirits he sees ghosts, uncanny beyond measure;", "he has offended the Mountain Official and the one under the wood;", "and there are also obscure women dead by injury;", "The verdict for the Hai-palace hexagrams:", "the ghosts of the half-sky, of Wu and You, and of the wild fields;", "and also the household's 'two-surname lord';", "an illness taken at the Zi hour is hard to settle;", "he should be quickly prayed for, to spare him worry and distress."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。「乱言论语」是乱说话；「木下」「山司」书里没有解释，译文只照字面；「暗昧女伤亡」是说暗中、昏昧的女性伤亡鬼，也是字面；「半天午酉并草野」「二姓郎」不知所指，译文照字面写，不下定义（第 11 首有「家先三五郎」，「郎」像是民间称某类神鬼的叫法，这是推测）；「子时得疾」是说这个病是在子时得的；「保忧」两字不通，译成「保祷」是读法，像是「保佑」「保安」一类，「栖惶」是惶惑不安。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. 'Babbles confusedly' is the book's 'speaks in disorder'; 'the one under the wood' and 'the Mountain Official' are not explained in the book and are only literal; 'obscure women dead by injury' is the sense of women in the dark and the dim who died by injury, again literal; 'the half-sky, Wu and You, and the wild fields' and 'two-surname lord' are not known and are written literally without defining them (verse 11 has 'the household ancestors and the Third and Fifth Lords', and 'lord' looks like a popular name for a kind of spirit, which is a guess); 'an illness taken at the Zi hour' says that this illness was taken at the Zi hour; the two characters of 'guard against worry' do not make sense as printed, and 'prayed for' is a reading, as if it were 'protect' or 'keep safe', while 'distress' is the book's word for being unsettled and perplexed."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.07",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·神后（月建子）占病：虚惊、寒热、腹中疾痛及肝心、浑身沉重、四肢疼痛；子宫卦断不思饮食又番吐、触犯山神土石精、宜禳土杀神及伤亡五道",
+      "rule": {
+        "yi": "月建落在子、叫神后的时候占病：虚惊，白天得病是鬼来侵犯；寒热时来，很蹊跷；腹中疼痛，牵连肝和心；全身沉重，转不了身；四肢疼痛，不能安宁。「子宫卦断」那一段说：不想吃喝，又翻着吐；冲犯了山神和土石精；手脚疼痛，一动就气喘，适合禳解土杀神；还有伤亡鬼和五道，要祈求、做福事，保平安。",
+        "en": "When the Month falls on Zi, named Shenhou, divining illness: a false alarm; an illness taken in the daytime is a ghost's invasion; chills and fever come at times and are very odd; pain in the belly, reaching the liver and the heart; the whole body heavy and unable to turn; the limbs ache and cannot settle. The passage 'the verdict for the Zi-palace hexagrams' says: no wish for food or drink, and vomiting again and again; he has offended the Mountain Spirit and the earth-and-stone sprites; the hands and feet ache and movement leaves him short of breath, and it is fitting to perform rites against the Earth-Killer spirits; there are also the dead by injury and the Five Ways, and he should pray and perform blessing rites to keep himself in peace."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [123, 123],
+          "zh": ["神后值日", "（月建值子名神后主十一月事）", "神后值卦主虚惊", "日中得病鬼来侵", "寒热时来远跷蹊", "腹中疾痛及肝心", "浑身沉重转不得", "四肢疼痛末能安", "子宫卦断", "不思饮食又番吐", "触犯山神土石精", "手足疾疼举动气急", "宜禳土杀神", "更有伤亡并五道", "祈求作福保安宁"],
+          "yi": ["神后当值的日子", "（月建落在子上，名叫神后，管十一月的事。）", "神后当值，主虚惊；", "白天得的病，是鬼来侵犯；", "寒热不时地来，很蹊跷；", "腹中疼痛，牵连到肝和心；", "全身沉重，转不了身；", "四肢疼痛，不能安宁；", "子宫的卦这样断：", "不想吃喝，又翻着吐；", "冲犯了山神和土石精；", "手脚疼痛，一动就气喘；", "适合禳解土杀神；", "还有伤亡鬼和五道；", "祈求，做福事，保平安。"],
+          "en": ["When Shenhou rules the day", "(when the Month falls on Zi, named Shenhou, it governs the matters of the eleventh month)", "when Shenhou rules the hexagram it means a false alarm;", "an illness taken in the daytime is a ghost's invasion;", "chills and fever come at times, and are very odd;", "pain in the belly, reaching the liver and the heart;", "the whole body is heavy and cannot turn;", "the limbs ache and cannot settle;", "The verdict for the Zi-palace hexagrams:", "no wish for food or drink, and vomiting again and again;", "he has offended the Mountain Spirit and the earth-and-stone sprites;", "the hands and feet ache and movement leaves him short of breath;", "it is fitting to perform rites against the Earth-Killer spirits;", "there are also the dead by injury and the Five Ways;", "pray, perform blessing rites, and keep him in peace."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。「日中得病」的「日中」译成白天；「远跷蹊」的「远」不知本字，按上下文读作很；「四肢疼痛末能安」的「末」读作「未」（不能）；「手足疾疼举动」和「气急宜禳土杀神」在原文里隔着一个空格，像是脱了字，译文把「举动气急」连着读（一动就气喘），这是读法；「土杀神」「五道」「土石精」书里都没有解释，译文只照字面。「神后值卦主虚惊」的「虚惊」是说受惊吓而无事，书里没有展开。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. 'In the daytime' is the book's 'in the middle of the day'; the first character of 'very odd' is not known as a word and is read from context as 'very'; 'cannot settle' reads the book's 'has not yet been able to settle' with the character for 'not yet' standing for 'cannot'; 'the hands and feet ache and movement' and 'short of breath, it is fitting to perform rites against the Earth-Killer spirits' are separated by a space in the original, as if a character had dropped out, and the translation reads 'movement ... short of breath' straight on (a movement leaves him gasping), which is a reading; 'the Earth-Killer spirits', 'the Five Ways' and 'the earth-and-stone sprites' are not explained in the book and are only literal. The 'false alarm' of 'it means a false alarm' says being frightened with no harm to follow, and the book does not expand it."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.08",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·大吉（月建丑）占病：胸肋、寒热、大小便不通、不思饭食心中结；伏尸古墓同为祸；丑宫卦断社司五朝入宅、更犯五道伤亡、退北方凶恶杀、禳谢本命星辰",
+      "rule": {
+        "yi": "月建落在丑、叫大吉的时候占病：胸和肋疼，有时发冷有时发热，大小便都不通，不想吃饭，心里郁结。伏尸和古墓一同作祸，只是家先牵着引着。「丑宫卦断」那一段说：社司、五朝进了宅，要设祭给香火和土地；又冲犯了五道和伤亡鬼，要把北方的凶恶煞退送出去，向本命上的星辰禳解酬谢，化解流年的灾病厄运。",
+        "en": "When the Month falls on Chou, named Daji, divining illness: the chest and ribs, now chills and now fever, neither urine nor stool passing, no wish for food, a knot in the heart. The Hidden Corpse and the ancient tomb make trouble together, only that the household ancestors lead them through and receive them. The passage 'the verdict for the Chou-palace hexagrams' says: the Altar Official and the Five Courts have entered the house, and offerings are to be set out to the incense-fire and the Earth God; the Five Ways and the dead by injury have also been offended, the fierce killer of the north is to be driven off, rites and thanks are to be made to the stars of his natal destiny, and the calamity, illness and misfortune of the passing year resolved."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [124, 124],
+          "zh": ["大吉值日", "（月建值丑名大吉主十二月事）", "大吉占病主胸肋", "或作寒来或作热", "小便大便已不通", "不思饭食心中结", "伏尸古墓同为祸", "只是家先透引接", "丑宫卦断", "社司五朝入宅来", "香火土地求祭设", "更犯五道及伤亡", "用退北方凶恶杀", "禳谢本命上星辰", "解释流年灾疾厄"],
+          "yi": ["大吉当值的日子", "（月建落在丑上，名叫大吉，管十二月的事。）", "大吉当值占病，主胸和肋；", "有时发冷，有时发热；", "大小便都不通；", "不想吃饭，心里郁结；", "伏尸和古墓一同作祸；", "只是家先牵着引着接着；", "丑宫的卦这样断：", "社司、五朝进了宅；", "对香火、土地，要设祭；", "又冲犯了五道和伤亡鬼；", "要把北方的凶恶煞退送出去；", "向本命上的星辰禳解酬谢；", "化解流年的灾病厄运。"],
+          "en": ["When Daji rules the day", "(when the Month falls on Chou, named Daji, it governs the matters of the twelfth month)", "Daji, divining illness: it means the chest and the ribs;", "now chills come, now fever;", "neither urine nor stool passes;", "no wish for food, a knot in the heart;", "the Hidden Corpse and the ancient tomb make trouble together;", "only that the household ancestors lead them through and receive them;", "The verdict for the Chou-palace hexagrams:", "the Altar Official and the Five Courts have entered the house;", "to the incense-fire and the Earth God, ask for offerings to be set out;", "the Five Ways and the dead by injury have also been offended;", "the fierce killer of the north is to be driven off;", "make rites and thanks to the stars of his natal destiny;", "and resolve the calamity, illness and misfortune of the passing year."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。「伏尸古墓」的「伏尸」书里没有解释，按字面是暗藏的尸；「家先透引接」读作家先牵引着、接应着（那些鬼），是读法；「五朝」不知所指，像是和「十朝」（见 GLJ.04）同类的叫法，不下定义；「小便大便已不通」的「已」读作都；「解释」是化解，不是解说。「本命上星辰」是病人本命（出生年）对应的星辰。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. The book does not explain 'the Hidden Corpse', which literally is a corpse lying in hiding; 'the household ancestors lead them through and receive them' reads the book's 'lead through and receive' as the ancestors leading and meeting those ghosts, which is a reading; what 'the Five Courts' are is not known, and they look like a kind of thing with the 'Ten Courts' (see GLJ.04), and are not defined; the 'neither' of 'neither urine nor stool passes' reads the book's 'already' as 'both'; 'resolve' is the book's 'release', in the sense of undoing, not of explaining. 'The stars of his natal destiny' are the stars answering to the patient's natal year."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.09",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·功曹（月建寅）占病：白虎神、寒热头痛、胸肋疼闷气冲心、手足拘攀行不得；触犯山司木下神；寅宫卦断伤亡五道东北土煞怪巽入宅、禳度即安轻",
+      "rule": {
+        "yi": "月建落在寅、叫功曹的时候占病：功曹当值，是白虎神，要赶紧祭祀超度，免得有哭声；病人忽冷忽热，头疼，胸肋疼闷，气往上冲心，手脚拘挛，走不动。冲犯的是山司和木下神。「寅宫卦断」那一段说：还有伤亡鬼和五道，东北方的土煞又加上来，怪巽进了宅作祸；只要做禳解超度，马上安稳减轻。",
+        "en": "When the Month falls on Yin, named Gongcao, divining illness: when Gongcao rules the day it is the White Tiger spirit, and offerings and deliverance should be made at once, to avoid the sound of weeping; the sick person has chills and fever, a headache, the chest and ribs aching and oppressed with breath surging against the heart, and the hands and feet drawn and cramped so that he cannot walk. What has been offended is the Mountain Official and the spirit under the wood. The passage 'the verdict for the Yin-palace hexagrams' says: there are also the dead by injury and the Five Ways, the Earth Killer of the northeast comes on top, and the uncanny Xun has come into the house to make trouble; if rites of averting and deliverance are performed, he is soon at ease and lighter."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [125, 125],
+          "zh": ["功曹值日", "（月建值寅名功曹主正月事）", "功曹值日白虎神", "急宜祭度免悲声", "病人寒热头疾痛", "胸肋疼闷气冲心", "手足拘攀行不得", "触犯山司木下神", "寅宫卦断", "更有伤亡并五道", "东北土煞又加临", "怪巽入宅来为祸", "世须禳度即安轻"],
+          "yi": ["功曹当值的日子", "（月建落在寅上，名叫功曹，管正月的事。）", "功曹值日，是白虎神；", "赶紧祭祀超度，免得有哭声；", "病人忽冷忽热，头疼；", "胸肋疼闷，气往上冲心；", "手脚拘挛，走不动；", "冲犯了山司和木下神；", "寅宫的卦这样断：", "还有伤亡鬼和五道；", "东北方的土煞又加上来；", "怪巽进了宅作祸；", "只要做禳解超度，马上安稳减轻。"],
+          "en": ["When Gongcao rules the day", "(when the Month falls on Yin, named Gongcao, it governs the matters of the first month)", "when Gongcao rules the day, there is the White Tiger spirit;", "quickly make offerings and deliverance, to avoid the sound of weeping;", "the sick person has chills and fever and an aching head;", "the chest and ribs ache and are oppressed, with breath surging against the heart;", "the hands and feet are drawn and cramped, and he cannot walk;", "he has offended the Mountain Official and the spirit under the wood;", "The verdict for the Yin-palace hexagrams:", "there are also the dead by injury and the Five Ways;", "the Earth Killer of the northeast comes on top;", "the uncanny Xun has come into the house to make trouble;", "if rites of averting and deliverance are performed, he is soon at ease and lighter."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。这一首的头一句「功曹值日白虎神」是十二首里唯一直接点出六神的，把功曹和白虎神连在一起，书里没有说为什么。「拘攀」读作拘挛；「怪巽」书里没有解释，「巽」是八卦里的巽（东南），像是说东南方来的怪，是读法；最后一句「世须禳度」的「世」字不通，像是「但」或「只」的误写，译文按「只要」读，这是读法；「安轻」是安稳、减轻。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. The first line of this verse, 'when Gongcao rules the day, there is the White Tiger spirit', is the only one among the twelve that names one of the six spirits directly, tying Gongcao to the White Tiger, and the book does not say why. 'Drawn and cramped' reads the book's word for being drawn and clutching as 'cramped'; the book does not explain 'the uncanny Xun', where 'Xun' is the Xun of the eight trigrams (southeast), and it looks like an uncanny thing coming from the southeast, which is a reading; in the last line the first character of 'if rites of averting and deliverance are performed' does not make sense as printed and looks like a miswriting of 'only' or 'but', and the translation reads it as 'if', which is a reading; 'at ease and lighter' is 'settled and eased'."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.10",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·太冲（月建卯）占病：在路头充着游瘟、寒热心头闷、脚手酸疼难动；四野伤亡作祸；卯宫卦断土主社司河神水鬼、急宜禳谢身康吉不须服药",
+      "rule": {
+        "yi": "月建落在卯、叫太冲的时候占病：病是在路口上得的，撞上了游瘟，作祸生忧；有时冷有时热，心口闷，手脚酸疼，难以走动；是野外的伤亡鬼来作祸，要化解咒咀免得结成冤仇。「卯宫卦断」那一段说：土主、社司要设祭，河神、水鬼使病缠着不走；赶紧禳解酬谢，身体就康健吉利，不用吃药，自然没有忧愁。",
+        "en": "When the Month falls on Mao, named Taichong, divining illness: it was taken at the head of the road, having run into the Wandering Plague, which makes trouble and worry; now cold, now hot, oppression at the heart, the hands and feet aching and sore so that he can hardly move about; the dead by injury of the open fields have come to make trouble, and the curses are to be resolved so that they do not turn to enmity. The passage 'the verdict for the Mao-palace hexagrams' says: the Earth Lord and the Altar Official should be given offerings, and the River Spirit and the water ghosts make the illness linger; quickly perform rites and thanks and the body will be healthy and fortunate, with no need of medicine, and there will be no worry."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [126, 126],
+          "zh": ["太冲值日", "（月建值卯名太衡主二月之事）", "太冲占病在路头", "充着游瘟作祸忧", "或寒或热心头闷", "脚手酸疼难动游", "四野伤亡来作祸", "解释咒咀免为仇", "卯宫卦断", "土主社司求祭设", "河神水鬼作淹留", "急宜禳谢身康吉", "不须服药自无愁"],
+          "yi": ["太冲当值的日子", "（月建落在卯上，名叫太冲，管二月的事。）", "太冲当值占病，病是在路口上得的；", "撞上了游瘟，作祸生忧；", "有时冷有时热，心口闷；", "手脚酸疼，难以走动；", "野外的伤亡鬼来作祸；", "化解咒咀，免得结成冤仇；", "卯宫的卦这样断：", "土主、社司，要设祭；", "河神、水鬼，使病缠着不走；", "赶紧禳解酬谢，身体就康健吉利；", "不用吃药，自然没有忧愁。"],
+          "en": ["When Taichong rules the day", "(when the Month falls on Mao, named Taichong, it governs the matters of the second month)", "Taichong, divining illness: it was taken at the head of the road;", "he ran into the Wandering Plague, which makes trouble and worry;", "now cold, now hot, with oppression at the heart;", "the hands and feet ache and are sore and he can hardly move about;", "the dead by injury of the open fields come to make trouble;", "resolve the curses so that they do not turn to enmity;", "The verdict for the Mao-palace hexagrams:", "the Earth Lord and the Altar Official: ask for offerings to be set out;", "the River Spirit and the water ghosts make the illness linger;", "quickly perform rites and thanks and the body will be healthy and fortunate;", "no medicine is needed, and there will be no worry."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。标题括号里「太衡」是「太冲」的误写。「充着」读作冲着、撞上；「游瘟」是四处游走传播瘟疫的神鬼，书里没有展开；「作淹留」是使人久病、拖着不走。这一首最后两句「不须服药自无愁」是十二首里唯一直接说不用吃药的（第 2 首说「药方通」，要请巫师做了法事药才有用），两首的态度不一样，书里没有说明。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. In the heading's bracket the printed 'Taiheng' is a misprint for 'Taichong'. 'Ran into' reads the book's 'charge against' as running up against; 'the Wandering Plague' is a spirit that wanders about spreading plague, which the book does not expand; 'make the illness linger' is the book's 'make him detained', that is, keep the illness on and not let it go. The last line of this verse, 'no medicine is needed, and there will be no worry', is the only one among the twelve that says outright that medicine is not needed (verse 2 says 'the medicine will work' once a shaman has performed the rites, so that medicine works only after the rites), and the two take different attitudes, which the book does not discuss."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.11",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·天罡（月建辰）占病：心腹膨胀卧高床、寒热往来须作痛；天罗地网煞山司木下廊边鬼；辰宫卦断半天午酉降祸、家先三五郎、旺神有愿急解谢、退送墓煞",
+      "rule": {
+        "yi": "月建落在辰、叫天罡的时候占病：这天得的病，心腹胀满，卧在床上，寒热交替，必定疼痛。作祟的是天罗地网煞，山司、木下、廊边的鬼，还有正通和伤亡鬼。「辰宫卦断」那一段说：半空的、午酉方位的鬼一同降祸，还有家先和三郎、五郎；旺相的神有愿没还，赶紧解愿酬谢，把墓煞退送出去，免得病人惶恐不安。",
+        "en": "When the Month falls on Chen, named Tiangang, divining illness: an illness taken on this day, the heart and belly swollen, lying in his bed, chills and fever alternating, bound to be painful. The ones at work are the Heaven's-Net and Earth's-Net Killer, the Mountain Official, the one under the wood and the ghosts by the corridor, and also the Zhengtong and the dead by injury. The passage 'the verdict for the Chen-palace hexagrams' says: the ghosts of the half-sky and of Wu and You send down misfortune together, and there are also the household ancestors and the Third and Fifth Lords; a strong spirit has a vow outstanding, and it is to be released quickly with thanks, and the Tomb Killer sent away, to spare the sick person distress."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [127, 127],
+          "zh": ["天罡值日", "（月建值辰名天罡主三月之事）", "此日得病值天", "心腹膨胀卧高床", "寒热往来须作痛", "天罗地网煞为殃", "山司木下廊边鬼", "更与正通及伤亡", "辰宫卦断", "半天午酉同降祸", "更有家先三五郎", "旺神有愿急解谢", "退送墓煞免栖惶"],
+          "yi": ["天罡当值的日子", "（月建落在辰上，名叫天罡，管三月的事。）", "这一天得的病，值上了天（罡）；", "心腹胀满，卧在床上；", "寒热交替，必定疼痛；", "天罗地网煞作祸；", "山司、木下、廊边的鬼；", "还有正通和伤亡鬼；", "辰宫的卦这样断：", "半空的、午酉方位的鬼一同降祸；", "还有家先和三郎、五郎；", "旺相的神有愿没还，赶紧解愿酬谢；", "把墓煞退送出去，免得惶恐不安。"],
+          "en": ["When Tiangang rules the day", "(when the Month falls on Chen, named Tiangang, it governs the matters of the third month)", "an illness taken on this day falls upon 'Heaven' (the line is short of a character, probably Tiangang);", "the heart and belly swell, and he lies in his bed;", "chills and fever alternate, and there is bound to be pain;", "the Heaven's-Net and Earth's-Net Killer brings harm;", "the Mountain Official, the one under the wood, and the ghosts by the corridor;", "and also the Zhengtong and the dead by injury;", "The verdict for the Chen-palace hexagrams:", "the ghosts of the half-sky and of Wu and You send down misfortune together;", "and there are also the household ancestors and the Third and Fifth Lords;", "a strong spirit has a vow outstanding: quickly release it and give thanks;", "send off the Tomb Killer and spare him distress."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。「此日得病值天」这一句只有六个字，像是脱了「罡」字（天罡），译文把这一点写在括号里，是读法。「正通」书里没有解释，有可能是「五通」（民间的一种神）之误，但原文没有说，译文只照字面写「正通」。「廊边鬼」「三五郎」（三郎、五郎）「半天午酉」书里都没有解释；「墓煞」是一种凶煞。「旺神有愿」同 GLJ.03。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. The line 'an illness taken on this day falls upon Heaven' has only six characters and looks as if the character for 'Gang' (Tiangang) has dropped out, and the translation puts this in brackets, which is a reading. The book does not explain 'the Zhengtong', and it may be a miswriting of 'the Wutong' (a kind of popular spirit), but the original does not say so, and the translation writes 'the Zhengtong' literally. 'The ghosts by the corridor', 'the Third and Fifth Lords' and 'the half-sky, Wu and You' are not explained in the book; 'the Tomb Killer' is a kind of fierce killer. For 'a strong spirit has a vow outstanding' see GLJ.03."
+      },
+      "see": ["LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.GLJ.12",
+      "topic": "神祟",
+      "chapter": "卷五·论十月将值日要决",
+      "chapter_en": "Volume 5: The essentials of the month-generals ruling the day",
+      "title": "月将值日·太乙（月建巳）占病：病是两蛇、途中惊恐、心腹疼痛气冲急、男轻女重；已宫卦断触犯香堂土地、溪河落水作寒邪、四片板木皆有、病人火里出莲花",
+      "rule": {
+        "yi": "月建落在巳、叫太乙的时候占病：太乙日得的病，是两条蛇作祟，在路上受了惊吓，招来祸邪；心腹疼痛，气往上冲、急促，男的轻、女的重，手脚还有血光之灾，有咒咀和口舌。「巳宫卦断」那一段说：冲犯了香堂和土地，溪河、落水的鬼作寒邪；四片板木都齐备了，病人就像火里长出莲花。",
+        "en": "When the Month falls on Si, named Taiyi, divining illness: an illness on a Taiyi day is the work of two snakes, a fright on the road has drawn in misfortune and evil; the heart and belly ache with the breath surging and hurried, light in a man and heavy in a woman, and there is also the calamity of bloodshed on the hands and feet, with curses and quarrels. The passage 'the verdict for the Si-palace hexagrams' says: he has offended the incense hall and the Earth God, and the ghosts of streams and rivers and of the drowned make cold evil; once the four wooden boards are all there, the sick person is like a lotus coming out of the fire."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易鬼灵经", "range": [128, 128],
+          "zh": ["太乙值日", "（月建值已名太乙主四月之事）", "太乙日病是两蛇", "途中惊恐惹祸邪", "心腹疼痛气冲急", "男轻女重最交加", "脚手血光炎更有", "神广咒咀有口牙", "已宫卦断", "触犯香堂并土地", "溪河落水作寒邪", "四片板木皆有已", "病人火里出莲花"],
+          "yi": ["太乙当值的日子", "（月建落在巳上，名叫太乙，管四月的事。）", "太乙日得的病，是两条蛇作祟；", "在路上受惊吓，招来祸邪；", "心腹疼痛，气往上冲，急促；", "男的轻，女的重，最是夹杂；", "手脚的血光之灾也有；", "神广、咒咀，有口舌；", "巳宫的卦这样断：", "冲犯了香堂和土地；", "溪河、落水的鬼作寒邪；", "四片板木都有了；", "病人就像火里长出莲花。"],
+          "en": ["When Taiyi rules the day", "(when the Month falls on Si, named Taiyi, it governs the matters of the fourth month)", "an illness on a Taiyi day is the work of two snakes;", "a fright on the road has drawn in misfortune and evil;", "the heart and belly ache, the breath surging and hurried;", "light in a man, heavy in a woman, all mixed together;", "the calamity of bloodshed on the hands and feet is also found;", "'Shenguang', curses and quarrels;", "The verdict for the Si-palace hexagrams:", "he has offended the incense hall and the Earth God;", "the ghosts of streams and rivers and of the drowned make cold evil;", "once the four wooden boards are all there;", "the sick person is like a lotus coming out of the fire."] }
+      ],
+      "note": {
+        "yi": "格式和名词见 LY.ILL.GLJ.01。标题括号里「月建值已」「已宫卦断」的「已」是「巳」的误写；「脚手血光炎更有」的「炎」读作「灾」（这本书里别处常把「灾」写成「炎」），是读法；「神广咒咀」的「神广」不知所指，译文照字面写；「口牙」读作口舌（争吵），同书别处也有「寻君起口牙」的说法；「男轻女重最交加」是说男的轻、女的重、轻重夹杂，书里没有展开；「四片板木皆有已」的「已」字不通，按上下文读作「已经」，整句读作四片板木齐备了（同 GLJ.01 的「板木来全」），是读法；「火里出莲花」是说在绝境里转好，书里没有注。十二首到这一首为止；原文这一行末尾还连着下一部分的标题「精校断易鬼灵经」，不收。",
+        "en": "For the form and the terms see LY.ILL.GLJ.01. In the heading's brackets 'the Month falls on Si' and 'the Si-palace' the printed character is a misprint of 'Si'; the 'calamity' of 'the calamity of bloodshed on the hands and feet' is read from a character printed 'inflamed' (this book often writes 'calamity' that way), which is a reading; 'Shenguang' is not known and is written literally; 'quarrels' is the book's 'mouth and teeth', which the book uses elsewhere too, as in 'come looking for you and stir up mouth-and-teeth'; 'light in a man, heavy in a woman, all mixed together' says light in a man, heavy in a woman, light and heavy mingled, and the book does not expand it; the last character of 'the four wooden boards are all there' does not make sense as printed and is read from context as 'already', so that the whole line reads that the four boards have been made ready (as with 'the wooden boards come, complete' in GLJ.01), which is a reading; 'a lotus coming out of the fire' says that things turn for the better out of a desperate pass, and the book gives no comment. The twelve verses end here; the end of this line in the original runs into the heading of the next part, 'the carefully collated Duanyi Guiling Jing', which is not quoted."
+      },
+      "see": ["LY.ILL.EL.29"]
+    }
+  ]
+}

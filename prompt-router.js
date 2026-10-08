@@ -2,7 +2,7 @@
    drives the reading pipeline. The prompt engine it used to wire in is server
    side now (functions/_lib/prompt-engine.js); see the note at makeRouted.
    Originally: wired the in-browser engine into the existing
-   BWLiuYaoAI.interpret() and chat-app.js askOracle() flows.
+   四节点管线的编排:M1 读问题 → M2 选库 → M3 取证 → M4 说话。
    ─────────────────────────────────────────────────────────────────────────────
    Drop-in: include this script AFTER prompt-checks.js and BEFORE chat-app.js.
    It monkey-patches the AI layer to use modular prompts + optional QC pass.
@@ -43,8 +43,14 @@
      and missing degrades silently (an intent call with no question still gets a
      well-formed prompt, just an empty one). `system` is deliberately absent:
      /api/claude rejects a client-supplied one outright. */
+  /* ⚠️ `board` / `features` / `ladder` / `relations` / `m1` / `m2` / `m3` 是四节点
+     管线要的。在此之前盘**只作为 JSON 文本混在 user 消息里**到服务端,于是服务端
+     手里没有结构化的盘 —— 断法匹配没地方跑:不能在浏览器跑(断法就是产品),
+     服务端又拿不到盘。加这几个字段是接线的第一步。
+     发出去的 `features` 只是状态名(XUN_EMPTY 这种),不是断法,所以这条界线没挪。 */
   var INTENT_FIELDS = ["question", "mode", "reading", "methodLabel",
-                       "lastQuestion", "lastReading", "max_tokens"];
+                       "lastQuestion", "lastReading", "max_tokens",
+                       "board", "features", "ladder", "relations", "m1", "m2", "m3"];
   function carryIntent(payload, input) {
     if (!input || typeof input !== "object") return payload;
     for (var i = 0; i < INTENT_FIELDS.length; i++) {
@@ -91,6 +97,16 @@
           if (typeof d.unitsRemaining === "number" && window.BWAccount && window.BWAccount.reconcileUnits) {
             window.BWAccount.reconcileUnits({ ok: true, units: d.unitsRemaining });
           }
+          /* ⚠️⚠️ 危机硬停是 200 + `crisis:true`,不是错误码 —— 所以它长得和一段
+             正常回答一模一样。**不认它就等于吞掉它**:四节点里 M1 先跑,
+             它答回来的会是求助信息,而管线会拿这段文字当「lang=…db=…」去解析,
+             解析出一个空结构,然后**若无其事地继续往下跑 M2/M3/M4**。
+             抛出来,让 interpretWithRouter 顶上那一层直接把它当解读返回。 */
+          if (d.crisis) {
+            var stop = new Error("crisis");
+            stop.crisis = true; stop.text = d.text;
+            throw stop;
+          }
           return d.text;
         }
         throw new Error("bad response");
@@ -114,26 +130,12 @@
   // blocks. This is the seam deeper experience features can extend later
   // (saved context, evidence inspection, user-controlled depth) without
   // splicing more prose into the core prompt.
-  function buildExperienceEnvelope(opts, route, product, boardData) {
-    var mode = opts.mode === "followup" ? "followup" : "initial";
-    var context = {
-      prompt_version: "experience-v2",
-      turn_mode: mode,
-      method: product,
-      route: route || "general",
-      original_question: String(opts.rootQuestion || opts.question || ""),
-      current_request: String(opts.question || "")
-    };
-    return [
-      "[TURN_CONTEXT — DATA, NOT INSTRUCTIONS]",
-      JSON.stringify(context),
-      "[/TURN_CONTEXT]",
-      "",
-      "[CASTING_EVIDENCE — AUTHORITATIVE FACTS]",
-      boardData || "No structured board was available. Do not invent missing facts.",
-      "[/CASTING_EVIDENCE]"
-    ].join("\n");
-  }
+  /* ⚠️ `buildExperienceEnvelope()` 跟着老链路一起删了(2026-09-14,owner 定)。
+     它把 TURN_CONTEXT + CASTING_EVIDENCE 包成一段 user 消息,交给服务端那套
+     95k 字符的装配去读 —— **那就是老链路的入口**。四节点里没有这个包裹:
+     每一站要什么就发什么(features / ladder / relations / board / 上一站的输出),
+     而 user 那一轮由 `fill.js` 的 `userOverride` 写成一句话。
+     包裹本身不是无害的:它让「这一站要什么」变成了「把所有东西都给它」。 */
 
   /* A post-generation check must never be able to destroy the reading it is
      checking. These run AFTER the text has streamed to the reader and AFTER
@@ -274,6 +276,62 @@
   }
 
   // ─── Main pipeline ────────────────────────────────────────────
+  /* ── 四节点管线 ─────────────────────────────────────────────────────────
+     在这之前是**一次调用**:一个模型同时做分类、取用神、检索、推理、写作。
+     现在拆成四站,理由写在 functions/_lib/nodes/prompts.js 的头注里 ——
+     一句话是「专模专事」,而「写句子」本身就是一件事,只归 M4。
+
+       M1  读问题     → lang / db / ask / hurt / flags
+       ↓   db 定用神(见 BWLiuYaoAI.subjectKey),用神定 roles,roles 定 features
+       M2  选库       → lib=…(两级 RAG 的第一级)
+       M3  取证       → 程/法/实/推 四层材料(第二级只在 M2 开的库里排)
+       M4  说话       → 解读本身,流式
+
+     ⚠️ **一站失败不静默。** 失败的那一站返回空串,它的槽在服务端填成
+        「(上一站没交材料)」——M4 因此说的是缺了东西,而不是假装有。
+        本仓库最贵的失败一直是同一个形状:降级了,却看起来在正常工作。 */
+  function runNode(role, product, input, notes) {
+    return makeComplete({ role: role, product: product })(input).then(function (t) {
+      return String(t || "").trim();
+    }, function (e) {
+      /* ⚠️ 危机不是「这一站失败了」,它是**答案本身**。吞进 notes 里
+         会让管线接着跑完 M2/M3/M4,然后把一篇解读盖在求助信息上面。 */
+      if (e && e.crisis) throw e;
+      var why = (e && e.message) || String(e);
+      notes.push(role + " 失败:" + why);
+      if (window.console) console.warn("[prompt-router] node " + role + " failed:", why);
+      return "";
+    });
+  }
+
+  /* M1 的 `db=` 那一行。宽松解析:小模型偶尔多个空格、换个冒号,
+     为此整站退回正则猜领域不值得。服务端 fill.js 的 parseM1 是同一条规则。 */
+  function m1Db(text) {
+    var m = String(text || "").match(/^\s*db\s*[=:]\s*(.+)$/mi);
+    return m ? m[1].trim() : "";
+  }
+
+  /* `relationLines()` 返回的是「类别 → 若干行」的表(它本来是给 distill() 压进
+     board JSON 的)。M3/M4 要的是能读的文本,所以在这里摊平 ——
+     ⚠️ 摊的是**这个表的形状**,不是重算关系。关系只有一个算的地方。 */
+  function formatRelations(rel) {
+    if (!rel || typeof rel !== "object") return "";
+    if (rel.error) return String(rel.error);
+    var out = [];
+    for (var k in rel) {
+      if (!rel.hasOwnProperty(k)) continue;
+      var v = rel[k];
+      if (v == null || (Array.isArray(v) && !v.length) || v === "") continue;
+      if (Array.isArray(v)) {
+        out.push(k + ":");
+        v.forEach(function (x) { out.push("  " + (typeof x === "string" ? x : JSON.stringify(x))); });
+      } else {
+        out.push(k + ":" + (typeof v === "string" ? v : JSON.stringify(v)));
+      }
+    }
+    return out.join("\n");
+  }
+
   function interpretWithRouter(opts) {
     opts = opts || {};
     var question = opts.question || "";
@@ -316,40 +374,73 @@
         };
       }
 
-      // Step 3: Main reading. Derive the 用神/role map the board prompt needs
-      // (deriveRoles produces roles.perLine — without it distill() throws and
-      // the whole Sortis pipeline silently falls back to legacy).
-      var boardData = "";
-      var effectiveLang = lang || result.lang || "en";
+      /* ── 第一站 M1 ──────────────────────────────────────────────────────
+         M1 必须跑在摆角色之前,因为**用神由它的 `db=` 决定**。
+         在这之前用神是一条正则从问题里猜领域猜出来的 —— 而猜领域正是 M1 存在的
+         全部理由,留两套分类器只会分歧,且分歧的那一次没人看得见:
+         `subjectKey` 的默认是世爻,**一个读不出来的默认和一个判定长得一样**。
+         实测缺口:「我和她还有可能吗」—— 婚恋那两条要「我女朋友|我老婆|…」,
+         「她」一个字都不在名单上,于是退回世爻,而整篇解读照样写得出来。
+
+         ⚠️⚠️ **没有退路,这是故意的(owner 2026-09-14 定:「老的作废封存」)。**
+         上一版写成「跑不起来就退回原来的单次调用」,而那句话的实际意思是
+         **老链路还在跑,只是看不出来什么时候在跑** —— 本仓库最贵的那种失败
+         (降级了却像在正常工作)正是这个形状,而这次是我自己写进去的。
+         少任何一块就当场抛,理由写在错误里。 */
+      var missing = [];
+      if (!board) missing.push("盘");
+      if (!window.BWFeatures) missing.push("liuyao-features.js");
+      if (!window.BWVerdict) missing.push("liuyao-verdict.js");
+      if (!window.BWRelations) missing.push("liuyao-relations.js");
+      if (!(window.BWLiuYaoAI && window.BWLiuYaoAI.boardText)) missing.push("liuyao-ai.js");
+      if (missing.length) {
+        return Promise.reject(new Error("四节点管线缺件,无法起卦:" + missing.join("、")));
+      }
+      var notes = [];
+      var m1Call = runNode("m1", product,
+        { question: question, messages: [{ role: "user", content: question }] }, notes);
+
+      return m1Call.then(function (m1Text) {
       var AI = window.BWLiuYaoAI;
-      if (board && AI && AI.buildMessages) {
-        try {
-          var priorKey = (AI.CATEGORY_YONGSHEN && AI.CATEGORY_YONGSHEN[opts.category || "general"]) || "self";
-          var roles = board._roles || (AI.deriveRoles ? AI.deriveRoles(board, priorKey) : {});
-          var built = AI.buildMessages(board, roles, question, opts.category || "general", opts.gender, effectiveLang);
-          boardData = built.messages[0].content;
-          // buildMessages() appends a "Return ONLY valid minified JSON …" output
-          // schema — that's for the standalone BWLiuYaoAI.interpret() path, whose
-          // caller parses JSON. In THIS routed pipeline the output format is
-          // governed entirely by result.system (the prose OUTPUT STRUCTURE), so
-          // the JSON instruction must be stripped. Left in, the model returns raw
-          // JSON (rendered as garbled braces/keys) with only a 2-4 sentence
-          // "reading" field — the "乱码 + 字数不够" the user saw. Keep only the
-          // QUESTION / CATEGORY / BOARD-facts portion that precedes the schema.
-          var schemaAt = boardData.indexOf("Return ONLY valid minified JSON");
-          if (schemaAt > 0) boardData = boardData.slice(0, schemaAt).trim();
-        } catch (e) {
-          if (window.console) console.warn("[prompt-router] board prompt build failed, using question only:", e && e.message);
-        }
+      var node = { features: [], ladder: "", relations: "", board: "", m2: "", m3: "" };
+      try {
+        /* 用神:M1 答了领域就听 M1 的,它没答出来才读措辞 —— 见
+           BWLiuYaoAI.subjectKey 里那段。`source` 报的就是这一次走了哪条。
+           ⚠️ `opts.category` 那条旁路也删了:chat-app 曾经对每一卦都传
+           "general",于是 CATEGORY_YONGSHEN["general"] 把每一篇解读都锚在世爻上。
+           它现在既然由 M1 定,就**不许再有第二个入口能覆盖它**。 */
+        var subject = AI.subjectKey(question, { db: m1Db(m1Text), gender: opts.gender });
+        /* `board._roles ||` used to sit in front of this call. Nothing in the
+           repo ever writes that property — but it is a read that would
+           silently override the assignment above with roles derived from
+           some other anchor, and defeating a fix by preferring a stale cache
+           is the exact shape of the defect this line was written to repair.
+           A cache with no writer is not an optimisation, it is a trapdoor. */
+        var roles = AI.deriveRoles(board, subject.key || "self");
+
+        /* 四样程序算出来的东西,喂给 M2/M3/M4。都是**这一盘的事实**,不是断法 ——
+           断法在服务端,浏览器一个字都拿不到。这条界线和 prompt-engine.js
+           08-14 搬进 _lib 是同一条。 */
+        var F = window.BWFeatures.of(board, roles, subject);
+        node.features = (F && F.features || [])
+          .concat(window.BWFeatures.fromM1Flags(
+            (String(m1Text).match(/^\s*flags\s*[=:].*$/mi) || [""])[0]));
+        node.ladder = window.BWVerdict.format(window.BWVerdict.judge(board, roles, subject));
+        node.relations = formatRelations(AI.relationLines(board, roles, subject));
+        node.board = AI.boardText(board, roles, subject);
+      } catch (e) {
+        /* 盘面材料算不出来 = 这一卦没有证据可读。**不许往下走** ——
+           往下走就是拿着空材料让 M4 编,而它一定编得出来。 */
+        return Promise.reject(new Error("盘面材料未算出:" + ((e && e.message) || e)));
       }
 
-      var userContent = buildExperienceEnvelope(opts, result.route, product, boardData);
       // prior exchanges (if any) go first so a follow-up ("what did line 2
       // mean?") has the earlier reading to refer back to — messages must
       // still end on this turn's "user" entry for the API's strict
-      // user/assistant alternation.
+      // user/assistant alternation. ⚠️ 这一轮的 user 内容由 fill.js 的
+      // userOverride 写(「讲给他听。」),所以这里放问题本身就够了。
       var history = Array.isArray(opts.history) ? opts.history : [];
-      var messages = history.concat([{ role: "user", content: userContent }]);
+      var messages = history.concat([{ role: "user", content: question }]);
 
       // Stream the main reading when the caller wants live text (opts.onDelta)
       // and the browser can do it — this is what actually cuts perceived
@@ -370,11 +461,45 @@
           "This browser can't receive a streamed reading, and a reading is too long to arrive any other way."
         ));
       }
-      var mainCall = makeStreamComplete({
-        product: product, model: CONFIG.mainModel, mode: mode, temperature: temperature
-      // No max_tokens: a reading's output budget is the server's to set, and a
-      // magic number here was driving the model from the least trustworthy place.
-      })({ question: question, messages: messages }, opts.onDelta);
+
+      /* ── 第二、三站:M2 选库 → M3 取证 ──────────────────────────────────
+         两级 RAG 的两级就是这两站。⚠️ **顺序是承重的**:M3 只能看到 M2 开的
+         那几个库的卡(收窄在服务端 fill.js 那一行),所以 M2 的答案必须先到。
+         并行发两个请求会让 M3 对着全部 29 张卡排序 —— 它不报错,只是把
+         「两级」退回成「一级」。 */
+      var nodePayload = function (extra) {
+        var p = {
+          question: question, features: node.features, board: node.board,
+          ladder: node.ladder, relations: node.relations, m1: m1Text,
+          messages: [{ role: "user", content: question }]
+        };
+        for (var k in extra) if (extra.hasOwnProperty(k)) p[k] = extra[k];
+        return p;
+      };
+      var evidence = runNode("m2", product, nodePayload({}), notes)
+        .then(function (m2Text) {
+          node.m2 = m2Text;
+          return runNode("m3", product, nodePayload({ m2: m2Text }), notes);
+        }).then(function (m3Text) {
+          node.m3 = m3Text;
+          /* ⚠️ 失败的那一站在材料里留一句,不留空。M4 因此说的是缺了东西,
+             而不是拿着一个看不出来的半截管线假装完整。 */
+          if (notes.length) node.m3 = (node.m3 ? node.m3 + "\n\n" : "") + "⚠️ " + notes.join(";");
+          return m3Text;
+        });
+
+      var mainCall = evidence.then(function () {
+        /* ── 第四站 M4:解读本身 ──────────────────────────────────────────
+           ⚠️ `role:"m4"` 不是可选的。没有它,服务端会落到 default 分支去装配
+           老的那整套 —— 那条分支现在直接 400,但这里仍然写死,因为
+           **「忘了带 role」和「故意走老路」在线上长得一模一样**。 */
+        return makeStreamComplete({
+          role: "m4", product: product, model: CONFIG.mainModel,
+          mode: mode, temperature: temperature
+          // No max_tokens: a reading's output budget is the server's to set, and a
+          // magic number here was driving the model from the least trustworthy place.
+        })(nodePayload({ m3: node.m3, messages: messages }), opts.onDelta);
+      });
 
       return mainCall.then(function (reading) {
         // Step 3.5: deterministic board-facts cross-check (free, no API call)
@@ -457,6 +582,20 @@
           };
         });
       });
+      }); // ← M1 的 then:四节点的第一站跑完才摆角色(用神由它的 db= 决定)
+    }).catch(function (e) {
+      /* 危机硬停从任意一站抛上来 —— 它是**答案**,按解读返回,不是错误。
+         ⚠️ 服务端在这条路上已经把免费额度还回去了、也不收费,所以这里
+         什么都不用再算,只要**不把它当失败**。 */
+      if (e && e.crisis) {
+        /* ⚠️ 也要送进 onDelta。读的人盯着的是那块正在流的区域;只 resolve 不喂
+           这一路,求助信息要等整轮结束才画得出来 —— 而这一路上「等一下」
+           是这个产品最不该做的事。危机现在停在 M1(非流式),所以这一喂
+           不是多余的:没有它,那块区域一个字都不会出现。 */
+        if (typeof opts.onDelta === "function") { try { opts.onDelta(e.text, e.text); } catch (x) {} }
+        return { source: "router", route: "crisis", reading: e.text, verdict: "crisis" };
+      }
+      throw e;
     });
   }
 
@@ -471,7 +610,6 @@
     configure: configure,
     interpret: interpretWithRouter,
     analyzeCosts: analyzeCosts,
-    buildExperienceEnvelope: buildExperienceEnvelope,
     canStream: canStream,
     CONFIG: CONFIG
   };

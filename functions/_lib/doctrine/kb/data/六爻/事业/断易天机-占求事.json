@@ -1,0 +1,96 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "断易天机",
+  "chapter": "占求事第十三",
+  "chapter_en": "Chapter 13: Divining for an undertaking",
+  "ranges": {"断易天机": [2322, 2344]},
+  "units": [
+    {
+      "id": "LY.CAREER.DYTJ.47",
+      "topic": "取象",
+      "chapter": "占求事第十三",
+      "chapter_en": "Chapter 13: Divining for an undertaking",
+      "title": "鬼谷辨爻法·占求事：初心事、二身事、三家事、四人事、五官事、六国事",
+      "rule": {
+        "yi": "占求事（谋事），按鬼谷子的爻位法：初爻是心里的事，二爻是自身的事，三爻是家里的事，四爻是人事往来，五爻是官府的事，六爻是国家的事。",
+        "en": "In divining an undertaking, by the Guigu line-position method the first line is the matter of the heart, the second a personal matter, the third a household matter, the fourth dealings with people, the fifth a matter of the officials and the sixth a matter of the state."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2322, 2325],
+          "zh": ["鬼谷辨爻法", "初爻二爻三爻四爻五爻六爻", "心事身事家事人事官事国事"],
+          "yi": ["鬼谷子的爻位法", "从初爻数到六爻，依次是：", "心里的事、自身的事、家里的事、人事往来、官府的事、国家的事"],
+          "en": ["The Guigu method of the line positions", "The first, second, third, fourth, fifth and sixth lines are in order:", "matter of the heart, personal matter, household matter, dealings with people, matter of officials, matter of the state"] }
+      ],
+      "see": ["LY.CAREER.DYTJ.01", "LY.CAREER.DYTJ.33"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.48",
+      "topic": "成否",
+      "chapter": "占求事第十三",
+      "chapter_en": "Chapter 13: Divining for an undertaking",
+      "title": "杜氏占求事歌：求事先看内卦，内刚柔克外所求通；内爻无气哪能共、世应空亡身心不同；内外相生俱有气事皆成就荷天公",
+      "rule": {
+        "yi": "谋事，先看内卦：是阳卦还是阴卦；内卦克外卦，所求就通，外卦克内卦，难成；内卦的爻无气，即使外卦旺相，也不能共事、所求终不遂心；世、应空亡，身与心相违，与人谋事也难称意；内外卦相生、又都有气，事情都成就，像得到天公的庇佑。",
+        "en": "In planning a matter, first look at the inner trigram, whether it is a yang trigram or a yin one; if the inner controls the outer, what is sought goes through, and if the outer controls the inner it is hard to accomplish; if the lines of the inner trigram have no qi, then even if the outer is strong one cannot work together and what is sought is in the end not as one wishes; with the Self and the Other Void, body and heart are at odds, and in planning a matter with others it is hard to get what one wants; with inner and outer generating each other and both with qi, all matters are accomplished, as if blessed by Heaven."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2329, 2329],
+          "zh": ["求事先看内卦中（1），", "刚柔克外所求通（2），", "内爻无气哪能共（3），", "空处身心亦不同（4）。", "内外相生俱有气（5），", "事皆成就荷天公（6）。"],
+          "yi": ["求事先看内卦里的情形（1）；", "内卦的刚柔去克外卦，所求就通（2）；", "内卦的爻无气，哪里能共事（3）；", "落空的地方，身与心也不一致（4）。", "内外相生，又都有气（5），", "事情都成就，承蒙天公庇佑（6）。"],
+          "en": ["In seeking a matter, first look into the inner trigram (1);", "if its hardness or softness controls the outer, what is sought goes through (2);", "if the inner lines have no qi, how can one work together (3);", "in a void place, body and heart too are not as one (4).", "inner and outer generating each other and both with qi (5),", "all matters are accomplished, thanks to the blessing of Heaven (6)."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2332, 2332],
+          "zh": ["（1）求事当先看内卦，是阳卦还是阴卦。。"],
+          "yi": ["（1）求事应当先看内卦，是阳卦还是阴卦。"],
+          "en": ["(1) In seeking a matter one should first look at the inner trigram, whether it is a yang trigram or a yin one."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2333, 2333],
+          "zh": ["（2）若内卦克外卦，则所求可成。", "若外卦克内卦，则主难成。"],
+          "yi": ["（2）如果内卦克外卦，所求就能成；", "如果外卦克内卦，就主难成。"],
+          "en": ["(2) If the inner trigram controls the outer, what is sought can be accomplished;", "if the outer trigram controls the inner, it means hard to accomplish."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2334, 2334],
+          "zh": ["（3）若内卦无气，即使外卦旺相，所求终不能遂心。"],
+          "yi": ["（3）如果内卦无气，即使外卦旺相，所求终究不能遂心。"],
+          "en": ["(3) If the inner trigram has no qi, then even if the outer trigram is strong, what is sought cannot in the end be as one wishes."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2335, 2335],
+          "zh": ["（4）若世应空亡，主身与心违，与人谋事，也难如心称意。"],
+          "yi": ["（4）如果世、应空亡，主身与心相违，与人谋事，也难如心称意。"],
+          "en": ["(4) If the Self and the Other are Void, body and heart are at odds, and in planning a matter with others it is hard to get what one wants."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2336, 2336],
+          "zh": ["（5）内外卦相生，有气则吉利。", "如风水涣卦之类是也。"],
+          "yi": ["（5）内外卦相生，有气就吉利。", "如风水涣卦这一类就是。"],
+          "en": ["(5) Inner and outer trigrams generating each other with qi is auspicious.", "The hexagram Huan (wind over water) and the like are of this kind."] },
+        { "by": "断易天机注", "book": "断易天机", "range": [2337, 2337],
+          "zh": ["（6）谋事成就，如得天公庇佑。"],
+          "yi": ["（6）谋事成就，好像得到天公的庇佑。"],
+          "en": ["(6) A planned matter is accomplished as if blessed by Heaven."] }
+      ],
+      "note": {
+        "yi": "「求事」指谋求办成一件事，不限于求官。「杜氏」是这首歌的作者，断易天机没有交代是谁。",
+        "en": "'Seeking a matter' means working to get a thing done and is not limited to seeking office. 'Master Du' is named as the author of the song, and the Duanyi Tianji does not say who he is."
+      },
+      "see": ["LY.CAREER.DYTJ.44"]
+    },
+    {
+      "id": "LY.CAREER.DYTJ.49",
+      "topic": "成否",
+      "chapter": "占求事第十三",
+      "chapter_en": "Chapter 13: Divining for an undertaking",
+      "title": "经验云·出行谒贵及寻人：兄鬼交重不可亲，子旺财明须吉利，父兴既去又回程",
+      "rule": {
+        "yi": "出行、谒见贵人以及寻人：兄、鬼交重发动，不可亲近；子孙旺、财爻明，一定吉利；父母兴动，即使去了也会又回来。",
+        "en": "For travelling, calling on a noble, or looking for someone: with Peer and Pressure moving heavily one cannot get close; with Output strong and Wealth clear it is surely auspicious; with Resource rising, one who has gone will come back again."
+      },
+      "quotes": [
+        { "by": "经", "book": "断易天机", "range": [2344, 2344],
+          "zh": ["出行谒贵及寻人，", "兄鬼交重不可亲，", "子旺财明须吉利，", "父兴既去又回程。"],
+          "yi": ["出行、谒见贵人以及寻人，", "兄、鬼交重发动，不可亲近；", "子孙旺、财爻明，一定吉利；", "父母兴动，即使去了也会又回来。"],
+          "en": ["For travelling, calling on a noble, or looking for someone,", "with Peer and Pressure moving heavily, one cannot get close;", "with Output strong and Wealth clear, it is surely auspicious;", "with Resource rising, one who has gone will come back again."] }
+      ],
+      "note": {
+        "yi": "「经验云」是断易天机引来的一条经验语，没有交代出处。",
+        "en": "'Jingyan yun' (experience says) is an empirical saying cited in the Duanyi Tianji without a source."
+      },
+      "see": ["LY.CAREER.HZL.03", "LY.CAREER.HZL.04"]
+    }
+  ]
+}

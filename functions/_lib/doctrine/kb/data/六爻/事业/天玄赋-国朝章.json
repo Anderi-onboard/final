@@ -1,0 +1,468 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "天玄赋",
+  "chapter": "国朝章",
+  "chapter_en": "The state and the court",
+  "ranges": {"卜筮大全": [4883, 4945]},
+  "units": [
+    {
+      "id": "LY.CAREER.TXF.19",
+      "topic": "国朝",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "五爻为天子，近亲贤而远去奸邪：占国家以本宫为国、世为君，又云五爻为天子；带财福青龙贵人为仁君，临太岁月建勾陈为守正之君，加大杀白虎为暴虐之君，带咸池为淫乱之君，加劫杀居位不久；与吉神相生合必亲贤，动克凶神必远小人；与凶杀相生合则奸佞相辅",
+      "rule": {
+        "yi": "占国家，以本宫为国、世为君；又说五爻是天子。五爻带财、福、青龙、贵人的，是仁君；临太岁、月建、勾陈的，威震天下，是守正之君；加大杀、白虎的，是暴虐之君；带咸池的，是淫乱之君；加劫杀的，在位不久。五爻与吉神相生相合，必能亲近贤者；吉神来克它，必有贤臣辅佐；它动而克凶神，必能远小人、去奸邪。若与凶杀相生相合，或凶杀发动来克，辅佐的宰相就不得其人，都是奸佞在辅佐，君爻纵然遇上吉神，也不能去掉奸佞。",
+        "en": "In divining for the state, the palace of the hexagram is the state and the Self is the lord; it is also said that the fifth line is the Son of Heaven. A fifth line carrying Wealth, Output, the Azure Dragon or the Noble is a benevolent lord; on Tai Sui, the Month or Hook Earth it shakes the world and is a lord who keeps to the right; with the Great Baleful Spirit or the White Tiger it is a tyrant; with Xianchi, a debauched lord; with the Robbery Killing, a lord who will not hold his seat long. If it is generated or combined by auspicious spirits it will surely draw near the worthy; if an auspicious spirit comes to control it, there will be worthy ministers to assist; if it moves and controls a baleful spirit it will surely keep the petty at a distance and remove the wicked. If it is generated or combined by baleful spirits, or baleful spirits move to control it, the chancellors are the wrong men and all are flatterers assisting, and even if the lord's line meets an auspicious spirit it cannot remove the flatterers."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4885, 4885],
+          "zh": ["五爻为天子，", "近亲贤而远去奸邪；"],
+          "yi": ["五爻是天子，", "他亲近贤人而远远去掉奸邪；"],
+          "en": ["The fifth line is the Son of Heaven;", "he draws near the worthy and puts the wicked far away;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4886, 4886],
+          "zh": ["凡占国家：以本宫为国，世为君。", "又云：五爻为天子。"],
+          "yi": ["凡是占国家：以本宫为国，世为君。", "又说：五爻是天子。"],
+          "en": ["In every divination for the state: the palace of the hexagram is the state and the Self is the lord.", "It is also said: the fifth line is the Son of Heaven."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4887, 4887],
+          "zh": ["若带财福、青龙、贵人者，仁君也。", "临太岁、月建、勾陈者，威震天下，守正之君。", "加大杀、白虎，暴虐之君。", "带咸池，淫乱之君。", "加劫杀，居位不久。"],
+          "yi": ["如果带着财、福、青龙、贵人，是仁君。", "落在太岁、月建、勾陈上的，威震天下，是守正之君。", "加大杀、白虎的，是暴虐之君。", "带咸池的，是淫乱之君。", "加劫杀的，在位不久。"],
+          "en": ["If it carries Wealth, Output, the Azure Dragon or the Noble, he is a benevolent lord.", "If it stands on Tai Sui, the Month or Hook Earth, he shakes the world and is a lord who keeps to the right.", "With the Great Baleful Spirit or the White Tiger added, he is a tyrant.", "Carrying Xianchi, he is a debauched lord.", "With the Robbery Killing added, he will not hold his seat long."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4888, 4888],
+          "zh": ["若与吉神相生相合，必能亲近贤者。", "若吉神来克，必有贤臣相辅。", "若动克凶神，必能远小人，去奸邪。"],
+          "yi": ["如果与吉神相生相合，必能亲近贤者。", "如果吉神来克它，必有贤臣辅佐。", "如果它动而克凶神，必能远离小人、去除奸邪。"],
+          "en": ["If it is generated or combined by auspicious spirits, he will surely draw near the worthy.", "If an auspicious spirit comes to control it, there will surely be worthy ministers to assist.", "If it moves and controls a baleful spirit, he will surely keep the petty at a distance and remove the wicked."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4889, 4889],
+          "zh": ["或与凶杀相生相合，及凶杀动来相克，辅相不得其人，皆奸佞相辅。", "君爻纵遇吉神，亦不能去奸佞。"],
+          "yi": ["或者与凶杀相生相合，以及凶杀发动来克它，辅佐的宰相就不得其人，都是奸佞在辅佐。", "君爻纵然遇上吉神，也不能去掉奸佞。"],
+          "en": ["Or if it is generated or combined by baleful spirits, or baleful spirits move to control it, the chancellors are the wrong men, and all are flatterers assisting.", "Even if the lord's line meets an auspicious spirit, it cannot remove the flatterers."] }
+      ],
+      "see": ["LY.CAREER.HZL.07", "LY.CAREER.HJC.64", "LY.CAREER.YY.35"]
+    },
+    {
+      "id": "LY.CAREER.TXF.20",
+      "topic": "国朝",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "四位列公侯，上忠君而下安黎庶：三公九卿皆在四爻；临吉神旺相克世为敢言敢谏之臣，加鬼杀旺相克世为欺君僭上之辈；四爻与世相生为阿谀之臣；四爻动生初爻有忧民之心、初爻生四爻民有仰慕、四爻加凶杀克初爻民受无辜之害、初爻动克四爻民视如仇；四爻生合二爻能招贤纳士，生克三爻能任用百官",
+      "rule": {
+        "yi": "三公九卿的位置都在四爻。四爻临吉神、旺相而克世，是敢言敢谏的社稷之臣；加鬼、杀、旺相而克世，是欺君僭上、蒙蔽君主把持权柄的人；世值吉神，大概没有大害。四爻与世相生，是阿谀奉承的臣子，纵然带吉神也不能规谏君主的过错，带凶神也害不了君主的正道。四爻动生初爻，必有忧虑百姓之心；初爻生四爻，百姓有仰慕之意；四爻加凶杀克初爻，百姓受无辜之害；初爻发动克四爻，百姓看他如同仇敌。四爻生合二爻，必能招揽贤人、接纳士人；二爻生四爻，士人有景仰羡慕之心；四爻生克三爻，必能任用百官、进用贤人罢退不肖之人。",
+        "en": "The places of the Three Councillors and the Nine Ministers are all on the fourth line. If it stands on an auspicious spirit, strong, and controls the Self, he is a pillar of the state who dares to speak and to remonstrate; if Pressure and baleful spirits are added, strong, and it controls the Self, he is one who deceives the lord, oversteps, keeps his master in the dark and seizes power; if the Self is on an auspicious spirit there is probably no great harm. If the fourth line and the Self generate each other, he is a flattering minister, who even with an auspicious spirit cannot admonish the lord's faults or set right his errors, and with a baleful spirit cannot damage the lord's uprightness or ruin his virtue. The fourth line moving to generate the first, he surely has a heart that grieves for the people; the first generating the fourth, the people look up to him; the fourth with a baleful spirit controlling the first, the people suffer undeserved harm; the first moving to control the fourth, the people regard him as a bitter enemy. The fourth generating or combining the second, he can surely call in the worthy and receive scholars; the second generating the fourth, the scholars admire him; the fourth generating or controlling the third, he can surely employ the hundred officials, advancing the worthy and dismissing the unworthy."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4891, 4891],
+          "zh": ["四位列公侯，", "上忠君而下安黎庶。"],
+          "yi": ["四爻列为公侯，", "对上忠于君，对下安定百姓。"],
+          "en": ["The fourth place is ranked among dukes and marquises,", "loyal to the lord above and bringing peace to the people below."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4892, 4892],
+          "zh": ["三公九卿之位，皆在四爻。", "若临吉神旺相克世，乃是敢言敢谏，社稷之臣也。", "若加鬼杀旺相克世，乃是欺君僭上，昧主把权之辈也。", "若世值吉神，庶无大害。", "四爻若与世相生，阿谀之臣也；", "纵带吉神，亦不能规君之过，正君之失；", "带凶神，亦不能害君之正，丧君之德。"],
+          "yi": ["三公九卿的位置，都在四爻。", "如果临吉神、旺相而克世，是敢直言敢规谏、社稷之臣。", "如果加鬼、杀、旺相而克世，是欺君僭上、蒙蔽君主而把持权柄的一类人。", "如果世值吉神，大概没有大害。", "四爻如果与世相生，是阿谀奉承的臣子；", "纵然带吉神，也不能规谏君主的过错、纠正君主的失误；", "带凶神，也害不了君主的正道、败不了君主的德。"],
+          "en": ["The places of the Three Councillors and the Nine Ministers are all on the fourth line.", "If it stands on an auspicious spirit, strong, and controls the Self, he is one who dares to speak and remonstrate, a pillar of the state.", "If Pressure and baleful spirits are added, strong, and it controls the Self, he is of those who deceive the lord, overstep their place, keep their master in the dark and seize power.", "If the Self is on an auspicious spirit, there is probably no great harm.", "If the fourth line and the Self generate each other, he is a flattering minister;", "even with an auspicious spirit he cannot admonish the lord's faults or set right his errors;", "and with a baleful spirit he cannot damage the lord's uprightness or ruin his virtue."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4893, 4893],
+          "zh": ["四爻动生初爻，必有忧民之心；", "初爻生四爻，民有仰慕之意。", "四爻加凶杀克初爻，民受无辜之害；", "初爻动克四爻，民视之如仇仇。"],
+          "yi": ["四爻发动生初爻，必有忧虑百姓之心；", "初爻生四爻，百姓有仰慕之意。", "四爻加凶杀克初爻，百姓受无辜的伤害；", "初爻发动克四爻，百姓看他如同仇敌。"],
+          "en": ["The fourth line moving to generate the first, he surely has a heart that grieves for the people;", "the first generating the fourth, the people look up to him in admiration.", "The fourth with a baleful spirit controlling the first, the people suffer undeserved harm;", "the first moving to control the fourth, the people regard him as a bitter enemy."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4894, 4894],
+          "zh": ["四爻生合二爻，必能招贤纳士；", "二爻生四爻，士有景羡之心。", "四爻生克三爻，必能任用百官，进贤退不肖。", "以上细心详察，无不应验。"],
+          "yi": ["四爻生合二爻，必能招揽贤人、接纳士人；", "二爻生四爻，士人有景仰羡慕之心。", "四爻生克三爻，必能任用百官，进用贤人、罢退不肖之人。", "以上要细心详察，没有不应验的。"],
+          "en": ["The fourth generating or combining the second, he can surely call in the worthy and receive scholars;", "the second generating the fourth, the scholars look up to him with admiration.", "The fourth generating or controlling the third, he can surely employ the hundred officials, advancing the worthy and dismissing the unworthy.", "Examine the above with care and detail, and none fails to be confirmed."] }
+      ],
+      "see": ["LY.CAREER.YY.45", "LY.CAREER.HZL.07", "LY.CAREER.YM.04"]
+    },
+    {
+      "id": "LY.CAREER.TXF.21",
+      "topic": "国朝",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "子孙临大杀，秦扶苏中赵相之谋：占国家以子孙为国嗣，得日辰扶合或动爻相生或临月建旺相及加青龙贵人则东宫已立他日登位无改易；子孙带咸池非正宫所生；福德临劫杀大杀恐有变易；更被四爻伤克必有赵高谋扶苏之事；卦无子孙无国嗣",
+      "rule": {
+        "yi": "占国家，以子孙为国家的继承人。子孙得日辰扶助相合，或动爻来生它，或落在月建上旺相，以及加青龙、贵人，如果东宫（太子）已立，将来要登宝位，就不会再有更改；子孙带咸池，不是正宫所生；福德落在劫杀、大杀上，恐怕有变更，再被四爻伤克，必有赵高谋害扶苏那样的事；卦里没有子孙，就没有国家的继承人。",
+        "en": "In divining for the state, Output stands for the heir to the state. If Output gets support and combination from the Day, or a moving line generates it, or it stands on the Month and is strong, or the Azure Dragon or the Noble is added, then if the Eastern Palace (the crown prince) has already been established, when he is due to ascend the throne there will be no further change; if Output carries Xianchi, he is not born of the principal consort; if Output stands on the Robbery Killing or the Great Baleful Spirit there may be a change, and if it is further injured and controlled by the fourth line there will surely be a matter like Zhao Gao's plot against Fusu; if there is no Output in the hexagram, there is no heir to the state."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4896, 4896],
+          "zh": ["子孙临大杀，秦扶苏中赵相之谋；"],
+          "yi": ["子孙落在大杀上，就像秦国的扶苏中了赵相（赵高）的奸谋；"],
+          "en": ["Output on the Great Baleful Spirit: like Fusu of Qin falling into the plot of the chancellor Zhao;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4897, 4897],
+          "zh": ["占国家，以子孙为国嗣。", "若得日辰扶合，或动爻相生，或临月建旺相，及加青龙、贵人者，若东宫已立，他日拟登宝位，更无改易。"],
+          "yi": ["占国家，以子孙为国家的继承人。", "如果得到日辰扶助相合，或者动爻来生它，或者落在月建上旺相，以及加青龙、贵人，若东宫已立，将来要登宝位，就不会再有更改。"],
+          "en": ["In divining for the state, Output stands for the heir to the state.", "If it gets support and combination from the Day, or a moving line generates it, or it stands on the Month and is strong, or the Azure Dragon or the Noble is added, then if the Eastern Palace (the crown prince) has already been established, when he is due to ascend the throne there will be no further change."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4898, 4898],
+          "zh": ["子孙若带咸池，非正宫所生。", "福德临劫杀、大杀，恐有变易。", "更被四爻伤克，必有赵高谋扶苏之事。"],
+          "yi": ["子孙如果带咸池，不是正宫所生。", "福德落在劫杀、大杀上，恐怕有变更。", "再被四爻伤克，必有赵高谋害扶苏那样的事。"],
+          "en": ["If Output carries Xianchi, he is not born of the principal consort.", "If Output stands on the Robbery Killing or the Great Baleful Spirit, there may be a change.", "If it is further injured and controlled by the fourth line, there will surely be a matter like Zhao Gao's plot against Fusu."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4899, 4899],
+          "zh": ["卦无子孙，无国嗣。"],
+          "yi": ["卦里没有子孙，就没有国家的继承人。"],
+          "en": ["If there is no Output in the hexagram, there is no heir to the state."] }
+      ],
+      "see": ["LY.CAREER.HZL.08", "LY.CAREER.YM.08", "LY.CAREER.HJC.75"]
+    },
+    {
+      "id": "LY.CAREER.TXF.22",
+      "topic": "国朝",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "君位合咸池，唐玄宗受杨妃之祸：世爻五爻带咸池玄武则上必荒淫；卦有咸池而被君爻克则虽有西施之美无害国政；应爻加咸池飞入五爻旺相兼世爻空亡必有武氏乱唐之患；加吉神天下庶几安定更带凶神四海必乱；君位合咸池带杀旺相必有女祸",
+      "rule": {
+        "yi": "世爻和五爻如果带咸池、玄武，在上的君主必定荒淫；卦里有咸池却被君爻克住，虽有西施那样的美人，也无害于国政；应爻加咸池、飞入五爻旺相，又加上世爻空亡，必有像武氏乱唐那样的祸患，以后必定见到女主治理天下。再加吉神，天下大概可以安定，再带凶神，四海必乱。君位如果合咸池、带杀、旺相，必有女祸，就像唐皇与杨贵妃的故事。",
+        "en": "If the Self line and the fifth line carry Xianchi and the Dark Tortoise, the ruler above is sure to be dissolute; if the hexagram has Xianchi but it is controlled by the lord's line, then though there is a beauty like Xishi it does no harm to the government; if the Other line carries Xianchi and flies into the fifth line, strong, and the Self line is also Void, there will surely be the calamity of a Lady Wu throwing Tang into disorder, and later a female ruler will surely rule the world. If an auspicious spirit is added the world will perhaps be at peace, and if a baleful spirit is added the four seas are sure to be in disorder. If the lord's place combines with Xianchi and carries a baleful spirit, strong, there is sure to be calamity through a woman, like the story of the Tang emperor and Yang Guifei."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4896, 4896],
+          "zh": ["君位合咸池，唐玄宗受杨妃之祸。"],
+          "yi": ["君位与咸池相合，像唐玄宗遭了杨贵妃之祸。"],
+          "en": ["The lord's place combining with Xianchi: like Tang Xuanzong who suffered the calamity of Consort Yang."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4900, 4900],
+          "zh": ["世爻与五爻，若带咸池玄武，上必荒淫。", "卦有咸池，却被君爻相克，虽有西施之美，无害于国政。", "应爻加咸池，飞入五爻旺相，又兼世爻空亡，必有武氏乱唐之患，后必当见女主治天下。"],
+          "yi": ["世爻和五爻，如果带咸池、玄武，在上的君主必定荒淫。", "卦里有咸池，却被君爻克住，虽有西施那样的美人，也无害于国政。", "应爻加咸池，飞入五爻旺相，又加上世爻空亡，必有像武氏乱唐那样的祸患，以后必定会见到女主治理天下。"],
+          "en": ["If the Self line and the fifth line carry Xianchi and the Dark Tortoise, the ruler above is sure to be dissolute.", "If the hexagram has Xianchi but it is controlled by the lord's line, then though there is a beauty like Xishi it does no harm to the government.", "If the Other line carries Xianchi and flies into the fifth line, strong, and the Self line is also Void, there will surely be the calamity of a Lady Wu throwing Tang into disorder, and later a female ruler will surely rule the world."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4901, 4901],
+          "zh": ["若加吉神，天下庶几安定。", "更带凶神，四海必乱。"],
+          "yi": ["如果再加吉神，天下大概可以安定。", "再带凶神，四海必乱。"],
+          "en": ["If an auspicious spirit is added, the world will perhaps be at peace.", "If a baleful spirit is added too, the four seas are sure to be in disorder."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4902, 4902],
+          "zh": ["君位若合咸池，带杀旺相，必有女祸。", "如唐皇之于杨贵妃故事也。"],
+          "yi": ["君位如果合咸池，又带杀、旺相，必有女祸。", "就像唐皇与杨贵妃的故事。"],
+          "en": ["If the lord's place combines with Xianchi and carries a baleful spirit, strong, there is sure to be calamity through a woman.", "It is like the story of the Tang emperor and Yang Guifei."] }
+      ],
+      "see": ["LY.CAREER.YY.37", "LY.CAREER.YM.06"]
+    },
+    {
+      "id": "LY.CAREER.TXF.23",
+      "topic": "国朝",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "福神克世，重观折槛之朱云：子孙发动伤克世爻主有直臣奏事如朱云折槛，与日辰相生合上必允其奏、刑冲则龙颜大怒终遭贬责；子孙临太岁月建动克四爻而生五爻、子孙旺日必有御史劾权臣；四爻鬼杀旺相不受克须防有变",
+      "rule": {
+        "yi": "福神（子孙）克世，又见到折槛直谏的朱云。子孙发动、伤克世爻，主有正直的大臣上奏，很像朱云折槛的风骨；若与日辰相生相合，上面一定准他的奏章；与日辰刑冲，皇帝大怒，终究遭到贬责。子孙落在太岁、月建上，发动克四爻、生五爻，在子孙旺的日子，必有御史弹劾权臣；四爻的鬼、杀旺相而不受克，要防备有变。",
+        "en": "Output controlling the Self, one sees again Zhu Yun who broke the railing. If Output moves and injures and controls the Self line, there is an upright minister presenting a memorial, much like Zhu Yun breaking the railing; if it is generated or combined by the Day, the sovereign will surely grant the memorial, and if it is punished or clashed by the Day the dragon countenance is greatly angered and he is in the end demoted and reprimanded. If Output stands on Tai Sui or the Month and moves to control the fourth line and generate the fifth, on a day when Output is strong there will surely be a censor impeaching a powerful minister; if the fourth line's ghost and baleful spirit are strong and not controlled, guard against a change."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4904, 4904],
+          "zh": ["福神克世，重观折槛之朱云；"],
+          "yi": ["福神克世，再看到折槛进谏的朱云；"],
+          "en": ["Output controlling the Self, one sees again Zhu Yun who broke the railing;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4905, 4905],
+          "zh": ["子孙发动，伤克世爻，主有直臣奏事，颇类朱云折槛之风。", "若与日辰相生合，上必允其奏；", "与日辰刑冲，龙颜大怒，终遭贬责。"],
+          "yi": ["子孙发动，伤克世爻，主有正直的大臣上奏，很像朱云折槛的风骨。", "如果与日辰相生相合，上面一定准他的奏章；", "与日辰刑冲，皇帝大怒，终究遭到贬责。"],
+          "en": ["If Output moves and injures and controls the Self line, there is an upright minister presenting a memorial, much like the manner of Zhu Yun breaking the railing.", "If it is generated or combined by the Day, the sovereign will surely grant his memorial;", "if it is punished or clashed by the Day, the dragon countenance is greatly angered and he is in the end demoted and reprimanded."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4906, 4906],
+          "zh": ["子孙临太岁、月建动克四爻，而生五爻，子孙旺日，必有御史劾权臣。", "四爻鬼杀旺相不受克，须防有变。"],
+          "yi": ["子孙落在太岁、月建上，发动克四爻、生五爻，在子孙旺的日子，必有御史弹劾权臣。", "四爻的鬼、杀旺相而不受克，要防备有变。"],
+          "en": ["If Output stands on Tai Sui or the Month and moves to control the fourth line and generate the fifth, on a day when Output is strong there will surely be a censor impeaching a powerful minister.", "If the fourth line's ghost and baleful spirit are strong and not controlled, guard against a change."] }
+      ],
+      "note": {
+        "yi": "朱云是汉成帝时的直臣，当面弹劾权贵，被拖下殿时攀住殿槛，槛折；「折槛」就是这个典故，注文没有解释。",
+        "en": "Zhu Yun was an upright minister under Emperor Cheng of Han who impeached a powerful man to his face and, as he was dragged from the hall, clung to the railing until it broke; 'breaking the railing' is that allusion, and the commentary does not explain it."
+      },
+      "see": ["LY.CAREER.EL.89", "LY.CAREER.HJC.26", "LY.CAREER.ZS.33"]
+    },
+    {
+      "id": "LY.CAREER.TXF.24",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "将曜加刑，再睹登坛之韩信：寅午戌午、巳酉丑酉、申子辰子、亥卯未卯为将星；将星加白虎羊刃生世必得强将，带贵人青龙生世得忠良之将，加劫杀动来克世须防弑君之祸（此爻将星名为刺客）；以上三节皆在旺相年月日可见",
+      "rule": {
+        "yi": "将星加刑，再看到登坛拜将的韩信。将星：寅午戌的将星是午，巳酉丑是酉，申子辰是子，亥卯未是卯。将星加白虎、羊刃而生世，必得强将；带贵人、青龙而生世，会得忠良的将领；加劫杀、发动来克世，要防弑君之祸，这样的将星爻名叫刺客。以上三节，都在旺相的年、月、日可以看到应验。",
+        "en": "The General star with punishment added: one sees again Han Xin ascending the altar. The General star: for Yin, Wu and Xu it is Wu; for Si, You and Chou, You; for Shen, Zi and Chen, Zi; for Hai, Mao and Wei, Mao. If the General star carries the White Tiger or the Goat Blade and generates the Self, a strong general is sure to be found; if it carries the Noble or the Azure Dragon and generates the Self, a loyal and good general is to be had; if it carries the Robbery Killing and moves to control the Self, guard against the calamity of regicide, and such a General-star line is called an assassin. The three sections above can all be seen in strong years, months and days."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4904, 4904],
+          "zh": ["将曜加刑，再睹登坛之韩信。"],
+          "yi": ["将星加上刑，再看到登坛拜将的韩信。"],
+          "en": ["The General star with punishment added: one sees again Han Xin ascending the altar."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4907, 4907],
+          "zh": ["寅午戌，午是将星；", "巳酉丑，酉是将星；", "申子辰，子是将星；", "亥卯未，卯是将星。", "若将加白虎、羊刃生世，必得强将。", "将星若带贵人、青龙生世，当得忠良之将。", "将星若加劫杀，动来克世，须防弑君之祸。", "此爻将星，名为刺客。"],
+          "yi": ["寅午戌这一组，将星是午；", "巳酉丑这一组，将星是酉；", "申子辰这一组，将星是子；", "亥卯未这一组，将星是卯。", "如果将星加白虎、羊刃而生世，必得强将。", "将星如果带贵人、青龙而生世，会得到忠良的将领。", "将星如果加劫杀，发动来克世，要防备弑君之祸。", "这样的将星爻，名叫刺客。"],
+          "en": ["For Yin, Wu and Xu, Wu is the General star;", "for Si, You and Chou, You is the General star;", "for Shen, Zi and Chen, Zi is the General star;", "for Hai, Mao and Wei, Mao is the General star.", "If the General star carries the White Tiger or the Goat Blade and generates the Self, a strong general is sure to be found.", "If the General star carries the Noble or the Azure Dragon and generates the Self, a loyal and good general is to be had.", "If the General star carries the Robbery Killing and moves to control the Self, guard against the calamity of regicide.", "Such a General-star line is called an assassin."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4908, 4908],
+          "zh": ["以上三节，皆在旺相年月日可见也。"],
+          "yi": ["以上三节，都在旺相的年、月、日可以看到应验。"],
+          "en": ["The three sections above can all be seen in strong years, months and days."] }
+      ],
+      "see": ["LY.CAREER.HJC.73", "LY.CAREER.EL.35"]
+    },
+    {
+      "id": "LY.CAREER.TXF.25",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "金爻带鬼一方有兵革之兴、土位逢凶四海尽干戈之难：大杀临金鬼旺动必兴兵革，土鬼带杀发动旺相四海皆乱；有杀无鬼克世亦凶、有鬼无杀虽凶弗咎；有神制杀鬼动无妨；鬼空杀旺纵乱无成、鬼旺杀空虽凶无害；鬼带劫杀或化兄弟为劫财之贼、加玄武为阴私暗害之贼；蛇虎不动不为急迫；以生旺克害何方断方向",
+      "rule": {
+        "yi": "大杀落在金鬼上、旺而发动，必起兵革，世去克它大概无大事，它克世必凶；土鬼带杀、发动旺相，四海皆乱，克世必有攻城的贼寇。卦中有杀无鬼，克世也凶；有鬼无杀，虽凶无咎；有神制住杀，鬼动也无妨；鬼位休囚，财兴有害；鬼空杀旺，纵乱也成不了；鬼旺杀空，虽凶无害。鬼带劫杀、或化为兄弟，不过是劫财的盗贼；加玄武，是暗中阴私加害的贼；卦中螣蛇、白虎不动，纵有大杀也不急迫；若官鬼和恶杀一起发动，实在是大害；再看生旺克害落在哪个方位，才可决断。",
+        "en": "A Metal Pressure line carrying a baleful spirit: war breaks out in one quarter; an Earth place meeting ill: weapons and spears everywhere under heaven. If the Great Baleful Spirit stands on a Metal Pressure line that is strong and moving, war is sure to break out; if the Self controls it there is probably no great matter, and if it controls the Self it is surely bad. If an Earth Pressure line carries a baleful spirit and is strong and moving, the four seas are all in chaos, and controlling the Self there will surely be bandits assaulting cities. If the hexagram has a baleful spirit but no Pressure, controlling the Self is also bad; with Pressure but no baleful spirit, though bad it brings no fault; if a spirit restrains the baleful spirit, a moving Pressure line does no harm; if the Pressure place is at rest or trapped, a thriving Wealth line does harm; with Pressure void and the baleful spirit strong, even a revolt does not succeed; with Pressure strong and the baleful spirit void, though bad it does no harm. If Pressure carries the Robbery Killing, or turns into Peer, it is no more than robbers who rob for wealth; if the Dark Tortoise is added, they are secret and covert harming bandits; if the Snake and the Tiger in the hexagram do not move, even with the Great Baleful Spirit it is not urgent; if Pressure and a vicious baleful spirit move together it is truly a great harm; then see in which direction the generation, strength, control and harm fall, and only then can one decide."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4910, 4910],
+          "zh": ["金爻带鬼，一方有兵革之兴；", "土位逢凶，四海尽干戈之难。"],
+          "yi": ["金爻带着官鬼，一个地方会有兵革兴起；", "土位逢凶，四海都有干戈之难。"],
+          "en": ["A Metal line carrying Pressure: war breaks out in one quarter;", "an Earth place meeting ill: the four seas all suffer weapons and spears."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4911, 4911],
+          "zh": ["大杀若临金鬼旺动，必兴兵革。", "世克，庶无大事；", "克世，必凶。", "若土鬼带杀，发动旺相，四海皆乱；", "克世，必有攻城之贼。", "卦中有杀无鬼，克世亦凶；", "有鬼无杀，虽凶弗咎。", "有神制杀，鬼动无妨；", "鬼位休囚，财兴有害。", "鬼空杀旺，纵乱无成；", "鬼旺杀空，虽凶无害。", "若鬼带劫杀，或化为兄弟，无过是劫财之贼；", "若加玄武，是阴私暗害之贼。", "卦中蛇虎不动，纵有大杀，不为急迫。", "若并官鬼恶杀动，实为大害。", "却以生旺克害何方，方可决断。"],
+          "yi": ["大杀如果落在金鬼上、旺而发动，必定兴起兵革。", "世去克它，大概没有大事；", "它克世，必凶。", "如果土鬼带杀，发动旺相，四海都乱；", "克世，必有攻城的贼寇。", "卦中有杀无鬼，克世也凶；", "有鬼无杀，虽然凶也无咎。", "有神制住杀，鬼动也无妨；", "鬼位休囚，财旺而兴则有害。", "鬼空而杀旺，纵然作乱也成不了；", "鬼旺而杀空，虽凶也无害。", "如果鬼带劫杀，或者化为兄弟，不过是劫财的盗贼；", "如果加玄武，是暗中阴私加害的贼。", "卦中螣蛇、白虎不动，纵然有大杀，也不急迫。", "如果官鬼和恶杀一起发动，实在是大害。", "再看生旺克害落在哪个方位，才可以决断。"],
+          "en": ["If the Great Baleful Spirit stands on a Metal Pressure line that is strong and moving, war is sure to break out.", "If the Self controls it, there is probably no great matter;", "if it controls the Self, it is surely bad.", "If an Earth Pressure line carries a baleful spirit and is strong and moving, the four seas are all in chaos;", "if it controls the Self, there will surely be bandits assaulting cities.", "If the hexagram has a baleful spirit but no Pressure, its controlling the Self is also bad;", "with Pressure but no baleful spirit, though bad it brings no fault.", "If a spirit restrains the baleful spirit, a moving Pressure line does no harm;", "if the Pressure place is at rest or trapped, a thriving Wealth line does harm.", "With Pressure void and the baleful spirit strong, even if there is a revolt it does not succeed;", "with Pressure strong and the baleful spirit void, though bad it does no harm.", "If Pressure carries the Robbery Killing, or turns into Peer, it is no more than robbers who rob for wealth;", "if the Dark Tortoise is added, they are secret and covert harming bandits.", "If the Coiling Snake and the White Tiger in the hexagram do not move, even with the Great Baleful Spirit it is not urgent.", "If Pressure and a vicious baleful spirit move together, it is truly a great harm.", "Then see in which direction the generation, strength, control and harm fall, and only then can one decide."] }
+      ],
+      "see": ["LY.CAREER.EL.28", "LY.CAREER.HZL.09", "LY.CAREER.YY.52"]
+    },
+    {
+      "id": "LY.CAREER.TXF.26",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "以遏寇贼，全凭将帅专征：世为我将、应为彼帅，又以子孙为我将及先锋；子孙得地旺相将军必胜；加青龙为忠良之将、加白虎为勇悍威猛之将；持世虽有鬼无伤、旺相发动决胜千里、日辰扶拱百战百胜；所嫌父母发动不可当其锋，入墓无气虽动无伤",
+      "rule": {
+        "yi": "要遏止寇贼，全靠将帅专意出征。世是我方将领，应是对方统帅；又说子孙是我方将领和先锋。子孙得地、旺相，将军必胜；加青龙，是忠良的将领；加白虎，是勇悍威猛的将领；子孙持世，虽有鬼也无伤害；旺相发动，决胜千里之外；再得日辰扶持拱卫，有百战百胜之功。所嫌的是父母发动，即使有子孙也抵挡不了它的锋芒；若入墓、无气，虽动也无伤。",
+        "en": "To check bandits and raiders one relies wholly on a commander going out on campaign. The Self is our general and the Other their commander; another saying is that Output is our general and our vanguard. If Output is well placed and strong the general is sure to win; with the Azure Dragon added he is a loyal and good general, with the White Tiger a brave, fierce and mighty one; with Output holding the Self, even if Pressure is present there is no harm; strong and moving, victory is decided a thousand li away; and if the Day supports and gathers round it there is the merit of a hundred battles and a hundred victories. What is disliked is Resource moving, whose edge even Output cannot withstand; if it enters its tomb and has no qi, though it moves it does no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4913, 4913],
+          "zh": ["以遏寇贼，全凭将帅专征；"],
+          "yi": ["要遏止寇贼，全凭将帅专意出征；"],
+          "en": ["To check bandits and raiders, one relies wholly on a commander going out on campaign;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4914, 4914],
+          "zh": ["以世为我将，应为彼帅。", "又云：以子孙为我将，及先锋。", "子孙得地旺相，将军必胜。", "若加青龙，乃忠良之将；", "若加白虎，乃勇悍威猛之将。", "若得持世，虽有鬼亦无伤害；", "若得旺相发动，决胜千里。", "更日辰扶拱，有百战百胜之功。", "所嫌者，父母发动；", "虽有子孙，不可当其锋。", "若入墓无气，虽动无伤。"],
+          "yi": ["以世为我方的将领，应为对方的统帅。", "又说：以子孙为我方的将领以及先锋。", "子孙得地、旺相，将军必胜。", "如果加青龙，是忠良的将领；", "如果加白虎，是勇悍威猛的将领。", "如果得以持世，虽然有鬼也没有伤害；", "如果得旺相又发动，决胜千里之外。", "再得日辰扶持拱卫，有百战百胜的功勋。", "所嫌的，是父母发动；", "即使有子孙，也抵挡不了它的锋芒。", "如果入墓、无气，虽动也无伤。"],
+          "en": ["The Self is our general and the Other is their commander.", "Another saying: Output is our general and our vanguard.", "If Output is well placed and strong, the general is sure to win.", "If the Azure Dragon is added, he is a loyal and good general;", "if the White Tiger is added, he is a brave, fierce and mighty general.", "If it holds the Self, even if Pressure is present there is no harm;", "if it is strong and moving, victory is decided a thousand li away.", "And if the Day supports and gathers round it, there is the merit of a hundred battles and a hundred victories.", "What is disliked is Resource moving;", "even with Output one cannot withstand its edge.", "If it enters its tomb and has no qi, though it moves it does no harm."] }
+      ],
+      "see": ["LY.CAREER.HJC.90", "LY.CAREER.EL.35", "LY.CAREER.HZL.09"]
+    },
+    {
+      "id": "LY.CAREER.TXF.27",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "要决输赢，先察世辰相克：专征伐以世为我、应为彼；世克应我胜、应克世彼胜；世墓宜坚壁自守；世旺应入墓彼必折人丁；世空我有难、应空彼有伤；世在阴宫不宜先动、世在阳象不利后兴；世动克应我必进、应动克世他欲来；鬼爻克世他胜我、克应他欲退；鬼持世须防围困；金火持世应两家流血；世应比和皆旺两强敌手；世应相生合将帅有允和之心",
+      "rule": {
+        "yi": "要决定输赢，先看世和日辰相克的情形。专意出征讨伐，以世为我方、应为对方：世克应，我胜；应克世，对方胜；世入墓，只宜坚壁自守，不可妄动；世旺相、应入墓，对方必折损人丁；世空，我方有难；应空，对方有伤；世在阴宫，不宜先动；世在阳象，不利于后发；世动克应，我方必进；应动克世，对方要来攻；官鬼爻克世，对方胜我；官鬼爻克应，对方要退；鬼持世，要防被围困；金、火持世或应，两家流血交战；世、应比和而都旺相，是两强对手，胜败不能立刻定下，只能凭各自的所长来断；世、应相生相合，将帅有答应议和之心，士卒没有攻战之意。",
+        "en": "To decide victory or defeat, first examine how the Self and the Day control each other. In an expedition of conquest the Self is us and the Other is them: if the Self controls the Other we win, if the Other controls the Self they win; with the Self in its tomb one should only hold the walls firm and guard oneself and not move rashly; with the Self strong and the Other entering its tomb they are sure to lose men; the Self void, we are in difficulty, the Other void, they are wounded; with the Self in a yin palace one should not move first, with the Self in a yang image it is not favourable to rise later; the Self moving and controlling the Other, we are sure to advance, the Other moving and controlling the Self, they mean to come; the Pressure line controlling the Self, they beat us, controlling the Other, they wish to retreat; with Pressure holding the Self guard against being besieged; with Metal or Fire holding the Self or the Other both sides shed blood in the fight; if the Self and the Other are in accord and both strong they are two strong rivals, and victory and defeat cannot yet be decided, so judge only by what each is best at; if the Self and the Other generate and combine, the commanders are minded to agree to peace and the soldiers have no intention to attack."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4913, 4913],
+          "zh": ["要决输赢，先察世辰相克。"],
+          "yi": ["要决定输赢，先看世与日辰相克的情形。"],
+          "en": ["To decide victory or defeat, first examine how the Self and the Day control each other."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4915, 4915],
+          "zh": ["凡专征伐：以世为我，应为彼。", "世克应，我胜；", "应克世，彼胜。", "世墓，只宜坚壁自守，不可妄动。", "若世旺相，应入墓，彼必折人丁。", "世空我有难，应空彼有伤。", "世在阴宫，不宜先动；", "世在阳象，不利后兴。", "世动克应，我必进；", "应动克世，他欲来。", "鬼爻克世，他胜我；", "鬼爻克应，他欲退。", "鬼持世，须妨围困。", "金火持世应，两家流血交征。", "世应比和皆旺相，此两强敌手，胜败未可决，但以所长断之。", "世应相生相合，将帅有允和之心，士卒无攻战之意。"],
+          "yi": ["凡是专意出征讨伐：以世为我方，应为对方。", "世克应，我胜；", "应克世，对方胜。", "世入墓，只宜坚壁自守，不可妄动。", "如果世旺相、应入墓，对方必折损人丁。", "世空，我方有难；应空，对方有伤。", "世落在阴宫，不适宜先动手；", "世在阳象，不利于后发。", "世动克应，我方必进；", "应动克世，对方要来攻。", "官鬼爻克世，对方胜我；", "官鬼爻克应，对方要退。", "鬼持世，要防被围困。", "金、火持世或应，两家流血交战。", "世、应比和而都旺相，这是两强对手，胜败不能立刻定下，只能凭各自的所长来断。", "世、应相生相合，将帅有答应议和之心，士卒没有攻战之意。"],
+          "en": ["In every expedition of conquest: the Self is us and the Other is them.", "If the Self controls the Other, we win;", "if the Other controls the Self, they win.", "If the Self is in its tomb, one should only hold the walls firm and guard oneself and not move rashly.", "If the Self is strong and the Other enters its tomb, they are sure to lose men.", "The Self void, we are in difficulty; the Other void, they are wounded.", "With the Self in a yin palace one should not move first;", "with the Self in a yang image it is not favourable to rise later.", "If the Self moves and controls the Other, we are sure to advance;", "if the Other moves and controls the Self, they mean to come.", "If the Pressure line controls the Self, they beat us;", "if the Pressure line controls the Other, they wish to retreat.", "With Pressure holding the Self, guard against being besieged.", "With Metal or Fire holding the Self or the Other, both sides shed blood in the fight.", "If the Self and the Other are in accord and both strong, these are two strong rivals, and victory and defeat cannot yet be decided; judge only by what each is best at.", "If the Self and the Other generate and combine, the commanders are minded to agree to peace and the soldiers have no intention to attack."] }
+      ],
+      "note": {
+        "yi": "「先察世辰相克」的「辰」原文没有展开，这里按上下文读作日辰；后面的注文讲的是世应相克。",
+        "en": "The 'chen' of 'first examine the control between the Self and chen' is not expanded in the text and is read from the context as the Day; the commentary that follows speaks of the Self and the Other controlling each other."
+      },
+      "see": ["LY.CAREER.HZL.09", "LY.CAREER.HZL.10", "LY.CAREER.EL.27"]
+    },
+    {
+      "id": "LY.CAREER.TXF.28",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "妻财发动当成易帜之功、兄弟交重须御夺粮之患：父母为旗帜，旺相发动必然兴兵，内动我欲兴兵外动他行军马，克世欲来侵我、克应他必自退；父母不动妻财动当有夺旗易帜之事，财内动克外之父母我夺彼旗、财外动克内之父母彼夺我旗；财为粮草，无财必绝粮、财空粮欲缺、财无气粮不多、财动送粮与贼；兄弟交重须防劫粮夺草",
+      "rule": {
+        "yi": "妻财发动，该成夺旗易帜之功；兄弟交重，要防夺粮的祸患。父母是旗帜，旺相发动必然兴兵：在内卦动，是我方要兴兵；在外卦动，是对方行军出马；克世，是要来侵犯我；克应，是回头的旌旗，对方必自行退兵。父母不动而妻财动，该有夺旗易帜的事：财在内动克外面的父母，我方必夺对方的旌旗；妻财在外动克里面的父母，对方将夺我方的旗旌。财是粮草：卦里没有财必断粮，财空粮食将要缺乏，财无气粮食不多，财动是把粮食送给贼寇；若兄弟交重，要防备劫粮夺草。",
+        "en": "With Wealth moving, the merit of seizing the banners and changing the standards is to be achieved; with Peer moving heavily, one must guard against the trouble of grain being seized. Resource is the banner; strong and moving it surely means troops are raised: moving inside, we wish to raise troops; moving outside, they send out their army and horses; controlling the Self, they mean to invade us; controlling the Other, it is a banner turned back, and they will surely withdraw of themselves. If Resource does not move and Wealth moves, there will be the seizing of banners and changing of standards: Wealth moving inside and controlling Resource outside, we shall surely seize their banners; Wealth moving outside and controlling Resource inside, they will seize ours. Wealth is the grain and fodder: with no Wealth in the hexagram the grain is sure to be cut off; with Wealth void grain is about to run short; with Wealth lacking qi there is not much grain; with Wealth moving, grain is sent to the enemy; and if Peer moves heavily, guard against the raiding of grain and seizing of fodder."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4917, 4917],
+          "zh": ["妻财发动，当成易帜之功；", "兄弟交重，须御夺粮之患。"],
+          "yi": ["妻财发动，该成夺旗易帜的功劳；", "兄弟交重，要防抵夺粮的祸患。"],
+          "en": ["With Wealth moving, the merit of seizing the banners and changing the standards is to be achieved;", "with Peer moving heavily, one must guard against the trouble of grain being seized."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4918, 4918],
+          "zh": ["父母为旗帜。", "旺相发动，必然兴兵。", "若在内动，我欲兴兵；", "外动，他行军马。", "克世，欲来侵我；", "克应，乃回头之旌帜，他必自退。"],
+          "yi": ["父母是旗帜。", "旺相发动，必定兴兵。", "如果在内动，是我方要兴兵；", "在外动，是对方行军出马。", "克世，是要来侵犯我；", "克应，是回头的旌旗，对方必定自己退兵。"],
+          "en": ["Resource is the banner.", "Strong and moving, it surely means troops are raised.", "If it moves inside, we wish to raise troops;", "if it moves outside, they send out their army and horses.", "If it controls the Self, they mean to invade us;", "if it controls the Other, it is a banner turned back, and they will surely withdraw of themselves."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4919, 4919],
+          "zh": ["凡父母不动妻财动，当有夺旗易帜之事。", "财在内动，克外之父母，我必夺彼之旌旗；", "妻财外动，克内之父母，彼将夺我旗旌。"],
+          "yi": ["凡是父母不动、妻财动，该有夺旗易帜的事。", "财在内动，克外面的父母，我方必夺对方的旌旗；", "妻财在外动，克里面的父母，对方将夺我方的旗旌。"],
+          "en": ["Whenever Resource does not move and Wealth moves, there will be the seizing of banners and changing of standards.", "If Wealth moves inside and controls Resource outside, we shall surely seize their banners;", "if Wealth moves outside and controls Resource inside, they will seize our banners."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4920, 4920],
+          "zh": ["财为粮草。", "卦若无财必绝粮；", "财空粮欲缺；", "财无气，粮不多；", "财动送粮与贼。", "若兄弟交重，须防劫粮夺草。"],
+          "yi": ["财是粮草。", "卦里如果没有财，必定断粮；", "财空，粮食将要缺乏；", "财无气，粮食不多；", "财动，是把粮食送给贼寇。", "如果兄弟交重，要防备劫粮夺草。"],
+          "en": ["Wealth is the grain and fodder.", "If the hexagram has no Wealth, the grain is sure to be cut off;", "with Wealth void, grain is about to run short;", "with Wealth lacking qi, there is not much grain;", "with Wealth moving, grain is sent to the enemy.", "If Peer moves heavily, guard against the raiding of grain and seizing of fodder."] }
+      ],
+      "see": ["LY.CAREER.EL.30", "LY.CAREER.EL.33", "LY.CAREER.CA.24"]
+    },
+    {
+      "id": "LY.CAREER.TXF.29",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "听轰雷之战鼓，金爻发动逢空；看如雨之炮砖，土位交重逢旺：土为炮石旺相临未上发动方可言，带大杀必遭伤害、遇退神防自损；金空则鸣动处逢冲愈鸣，发动必然金鼓轰雷须防战斗；金爻发动不空亡刀刃森森明似雪，内动我器械备具外动彼兵刃整齐；金爻发动逢刑克兵甲虽坚不损人、金爻无气逢刑克甲胄干戈不整齐",
+      "rule": {
+        "yi": "要听战鼓如轰雷，就看金爻发动逢空；要看炮石砖块如雨，就看土位交重逢旺。土是炮石，要旺相、落在未上发动，才可以这样说；带大杀，必遭伤害；遇退神，要防自损。金空就鸣，发动之处逢冲鸣得更厉害；发动，必然金鼓轰雷，要防战斗。金爻发动而不空亡，刀刃森森明亮如雪；内卦动，我方器械齐备；外卦动，对方兵刃整齐。金爻发动逢刑克，兵甲虽坚却伤不了人；金爻无气又逢刑克，甲胄干戈不整齐。",
+        "en": "To hear war drums like rolling thunder, look for the Metal line moving and meeting the void; to see cannon stones and bricks like rain, look for the Earth place moving heavily and meeting strength. Earth is the catapult stone, and only when it is strong and moves while standing on Wei can this be said; if it carries the Great Baleful Spirit one is sure to suffer harm; if it meets a Retreating spirit, guard against harming oneself. Metal rings when void, and rings all the more where it moves and meets a clash; if it moves, gongs and drums are sure to thunder, and one must guard against fighting. A Metal line moving and not Void: blades gleam in rows, bright as snow; moving inside, our weapons are fully equipped; moving outside, their blades are in good order. A Metal line moving and meeting punishment or control: the arms and armour, though sturdy, injure no one; a Metal line without qi and meeting punishment or control: helmets, armour and halberds are not in order."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4922, 4922],
+          "zh": ["听轰雷之战鼓，金爻发动逢空；", "看如雨之炮砖，土位交重逢旺。"],
+          "yi": ["要听战鼓如轰雷，就看金爻发动逢空；", "要看炮石砖块如雨，就看土位交重逢旺。"],
+          "en": ["To hear war drums like rolling thunder: the Metal line moving and meeting the void;", "to see cannon stones and bricks like rain: the Earth place moving heavily and meeting strength."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4923, 4925],
+          "zh": ["土为炮石，旺相临未上发动，方可言之。", "若带大杀，必遭伤害；", "如遇退神，须防自损。", "金空则鸣，动处逢冲愈鸣。", "若发动，必然金鼓轰雷，须防战斗。", "金爻发动不空亡，刀刃森森明似雪。", "内动，我器械备具；", "外动，彼之兵刃整齐。", "金爻发动逢刑克，兵甲虽坚不损人；", "金爻无气逢刑克，甲胄干戈不整齐。", "以上细细搜求，自然有准。"],
+          "yi": ["土是炮石，旺相、落在未上发动，才可以这样说。", "如果带大杀，必定遭受伤害；", "如果遇到退神，要防自己受损。", "金落空就会响，发动之处逢冲则响得更厉害。", "如果发动，必然金鼓如轰雷，要防备战斗。", "金爻发动而不空亡，刀刃森森，明亮如雪。", "在内卦动，我方器械齐备；", "在外卦动，对方兵刃整齐。", "金爻发动逢刑克，兵甲虽然坚固却伤不了人；", "金爻无气又逢刑克，甲胄干戈不整齐。", "以上要细细搜求，自然有准。"],
+          "en": ["Earth is the catapult stone; only when it is strong and moves while standing on Wei can this be said.", "If it carries the Great Baleful Spirit, one is sure to suffer harm;", "if it meets a Retreating spirit, guard against harming oneself.", "Metal rings when it is void, and rings all the more where it moves and meets a clash.", "If it moves, gongs and drums are sure to thunder, and one must guard against fighting.", "A Metal line moving and not Void: blades gleam in rows, bright as snow.", "Moving in the inner trigram, our weapons are fully equipped;", "moving in the outer, their blades are in good order.", "A Metal line moving and meeting punishment or control: the arms and armour, though sturdy, injure no one;", "a Metal line without qi and meeting punishment or control: helmets, armour and halberds are not in order.", "Search through the above in fine detail and it will naturally prove accurate."] }
+      ],
+      "see": ["LY.CAREER.EL.30", "LY.CAREER.YY.63"]
+    },
+    {
+      "id": "LY.CAREER.TXF.30",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "木乃济川之舟楫：征战不免登山涉水，无舟船之便五月安可渡泸；以木为舟楫，发动旺相必有济川之利，木爻受冲舟必破漏、受克船车难行；卦无水爻恐无水、木爻逢空必无船、木爻带鬼乃贼船",
+      "rule": {
+        "yi": "木是渡河的舟船桨楫。征战免不了登山涉水，没有舟船的方便，五月怎么能渡泸水？占这件事以木为舟楫：发动、旺相，必有渡河之利；木爻受冲，船必破漏；木爻受克，船车难行；卦里没有水爻，恐怕没有水；木爻逢空，必定没有船；木爻带鬼，是贼船。",
+        "en": "Wood is the boat and oar for crossing the river. Campaigns cannot avoid climbing mountains and wading rivers, and without boats how could one cross the Lu River in the fifth month? In this divination Wood is the boat and oar: moving and strong, it surely brings the advantage of crossing the river; if the Wood line is clashed the boat is sure to be broken and leaking; if controlled, boats and carts are hard to move; with no Water line in the hexagram there may be no water; a Wood line meeting the void means surely no boat; a Wood line carrying Pressure is a bandits' boat."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4926, 4926],
+          "zh": ["木乃济川之舟揖，"],
+          "yi": ["木是渡河的舟船桨楫，"],
+          "en": ["Wood is the boat and oar for crossing the river,"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4927, 4927],
+          "zh": ["征战不免登山涉水，若无舟船之便，五月安可渡泸？"],
+          "yi": ["征战免不了登山涉水，如果没有舟船的方便，五月里怎么能渡过泸水？"],
+          "en": ["Campaigns cannot avoid climbing mountains and wading rivers; without the convenience of boats, how could one cross the Lu River in the fifth month?"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4928, 4928],
+          "zh": ["凡占：以木为舟揖。", "发动旺相，必有济川之利。", "木爻受冲，舟必破漏；", "木爻受克，船车难行。", "卦无水爻恐无水，木爻逢空必无船，木爻带鬼乃贼船。"],
+          "yi": ["凡是占这件事：以木为舟楫。", "发动、旺相，必有渡河之利。", "木爻受冲，船必破漏；", "木爻被克，船和车都难以通行。", "卦里没有水爻，恐怕没有水；木爻逢空，必定没有船；木爻带鬼，是贼船。"],
+          "en": ["In divining it: Wood is the boat and oar.", "Moving and strong, it surely brings the advantage of crossing the river.", "If the Wood line is clashed, the boat is sure to be broken and leaking;", "if the Wood line is controlled, boats and carts are hard to move.", "With no Water line in the hexagram there may be no water; a Wood line meeting the void means surely no boat; a Wood line carrying Pressure is a bandits' boat."] }
+      ],
+      "note": {
+        "yi": "「五月渡泸」是诸葛亮五月渡泸水南征的典故，注文没有解释；「舟揖」是「舟楫」之误。",
+        "en": "'Crossing the Lu in the fifth month' alludes to Zhuge Liang's southern campaign across the Lu River in the fifth month, which the commentary does not explain; the text writes the character for 'to bow' where the character for 'oar' is meant."
+      },
+      "see": ["LY.CAREER.YY.63"]
+    },
+    {
+      "id": "LY.CAREER.TXF.31",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "火为系马之军营：凡战于野不免安营下寨，虽处山谷之险亦宜卜其吉凶；以世为主将、火爻为营寨，与世爻相生合其地得利、相克冲不吉；火爻带鬼贼寨必相近；火爻旺相宜宽阔无气宜小结构；苍屏云水爻带鬼来克我须防劫寨攻营，有气无气方断输赢，火爻旺相水无气纵克世亦无伤",
+      "rule": {
+        "yi": "火是系马驻军的营寨。在野外作战免不了安营下寨，即使处在山谷的险要之地，也该占卜它的吉凶。占这件事以世为主将、火爻为营寨：与世爻相生相合，那个地方得利；与世爻相克相冲，不吉；火爻带鬼，贼寇的营寨必定靠近；火爻旺相，宜扎得宽阔；无气，宜小规模结营。苍屏说：水爻带着官鬼来克我，要防劫寨和攻营，再看有气还是无气，才能斟酌说败还是赢；假如火爻旺相、水爻无气，纵然来克世也没有伤害。",
+        "en": "Fire is the camp where horses are tethered and the army stays. In fighting in the open one cannot avoid pitching camp and setting up a stockade, and even in the peril of mountain valleys one should divine its good or ill fortune. In this divination the Self is the commanding general and the Fire line is the camp: if it generates or combines with the Self line the place is advantageous, and if it controls or clashes with the Self line it is not auspicious; if the Fire line carries Pressure, the bandits' stockade is sure to be near; a strong Fire line suits a broad camp, and without qi a small layout. Cangping says: a Water line carrying Pressure and coming to control me, guard against the raiding of the camp and the assault on the encampment; then see whether there is qi or none, and only then can one weigh and speak of defeat or victory; suppose the Fire line is strong and the Water line has no qi: even if it comes to control the Self there is no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4926, 4926],
+          "zh": ["火为系马之军营。"],
+          "yi": ["火是系马驻军的营寨。"],
+          "en": ["Fire is the camp where horses are tethered and the army stays."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4929, 4929],
+          "zh": ["凡战于野，不免安营下寨，虽处山谷之险，亦宜卜其吉凶。"],
+          "yi": ["凡是在野外作战，免不了安营下寨，即使处在山谷的险要之地，也该占卜它的吉凶。"],
+          "en": ["In fighting in the open one cannot avoid pitching camp and setting up a stockade, and even in the peril of mountain valleys one should divine its good or ill fortune."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4930, 4930],
+          "zh": ["凡占：以世为主将，火爻为营寨。", "与世爻相生相合，其地得利；", "与世爻相克相冲，不吉。", "火爻若带鬼，贼寨必相近。", "火爻旺相宜宽阔，无气，宜小结构。"],
+          "yi": ["凡是占这件事：以世为主将，火爻为营寨。", "与世爻相生相合，那个地方得利；", "与世爻相克相冲，是不吉利的。", "火爻如果带鬼，贼寇的营寨必定靠近。", "火爻旺相，宜扎得宽阔；无气，宜小规模结营。"],
+          "en": ["In divining it: the Self is the commanding general and the Fire line is the camp.", "If it generates or combines with the Self line, the place is advantageous;", "if it controls or clashes with the Self line, it is not auspicious.", "If the Fire line carries Pressure, the bandits' stockade is sure to be near.", "A Fire line that is strong suits a broad camp; without qi, a small layout."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4931, 4931],
+          "zh": ["苍屏云：“水爻带鬼来克我，须防劫寨及攻营，却看有气并无气，方可斟量道败赢”。", "假如火爻旺相水无气，纵来克世亦无伤。"],
+          "yi": ["苍屏说：「水爻带着官鬼来克我，要防劫寨和攻营，再看有气还是无气，才能斟酌说败还是赢」。", "假如火爻旺相、水爻无气，纵然来克世也没有伤害。"],
+          "en": ["Cangping says: 'A Water line carrying Pressure and coming to control me: guard against the raiding of the camp and the assault on the encampment; then see whether there is qi or none, and only then can one weigh and speak of defeat or victory.'", "Suppose the Fire line is strong and the Water line has no qi: even if it comes to control the Self there is no harm."] }
+      ],
+      "note": {
+        "yi": "「苍屏云」引的四句，就是阐奥歌国事章（三）里「水爻带鬼来克我……」那一首的原话，两处只差个别字。",
+        "en": "The lines quoted from 'Cangping' are the same as the verse beginning 'a Water line carrying Pressure and coming to control me' in the third song of the Chan'ao Ge chapter on affairs of state, differing only in a few characters."
+      },
+      "see": ["LY.CAREER.CA.25", "LY.CAREER.YY.63"]
+    },
+    {
+      "id": "LY.CAREER.TXF.32",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "父加虎杀外兴，莫纵军兵来出阵：子孙为我兵卒、官鬼为彼贼徒，子衰兵卒怯鬼旺贼军强，鬼空他必灭子旺我必昌；怕父母带白虎外动必克子孙宜守不宜战；父母持世动主将不能养士卒上下相离，带凶神须防自变；亡神杀正月从亥起顺行",
+      "rule": {
+        "yi": "父母加白虎、杀，在外卦兴起，不要放纵军兵出阵。子孙是我方兵卒，官鬼是对方贼徒：子衰兵卒怯懦，鬼旺贼军强大；鬼空他必覆灭，子旺我必昌盛。怕的是父母带白虎在外卦动，必克子孙，宜守不宜战，战必伤军卒。父母若持世发动，主将不能抚养士卒，上下离散，心里没有相安之道；若带凶神，要防内部生变。亡神杀，正月从亥起顺着排；劫杀见后面。",
+        "en": "Resource carrying the Tiger and a baleful spirit and rising in the outer trigram: do not let the troops go out to the battle line. Output is our soldiers and Pressure is the enemy's bandits: with Output weak the soldiers are timid, with Pressure strong the enemy army is mighty; with Pressure void they are sure to be destroyed, with Output strong we are sure to prosper. What is feared is Resource carrying the White Tiger and moving outside, which surely controls Output; it is right to defend and not to fight, for fighting surely wounds the troops. If Resource holds the Self and moves, the commanding general cannot nurture his troops, high and low drift apart and hearts have no way to rest easy together; if a baleful spirit is carried, guard against a change from within. The Lost Spirit baleful spirit: begin at Hai in the first month and run forward in order; the Robbery Killing is given later."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4933, 4933],
+          "zh": ["父加虎杀外兴，莫纵军兵来出阵；"],
+          "yi": ["父母加白虎、杀，在外卦兴起，不要放纵军兵出阵；"],
+          "en": ["Resource carrying the Tiger and a baleful spirit and rising in the outer trigram: do not let the troops go out to the battle line;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4934, 4934],
+          "zh": ["子孙为我兵卒，官鬼为彼贼徒。", "子衰兵卒怯，鬼旺贼军强；", "鬼空他必灭，子旺我必昌。", "怕父母带白虎外动，必克子孙；", "宜守不宜战，战则必伤军卒。"],
+          "yi": ["子孙是我方的兵卒，官鬼是对方的贼徒。", "子孙衰，兵卒胆怯；官鬼旺，贼军强大；", "鬼空，他必覆灭；子旺，我必昌盛。", "怕的是父母带白虎在外卦动，必克子孙；", "宜守不宜战，战必伤军卒。"],
+          "en": ["Output is our soldiers and Pressure is the enemy's bandits.", "With Output weak the soldiers are timid; with Pressure strong the enemy army is mighty;", "with Pressure void they are sure to be destroyed; with Output strong we are sure to prosper.", "What is feared is Resource carrying the White Tiger and moving outside, which surely controls Output;", "it is right to defend and not to fight, for fighting surely wounds the troops."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4935, 4935],
+          "zh": ["父母若持世动，主将不能养士卒，上下有相离，心未相安之道。", "若带凶神，须防自变。", "亡神杀，正月从亥起顺行。", "劫杀见后。"],
+          "yi": ["父母如果持世发动，主将不能抚养士卒，上下离散，心里没有相安之道。", "如果带凶神，要防内部生变。", "亡神杀，正月从亥起，顺着排。", "劫杀见后面。"],
+          "en": ["If Resource holds the Self and moves, the commanding general cannot nurture his troops, high and low drift apart, and hearts have no way to rest easy together.", "If a baleful spirit is carried, guard against a change from within.", "The Lost Spirit baleful spirit: begin at Hai in the first month and run forward in order.", "The Robbery Killing is given later."] }
+      ],
+      "see": ["LY.CAREER.EL.33", "LY.CAREER.EL.36", "LY.CAREER.YY.62"]
+    },
+    {
+      "id": "LY.CAREER.TXF.33",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "鬼带劫亡内动，须防奸细暗临城：鬼带二杀于内动须防奸细在城池之内；若被世克须探事情不至漏泄；世爻无气鬼杀旺军机透漏祸终来；内外鬼爻俱发动克世必有内应外合之患子动必无妨；鬼爻不带杀为害亦不凶",
+      "rule": {
+        "yi": "官鬼带劫杀、亡神在内卦发动，要防奸细暗中混进城来。官鬼带两种杀在内发动，要防城池之内有奸细之人；若被世克，要去探听情况，不至于泄漏；世爻无气而鬼、杀旺，军机泄漏，祸终究要来；内外的鬼爻都发动克世，必有内应外合的祸患，子孙动就一定无妨；鬼爻不带杀，为害也不凶。",
+        "en": "Pressure carrying the Robbery and Lost-Spirit killings and moving inside: guard against spies secretly entering the city. If Pressure carries the two baleful spirits and moves inside, guard against spies within the city; if it is controlled by the Self, one must scout out the situation so that nothing leaks; if the Self line has no qi and Pressure and the baleful spirits are strong, military secrets leak and in the end disaster comes; if the Pressure lines inside and outside both move and control the Self, there is sure to be the trouble of insiders answering outsiders, and if Output moves it is surely harmless; if the Pressure line carries no baleful spirit its harm is not fierce either."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4933, 4933],
+          "zh": ["鬼带劫亡内动，须防奸细暗临城。"],
+          "yi": ["官鬼带劫杀、亡神在内卦发动，要防奸细暗中混进城来。"],
+          "en": ["Pressure carrying the Robbery and Lost-Spirit killings and moving inside: guard against spies secretly entering the city."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4936, 4936],
+          "zh": ["若鬼带二杀于内动，须防奸细之人在城池之内；", "若被世克，须探事情，不至漏泄。", "世爻无气鬼杀旺，军机透漏祸终来。", "内外鬼爻俱发动克世，必有内应外合之患，子动必无妨。", "鬼爻不带杀，为害亦不凶。"],
+          "yi": ["如果鬼带两种杀在内发动，要防备奸细之人在城池之内；", "如果被世克，要去探听情况，不至于泄漏。", "世爻无气而鬼、杀旺，军机泄漏，祸终究要来。", "内外的鬼爻都发动克世，必有内应外合的祸患，子孙动就一定无妨。", "鬼爻不带杀，为害也不凶。"],
+          "en": ["If Pressure carries the two baleful spirits and moves inside, guard against spies within the city;", "if it is controlled by the Self, one must scout out the situation so that nothing leaks.", "If the Self line has no qi and Pressure and the baleful spirits are strong, military secrets leak and in the end disaster comes.", "If the Pressure lines inside and outside both move and control the Self, there is sure to be the trouble of insiders answering outsiders; if Output moves it is surely harmless.", "If the Pressure line carries no baleful spirit, its harm is not fierce either."] }
+      ],
+      "see": ["LY.CAREER.YY.62", "LY.CAREER.EL.36"]
+    },
+    {
+      "id": "LY.CAREER.TXF.34",
+      "topic": "军旅",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "若逢暗动伤身，须遇阴谋刺客：鬼爻暗动更加劫杀大杀刑克世爻主将须防刺客；卦内得子孙发动来救刺客必被擒（如燕太子丹使荆轲刺秦王）；日辰冲动伏鬼伤飞爻须防手下有人谋己；卦中无救祸将及身；鬼旺日决见应验",
+      "rule": {
+        "yi": "如果遇到暗动伤身，就要遇上阴谋刺客。凡是鬼爻暗动，又加劫杀、大杀，刑克世爻，主将要防刺客；卦内如果有子孙发动来救，刺客一定被擒，好比燕太子丹派荆轲刺秦王这一类事；如果日辰冲动、伏着的鬼伤了飞爻，要防自己手下有人谋害自己；卦中没有救助，祸将及身；在鬼旺的日子，一定应验。",
+        "en": "If one meets a hidden stirring that harms the self, one will meet a plotting assassin. Whenever the Pressure line moves in secret, with the Robbery Killing and the Great Baleful Spirit added and punishing or controlling the Self line, the commanding general must guard against assassins; if Output in the hexagram moves to rescue, the assassin is surely caught, like the matter of Crown Prince Dan of Yan sending Jing Ke to stab the King of Qin; if the Day clashes and moves and the hidden Pressure injures the flying line, guard against someone among one's own men plotting against one; if there is no rescue in the hexagram, calamity is about to reach one; on a day when Pressure is strong it will surely be confirmed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4938, 4938],
+          "zh": ["若逢暗动伤身，", "须遇阴谋刺客。"],
+          "yi": ["如果遇到暗动伤身，", "就要遇上阴谋刺客。"],
+          "en": ["If one meets a hidden stirring that harms the self,", "one will meet a plotting assassin."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4939, 4939],
+          "zh": ["凡鬼爻暗动，更加劫杀、大杀，刑克世爻，主将须防刺客。", "卦内若得子孙发动来救，刺客决然被擒。", "比同燕太子丹使荆轲刺秦王之类。", "若日辰冲动，伏鬼伤飞爻，须防自己手下有人谋己；", "卦中无救，祸将及身；", "鬼旺日，决见应验也。"],
+          "yi": ["凡是鬼爻暗动，又加劫杀、大杀，刑克世爻，主将要防刺客。", "卦内如果有子孙发动来救，刺客一定被擒。", "好比燕太子丹派荆轲刺秦王这一类事。", "如果日辰冲动，伏着的鬼伤了飞爻，要防自己手下有人谋害自己；", "卦中没有救助，祸将及身；", "鬼旺的日子，一定应验。"],
+          "en": ["Whenever the Pressure line moves in secret, with the Robbery Killing and the Great Baleful Spirit added and punishing or controlling the Self line, the commanding general must guard against assassins.", "If Output in the hexagram moves to rescue, the assassin is surely caught.", "It is like the matter of Crown Prince Dan of Yan sending Jing Ke to stab the King of Qin.", "If the Day clashes and moves and the hidden Pressure injures the flying line, guard against someone among one's own men plotting against one;", "if there is no rescue in the hexagram, calamity is about to reach one;", "on a day when Pressure is strong it will surely be confirmed."] }
+      ],
+      "see": ["LY.CAREER.HJC.73", "LY.CAREER.YY.62"]
+    },
+    {
+      "id": "LY.CAREER.TXF.35",
+      "topic": "国朝",
+      "chapter": "国朝章",
+      "chapter_en": "The state and the court",
+      "title": "虎蛇皆动，正当离乱之时；世应俱空，宜见升平之乐：大杀动加白虎螣蛇必大乱卒难休息；大杀当胎养长生位乃丧乱发萌之时、在临官帝旺之地正当大乱过此渐息、当墓绝位将次太平；已经历的离乱，要知何年最甚何年稍息依长生法断；六爻无鬼卦无杀世应俱空即太平",
+      "rule": {
+        "yi": "白虎、螣蛇都动，正是离乱的时候；世、应都空，适宜见到升平的安乐。大杀如果发动，加白虎、螣蛇，必是大乱，一时难以平息；大杀落在胎、养、长生的位置上，是丧乱刚刚萌发的时候；在临官、帝旺的地方，正当大乱，过了这个阶段才渐渐平息；落在墓、绝的位置上，将要太平。离乱已经过去的，要知道哪一年最厉害、哪一年稍稍平息，依长生法来断。六爻没有鬼、卦里没有杀，世、应都空，就是太平。",
+        "en": "With the Tiger and the Snake both moving it is just the time of dispersal and disorder; with the Self and the Other both void it suits seeing the joy of peaceful times. If the Great Baleful Spirit moves and the White Tiger and the Coiling Snake are added, it is surely great disorder, hard to quiet soon; if the Great Baleful Spirit falls on the Embryo, Nurture or Birth stage it is the time when calamity and disorder are just sprouting; if it is at the Office or Peak stage it is just the height of disorder, which then gradually subsides; if it falls on the Tomb or Extinction stage peace is coming. For a disorder already passed, to know in which year it was at its worst and in which it eased a little, judge by the method of the Birth stages. With no Pressure among the six lines and no baleful spirit in the hexagram, and the Self and the Other both void, there is peace."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4941, 4941],
+          "zh": ["虎蛇皆动，正当离乱之时；", "世应俱空，宜见升平之乐。"],
+          "yi": ["白虎、螣蛇都动，正是离乱的时候；", "世、应都空，适宜见到升平的安乐。"],
+          "en": ["With the Tiger and the Snake both moving, it is just the time of dispersal and disorder;", "with the Self and the Other both void, it suits seeing the joy of peaceful times."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4942, 4944],
+          "zh": ["大杀若动，加白虎螣蛇，必是大乱，卒难休息。", "大杀若当胎养、长生位上，乃丧乱发萌之时；", "若在临官、帝旺之地，正当大乱，过此渐息；", "若当墓、绝位上，将次太平。", "离乱已经历过，要知何年离乱最甚，何年稍息，依长生法断之。", "六爻无鬼卦无杀，世应俱空即太平。"],
+          "yi": ["大杀如果发动，加上白虎、螣蛇，必定是大乱，一时难以平息。", "大杀如果正落在胎、养、长生的位置上，是丧乱刚刚萌发的时候；", "如果在临官、帝旺的地方，正当大乱，过了这个阶段才渐渐平息；", "如果落在墓、绝的位置上，将要太平。", "离乱已经过去的，要知道哪一年离乱最厉害、哪一年稍稍平息，依长生法来断。", "六爻没有鬼、卦里没有杀，世、应都空，就是太平。"],
+          "en": ["If the Great Baleful Spirit moves and the White Tiger and the Coiling Snake are added, it is surely great disorder, hard to quiet soon.", "If the Great Baleful Spirit falls on the Embryo, Nurture or Birth stage, it is the time when calamity and disorder are just sprouting;", "if it is at the Office or Peak stage, it is just the height of disorder, which then gradually subsides;", "if it falls on the Tomb or Extinction stage, peace is coming.", "For a disorder already passed, to know in which year it was at its worst and in which it eased a little, judge by the method of the Birth stages.", "With no Pressure among the six lines and no baleful spirit in the hexagram, and the Self and the Other both void, there is peace."] }
+      ],
+      "see": ["LY.CAREER.EL.28", "LY.CAREER.YM.05", "LY.CAREER.HJC.66"]
+    }
+  ]
+}

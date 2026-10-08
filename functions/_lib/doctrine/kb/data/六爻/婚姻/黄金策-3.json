@@ -1,0 +1,416 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "婚姻",
+  "chapter_en": "Marriage",
+  "ranges": {"卜筮大全": [6301, 6458], "卜筮正宗": [1984, 2079]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.31",
+      "topic": "应期",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "日逢父合，已期合卺于三星：日辰与父爻相合，或日辰自带文书，成婚的日期已经定下",
+      "rule": {
+        "yi": "日辰与父爻相合，或者日辰自己带着文书（父母），主成婚的日期已经预先定下。",
+        "en": "The Day combining with the Resource line, or the Day itself carrying the document (Resource), means the wedding date has already been fixed in advance."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6413, 6413],
+          "zh": ["日逢父合，已期合卺于三星；"],
+          "yi": ["日辰与父爻相合，已经在三星（出现）的时候约好了成婚。"],
+          "en": ["The Day combining with the Resource line: the wedding is already set for the time of the Three Stars."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6414, 6414],
+          "zh": ["日辰与父爻作合，或日辰自带文书，主成婚日期，已预定矣。"],
+          "yi": ["日辰与父爻相合，或者日辰自己带着文书，主成婚的日期已经预先定下了。"],
+          "en": ["The Day combining with the Resource line, or the Day itself carrying the document, means the wedding date has already been fixed in advance."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2050, 2050],
+          "zh": ["日辰与父爻作合，或日辰自带文书，主成婚日期已选定。"],
+          "yi": ["日辰与父爻相合，或者日辰自己带着文书，主成婚的日期已经选定。"],
+          "en": ["The Day combining with the Resource line, or the Day itself carrying the document, means the wedding date has been chosen."] }
+      ],
+      "note": {
+        "yi": "「三星」出自《诗经·唐风·绸缪》的「三星在天」「三星在隅」「三星在户」，是婚期的意象；「合卺」是新婚夫妇共饮交杯酒，指成婚。",
+        "en": "'The Three Stars' is from the Book of Odes (Tang Feng, 'Chou Miu'), 'the Three Stars are in the sky', 'in the corner', 'at the door', an image for the wedding season; 'sharing the nuptial cup' means the wedding itself."
+      },
+      "see": ["LY.WEALTH.YL.19"]
+    },
+    {
+      "id": "LY.MARRY.HJC.32",
+      "topic": "聘嫁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "世获财生，终得妆奁于百两：财爻生合世爻又得日月动爻扶助必有妆奁；临勾陈有妆奁田、临青龙美丽、临螣蛇白虎败病是旧什物",
+      "rule": {
+        "yi": "看妆奁要看财爻：财爻生合世爻，又有日月、动爻扶助，一定有妆奁；临勾陈，有妆奁田；临青龙，妆奁漂亮；临螣蛇、白虎、败、病等爻，是旧东西；财没有生助，不可乱说；想推多少，看生合妻财那一爻的衰旺；财的衰旺只能推女子的相貌美丑，不能推妆奁厚薄。",
+        "en": "To judge the dowry look at the Wealth line: Wealth generating or combining with the Self and supported by the Month, Day or a moving line means there will be a dowry; on Hook Earth, dowry land; on the Azure Dragon, a handsome dowry; on the Coiling Snake, the White Tiger, or the ruined or sick lines, old household goods; if Wealth has no support, do not speak rashly; to reckon how much, judge by the strength of the line that generates or combines with Wealth; the strength of Wealth can only tell the woman's looks, not the richness of the dowry."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6416, 6416],
+          "zh": ["世获财生，终得妆奁于百两。"],
+          "yi": ["世获得财的生助，终究能得到百两的妆奁。"],
+          "en": ["The Self receiving generation from Wealth will in the end obtain a dowry of a hundred taels."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6417, 6418],
+          "zh": ["财爻又作妆奁断，若生合世爻，又得日月动爻扶助，必有妆奁。", "临勾陈，必有妆奁田；", "临青龙，必美丽；", "临螣蛇白虎败病等爻，则是旧什物也。", "若财无生助，不可乱言。", "要推多少，以生合妻财之爻，看衰旺断之。", "财之衰旺，仅可推女貌妍媸，不可推妆奁厚薄。"],
+          "yi": ["财爻也用来断妆奁，如果生合世爻，又得月、日、动爻扶助，一定有妆奁；", "临勾陈，一定有妆奁田；", "临青龙，一定漂亮；", "临螣蛇、白虎、败、病等爻，就是旧东西。", "如果财没有生助，不可乱说。", "想推算多少，看生合妻财的那一爻的衰旺来断。", "财的衰旺，只能推女子的相貌美丑，不能推妆奁的厚薄。"],
+          "en": ["The Wealth line is also used to judge the dowry: if it generates or combines with the Self line and is supported by the Month, Day or a moving line, there will surely be a dowry;", "on Hook Earth, surely dowry land;", "on the Azure Dragon, surely handsome;", "on the Coiling Snake, the White Tiger, or the ruined or sick lines, it is old goods.", "If Wealth has no support, do not speak rashly.", "To reckon how much, judge by the strength of the line that generates or combines with Wealth.", "The strength of Wealth can only tell the woman's looks, not the richness of the dowry."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2052, 2052],
+          "zh": ["凡占妆奁，当看财爻，若财爻生合世爻，又得日辰动爻扶助，必有妆奁；", "如临勾陈，必有奁田。"],
+          "yi": ["凡是占妆奁，要看财爻，如果财爻生合世爻，又得日辰、动爻扶助，一定有妆奁；", "如果临勾陈，一定有陪嫁的田地。"],
+          "en": ["In divining the dowry look at the Wealth line: if it generates or combines with the Self line and is supported by the Day or a moving line, there will surely be a dowry;", "if it sits on Hook Earth, there is surely land as part of the dowry."] }
+      ],
+      "see": ["LY.MARRY.HJC.07"]
+    },
+    {
+      "id": "LY.MARRY.HJC.33",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "欲通媒妁，须论间爻：占庚帖以间爻为媒人；专占媒人则以应爻为媒",
+      "rule": {
+        "yi": "占庚帖，以间爻为媒人；如果是专为媒人这件事占，就不按间爻论，一定以应爻为媒。",
+        "en": "In divining the horoscope card, the between lines are the go-between; if the divination is solely about the go-between, do not go by the between lines but take the Other line as the go-between."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6420, 6420],
+          "zh": ["欲通媒妁，须论间爻。"],
+          "yi": ["想通过媒人说合，须论间爻。"],
+          "en": ["To go through a go-between, consider the between lines."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6421, 6421],
+          "zh": ["占贴，以间爻媒人也。"],
+          "yi": ["占庚帖，用间爻当作媒人。"],
+          "en": ["In divining the horoscope card, the between lines are the go-between."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2054, 2054],
+          "zh": ["占庚帖以间爻为媒人；", "如独指媒人占，又非间爻论，必以应爻为媒妁是也。"],
+          "yi": ["占庚帖的时候，用间爻当作媒人；", "如果是专指媒人来占，又不按间爻论，一定以应爻为媒人。"],
+          "en": ["In divining the horoscope card the between lines are the go-between;", "if the divination is directly about the go-between, do not go by the between lines but take the Other line as the go-between."] }
+      ],
+      "see": ["LY.MARRY.HJC.09"]
+    },
+    {
+      "id": "LY.MARRY.HJC.34",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "应或相生，乃女家之瓜葛；世如相合，必男室之葭莩：间爻与世生合多男家亲、与应生合多女家亲；旺相新亲、休囚旧眷、本宫至亲、他宫外亲",
+      "rule": {
+        "yi": "间爻与世生合，多是男家的亲戚；与应生合，多是女家的亲戚；世应都被生合，两家都有亲；旺相是新亲，休囚是旧眷，本宫是至亲，他宫是外亲。",
+        "en": "A between line generating or combining with the Self is mostly kin of the man's family, with the Other mostly kin of the woman's, and with both, both families are related to it; thriving means new relatives, weak means old ones, the home palace means nearest kin, another palace means outside kin."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6423, 6423],
+          "zh": ["应或相生，乃女家之瓜葛；", "世如相合，必男室之葭莩。"],
+          "yi": ["（间爻）若与应相生，是女家的亲戚关系；", "若与世相合，必是男家的远亲。"],
+          "en": ["If it generates the Other, it is a tie to the woman's family;", "if it combines with the Self, it is surely a distant kinsman of the man's household."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6424, 6424],
+          "zh": ["间爻与世生合，多男家亲；", "与应生合，多女家亲。", "世应俱相生合，两家皆有亲。", "旺相新亲，休囚旧眷；", "本宫至亲，他宫外亲。"],
+          "yi": ["间爻与世生合，多是男家的亲戚；", "与应生合，多是女家的亲戚；", "世应都被生合，两家都有亲。", "旺相是新亲，休囚是旧眷；", "本宫是至亲，他宫是外亲。"],
+          "en": ["A between line generating or combining with the Self is mostly kin of the man's family;", "with the Other, mostly kin of the woman's family;", "with both the Self and Other, both families are related to it.", "Thriving means new relatives, weak means old ones;", "the home palace means nearest kin, another palace means outside kin."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2056, 2056],
+          "zh": ["间爻与世生合，言我家亲，与应生合言彼家亲，与世应俱生合，两家皆有亲也。", "旺相新亲，休囚旧眷，本宫至亲，他宫外亲。"],
+          "yi": ["间爻与世生合，是说我家的亲戚，与应生合，是说对方家的亲戚，与世应都生合，两家都有亲。", "旺相是新亲，休囚是旧眷，本宫是至亲，他宫是外亲。"],
+          "en": ["A between line generating or combining with the Self means kin on my side, with the Other kin on the other side, and with both, both families are related.", "Thriving means new relatives, weak means old ones, the home palace nearest kin, another palace outside kin."] }
+      ],
+      "note": {
+        "yi": "「瓜葛」是瓜蔓藤葛缠绕，比喻亲戚关系；「葭莩」是芦苇里的薄膜，比喻疏远的亲戚。经文里省了主语「间爻」，注里补出。",
+        "en": "'Melon and vine' is a tangle of creepers, standing for ties of kinship; 'reed membrane' stands for a distant relative. The verse omits its subject, the between line, which the commentary supplies."
+      },
+      "see": ["LY.MARRY.HJC.17"]
+    },
+    {
+      "id": "LY.MARRY.HJC.35",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "先观卦象之阴阳，则男女可决：阳男媒、阴女媒；间爻有二，以衰旺动静、冲动、生合扶起、不空、长生来定",
+      "rule": {
+        "yi": "间爻阳是男媒，阴是女媒；间爻有两个时，按衰旺、动静来取；衰爻动、旺爻静，取动的；两爻都旺或都衰，取被冲而动的；没有冲，取被生合扶起的；一旺一空，取不空的；都不空，用长生的办法；务必归到一个，就不杂乱。",
+        "en": "A yang between line is a male go-between and a yin one a female; when there are two between lines, choose by strength and movement; if the weak one moves and the thriving one is still, take the moving one; if both thrive or both are weak, take the one clashed into movement; with no clash, the one raised by generation or combination; if one thrives and one is Void, the one that is not Void; if neither is Void, use the Long Life method; always come down to one, and then it is not confused."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6426, 6426],
+          "zh": ["先观卦象之阴阳，则男女可决；"],
+          "yi": ["先看卦象的阴阳，就可以断定媒人是男是女；"],
+          "en": ["First look at the yin and yang of the hexagram and one can decide whether the go-between is a man or a woman;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6427, 6428],
+          "zh": ["阳男媒，阴女媒。", "或问：间爻有二，当以何爻为主？", "以衰旺动静取之。", "又问：衰爻动，旺爻静，则如何？", "则动者是也。", "又问：两爻皆旺或皆衰，又将何以定之？", "以冲动者定之。", "若又无冲，以生合扶起者定之。", "或一旺一空，以不空者定之。", "又不遇空，则以长生决法定之。", "务归于一，则不杂乱。"],
+          "yi": ["阳是男媒，阴是女媒。", "有人问：间爻有两个，应当以哪一爻为主？", "用衰旺、动静来取。", "又问：衰的爻动、旺的爻静，怎么办？", "那么动的就是。", "又问：两个爻都旺或者都衰，又用什么来定？", "用被冲而动的来定。", "如果又没有冲，用被生合扶起的来定。", "或者一旺一空，用不空的来定。", "又不遇空，就用长生的办法来定。", "务必归到一个，就不杂乱。"],
+          "en": ["Yang is a male go-between and yin a female one.", "Someone asks: there are two between lines, which should be taken as the main one?", "Take it by strength and movement.", "Again he asks: what if the weak line moves and the thriving one is still?", "Then the moving one is it.", "Again: if both lines thrive or both are weak, what decides?", "Decide by the one clashed into movement.", "If there is no clash either, decide by the one raised by generation or combination.", "Or if one thrives and one is Void, decide by the one that is not Void.", "If neither is Void, decide by the Long Life method.", "Always come down to one, and then it is not confused."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2058, 2058],
+          "zh": ["阳男媒，阴女媒，以衰动旺静取之是也。"],
+          "yi": ["阳是男媒，阴是女媒，按衰的动、旺的静来取。"],
+          "en": ["Yang is a male go-between and yin a female one, chosen by taking the weak that moves and the thriving that is still."] }
+      ],
+      "note": {
+        "yi": "「长生决法」的「决」疑是「诀」，书里没有说这个办法怎么用，本库不补。",
+        "en": "'Chang sheng jue fa' may be a miscopy for 'the Long Life rule'; the book does not say how it is applied, and this library does not add it."
+      },
+      "see": ["LY.MARRY.HJC.36"]
+    },
+    {
+      "id": "LY.MARRY.HJC.36",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "次看卦爻之动静，则老幼堪推：交重二爻为老年人，单拆二爻为少年人；胎养长生少年、临官帝旺中年、墓绝老年",
+      "rule": {
+        "yi": "交、重（老阴老阳）为老年人，单、拆（少阳少阴）为少年人；胎、养、长生是少年，临官、帝旺是中年，墓、绝是老年；墓化旺，是老年人先来说；阴化阳，是女人先来说；这爻动空化空而自冲另一爻，是原来的媒人有事推辞，别人来做媒。",
+        "en": "The doubled and crossed marks (old yin and old yang) mean an old person and the single and broken marks (young yang and young yin) a young one; Womb, Nurture and Long Life mean youth, Official and Emperor's Prime middle age, Tomb and Cut-off old age; Tomb changing to thriving means an old person spoke first; yin changing to yang means a woman spoke first; if this line moves, is Void and turns Void and itself clashes another line, the original go-between has an excuse to decline and someone else acts as go-between."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6430, 6430],
+          "zh": ["次看卦爻之动静，则老幼堪推。"],
+          "yi": ["再看卦爻的动静，就可以推断媒人是老是少。"],
+          "en": ["Then look at the movement of the lines and one can judge whether the go-between is old or young."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6431, 6431],
+          "zh": ["交重二爻为老年人，单拆二爻为少年人。", "或胎养长生为少年，临官帝旺为中年，墓绝是老年人为媒也。", "若墓化旺，是老年人先来说；", "阴化阳，是女人先来说。", "若此爻动空化空，而自冲动彼一爻，主原媒有故推却，而他人为媒也。"],
+          "yi": ["交、重两种爻（老阴老阳）是老年人，单、拆两种爻（少阳少阴）是少年人。", "或者胎、养、长生是少年，临官、帝旺是中年，墓、绝是老年人做媒。", "如果墓化旺，是老年人先来说；", "阴化阳，是女人先来说；", "如果这一爻动、空、化空，而自己冲动另一爻，主原来的媒人有事推辞，而别人来做媒。"],
+          "en": ["The crossed and doubled lines, old yin and old yang, mean an old person, and the single and broken lines, young yang and young yin, a young one.", "Or Womb, Nurture and Long Life mean youth, Official and Emperor's Prime middle age, and Tomb and Cut-off an old go-between.", "If Tomb changes into thriving, an old person spoke first;", "yin changing into yang, a woman spoke first;", "if this line moves, is Void and turns Void, and itself clashes another line, the original go-between has an excuse to decline and someone else acts as go-between."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2060, 2060],
+          "zh": ["交重二爻或衰弱者是老年人，单拆二爻或旺相者是少年人。"],
+          "yi": ["交重两种爻或者衰弱的是老年人，单拆两种爻或者旺相的是少年人。"],
+          "en": ["The crossed and doubled lines, or a weak one, mean an old person, and the single and broken lines, or a thriving one, a young person."] }
+      ],
+      "see": ["LY.MARRY.HJC.35"]
+    },
+    {
+      "id": "LY.MARRY.HJC.37",
+      "topic": "对方",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "论贫富，当究身命；决美恶，可验性情：问妇看财爻、问夫看鬼爻、问男家看世爻、问女家看应爻；应旺财衰，女家富而女貌不扬",
+      "rule": {
+        "yi": "要看男女的贫富美恶：问妇看财爻，问夫的身看鬼爻，问男家看世爻，问女家看应爻；应旺而财衰，是女家虽富，女子相貌不出众；维持和拆台的旁人，用刑冲生合的爻来推。",
+        "en": "To judge the wealth, poverty, looks and character of the man or woman: to ask about the bride look at the Wealth line, about the bridegroom look at the Pressure line, about the man's family the Self line, about the woman's family the Other line; the Other thriving and Wealth weak means the woman's family is rich but her looks are unremarkable; the bystanders who support or wreck it are judged by the lines that punish, clash, generate or combine."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6433, 6433],
+          "zh": ["论贫富，当究身命；", "决美恶，可验性情。"],
+          "yi": ["论贫富，应当追究身命；", "断美恶，可以验证性情。"],
+          "en": ["To judge wealth and poverty, look into the Body and the natal line;", "to decide good looks and plainness, verify the temperament."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6434, 6434],
+          "zh": ["人生美恶贫富，两章尽之矣。", "然非特可观媒妁而已。", "若问妇，看财爻；", "问夫身，看鬼爻；", "问男家，看世爻；", "问女家，看应爻。", "若应旺财衰，可言女家虽富，女貌不扬，余类推。", "至于维持破说之旁人，可以刑冲生合之爻推之。"],
+          "yi": ["人的美恶贫富，这两章（身命章、性情）已经说尽了。", "然而不只是可以观察媒人而已。", "如果问新妇，看财爻；", "问丈夫本人，看鬼爻；", "问男家，看世爻；", "问女家，看应爻。", "如果应旺财衰，可以说女家虽然富，女子相貌不出众，其余类推。", "至于从旁维持、拆台的人，可以用刑冲生合的爻来推。"],
+          "en": ["Human beauty, plainness, wealth and poverty are exhausted in those two chapters.", "But they are useful for more than observing the go-between.", "To ask about the bride, look at the Wealth line;", "about the bridegroom himself, the Pressure line;", "about the man's family, the Self line;", "about the woman's family, the Other line.", "If the Other thrives and Wealth is weak, one can say the woman's family is rich but her looks are unremarkable, and the rest by analogy.", "As for those on the side who support or wreck it, judge by the lines that punish, clash, generate or combine."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2062, 2062],
+          "zh": ["男问妇看财爻，女问夫看鬼爻，女问男家、男问女家皆看应爻。", "若应旺财衰，女家虽富，女貌不扬。", "余类推。"],
+          "yi": ["男子问妻子看财爻，女子问丈夫看鬼爻，女子问男家、男子问女家都看应爻。", "如果应旺财衰，女家虽然富有，女子相貌不出众。", "其余类推。"],
+          "en": ["A man asking about a wife looks at the Wealth line, a woman asking about a husband the Pressure line, and a woman asking about the man's family or a man about the woman's, the Other line.", "If the Other thrives and Wealth is weak, the woman's family though rich has a daughter of unremarkable looks.", "The rest by analogy."] }
+      ],
+      "note": {
+        "yi": "看男家女家的爻，旧注和王洪绪不同：旧注是问男家看世、问女家看应；王洪绪是问对方的家一律看应。",
+        "en": "For looking at the families the old commentary and Wang Hongxu differ: the old commentary looks at the Self for the man's family and the Other for the woman's; Wang Hongxu looks at the Other for whichever is the other party's family."
+      },
+      "see": ["LY.MARRY.HJC.25", "LY.MARRY.HJC.26"]
+    },
+    {
+      "id": "LY.MARRY.HJC.38",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "雀值兄临，惯在其中得利：间爻遇螣蛇、朱雀、兄弟，其人伶牙俐齿，惯以做媒获利，旺相必奸诈",
+      "rule": {
+        "yi": "间爻遇到螣蛇、朱雀和兄弟的，那人一定伶牙俐齿，一向靠做媒获利，旺相就一定奸诈。",
+        "en": "A between line that meets the Coiling Snake, the Vermilion Bird or Peer marks a person with a ready tongue who has always profited from matchmaking, and if thriving, one who is surely crafty."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6436, 6436],
+          "zh": ["雀值兄临，惯在其中得利；"],
+          "yi": ["朱雀、兄弟临在（间爻）上，惯于从中获利。"],
+          "en": ["With the Vermilion Bird or Peer on it, one habitually profits from the middle."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6437, 6437],
+          "zh": ["间爻如值螣蛇朱雀，及兄弟者，其人必俐齿伶牙，素以媒妁获利者。", "兴旺必奸诈。"],
+          "yi": ["间爻如果遇到螣蛇、朱雀，以及兄弟的，那个人一定伶牙俐齿，一向靠做媒获利。", "旺相就必定奸诈。"],
+          "en": ["If the between line meets the Coiling Snake, the Vermilion Bird or Peer, the person surely has a ready tongue and has always profited from matchmaking.", "If thriving, surely crafty."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2064, 2064],
+          "zh": ["间爻如值螣蛇、朱雀及兄弟者，其人惯赖媒妁获利。"],
+          "yi": ["间爻如果遇到螣蛇、朱雀以及兄弟的，那个人惯于靠做媒获利。"],
+          "en": ["If the between line meets the Coiling Snake, the Vermilion Bird or Peer, the person is used to profiting from matchmaking."] }
+      ],
+      "see": ["LY.MARRY.HJC.33"]
+    },
+    {
+      "id": "LY.MARRY.HJC.39",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "世冲应合，浼他出以为媒：间爻安静被世应冲动或生扶合起，其人无心作伐，是一边央他去说",
+      "rule": {
+        "yi": "间爻安静，被应、世两爻冲动，或者被生扶合起，或被日辰冲并起来的，那个人无心做媒，一定是一边请他去说；间爻自己发动的，不要这样断。",
+        "en": "A quiet between line clashed into motion by the Other and the Self, or raised by generation, support or combination, or by a clash from the Day, belongs to a person who has no mind to act as go-between and has certainly been asked by one side to speak; a between line that moves of itself is not to be judged this way."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6439, 6439],
+          "zh": ["世冲应合，浼他出以为媒。"],
+          "yi": ["世冲应合，请他出来做媒。"],
+          "en": ["The Self clashed and the Other combined: he is asked to come forward as go-between."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6440, 6440],
+          "zh": ["间爻安静，被应世二爻冲动，或生扶合起，及日辰冲并起者，其人无心作伐，必是一边央他说也。", "间爻自动者，勿如此断。"],
+          "yi": ["间爻安静，被应、世两爻冲动，或者被生扶合起，以及被日辰冲并起来的，那个人无心做媒，一定是一边央求他去说。", "间爻自己发动的，不要这样断。"],
+          "en": ["A between line that is quiet and is clashed into motion by the Other and Self lines, or raised by generation, support or combination, or by a clash from the Day, belongs to a person who has no mind to act as go-between and has certainly been asked by one side to speak.", "A between line that moves of itself is not to be judged this way."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2066, 2066],
+          "zh": ["间爻安静被世应冲合起，及日辰冲并起者，其人无心作伐，必央他说合也。", "间爻自动者勿如此断。"],
+          "yi": ["间爻安静，被世、应冲合起来，以及被日辰冲并起来的，那个人无心做媒，一定是请他去说合。", "间爻自己发动的，不要这样断。"],
+          "en": ["A quiet between line raised by clash or combination from the Self and Other, or by a clash from the Day, belongs to a person who has no mind to act as go-between and has certainly been asked to speak.", "A between line that moves of itself is not to be judged this way."] }
+      ],
+      "see": ["LY.MARRY.HJC.33"]
+    },
+    {
+      "id": "LY.MARRY.HJC.40",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "两兄同发，定多月老以争盟；二间俱空，必无通好以为礼：两间俱动必有两媒；间爻安静俱空则无媒；空动而化兄鬼是媒欲谢礼作梗",
+      "rule": {
+        "yi": "两个间爻都动，一定有两个媒人，临兄弟或兄化兄、动出两个鬼，主有争着做媒的，要看空亡衰旺、有制无制，才知道谁掌权；间爻安静又都空亡，一定没有媒人来通好；空动而化出兄鬼，是媒人想要谢礼而作梗不来，不是没有媒人。",
+        "en": "Two between lines both moving means two go-betweens, and if they sit on Peer, or Peer changes into Peer, or two Pressure lines move out, they compete to be go-between, and one must see Void, thriving or weakness, and whether there is restraint to know which holds the power; between lines that are quiet and both Void mean no go-between comes to bring the two sides together; between lines that are Void and moving and change into Peer or Pressure mean the go-between wants his thank-you gift and is holding back, not that there is no go-between."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6442, 6442],
+          "zh": ["两兄同发，定多月老以争盟；", "二间俱空，必无通好以为礼。"],
+          "yi": ["两个兄爻一起发动，一定有很多月老争着做媒；", "两个间爻都空，一定没有人来通好、送礼。"],
+          "en": ["Two Peer lines moving together mean many go-betweens contending to make the match;", "two between lines both Void mean no one comes to bring the two sides together with a gift."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6443, 6443],
+          "zh": ["两间俱动，必有两媒。", "临兄，或兄化兄，或动出两鬼，主有争竞为媒。", "须看空亡衰旺，及有制无制，可知那个执权。", "若间爻安静，俱在空亡，必无媒人通好。", "若空动而化出兄鬼，或临兄鬼空动者，乃是媒欲谢礼作鬼不来，非无媒也。"],
+          "yi": ["两个间爻都动，一定有两个媒人。", "临兄弟，或者兄弟化兄弟，或者动出两个鬼，主有争着做媒的。", "要看空亡、衰旺，以及有制无制，可以知道哪个掌权。", "如果间爻安静，又都在空亡，一定没有媒人来通好。", "如果空、动而化出兄、鬼，或者临兄、鬼而空动的，是媒人想要谢礼，故意作梗不来，不是没有媒人。"],
+          "en": ["Two between lines both moving mean two go-betweens.", "On Peer, or Peer changing into Peer, or two Pressure lines moving out, they compete to be go-between.", "One must see Void, thriving or weakness, and whether there is restraint, to know which holds the power.", "If the between lines are quiet and both in Void, no go-between comes to bring the two sides together.", "If they are Void and moving and change into Peer or Pressure, or sit on Peer or Pressure while Void and moving, the go-between wants his thank-you gift and is holding back on purpose, not that there is no go-between."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2068, 2068],
+          "zh": ["两间俱动，必有两媒，须看衰旺及有制无制，可知哪个执权。"],
+          "yi": ["两个间爻都动，一定有两个媒人，要看衰旺以及有制无制，可以知道哪个掌权。"],
+          "en": ["Two between lines both moving mean two go-betweens, and one must look at strength and weakness and whether there is restraint to know which holds the power."] }
+      ],
+      "see": ["LY.MARRY.HJC.35"]
+    },
+    {
+      "id": "LY.MARRY.HJC.41",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "世应不和，仗冰言而通好：世应相冲相克难成，得间爻生合解救，靠媒人两边说合可成",
+      "rule": {
+        "yi": "世应相冲相克，本来难成亲，如果得间爻生合来解救，终归要靠媒人两边说合来通好，事也可以成；解救的办法，比如应动克世，间爻合住应爻、生扶世爻，其余类推。",
+        "en": "The Self and Other clashing or controlling each other makes the match hard, but if a between line rescues them by generating or combining, in the end the go-betweens must speak to both sides to bring them together, and then it can succeed; the way of rescue is, for example, when the Other moves to control the Self, a between line combines with the Other and generates the Self, and the rest by analogy."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6445, 6445],
+          "zh": ["世应不和，仗冰言而通好；"],
+          "yi": ["世应不和，靠媒人的话来通好。"],
+          "en": ["With the Self and Other at odds, rely on the go-between's words to bring them together."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6446, 6446],
+          "zh": ["世应相冲相克，难以成亲。", "若得间爻生合解救，其事始难成就，终须得媒人两边说合，以通其好，则事亦可成。", "何谓救解？", "如应动克世，间爻合住应爻，生扶世爻，余可类推。"],
+          "yi": ["世爻应爻互相冲克，这门亲事难以成。", "如果得到间爻生合来解救，这件事开始虽然难成，终究要得媒人两边说合，来通好，那么事也可以成。", "什么叫救解？", "比如应动克世，间爻合住应爻、生扶世爻，其余可以类推。"],
+          "en": ["The Self and Other clashing or controlling each other makes the match hard.", "If a between line rescues them by generating or combining, the matter, though hard at first, must in the end rely on the go-between speaking to both sides to bring them together, and then it too can succeed.", "What is meant by rescue?", "For example, when the Other moves to control the Self, a between line combines with the Other and generates the Self, and the rest by analogy."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2070, 2070],
+          "zh": ["世应相冲相克，若得间爻生合动世动应，须赖媒人两边说合方成。"],
+          "yi": ["世应相冲相克，如果得到间爻发动来生合世、应，须要靠媒人两边说合才能成。"],
+          "en": ["The Self and Other clashing or controlling each other, if a between line moves to generate or combine with the Self and Other, it can succeed only by relying on the go-between speaking to both sides."] }
+      ],
+      "see": ["LY.MARRY.HJC.13", "LY.MARRY.HJC.42"]
+    },
+    {
+      "id": "LY.MARRY.HJC.42",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "间爻受克，总绮语亦无从：欲托媒说合，须应爻生合间爻；间爻被应冲克，甜言也不听",
+      "rule": {
+        "yi": "想请媒人说合求亲，必须应爻生合间爻，媒人的话才容易入耳、被听信；如果间爻反被应爻冲克，即使甜言蜜语，对方也不听从。",
+        "en": "To ask a go-between to arrange a match, the Other line must generate or combine with the between line, and then his words go in easily and are believed; if the between line is instead clashed or controlled by the Other, even honeyed words are not heeded."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6448, 6448],
+          "zh": ["间爻受克，总绮语亦无从。"],
+          "yi": ["间爻受克，即使花言巧语也没有人听从。"],
+          "en": ["With the between line controlled, even flowery words are not followed."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6449, 6449],
+          "zh": ["凡欲浼媒人说合求亲，必得应爻生合间爻。", "则其言易入，必然听信；", "如间爻反被应冲克，则虽甘言美语，亦不从。"],
+          "yi": ["凡是想请媒人说合求亲，必须应爻生合间爻，", "那么他的话容易入耳，一定被听信；", "如果间爻反而被应爻冲克，即使甘言美语，也不听从。"],
+          "en": ["Whenever one asks a go-between to arrange a match, the Other line must generate or combine with the between line,", "and then his words go in easily and are surely believed;", "if the between line is instead clashed or controlled by the Other, even honeyed words are not heeded."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2072, 2072],
+          "zh": ["欲求亲必得应爻生合间爻，必然听信媒言；", "如间爻反被应爻冲克，虽甜言亦不从。"],
+          "yi": ["想求亲必须应爻生合间爻，才一定听信媒人的话；", "如果间爻反被应爻冲克，即使甜言蜜语也不听从。"],
+          "en": ["To seek a match the Other line must generate or combine with the between line, and then the go-between's words are surely believed;", "if the between line is instead clashed or controlled by the Other, even sweet words are not heeded."] }
+      ],
+      "see": ["LY.MARRY.HJC.41"]
+    },
+    {
+      "id": "LY.MARRY.HJC.43",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "财官冲克，反招就里愆尤：间爻被日辰动爻刑冲克害，媒人被两家埋怨；世爻冲克男家怨、应爻冲克女家怨",
+      "rule": {
+        "yi": "间爻如果被日辰、动爻刑冲克害，那个媒人一定被两家怨恨：世爻冲克，男家有怨；应爻冲克，女家有怨；或者世来生合而财爻冲克，男家虽吉，日后女家一定怨；财、官都冲克，夫妻双方都有怨。",
+        "en": "If the between line is punished, clashed, controlled or harmed by the Day or a moving line, the go-between is surely resented by both families: the Self line clashing or controlling, the man's family resents; the Other line clashing or controlling, the woman's family resents; or if the Self generates or combines while the Wealth line clashes or controls, the man's family is fine but later the woman's family will resent; if Wealth and Pressure both clash or control, both husband and wife resent."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6451, 6451],
+          "zh": ["财官冲克，反招就里愆尤；"],
+          "yi": ["财、官（对间爻）冲克，反而招来其中的怨尤。"],
+          "en": ["With Wealth and Pressure clashing or controlling, resentment from within is instead drawn down."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6452, 6452],
+          "zh": ["间爻若被日辰动爻刑冲克害，其媒必然取怨于两家。", "世爻冲克，男家有怨；", "应爻冲克，女家有怨。", "或世来生合，而财爻冲克者，男家虽吉，异日女家必怨。", "财官皆冲克，夫妻俱有怨。"],
+          "yi": ["间爻如果被日辰、动爻刑冲克害，那个媒人一定被两家怨恨。", "世爻冲克，男方家里有怨言；", "应爻冲克，女方家里有怨言。", "或者世来生合，而财爻冲克，男家虽然吉，日后女家一定怨。", "财、官都冲克，夫妻双方都有怨。"],
+          "en": ["If the between line is punished, clashed, controlled or harmed by the Day or a moving line, the go-between is surely resented by both families.", "The Self line clashing or controlling, the man's family resents;", "the Other line clashing or controlling, the woman's family resents.", "Or if the Self generates or combines while the Wealth line clashes or controls, the man's family is fine but later the woman's family will surely resent.", "If Wealth and Pressure both clash or control, both husband and wife resent."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2074, 2074],
+          "zh": ["间爻若被日辰动爻或财官冲克，其媒必然取怨于两家，世爻克冲男家有怨，应爻克冲女家有怨。"],
+          "yi": ["间爻如果被日辰、动爻或者财官冲克，那个媒人一定被两家埋怨，世爻冲克男家有怨，应爻冲克女家有怨。"],
+          "en": ["If the between line is clashed or controlled by the Day, a moving line, or Wealth and Pressure, the go-between is surely blamed by both families; the Self line clashing means the man's family resents and the Other line clashing means the woman's family resents."] }
+      ],
+      "see": ["LY.MARRY.HJC.44"]
+    },
+    {
+      "id": "LY.MARRY.HJC.44",
+      "topic": "媒妁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "世应生扶，必得其中厚惠：世应日辰带财福青龙生合间爻，媒人必得两家酬谢；带兄鬼螣蛇玄武只是巧言虚礼",
+      "rule": {
+        "yi": "世应、日辰带财福、青龙，生合间爻，媒人一定得到两家的酬谢，旺相多、休囚少；带兄、鬼、螣蛇、玄武生合的，不过巧言虚礼，没有实惠；化出财福生合也吉；男看世爻，女看应爻；世应都生合，两家都有酬谢；世旺男家多，应旺女家多。",
+        "en": "When the Self and Other or the Day carry Wealth, Output or the Azure Dragon and generate or combine with the between line, the go-between surely receives thanks from both families, more if thriving and less if weak; if what generates or combines carries Peer, Pressure, the Coiling Snake or the Dark Tortoise, it is no more than fine words and empty courtesy without real benefit; changing out into Wealth or Output that generates or combines is also auspicious; a man looks at the Self line and a woman at the Other line; the Self and Other both generating or combining means both families give; the Self thriving means more from the man's family and the Other thriving more from the woman's."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6454, 6454],
+          "zh": ["世应生扶，必得其中厚惠。"],
+          "yi": ["世应生扶（间爻），一定得到其中的厚惠。"],
+          "en": ["The Self and Other generating and supporting it, he surely receives a generous reward from within."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6455, 6456],
+          "zh": ["凡遇世应、日辰带财福、青龙，生合间爻，其媒必有两家酬贶。", "旺相多，休囚少。", "若带兄鬼螣蛇玄武类生合者，不过巧言虚礼，必无实惠。", "化出财福生合亦吉。", "男看世爻，女看应爻。", "世应俱生合，两家俱有惠。", "世旺，男家多；", "应旺，女家多。"],
+          "yi": ["凡是遇到世应、日辰带着财福、青龙，生合间爻，那个媒人一定有两家的酬谢。", "旺相多，休囚少。", "如果带着兄、鬼、螣蛇、玄武之类生合的，不过是巧言虚礼，一定没有实惠。", "化出财福生合的也吉。", "男的看世爻，女的看应爻。", "世应都生合，两家都有酬谢。", "世旺，男家给得多；", "应旺，女家给得多。"],
+          "en": ["Whenever the Self and Other or the Day carry Wealth, Output or the Azure Dragon and generate or combine with the between line, the go-between will surely have thanks from both families.", "More if thriving, less if weak.", "If what generates or combines carries Peer, Pressure, the Coiling Snake, the Dark Tortoise and the like, it is no more than fine words and empty courtesy, and surely without real benefit.", "Changing out into Wealth or Output that generates or combines is also auspicious.", "A man looks at the Self line, a woman at the Other line.", "The Self and Other both generating or combining, both families give.", "The Self thriving, the man's family gives more;", "the Other thriving, the woman's family gives more."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2076, 2076],
+          "zh": ["间爻遇世应日辰带财福生合，其媒必有两家酬。", "旺相多，休囚少，世旺男家多，应旺女家多。"],
+          "yi": ["间爻遇到世应、日辰带着财福来生合，那个媒人一定有两家的酬谢。", "旺相多，休囚少，世旺男家给得多，应旺女家给得多。"],
+          "en": ["If the between line meets the Self, the Other or the Day carrying Wealth or Output and generating or combining, the go-between will surely have thanks from both families.", "More if thriving, less if weak; the Self thriving means more from the man's family, the Other thriving more from the woman's."] }
+      ],
+      "see": ["LY.MARRY.HJC.43"]
+    },
+    {
+      "id": "LY.MARRY.HJC.45",
+      "topic": "总则",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "一卦吉凶，细察精微委曲：此章只论男卜女婚、女卜男姻；择婿择媳嫁妹娶嫂，要按用神断，不可一概以官为夫、财为妇",
+      "rule": {
+        "yi": "一卦的吉凶，要细察其中精微曲折；夫妇百年，才知道到底能否团圆。王洪绪特别说：这一章只是讲男子占女方婚事、女子占男方姻缘；今天的术士不辨清楚，凡择婿、择媳、嫁妹、娶嫂，都不按用神断，一概以官为夫、财为妇，大大误人；应当按用神的吉凶来推断，不可一概只论财官。",
+        "en": "The good and ill of a hexagram is to be examined for its fine and winding detail; only over a lifetime as husband and wife does one know whether they come together in the end. Wang Hongxu adds especially: this chapter speaks only of a man divining about a bride or a woman divining about a bridegroom; today's practitioners, not seeing the distinction, for choosing a son-in-law or daughter-in-law, marrying off a younger sister or taking a brother's wife, do not judge by the Subject but always take Pressure as the husband and Wealth as the wife, which misleads people greatly; one should judge by the good or ill of the Subject and never speak of Wealth and Pressure alike in every case."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6458, 6458],
+          "zh": ["一卦吉凶，细察精微委曲；", "百年夫妇，方知到底团圆。"],
+          "yi": ["一卦的吉凶，要细细察看其中精微曲折；", "百年夫妇，才知道到底能不能团圆。"],
+          "en": ["The good and ill of a hexagram is to be examined for its fine and winding detail;", "only over a lifetime as husband and wife does one know whether they come together in the end."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2078, 2078],
+          "zh": ["此章唯论男卜女婚，女卜男姻之意，今术家不辨其详，凡择婿择媳嫁妹娶嫂，竟不以用神断，概以官为夫财为妇，大误于人。", "况章内有云：“妯娌不合只为官爻发动，翁姑不睦定因妻位交重”，此二句可征矣。", "学者当凭用神吉凶推断，不可概论财官是也。"],
+          "yi": ["这一章只是讲男子占女方婚事、女子占男方姻缘的意思，现在的术士不辨清楚，凡是择婿、择媳、嫁妹、娶嫂，竟然不按用神来断，一概以官为丈夫、财为妻子，大大误人。", "况且这一章里有一句说：「妯娌不合，只为官爻发动；翁姑不睦，定因妻位交重」，这两句就可以为证。", "学的人应当按用神的吉凶来推断，不可一概只论财官。"],
+          "en": ["This chapter speaks only of a man divining about a bride or a woman divining about a bridegroom; the practitioners of today, not seeing the distinction, for choosing a son-in-law or daughter-in-law, marrying off a younger sister or taking a brother's wife, do not judge by the Subject and always take Pressure as the husband and Wealth as the wife, which misleads people greatly.", "Moreover the chapter itself says, 'the brothers' wives are at odds only because the Pressure line moves; the parents-in-law are at odds surely because the wife's place is doubled', and these two lines can serve as proof.", "Learners should judge by the good or ill of the Subject and never speak of Wealth and Pressure alike in every case."] }
+      ],
+      "dispute": {
+        "yi": "这一章的财官各指谁：旧注一路按「官为夫、财为妇」讲（见 HJC.11、HJC.24）；王洪绪在章末明说这是「男卜女婚、女卜男姻」的意思，别人代占、兄占弟婚之类要按用神断，不可一概；觉子（《增删卜易》）也说男家占女以财为用、女家占男以官为用，不拘父母亲朋代占都同。",
+        "en": "Whom Wealth and Pressure stand for in this chapter: the old commentary throughout speaks by 'Pressure the husband, Wealth the wife' (see HJC.11, HJC.24); Wang Hongxu says at the chapter's end that this is what applies when a man divines about a bride or a woman about a bridegroom, and that divinations made on another's behalf or by an elder brother for a younger must be judged by the Subject and not all alike; Juezi (Zengshan Buyi) also says that the man's family divining about the woman takes Wealth as the Subject and the woman's family divining about the man takes Pressure, the same whether parents or relatives divine on their behalf."
+      },
+      "see": ["LY.MARRY.HJC.18", "LY.MARRY.HJC.11"]
+    }
+  ]
+}

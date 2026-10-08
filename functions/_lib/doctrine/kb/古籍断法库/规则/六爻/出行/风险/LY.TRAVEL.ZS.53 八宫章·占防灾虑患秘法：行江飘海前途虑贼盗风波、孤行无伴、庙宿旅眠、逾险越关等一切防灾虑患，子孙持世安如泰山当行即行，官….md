@@ -1,0 +1,73 @@
+---
+id: "LY.TRAVEL.ZS.53"
+title: "八宫章·占防灾虑患秘法：行江飘海前途虑贼盗风波、孤行无伴、庙宿旅眠、逾险越关等一切防灾虑患，子孙持世安如泰山当行即行，官鬼持世忧疑难解加意防止即使当行也宜暂止；但江海开舟官鬼持世，不是永不开行，今日得官鬼持世先不开，明日后日再占，遇子孙持世便开"
+shushu: "六爻"
+domain: "出行"
+topic: "风险"
+work: "[[增删卜易]]"
+books:
+  - "[[增删卜易]]"
+speakers:
+  - "《增删卜易》正文(未标说话人)"
+dispute: false
+terms:
+  - "[[子孙]]"
+  - "[[官鬼]]"
+  - "[[世爻]]"
+  - "[[不上卦]]"
+rule: "以上都是防灾虑患：只要得子孙持世，安稳如泰山，该走就走，有吉无凶；如果得官鬼持世，忧疑难解，要加意防止，即使该走，也宜暂时停下。只有陈言谏诤的，又当别论；如果真是为国计民生，捐躯报主，即使官鬼持世，也应该去。前面说的各种事，以子孙持世为吉，官鬼持世为忧。这两个如果卦中都不出现，只能再占；只要有一个出现，就不必再占了。然而事情有缓急的不同：假如江海开船，如果得官鬼持世，难道会永远不开行吗？哪里知道早开一天遇凶，晚走半个时辰就免祸；如果今天占得官鬼持世，暂且不要开船，明天再占，后天又占，只要遇到子孙持世，马上开船。事情有相似的，照这个办。"
+rule_en: "All the above are cases of guarding against calamity and worry: if Output holds the Self, one is as safe as Mount Tai, and goes if one should, with luck and no ill; if Pressure holds the Self, the worry cannot be resolved, one must take extra care, and even if one should go it is fit to stop for the time being. Only those who offer advice and remonstrate are to be judged otherwise: if it is truly for the nation and the people and one gives one's life to repay the sovereign, then even with Pressure holding the Self one should go. In the matters just discussed, Output holding the Self is lucky and Pressure holding the Self is a worry. If neither shows in the hexagram, one can only divine again; if one of them appears, there is no need to divine further. But matters differ in urgency: suppose a boat is to set out on a river or the sea and one gets Pressure holding the Self, is it that it will never sail? One does not realise that setting out a day early meets ill, and leaving half an hour later escapes disaster; if today one gets Pressure holding the Self, do not sail for now; divine again tomorrow, and again the day after, and as soon as Output holds the Self, sail. In similar matters, do the same."
+tags:
+  - "六爻/出行/风险"
+aliases:
+  - "LY.TRAVEL.ZS.53"
+  - "八宫章·占防灾虑患秘法：行江飘海前途虑贼盗风波、孤行无伴、庙宿旅眠、逾险越关等一切防灾虑患，子孙持世安如泰山当行即行，官鬼持世忧疑难解加意防止即使当行也宜暂止；但江海开舟官鬼持世，不是永不开行，今日得官鬼持世先不开，明日后日再占，遇子孙持世便开"
+---
+
+# 八宫章·占防灾虑患秘法：行江飘海前途虑贼盗风波、孤行无伴、庙宿旅眠、逾险越关等一切防灾虑患，子孙持世安如泰山当行即行，官鬼持世忧疑难解加意防止即使当行也宜暂止；但江海开舟官鬼持世，不是永不开行，今日得官鬼持世先不开，明日后日再占，遇子孙持世便开
+
+六爻 · 出行 · 风险 · 出处 [[增删卜易]]
+
+> [!abstract] 规则(整理,不是原文)
+> 以上都是防灾虑患：只要得子孙持世，安稳如泰山，该走就走，有吉无凶；如果得官鬼持世，忧疑难解，要加意防止，即使该走，也宜暂时停下。只有陈言谏诤的，又当别论；如果真是为国计民生，捐躯报主，即使官鬼持世，也应该去。前面说的各种事，以子孙持世为吉，官鬼持世为忧。这两个如果卦中都不出现，只能再占；只要有一个出现，就不必再占了。然而事情有缓急的不同：假如江海开船，如果得官鬼持世，难道会永远不开行吗？哪里知道早开一天遇凶，晚走半个时辰就免祸；如果今天占得官鬼持世，暂且不要开船，明天再占，后天又占，只要遇到子孙持世，马上开船。事情有相似的，照这个办。
+>
+> *Rule (our summary):* All the above are cases of guarding against calamity and worry: if Output holds the Self, one is as safe as Mount Tai, and goes if one should, with luck and no ill; if Pressure holds the Self, the worry cannot be resolved, one must take extra care, and even if one should go it is fit to stop for the time being. Only those who offer advice and remonstrate are to be judged otherwise: if it is truly for the nation and the people and one gives one's life to repay the sovereign, then even with Pressure holding the Self one should go. In the matters just discussed, Output holding the Self is lucky and Pressure holding the Self is a worry. If neither shows in the hexagram, one can only divine again; if one of them appears, there is no need to divine further. But matters differ in urgency: suppose a boat is to set out on a river or the sea and one gets Pressure holding the Self, is it that it will never sail? One does not realise that setting out a day early meets ill, and leaving half an hour later escapes disaster; if today one gets Pressure holding the Self, do not sail for now; divine again tomorrow, and again the day after, and as soon as Output holds the Self, sail. In similar matters, do the same.
+
+## 《增删卜易》正文(未标说话人)
+
+> [!quote]+ [[增删卜易]] 第 335 行 · Zengshan Buyi, main text (speaker not marked)
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 或孤行无伴、或庙宿旅眠、或家防火烛、或宅见妖邪、或随营贸易、或逾险越关； | 或者孤身出行没有同伴、或者在庙里住宿旅途睡眠、或者家里防火烛、或者宅里见到妖邪、或者随军营做买卖、或者翻越险地关隘； | Or travelling alone without a companion, or sleeping in a temple or inn on the road, or guarding the house against fire and candles, or seeing evil spirits in the house, or trading with an army camp, or crossing dangerous ground and passes; |
+
+^q1
+
+## 《增删卜易》正文(未标说话人)
+
+> [!quote]+ [[增删卜易]] 第 339 行 · Zengshan Buyi, main text (speaker not marked)
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 以上皆系防灾虑患，但得子孙持世，安如泰山，当行即行，有吉无凶； | 以上都是防灾虑患，只要得子孙持世，安稳如泰山，该走就走，有吉无凶； | All the above are cases of guarding against calamity and worry: if Output holds the Self, one is as safe as Mount Tai, and goes if one should, with luck and no ill; |
+> | 若得官鬼持世，忧疑不解，加意防止，即使当行，亦宜者止。 | 如果得官鬼持世，忧疑难解，要加意防止，即使该走，也宜暂时停下。 | if Pressure holds the Self, the worry cannot be resolved, one must take extra care, and even if one should go it is fit to stop for the time being. |
+> | 惟陈言谏诤者，又当别论。 | 只有陈言谏诤的，又当别论。 | Only those who offer advice and remonstrate are to be judged otherwise. |
+> | 若果真正为国计民生，捐躯报主，即使官鬼持世，亦宜行之。 | 如果真是为国计民生，捐躯报主，即使官鬼持世，也应该去。 | If it is truly for the nation and the people and one gives one's life to repay the sovereign, then even with Pressure holding the Self one should go. |
+
+^q2
+
+## 《增删卜易》正文(未标说话人)
+
+> [!quote]+ [[增删卜易]] 第 340 行 · Zengshan Buyi, main text (speaker not marked)
+> | 原文 | 译文 | English |
+> | --- | --- | --- |
+> | 前说诸事，以子孙持世而吉，官鬼持世为忧。 | 前面说的各种事，以子孙持世为吉，官鬼持世为忧。 | In the matters just discussed, Output holding the Self is lucky and Pressure holding the Self is a worry. |
+> | 此二者卦若不现，仅可再占，但有一现者，不必占矣。 | 这两个如果卦中都不出现，只能再占；只要有一个出现，就不必再占了。 | If neither shows in the hexagram, one can only divine again; if one of them appears, there is no need to divine further. |
+> | 然事有缓急之不同，假令江海开舟，倘得官鬼持世，岂有永不开行之理？ | 然而事情有缓急的不同：假如江海开船，如果得官鬼持世，难道会永远不开行吗？ | But matters differ in urgency: suppose a boat is to set out on a river or the sea and one gets Pressure holding the Self, is it that it will never sail? |
+> | 殊不知早开一日逢凶，迟去半时免祸，倘若今日占得官鬼持世，且莫开舟，明日再占，后日又占，但遇子孙持世，即便开行。 | 哪里知道早开一天遇凶，晚走半个时辰就免祸；如果今天占得官鬼持世，暂且不要开船，明天再占，后天又占，只要遇到子孙持世，马上开船。 | One does not realise that setting out a day early meets ill, and leaving half an hour later escapes disaster; if today one gets Pressure holding the Self, do not sail for now; divine again tomorrow, and again the day after, and as soon as Output holds the Self, sail. |
+> | 事之有相似者，仿此。 | 事情有相似的，照这个办。 | In similar matters, do the same. |
+
+^q3
+
+## 相关
+
+- [[LY.TRAVEL.ZS.13 舟行章·舟行问平安：子孙持世、克世、生世、合世则一路无虞，官鬼持世忧郁惊恐，官鬼冲克世爻灾非必见，兄动破财|LY.TRAVEL.ZS.13 舟行章·舟行问平安：子孙持世、克世、生世、合世则一路无虞，官鬼持世忧郁惊恐，官鬼冲克世爻灾非必见，兄动破财]]
+- [[LY.TRAVEL.ZS.42 趋避章·避患于生世之方、趋吉于福神之地：避兵、避盗、避瘟、养病、避是非，都宜避到「生世」之方和「子孙」之方；子孙若在卦中…|LY.TRAVEL.ZS.42 趋避章·避患于生世之方、趋吉于福神之地：避兵、避盗、避瘟、养病、避是非，都宜避到「生世」之方和「子孙」之方；子孙若在卦中发动，不论克世、生世、持世都吉]]

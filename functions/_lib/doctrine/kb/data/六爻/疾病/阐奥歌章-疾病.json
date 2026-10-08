@@ -1,0 +1,260 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "阐奥歌章",
+  "chapter": "疾病章十一首、医药章二首",
+  "chapter_en": "Chapter on illness (eleven poems) and chapter on medicine (two poems)",
+  "ranges": {"卜筮大全": [3983, 4029]},
+  "units": [
+    {
+      "id": "LY.ILL.CA.01",
+      "topic": "总则",
+      "chapter": "阐奥歌章·二十二、疾病章",
+      "chapter_en": "Chan'ao Gezhang, chapter 22: illness",
+      "title": "疾病先将身命看：逢龙见子放心宽；妻财入命多沉重、官鬼临身更不堪；身犯勾陈凶有准、命加玄武瘥应难；螣蛇白虎忧丧事、身命空亡定入棺；金鬼值身伤骨节、水鬼血浓攒、火鬼疮痍恼、木鬼百骨酸、土鬼肿胀；杀刑加命命摧残",
+      "rule": {
+        "yi": "疾病先要看身和命：遇到青龙、见到子孙，可以放心。妻财入了命，多半沉重；官鬼临在身上，更加不堪。身犯勾陈，凶是有准的；命上加了玄武，痊愈就难。螣蛇、白虎，忧的是丧事；身命落空亡，一定入棺。金鬼值身，伤骨节；身临水鬼，血液浓稠聚积；贴着身的火鬼，疮痍烦恼；木鬼在身宫，百骨酸痛；土鬼在身，身体肿胀；杀和刑加在命上，命被摧残。",
+        "en": "In illness first look at the Body and the natal line: meeting the Dragon and seeing Output, set the heart at ease. Wealth entering the natal line: mostly heavy; the Pressure line sitting on the Body: still worse. The Body offending Hook Earth: ill is certain; the natal line with the Dark Tortoise added: recovery is surely hard. The Coiling Snake and White Tiger: worry of a funeral; the Body and natal line Void: he will surely enter the coffin. A Metal ghost on the Body: injury to the bone joints; the Body on a Water ghost: blood thick and gathered; a Fire ghost close to the Body: the vexation of sores; a Wood ghost in the Body palace: all the bones ache; an Earth ghost on the Body: the body swells; a killing and punishment added to the natal line: life is ruined."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3986, 3986],
+          "zh": ["疾病先将身命看，", "逢龙见子放心宽。", "妻财入命多沉重，", "官鬼临身更不堪。", "身犯勾陈凶有准，", "命加玄武瘥应难。", "螣蛇白虎忧丧事，", "身命空亡定入棺。", "金鬼值身伤骨节，", "身临水鬼血浓攒。", "贴身火鬼疮痍恼，", "木鬼身宫百骨酸。", "土鬼在身身肿胀，", "杀刑加命命摧残。"],
+          "yi": ["疾病要先看身和命，", "遇到青龙、见到子孙，放心宽慰。", "妻财入了命，多半沉重；", "官鬼临在身上，更加不堪。", "身犯勾陈，凶是有准的；", "命上加了玄武，痊愈就难。", "螣蛇、白虎，忧的是丧事；", "身命落了空亡，一定入棺。", "金鬼值身，伤骨节；", "身临水鬼，血液浓稠聚积；", "贴身的火鬼，疮痍烦恼；", "木鬼在身宫，百骨酸痛；", "土鬼在身，身体肿胀；", "杀和刑加在命上，命被摧残。"],
+          "en": ["In illness first look at the Body and the natal line:", "meeting the Dragon and seeing Output, set the heart at ease.", "Wealth entering the natal line: mostly heavy;", "the Pressure line sitting on the Body: still worse.", "the Body offending Hook Earth: ill is certain;", "the natal line with the Dark Tortoise added: recovery is surely hard.", "the Coiling Snake and White Tiger: worry of a funeral;", "the Body and natal line Void: he will surely enter the coffin.", "A Metal ghost on the Body: injury to the bone joints;", "the Body on a Water ghost: blood thick and gathered;", "a Fire ghost close to the Body: the vexation of sores;", "a Wood ghost in the Body palace: all the bones ache;", "an Earth ghost on the Body: the body swells;", "a killing and punishment added to the natal line: life is ruined."] }
+      ],
+      "note": {
+        "yi": "这一首（阐奥歌章疾病章第一首）很长，共十九联，这里分成三条：头七联（身命）在这一条，中间五联（五行脏腑、八卦部位）在 LY.ILL.CA.02，末六联（凶卦、化爻）在 LY.ILL.CA.03。「逢龙见子放心宽」的「龙」是青龙，「子」是子孙；「身」「命」是卦身和本命（病人的本命爻），本歌诀这样并称。「贴身火鬼」按字面译作「close to the Body」。「血浓攒」按「血液浓稠聚积」译，字面不确定。这一首在断易天机里也有，题作「孙膑断疾病歌」（见 LY.ILL.DYTJ.02 一带）。周易尚占的疾厄部（第 781–784 行）把这一首几乎原样收了一遍，字句有三处不同：「螣蛇」写作「腾蛇」（同一个神，字形不同）；「身临水鬼血浓攒」写作「身中水鬼血脓钻」（「脓」是脓，「浓」是浓稠；「钻」是往里钻，「攒」是聚积）；「木鬼身宫百骨酸」写作「木鬼身宫有骨酸」。",
+        "en": "This first poem of the Chan'ao Gezhang's chapter on illness is very long, nineteen couplets, and is divided here into three entries: the first seven couplets (the Body and the natal line) in this entry, the middle five (the five phases and viscera, the trigrams and body parts) in LY.ILL.CA.02, and the last six (the ominous hexagrams, changing lines) in LY.ILL.CA.03. The 'Dragon' of 'meeting the Dragon and seeing Output' is the Azure Dragon, and 'Output' is the Output line; the 'Body' and 'natal line' are the hexagram's Body and the sick person's natal line, which the verse names together. 'A Fire ghost close to the Body' is rendered literally as 'close to the Body'. 'Xue nong zan' is translated as 'blood thick and gathered', the literal sense being uncertain. This poem is also in the Duanyi Tianji, titled 'Sun Bin's song on judging illness' (see LY.ILL.DYTJ.02 and around). The Zhouyi Shangzhan's section on illness and affliction (lines 781–784) takes this poem over almost word for word; the wording differs in three places: 'Coiling Snake' is written with a variant character for 'Coiling' (the same spirit); 'a Water ghost close to the Body, blood thick and gathered' is written 'a Water ghost within the Body, blood and pus boring in' ('pus' where the Bushi Daquan has 'thick', and 'boring in' where it has 'gathered'); and 'a Wood ghost in the Body palace, a hundred bones aching' is written 'a Wood ghost in the Body palace, the bones ache'."
+      },
+      "see": ["LY.ILL.CA.02", "LY.ILL.CA.04", "LY.ILL.HJC.94"]
+    },
+    {
+      "id": "LY.ILL.CA.02",
+      "topic": "症候",
+      "chapter": "阐奥歌章·二十二、疾病章",
+      "chapter_en": "Chan'ao Gezhang, chapter 22: illness",
+      "title": "五行脏腑与八卦部位：水腰肾、金肺、火心经、木肝，土爻脾胃休逢杀；乾首坤腹巽手震足兑口艮鼻坎耳离目；一宫杀旺一般灾、子动龙兴保平复；虎鬼同兴应哭泣、龙孙并旺保平安",
+      "rule": {
+        "yi": "水是腰和肾，金是肺，火主心经，木主肝；土爻是脾胃，不要遇上杀；发动、交重时要仔细看。虎和鬼一起兴动，应该哭泣；龙和子孙一起旺，保平安。乾是头，坤是腹，巽是手，震是足，兑是口，艮是鼻，坎主耳，离主目。哪一宫杀旺，就是那一处的灾；子孙动、青龙兴，保平复。",
+        "en": "Water is the waist and kidneys, Metal the lungs; Fire governs the heart channel, Wood the liver; the Earth line is the spleen and stomach and must not meet a killing; if it moves or crosses heavily, look carefully. The Tiger and the ghost rising together: there will surely be weeping; the Dragon and Output both strong: peace is assured. Qian is the head and Kun the belly, Xun the hands and Zhen the feet, Dui the mouth and Gen the nose, Kan governs the ears and Li the eyes. Where a killing is strong in one palace, the calamity is the same there; with Output moving and the Dragon rising, recovery is assured."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3986, 3986],
+          "zh": ["水为腰肾金为肺，", "火主心经木主肝。", "土爻脾胃休逢杀，", "发动交重仔细观。", "虎鬼同兴应哭泣，", "龙孙并旺保平安。", "乾为首兮坤为腹，", "巽为手兮震为足。", "兑为口兮艮为鼻，", "坎主耳兮离主目。", "一宫杀旺一般灾，", "子动龙兴保平复。"],
+          "yi": ["水是腰和肾，金是肺，", "火主心经，木主肝。", "土爻是脾胃，不要遇上杀；", "发动、交重，要仔细看。", "虎和鬼一起兴动，应该哭泣；", "龙和子孙一起旺，保平安。", "乾是头啊坤是腹，", "巽是手啊震是足，", "兑是口啊艮是鼻，", "坎主耳啊离主目。", "哪一宫杀旺，就是同样的灾；", "子动龙兴，保平复。"],
+          "en": ["Water is the waist and kidneys, Metal the lungs;", "Fire governs the heart channel, Wood the liver.", "The Earth line is the spleen and stomach and must not meet a killing;", "if it moves or crosses heavily, look carefully.", "The Tiger and the ghost rising together: there will surely be weeping;", "the Dragon and Output both strong: peace is assured.", "Qian is the head and Kun the belly,", "Xun the hands and Zhen the feet,", "Dui the mouth and Gen the nose,", "Kan governs the ears and Li the eyes.", "Where a killing is strong in one palace, the calamity is the same there;", "with Output moving and the Dragon rising, recovery is assured."] }
+      ],
+      "dispute": {
+        "yi": "八卦各管身体哪一处，几处说法不同。阐奥歌章这一首（LY.ILL.CA.02）是「乾首、坤腹、巽手、震足、兑口、艮鼻、坎耳、离目」，巽是手、艮是鼻；断易天机的孙膑断疾病歌（见 LY.ILL.DYTJ.03）是「乾首、坤腹、坎耳、震足、巽肠、艮手、兑口、离目」，巽是肠、艮是手；断易天机的卜筮元龟一段（见 LY.ILL.DYTJ.12）是「乾头、坤腹、坎耳、离目、兑口、艮手、震足、巽股」，巽是股、艮是手；卜筮正宗的痘疹章（LY.ILL.BSZZ.23）也是「乾头面、坤腹、震足、巽股、艮手、离目、坎耳、兑口」。乾、坤、坎、离、兑、震六个卦几家一致，不同的只是巽（手、肠或股）和艮（鼻或手）。书里没有裁决。",
+        "en": "Which part of the body each of the eight trigrams governs is put differently in several places. This poem of the Chan'ao Gezhang (LY.ILL.CA.02) has 'Qian the head, Kun the belly, Xun the hands, Zhen the feet, Dui the mouth, Gen the nose, Kan the ears, Li the eyes', with Xun the hands and Gen the nose; Sun Bin's song in the Duanyi Tianji (see LY.ILL.DYTJ.03) has 'Qian the head, Kun the belly, Kan the ears, Zhen the feet, Xun the bowels, Gen the hands, Dui the mouth, Li the eyes', with Xun the bowels and Gen the hands; the Bushi Yuangui passage in the Duanyi Tianji (see LY.ILL.DYTJ.12) has 'Qian the head, Kun the belly, Kan the ears, Li the eyes, Dui the mouth, Gen the hands, Zhen the feet, Xun the thighs', with Xun the thighs and Gen the hands; and the smallpox chapter of the Bushi Zhengzong (LY.ILL.BSZZ.23) likewise has 'Qian the head and face, Kun the belly, Zhen the feet, Xun the thighs, Gen the hands, Li the eyes, Kan the ears, Dui the mouth'. Six of the trigrams (Qian, Kun, Kan, Li, Dui, Zhen) are agreed; the difference is only in Xun (the hands, bowels or thighs) and Gen (the nose or the hands). The books do not settle it."
+      },
+      "note": {
+        "yi": "这是第一首的中间十二句：五行配脏腑（水腰肾、金肺、火心、木肝、土脾胃），八卦配部位，和虎鬼同兴、龙孙并旺的判语。「龙孙」是青龙和子孙。「虎鬼同兴」的「虎」是白虎。「土爻脾胃休逢杀」按字面译作「the Earth line is the spleen and stomach and must not meet a killing」。「一宫杀旺一般灾」按字面译，意思是杀在哪一个卦宫旺，就是那一个卦所管的部位遭灾。前面的「水为腰肾金为肺」和黄金策、易隐的五行脏腑大体同一说（LY.ILL.YY.11、HJC.16 一带），只是这里水是「腰肾」、火是「心经」，没有小肠。周易尚占的疾厄部（第 784–785 行）里这一段有三处字不同：「水为腰肾金为肺」写作「水为腰肾金属肺」，「火主心经木主肝」写作「火主心胸木主肝」，「土爻脾胃休逢杀」写作「土爻脾位休逢杀」（脾「位」，不是脾「胃」）；八卦配部位那四联两本完全相同。",
+        "en": "These are the middle twelve lines of the first poem: the five phases matched with the viscera (Water the waist and kidneys, Metal the lungs, Fire the heart, Wood the liver, Earth the spleen and stomach), the eight trigrams matched with body parts, and the verdicts 'the Tiger and the ghost rising together' and 'the Dragon and Output both strong'. 'The Dragon and Output' are the Azure Dragon and the Output line. The 'Tiger' of 'the Tiger and the ghost rising together' is the White Tiger. 'The Earth line is the spleen and stomach and must not meet a killing' is rendered literally. 'Where a killing is strong in one palace, the calamity is the same' says that where a killing is strong in a given palace, the part that trigram governs meets calamity. The earlier 'Water the waist and kidneys, Metal the lungs' is broadly the same as the five phases and viscera of the Huangjin Ce and the Yi Yin (LY.ILL.YY.11, HJC.16 and around), only that here Water is 'waist and kidneys' and Fire 'the heart channel', without the small intestine. In the Zhouyi Shangzhan's section on illness and affliction (lines 784–785) this passage differs in three places: 'Water is the waist and kidneys, Metal the lungs' is written 'Water is the waist and kidneys, Metal belongs to the lungs'; 'Fire governs the heart channel, Wood the liver' is written 'Fire governs the heart and chest, Wood the liver'; and 'the Earth line is the spleen and stomach, do not meet a killing' is written 'the Earth line is the spleen position, do not meet a killing'. The four couplets matching the trigrams with body parts are identical in the two books."
+      },
+      "see": ["LY.ILL.CA.01", "LY.ILL.CA.03", "LY.ILL.YY.11", "LY.ILL.BSZZ.23", "LY.ILL.HDY.05", "LY.ILL.HDY.12", "LY.ILL.BSQS.33", "LY.ILL.BSQS.43", "LY.ILL.HJC.139", "LY.ILL.HJC.140"]
+    },
+    {
+      "id": "LY.ILL.CA.03",
+      "topic": "生死",
+      "chapter": "阐奥歌章·二十二、疾病章",
+      "chapter_en": "Chan'ao Gezhang, chapter 22: illness",
+      "title": "凶卦与化爻：丰蛊困明夷夬同人一例推（冬旅春需、夏观秋剥并倾危）；六爻安静尤难瘥、杀鬼交重便莫医；财旺身空身必丧、官生命死命应衰；两重官鬼因劳复；鬼化兄病不宜、化财凶有准、化子瘥无疑",
+      "rule": {
+        "yi": "丰、蛊、困、明夷，夬和同人，一样推断；冬天的旅、春天的需，都困重；夏天的观、秋天的剥，都倾危。六爻安静，尤其难痊；杀和鬼交重，就不要医。财旺而身空，身一定丧；官生而命死，命应衰。两重官鬼，是因劳累复发；鬼化为兄，病不宜；鬼化为财，凶有准；鬼爻化子，痊愈无疑。",
+        "en": "Feng together with Gu, Kun (Confinement) and Mingyi, and Guai and Tongren: reason the same for all; in winter Lü, in spring Xu: all are trapped and heavy; in summer Guan, in autumn Bo: all topple and are in danger. With the six lines still it is still harder to recover; with killing and ghost crossing heavily one cannot treat it. Wealth strong and the Body Void: the body will surely be lost; the Pressure line alive and the natal line dead: life is surely weak. Two Pressure lines: a relapse from overwork; a ghost changing into Peer: the illness is not favourable; a ghost changing into Wealth: ill is certain; a Pressure line changing into Output: recovery is beyond doubt."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3986, 3986],
+          "zh": ["丰兼蛊困及明夷，", "夬与同人一例推。", "冬旅春需都困重，", "夏观秋剥并倾危。", "六爻安静尤难瘥，", "杀鬼交重便莫医。", "财旺身空身必丧，", "官生命死命应衰。", "两重官鬼因劳复，", "鬼化为兄病不宜。", "鬼化为财凶有准。", "鬼爻化子瘥无疑。"],
+          "yi": ["丰，加上蛊、困和明夷，", "夬和同人，一样推断。", "冬天的旅、春天的需，都困重；", "夏天的观、秋天的剥，都倾危。", "六爻安静，尤其难痊；", "杀和鬼交重，就不要医了。", "财旺而身空，身一定丧；", "官生而命死，命应衰弱。", "两重官鬼，是因劳累而复发；", "鬼化为兄，病不适宜；", "鬼化为财，凶是有准的；", "鬼爻化为子，痊愈无疑。"],
+          "en": ["Feng together with Gu, Kun (Confinement) and Mingyi,", "and Guai and Tongren: reason the same for all.", "in winter Lü, in spring Xu: all are trapped and heavy;", "in summer Guan, in autumn Bo: all topple and are in danger.", "With the six lines still it is still harder to recover;", "with killing and ghost crossing heavily one cannot treat it.", "Wealth strong and the Body Void: the body will surely be lost;", "the Pressure line alive and the natal line dead: life is surely weak.", "Two Pressure lines: a relapse from overwork;", "a ghost changing into Peer: the illness is not favourable;", "a ghost changing into Wealth: ill is certain;", "a Pressure line changing into Output: recovery is beyond doubt."] }
+      ],
+      "dispute": {
+        "yi": "哪几个卦占病最凶，几本书的名单不同。阐奥歌章这一首（LY.ILL.CA.03）是丰、蛊、困、明夷、夬、同人一例，冬旅、春需、夏观、秋剥；第四首（LY.ILL.CA.06）是明夷、蛊、夬、剥、丰、同，第五首是丰、观、需、节、旅、贲、临、明夷、蛊、夬、同人；天玄赋（LY.ILL.TXF.06）是明夷、观、贲、需、临（世身入墓）和大畜、丰、同、蛊、夬（财鬼俱兴）；断易天机的卜筮元龟一段（LY.ILL.DYTJ.15）是丰、观、需、剥、节、旅、贲、明夷、蛊、夬、同人「十死分明」。名单大同小异：丰、蛊、夬、同人、明夷几乎处处都在，观、需、贲、旅、剥、节、临、大畜则有的有、有的没有。书里没有裁决。周易尚占（LY.ILL.ZSZ.02 至 ZSZ.05）和文王金钱课（LY.ILL.WWJQ.03、WWJQ.05）也按卦名断病，和这个名单有出入：观，周易尚占说「财聚病痊」，文王金钱课说「占病即愈」「疾病皆除」；丰，文王金钱课说「疾病渐好」，周易尚占说「病人沉滞」；夬，周易尚占说「病讼迟延」，文王金钱课补录部分说「疾病除根」；蛊、困、明夷三卦，周易尚占也说病凶或「件件遭伤」，和这个名单一致（文王金钱课对这三卦没有讲病）。",
+        "en": "Which hexagrams are worst in divining illness is listed differently by several books. This poem of the Chan'ao Gezhang (LY.ILL.CA.03) has Feng, Gu, Kun, Mingyi, Guai and Tongren alike, with Lü in winter, Xu in spring, Guan in summer and Bo in autumn; its fourth poem (LY.ILL.CA.06) has Mingyi, Gu, Guai, Bo, Feng and Tong, and its fifth Feng, Guan, Xu, Jie, Lü, Bi, Lin, Mingyi, Gu, Guai and Tongren; the Tianxuan Fu (LY.ILL.TXF.06) has Mingyi, Guan, Bi, Xu and Lin (the Self and Body entering a tomb) and Daxu, Feng, Tong, Gu and Guai (Wealth and the ghost both rising); the Bushi Yuangui passage in the Duanyi Tianji (LY.ILL.DYTJ.15) has Feng, Guan, Xu, Bo, Jie, Lü, Bi, Mingyi, Gu, Guai and Tongren, 'the ten deaths plain'. The lists are much alike with small differences: Feng, Gu, Guai, Tongren and Mingyi are almost everywhere, and Guan, Xu, Bi, Lü, Bo, Jie, Lin and Daxu are in some and not in others. The books do not settle it. The Zhouyi Shangzhan (LY.ILL.ZSZ.02 to ZSZ.05) and the Wenwang Jinqian Ke (LY.ILL.WWJQ.03, WWJQ.05) also judge illness by the name of the hexagram, and differ from this list: for Guan (Viewing) the Zhouyi Shangzhan says 'wealth gathers and the illness is cured' and the Wenwang Jinqian Ke says 'divining illness, it is cured at once' and 'illness all removed'; for Feng (Abundance) the Wenwang Jinqian Ke says 'the illness gradually gets better' and the Zhouyi Shangzhan says 'the sick are held fast'; for Guai (Breakthrough) the Zhouyi Shangzhan says 'illness and lawsuit are delayed' and the Wenwang Jinqian Ke, in its supplementary part, says 'the illness is rooted out'; for Gu (Decay), Kun (Confinement) and Mingyi (Brightness Wounded) the Zhouyi Shangzhan also says the illness is ominous or 'every matter meets injury', which agrees with this list (the Wenwang Jinqian Ke says nothing of illness for these three)."
+      },
+      "note": {
+        "yi": "这是第一首的末六联。「困」是困卦，按「Kun （Confinement）」译；「旅」「需」「观」「剥」是卦名，前面加季节：冬旅、春需、夏观、秋剥，是说这几个卦在这个季节占病特别凶（按季节各有一个卦）。「官生命死命应衰」文字费解，按字面译：官（鬼）在长生、命在死。「两重官鬼因劳复」的「劳复」是病愈后因劳累而复发（中医词）。「六爻安静尤难瘥」和天玄赋「卦爻安静，重为济世之人」（LY.ILL.TXF.14）、野鹤「六爻安静、卦吉可以调理」（LY.ILL.ZS.22）正好相反：这里说安静更难愈——三家说法不同，书里没有裁决。周易尚占的疾厄部（第 787–790 行）里这一段有两处字不同：「六爻安静尤难瘥」写作「六爻安静犹难瘥」（「犹」，不是「尤」，意思差不多，都是还更难愈）；「鬼化为财凶有准」写作「官化为财凶有定」（官和鬼在这里是同一个爻；「有定」「有准」都是说一定）。",
+        "en": "These are the last six couplets of the first poem. 'Kun' is the hexagram Kun (Confinement); 'Lü', 'Xu', 'Guan' and 'Bo' are hexagram names, each given a season: Lü in winter, Xu in spring, Guan in summer, Bo in autumn, meaning that these hexagrams are especially ominous in divining illness in that season (one hexagram for each season). 'The Pressure line alive and the natal line dead' is hard to understand and is rendered literally: the Pressure line at Birth and the natal line at Death. The 'relapse' of 'two Pressure lines: a relapse from overwork' is illness returning through exertion after recovery (a term of Chinese medicine). 'With the six lines still it is still harder to recover' is exactly the opposite of the Tianxuan Fu's 'the hexagram and lines still, weighty is he who saves the world' (LY.ILL.TXF.14) and the Old Man of Yehe's 'six lines still and the hexagram auspicious, it can be treated by nursing' (LY.ILL.ZS.22): here it says that stillness makes recovery harder — the three differ, and the books do not settle it. In the Zhouyi Shangzhan's section on illness and affliction (lines 787–790) this passage differs in two places: 'with the six lines still it is still harder to recover' is written with a different word for 'still' (the sense is about the same: harder still to recover); and 'a ghost changing into Wealth: ill is certain' is written 'Pressure changing into Wealth: ill is fixed' (Pressure and ghost are the same line here; 'fixed' and 'certain' both say it is sure)."
+      },
+      "see": ["LY.ILL.CA.02", "LY.ILL.CA.04", "LY.ILL.TXF.06", "LY.ILL.TXF.14", "LY.ILL.ZS.22", "LY.ILL.YY.06", "LY.ILL.ZSZ.02", "LY.ILL.ZSZ.03", "LY.ILL.ZSZ.04", "LY.ILL.ZSZ.05", "LY.ILL.WWJQ.03", "LY.ILL.WWJQ.05"]
+    },
+    {
+      "id": "LY.ILL.CA.04",
+      "topic": "总则",
+      "chapter": "阐奥歌章·二十二、疾病章",
+      "chapter_en": "Chan'ao Gezhang, chapter 22: illness",
+      "title": "疾病歌(二)：凡占疾病先从卦中寻本命、仍看来者是何人（克者是何加世应）；福德持世鬼暂退、官旺之日又加进；卦中无鬼病难医、鬼旺财兴难保命；鬼杀临身五墓侵鬼神不应药无灵；一为五脏二皮肉三为体骨腰并足四肺心经五六头；游魂恍惚如神触、归魂渐向安",
+      "rule": {
+        "yi": "凡是有人占疾病，先从卦里找本命，还要看来占的是什么人，克它的又是什么、加在世应上。福德持世，鬼暂时退去；官鬼旺相的日子又进一步。卦里没有鬼，病难医；鬼旺、财兴，难保命。鬼杀临在身上、又有五墓侵犯，鬼神不应验，药也无灵。第一爻是五脏，第二爻是皮肉，第三爻是体骨、腰和足；第四爻是肺和心经，第五、第六爻是头。游魂卦恍惚，像被神鬼触到；只有归魂卦，渐渐向安；吉凶我细细地为你嘱咐。",
+        "en": "If someone divines an illness, first look in the hexagram for the natal line, and still look at who has come, and what it is that controls, added to the Self and Other. Output holding the Self: the ghost retreats for a time; on a day when the Pressure line is strong it advances again. With no ghost in the hexagram the illness is hard to treat; with the ghost strong and Wealth rising life is hard to keep. A ghost-killing sitting on the Body with the Five Tombs invading: the ghosts and spirits do not respond and medicine has no effect. The first line is the five viscera, the second skin and flesh, the third body, bones, waist and feet; the fourth is the lungs and heart channel, the fifth and sixth the head. The Wandering Soul hexagram: dazed, as if touched by spirits; only the Returning Soul gradually turns to peace; good and ill I tell you in detail."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3989, 3989],
+          "zh": ["凡若有人占疾病，", "先从卦中寻本命。", "仍看来者是何人，", "克者是何加世应。", "福德持世鬼暂退，", "官旺之日又加进。", "卦中无鬼病难医，", "鬼旺财兴难保命。"],
+          "yi": ["凡是有人占疾病，", "先从卦里找本命；", "还要看来占的是什么人，", "克它的是什么、加在世应上。", "福德持世，鬼暂时退去；", "官旺的日子又进一步。", "卦里没有鬼，病难医；", "鬼旺、财兴，难保命。"],
+          "en": ["If someone divines an illness,", "first look in the hexagram for the natal line;", "and still look at who has come,", "and what it is that controls, added to the Self and Other.", "Output holding the Self: the ghost retreats for a time;", "on a day when the Pressure line is strong it advances again.", "With no ghost in the hexagram the illness is hard to treat;", "with the ghost strong and Wealth rising life is hard to keep."] },
+        { "by": "经", "book": "卜筮大全", "range": [3991, 3991],
+          "zh": ["鬼杀临身五墓侵，", "鬼神不应药无灵。", "一为五脏二皮肉，", "三为体骨腰并足。"],
+          "yi": ["鬼杀临在身上，五墓侵犯，", "鬼神不应验，药也无灵；", "第一爻是五脏，第二爻是皮肉，", "第三爻是体骨、腰和足；"],
+          "en": ["A ghost-killing sitting on the Body with the Five Tombs invading:", "the ghosts and spirits do not respond and medicine has no effect;", "the first line is the five viscera, the second skin and flesh,", "the third body, bones, waist and feet;"] },
+        { "by": "经", "book": "卜筮大全", "range": [3992, 3992],
+          "zh": ["四肺心经五六头，", "游魂恍惚如神触。", "惟有归魂渐向安，", "吉凶细细为君嘱。"],
+          "yi": ["第四爻是肺和心经，第五、第六爻是头；", "游魂卦恍惚，像被神鬼触到；", "只有归魂卦，渐渐向安；", "吉凶我细细地为你嘱咐。"],
+          "en": ["the fourth is the lungs and heart channel, the fifth and sixth the head;", "the Wandering Soul hexagram: dazed, as if touched by spirits;", "only the Returning Soul gradually turns to peace;", "good and ill I tell you in detail."] }
+      ],
+      "dispute": {
+        "yi": "哪一爻管身体哪一处，几本书的说法差得很远。阐奥歌章这一首（LY.ILL.CA.04）是「一爻五脏、二爻皮肉、三爻体骨腰并足、四爻肺心经、五六爻头」，断易天机的孙膑断疾病歌（LY.ILL.DYTJ.03）同；断易天机卜筮元龟一段（见 LY.ILL.DYTJ.11）是「初爻两足、二爻双腿、三爻腰背、四爻心腹及肚肠、五爻肾脏、六爻头」；断易天机鬼谷辨爻法的表（LY.ILL.DYTJ.01）是「初足、二腿股、三腰、四脊、五心、六头」；易隐引鬼谷分爻（LY.ILL.YY.02）是「初爻足、二爻腿股、三爻肝肾、四爻脾脏、五爻心肺、六爻头脑」；卜筮大全卜筮全书歌诀里的六位取象表（见 LY.ILL.BSQS.01）疾病一行是「足、腿肢、（缺）、（缺）、心肺、头脑」。卜筮元龟、鬼谷辨爻法的表、易隐、六位表都是「初足、二腿、上头」，只有阐奥歌章和孙膑歌把初爻配成五脏、二爻配成皮肉。书里没有裁决。",
+        "en": "Which line governs which part of the body is put very differently in several books. This poem of the Chan'ao Gezhang (LY.ILL.CA.04) has 'the first line the five viscera, the second skin and flesh, the third body, bones, waist and feet, the fourth lungs and heart channel, the fifth and sixth the head', and Sun Bin's song in the Duanyi Tianji (LY.ILL.DYTJ.03) is the same; the Bushi Yuangui passage in the Duanyi Tianji (see LY.ILL.DYTJ.11) has 'the first line the two feet, the second both legs, the third waist and back, the fourth heart, belly and bowels, the fifth the kidneys, the sixth the head'; the table headed Guigu's method of telling the lines apart in the Duanyi Tianji (LY.ILL.DYTJ.01) has 'first the feet, second the legs and thighs, third the waist, fourth the spine, fifth the heart, sixth the head'; the Yi Yin, quoting Guigu's division of the lines (LY.ILL.YY.02), has 'first the feet, second the legs and thighs, third liver and kidneys, fourth the spleen, fifth heart and lungs, sixth the head and brain'; and the table of the six positions in the verses of the Bushi Quanshu in the Buyi Daquan (see LY.ILL.BSQS.01) has for illness 'feet, legs and limbs, (missing), (missing), heart and lungs, head and brain'. The Bushi Yuangui, Guigu's table, the Yi Yin and the table of the six positions all run 'first line the feet, second the legs, top the head', and only the Chan'ao Gezhang and Sun Bin's song match the first line with the viscera and the second with skin and flesh. The books do not settle it."
+      },
+      "note": {
+        "yi": "这是第二首疾病歌，它在断易天机里作「孙膑断疾病歌」（从 LY.ILL.DYTJ.02 起到 LY.ILL.DYTJ.07，共六条），字句略有出入。「先从卦中寻本命」的「本命」是病人的本命爻（生年属相所在的爻）；「克者是何加世应」文字含混，按字面译。「福德持世鬼暂退，官旺之日又加进」是说子孙持世时鬼暂时退去，但官鬼旺相的日子又会进一步。「五墓」是五墓煞（春未、夏戌、秋丑、冬辰，见 LY.ILL.EL.51）。「游魂恍惚如神触」的「游魂」「归魂」是卦的名称（游魂卦、归魂卦），「恍惚」是神志不清。整首和易林补遗的「卦无用象」（LY.ILL.EL.10）、海底眼的「疾病」一节（LY.ILL.HDY.01）是同一类判据：先找本命、看来者何人、看鬼有无。",
+        "en": "This is the second illness poem, which appears in the Duanyi Tianji as 'Sun Bin's song on judging illness' (six entries, LY.ILL.DYTJ.02 to LY.ILL.DYTJ.07), with slight differences in wording. The 'natal line' of 'first look in the hexagram for the natal line' is the sick person's natal line (the line where the birth animal falls); 'what it is that controls, added to the Self and Other' is loose in wording and is rendered literally. 'Output holding the Self, the ghost retreats for a time; on a day when the Pressure line is strong it advances again' says that when Output holds the Self the ghost retreats for a time, but on a day when the Pressure line is strong it advances again. The 'Five Tombs' is the Five Tombs killing (Wei in spring, Xu in summer, Chou in autumn, Chen in winter; see LY.ILL.EL.51). The 'Wandering Soul' and 'Returning Soul' of 'the Wandering Soul hexagram, dazed as if touched by spirits' are names of hexagrams (the Wandering Soul hexagram and the Returning Soul hexagram), and 'dazed' is clouded consciousness. The whole poem is on the same kind of criteria as the Yilin Buyi's 'when the hexagram has no Subject image' (LY.ILL.EL.10) and the Haidi Yan's section on illness (LY.ILL.HDY.01): first find the natal line, look at who has come, and look at whether there is a ghost. "
+      },
+      "see": ["LY.ILL.CA.03", "LY.ILL.CA.05", "LY.ILL.HDY.01", "LY.ILL.EL.10", "LY.ILL.YY.02", "LY.ILL.EL.51", "LY.ILL.BSQS.33"]
+    },
+    {
+      "id": "LY.ILL.CA.05",
+      "topic": "他人病",
+      "chapter": "阐奥歌章·二十二、疾病章",
+      "chapter_en": "Chan'ao Gezhang, chapter 22: illness",
+      "title": "占病先须问六亲：父母空亡防父母、财爻无气损妻身、子孙化鬼须遭死、兄弟杀临定不贞",
+      "rule": {
+        "yi": "占病先要问是哪一层亲人，吉凶必须问清楚。父母爻空亡，要防父母；财爻无气，妻子受损；子孙化成鬼，必定遭死；兄弟爻上有杀，一定不吉。",
+        "en": "In divining illness first ask which of the relations it is; good and ill must be made clear. Resource Void: guard the parents; the Wealth line without qi: the wife is harmed; Output changing into a ghost will meet death; Peer with a killing sitting on it is surely not steadfast."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3995, 3995],
+          "zh": ["占病先须问六亲，", "吉凶须要讨分明。", "父母空亡防父母，", "财爻无气损妻身。", "子孙化鬼须遭死，", "兄弟杀临定不贞。"],
+          "yi": ["占病先要问是哪一层亲人，", "吉凶必须问得分明。", "父母爻空亡，要防父母；", "财爻无气，妻子受损；", "子孙化为鬼，必定遭死；", "兄弟爻上有杀，一定不吉。"],
+          "en": ["In divining illness first ask which of the relations it is;", "good and ill must be made clear.", "Resource Void: guard the parents;", "the Wealth line without qi: the wife is harmed;", "Output changing into a ghost will meet death;", "Peer with a killing sitting on it is surely not steadfast."] }
+      ],
+      "note": {
+        "yi": "这是第三首。「父母空亡防父母，财爻无气损妻身」是说占哪一层亲人就看哪一层的爻（父母爻、财爻）有没有气，和天玄赋「杀临父母，当忧堂上之亲；空及妻财，灾虑闺中之妇」（LY.ILL.TXF.01）、易林补遗「谁爻化鬼谁人犯」（LY.ILL.EL.02）是同一个思路。「不贞」按字面译作「not steadfast」，意思是不吉利、靠不住。",
+        "en": "This is the third poem. 'Resource Void: guard the parents; the Wealth line without qi: the wife is harmed' says that one looks at the line of the relation asked about (the Resource line, the Wealth line) to see whether it has qi, on the same line of thought as the Tianxuan Fu's 'a killing sitting on Resource, worry for the parents in the hall; Void reaching Wealth, fear calamity for the woman in the inner chamber' (LY.ILL.TXF.01) and the Yilin Buyi's 'whose line changes into a ghost, that person is struck' (LY.ILL.EL.02). 'Bu zhen' is rendered literally as 'not steadfast', and means not auspicious and not to be relied on. "
+      },
+      "see": ["LY.ILL.CA.04", "LY.ILL.CA.06", "LY.ILL.TXF.01", "LY.ILL.EL.02"]
+    },
+    {
+      "id": "LY.ILL.CA.06",
+      "topic": "生死",
+      "chapter": "阐奥歌章·二十二、疾病章",
+      "chapter_en": "Chan'ao Gezhang, chapter 22: illness",
+      "title": "占病凶卦二首：明夷蛊夬剥丰同六卦哪堪占病，财鬼二爻俱发动丧门吊客闹丛丛；丰观需节旅贲临明夷蛊夬及同人占病若逢此卦归家急急办前程",
+      "rule": {
+        "yi": "明夷、蛊、夬、剥、丰、同（人）这六个卦，怎么经得起占病的凶；财、鬼两爻都发动，丧门、吊客热闹地聚在一起。丰、观、需、节、旅、贲、临，明夷、蛊、夬和同人，占病如果遇到这些卦，赶紧回家去办后事。",
+        "en": "Mingyi, Gu, Guai, Bo, Feng and Tong(ren): how can these six hexagrams bear the ill of divining illness; with Wealth and the ghost both moving, Mourning Gate and Guest of Condolence crowd noisily together. Feng, Guan, Xu, Jie, Lü, Bi and Lin, Mingyi, Gu, Guai and Tongren: if in divining illness one meets these hexagrams, hurry home and make ready for what lies ahead."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3998, 3998],
+          "zh": ["明夷蛊夬剥丰同，", "六卦哪堪占病凶。", "财鬼二爻俱发动，", "丧门吊客闹丛丛。"],
+          "yi": ["明夷、蛊、夬、剥、丰、同（人），", "这六个卦怎么经得起占病的凶；", "财、鬼两爻都发动，", "丧门、吊客热闹地聚在一起。"],
+          "en": ["Mingyi, Gu, Guai, Bo, Feng and Tong(ren):", "how can these six hexagrams bear the ill of divining illness;", "with Wealth and the ghost both moving,", "Mourning Gate and Guest of Condolence crowd noisily together."] },
+        { "by": "经", "book": "卜筮大全", "range": [4001, 4001],
+          "zh": ["丰观需节旅贲临，", "明夷蛊夬及同人。", "占病若还逢此卦，", "归家急急办前程。"],
+          "yi": ["丰、观、需、节、旅、贲、临，", "明夷、蛊、夬和同人；", "占病如果遇到这些卦，", "赶紧回家去办后事。"],
+          "en": ["Feng, Guan, Xu, Jie, Lü, Bi (Adornment), Lin,", "Mingyi, Gu, Guai and Tongren:", "if in divining illness one meets these hexagrams,", "hurry home and make ready for what lies ahead."] }
+      ],
+      "dispute": {
+        "yi": "周易尚占和文王金钱课按卦名断病，和第五首这个名单有出入：观，周易尚占说「财聚病痊」，文王金钱课说「占病即愈」（LY.ILL.ZSZ.02、WWJQ.03）；贲，周易尚占说「病安」（LY.ILL.ZSZ.03）；节，文王金钱课说「疾病口舌消除安」（LY.ILL.WWJQ.03）；丰，文王金钱课说「疾病渐好」，周易尚占说「病人沉滞」（LY.ILL.WWJQ.03、ZSZ.04）；夬，周易尚占说「病讼迟延」，文王金钱课补录部分说「疾病除根」（LY.ILL.ZSZ.04、WWJQ.05）；临，周易尚占说「病犯崇侵」，文王金钱课补录部分说「疾病即痊」（LY.ILL.ZSZ.07、WWJQ.05）；蛊、明夷，周易尚占不说吉，和名单一致（LY.ILL.ZSZ.05）；文王金钱课对这两卦没有讲病。",
+        "en": "The Zhouyi Shangzhan and the Wenwang Jinqian Ke judge illness by the name of the hexagram and differ from the list of the fifth poem: for Guan the Zhouyi Shangzhan says 'wealth gathers and the illness is cured' and the Wenwang Jinqian Ke says 'divining illness, it is cured at once' (LY.ILL.ZSZ.02, WWJQ.03); for Bi (Adornment) the Zhouyi Shangzhan says 'the illness is settled' (LY.ILL.ZSZ.03); for Jie (Restraint) the Wenwang Jinqian Ke says 'illness and quarrels are removed and all is at peace' (LY.ILL.WWJQ.03); for Feng the Wenwang Jinqian Ke says 'the illness gradually gets better' and the Zhouyi Shangzhan says 'the sick are held fast' (LY.ILL.WWJQ.03, ZSZ.04); for Guai the Zhouyi Shangzhan says 'illness and lawsuit are delayed' and the Wenwang Jinqian Ke, in its supplementary part, says 'the illness is rooted out' (LY.ILL.ZSZ.04, WWJQ.05); for Lin (Approach) the Zhouyi Shangzhan says 'the illness offends a curse that attacks' and the Wenwang Jinqian Ke, in its supplementary part, says 'the illness is cured at once' (LY.ILL.ZSZ.07, WWJQ.05); for Gu and Mingyi the Zhouyi Shangzhan speaks of no good fortune, which agrees with the list (LY.ILL.ZSZ.05), and the Wenwang Jinqian Ke says nothing of illness for these two."
+      },
+      "note": {
+        "yi": "这是第四、五首。两首列的凶卦名单和第一首（LY.ILL.CA.03）、天玄赋（LY.ILL.TXF.06）不完全一样，名单的比较见 LY.ILL.CA.03 的「打架」一栏。「同」「节」「旅」「贲」「丰」等是卦名，「同」按上下文是同人。「丧门吊客闹丛丛」的「丛丛」是热闹聚在一起的样子。「归家急急办前程」的「办前程」按字面译作「make ready for what lies ahead」，意思是赶紧回家料理后事。",
+        "en": "These are the fourth and fifth poems. The lists of ominous hexagrams in the two poems are not exactly the same as in the first poem (LY.ILL.CA.03) and the Tianxuan Fu (LY.ILL.TXF.06); the comparison of the lists is in the 'dispute' field of LY.ILL.CA.03. 'Tong', 'Jie', 'Lü', 'Bi', 'Feng' and so on are hexagram names, and 'Tong' is Tongren from the context. The 'cong cong' of 'Mourning Gate and Guest of Condolence crowd noisily' is a crowd gathering noisily. 'Ban qian cheng' in 'go home in haste and make ready for what lies ahead' is rendered literally as 'make ready for what lies ahead', meaning to hurry home and see to the funeral. "
+      },
+      "see": ["LY.ILL.CA.05", "LY.ILL.CA.07", "LY.ILL.CA.03", "LY.ILL.TXF.06", "LY.ILL.ZSZ.02", "LY.ILL.ZSZ.03", "LY.ILL.ZSZ.04", "LY.ILL.ZSZ.05", "LY.ILL.WWJQ.03", "LY.ILL.ZSZ.07", "LY.ILL.WWJQ.05"]
+    },
+    {
+      "id": "LY.ILL.CA.07",
+      "topic": "他人病",
+      "chapter": "阐奥歌章·二十二、疾病章",
+      "chapter_en": "Chan'ao Gezhang, chapter 22: illness",
+      "title": "六亲占病六首：子占亲病（子要兴隆父要安、兄动缠绵、子兴财发入黄泉）；父占子病（兄兴子动死还生、鬼摇父动难保、财动病增）；夫问妻疾（财明子动便安然、鬼爻发动沉重、父发兄摇定断弦）；妻占夫病（鬼静财兴可放心、兄子交重恩义绝、父摇难愈）；兄弟占病（父兴兄静自安全、鬼摇财动黄泉客、子动留连数日）；奴婢疾病（鬼摇更连绵、财安子发无事、父动兄兴不得痊）",
+      "rule": {
+        "yi": "子占父母的病：什么时候好？子孙要兴隆，父母要安。兄动，缠绵难脱体；子孙兴、财发，入黄泉。父占子病：兄兴、子动，死里逃生；鬼摇、父动，终究难保；财动，缠绵，病反增。夫问妻的病：财明、子动，便安然；鬼爻发动，还沉重；父发、兄摇，定断弦。妻占夫的病：鬼静、财兴，可以放心；兄、子交重，恩义断绝；父摇，难愈，病沉沉。兄弟来占病：父兴、兄静，自然安全；鬼摇、财动，黄泉客；子动，留连几日卧床。奴婢的病：鬼摇，病更连绵；财安、子发，没有别的事；父动、兄兴，不得痊愈。",
+        "en": "A son divining a parent's illness, when will it be cured? Output must thrive and Resource must be at peace; Peer moving, it drags on and is hard to shake off; Output rising and Wealth moving, it enters the Yellow Springs. A parent divining a child's illness: Peer rising and Output moving, one dies and yet lives; the ghost shaking and Resource moving, in the end he cannot be kept; Wealth moving, it drags on and the illness increases. A husband asking of his wife's illness: Wealth clear and Output moving, at once she is at ease; the Pressure line moving, it is still heavy; Resource issuing and Peer shaking, surely the string is cut. A wife divining her husband's illness: the ghost still and Wealth rising, one may set the heart at rest; Peer and Output crossing heavily, love and duty are cut; Resource shaking, hard to cure, the illness deep. Brothers coming to divine an illness: Resource rising and Peer still, of itself safe; the ghost shaking and Wealth moving, a guest of the Yellow Springs; Output moving, it lingers several days in bed. A servant's illness: the ghost shaking, the illness drags on the more; Wealth at peace and Output issuing, no other matter; Resource moving and Peer rising, no recovery."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4004, 4004],
+          "zh": ["子占亲病几时痊，", "子要兴隆父要安。", "兄动缠绵难脱体，", "子兴财发入黄泉。"],
+          "yi": ["子占父母的病，什么时候能好？", "子孙要兴隆，父母要安静。", "兄动，缠绵难脱体；", "子孙兴、财发，入黄泉。"],
+          "en": ["A son divining a parent's illness, when will it be cured?", "Output must thrive and Resource must be at peace.", "Peer moving, it drags on and is hard to shake off;", "Output rising and Wealth moving, it enters the Yellow Springs."] },
+        { "by": "经", "book": "卜筮大全", "range": [4007, 4007],
+          "zh": ["子病亲来问卦灵，", "兄兴子动死还生。", "鬼摇父动终难保，", "财动缠绵病转增。"],
+          "yi": ["子病，亲人来问卦灵不灵：", "兄兴、子动，死里逃生；", "鬼摇、父动，终究难保；", "财动，缠绵，病反而增加。"],
+          "en": ["A child ill, a parent comes to ask the hexagram:", "Peer rising and Output moving, one dies and yet lives;", "the ghost shaking and Resource moving, in the end he cannot be kept;", "Wealth moving, it drags on and the illness increases."] },
+        { "by": "经", "book": "卜筮大全", "range": [4010, 4010],
+          "zh": ["夫问其妻疾病煎，", "财明子动便安然。", "鬼爻发动还沉重，", "父发兄摇定断弦。"],
+          "yi": ["丈夫问妻子的病被煎熬：", "财明、子动，便安然；", "鬼爻发动，还沉重；", "父发、兄摇，一定断弦（妻亡）。"],
+          "en": ["A husband asking of his wife's illness that torments her:", "Wealth clear and Output moving, at once she is at ease;", "the Pressure line moving, it is still heavy;", "Resource issuing and Peer shaking, surely the string is cut (the wife dies)."] },
+        { "by": "经", "book": "卜筮大全", "range": [4013, 4013],
+          "zh": ["妻占夫病未安宁，", "鬼静财兴可放心。", "兄子交重恩义绝，", "父摇难愈病沉沉。"],
+          "yi": ["妻子占丈夫的病，还不安宁：", "鬼静、财兴，可以放心；", "兄、子交重，恩义断绝；", "父摇，难愈，病沉沉。"],
+          "en": ["A wife divining her husband's illness, unsettled:", "the ghost still and Wealth rising, one may set the heart at rest;", "Peer and Output crossing heavily, love and duty are cut;", "Resource shaking, hard to cure, the illness deep."] },
+        { "by": "经", "book": "卜筮大全", "range": [4016, 4016], "literal": ["兄弟"],
+          "zh": ["兄弟来占疾病缠，", "父兴兄静自安全。", "鬼摇财动黄泉客，", "子动留连数日眠。"],
+          "yi": ["兄弟来占病缠身：", "父兴、兄静，自然安全；", "鬼摇、财动，是黄泉的客人；", "子动，留连几日卧床。"],
+          "en": ["When a brother comes to divine an illness that clings:", "Resource rising and Peer still, of itself safe;", "the ghost shaking and Wealth moving, a guest of the Yellow Springs;", "Output moving, it lingers several days in bed."] },
+        { "by": "经", "book": "卜筮大全", "range": [4020, 4020],
+          "zh": ["奴婢淹延疾病缠，", "鬼摇疾病更连绵。", "财安子发无他事，", "父动兄兴不得痊。"],
+          "yi": ["奴婢缠绵于疾病：", "鬼摇，病更连绵；", "财安、子发，没有别的事；", "父动、兄兴，不得痊愈。"],
+          "en": ["A servant lingering in an illness that clings:", "the ghost shaking, the illness drags on the more;", "Wealth at peace and Output issuing, no other matter;", "Resource moving and Peer rising, no recovery."] }
+      ],
+      "dispute": {
+        "yi": "子占父母病要哪一爻兴隆，两个抄本不同。阐奥歌章（LY.ILL.CA.07）是「子占亲病几时痊，子要兴隆父要安」——要子孙兴隆、父母安静；断易天机（见 LY.ILL.DYTJ.08）同一首作「鬼要兴隆父要安」——要官鬼兴隆、父母安静。「子孙旺」是医药有力、能制鬼，「官鬼兴隆」却是病重，前一种更合病理，后一种文字上可能是「子」字误作「鬼」，书里没有说明，这里只如实并列。",
+        "en": "Which line must thrive when a son divines a parent's illness differs in the two copies. The Chan'ao Gezhang (LY.ILL.CA.07) has 'a son divining a parent's illness, when will it be cured: Output must thrive and Resource must be at peace' — Output thriving and Resource at peace; the Duanyi Tianji (see LY.ILL.DYTJ.08) has the same poem as 'the ghost must thrive and Resource must be at peace' — the Pressure line thriving and Resource at peace. Output being strong means the medicine is effective and can control the ghost, while the Pressure line thriving means the illness is heavy: the first agrees better with the logic of illness, and the second may be a miswriting of 'ghost' for 'Output', which the book does not explain, and here the two are only set side by side."
+      },
+      "note": {
+        "yi": "这六首（第六到第十一首）是按病人和占卜人的关系分的六亲占病歌：子占父母、父占子、夫占妻、妻占夫、兄弟占、奴婢占。每首都是「哪一爻动、哪一爻静、哪一爻兴」几个组合的吉凶。「断弦」是妻子去世的委婉说法（琴弦断了）；「黄泉客」是死亡；「财明」是财爻明显出现；「恩义绝」是夫妻情义断绝（兄弟克财而说兄弟伤妻的说法，原文没有解释）。这六首在断易天机里作「经验论家人占病」（LY.ILL.DYTJ.08），文字略有出入（除了上面「打架」里那一处，还有「妻问夫病」等）。用爻表是：子占父母看父母、父占子看子孙、夫占妻看财、妻占夫看鬼（见 LY.ILL.TXF.01）。第十首「兄弟来占疾病缠」的「兄弟」是兄弟这个亲人，不是兄弟爻。",
+        "en": "These six poems (the sixth to the eleventh) are poems for divining illness by relations, divided by the relation between the sick person and the diviner: a son about a parent, a parent about a child, a husband about a wife, a wife about a husband, a brother, and a servant. Each is the good or ill of a few combinations of 'which line moves, which stays still, which rises'. 'Duan xian' (the string cut) is a delicate way of saying the wife has died (a broken zither string); 'guest of the Yellow Springs' is death; 'Wealth clear' is the Wealth line clearly appearing; 'love and duty cut' is the bond between the couple cut off (the original does not explain why Peer and Output should cut a husband's love from his wife). In the Duanyi Tianji these six appear as 'verses from experience on divining illness by family members' (LY.ILL.DYTJ.08), with slight differences in wording (besides the one place in the 'dispute' above, also 'the wife asks of her husband's illness' and so on). The table of the Subject line: a son about a parent looks at Resource, a parent about a child at Output, a husband about a wife at Wealth, a wife about a husband at the ghost (see LY.ILL.TXF.01). The 'brothers' of the tenth poem, 'brothers come to divine an illness that clings', are brothers as relatives and not the Peer line. "
+      },
+      "see": ["LY.ILL.CA.06", "LY.ILL.CA.08", "LY.ILL.TXF.01", "LY.ILL.DYTJ.08"]
+    },
+    {
+      "id": "LY.ILL.CA.08",
+      "topic": "医药",
+      "chapter": "阐奥歌章·二十三、医药章",
+      "chapter_en": "Chan'ao Gezhang, chapter 23: medicine",
+      "title": "医药章(一)：子孙出现是医人、生世生身药必灵；两个子孙齐发动换医困厄即时平；子囚医拙、子旺医明；无子病人难服药、子空患者便归程；子孙值土宜丸散、火艾火蒸、木咬咀、金针刺、水汤药；青龙独发最为良、持世生身便离床；子孙同位发不须服药；鬼财安贴无忧虑、身世比和大吉祥；何日瘥：鬼衰身旺世生方",
+      "rule": {
+        "yi": "子孙出现就是医生，生世、生身，药一定灵验。两个子孙一起发动，换医生，困厄立刻平息。子孙被囚，医生笨拙，没有功效；子孙旺，医生高明，有准绳。没有子孙，病人难服药；子孙空亡，患者就要归去了。子孙值土，宜丸散；值火，要用艾火熏蒸；遇木，用咬咀才对症；逢金，用针刺才保平安；子孙值水，宜汤药；有天喜扶持，妙不可言。青龙独发，最好；持世生身，便可离床；再有子孙同位发动，不必服药，保安康。鬼、财安贴，没有忧虑；身、世比和，大吉祥。想问病人哪一天痊愈？鬼衰、身旺、世生的时候。",
+        "en": "Output appearing is the doctor; generating the Self and the Body, the medicine is surely effective. Two Output lines moving together: change the doctor and the distress is settled at once. Output trapped: the doctor is clumsy and without effect; Output strong: the doctor is wise and has a standard. With no Output the patient can hardly take medicine; Output Void: the sufferer starts on his homeward road. Output on Earth: suit pills and powders; on Fire: it must be moxa fire steaming; meeting Wood: crushed herbs answer the illness; meeting Metal: the needle is guaranteed to bring health; Output on Water: suit decoctions; with Heavenly Joy helping, the wonder cannot be praised enough. The Azure Dragon moving alone is best; holding the Self and generating the Body, he leaves his bed at once; and if Output moves in the same place, no medicine need be taken and health is assured. With the ghost and Wealth quiet and settled there is no worry; the Body and Self harmonious is greatly auspicious. To ask on what day the sick person recovers: when the ghost is weak, the Body strong and the Self generated."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4025, 4025],
+          "zh": ["子孙出现是医人，", "生世生身药必灵。", "两个子孙齐发动，", "换医困厄即时平。", "子囚医拙无功效，", "子旺医明有准绳。", "无子病人难服药，", "子空患者便归程。", "子孙值土宜丸散，", "值火须当艾火蒸。", "遇木咬咀方应病，", "逢金针刺保亨贞。", "子孙值水宜汤药，", "天喜扶持妙莫评。", "青龙独发最为良，", "持世生身便离床。", "那更子孙同位发，", "不须服药保安康。", "鬼财安贴无忧虑，", "身世比和大吉祥。", "欲问病人何日瘥？", "鬼衰身旺世生方。"],
+          "yi": ["子孙出现就是医生，", "生世、生身，药一定灵验。", "两个子孙一起发动，", "换医生，困厄立刻平息。", "子孙被囚，医生笨拙，没有功效；", "子孙旺，医生高明，有准绳。", "没有子孙，病人难服药；", "子孙空亡，患者就要归去了。", "子孙值土，宜丸散；", "值火，要用艾火熏蒸；", "遇木，用咬咀才对症；", "逢金，用针刺保平安。", "子孙值水，宜汤药；", "有天喜扶持，妙不可言。", "青龙独发，最好；", "持世生身，便可离床。", "再有子孙同位发动，", "不必服药，保安康。", "鬼、财安贴，没有忧虑；", "身、世比和，大吉祥。", "想问病人哪一天痊愈？", "鬼衰、身旺、世生的时候。"],
+          "en": ["Output appearing is the doctor;", "generating the Self and the Body, the medicine is surely effective.", "Two Output lines moving together:", "change the doctor and the distress is settled at once.", "Output trapped: the doctor is clumsy and without effect;", "Output strong: the doctor is wise and has a standard.", "With no Output the patient can hardly take medicine;", "Output Void: the sufferer starts on his homeward road.", "Output on Earth: suit pills and powders;", "on Fire: it must be moxa fire steaming;", "meeting Wood: crushed herbs answer the illness;", "meeting Metal: the needle is guaranteed to bring health.", "Output on Water: suit decoctions;", "with Heavenly Joy helping, the wonder cannot be praised enough.", "The Azure Dragon moving alone is best;", "holding the Self and generating the Body, he leaves his bed at once.", "and if Output moves in the same place,", "no medicine need be taken and health is assured.", "With the ghost and Wealth quiet and settled there is no worry;", "the Body and Self harmonious is greatly auspicious.", "To ask on what day the sick person recovers:", "when the ghost is weak, the Body strong and the Self generated."] }
+      ],
+      "note": {
+        "yi": "这是阐奥歌章「医药章」的第一首，和天玄赋的「医药」（LY.ILL.TXF.12、TXF.13）、易林补遗的「求医疗病」（LY.ILL.EL.26）、易隐的「医药」（LY.ILL.YY.21、YY.25）一样，都是「子孙为医药」的一套：子孙旺相、生世生身，药灵；两个子孙齐发，换医；无子孙、子孙空，难服药或不治。五行用药：土宜丸散、火宜艾灸、木宜咬咀、金宜针刺、水宜汤药——和天玄赋的「火鬼宜凉剂、水鬼宜温剂、木鬼宜针、金鬼宜灸、土鬼宜剉散」（LY.ILL.TXF.13）不同：那里按鬼的五行、这里按子孙的五行；这两个标准给出的用药并不一样（如木：天玄赋鬼属木宜针、这里子孙属木宜咬咀；金：天玄赋鬼属金宜灸、这里子孙属金宜针刺），书里没有说明二者的关系。「咬咀」是把药物切碎、入口嚼碎之类的做法（下面注释：「咀」音 ju，嚼）。「子空患者便归程」的「归程」是回去的路，指死。「鬼财安贴」的「贴」是安稳。周易尚占的疾厄部（第 794–799 行）里这一首有五处字不同：「值火须当艾火蒸」写作「值火须当火艾蒸」（「艾火」「火艾」的次序）；「遇木咬咀方应病」写作「值木吺咀方应病」（「遇」写作「值」，「咬咀」写作「吺咀」，两本各是各的字形，书里都没有解释）；「逢金针刺保亨贞」写作「值金针刺保亨贞」；「身世比和大吉祥」写作「身世比和大吉昌」；「鬼衰身旺世生方」写作「鬼衰生旺世生方」（「身旺」写作「生旺」，两个词意思不一样：一个说身爻旺，一个说鬼衰之后是生旺的状态）。",
+        "en": "This is the first poem of the Chan'ao Gezhang's chapter on medicine, and like the Tianxuan Fu's 'medicine' (LY.ILL.TXF.12, TXF.13), the Yilin Buyi's 'seeking a doctor to treat illness' (LY.ILL.EL.26) and the Yi Yin's 'medicine' (LY.ILL.YY.21, YY.25) it is one set of 'Output is the medicine and doctor': Output strong and generating the Self and Body, the medicine is effective; two Output lines moving together, change the doctor; with no Output or Output Void, medicine can hardly be taken or there is no cure. The medicine by phase: Earth suits pills and powders, Fire moxa, Wood crushed herbs, Metal the needle, Water decoctions — which differs from the Tianxuan Fu's 'a Fire ghost suits cooling remedies, a Water ghost warming remedies, a Wood ghost the needle, a Metal ghost moxa, an Earth ghost cut-and-ground powders' (LY.ILL.TXF.13): there it goes by the phase of the ghost, here by the phase of Output, and the two criteria do not give the same medicine (for Wood: in the Tianxuan Fu a Wood ghost suits the needle, here Wood Output suits crushed herbs; for Metal: a Metal ghost suits moxa there, Metal Output the needle here), and the book does not say how the two relate. 'Yao ju' (crushed herbs) is cutting medicines fine and crushing them by chewing and the like (the note below has 'ju' as to chew). The 'gui cheng' of 'Output Void: the sufferer starts on his homeward road' is the road home, meaning death. The 'tie' of 'the ghost and Wealth quiet and settled' is settled and steady. In the Zhouyi Shangzhan's section on illness and affliction (lines 794–799) this poem differs in five places: 'on Fire it must be moxa fire steaming' is written with the two words of 'moxa fire' in the other order; 'meeting Wood, crushed herbs answer the illness' is written 'on Wood, [a differently written] crushed herbs answer the illness' (the word for 'meeting' and the first character of 'crushed herbs' are written differently, and the book explains neither); 'meeting Metal, the needle keeps the omen fortunate' is written 'on Metal, ...'; 'the Body and Self harmonious is greatly auspicious' ends with a different word for 'auspicious'; and 'the ghost weak, the Body strong, the Self generating' is written 'the ghost weak, birth and strength, the Self generating' ('Body strong' becomes 'birth and strength', and the two phrases do not mean the same: one says the Body line is strong, the other that after the ghost's weakening the state is one of birth and strength)."
+      },
+      "see": ["LY.ILL.CA.07", "LY.ILL.CA.09", "LY.ILL.TXF.12", "LY.ILL.TXF.13", "LY.ILL.EL.26", "LY.ILL.YY.21", "LY.ILL.YY.25", "LY.ILL.WWJQ.01", "LY.ILL.HDY.13"]
+    },
+    {
+      "id": "LY.ILL.CA.09",
+      "topic": "医药",
+      "chapter": "阐奥歌章·二十三、医药章",
+      "chapter_en": "Chan'ao Gezhang, chapter 23: medicine",
+      "title": "医药章(二)：夫病欲医须卦静、爻须旺相子扶身；应爻及外为医者、内卦身爻是病人；医来克病人方愈、病若克医药不灵；鬼爻持世人难保、吉曜加临大利贞",
+      "rule": {
+        "yi": "丈夫的病要医，要卦静，爻旺相，子孙扶身。应爻和外卦是医生，内卦和身爻是病人。医克病，病人才好；病克医，药不灵。鬼爻持世，人难保；吉曜加临，大吉大利。",
+        "en": "When a man's illness is to be treated the hexagram must be still, the lines strong and Output supporting the body. The Other line and the outer trigram are the doctor; the inner trigram and the Body line are the sick person. If the doctor controls the illness the person is cured; if the illness controls the doctor the medicine is not effective. The Pressure line holding the Self, the person can hardly be kept; a lucky star added, greatly favourable."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4028, 4028],
+          "zh": ["夫病欲医须卦静，", "爻须旺相子扶身。", "应爻及外为医者，", "内卦身爻是病人。", "医来克病人方愈，", "病若克医药不灵。", "鬼爻持世人难保，", "吉曜加临大利贞。"],
+          "yi": ["病人的病要医，卦要安静，", "爻要旺相，子孙扶身；", "应爻和外卦是医生，", "内卦和身爻是病人。", "医生克病，病人才好；", "病克医生，药不灵验。", "鬼爻持世，人难保；", "吉曜加临，大吉大利。"],
+          "en": ["When a man's illness is to be treated the hexagram must be still,", "the lines strong and Output supporting the body;", "the Other line and the outer trigram are the doctor;", "the inner trigram and the Body line are the sick person.", "If the doctor controls the illness the person is cured;", "if the illness controls the doctor the medicine is not effective.", "The Pressure line holding the Self, the person can hardly be kept;", "a lucky star added, greatly favourable."] }
+      ],
+      "note": {
+        "yi": "这是医药章的第二首。「应爻及外为医者，内卦身爻是病人」的划分（应和外卦是医、内卦和身爻是病人）和天玄赋（LY.ILL.TXF.12「世为病人，应及外卦为医药」）、易隐（LY.ILL.YY.21「内卦世爻用爻是病人、外卦应爻子孙是医药」）一致，只是这里说「身爻」而不说「世爻」。「医来克病人方愈」的「病人」原文如此，意思是「医克病」。「吉曜」是吉星，书里没有列名。",
+        "en": "This is the second poem of the chapter on medicine. Its division 'the Other line and the outer trigram are the doctor, the inner trigram and the Body line are the sick person' agrees with the Tianxuan Fu (LY.ILL.TXF.12, 'the Self is the sick person, the Other and the outer trigram are the doctor and the medicine') and the Yi Yin (LY.ILL.YY.21, 'the inner trigram, the Self line and the Subject are the sick person, the outer trigram, the Other line and Output the doctor and medicine'), except that here it says 'the Body line' and not 'the Self line'. The 'sick person' of 'if the doctor controls the sick person he is cured' is as the original reads, and means 'the doctor controls the illness'. 'Lucky star' is a lucky star, of which the book gives no name. "
+      },
+      "see": ["LY.ILL.CA.08", "LY.ILL.TXF.12", "LY.ILL.YY.21"]
+    }
+  ]
+}

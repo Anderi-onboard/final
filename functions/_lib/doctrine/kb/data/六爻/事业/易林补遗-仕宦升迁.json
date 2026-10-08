@@ -1,0 +1,196 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "仕宦升迁章第二十九",
+  "chapter_en": "Chapter 29: Official career and promotion",
+  "ranges": {"易林补遗": [758, 768]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.55",
+      "topic": "升迁",
+      "chapter": "仕宦升迁章第二十九",
+      "chapter_en": "Chapter 29: Official career and promotion",
+      "title": "仕宦升迁：以官爻为主、世象为凭；官职升迁子莫刚，唯求官鬼动为良，值生值旺当迁转，临陷临空且守常；子乃忌神不宜发动，官为主象最利交重，若临生旺定主高升，如值空亡未能迁转",
+      "rule": {
+        "yi": "占官职升迁，以官爻为主，以世爻为凭据。子孙是官鬼的忌神，不宜刚旺发动；只求官鬼发动才好。官鬼得生、得旺，就该迁转升调；官鬼落陷、落空，就暂且守着原职、照常。官鬼是主象，最有利的是它发动；如果临生旺，一定主高升；如果遇到空亡，就不能迁转。",
+        "en": "In divining promotion in office, take the Pressure line as the chief and the Self image as the ground. Output is the Adversary of Pressure and must not be strong or move; one asks only that Pressure move, which is good. If Pressure is generated or thriving, one should expect to be promoted and transferred; if Pressure is sunk or Void, for the time being one keeps to the usual and holds one's post. Pressure is the chief image and is most favoured when it moves; if it meets generation or thriving, it surely means a high promotion; if it meets Void, there will be no promotion or transfer."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [760, 760],
+          "zh": ["以官爻为主，世象为凭。"],
+          "yi": ["以官爻为主要看的，以世爻为凭据。"],
+          "en": ["Take the Pressure line as the chief to be looked at, and the Self image as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [761, 761],
+          "zh": ["官职升迁子莫刚，唯求官鬼动为良，", "值生值旺当迁转。", "临陷临空且守常。"],
+          "yi": ["官职升迁，子孙爻不要刚强；只求官鬼发动才好。", "官鬼得生、得旺，就该迁转升调。", "官鬼落陷、落空，就暂且守着原职、照常。"],
+          "en": ["For promotion in office, Output must not be strong; one asks only that Pressure move, which is good.", "If Pressure is generated or thriving, one should expect to be promoted and transferred.", "If Pressure is sunk or Void, for the time being one keeps to the usual and holds one's post."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [762, 762],
+          "zh": ["凡占升迁，须评官鬼，子乃忌神，不宜发动，官为主象，最利交重，若临生旺，定主高陛。", "如值空亡，未能迁转。"],
+          "yi": ["凡是占升迁，必须评断官鬼：子孙是官鬼的忌神，不宜发动；官鬼是主象，最有利的是它发动；如果临生旺，一定主高升。", "如果遇到空亡，就不能迁转。"],
+          "en": ["In divining promotion one must judge Pressure: Output is the Adversary of Pressure and ought not to move; Pressure is the chief image and is most favoured when it moves; if it meets generation or thriving, it surely means a high promotion.", "If it meets Void, one cannot be promoted or transferred."] }
+      ],
+      "note": {
+        "yi": "这一章把「升」写作「陛」（「高陛」「平陛」「陛迁」等），应是「升」的误写，译文一律按「升」译。「子莫刚」的「刚」是强旺、发动有力。「交重」是卦里发动爻的记号（「重」是老阳、「交」是老阴，都是会变的爻），这里泛指爻发动。「迁转」是官员的升迁调转。「临陷」的「陷」是落入空亡、墓绝一类的凶地，书里没有细说。这一条与黄金策「兴隆官鬼，定居一品之尊」「子若交重，当虑剥官削职」（HJC.02、HJC.03）和增删卜易升选候补（ZS.01、ZS.02）取同一个关系：官鬼为主，子孙为忌。",
+        "en": "In this chapter 'sheng', to rise, is written 'bi' ('gao bi', 'ping bi', 'bi qian' and so on), which is presumably a miswriting of 'sheng', and the translation reads 'promotion' throughout. The 'gang' of 'zi mo gang' is strong and moving with force. 'Jiaozhong' are the marks of moving lines in a hexagram ('zhong' is old yang and 'jiao' old yin, both lines that change), and here mean a line moving in general. 'Qianzhuan' is the promotion and transfer of officials. The 'xian' of 'lin xian' is a fall into a bad place such as Void, tomb or extinction, and the book does not go into it. This entry takes the same relation as 'a flourishing Pressure settles one in the first rank' and 'if Output moves, beware of being stripped of office' in the Huangjin Ce (HJC.02, HJC.03) and as the Zengshan Buyi on promotion and selection (ZS.01, ZS.02): Pressure is the chief and Output the Adversary."
+      },
+      "see": ["LY.CAREER.EL.56", "LY.CAREER.HJC.02", "LY.CAREER.HJC.03", "LY.CAREER.ZS.01", "LY.CAREER.ZS.02", "LY.CAREER.YY.21", "LY.CAREER.YY.22"]
+    },
+    {
+      "id": "LY.CAREER.EL.56",
+      "topic": "升迁",
+      "chapter": "仕宦升迁章第二十九",
+      "chapter_en": "Chapter 29: Official career and promotion",
+      "title": "仕宦升迁：鬼化子字忧调降、官连财位沐恩光；官化子孙非降即调，卦中财子动亦然，若还财子同兴转助官爻又不降调，官若化财平升品级，官化进气官爻又主重超美职",
+      "rule": {
+        "yi": "官鬼化成子孙，就要担忧被调、被降；官鬼连着财位（化成财），就沐浴恩光。具体说：官鬼化成子孙，不是降职就是调走，卦里财爻、子孙发动也是这样；但如果财爻、子孙一起发动，转过来帮助官爻，就又不降不调；官鬼化成财爻，是在原品级上平升；官爻化成进气的官爻，又主连升、超升到好的职位。",
+        "en": "If Pressure changes into Output, fear being transferred or demoted; if Pressure is joined to the Wealth place, one bathes in the glow of favour. In detail: if Pressure changes into Output it is either demotion or transfer, and the same if Wealth and Output move in the hexagram; but if Wealth and Output move together and turn to aid the Pressure line, there is then no demotion or transfer; if Pressure changes into Wealth, one is raised on a level in grade; if Pressure changes into an advancing-qi Pressure line, it again means a double promotion to a fine post."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [761, 761],
+          "zh": ["鬼化子字忧调降，官连财位沐恩光。"],
+          "yi": ["官鬼化成子孙，就要担忧被调、被降；官鬼连着财位，就沐浴恩光。"],
+          "en": ["If Pressure changes into Output, fear being transferred or demoted; if Pressure is joined to the Wealth place, one bathes in the glow of favour."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [762, 762],
+          "zh": ["官化子孙，非降即调，卦中财子动亦然。", "若还财子同兴转助官爻，又不降调，官若化财平陛品级，官化进气官爻，又主重超美职。"],
+          "yi": ["官鬼化成子孙，不是降职就是调走，卦里财爻、子孙发动也是这样。", "如果财爻、子孙一起发动，转过来帮助官爻，就又不降不调；官鬼如果化成财爻，是在原品级上平升；官爻化成进气的官爻，又主连升、超升到好的职位。"],
+          "en": ["If Pressure changes into Output, it is either demotion or transfer, and the same if Wealth and Output move in the hexagram.", "If Wealth and Output move together and turn to aid the Pressure line, there is then no demotion or transfer; if Pressure changes into Wealth, one is raised on a level in grade; if Pressure changes into an advancing-qi Pressure line, it again means a double promotion to a fine post."] }
+      ],
+      "note": {
+        "yi": "「官连财位」按解里的「官若化财」译，指官鬼变成财爻。「平陛品级」的「平」疑是在原来的品级上升，即不加品级的平升；「重超」是连升、越级升；「进气」是进神（见术语表）。财爻、子孙一起发动转助官爻就不降调：按五行相生，子孙生财、财生官，子孙的力量经财爻传给官鬼，它就不再是克官的忌神——这是据五行相生推的，书里没有明说。这一条与易隐官禄占「官化财平升」（YY.22）、增删卜易「化进神加官晋爵」（ZS.15）是同一类断语。",
+        "en": "'Guan lian cai wei' is translated after 'if Pressure changes into Wealth' in the explanation, and means Pressure changing into the Wealth line. The 'ping' of 'ping sheng pinji' is presumably a rise on the same grade, that is a level promotion with no grade added; 'chong chao' is repeated or over-ranked promotion; 'jin qi' is an advancing spirit (see the glossary). That Wealth and Output moving together and turning to aid Pressure means no demotion is read by the generation of the five elements: Output generates Wealth and Wealth generates Pressure, so the force of Output passes through Wealth to Pressure and Output is no longer the Adversary that controls the star of office; this is inferred from five-element generation and the book does not say it. This entry is the same kind of judgment as 'Pressure changes into Wealth, level promotion' in the Yi Yin divination for official salary and rank (YY.22) and 'changing into an advancing spirit adds office and rank' in the Zengshan Buyi (ZS.15)."
+      },
+      "see": ["LY.CAREER.EL.55", "LY.CAREER.EL.57", "LY.CAREER.YY.22", "LY.CAREER.ZS.15", "LY.CAREER.HJC.03"]
+    },
+    {
+      "id": "LY.CAREER.EL.57",
+      "topic": "升迁",
+      "chapter": "仕宦升迁章第二十九",
+      "chapter_en": "Chapter 29: Official career and promotion",
+      "title": "仕宦升迁：财之福象加爵禄、妻变兄爻减俸粮；妻财为俸禄，财化子孙加衔赐禄，变成兄弟罢俸减粮",
+      "rule": {
+        "yi": "妻财是俸禄：财爻化成福象（子孙），就加官衔、赐俸禄；财爻变成兄爻（兄弟），就罢俸、减粮。",
+        "en": "Wealth is the salary: if Wealth changes into the fortune image, Output, rank is added and pay is granted; if Wealth changes into a Peer line, salary is stopped and grain is cut."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [763, 763],
+          "zh": ["财之福象加爵禄，妻变兄爻减俸粮，"],
+          "yi": ["财爻变出福象，加官爵、加俸禄；妻财变成兄爻，减少俸粮。"],
+          "en": ["If Wealth turns into the fortune image, rank and pay are increased; if Wealth changes into a Peer line, salary and grain are reduced."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [764, 764],
+          "zh": ["妻财为俸禄，财化子孙加衔赐禄，变成兄弟罢俸减粮。"],
+          "yi": ["妻财是俸禄：财爻化成子孙，加官衔、赐俸禄；变成兄弟，罢俸、减粮。"],
+          "en": ["Wealth is the salary: if Wealth changes into Output, rank is added and pay is granted; if it changes into Peer, salary is stopped and grain is cut."] }
+      ],
+      "note": {
+        "yi": "这一条与黄金策「兄如发动，须防减俸除粮」（HJC.04）、易隐官禄占「财化福加俸秩；财化兄罚俸粮」（YY.19）同取妻财为俸禄，财爻向子孙变是添、向兄弟变是减。",
+        "en": "This entry, like 'if Peer moves, beware of reduced salary and cut grain' in the Huangjin Ce (HJC.04) and 'Wealth changes into Output, rank and pay are added; Wealth changes into Peer, salary is fined' in the Yi Yin divination for official salary and rank (YY.19), takes Wealth as the salary: a Wealth line changing toward Output adds and changing toward Peer subtracts."
+      },
+      "see": ["LY.CAREER.EL.56", "LY.CAREER.EL.58", "LY.CAREER.HJC.01", "LY.CAREER.HJC.04", "LY.CAREER.YY.19"]
+    },
+    {
+      "id": "LY.CAREER.EL.58",
+      "topic": "升迁",
+      "chapter": "仕宦升迁章第二十九",
+      "chapter_en": "Chapter 29: Official career and promotion",
+      "title": "仕宦升迁：卦得归魂还复任、游魂迁转在他方；若卜归魂还当复任，归魂化归魂理应致仕，如遇游魂官又旺者必升别省，游魂化游魂升后再升远处",
+      "rule": {
+        "yi": "卦得归魂，是回来再任原职；卦得游魂，是迁转到别的地方去。具体说：卜得归魂，还会恢复原任；归魂化成归魂，按理应当退休（致仕）；遇到游魂而官又旺相的，必定升到别的省；游魂化成游魂，升了之后再升到远处。",
+        "en": "A Returning Soul hexagram means returning to the former post; a Wandering Soul means being moved and transferred elsewhere. In detail: if a Returning Soul is cast, one will return to the former post; a Returning Soul changing into a Returning Soul means that by right one should retire from office; if one meets a Wandering Soul and the star of office is again thriving, one is surely raised to another province; a Wandering Soul changing into a Wandering Soul means being promoted and then promoted again to a far place."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [763, 763],
+          "zh": ["卦得归魂还复任，游魂迁转在他方。"],
+          "yi": ["卦得归魂，是回来再任原职；游魂，是迁转到别的地方去。"],
+          "en": ["If the hexagram is a Returning Soul, one returns to the former post; a Wandering Soul means being moved and transferred to another place."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [764, 764],
+          "zh": ["若卜归魂，还当复任，归魂化归魂，理应致仕，如遇游魂官又旺者，必陛别省。", "游魂化游魂，陛后再陛远处。"],
+          "yi": ["如果卜得归魂，还会恢复原任；归魂化成归魂，按理应当退休；如果遇到游魂而官又旺相的，必定升到别的省去。", "游魂化成游魂，升了之后再升到远处。"],
+          "en": ["If a Returning Soul is cast, one will return to the former post; if a Returning Soul changes into a Returning Soul, by right one should retire from office; if one meets a Wandering Soul and the star of office is again thriving, one is surely raised to another province.", "If a Wandering Soul changes into a Wandering Soul, after being raised one is raised again to a far place."] }
+      ],
+      "note": {
+        "yi": "「游魂」「归魂」是八宫卦里每宫的第七、第八卦（见术语表）。「复任」是回到原来的任上，「致仕」是退休。归魂变归魂「理应致仕」，与易隐官禄占「游魂化归魂宜致仕」（YY.20）一样落在「归」字上，但前提不同：那里是游魂变归魂，这里是归魂变归魂。",
+        "en": "'Wandering Soul' and 'Returning Soul' are the seventh and eighth hexagrams of each of the eight palaces (see the glossary). 'Fu ren' is returning to one's former post and 'zhi shi' is retiring from office. That a Returning Soul changing into a Returning Soul 'by right should retire' falls on the word 'return' just as 'a Wandering Soul changing into a Returning Soul suits retiring' does in the Yi Yin divination for official salary and rank (YY.20), but the starting point differs: there a Wandering Soul changes into a Returning Soul, here a Returning Soul changes into a Returning Soul."
+      },
+      "see": ["LY.CAREER.EL.57", "LY.CAREER.EL.59", "LY.CAREER.YY.20"]
+    },
+    {
+      "id": "LY.CAREER.EL.59",
+      "topic": "升迁",
+      "chapter": "仕宦升迁章第二十九",
+      "chapter_en": "Chapter 29: Official career and promotion",
+      "title": "仕宦升迁：世空未得高升任、财动还须佐帝皇；世爻为自身本官，自卜当察世爻、世若空亡未能迁转，他人代卜又不取世爻为主专看官爻、若得财动生官自然显达",
+      "rule": {
+        "yi": "世爻是自己本人的官职：自己占卜，要察看世爻，世爻落空，就不能升迁；替别人占卜，就不取世爻为主，专看官爻，如果得到财爻发动生官爻，自然显达，能去辅佐帝王。",
+        "en": "The Self line is one's own post: in divining for oneself, look at the Self line, and if the Self is Void one cannot be promoted or transferred; in divining on behalf of another, do not take the Self as the chief but look only at the Pressure line, and if Wealth moves to generate Pressure, one naturally rises to eminence and goes on to assist the sovereign."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [765, 765],
+          "zh": ["世空未得高升任，财动还须佐帝皇，"],
+          "yi": ["世爻落空，就得不到高升的官职；财爻发动，还要去辅佐帝王。"],
+          "en": ["If the Self is Void one does not get a high post; if Wealth moves, one will go on to assist the emperor."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [766, 766],
+          "zh": ["世爻为自身本官，自卜当察世爻，世若空亡未能迁转。", "他人代卜，又不取世爻为主，专看官爻，若得财动生官，自然显达。"],
+          "yi": ["世爻是自己本人的官职，自己占卜，就该察看世爻；世爻如果空亡，就不能迁转。", "别人代为占卜，就不取世爻为主，专看官爻；如果得到财爻发动生官爻，自然显达。"],
+          "en": ["The Self line is one's own post; in divining for oneself one should examine the Self line, and if the Self is Void, one cannot be promoted or transferred.", "If another divines on one's behalf, the Self is not taken as the chief; look only at the Pressure line, and if Wealth moves to generate Pressure, one naturally rises to eminence."] }
+      ],
+      "note": {
+        "yi": "「本官」是自己现任的官职。「他人代卜」书里没有说明代的是谁；按文意是替别人占他的升迁，世爻不再是被问的人，所以改看官爻——这是据文意的读法。这一条与黄金策「世动逢空，官居不久」（HJC.08）同看世爻：自占看世爻。",
+        "en": "'Benguan' is the post one now holds. The book does not say who is divining 'on behalf of another'; by the sense it is divining another person's promotion, so the Self is no longer the person asked about and the Pressure line is looked at instead; this is a reading from the sense. This entry looks at the Self as the Huangjin Ce does in 'if the Self moves and meets Void, one does not stay long in office' (HJC.08): in divining for oneself, look at the Self."
+      },
+      "see": ["LY.CAREER.EL.58", "LY.CAREER.EL.60", "LY.CAREER.HJC.08", "LY.CAREER.ZS.02"]
+    },
+    {
+      "id": "LY.CAREER.EL.60",
+      "topic": "升迁",
+      "chapter": "仕宦升迁章第二十九",
+      "chapter_en": "Chapter 29: Official career and promotion",
+      "title": "仕宦升迁：鬼变退神宜致仕、化居墓绝早还乡；鬼爻若化退气或变入墓绝之中，莫望升迁，远归田里",
+      "rule": {
+        "yi": "官鬼变成退神，适宜退休（致仕）；变入墓、绝，就早早回乡。官鬼爻如果化成退气，或者变入墓、绝之中，就不要指望升迁，只能远远地回到乡里。",
+        "en": "If Pressure changes into a retreating spirit it is fitting to retire from office; if it changes into tomb or extinction, one returns home early. If the Pressure line changes into a retreating qi, or changes into tomb or extinction, do not hope for promotion, but go far away and return to the countryside."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [765, 765],
+          "zh": ["鬼变退神宜致仕，化居墓绝早还乡。"],
+          "yi": ["官鬼变成退神，适宜退休；化到墓、绝的位置，就早点回乡。"],
+          "en": ["If Pressure changes into a retreating spirit it is fitting to retire from office; if it changes into tomb or extinction, return home early."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [766, 766],
+          "zh": ["鬼爻若化退气或变入墓绝之中，莫望陛迁，远归田里。"],
+          "yi": ["官鬼爻如果化成退气，或者变入墓、绝之中，就不要指望升迁，只能远远地回到乡里。"],
+          "en": ["If the Pressure line changes into a retreating qi, or changes into tomb or extinction, do not hope for promotion, but go far away and return to the countryside."] }
+      ],
+      "note": {
+        "yi": "「退气」就是退神（见术语表）：变爻往后退一步。「致仕」是退休，「田里」是乡里、田园。这一条与易隐官禄占「游魂化归魂宜致仕」（YY.20）和增删卜易「官化退、休致须宜化退」（ZS.47）说的是同一个去向：官爻往后退，人就退。",
+        "en": "'Tui qi' is the retreating spirit (see the glossary): the changed line takes a step back. 'Zhi shi' is retiring from office and 'tianli' is the countryside and the fields. This entry points the same way as 'a Wandering Soul changing into a Returning Soul suits retiring' in the Yi Yin divination for official salary and rank (YY.20) and as 'for resigning from office, a changing into a retreating spirit is wanted' in the Zengshan Buyi (ZS.47): when the star of office steps back, the man retires."
+      },
+      "see": ["LY.CAREER.EL.59", "LY.CAREER.EL.61", "LY.CAREER.YY.20", "LY.CAREER.ZS.47", "LY.CAREER.HJC.16"]
+    },
+    {
+      "id": "LY.CAREER.EL.61",
+      "topic": "应期",
+      "chapter": "仕宦升迁章第二十九",
+      "chapter_en": "Chapter 29: Official career and promotion",
+      "title": "仕宦升迁：欲知何月官升处、遇值逢生喜报祥；欲决何时迁转，推评官鬼旺衰——旺则高升在近，衰则待生旺之期；若六爻无鬼，查那月临官，便知迁升决矣",
+      "rule": {
+        "yi": "要知道官职在哪个月升，遇到官爻当值、得生的月份，就有喜报。要断定什么时候迁转，就推断官鬼的旺衰：官鬼旺相，高升就在眼前；衰弱，就等它得生、旺相的时候。如果六爻里没有官鬼，再查哪个月临到官，就能知道升迁的决断了。",
+        "en": "To know in which month one is promoted, when the line meets its own month or the month that generates it, joyful news is reported. To decide when the promotion or transfer will come, weigh the strength of Pressure: if it is thriving, the high promotion is near at hand; if weak, wait for the time when it is generated or thriving. If there is no Pressure among the six lines, then check which month falls on the star of office, and one will know the decision of the promotion."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [767, 767],
+          "zh": ["欲知何月官陛处，遇值逢生喜报祥。"],
+          "yi": ["要知道官职在哪个月升，遇到（官爻）当值、得生的月份，就有喜报吉祥。"],
+          "en": ["To know in which month the official is raised, when the line meets its own month or the month that generates it, joyful news and good omens are reported."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [768, 768],
+          "zh": ["欲决何时迁转，推评官鬼旺衰，旺则高承升在尔，衰则待生旺之期。", "若六爻无鬼，后查那月临官，便知迁陛决矣！"],
+          "yi": ["想断定什么时候迁转，就推断官鬼的旺衰：旺相，高升就在眼前；衰弱，就等它得生、旺相的时期。", "如果六爻里没有官鬼，再查哪个月临到官，就能知道升迁的决断了！"],
+          "en": ["To decide when the promotion or transfer will come, weigh the strength of Pressure: if it is thriving, the high promotion is near at hand; if weak, wait for the time when it is generated or thriving.", "If there is no Pressure among the six lines, then check which month falls on the star of office, and one will know the decision of the promotion!"] }
+      ],
+      "note": {
+        "yi": "「官陛处」的「陛」是「升」。「高承升在尔」按字面不顺，「尔」疑是「迩」（近），译作「高升就在近前」；「承」不译。「那月临官」按文意是官爻（官星）当值的那个月，书里没有细说。这一条与易隐官禄占「候选（二）·何日得官」（YY.08）取同一个法：官旺者看当值或合的年月日，官衰者看生旺的时候，官伏藏者看临值的时候。",
+        "en": "The 'bi' of 'guan bi chu' is 'sheng', to rise. 'Gao cheng sheng zai er' does not run smoothly as written, and 'er' is presumably 'er', near, so it is translated 'the high promotion is near at hand'; 'cheng' is left untranslated. 'The month falls on the star of office' is, by the sense, the month in which the line of the star of office is on duty, which the book does not go into. This entry takes the same method as 'on what day one gets office' in the Yi Yin divination on awaiting selection (YY.08): for a thriving star of office look at the year, month or day on duty or in combination, for a weak one at the time it is generated or thriving, and for a hidden one at the time it comes on duty."
+      },
+      "see": ["LY.CAREER.EL.60", "LY.CAREER.YY.08", "LY.CAREER.YY.22", "LY.CAREER.ZS.01"]
+    }
+  ]
+}

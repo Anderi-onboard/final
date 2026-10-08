@@ -1,0 +1,344 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "黄金策",
+  "chapter": "求馆(附束修)",
+  "chapter_en": "Seeking a school post (with the tuition fee)",
+  "ranges": {"卜筮大全": [8599, 8638], "卜筮正宗": [2783, 2798]},
+  "units": [
+    {
+      "id": "LY.CAREER.HJC.52",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·两福自冲，鬼谷值孙膑庞涓之弟子；子孙皆合，伊川遇杨时游酢之门生（旧注：卦有两爻子孙俱动相冲弟子多不合、加白虎螣蛇数有争斗、来伤世必责及先生；二爻俱生合世爻则门生自尽弟子之礼必不轻背其师）",
+      "rule": {
+        "yi": "卦里有两个子孙爻，都发动而相冲，弟子之间必定多有不合，再加白虎、螣蛇，时常有争斗，如果来伤世爻，必定连累到先生；如果两个爻都来生合世爻，门生就自己尽弟子的礼，尊师重道，必定不会轻易背弃老师。",
+        "en": "If the hexagram has two Output lines and both move and clash with each other, there will surely be much discord among the disciples, with the White Tiger and the Coiling Snake added there are often fights, and if they come to injure the Self it will surely reach the teacher; if both lines come to generate or combine with the Self, the pupils will fulfil the duty of disciples on their own, respect their teacher and value what is handed down, and will surely not lightly turn their backs on him."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8599, 8599],
+          "zh": ["两福自冲，鬼谷值孙膑庞涓之弟子；", "子孙皆合，伊川遇杨时游酢之门生。"],
+          "yi": ["两个子孙自相冲，就像鬼谷子遇到孙膑、庞涓那样的弟子；", "子孙都相合，就像程伊川遇到杨时、游酢那样的门生。"],
+          "en": ["With two Output lines clashing each other, it is as if Guiguzi had met disciples such as Sun Bin and Pang Juan;", "with the Output lines all combining, it is as if Cheng Yichuan had met disciples such as Yang Shi and You Zuo."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8600, 8601],
+          "zh": ["卦有两爻子孙，俱动相冲，弟子中，必多不合；", "更加白虎螣蛇，数有争斗。", "若来伤世，必然责及先生。", "如遇二爻俱来生合世爻，则门生自尽弟子之礼，尊师重传，必不轻背其师也。"],
+          "yi": ["卦里有两个子孙爻，都发动而相冲，弟子之间必定多有不合；", "再加上白虎、螣蛇，时常有争斗。", "如果来伤世爻，必定连累到先生。", "如果遇到两个爻都来生合世爻，门生就自己尽弟子的礼，尊敬老师、重视传授，必定不会轻易背弃老师。"],
+          "en": ["If the hexagram has two Output lines and both move and clash with each other, there will surely be much discord among the disciples;", "if the White Tiger and the Coiling Snake are added, there are often fights.", "If they come to injure the Self, it will surely reach the teacher.", "If both lines come to generate or combine with the Self, the pupils will fulfil the duty of disciples on their own, respect their teacher and value what is handed down, and will surely not lightly turn their backs on him."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2783, 2783],
+          "zh": ["卦有两爻子孙俱动相冲，弟子中必多不合，若来伤世，必然责及先生。", "如遇二爻俱来生合世爻，则门生自尽弟子之礼。"],
+          "yi": ["卦里有两个子孙爻都发动而相冲，弟子之间必定多有不合，如果来伤世爻，必定连累到先生。", "如果遇到两个爻都来生合世爻，门生就自己尽弟子的礼。"],
+          "en": ["If the hexagram has two Output lines that both move and clash with each other, there will surely be much discord among the disciples, and if they come to injure the Self it will surely reach the teacher.", "If both lines come to generate or combine with the Self, the pupils will fulfil the duty of disciples on their own."] }
+      ],
+      "note": {
+        "yi": "经文借了两对师生：鬼谷子的弟子孙膑、庞涓后来成了仇敌，程颐（伊川）的弟子杨时、游酢「程门立雪」，以尊师著称。孙膑、庞涓、杨时、游酢书里没有展开，这里只是用来比弟子之间不合和相合。",
+        "en": "The verse borrows two pairs of teachers and pupils: Guiguzi's disciples Sun Bin and Pang Juan later became enemies, and Cheng Yi's (Yichuan's) disciples Yang Shi and You Zuo, of the story of 'standing in the snow at Cheng's gate', were known for respect to their teacher. The book does not expand on Sun Bin, Pang Juan, Yang Shi or You Zuo, and they are used only as images for discord and accord among disciples."
+      },
+      "see": ["LY.CAREER.HJC.49", "LY.CAREER.HJC.51"]
+    },
+    {
+      "id": "LY.CAREER.HJC.53",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·世动妻爻，决主亲操井臼（旧注：世临财动是自炊爨非供膳；占供膳又主供得成，怕兄动或持身世则供不成；占馆财爻持世又主西席家眷同至）",
+      "rule": {
+        "yi": "世爻临着财爻发动，是自己做饭，不是东家供给膳食；如果占的是供膳，又主供得成，只怕兄弟发动，或者虽然不动而持身世的，都主供不成；大凡占馆，遇到财爻持世，又主先生的家眷一同到馆。",
+        "en": "If the Self rests on Wealth and it moves, one cooks for oneself and meals are not provided by the host; if one divines whether meals will be provided, it also means they will be provided, and what is feared is Peer moving, or Peer holding the Self or the Body even if it does not move, in all of which cases they will not be provided; in general in divining a school post, Wealth holding the Self also means the teacher's family comes along."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8603, 8603],
+          "zh": ["世动妻爻，决主亲操井臼；"],
+          "yi": ["世爻发动在妻财上，一定是自己亲自操持汲水舂米的家务；"],
+          "en": ["If the Self moves onto the Wealth line, one will surely do the drawing of water and pounding of rice oneself;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8604, 8605],
+          "zh": ["世临财动，是自炊爨，非供膳也。", "若占供膳，又主供得膳成。", "惟怕兄动，或虽不动，而持身世者，皆主供不成。", "大凡占馆，遇财爻持世，又主西席家眷同至。"],
+          "yi": ["世爻临着财爻发动，是自己做饭，不是供给膳食。", "如果占供膳，又主供得成。", "只怕兄弟发动，或者虽然不动，而持身世的，都主供不成。", "大凡占馆，遇到财爻持世，又主先生的家眷一同到馆。"],
+          "en": ["If the Self rests on Wealth and it moves, one cooks for oneself, and meals are not provided.", "If one divines whether meals will be provided, it also means they will be provided.", "What is feared is Peer moving, or Peer holding the Self or the Body even if it does not move, and in all such cases the meals will not be provided.", "In general in divining a school post, Wealth holding the Self also means the teacher's family comes along."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2785, 2785],
+          "zh": ["世临财动，乃自炊爨，非供赡也。"],
+          "yi": ["世爻临着财爻发动，是自己做饭，不是供给膳食。"],
+          "en": ["If the Self rests on Wealth and it moves, one cooks for oneself, and meals are not provided."] }
+      ],
+      "note": {
+        "yi": "「井臼」是汲水（井）和舂米（臼），代指家务、自己做饭。「供膳」是东家供给先生饭食。同一个「财临世」在这里有两面：不问供膳时是自己做饭、家眷同来；占供膳时是供得成。",
+        "en": "'Drawing water and pounding rice' is household chores, meaning cooking for oneself. 'Provide meals' is the host supplying the teacher's food. The same 'Wealth on the Self' has two faces here: when meals are not what is asked, it is cooking for oneself and the family coming along; when meals are asked, it is that they are provided."
+      },
+      "see": ["LY.CAREER.HJC.54"]
+    },
+    {
+      "id": "LY.CAREER.HJC.54",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·应生财值，定然供膳饔餐（旧注：财爻临应生合世身定主供膳；月日动爻俱带妻财是诸生轮流供；财旺款待厚、休囚薄；财化子丰洁、化鬼无美味、化父淡薄、化兄常食而已）",
+      "rule": {
+        "yi": "财爻临在应爻上、生合世爻身爻，一定供给膳食，因为财就是饮食；月建、日辰、动爻都带妻财，一定不是一家做东供膳，而是各位学生轮流供给；财旺相款待丰厚，休囚款待菲薄，财化子孙丰盛洁净，化官鬼没有美味，化父母清淡，化兄弟不过是平常饭食。",
+        "en": "If Wealth rests on the Other and generates or combines with the Self or the Body, meals will surely be provided, because Wealth is food and drink; if the Month, the Day and the moving lines all carry Wealth, it is surely not one family acting as host but the pupils providing in turn; thriving Wealth means generous hospitality and resting or trapped Wealth meagre, Wealth turning into Output means plentiful and clean food, into Pressure no delicacies, into Resource plain fare, and into Peer no more than everyday food."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8607, 8607],
+          "zh": ["应生财值，定然供膳饔餐。"],
+          "yi": ["应爻生财、财爻当值，一定供给饭食。"],
+          "en": ["If the Other generates Wealth and Wealth is on duty, meals will surely be provided."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8608, 8608],
+          "zh": ["财爻临应生合世身，定主供膳，财为饮食故也。", "若月建日辰动爻，俱带妻财，必非一家东道供膳，乃诸生轮流供也。", "财爻旺相，款待必厚；", "休囚，款待必薄；", "财化子，必丰洁；", "财化鬼，无美味；", "财化父，必淡薄；", "财化兄，常食而已。"],
+          "yi": ["财爻临应、生合世身，一定供给膳食，因为财是饮食。", "如果月建、日辰、动爻都带妻财，一定不是一家做东供膳，而是各位学生轮流供给。", "财爻旺相，款待一定丰厚；", "休囚，款待一定菲薄；", "财化子孙，一定丰盛洁净；", "财化官鬼，没有美味；", "财化父母，一定清淡；", "财化兄弟，不过是平常饭食而已。"],
+          "en": ["If Wealth rests on the Other and generates or combines with the Self or the Body, meals will surely be provided, because Wealth is food and drink.", "If the Month, the Day and the moving lines all carry Wealth, it is surely not one family acting as host and providing meals but the pupils providing in turn.", "If Wealth is thriving, the hospitality is surely generous;", "if resting or trapped, surely meagre;", "if Wealth turns into Output, surely plentiful and clean;", "if Wealth turns into Pressure, there are no delicacies;", "if Wealth turns into Resource, surely plain;", "if Wealth turns into Peer, it is no more than everyday fare."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2787, 2787],
+          "zh": ["财爻临应生合世身，定主供膳；", "月建、日辰、动爻俱带妻财，乃诸生轮流供膳，旺相款待厚，休囚款待薄。"],
+          "yi": ["财爻临应生合世身，一定供给膳食；", "月建、日辰、动爻都带妻财，是各位学生轮流供给膳食，旺相款待丰厚，休囚款待菲薄。"],
+          "en": ["If Wealth rests on the Other and generates or combines with the Self or the Body, meals will surely be provided;", "if the Month, the Day and the moving lines all carry Wealth, the pupils provide the meals in turn, with generous hospitality if thriving and meagre if resting or trapped."] }
+      ],
+      "note": {
+        "yi": "「饔餐」是熟食、饭食。财爻化出什么六亲，就看饭食的样子（化子孙丰洁、化官鬼无美味、化父母淡薄、化兄弟平常）：旧注细，王洪绪只写了前两句和旺衰厚薄。",
+        "en": "'Cooked meals' is prepared food. What Wealth turns into gives the look of the meals (Output plentiful and clean, Pressure no delicacies, Resource plain, Peer everyday): the old commentary is detailed, and Wang Hongxu writes only the first two points and the generosity by strength."
+      },
+      "see": ["LY.CAREER.HJC.53", "LY.CAREER.HJC.55"]
+    },
+    {
+      "id": "LY.CAREER.HJC.55",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·如索束修，可把妻财推究；若居伏地，还求朋友维持（旧注：索束修以财爻为主；不出现不拘伏何爻下皆费力难索，须浼朋友同行取讨；伏藏须月日动爻提起；王洪绪：财出现旺相不被伤克则不欠缺，被克或绝或空或墓皆不遂意）",
+      "rule": {
+        "yi": "要讨取束修，以财爻为主。财爻不出现，不管伏在哪个爻下，都主费力难讨，必须央求朋友一同去讨，也许才能得到，因为伏藏的爻必须有月建、日辰、动爻把它提起来，像飞神一样，然后才能出来起作用；财爻出现旺相，月建日辰动爻不来伤克，就不会欠缺；财爻出现却被克，或者绝、空、入墓，都不如意。",
+        "en": "To collect the tuition fee, Wealth is the main line. If Wealth does not appear, whatever line it lies hidden under, collecting is hard work, and one must beg friends to go along and ask for it, and then it may perhaps be had, for a hidden line must be drawn up by the Month, the Day or a moving line, like a flying line, before it can come out and act; if Wealth appears and is thriving, and the Month, the Day and the moving lines do not injure or control it, there will be no shortfall; if Wealth appears but is controlled, or in extinction, Void or in a tomb, nothing is as one wishes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8610, 8610],
+          "zh": ["如索束修，可把妻财推究；", "若居伏地，还求朋友维持。"],
+          "yi": ["如果要讨取束修，可以从妻财来推究；", "如果它处在伏藏的地方，还要求朋友出面维持。"],
+          "en": ["If the tuition fee is to be collected, look into Wealth;", "if it lies hidden, one must still ask friends to help."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8611, 8614],
+          "zh": ["凡占取索束修，以财爻为主。", "若不出现，不拘伏在何爻下，皆主费力难索。", "必须浼求朋友，同行取讨，则或可得。", "盖凡伏藏，须得月建日辰动爻，提起伏神，如同飞神，然后得出为用，故也。"],
+          "yi": ["凡是占讨取束修，以财爻为主。", "如果不出现，不管伏在哪个爻下，都主费力难讨。", "必须央求朋友，一同去讨，也许才能得到。", "因为凡是伏藏的，必须有月建、日辰、动爻把伏神提起来，像飞神一样，然后才能出来起作用，所以这样。"],
+          "en": ["In divining the collecting of the tuition fee, Wealth is the main line.", "If it does not appear, whatever line it lies hidden under, collecting is hard work.", "One must beg friends to go along and ask for it, and then it may perhaps be had.", "For whatever lies hidden must have the Month, the Day or a moving line draw up the hidden line, like a flying line, before it can come out and act, and that is why."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2789, 2789],
+          "zh": ["凡占取索束修，得财爻出现旺相，月建日辰动爻不来伤克，则不欠缺；", "若财出现被克，或绝或空或墓，主皆不遂意也。"],
+          "yi": ["凡占讨取束修，得到财爻出现旺相，月建、日辰、动爻不来伤克，就不会欠缺；", "如果财爻出现却被克，或者绝、或者空、或者入墓，主都不如意。"],
+          "en": ["In divining the collecting of the tuition fee, if Wealth appears and is thriving, and the Month, the Day and the moving lines do not come to injure or control it, there will be no shortfall;", "if Wealth appears but is controlled, or in extinction, or Void, or in a tomb, nothing is as one wishes."] }
+      ],
+      "note": {
+        "yi": "「维持」是帮忙撑持。伏神要「提起」才能起作用（月建日辰动爻把它冲、生、合起来），这是通用的规矩，在别的章里也常见。卜筮正宗没有 LY.CAREER.HJC.56 那一联的经文，王洪绪这一段把「出现不伤」那一联的意思也包括了。",
+        "en": "'Help' is helping to prop up. A hidden line must be 'drawn up' (clashed, generated or combined up by the Month, the Day or a moving line) before it can act, a general rule that is also often met in other chapters. The Bushi Zhengzong does not carry the verse of the couplet in LY.CAREER.HJC.56, and Wang Hongxu's passage here also covers the sense of the couplet 'appearing and not injured'."
+      },
+      "see": ["LY.CAREER.HJC.54", "LY.CAREER.HJC.56", "LY.CAREER.HJC.34"]
+    },
+    {
+      "id": "LY.CAREER.HJC.56",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·出现不伤，旺相生身，名曰吉；入空无救，休囚化绝，号为凶（旧注：占束修财爻出现旺相不空、月日动爻不带兄弟伤克则不缺欠，财生世合世大吉；财被克劫、居绝地、空亡、变死墓绝皆不遂意；世持兄克尤难取讨；子孙旺动亦好）",
+      "rule": {
+        "yi": "占束修，财爻出现、旺相不空，月建、日辰、动爻又不带兄弟来伤克，就不缺欠，再得财爻生世、合世，是大吉的兆头；如果财爻虽然出现，却被克被劫，或处在绝地，或空亡，或变出死、墓、绝的爻，都不如意；世爻临着兄弟来克财，尤其难讨；得子孙旺相发动，也好。",
+        "en": "In divining the tuition fee, if Wealth appears, thriving and not Void, and the Month, the Day and the moving lines do not carry Peer to injure or control it, there is no shortfall, and if Wealth also generates or combines with the Self it is a greatly auspicious sign; if Wealth appears but is controlled or robbed, or stands in a place of extinction, or is Void, or turns into a line of death, tomb or extinction, nothing is as one wishes; if the Self rests on Peer and it controls Wealth, collecting is especially hard; and if Output is thriving and moves, that is also good."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8616, 8616],
+          "zh": ["出现不伤，旺相生身，名曰吉；", "入空无救，休囚化绝，号为凶。"],
+          "yi": ["财爻出现而不受伤，旺相而生扶身爻，叫做吉；", "落入空亡又没有救，休囚而化入绝，叫做凶。"],
+          "en": ["Wealth appearing and not injured, thriving and generating the Body, is called auspicious;", "falling Void with no rescue, resting or trapped and turning into extinction, is called ominous."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8617, 8618],
+          "zh": ["凡占束修，得财爻出现，旺相不空，而月建日辰动爻，不带兄弟伤克，则不缺欠。", "更得财爻生世合世，大吉之兆。", "若财虽出现，却被克劫，或居绝地，或空亡，或变出死墓绝爻，皆不遂意。", "世持兄克，尤难取讨。", "得子孙旺动，亦好。"],
+          "yi": ["凡占束修，得到财爻出现，旺相不空，而月建、日辰、动爻不带兄弟来伤克，就不会缺欠。", "再得到财爻生世、合世，是大吉的兆头。", "如果财虽然出现，却被克被劫，或者处在绝地，或者空亡，或者变出死、墓、绝的爻，都不如意。", "世爻持兄弟来克财，尤其难讨。", "得到子孙旺相发动，也好。"],
+          "en": ["In divining the tuition fee, if Wealth appears, thriving and not Void, and the Month, the Day and the moving lines do not carry Peer to injure or control it, there will be no shortfall.", "If Wealth also generates or combines with the Self, it is a greatly auspicious sign.", "If Wealth appears but is controlled or robbed, or stands in a place of extinction, or is Void, or turns into a line of death, tomb or extinction, nothing is as one wishes.", "If the Self holds Peer and it controls Wealth, collecting is especially hard.", "If Output is thriving and moves, that is also good."] }
+      ],
+      "note": {
+        "yi": "这一联的经文是求馆章收尾处对「吉凶」的总括（出现不伤旺相是吉、空无救休囚化绝是凶）；卜筮正宗没有这一联，它的相应意思并在 LY.CAREER.HJC.55 的王洪绪一段里。旧注「世持兄克，尤难取讨」是说世爻临着兄弟而兄弟又克财，不是说世克兄弟。",
+        "en": "The verse is a summary of good and ill at the end of the chapter's account of the tuition fee (appearing, uninjured and thriving is auspicious; Void, unrescued, resting or turning into extinction is ominous); the Bushi Zhengzong does not have this couplet, and its sense is in Wang Hongxu's passage in LY.CAREER.HJC.55. The old commentary's 'the Self holds Peer and it controls Wealth, collecting is especially hard' means the Self rests on Peer and Peer controls Wealth, not that the Self controls Peer."
+      },
+      "see": ["LY.CAREER.HJC.55", "LY.CAREER.HJC.57"]
+    },
+    {
+      "id": "LY.CAREER.HJC.57",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·变出父爻，书债必然偿货物（旧注：财动化父或父动化财，束修必无金银宝物，多是货物准折，有名无实；兄弟更动杂货物亦不尽得）",
+      "rule": {
+        "yi": "财爻发动化出父母，或者父母发动化出财，束修一定没有金银财宝，多半是用货物折价，是有名无实的象；卦里兄弟再发动，连杂货物也不能全部得到。",
+        "en": "If Wealth moves and turns into Resource, or Resource moves and turns into Wealth, the fee will surely not be in gold and silver but mostly in goods taken at a set value, the image of name without substance; if Peer also moves in the hexagram, even the miscellaneous goods cannot all be had."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8620, 8620],
+          "zh": ["变出父爻，书债必然偿货物；"],
+          "yi": ["变出父母爻，学费的债必然是用货物来偿还；"],
+          "en": ["If it turns into Resource, the school debt will surely be paid in goods;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8621, 8621],
+          "zh": ["财动化父，或父动化财，主束修必无金银宝物，多是货物准折，乃有名无实之象。", "卦中兄弟更动，杂货物亦不尽得。"],
+          "yi": ["财动化父母，或者父母动化财，主束修一定没有金银财宝，多半是用货物折价，是有名无实的象。", "卦中兄弟再发动，杂货物也不能全部得到。"],
+          "en": ["If Wealth moves and turns into Resource, or Resource moves and turns into Wealth, the fee will surely not be in gold and silver but mostly in goods taken at a set value, which is the image of name without substance.", "If Peer also moves in the hexagram, even the miscellaneous goods cannot all be had."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2791, 2791],
+          "zh": ["财动化父或父动化财，主束修以货物准折。"],
+          "yi": ["财动化父母，或者父母动化财，主束修用货物折抵。"],
+          "en": ["If Wealth moves and turns into Resource, or Resource moves and turns into Wealth, the fee is paid in goods at a set value."] }
+      ],
+      "note": {
+        "yi": "「书债」是欠先生的束修；「准折」是用货物折价抵付。这一联的象：财（钱）和父（文书、物件）互相变化，钱变成了东西。",
+        "en": "'School debt' is the fee owed to the teacher, and 'taken at a set value' is paying by goods valued as the sum. The image of this couplet: Wealth (money) and Resource (documents, goods) turn into each other, and money becomes things."
+      },
+      "see": ["LY.CAREER.HJC.58", "LY.CAREER.HJC.34"]
+    },
+    {
+      "id": "LY.CAREER.HJC.58",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·化成兄弟，砚田定主欠收成（旧注：兄弟劫财之神，发动或持世皆难入手；财化兄有名无实或得一半；卦无财遇兄化出则有人抽分）",
+      "rule": {
+        "yi": "兄弟是劫财的神，发动或持世，束修都难到手；财爻化出兄弟，有名无实，或者只得一半；卦里没有财而兄弟化出来，就有人抽成分去。",
+        "en": "Peer is the spirit that robs wealth, and when it moves or holds the Self the fee is hard to lay hands on; Wealth turning into Peer is in name only, or only half is had; if there is no Wealth in the hexagram and Peer is changed out, someone takes a share."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8623, 8623],
+          "zh": ["化成兄弟，砚田定主欠收成。"],
+          "yi": ["化成兄弟，砚田一定歉收。"],
+          "en": ["Turning into Peer, the inkstone field will surely yield a poor harvest."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8624, 8624],
+          "zh": ["兄弟乃劫财之神。", "若发动或持世，皆难入手。", "财化兄，有名无实，或得一半。", "卦若无财，遇兄化出，则主有人抽分。"],
+          "yi": ["兄弟是劫财的神。", "如果发动或者持世，都难以到手。", "财化兄弟，有名无实，或者只得到一半。", "卦里如果没有财，遇到兄弟化出来，就主有人抽成分去。"],
+          "en": ["Peer is the spirit that robs wealth.", "If it moves or holds the Self, it is hard to lay hands on the fee.", "Wealth turning into Peer is in name only, or only half is had.", "If there is no Wealth in the hexagram and Peer is changed out, it means someone takes a share."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2791, 2791],
+          "zh": ["财爻化兄，有名无实。"],
+          "yi": ["财爻化兄弟，有名无实。"],
+          "en": ["Wealth turning into Peer is in name only."] }
+      ],
+      "note": {
+        "yi": "「砚田」是靠砚台（笔墨、教书）吃饭的田，指教书的收入。LY.CAREER.HJC.34（财作束修，不宜化弟）是同一个判据，在那里是总说，这里是收尾时再讲一次兄弟化出的后果。",
+        "en": "'The inkstone field' is the field that feeds one by the inkstone (brush, ink, teaching), meaning the income of teaching. LY.CAREER.HJC.34 ('Wealth is the tuition fee, not fitting to turn into Peer') is the same criterion, stated there in general, and here the consequence of Peer being changed out is told again at the end."
+      },
+      "see": ["LY.CAREER.HJC.34", "LY.CAREER.HJC.57"]
+    },
+    {
+      "id": "LY.CAREER.HJC.59",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·身空应空财福空，必成虚度（旧注：占束修卦身应爻及子孙妻财或空或不上卦则束修无得，财为用神、身为事主、应为诸生父兄、子孙生财之神今皆空休）",
+      "rule": {
+        "yi": "占束修，遇到卦身、应爻，以及子孙、妻财，有的空亡或者不上卦，束修就拿不到，因为财是用神，身是事主，应是学生的父兄，子孙又是生财的神，现在都空、都休囚，怎么能拿到呢，所以白白虚度。",
+        "en": "In divining the fee, if the Body, the Other, Output and Wealth are Void or absent from the hexagram, the fee will not be obtained, for Wealth is the Subject, the Body is the one the matter belongs to, the Other is the pupils' fathers and brothers, and Output is the spirit that generates Wealth, and now all are Void and resting, how can it be obtained, and so the time is spent in vain."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8626, 8626],
+          "zh": ["身空应空财福空，必成虚度；"],
+          "yi": ["卦身空、应爻空、财爻子孙都空，必定落得白白虚度；"],
+          "en": ["With the Body Void, the Other Void and Wealth and Output Void, one will surely pass the time in vain;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8627, 8627],
+          "zh": ["凡占束修，遇卦身应爻，及子孙妻财，或空或不上卦，主束修无得。", "盖财为用神，身为事主，应为诸生父兄，而子孙又生财之神，今皆空休，其能取乎？", "故成虚度。"],
+          "yi": ["凡占束修，遇到卦身、应爻，以及子孙、妻财，有的空亡或者不上卦，主束修拿不到。", "因为财是用神，身是事主，应是学生的父兄，而子孙又是生财的神，现在都空、都休囚，还能拿到吗？", "所以成了白白虚度。"],
+          "en": ["In divining the fee, if the Body, the Other, Output and Wealth are Void or absent from the hexagram, the fee will not be obtained.", "For Wealth is the Subject, the Body is the one the matter belongs to, the Other is the pupils' fathers and brothers, and Output is the spirit that generates Wealth, and now all are Void and resting, how can it be obtained?", "So it becomes time spent in vain."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2792, 2792],
+          "zh": ["凡占束修，遇卦身应爻及子孙妻财皆空，或不上卦者，主束修无得。"],
+          "yi": ["凡占束修，遇到卦身、应爻以及子孙、妻财都空，或者不上卦的，主束修拿不到。"],
+          "en": ["In divining the fee, if the Body, the Other, Output and Wealth are all Void, or absent from the hexagram, the fee will not be obtained."] }
+      ],
+      "note": {
+        "yi": "这一联列出了束修要有的四样：身（事主）、应（东家，即学生的父兄）、财（束修）、子孙（生财的神），缺哪个都不行。旧注「用神」是财爻；王洪绪只写了结论。",
+        "en": "This couplet lists the four things the fee needs: the Body (the one the matter belongs to), the Other (the host, that is, the pupils' fathers and brothers), Wealth (the fee) and Output (the spirit that generates Wealth), and without any one it cannot be had. In the old commentary 'the Subject' is the Wealth line; Wang Hongxu writes only the conclusion."
+      },
+      "see": ["LY.CAREER.HJC.56"]
+    },
+    {
+      "id": "LY.CAREER.HJC.60",
+      "topic": "风险",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·日克月克动变克，恐受刑伤（旧注：月日动变诸爻皆来刑克世爻占馆必不可成；占束修恐被诸生父兄呵责宜慎；王洪绪：占馆有不测之凶）",
+      "rule": {
+        "yi": "月建、日辰、动爻、变爻等爻，都来刑克世爻的，占馆一定不能成；占束修，恐怕被学生的父兄呵责，应该谨慎。王洪绪说得更重：占馆有意想不到的凶险。",
+        "en": "If the Month, the Day, the moving lines and the changed lines all come to punish or control the Self, the school post cannot come about; in divining the fee, one may be scolded by the pupils' fathers and brothers, and care should be taken. Wang Hongxu puts it more heavily: in divining a school post there is an unforeseen ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8629, 8629],
+          "zh": ["日克月克动变克，恐受刑伤。"],
+          "yi": ["日辰克、月建克、动爻变爻也克，恐怕要受到刑罚伤害。"],
+          "en": ["If the Day controls, the Month controls, and the moving and changed lines control too, one may suffer punishment and injury."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8630, 8630],
+          "zh": ["月建日辰动变诸爻，皆来刑克世爻者，占馆必不可成。", "占束修，恐被诸生父兄呵责，宜慎之。"],
+          "yi": ["月建、日辰、动爻、变爻等爻，都来刑克世爻的，占馆一定不能成。", "占束修，恐怕被学生的父兄呵责，应该谨慎。"],
+          "en": ["If the Month, the Day, the moving lines and the changed lines all come to punish or control the Self, the school post cannot come about.", "In divining the fee, one may be scolded by the pupils' fathers and brothers, and care should be taken."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2794, 2794],
+          "zh": ["月建日辰动变，诸爻皆来刑克世爻者，占馆有不测之凶。"],
+          "yi": ["月建、日辰、动爻、变爻等爻，都来刑克世爻的，占馆有意想不到的凶险。"],
+          "en": ["If the Month, the Day, the moving lines and the changed lines all come to punish or control the Self, in divining a school post there is an unforeseen ill."] }
+      ],
+      "dispute": {
+        "yi": "同一个象（月日动变都来刑克世爻），旧注说的是「占馆必不可成」，再说占束修会被学生父兄呵责；王洪绪说的是「占馆有不测之凶」。旧注是事成不成的问题，王洪绪是祸患大小的问题，他把结果说得更重，书里没有裁决。",
+        "en": "For the same image (the Month, the Day and the moving and changed lines all punish or control the Self) the old commentary says 'the school post cannot come about' and then that in divining the fee one will be scolded by the pupils' fathers and brothers, and Wang Hongxu says 'in divining a school post there is an unforeseen ill'. The old commentary is about whether it comes about, and Wang Hongxu about how great the misfortune is, and he puts the result more heavily; the books do not decide."
+      },
+      "note": {
+        "yi": "「刑伤」在经文里指受到刑罚、伤害，旧注落实为「被呵责」。",
+        "en": "'Punishment and injury' in the verse means suffering punishment and harm, which the old commentary makes concrete as 'being scolded'."
+      },
+      "see": ["LY.CAREER.HJC.42", "LY.CAREER.HJC.59"]
+    },
+    {
+      "id": "LY.CAREER.HJC.61",
+      "topic": "任所",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·鬼化财生，非讼则学金休矣（旧注：卦中无财而兄鬼文书乱动有化出财爻生合世爻者，必须讼诉公庭然后可得束修；官爻独发生世合世亦然）",
+      "rule": {
+        "yi": "卦里没有财，而兄弟、官鬼、文书乱动，有化出财爻来生合世爻的，必须到公堂上打官司，然后才能得到束修；官爻单独发动、生世合世，也是这样。",
+        "en": "If there is no Wealth in the hexagram but Peer, Pressure and Resource move wildly and one of them turns into a Wealth that generates or combines with the Self, one must go to the court and bring a suit before the fee can be had; Pressure moving alone to generate or combine with the Self is likewise so."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8632, 8632],
+          "zh": ["鬼化财生，非讼则学金休矣；"],
+          "yi": ["官鬼化出财爻来生，不是打官司，学金就算休了；"],
+          "en": ["When Pressure turns into Wealth that generates the Self, unless there is a lawsuit the tuition money is finished;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8633, 8633],
+          "zh": ["卦中无财，而遇兄鬼文书乱动，有化出财爻，生合世爻者，必须讼诉公庭，然后可得束修。", "官爻独发生世合世，亦然。"],
+          "yi": ["卦里没有财，而遇到兄弟、官鬼、文书乱动，有化出财爻、生合世爻的，必须到公堂上打官司，然后才能得到束修。", "官爻单独发动、生世合世，也是这样。"],
+          "en": ["If there is no Wealth in the hexagram but Peer, Pressure and Resource move wildly and one of them turns into a Wealth that generates or combines with the Self, one must go to the court and bring a suit before the fee can be had.", "Pressure moving alone to generate or combine with the Self is likewise so."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2796, 2796],
+          "zh": ["卦中无财，而遇兄、鬼、文书化出财爻生合世爻者，必须讼诉公庭，束修可有。"],
+          "yi": ["卦里没有财，而遇到兄弟、官鬼、文书化出财爻生合世爻的，必须到公堂上打官司，束修才有。"],
+          "en": ["If there is no Wealth in the hexagram but Peer, Pressure or Resource turns into a Wealth that generates or combines with the Self, one must go to the court and bring a suit before there is a fee."] }
+      ],
+      "note": {
+        "yi": "「学金」是学费、束修。官鬼是官司、公门，所以束修要靠打官司才能到手。经文的「非讼则学金休矣」是说不告到公堂，束修就算了。",
+        "en": "'Tuition money' is the fee. Pressure is lawsuits and the law-court, so the fee has to be got by a suit. The verse's 'unless there is a lawsuit the tuition money is finished' says that unless one goes to law the fee is lost."
+      },
+      "see": ["LY.CAREER.HJC.58"]
+    },
+    {
+      "id": "LY.CAREER.HJC.62",
+      "topic": "取象",
+      "chapter": "求馆(附束修)",
+      "chapter_en": "Seeking a school post (with the tuition fee)",
+      "title": "求馆·子连父合，因学而才思加焉（旧注：世衰绝无气而子孙动化、父母生扶合起世爻，先生才学本不赡而因教训子弟才思日进；有财动则不然；王洪绪：子弟之才日加进益）",
+      "rule": {
+        "yi": "占学馆，世爻如果衰绝无气，而遇到子孙发动变化、父母生扶、合起世爻的，主先生的才学本来不够丰富，因为教导子弟，他的才思日渐进益；卦里有财爻发动，就不是这样。",
+        "en": "In divining a school, if the Self is weak and in extinction without breath, but Output moves and changes and Resource generates and supports and combines the Self up, it means the teacher's learning was not at first abundant, but through teaching the youngsters his talent and thought advance day by day; if a Wealth line moves in the hexagram, it is not so."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [8635, 8635],
+          "zh": ["子连父合，因学而才思加焉。"],
+          "yi": ["子孙相连、父母相合，因为教学而才思日益增加。"],
+          "en": ["With Output linked and Resource combined, one's talent and thought grow through teaching."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [8637, 8638],
+          "zh": ["凡占学馆，世若衰绝无气，而遇子孙动化，父母生扶，合起世爻者，主先生才学本不克赡，因教训子弟，而其才思日加进益。", "卦有财动则不然。"],
+          "yi": ["凡是占学馆，世爻如果衰绝无气，而遇到子孙发动变化、父母生扶、合起世爻的，主先生的才学本来不够丰富，因为教导子弟，他的才思日渐进益。", "卦里有财爻发动就不是这样。"],
+          "en": ["In divining a school, if the Self is weak and in extinction without breath, but Output moves and changes and Resource generates and supports and combines the Self up, it means the teacher's learning was not at first abundant, but through teaching the youngsters his talent and thought advance day by day.", "If a Wealth line moves in the hexagram, it is not so."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2798, 2798],
+          "zh": ["世若衰绝无气，而遇子孙动化生合世爻者，主子弟之才日加进益也。"],
+          "yi": ["世爻如果衰绝无气，而遇到子孙发动变化、生合世爻的，主子弟的才学日渐进益。"],
+          "en": ["If the Self is weak and in extinction without breath, but Output moves and changes and generates or combines with the Self, it means the pupils' talent advances day by day."] }
+      ],
+      "dispute": {
+        "yi": "进益的是谁，两家说法不一样：旧注说是先生（「先生才学本不克赡，因教训子弟而其才思日加进益」，教学相长）；王洪绪说是子弟（「主子弟之才日加进益也」）。书里没有裁决。",
+        "en": "On who is the one who advances, the two commentators differ: the old commentary says it is the teacher ('the teacher's learning was not at first abundant, and through teaching the youngsters his talent and thought advance day by day', teaching and learning growing together), and Wang Hongxu says it is the pupils ('the pupils' talent advances day by day'). The books do not decide."
+      },
+      "note": {
+        "yi": "这是求馆章的最后一联：前面都是讲能不能得到馆、束修多少，最后一联讲的是做了这份差事之后人会怎么样。「教学相长」的意思见旧注。",
+        "en": "This is the last couplet of the chapter on a school post: the earlier ones speak of whether one gets the post and how much the fee is, and the last speaks of what becomes of the person after doing the work. For 'teaching and learning grow together' see the old commentary."
+      },
+      "see": ["LY.CAREER.HJC.29", "LY.CAREER.HJC.51"]
+    }
+  ]
+}

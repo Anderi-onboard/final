@@ -1,0 +1,658 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "黄金策",
+  "chapter": "行人",
+  "chapter_en": "Absent travellers",
+  "ranges": {"卜筮正宗": [3479, 3541]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.HJC.27",
+      "topic": "总则",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·要决归期但寻主象：主象就是用神——官员看官爻，晚辈看子孙爻，妻奴看财爻，兄弟朋友看兄爻，尊长看父爻，不在六亲里的看应爻",
+      "rule": {
+        "yi": "占行人（在外的人），先找主象，也就是用神：占官员看官爻，占晚辈看子孙爻，占妻子、奴仆看财爻，占兄弟朋友看兄爻，占尊长看父爻，不在六亲之中的人看应爻；要决断他的归期，就看这个主象。",
+        "en": "In divining for an absent traveller one first finds the principal image, which is the Subject: for an official look at the Pressure line, for the young at the Output line, for a wife or servant at the Wealth line, for brothers and friends at the Peer line, for elders at the Resource line, and for anyone outside the six relations at the Other line; to decide his day of return one looks at this principal image."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3481, 3481],
+          "zh": ["人为名利，", "忘却故乡生处乐；", "家无音信，", "全凭《周易》卦中推。", "要决归期，", "但寻主象"],
+          "yi": ["人为了名利，", "把故乡生长之处的欢乐都忘了；", "家里没有音信，", "全靠《周易》的卦来推断。", "要决断归期，", "只要找主象"],
+          "en": ["A man for fame and gain", "forgets the joys of his native place;", "when the home has no news,", "it relies wholly on the hexagram of the Zhouyi to work it out.", "To decide the day of return,", "one need only look for the principal image"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3481, 3481],
+          "zh": ["主象者用神也，卜官员看官爻，幼辈看子孙爻，妻奴看财爻，兄弟朋友看兄爻，尊长看父爻，不在六亲之中者看应爻。"],
+          "yi": ["主象就是用神：占官员看官爻，占晚辈看子孙爻，占妻子、奴仆看财爻，占兄弟朋友看兄爻，占尊长看父爻，不在六亲之中的人看应爻。"],
+          "en": ["The principal image is the Subject: for an official look at the Pressure line, for the young at the Output line, for a wife or servant at the Wealth line, for brothers and friends at the Peer line, for elders at the Resource line, and for anyone outside the six relations at the Other line."] }
+      ],
+      "see": ["LY.EXAM.BSZZ.01"]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.28",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·主象交重身已动、用爻安静未思归：主象发动行人已动身，用爻安静又无冲并则安居异乡还没想回家",
+      "rule": {
+        "yi": "主象（用爻）发动，行人已经动身；用爻安静，又没有日辰、动爻来冲来并，他就安居在异乡，还没起回家的念头。",
+        "en": "If the principal image (the Subject line) moves, the traveller has already set out; if the Subject line is still and no Day or moving line comes to clash or join it, he is settled in a strange land and has not thought of going home."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3483, 3483],
+          "zh": ["主象交重身已动，", "用爻安静未思归"],
+          "yi": ["主象发动，人已经动身；", "用爻安静，还没想回来"],
+          "en": ["If the principal image moves, the man has already set out;", "if the Subject line is still, he has not thought of returning"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3483, 3483],
+          "zh": ["主象即用爻也，动则行人已行；", "如用爻安静又无日辰动爻冲并者，安居异乡未起归念。"],
+          "yi": ["主象就是用爻，动了，行人已经动身；", "如果用爻安静，又没有日辰、动爻来冲、并，就是安居在异乡、还没起回家的念头。"],
+          "en": ["The principal image is the Subject line; if it moves, the traveller has already set out;", "if the Subject line is still and no Day or moving line comes to clash or join it, he is settled in a strange land and has not thought of going home."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.29",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·克速生迟、我若制他难见面：用爻克世或世落空亡人很快到，生合世爻回得迟，最忌世爻动克用爻",
+      "rule": {
+        "yi": "用爻发动克世爻，或者世爻落空亡，人一定很快就到；用爻生合世爻，人回得迟；最忌世爻发动去克用爻，那是回不来。",
+        "en": "If the Subject moves and controls the Self, or the Self falls into Void, the man will surely arrive soon; if the Subject gives life to or combines with the Self, he returns late; most to be feared is the Self moving to control the Subject line, which means he cannot come back."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3485, 3485],
+          "zh": ["克速生迟，", "我若制他难见面"],
+          "yi": ["（用爻）克世则快，生世则迟，", "我如果制住他，就难以见面"],
+          "en": ["Controlling means quick, generating means late;", "if I control him, it is hard to meet him"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3485, 3485],
+          "zh": ["用动克世或世落空亡，人必速至；", "生合世爻人必归迟；", "最忌世爻动克用爻，乃未能归也。"],
+          "yi": ["用爻发动克世，或者世爻落空亡，人一定很快就到；", "生合世爻，人一定回得迟；", "最忌世爻发动克用爻，那是不能回来。"],
+          "en": ["If the Subject moves and controls the Self, or the Self falls into Void, the man will surely arrive soon;", "if it gives life to or combines with the Self, the man will return late;", "most to be feared is the Self moving to control the Subject line, which means he cannot come back."] }
+      ],
+      "note": {
+        "yi": "这一联和十八问答「第一问」前后的行人卦例是配套的；增删卜易行人章开头也说「世克用兮人未动，用爻克世必然归」，是同一个意思（见 LY.TRAVEL 增删卜易行人章）。",
+        "en": "This couplet goes with the travellers' cases around the first of the eighteen questions; the Zengshan Buyi's chapter on absent travellers opens with \"when the Self controls the Subject the man has not moved, when the Subject controls the Self he surely comes home\", which says the same thing (see its chapter on absent travellers in LY.TRAVEL)."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.30",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·三门四户用如合世即回家：三、四爻是门户，用爻临在上面发动则归程已近，又无制伏、来生合世爻则可立而待",
+      "rule": {
+        "yi": "三爻、四爻是门户，用爻临在上面发动，归程已经近了；用爻又没有被制伏、发动来生合世爻，就可以站着等他到。",
+        "en": "The third and fourth lines are the doors and gates; if the Subject stands there and moves, his homeward road is already near; and if the Subject line is not restrained and moves to give life to or combine with the Self, one may stand and wait for him."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3487, 3487],
+          "zh": ["三门四户，", "用如合世即回家"],
+          "yi": ["三爻是门，四爻是户，", "用爻如果合世，就回家了"],
+          "en": ["The third is the door and the fourth the gate;", "if the Subject combines with the Self, he comes home"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3487, 3487],
+          "zh": ["三四爻为门户，临用爻动，归程已近；", "而用爻又无制伏，动来生合世爻者，可立而待也。"],
+          "yi": ["三、四爻是门户，用爻临在上面发动，归程已经近了；", "而且用爻又没有被制伏，发动来生合世爻，就可以站着等他到了。"],
+          "en": ["The third and fourth lines are the doors and gates; if the Subject stands there and moves, his homeward road is already near;", "and if the Subject line is not restrained and moves to give life to or combine with the Self, one may stand and wait for him."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.31",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·动化退神人既来而复返：用爻化进神行人急回不日望，化退神行人虽来仍返或又往别处",
+      "rule": {
+        "yi": "用爻如果化出进神，行人很快就回，不久可望；化出退神，行人虽然来了仍会返回，或者又去别处；「既来而复返」总的是说回不来。",
+        "en": "If the Subject line changes into an Advancing spirit, the traveller hurries home and may be looked for before long; if it changes into a Retreating spirit, though the traveller comes he goes back again, or goes elsewhere; \"comes and goes back again\" says in sum that he cannot come home."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3489, 3489],
+          "zh": ["动化退神，", "人既来而复返"],
+          "yi": ["发动化出退神，", "人已经来了却又会返回去"],
+          "en": ["If it moves and changes into a Retreating spirit,", "the man comes and then goes back again"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3489, 3489],
+          "zh": ["用爻若化进神，行人急回不日望；", "化退神，行人虽来仍返，或又往处。", "既来而复返者，总言不能归也。"],
+          "yi": ["用爻如果化出进神，行人很快就回，不久可望；", "化出退神，行人虽然来了仍会返回，或者又去别处。", "「既来而复返」，总的是说回不来。"],
+          "en": ["If the Subject line changes into an Advancing spirit, the traveller hurries home and may be looked for before long;", "if it changes into a Retreating spirit, though the traveller comes he goes back again, or goes elsewhere.", "\"Comes and goes back again\" says in sum that he cannot come home."] }
+      ],
+      "see": ["LY.EXAM.ZS.57"]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.32",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·静生世位身未动而怀归：六爻安静人不思归，用爻生合世爻则人虽未动身已起归意",
+      "rule": {
+        "yi": "六爻安静，人不想回家；如果用爻生合世爻，人虽然还没动身，已经起了回家的念头。",
+        "en": "With the six lines still the man does not think of returning; if the Subject gives life to or combines with the Self, though he has not set out the thought of going home has arisen."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3491, 3491],
+          "zh": ["静生世位，", "身未动而怀归"],
+          "yi": ["用爻安静而生世位，", "人还没动身，心里已想着回来"],
+          "en": ["If the Subject is still and gives life to the Self position,", "the man has not set out but his heart is set on returning"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3491, 3491],
+          "zh": ["六爻安静人不思归，若用爻生合世爻，身虽未动已起归意。"],
+          "yi": ["六爻安静，人不想回；如果用爻生合世爻，人虽然没动身，已经起了回家的念头。"],
+          "en": ["With the six lines still the man does not think of returning; if the Subject gives life to or combines with the Self, though he has not set out the thought of going home has arisen."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.33",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·若遇暗冲睹物起伤情之客况：用爻安静本无归意，遇日辰冲动则睹物思乡将欲回家，月建动爻克之也难起程",
+      "rule": {
+        "yi": "用爻安静，本来没有回家的意思；如果遇到日辰冲动，必定看见东西就想起家乡，将要回家；如果月建、动爻来克它，也难以起程。",
+        "en": "If the Subject line is still he has no thought of returning; if the Day clashes it into movement, he is sure to be reminded of home by what he sees and is about to go back; but if the Month or a moving line comes to control it, he can hardly set out either."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3493, 3493],
+          "zh": ["若遇暗冲，", "睹物起伤情之客况"],
+          "yi": ["如果遇到暗中冲动，", "看见旧物就想起旅居在外的伤情"],
+          "en": ["If it meets a hidden clash,", "seeing familiar things he is moved by the sorrow of his sojourn"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3493, 3495],
+          "zh": ["用爻安静，本无归意，若遇日辰冲动，必然睹物思乡，将欲回家。", "倘月建动爻克之，亦难起程也。"],
+          "yi": ["用爻安静，本来没有回家的意思；如果遇到日辰冲动，必定看见东西就想起家乡，将要回家。", "倘若月建、动爻克它，也难以起程。"],
+          "en": ["If the Subject line is still he has no thought of returning; if the Day clashes it into movement, he is sure to be reminded of home by what he sees and is about to go back.", "But if the Month or a moving line controls it, he can hardly set out either."] }
+      ],
+      "note": {
+        "yi": "这一联的注文在原书里分在两行，「将」字后面断开，「欲回家」接在下一行，这里合起来引。",
+        "en": "In the book the note to this couplet is split over two lines, breaking after one character, with \"about to go back\" on the next line; the two are quoted together here."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.34",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·如逢合住临行有尘事之羁身：用神发动本是归象，被动爻日辰合住则被事绊住，要等月日冲开才到",
+      "rule": {
+        "yi": "用神发动本来是回家的象；如果被动爻、日辰合住，就被事情绊住不能回来，要等月、日冲开它才能到；远的断年月，近的断日时。",
+        "en": "The Subject moving is by nature the image of returning; if a moving line or the Day combines with it, he is held by some affair and cannot return, and must wait for the Month or Day to clash it open; for far, judge by year and month, for near, by day and hour."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3497, 3497],
+          "zh": ["如逢合住，", "临行有尘事之羁身"],
+          "yi": ["如果遇到合住，", "临到要走时有俗事缠身"],
+          "en": ["If it meets a combination that holds it,", "just as he is about to leave worldly affairs hold him back"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3497, 3497],
+          "zh": ["用神发动本是归象，若遇动爻日辰合之，因事绊住不得归来，须待月日冲之可到，远断年月，近断日时。"],
+          "yi": ["用神发动本来是回家的象，如果遇到动爻、日辰合住它，就被事情绊住不能回来，要等月、日冲开它才能到；远的断年月，近的断日时。"],
+          "en": ["The Subject moving is by nature the image of returning; if a moving line or the Day combines with it, he is held by some affair and cannot return, and must wait for the Month or Day to clash it open; for far, judge by year and month, for near, by day and hour."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.35",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·世克用而俱动转往他方：不宜世克用爻，用爻安静受克仍在旧处，用爻发动人已起程，世动克它而用爻也动则转往别处",
+      "rule": {
+        "yi": "不宜世爻克用爻：用爻安静受克，人还在原来的地方；用爻发动，人已经起程；被发动的世爻克它而用爻也动，就转往别处。",
+        "en": "It is unfit for the Self to control the Subject line: if the Subject is still and controlled, the man is still in the old place; if it moves, he has already set out; if a moving Self controls it and the Subject also moves, he turns and goes elsewhere."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3499, 3499],
+          "zh": ["世克用而俱动，", "转往他方"],
+          "yi": ["世爻克用爻而两边都动，", "就转到别处去"],
+          "en": ["If the Self controls the Subject and both move,", "he turns and goes elsewhere"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3499, 3499],
+          "zh": ["不宜世克用爻，若安静受克者，原在旧处；", "若发动人已起程；", "如被动世克之，而用爻亦动者，则转往他处。"],
+          "yi": ["不宜世克用爻；如果用爻安静受克，还在原来的地方；", "如果发动，人已经起程；", "如果被发动的世克它，而用爻也发动，就转往别处。"],
+          "en": ["It is unfit for the Self to control the Subject line; if the Subject is still and controlled, he is still in the old place;", "if it moves, he has already set out;", "if a moving Self controls it and the Subject also moves, he turns and goes elsewhere."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.36",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·用比世皆空难归故里：世爻落旬空人速至，但用爻也落旬空，即使世空也来不了，不可一概而论",
+      "rule": {
+        "yi": "世爻落旬空，人很快就到；但如果用爻也落旬空，即使世爻空，他也来不了；不能一概而论，所以说「用爻和世爻都空，难回故乡」。",
+        "en": "If the Self is Void in its ten-day period the man arrives soon; but if the Subject line is also Void in its ten-day period, then even though the Self is Void he cannot come; it cannot be said as a blanket rule, hence \"if the Subject and the Self are both Void, it is hard to return to his native place\"."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3501, 3501],
+          "zh": ["用比世皆空，", "难归故里"],
+          "yi": ["用爻和世爻都空，", "难以回到故乡"],
+          "en": ["If the Subject and the Self are both Void,", "it is hard to return to his home village"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3501, 3501],
+          "zh": ["世爻旬空者速至，如用爻亦值旬空，纵世空而不能来也。", "不可一概而言，故曰“用比世而皆空，难归故里”。"],
+          "yi": ["世爻落旬空，人很快就到；如果用爻也落旬空，即使世空，他也来不了。", "不能一概而论，所以说「用爻和世爻都空，难回故乡」。"],
+          "en": ["If the Self is Void in its ten-day period he arrives soon; if the Subject line is also Void in its ten-day period, then even though the Self is Void he cannot come.", "It cannot be said as a blanket rule, hence \"if the Subject and the Self are both Void, it is hard to return to his native place\"."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.37",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·远行最怕用爻伤、尤嫌入墓：用神出现不受伤克、不落旬空月破则在外吉利归迟无妨，遇墓绝及日月动爻变刑克皆不吉",
+      "rule": {
+        "yi": "占远行，用神出现、不受伤克、不落旬空月破，主他在外吉利，回来迟也无妨；如果遇到墓、绝，或者日月、动爻、变爻的刑克，都主不吉。",
+        "en": "In divining a distant journey, if the Subject appears, is not injured or controlled, and is not in the Void of its ten-day period or under a Month-break, he does well abroad and there is no harm if his return is late; if it meets the tomb or extinction, or the punishment or control of the Day, the Month, a moving line or a changed line, all are inauspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3503, 3503],
+          "zh": ["远行最怕用爻伤，", "尤嫌入墓"],
+          "yi": ["远行最怕用爻受伤，", "尤其嫌它入墓"],
+          "en": ["On a distant journey one most fears injury to the Subject line,", "and above all dislikes its entering the tomb"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3503, 3503],
+          "zh": ["凡卜远行，若用神出现不受伤克，不值旬空月破，主在外吉利，归迟无妨；", "若逢墓绝及日月动爻变刑克，皆主不吉。"],
+          "yi": ["凡是占远行，如果用神出现、不受伤克，不落旬空、月破，主在外吉利，回来迟也无妨；", "如果遇到墓、绝，以及日月、动爻、变爻的刑克，都主不吉。"],
+          "en": ["In divining a distant journey, if the Subject appears, is not injured or controlled, and is not in the Void of its ten-day period or under a Month-break, he does well abroad and there is no harm if his return is late;", "if it meets the tomb or extinction, or the punishment or control of the Day, the Month, a moving line or a changed line, all are inauspicious."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.38",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·近出何妨主象伏、偏利逢冲：近出用爻伏藏必因事故不归，值日便到；安静则冲动日到；旬空安静则出旬逢冲日到",
+      "rule": {
+        "yi": "近处出行，用爻伏藏，必定是因为有事故不回，到它值日那天便到；如果安静，到冲动它的那天到；如果旬空而安静，到出旬、遇到冲的那天到。",
+        "en": "On a near outing, if the Subject line is hidden he is surely kept back by some affair, and he arrives on the day it rules; if it is still, he arrives on the day that clashes it into movement; if it is Void in its ten-day period and still, he arrives on the day that comes out of the period and meets a clash."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3505, 3505],
+          "zh": ["近出何妨主象伏，", "偏利逢冲"],
+          "yi": ["近处出行，主象伏藏有什么妨碍，", "反而利于遇到冲"],
+          "en": ["For a near outing, what harm if the principal image is hidden,", "it is the more favourable if it meets a clash"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3505, 3505],
+          "zh": ["近出若用爻伏藏，必因事故不归，值日便到；", "若安静，至冲动日到；", "如旬空安静，至出旬逢冲日到。"],
+          "yi": ["近处出行，如果用爻伏藏，一定是因为有事故不回，到它值日那天便到；", "如果安静，到冲动它的那天到；", "如果旬空而安静，到出旬、遇到冲的那天到。"],
+          "en": ["On a near outing, if the Subject line is hidden he is surely kept back by some affair, and he arrives on the day it rules;", "if it is still, he arrives on the day that clashes it into movement;", "if it is Void in its ten-day period and still, he arrives on the day that comes out of the period and meets a clash."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.39",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·若伏空乡须究卦中之六合：用神伏在不空的飞爻下，等冲飞之日来；伏在空爻下，得日辰动爻合它即出，快则当日、慢则值日",
+      "rule": {
+        "yi": "用神伏在不落空的飞爻下面，要等冲开飞爻的那天才能来；如果伏在落空的爻下面，得日辰、动爻合它就出来；快的当天来，慢的到值日那天到。",
+        "en": "If the Subject is hidden under a flying line that is not Void, he must wait for the day that clashes the flying line before he can come; if it is hidden under a Void line, it comes out as soon as the Day or a moving line combines with it; at the quickest he comes that very day, at the slowest he arrives on the ruling day."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3507, 3507],
+          "zh": ["若伏空乡，", "须究卦中之六合"],
+          "yi": ["如果伏在落空的地方，", "要查看卦中的六合"],
+          "en": ["If it is hidden in a Void place,", "one must look into the combinations in the hexagram"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3507, 3507],
+          "zh": ["用神若伏不空之飞爻下，须待冲飞之日可来；", "如伏空爻之下，得日辰动爻合之即出。", "速则当日来，迟则值日到。"],
+          "yi": ["用神如果伏在不空的飞爻下面，要等冲开飞爻的那天才能来；", "如果伏在落空的爻下面，得日辰、动爻合它就出来。", "快的当天来，慢的到值日那天到。"],
+          "en": ["If the Subject is hidden under a flying line that is not Void, he must wait for the day that clashes the flying line before he can come;", "if it is hidden under a Void line, it comes out as soon as the Day or a moving line combines with it.", "At the quickest he comes that very day, at the slowest he arrives on the ruling day."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.40",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·如藏官下当参飞上之六神：用爻伏在官爻下必被凶事拘住，临勾陈跌扑、螣蛇惊恐、白虎或土鬼卧病、玄武盗贼或贪色",
+      "rule": {
+        "yi": "用爻伏在官爻下面，必定被凶事拘住：飞爻临勾陈，是跌扑损伤；临螣蛇，是牵连惊恐；临白虎，或者官鬼属土，是卧病不能回；临玄武，是被盗贼阻住，或者贪恋女色不回。",
+        "en": "If the Subject line is hidden under the Pressure line, he is surely held by some ill event: with Hook Earth on the flying line, a fall and injury; with the Coiling Snake, entanglement and fright; with the White Tiger, or with Pressure of the Earth element, lying sick and unable to return; with the Dark Tortoise, stopped by thieves, or kept by love of women."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3509, 3509],
+          "zh": ["如藏官下，", "当参飞上之六神"],
+          "yi": ["（用爻）如果藏在官鬼之下，", "要参看飞爻上面的六神"],
+          "en": ["If it is hidden under Pressure,", "look to the six spirits on the flying line above"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3509, 3509],
+          "zh": ["用爻伏于官爻下，必为凶事所羁，临勾陈跌仆损伤，临螣蛇勾连惊恐，临白虎或官鬼属土卧病不归，临玄武盗贼所阻，或贪色不归。", "其余下文引证类推之。"],
+          "yi": ["用爻伏在官爻下面，必定被凶事拘住：临勾陈，是跌扑损伤；临螣蛇，是牵连惊恐；临白虎或者官鬼属土，是卧病不能回；临玄武，是被盗贼阻住，或者贪恋女色不回。", "其余的在下文引证，可以类推。"],
+          "en": ["If the Subject line is hidden under the Pressure line, he is surely held by some ill event: with Hook Earth, a fall and injury; with the Coiling Snake, entanglement and fright; with the White Tiger, or with Pressure of the Earth element, lying sick and unable to return; with the Dark Tortoise, stopped by thieves, or kept by love of women.", "The rest are cited below and can be reasoned out by analogy."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.41",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·兄弟遮藏缘是非而不返：用爻伏在兄弟爻下必因赌博，加朱雀是口舌争斗，临白虎为风波所阻",
+      "rule": {
+        "yi": "用爻伏在兄弟爻下面，必定是因为赌博；加朱雀，是口舌争斗；临白虎，是被风波阻住。",
+        "en": "If the Subject line is hidden under Peer, it is surely because of gambling; with the Vermilion Bird, it is wrangling and fighting; with the White Tiger, he is stopped by storms."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3511, 3511],
+          "zh": ["兄弟遮藏，", "缘是非而不返"],
+          "yi": ["（用爻）被兄弟爻遮藏，", "因为是非纠纷而不回来"],
+          "en": ["If it is covered and hidden by Peer,", "he does not return because of quarrels"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3511, 3511],
+          "zh": ["用爻伏于兄弟下，必因赌博，加朱雀是口舌争斗，临白虎为风波所阻。"],
+          "yi": ["用爻伏在兄弟爻下，必定因为赌博，加朱雀是口舌争斗，临白虎为风波所阻。"],
+          "en": ["If the Subject line is hidden under Peer, it is surely because of gambling; with the Vermilion Bird, it is wrangling and fighting; with the White Tiger, he is stopped by storms."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.42",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·子孙把持由乐酒而忘归：用爻伏在子孙爻下必为游乐饮酒，不然被僧道、六畜或晚辈所阻",
+      "rule": {
+        "yi": "用爻伏在子孙爻下面，必定是游乐饮酒；不然就是被僧道、六畜或子孙晚辈阻住，不能回来。",
+        "en": "If the Subject line is hidden under Output, he is surely amusing himself and drinking; if not, he is held back by monks or Daoists, by livestock, or by his descendants and the young, and cannot return."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3513, 3513],
+          "zh": ["子孙把持，", "由乐酒而忘归"],
+          "yi": ["（用爻）被子孙爻把持住，", "因为贪酒作乐而忘了回家"],
+          "en": ["If it is held fast by Output,", "he forgets to return for pleasure and wine"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3513, 3513],
+          "zh": ["用爻伏于子孙下，必为游乐饮酒，不然因僧道，或六畜，或子孙幼辈之阻，不得归也。"],
+          "yi": ["用爻伏在子孙爻下，必定是游乐饮酒；不然就是被僧道、六畜或子孙晚辈阻住，不能回来。"],
+          "en": ["If the Subject line is hidden under Output, he is surely amusing himself and drinking; if not, he is held back by monks or Daoists, by livestock, or by his descendants and the young, and cannot return."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.43",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·父为文书之阻滞：用爻伏在父母爻下必被文书阻隔，或被尊长、手艺人扣留",
+      "rule": {
+        "yi": "用爻伏在父母爻下面，必定是被文书阻隔，或者被尊长、手艺人扣留。",
+        "en": "If the Subject line is hidden under the Resource line, he is surely blocked by documents, or detained by an elder or a craftsman."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3515, 3515],
+          "zh": ["父为文书之阻滞"],
+          "yi": ["父母爻是文书，（用爻伏在它下面）就被文书阻滞"],
+          "en": ["Resource is documents: he is held up by documents"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3515, 3515],
+          "zh": ["用爻伏于父爻下，必为文书阻节，或因尊长、手艺人拘留。"],
+          "yi": ["用爻伏在父爻下面，必定是被文书阻隔，或者被尊长、手艺人扣留。"],
+          "en": ["If the Subject line is hidden under the Resource line, he is surely blocked by documents, or detained by an elder or a craftsman."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.44",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·财因买卖之牵连：用爻伏在旺财下必为经营买卖得利忘家，财空或遇兄动多折本，加咸池恋色忘归",
+      "rule": {
+        "yi": "用爻伏在旺相的财爻下面，必定是经营买卖得了利而忘了家；财如果空亡或遇兄弟发动，多半是亏了本；如果加上咸池，一定是恋着女色而忘了回家。",
+        "en": "If the Subject line is hidden under a strong Wealth line, he is surely so pleased with profit from trade that he forgets his home; if Wealth is Void or meets a moving Peer, it is mostly because he has lost his capital; if the Xianchi star is added, he surely lingers over women and forgets to return."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3517, 3517],
+          "zh": ["财因买卖之牵连"],
+          "yi": ["财爻（下面），是因为买卖而牵连"],
+          "en": ["Under Wealth, he is tied up in trade"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3517, 3517],
+          "zh": ["用爻伏于旺财下，必为经营买卖得利忘家；", "财若空亡或遇兄动，多因折本；", "若加咸池，定然恋色而忘归。"],
+          "yi": ["用爻伏在旺相的财爻下面，必定是经营买卖得了利而忘了家；", "财如果空亡或者遇到兄弟发动，多半是亏了本；", "如果加上咸池，一定是恋着女色而忘了回家。"],
+          "en": ["If the Subject line is hidden under a strong Wealth line, he is surely so pleased with profit from trade that he forgets his home;", "if Wealth is Void or meets a moving Peer, it is mostly because he has lost his capital;", "if the Xianchi star is added, he surely lingers over women and forgets to return."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.45",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·用伏应财之下身赘他人：用爻伏在应位阴财爻下必入赘他人，若临阳象生合世身则必替别人掌财不回",
+      "rule": {
+        "yi": "用爻伏在应位的阴财爻下面，必定是入赘到别人家；如果临阳象、生合世身，必定是替别人掌管财物、不回来。",
+        "en": "If the Subject line is hidden under a yin Wealth line at the Other position, he has surely entered another's house as a son-in-law; if it stands on a yang image and gives life to or combines with the Self and Body, he is surely managing another's wealth and does not return."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3519, 3519],
+          "zh": ["用伏应财之下，", "身赘他人"],
+          "yi": ["用爻伏在应位的财爻下面，", "人是入赘到别人家了"],
+          "en": ["If the Subject line is hidden under the Wealth line at the Other position,", "he has gone as a son-in-law into another's house"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3519, 3519],
+          "zh": ["用爻伏于应位阴财之下，必赘他人；", "若临阳象生合世身，必代他人掌财不返。"],
+          "yi": ["用爻伏在应位的阴财爻下面，必定是入赘别人家；", "如果临阳象生合世身，必定是替别人掌管财物不回来。"],
+          "en": ["If the Subject line is hidden under a yin Wealth line at the Other position, he has surely entered another's house as a son-in-law;", "if it stands on a yang image and gives life to or combines with the Self and Body, he is surely managing another's wealth and does not return."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.46",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·主投财库之中名留富室：用爻伏在财库下，其人必在富家掌财；伏神遇墓绝则只是依傍度日",
+      "rule": {
+        "yi": "用爻伏在财库下面，这个人必定在富家掌管财物；伏神如果遇到墓、绝，就只是依靠别人过日子罢了。",
+        "en": "If the Subject line is hidden under the treasury of Wealth, the man is surely managing wealth in a rich family; if the hidden line meets the tomb or extinction, he is merely living in dependence on others."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3521, 3521],
+          "zh": ["主投财库之中，", "名留富室"],
+          "yi": ["用爻投入财库之中，", "名字留在富户人家"],
+          "en": ["If the Subject has fallen into the treasury of Wealth,", "his name is left in a rich house"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3521, 3521],
+          "zh": ["用爻伏于财库下，其人必在富家掌财；", "伏神如遇墓绝，则是依傍度日耳。"],
+          "yi": ["用爻伏在财库下面，这个人必定在富家掌管财物；", "伏神如果遇到墓、绝，就只是依靠别人过日子罢了。"],
+          "en": ["If the Subject line is hidden under the treasury of Wealth, the man is surely managing wealth in a rich family;", "if the hidden line meets the tomb or extinction, he is merely living in dependence on others."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.47",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·五爻有鬼皆因途路之不通：用爻伏在五爻官鬼之下，必因关津不通而被阻",
+      "rule": {
+        "yi": "用爻伏在第五爻的官鬼下面，必定是因为关口、渡口不通而被阻住。",
+        "en": "If the Subject line is hidden under the Pressure line in the fifth place, he is surely stopped because the passes and ferries are closed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3523, 3523],
+          "zh": ["五爻有鬼，", "皆因途路之不通"],
+          "yi": ["第五爻上有官鬼，", "都是因为路途不通"],
+          "en": ["If there is Pressure on the fifth line,", "it is all because the road is blocked"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3523, 3523],
+          "zh": ["用爻伏于五爻官鬼之下，必因关津不通而阻也。"],
+          "yi": ["用爻伏在五爻的官鬼下面，必定因关口渡口不通而被阻。"],
+          "en": ["If the Subject line is hidden under the Pressure line in the fifth place, he is surely stopped because the passes and ferries are closed."] }
+      ],
+      "note": {
+        "yi": "原书这一行把两联写在了一起（「五爻有鬼……」「一卦无财……」），这里按联拆成两条，各取各的注。",
+        "en": "The book writes two couplets together on this line (\"Pressure in the fifth place ...\" and \"no Wealth in the hexagram ...\"); they are split here into two entries, each with its own note."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.48",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·一卦无财只为盘缠之缺乏：卦中动、变、日月都没有财爻，是没有路费所以不回",
+      "rule": {
+        "yi": "卦中动爻、变爻、日月都没有财爻的，是没有路费，所以不回来。",
+        "en": "If neither the moving lines, the changed lines, nor the Day and Month show a Wealth line, he does not return for lack of travelling money."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3523, 3523],
+          "zh": ["一卦无财，", "只为盘缠之缺乏"],
+          "yi": ["整个卦没有财爻，", "只是因为路费缺乏"],
+          "en": ["If the whole hexagram has no Wealth,", "it is only for lack of travelling money"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3523, 3523],
+          "zh": ["卦中动变日月皆无财爻者，为无路费不归。"],
+          "yi": ["卦中动、变、日月都没有财爻的，是没有路费所以不回。"],
+          "en": ["If neither the moving lines, the changed lines, nor the Day and Month show a Wealth line, he does not return for lack of travelling money."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.49",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·墓持墓动必然卧病呻吟：用爻墓化墓、持鬼墓、伏鬼墓爻下都主卧病不回；伏官爻下或临白虎则是在狱中，不是病",
+      "rule": {
+        "yi": "用爻如果墓化墓，或者持着鬼的墓，或者伏在鬼墓爻下面，都主卧病不能回；如果伏在官爻下面、或临白虎，必定是在监狱里，不是生病。",
+        "en": "If the Subject line goes from a tomb to a tomb, or holds the tomb of Pressure, or is hidden under the tomb line of Pressure, he lies sick and does not return; if it is hidden under the Pressure line or stands on the White Tiger, he is surely in prison and not sick."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3524, 3524],
+          "zh": ["墓持墓动，", "必然卧病呻吟"],
+          "yi": ["持着墓、墓发动，", "必定卧病呻吟"],
+          "en": ["With the tomb held and the tomb moving,", "he is surely lying sick and groaning"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3524, 3524],
+          "zh": ["用爻如墓化墓，或持鬼墓，或伏于鬼墓爻下者，皆主卧病不回；", "若伏官爻下或临白虎，必在狱中，非病也。"],
+          "yi": ["用爻如果墓化墓，或者持着鬼的墓，或者伏在鬼墓爻下面，都主卧病不回；", "如果伏在官爻下面或临白虎，必定是在监狱里，不是生病。"],
+          "en": ["If the Subject line goes from a tomb to a tomb, or holds the tomb of Pressure, or is hidden under the tomb line of Pressure, he lies sick and does not return;", "if it is hidden under the Pressure line or stands on the White Tiger, he is surely in prison and not sick."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.50",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·世合世冲须用遣人寻觅：用爻安静而世爻发动冲起合起它，或用爻伏藏世去提起、用爻入墓世去破墓，都宜自己去寻找他才回来",
+      "rule": {
+        "yi": "用爻安静而世爻发动把它冲起、合起，或者用爻伏藏、世爻去把它提起，或者用爻入墓、世爻去冲破墓，都应当自己去寻找，他才会回来。",
+        "en": "If the Subject line is still and a moving Self rouses it by clash or combination, or if the Subject is hidden and the Self draws it out, or if the Subject has entered a tomb and the Self breaks the tomb open, one should go and look for him oneself, and then he returns."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3526, 3526],
+          "zh": ["世合世冲，", "须用遣人寻觅"],
+          "yi": ["世爻合它、世爻冲它，", "就要派人去寻找"],
+          "en": ["If the Self combines with it or clashes it,", "one must send someone to look for him"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3526, 3526],
+          "zh": ["用爻安静而世动冲起之，合起之，用爻伏藏世去提起，若用爻入墓世去破墓，皆宜自去寻觅方回。"],
+          "yi": ["用爻安静而世动冲起它、合起它，用爻伏藏世去提起它，或者用爻入墓世去破墓，都宜自己去寻找才回来。"],
+          "en": ["If the Subject line is still and a moving Self rouses it by clash or combination, or if the Subject is hidden and the Self draws it out, or if the Subject has entered a tomb and the Self breaks the tomb open, one should go and look for him oneself, and then he returns."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.51",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·合逢玄武昏迷酒色不思乡：用爻临玄武被财爻合住，或伏在玄武财爻下，都是贪花恋色不想家；伏玄武鬼爻下而财不合，是在外做了贼",
+      "rule": {
+        "yi": "用爻临玄武发动而被财爻合住，或者用爻伏在玄武临的财爻下面，都是贪花恋色、不想家乡，要等冲破合住它的爻才可能回来；如果用爻伏在玄武临的鬼爻下面，而财爻不来合，这个人在外面做了贼，没有回来。",
+        "en": "If the Subject line stands on the Dark Tortoise and moves and is held by a combination from a Wealth line, or is hidden under a Wealth line on the Dark Tortoise, it means indulging in dissipation and not thinking of home, and he can return only when the combining line is clashed or broken; if the Subject line is hidden under a Pressure line on the Dark Tortoise and the Wealth line does not combine with it, the man has become a thief abroad and has not returned."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3528, 3528],
+          "zh": ["合逢玄武，", "昏迷酒色不思乡"],
+          "yi": ["（用爻）被合又逢玄武，", "沉迷酒色而不想家乡"],
+          "en": ["If the Subject is held by a combination and meets the Dark Tortoise,", "he is lost in wine and women and does not think of home"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3528, 3528],
+          "zh": ["或用临玄武动而遇财爻合住，或用伏玄武财下，皆主贪花恋色不思乡也。", "等冲破合爻，庶可归来；", "若用伏玄武鬼下，而财爻不相合者，其人在外为贼未归也。"],
+          "yi": ["或者用爻临玄武发动而被财爻合住，或者用爻伏在玄武临的财爻下面，都主贪花恋色、不想家乡。", "要等冲破合住它的爻，才可能回来；", "如果用爻伏在玄武临的鬼爻下面，而财爻不来合，这个人在外面做了贼，没有回来。"],
+          "en": ["If the Subject line stands on the Dark Tortoise and moves and is held by a combination from a Wealth line, or is hidden under a Wealth line on the Dark Tortoise, it means indulging in dissipation and not thinking of home.", "he can return only when the combining line is clashed or broken;", "if the Subject line is hidden under a Pressure line on the Dark Tortoise and the Wealth line does not combine with it, the man has become a thief abroad and has not returned."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.52",
+      "topic": "平安",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·卦得游魂漂泊他乡无定迹：游魂卦用爻发动行人东奔西走，游魂化游魂行踪不定，游魂化归魂游遍才回",
+      "rule": {
+        "yi": "游魂卦里用爻发动，行人东奔西走，不在一个地方；游魂卦变游魂卦，行踪不定；游魂卦变归魂卦，走遍各处才回来。",
+        "en": "In a Wandering Soul hexagram, if the Subject line moves the traveller hurries east and west and is not in one place; a Wandering Soul hexagram changing into a Wandering Soul hexagram means his whereabouts are not fixed; a Wandering Soul hexagram changing into a Returning Soul hexagram means he returns only after wandering everywhere."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3530, 3530],
+          "zh": ["卦得游魂，", "漂泊他乡无定迹"],
+          "yi": ["卦得游魂，", "漂泊在他乡，没有固定的行踪"],
+          "en": ["If the hexagram is a Wandering Soul,", "he drifts in a strange land with no fixed trace"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3530, 3530],
+          "zh": ["游魂卦用爻发动，行人东奔西走不在一方；", "游魂化游魂，行迹不定；", "游魂化归魂，游遍方归。"],
+          "yi": ["游魂卦用爻发动，行人东奔西走，不在一个地方；", "游魂卦变游魂卦，行踪不定；", "游魂卦变归魂卦，走遍各处才回来。"],
+          "en": ["In a Wandering Soul hexagram, if the Subject line moves the traveller hurries east and west and is not in one place;", "a Wandering Soul hexagram changing into a Wandering Soul hexagram means his whereabouts are not fixed;", "a Wandering Soul hexagram changing into a Returning Soul hexagram means he returns only after wandering everywhere."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.53",
+      "topic": "归期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·日并忌兴休望到、身临用发必然归：忌神临身世或日辰克用都主不归，用爻临身世、出现发动或持世动则立可望归",
+      "rule": {
+        "yi": "忌神临在身、世上，或者日辰克用爻，都主他不回来；如果用爻临在身、世上，出现发动，或者持世而动，立刻可以盼他回来。",
+        "en": "If the Adversary stands on the Body or the Self, or the Day controls the Subject line, he does not return; if the Subject stands on the Body or the Self, appears and moves, or holds the Self and moves, he may be looked for at once."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3532, 3532],
+          "zh": ["日并忌兴休望到，", "身临用发必然归"],
+          "yi": ["日辰与忌神同旺，就别指望他到，", "用爻临在身、世上并且发动，他必定回来"],
+          "en": ["If the Day joins with a flourishing Adversary, do not hope for his arrival;", "if the Subject stands on the Body or the Self and moves, he will surely return"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3532, 3532],
+          "zh": ["忌神临身世或日辰克用，皆主不归；", "若得用临身世，出现发动或持世动，立可望归。"],
+          "yi": ["忌神临在身、世上，或者日辰克用爻，都主不回；", "如果用爻临在身、世上，出现发动，或者持世而动，立刻可望他回来。"],
+          "en": ["If the Adversary stands on the Body or the Self, or the Day controls the Subject line, he does not return;", "if the Subject stands on the Body or the Self, appears and moves, or holds the Self and moves, he may be looked for at once."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.54",
+      "topic": "音信",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·父动卦中当有鱼书之寄：占书信，卦中父母爻发动，主有音信寄来",
+      "rule": {
+        "yi": "占书信，卦里有父母爻发动，主有音信寄来。",
+        "en": "In divining for a letter, if a Resource line moves in the hexagram a letter will be sent."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3534, 3534],
+          "zh": ["父动卦中，", "当有鱼书之寄"],
+          "yi": ["父母爻在卦中发动，", "应当有书信寄来"],
+          "en": ["If the Resource line moves in the hexagram,", "a letter should be sent"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3534, 3534],
+          "zh": ["凡占书信，卦有父母爻动，主有音信寄来。"],
+          "yi": ["凡是占书信，卦里有父母爻发动，主有音信寄来。"],
+          "en": ["In divining for a letter, if a Resource line moves in the hexagram a letter will be sent."] }
+      ],
+      "note": {
+        "yi": "「鱼书」是书信的雅称，出自旧时鲤鱼传书的说法。",
+        "en": "\"Fish letter\" is an elegant name for a letter, from the old tale of a letter carried in a carp."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.55",
+      "topic": "音信",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·财兴世上应无信之来：单占书信以父母爻为用神，世爻持财发动则克父母，所以没有书信到来",
+      "rule": {
+        "yi": "单独占书信，以父母爻为用神；如果世爻带着财爻发动，就克了父母，所以没有书信到来。",
+        "en": "In divining for a letter alone, the Resource line is the Subject; if the Self carries a moving Wealth line it controls Resource, so no letter comes."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3536, 3536],
+          "zh": ["财兴世上，", "应无信之来"],
+          "yi": ["财爻在世位上兴旺发动，", "应该没有书信到来"],
+          "en": ["If Wealth flourishes and moves on the Self,", "no letter should come"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3536, 3536],
+          "zh": ["独占书信，以父母爻为用神，若世持财动则克父矣，故无雁信之来也。"],
+          "yi": ["单独占书信，以父母爻为用神，如果世爻带着财爻发动就克了父母，所以没有书信到来。"],
+          "en": ["In divining for a letter alone, the Resource line is the Subject; if the Self carries a moving Wealth line it controls Resource, so no letter comes."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.56",
+      "topic": "应期",
+      "chapter": "行人",
+      "chapter_en": "Absent travellers",
+      "title": "行人·欲决归期之远近须详主象之兴衰：断归期全在合待冲、冲待合、空待出旬、破待补合、绝待逢生、墓待冲开；远近兼看兴衰",
+      "rule": {
+        "yi": "断归期，要用这些方法推详：被合住的等冲、被冲的等合、空的等出旬、破的等补合、绝的等逢生、入墓的等冲开；远近还要兼看主象的兴衰。",
+        "en": "To judge the return, work it out by these methods: a combined line waits for a clash, a clashed line waits for a combination, a Void line waits for the end of the ten-day period, a broken line waits for repair or combination, an extinct line waits for life, and a tombed line waits to be clashed open; whether it is far or near is also judged by the rise and fall of the principal image."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3538, 3538],
+          "zh": ["欲决归期之远近，", "须详主象之兴衰"],
+          "yi": ["要决断归期的远近，", "要详察主象的兴衰"],
+          "en": ["To decide whether the return is far or near,", "one must examine the rise and fall of the principal image"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3538, 3538],
+          "zh": ["断归期，全在合待冲、冲待合、空待出旬、破待补合、绝待逢生、墓待冲开等法，当以如是推详。", "要知远近，兼决于兴衰。"],
+          "yi": ["断归期，全在合住的等冲、被冲的等合、空的等出旬、破的等补合、绝的等逢生、入墓的等冲开这些方法，应当这样推详。", "要知道远近，还要兼看（主象的）兴衰。"],
+          "en": ["To judge the return, everything lies in such methods as: a combined line waits for a clash, a clashed line waits for a combination, a Void line waits for the end of the ten-day period, a broken line waits for repair or combination, an extinct line waits for life, and a tombed line waits to be clashed open; one should work it out so.", "To know far or near, one must judge also by strength and weakness."] }
+      ]
+    }
+  ]
+}

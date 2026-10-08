@@ -1,0 +1,80 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "丁产章第六十九",
+  "chapter_en": "Chapter 69: Households and holdings",
+  "ranges": {"易冒": [1572, 1575]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.74",
+      "topic": "差役",
+      "chapter": "丁产章第六十九",
+      "chapter_en": "Chapter 69: Households and holdings",
+      "title": "丁产·立户成丁、置业归产：止畏征科之累，官鬼为徭役不可动不可克（动烦而克累）、不可随墓助伤（有飞差突派），惟鬼静福兴而安居乐业",
+      "rule": {
+        "yi": "立户头成年丁、置办产业入册，说到底只是怕征收赋税的牵累，所以官鬼是徭役：不可动、不可克（动就烦，克就累）；不可随墓、助伤（随墓助伤就有飞来的差役、突然的摊派）；只有鬼静、福兴，才能安居乐业。",
+        "en": "Establishing a household and registering adult males, acquiring property and entering it on the rolls are in the end only out of fear of the burden of tax-levying; so Pressure is the corvée, and it must not move or be controlled (moving means vexation, being controlled means burden); it must not follow into the tomb or help the injury (following and helping bring sudden duties and abrupt levies); only with Pressure still and Output rising does one live in peace and enjoy one's work."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1573, 1573],
+          "zh": ["立户成丁，置业归产，", "止畏征科之累也，", "故官鬼为徭役，不可动、不可克，动烦而克累也；", "不可随墓助伤，随助有飞差突派也。", "惟鬼静福兴，而安居乐业。"],
+          "yi": ["立户头成丁，置办产业入册，", "只是怕征收赋税的牵累；", "所以官鬼是徭役，不可动、不可克：动就烦，克就累；", "不可随墓、助伤，随墓助伤就有飞来的差役、突然的摊派；", "只有鬼静、福兴，才能安居乐业。"],
+          "en": ["To establish a household and register the adult males, to acquire property and enter it on the rolls,", "is only out of fear of the burden of tax-levying;", "so Pressure is the corvée, and it must not move or be controlled: moving means vexation, being controlled means burden;", "it must not follow into the tomb or help the injury, for following and helping bring sudden duties and abrupt levies;", "only with Pressure still and Output rising does one live in peace and enjoy one's work."] },
+        { "by": "易冒注", "book": "易冒", "range": [1572, 1572],
+          "zh": ["内详寄户、投图、归甲、清漏、交纳、散派、违限诸问"],
+          "yi": ["里面详述寄户、投图、归甲、清漏、交纳、散派、违限这几问。"],
+          "en": ["Within are treated in detail the questions of lodging a household, joining a registry, returning to the tithing, clearing omissions, paying in, apportioning and missing the deadline."] }
+      ],
+      "note": {
+        "yi": "「立户成丁」是立户头、把成年男子（丁）登记入册，「置业归产」是置办产业、把产业登记归户，「征科」是征收赋税，「徭役」是官府摊派的劳役，「飞差突派」是突然飞来的差役和临时的摊派。章首目录里：「寄户」是把户口寄在别人名下，「投图」是投入某个里图（明代基层户籍的册籍单位），「归甲」是归入甲（十户为甲），「清漏」是清查漏报的丁产，「交纳」是缴纳钱粮，「散派」是摊派，「违限」是逾期。这一章讲户籍、赋役这套官府制度里的占问，和下一章户役（YM.77 起）是一对：这里管丁产户籍，下一章管差役。官鬼在这里仍是『官府加给的负担』。",
+        "en": "'Lihu chengding' is setting up a household head and entering the adult males (ding) on the register, 'zhiye guichan' is acquiring property and entering it under the household, 'zhengke' is levying taxes, 'yaoyi' is labour service assigned by the government, and 'feichai tupai' is sudden duties that fly in and ad hoc levies. In the index at the head of the chapter: 'jihu' is lodging one's household registration under another's name, 'toutu' is joining a 'tu' (a unit of the rural registers under the Ming), 'guijia' is being returned to a 'jia' (ten households), 'qinglou' is clearing omitted males and holdings, 'jiaona' is paying in grain and money, 'sanpai' is apportioning, and 'weixian' is missing the deadline. This chapter deals with divinations within the system of household registration and levies, and is a pair with the next chapter on service (from YM.77): this one governs the registration of households and holdings, the next governs duties. Pressure here is still 'the burden the government lays on one'."
+      },
+      "see": ["LY.CAREER.YM.75", "LY.CAREER.YM.77", "LY.CAREER.EL.109", "LY.CAREER.EL.110"]
+    },
+    {
+      "id": "LY.CAREER.YM.75",
+      "topic": "差役",
+      "chapter": "丁产章第六十九",
+      "chapter_en": "Chapter 69: Households and holdings",
+      "title": "丁产·寄户、投图与分丁产、收回图甲、清漏粮赋：寄户投图专察应象——应空不容、克世多累、世空无成、三冲不久；分丁产收回图甲清漏粮赋皆以助伤随墓为恶、鬼动克世为凶",
+      "rule": {
+        "yi": "占寄户（把户口寄在别人名下）、投图（投入某个里图），专看应象：应空，对方不容；克世，多有牵累；世空，成不了；三冲，不长久。至于分丁产、收回图甲、清漏粮赋，都以助伤、随墓为恶，鬼动克世为凶。",
+        "en": "In divining about lodging a household or joining a registry one looks only at the Other image: the Other Void, he will not take one in; controlling the Self, there are many burdens; the Self Void, it will not come off; the three clashes, it will not last. As for dividing the males and property, taking back the registry and tithing, and clearing omitted grain and levies, all take helping the injury and following into the tomb as bad, and Pressure moving to control the Self as ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1574, 1574],
+          "zh": ["或筮寄户，或筮投图，", "专察应象，", "应空不容，克世多累，世空无成，三冲不久。", "并分丁产，收回图甲，清漏粮赋，", "皆以助伤随墓为恶，鬼动克世为凶。"],
+          "yi": ["或者占寄户，或者占投图，", "专看应象：", "应空，对方不容；克世，多有牵累；世空，成不了；三冲，不长久。", "至于分丁产、收回图甲、清漏粮赋，", "都以助伤、随墓为恶，鬼动克世为凶。"],
+          "en": ["Whether one divines about lodging a household or about joining a registry,", "one looks only at the Other image:", "the Other Void, he will not take one in; controlling the Self, there are many burdens; the Self Void, it will not come off; the three clashes, it will not last.", "As for dividing the males and property, taking back the registry and tithing, and clearing omitted grain and levies,", "all take helping the injury and following into the tomb as bad, and Pressure moving to control the Self as ominous."] }
+      ],
+      "note": {
+        "yi": "「寄户」是把户口寄在别人的户名下，「投图」是投入某个里图（「图」是里甲制里按里编的册籍单位，各地叫法不一）。「不容」是对方不肯接纳。「分丁产」是把人丁和产业分开，「收回图甲」是收回原来的册籍归属，「清漏粮赋」是清查漏报、漏纳的钱粮赋税。「三冲」见 YM.07 注。「助伤随墓」就是「随墓助伤」。这一条的头两种（寄户、投图）是求别人接纳，所以看应；后三种（分丁产、收回图甲、清漏）是和官府的清理，所以怕官鬼。",
+        "en": "'Jihu' is lodging one's household under another's household name, and 'toutu' is joining a 'tu' (a unit of the registers compiled by 'li' under the 'lijia' system, called differently in different places). 'Burong' is the other side refusing to receive one. 'Fen ding chan' is separating the males from the property, 'shouhui tujia' is taking back the former attribution in the registers, and 'qinglou liangfu' is auditing omitted or unpaid grain and levies. For the 'three clashes' see the note to YM.07. 'Zhu shang sui mu' is 'following into the tomb and helping the injury'. The first two divinations here (lodging a household and joining a registry) ask another to receive one, so look at the Other; the last three (dividing males and property, taking back the registry, clearing omissions) are settlements with the authorities, so Pressure is feared."
+      },
+      "see": ["LY.CAREER.YM.74", "LY.CAREER.YM.76"]
+    },
+    {
+      "id": "LY.CAREER.YM.76",
+      "topic": "差役",
+      "chapter": "丁产章第六十九",
+      "chapter_en": "Chapter 69: Households and holdings",
+      "title": "丁产·交纳、散派、违限：交纳易乎官克世则难、散派难乎世克应则易、违限安乎鬼动官克则危",
+      "rule": {
+        "yi": "交纳（缴纳钱粮）容易吗？官克世，就难；散派（摊派）难吗？世克应，就容易；违限（逾期）安稳吗？鬼动、官克，就危险。",
+        "en": "Is paying in easy? With Pressure controlling the Self it is hard. Is apportioning hard? With the Self controlling the Other it is easy. Is missing the deadline safe? With Pressure moving and Pressure controlling, it is dangerous."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1575, 1575],
+          "zh": ["交纳易乎，官克世而难也，", "散派难乎，世克应而易也，", "违限安乎，鬼动官克而危也。"],
+          "yi": ["交纳容易吗？官克世，就难；", "散派难吗？世克应，就容易；", "违限安稳吗？鬼动、官克，就危险。"],
+          "en": ["Is paying in easy? With Pressure controlling the Self it is hard;", "is apportioning hard? With the Self controlling the Other it is easy;", "is missing the deadline safe? With Pressure moving and Pressure controlling, it is dangerous."] }
+      ],
+      "note": {
+        "yi": "「交纳」是缴纳钱粮，「散派」是官府把赋役分摊给下面的人，「违限」是错过规定的期限。「官克世而难」：官克世是官府压住我，所以缴纳难；「世克应而易」：世克应是我压得住对方，所以摊派容易。按文意，交纳时我是被派的一方，摊派时我是派人的一方（收粮的里长、粮长一类），所以同一个官爻、世应，在这两问里的好坏方向不同，要看清自己站在哪一边。",
+        "en": "'Jiaona' is paying in grain and money, 'sanpai' is the government apportioning levies and services among those below, and 'weixian' is missing the prescribed deadline. 'Pressure controlling the Self, so hard': Pressure controlling the Self is the authorities pressing on me, so paying in is hard; 'the Self controlling the Other, so easy': the Self controlling the Other is my being able to press on the other side, so apportioning is easy. By the sense, in paying in I am the one assigned, and in apportioning I am the one assigning (a village head or grain chief who collects the grain), so the same Pressure line and Self and Other have a different direction of good and bad in these two questions, and one must see on which side one stands."
+      },
+      "see": ["LY.CAREER.YM.75", "LY.CAREER.YM.77"]
+    }
+  ]
+}

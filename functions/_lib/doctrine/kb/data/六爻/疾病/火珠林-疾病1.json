@@ -1,0 +1,306 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "火珠林",
+  "chapter": "占疾病、病忌官鬼、病忌父兄、占医药(§41-§44)",
+  "chapter_en": "Divining illness, illness taboos, divining doctors and medicine (sections 41-44)",
+  "ranges": {"火珠林": [428, 472]},
+  "units": [
+    {
+      "id": "LY.ILL.HZL.01",
+      "topic": "总则",
+      "chapter": "占疾病",
+      "chapter_en": "Divining illness",
+      "title": "占疾病·应药世身、若坐墓鬼病主昏沉；卦有三墓（宫墓、鬼墓、财墓），世爻逢墓鬼主自身合灾（暴病未可、久病必死）；应为药忌坐鬼、本宫墓鬼得之主无药；最怕申酉持世、木爻独发",
+      "rule": {
+        "yi": "占疾病，应是药，世是身；世若坐在墓、鬼上，病主昏沉。卦有三墓（宫墓、鬼墓、财墓），以世为身，忌讳生鬼爻；本宫的墓、鬼落在世爻上，主自身该有灾：暴病还不能好，久病必死。以应为药，忌讳坐着鬼爻，旺相就凶；本宫的墓、鬼落在应上，主没有药，服药不见效。最怕申、酉爻持世，还有木爻独发、鬼爻旺相伏在世下、旺又动来克世。财墓是吉兆，占的是妇人时遇到它却要大忌；鬼旺伏在世下，是病跟着我，所以忌。",
+        "en": "In divining illness the Other is the medicine and the Self is the Body; if the Self sits on a tomb or a ghost the illness means stupor. A hexagram has three tombs (the palace tomb, the ghost's tomb and the Wealth tomb); taking the Self as the Body it is taboo to generate the Pressure line; when the own palace's tomb or ghost falls on the Self line the person is due a calamity: a sudden illness cannot yet recover and a long illness surely ends in death. Taking the Other as the medicine, it is taboo for it to sit on a Pressure line and if strong it is ominous; when the own palace's tomb or ghost falls on the Other there is no medicine and taking it has no effect. Most feared are a Shen or You line holding the Self, a Wood line moving alone, and the Pressure line strong and hidden under the Self, strong and also moving to control the Self. The Wealth tomb is a lucky sign, but when a woman is being divined for, meeting it is a great taboo; a strong ghost hidden under the Self is the illness following me, and so it is a taboo."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [431, 431],
+          "zh": ["凡占疾病，", "应药世身；", "若坐墓鬼，", "病主昏沉。"],
+          "yi": ["凡是占疾病，", "应是药，世是身；", "如果坐在墓、鬼上，", "病主昏沉。"],
+          "en": ["In divining illness,", "the Other is the medicine and the Self is the Body;", "if it sits on a tomb or a ghost,", "the illness means stupor."] },
+        { "by": "经", "book": "火珠林", "range": [432, 432],
+          "zh": ["封有三墓：", "宫基、鬼墓，", "以世为身，", "忌生鬼爻。", "本宫墓鬼得之者，", "主自身合灾，", "暴病未可，", "久病必死。"],
+          "yi": ["卦有三墓：", "宫基（宫墓）、鬼墓，", "以世作身，", "忌讳生鬼爻。", "本宫的墓、鬼得到它的，", "主自身该有灾；", "暴病还不能好，", "久病必死。"],
+          "en": ["A hexagram has three tombs:", "the palace base (the palace tomb) and the ghost's tomb,", "taking the Self as the Body,", "it is taboo to generate the Pressure line.", "When it is the own palace's tomb or ghost that obtains it,", "the person himself is due a calamity;", "in a sudden illness he cannot yet recover,", "in a long illness he will surely die."] },
+        { "by": "经", "book": "火珠林", "range": [433, 433],
+          "zh": ["以应为药，", "忌坐鬼爻，", "旺相凶。", "本宫墓鬼得之，", "主无药，", "服药不效，", "大怕申酉爻持世，", "占病重大忌，", "木爻独发，", "鬼爻旺相、伏世下，", "旺又动克世。"],
+          "yi": ["以应作药，", "忌讳坐着鬼爻，", "旺相就凶。", "本宫的墓、鬼得到它，", "主没有药，", "服药不见效；", "最怕申、酉爻持世，", "占病尤其是大忌；", "木爻独发，", "鬼爻旺相、伏在世下，", "旺而又动来克世。"],
+          "en": ["Taking the Other as the medicine,", "it is taboo for it to sit on a Pressure line;", "if strong it is ominous.", "When the own palace's tomb or ghost obtains it,", "it means there is no medicine,", "and taking medicine has no effect;", "most feared is a Shen or You line holding the Self;", "in divining illness it is a grave taboo;", "a Wood line moving alone,", "the Pressure line strong and hidden under the Self,", "strong and also moving to control the Self."] },
+        { "by": "经", "book": "火珠林", "range": [434, 434],
+          "zh": ["或问：卦有三墓，何谓三墓？", "答曰：如天风姤卦，旁爻丑持世，乾宫属金墓在丑，此是宫墓。", "如中孚封，世持辛未，艮官属土，以寅木为鬼，木墓在未，此是鬼墓。", "如泰卦，甲辰持世，坤宫属土，以亥水为财，水墓在辰，此是财墓。", "问：何谓得之？", "曰：得之者，世爻上逢之也。", "世为我身也，凡墓爻故主自身合灾也。", "暴病未可者，墓滞也，故未可。", "久病必死者，病久气衰，而又入墓，岂得不死？"],
+          "yi": ["有人问：卦有三墓，什么是三墓？", "答：比如天风姤卦，旁爻丑持世，乾宫属金、金的墓在丑，这是宫墓。", "又如中孚卦，世持辛未，艮宫属土，以寅木为鬼，木的墓在未，这是鬼墓。", "又如泰卦，甲辰持世，坤宫属土，以亥水为财，水的墓在辰，这是财墓。", "问：什么叫「得之」？", "答：得到它，就是在世爻上遇到它。", "世是我的身，凡是墓爻，所以主自身该有灾。", "「暴病未可」，是墓有滞碍，所以还不能好。", "「久病必死」，是病久了气衰，又入了墓，哪能不死？"],
+          "en": ["Someone asks: a hexagram has three tombs, what are the three tombs?", "The answer: take the hexagram Heaven over Wind, Gou, with the Chou line at the side holding the Self; the Qian palace belongs to Metal and the tomb of Metal is at Chou; this is the palace tomb.", "Or take Zhongfu, with Xin Wei holding the Self; the Gen palace belongs to Earth and takes Yin Wood as the ghost, and the tomb of Wood is at Wei; this is the ghost's tomb.", "Or take Tai, with Jia Chen holding the Self; the Kun palace belongs to Earth and takes Hai Water as Wealth, and the tomb of Water is at Chen; this is the Wealth tomb.", "Asked: what is meant by 'obtaining it'?", "The answer: obtaining it is meeting it on the Self line.", "The Self is my body, and any tomb line therefore means the person himself is due a calamity.", "'A sudden illness cannot yet recover' is because the tomb obstructs, so he cannot yet recover.", "'A long illness surely dies' is because the qi is weak from the long illness and it also enters the tomb: how could he not die?"] },
+        { "by": "经", "book": "火珠林", "range": [435, 435],
+          "zh": ["又问：何不言财墓？", "曰：财墓吉兆，故以财言之，", "若占妇人，逢此须大忌。"],
+          "yi": ["又问：为什么不说财墓？", "答：财墓是吉兆，所以拿财来说它，", "但占的是妇人，遇到这个就要大忌。"],
+          "en": ["Asked again: why is the Wealth tomb not mentioned?", "The answer: the Wealth tomb is a lucky sign, so it is spoken of in terms of Wealth,", "but if a woman is being divined for, meeting this is a great taboo."] },
+        { "by": "经", "book": "火珠林", "range": [436, 436],
+          "zh": ["又问：鬼爻旺相伏世下何也？", "曰：世为我身，鬼伏世下，是病随我，所以忌之。"],
+          "yi": ["又问：鬼爻旺相、伏在世下，是什么道理？", "答：世是我的身，鬼伏在世下，是病跟着我，所以忌它。"],
+          "en": ["Asked again: why is it that the Pressure line is strong and hidden under the Self?", "The answer: the Self is my body; a ghost hidden under the Self is the illness following me, and so it is a taboo."] }
+      ],
+      "note": {
+        "yi": "这一节是火珠林「占疾病」的头一部分：先是一副对句（凡占疾病，应药世身；若坐墓鬼，病主昏沉），然后一段一段地展开，末了是「或问……答曰」的问答。原文「封有三墓」的「封」是「卦」之误，「中孚封」同；「艮官属土」的「官」是「宫」之误；这里都按卦、宫译。「旁爻丑持世」的「旁爻」字面译作 the side line。三墓是宫墓（卦所属宫的五行的墓）、鬼墓（鬼爻五行的墓）、财墓（财爻五行的墓）：姤卦世爻丑，乾宫属金，金墓在丑，是宫墓；中孚世爻未，艮宫属土，以寅木为鬼，木墓在未，是鬼墓；泰卦世爻辰，坤宫属土，以亥水为财，水墓在辰，是财墓。「得之」是在世爻上遇到。对句里说「三墓」却只列宫基（宫墓）和鬼墓两个，第三个财墓在问答里补出；「本宫墓鬼得之」读作本宫的墓或鬼，原文没有拆开。这里说的世爻遇本宫墓、鬼，和天玄赋「不宜丘墓同宫」（LY.ILL.TXF.08）、断易天机「卦变墓乡」（LY.ILL.DYTJ.07）是同一类。",
+        "en": "This section is the first part of the Huozhu Lin's 'divining illness': first a couplet ('In divining illness the Other is the medicine and the Self is the Body; if it sits on a tomb or a ghost the illness means stupor'), then a passage at a time, and at the end questions and answers ('someone asks... the answer'). The 'feng' of the original 'feng you san mu' is a miswriting of 'gua' (hexagram), and so is that of 'Zhongfu feng'; the 'guan' of 'Gen guan shu tu' is a miswriting of 'gong' (palace); all are rendered as hexagram and palace here. The 'pang yao' of 'the side line Chou holding the Self' is rendered literally as 'the side line'. The three tombs are the palace tomb (the tomb of the phase of the palace the hexagram belongs to), the ghost's tomb (the tomb of the phase of the ghost line) and the Wealth tomb (the tomb of the phase of the Wealth line): in Gou the Self line is Chou, the Qian palace belongs to Metal and the tomb of Metal is at Chou, the palace tomb; in Zhongfu the Self line is Wei, the Gen palace belongs to Earth, taking Yin Wood as the ghost, and the tomb of Wood is at Wei, the ghost's tomb; in Tai the Self line is Chen, the Kun palace belongs to Earth, taking Hai Water as Wealth, and the tomb of Water is at Chen, the Wealth tomb. 'Obtaining it' is meeting it on the Self line. The couplet says 'three tombs' but lists only the palace tomb and the ghost's tomb, and the third, the Wealth tomb, is supplied in the questions and answers; 'the own palace's tomb or ghost obtains it' is read as the own palace's tomb or ghost, and the original does not separate them. The Self line meeting the own palace's tomb or ghost here is of the same kind as the Tianxuan Fu's 'the mound and the tomb must not share a palace' (LY.ILL.TXF.08) and the Duanyi Tianji's 'the hexagram changing into the tomb quarter' (LY.ILL.DYTJ.07)."
+      },
+      "see": ["LY.ILL.HZL.02", "LY.ILL.HZL.03", "LY.ILL.TXF.08", "LY.ILL.DYTJ.07", "LY.ILL.HDY.01", "LY.ILL.HDY.11"]
+    },
+    {
+      "id": "LY.ILL.HZL.02",
+      "topic": "病因",
+      "chapter": "占疾病",
+      "chapter_en": "Divining illness",
+      "title": "占疾病·看鬼伏何爻下：伏父母忧心或动土、伏兄弟饥饱口舌、伏子孙牵惹欲事、伏财饮食买物、官鬼出现惊恐怪异；土下伏土疮肿、火下火手足、金见金闷乱、木下木寒热、水下水冷疾、金下火喘满；阳宫财动主吐阴宫财动主泻；鬼在内下受病外上受病",
+      "rule": {
+        "yi": "看鬼伏在哪一爻下，再按金木水火土分辨：伏在父母下，是忧心得的病，或动了土、去修造的地方得的；伏兄弟下且动，是饥饱失节得的，或因口舌、生气得的；伏子孙下且动，是牵扯招惹得的，或欲事太过得的；伏财下，是饮食上得的，或买东西得的；官鬼出现，是惊恐怪异，或在寺观庙宇里得的。土下伏土生疮肿，火下伏火病在手足，金见金闷乱，木下木寒热，水下水冷疾，金下伏火喘满；阳宫财动主吐，阴宫财动主泻。鬼爻现在外、金鬼爻伏在里，主心腹病；鬼在内，下部受病；鬼在外而动，上部受病；用爻同。",
+        "en": "Look at which line the ghost is hidden under, and tell it apart by Metal, Wood, Water, Fire and Earth. Hidden under Resource: caught through worry, or by disturbing the earth, or by going to a place of building and repair. Hidden under Peer and moving: caught through the lapse of hunger and fullness, or through quarrels and anger. Hidden under Output and moving: caught through entanglement, or through excess of desire. Hidden under Wealth: caught through food and drink, or through buying things. The Pressure line appearing: fright and strange things, or caught in a temple or monastery. Earth hidden under Earth: sores and swelling; Fire under Fire: the hands and feet; Metal meeting Metal: oppression and confusion; Wood under Wood: chills and fever; Water under Water: a cold illness; Metal under Fire: panting and fullness. In a yang palace Wealth moving means vomiting, in a yin palace Wealth moving means diarrhoea. With the Pressure line showing outside and the Metal Pressure line hidden inside, it is an illness of the heart and belly; a ghost inside, the lower part is ill; a ghost outside and moving, the upper part is ill; the Subject line is the same."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [437, 439],
+          "zh": ["看鬼伏何爻下，于金木水火土分辨之，伏父母，忧心得，或动土得，或往修造处得。", "鬼伏兄弟动，失饥伤饱得，或因口舌气上得。", "鬼伏子孙动，因牵惹得，或欲事太过得。", "鬼伏财，饮食得，或买物件得。", "官鬼出现，惊恐怪异，或寺观宙宇中得。", "土下伏土，疮肿；火下火，手足；金见金，闷乱；木下木，寒热；水下水，冷疾；金下火，喘满；阳宫财动主吐；阴宫财动主泻。", "鬼爻现外，金鬼爻伏里，主心腹病。", "鬼在内地，下受病。", "鬼在外动，上受病。", "用爻同。"],
+          "yi": ["看鬼伏在哪一爻下，再按金木水火土分辨：伏在父母下，是忧心得的，或是动了土得的，或是去修造的地方得的。", "鬼伏在兄弟下且动，是饥饱失节得的，或因口舌、生气得的。", "鬼伏在子孙下且动，是牵扯招惹得的，或是欲事太过得的。", "鬼伏在财下，是饮食上得的，或是买东西得的。", "官鬼出现，是惊恐怪异，或是在寺观庙宇里得的。", "土下伏土，疮肿；火下伏火，手足；金见金，闷乱；木下木，寒热；水下水，冷疾；金下伏火，喘满；阳宫财动主吐；阴宫财动主泻。", "鬼爻现在外、金鬼爻伏在里，主心腹病。", "鬼在内地，下部受病。", "鬼在外而动，上部受病。", "用爻也是这样。"],
+          "en": ["Look at which line the ghost is hidden under and tell it apart by Metal, Wood, Water, Fire and Earth: hidden under Resource, caught through worry, or by disturbing the earth, or by going to a place of building and repair.", "The ghost hidden under Peer and moving: caught through the lapse of hunger and fullness, or through quarrels and anger.", "The ghost hidden under Output and moving: caught through entanglement, or through excess of desire.", "The ghost hidden under Wealth: caught through food and drink, or through buying things.", "The Pressure line appearing: fright and strange things, or caught in a temple or monastery.", "Earth hidden under Earth: sores and swelling; Fire under Fire: the hands and feet; Metal meeting Metal: oppression and confusion; Wood under Wood: chills and fever; Water under Water: a cold illness; Metal under Fire: panting and fullness; in a yang palace Wealth moving means vomiting; in a yin palace Wealth moving means diarrhoea.", "With the Pressure line showing outside and the Metal Pressure line hidden inside, it is an illness of the heart and belly.", "A ghost inside: the lower part is ill.", "A ghost outside and moving: the upper part is ill.", "The Subject line is the same."] }
+      ],
+      "note": {
+        "yi": "这一段和海底眼「鬼伏何爻下」一节（LY.ILL.HDY.04）、天玄赋「无鬼看伏鬼」（LY.ILL.TXF.10）是同一套，字句和顺序略有不同；这里多了「土下伏土疮肿……金下火喘满」一串五行相叠的症候。原文「寺观宙宇」的「宙」是「庙」之误，按庙宇译。「鬼在内地，下受病」的「内地」按「在内」译。「阳宫财动主吐，阴宫财动主泻」是说阳宫里财爻动主吐、阴宫里财爻动主泻，「阳宫」「阴宫」原文没有解释。「土下伏土」按「土鬼伏在土爻下」读。「用爻同」是说用爻的内外动也照这样看。原文中间隔了一个空行：「鬼伏兄弟」在一行的末尾，「动，失饥伤饱得」在下一行的开头，这里按连着读。",
+        "en": "This passage is the same set as the Haidi Yan's section on which line the ghost is hidden under (LY.ILL.HDY.04) and the Tianxuan Fu's 'with no ghost look for the hidden ghost' (LY.ILL.TXF.10), with slightly different wording and order; here there is in addition the string of symptoms from phases stacked on each other, 'Earth hidden under Earth: sores and swelling ... Metal under Fire: panting and fullness'. The 'zhou' of 'si guan zhou yu' in the original is a miswriting of 'miao' (temple), rendered as temple or monastery. The 'inside the earth' of 'the ghost inside the earth, the lower part is ill' is rendered 'inside'. 'In a yang palace Wealth moving means vomiting, in a yin palace Wealth moving means diarrhoea' says that Wealth moving in a yang palace means vomiting and in a yin palace diarrhoea, and the original does not explain 'yang palace' and 'yin palace'. 'Earth hidden under Earth' is read as an Earth ghost hidden under an Earth line. 'The Subject line is the same' says that the Subject line's inside and outside moving is also looked at this way. In the original a blank line falls in the middle: 'the ghost hidden under Peer' is at the end of one line and 'moving, caught through the lapse of hunger and fullness' at the beginning of the next, and they are read here as continuous."
+      },
+      "see": ["LY.ILL.HDY.04", "LY.ILL.TXF.10", "LY.ILL.HZL.01", "LY.ILL.EL.42"]
+    },
+    {
+      "id": "LY.ILL.HZL.03",
+      "topic": "症候",
+      "chapter": "占疾病",
+      "chapter_en": "Divining illness",
+      "title": "占疾病·土动主泻、木动发寒、金动四肢满闷、火动发热；木足金头土胸腹火手目水耳肾；飞为化因伏为受病；世动在内下受病、应动在外上受病、间爻动胸膈病；《易镜》长男受病宜纯震不摇；大忌申酉持世木爻独发(申丧车酉丧服木棺椁)",
+      "rule": {
+        "yi": "土动主泻，木动发寒，金动主四肢或满闷，火动发热。木主足，金主头，土主胸腹，火主手目，水主耳肾。飞伏都旺相时，飞是化出病的原因，以伏为受病的地方。又：世是动爻，在内则下部受病；应是动爻，在外则上部受病；间爻动，主胸膈的病。《易镜》说：长男受病，宜纯震卦不动；小女染病，宜兑卦不动。大忌申、酉持世，木爻独发，因为申是丧车，酉是丧服，木是棺椁。",
+        "en": "Earth moving means diarrhoea, Wood moving means chills, Metal moving means the four limbs or oppression, Fire moving means fever. Wood governs the feet, Metal the head, Earth the chest and belly, Fire the hands and eyes, Water the ears and kidneys. When the flying and the hidden are both strong, the flying is the cause the illness turns on and the hidden is where the illness is received. Again, the Self as the moving line, inside, the lower part receives the illness; the Other as the moving line, outside, the upper part receives it; a between line moving means an illness of the chest and diaphragm. The Yijing says: for a person of the eldest son to fall ill it is fitting that the pure Zhen hexagram does not move, and for the youngest daughter to be infected that the Dui hexagram does not move. It is greatly feared that Shen and You hold the Self and a Wood line moves alone, for Shen is the mourning cart, You the mourning dress and Wood the coffin."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [440, 440],
+          "zh": ["土动主泻，木动发寒，金动四肢或满闷，火动发热。", "木主足，金主头、土主胸腹，火主手目，水主耳肾。", "飞伏俱旺相，飞为化因，以伏为受病。", "又世为动爻，在内下受病，应为动爻，在外上受病，间爻动，主胸膈病症。"],
+          "yi": ["土动主泻，木动发寒，金动主四肢或满闷，火动发热。", "木主足，金主头，土主胸腹，火主手目，水主耳肾。", "飞伏都旺相时，飞是化出病的原因，以伏为受病的地方。", "又：世是动爻，在内则下部受病；应是动爻，在外则上部受病；间爻动，主胸膈的病。"],
+          "en": ["Earth moving means diarrhoea, Wood moving means chills, Metal moving means the four limbs or oppression, Fire moving means fever.", "Wood governs the feet, Metal the head, Earth the chest and belly, Fire the hands and eyes, Water the ears and kidneys.", "When the flying and the hidden are both strong, the flying is the cause the illness turns on and the hidden is where the illness is received.", "Again: the Self as the moving line, inside, the lower part receives the illness; the Other as the moving line, outside, the upper part receives it; a between line moving means an illness of the chest and diaphragm."] },
+        { "by": "经", "book": "火珠林", "range": [441, 441],
+          "zh": ["《易镜》云：且如长男受病，宜纯震之不摇，小女染病，则兑卦之不动。", "大忌申酉持世，木爻独发者，申为丧车，酉为丧服，木为棺椁耳。"],
+          "yi": ["《易镜》说：长男受病，宜纯震卦不动；小女染病，宜兑卦不动。", "大忌申、酉持世，木爻独发，因为申是丧车，酉是丧服，木是棺椁。"],
+          "en": ["The Yijing says: for a person of the eldest son to fall ill it is fitting that the pure Zhen hexagram does not move; for the youngest daughter to be infected that the Dui hexagram does not move.", "It is greatly feared that Shen and You hold the Self and a Wood line moves alone, for Shen is the mourning cart, You the mourning dress and Wood the coffin."] }
+      ],
+      "note": {
+        "yi": "这一段和海底眼的（LY.ILL.HDY.05）几乎一字不差：「土动主吐水动主泻……木主足金主头土主胸腹火主手水主脾肾，飞伏俱旺相飞为起因……」，以及「易镜云：且如长男受病，宜纯震之不摇，小女染病，则兑卦之不动」。两本书里哪一本抄哪一本，书里没有说。这里和海底眼有几处字不同：火珠林是「土动主泻」、海底眼是「土动主吐」；火珠林是「火主手目」、海底眼是「火主手」；火珠林是「水主耳肾」、海底眼是「水主脾肾」；火珠林是「飞为化因，以伏为受病」、海底眼是「飞为起因，以代为受病」。「化因」「起因」都按「病由之而起的原因」译。「《易镜》」是一部书名，这里译作 Yijing，不是《周易》。「长男」是震，「少女」（原文「小女」）是兑。申为丧车、酉为丧服、木为棺椁，是拿字面取象。",
+        "en": "This passage is almost word for word the same as the Haidi Yan's (LY.ILL.HDY.05): 'Earth moving means vomiting, Water moving means diarrhoea ... Wood governs the feet, Metal the head, Earth the chest and belly, Fire the hands, Water the spleen and kidneys; the flying and the hidden both strong, the flying is the origin ...', and 'the Yijing says: for a person of the eldest son to fall ill it is fitting that the pure Zhen hexagram does not move; for the youngest daughter to be infected that the Dui hexagram does not move'. Which of the two books copied the other, the books do not say. There are a few differences in characters from the Haidi Yan: the Huozhu Lin has 'Earth moving means diarrhoea' where the Haidi Yan has 'Earth moving means vomiting'; 'Fire the hands and eyes' where the Haidi Yan has 'Fire the hands'; 'Water the ears and kidneys' where the Haidi Yan has 'Water the spleen and kidneys'; and 'the flying is the cause, the hidden is where the illness is received' where the Haidi Yan has 'the flying is the origin, the substitute is where the illness is received'. Both 'hua yin' and 'qi yin' are rendered 'the cause the illness arises from'. 'Yijing' is the title of a book, here rendered Yijing, and is not the Zhouyi. The eldest son is Zhen and the youngest daughter (in the original 'the small daughter') is Dui. Shen as the mourning cart, You as the mourning dress and Wood as the coffin are images taken from the wording."
+      },
+      "see": ["LY.ILL.HDY.05", "LY.ILL.HZL.02", "LY.ILL.DYTJ.12", "LY.ILL.TXF.08"]
+    },
+    {
+      "id": "LY.ILL.HZL.04",
+      "topic": "总则",
+      "chapter": "病忌官鬼",
+      "chapter_en": "Illness: the Pressure line as the thing to avoid",
+      "title": "病忌官鬼·以财为禄、以鬼为祟；鬼爻旺相独发大忌；占妇人病喜子孙旺相持世安静、忌财伏鬼下兄弟持世独发；世克应内克外主吐、应克世外克内主泻",
+      "rule": {
+        "yi": "以财为禄，以鬼为祟；鬼爻旺相、独发，大忌。占妇人病，喜子孙旺相、持世、安静；忌财伏在鬼下、兄弟持世、兄弟独发。世克应、内克外，主吐；应克世、外克内，主泻。问答：妇人病喜子孙旺相、世安，是用财而以子孙辅助的道理；忌财伏鬼、兄弟持世，是用财伏在兄弟下的道理。内克外为什么主吐？内是腹、外是口；外克内主泻。",
+        "en": "Take Wealth as the salary and the ghost as the curse; the Pressure line strong and moving alone is a great taboo. In divining a woman's illness, it is welcome for Output to be strong, holding the Self and still; the taboos are Wealth hidden under the ghost, Peer holding the Self and Peer moving alone. The Self controlling the Other, the inner controlling the outer, means vomiting; the Other controlling the Self, the outer controlling the inner, means diarrhoea. Questions and answers: that in a woman's illness Output strong and the Self at peace is welcome is the principle of taking Wealth as the Subject with Output to help it; that Wealth hidden under the ghost and Peer holding the Self are taboo is the principle of the Subject Wealth hidden under Peer. Why does the inner controlling the outer mean vomiting? The inner is the belly and the outer is the mouth; the outer controlling the inner means diarrhoea."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [446, 446],
+          "zh": ["以财为禄，", "以鬼为祟；", "鬼爻旺相，", "独发大忌。"],
+          "yi": ["以财为禄，", "以鬼为祟；", "鬼爻旺相，", "独发大忌。"],
+          "en": ["Take Wealth as the salary", "and the ghost as the curse;", "the Pressure line strong", "and moving alone is a great taboo."] },
+        { "by": "经", "book": "火珠林", "range": [447, 447],
+          "zh": ["凡占妇人病，", "喜子孙旺相，持世，安静；", "忌财伏鬼下，兄弟持世，兄弟独发。", "世克应，内克外，主吐；", "应克世，外克内，主泻。"],
+          "yi": ["凡是占妇人的病，", "喜欢子孙旺相、持世、安静；", "忌讳财伏在鬼下、兄弟持世、兄弟独发。", "世克应、内克外，主吐；", "应克世、外克内，主泻。"],
+          "en": ["In divining a woman's illness,", "it is welcome for Output to be strong, holding the Self and still;", "the taboos are Wealth hidden under the ghost, Peer holding the Self and Peer moving alone.", "The Self controlling the Other, the inner controlling the outer, means vomiting;", "the Other controlling the Self, the outer controlling the inner, means diarrhoea."] },
+        { "by": "经", "book": "火珠林", "range": [448, 448],
+          "zh": ["或问：妇人病占喜子孙旺相、世安何也？", "答曰：此即用财以子孙辅之义。", "忌财伏鬼、兄弟持世，即用财伏兄之义。"],
+          "yi": ["有人问：妇人病占，喜子孙旺相、世安，是什么道理？", "答：这就是用财而以子孙辅助它的道理。", "忌讳财伏在鬼下、兄弟持世，就是用财而财伏在兄弟下的道理。"],
+          "en": ["Someone asks: in divining a woman's illness why is Output strong and the Self at peace welcome?", "The answer: this is the principle of taking Wealth as the Subject with Output to help it.", "The taboo of Wealth hidden under the ghost and Peer holding the Self is the principle of the Subject Wealth hidden under Peer."] },
+        { "by": "经", "book": "火珠林", "range": [449, 449],
+          "zh": ["又问：内克外何故主吐？", "曰：内为腹、外为口也，外克内主泻。"],
+          "yi": ["又问：内克外为什么主吐？", "答：内是腹、外是口，外克内主泻。"],
+          "en": ["Asked again: why does the inner controlling the outer mean vomiting?", "The answer: the inner is the belly and the outer is the mouth; the outer controlling the inner means diarrhoea."] }
+      ],
+      "note": {
+        "yi": "「以财为禄，以鬼为祟」是这一节的主句：财爻是禄命（生机），鬼爻是祟（病）。「用财」是用神取财爻，占妇人病时以财爻为用神，所以要子孙辅助财、忌财伏在鬼或兄弟之下。「世克应、内克外主吐；应克世、外克内主泻」和断易天机孙膑歌的「外克内应克世有药频频泻肚肠、内克外世克应无鬼爻多呕吐伤」（LY.ILL.DYTJ.04）、洞林秘诀「我克他先呕逆、他克我泻为伤」（LY.ILL.DYTJ.16）、天玄赋的医药一节是同一条说法；这里给了理由：「内为腹、外为口」。「问：妇人病占喜子孙旺相、世安何也」里，「世安」是世爻安静。",
+        "en": "'Take Wealth as the salary and the ghost as the curse' is the main line of this section: the Wealth line is the salary (the life force) and the Pressure line is the curse (the illness). 'Taking Wealth as the Subject' is taking the Wealth line as the Subject, because in divining a woman's illness the Wealth line is the Subject, and so Output must help Wealth, and Wealth hidden under the ghost or Peer is taboo. 'The Self controlling the Other, the inner controlling the outer means vomiting; the Other controlling the Self, the outer controlling the inner means diarrhoea' is the same saying as Sun Bin's song in the Duanyi Tianji, 'the outer controlling the inner, the Other controlling the Self: purging again and again; the inner controlling the outer, the Self controlling the Other, with no Pressure line: mostly vomiting' (LY.ILL.DYTJ.04), the Dongling Mijue's 'if I control him there is retching first, if he controls me purging is the harm' (LY.ILL.DYTJ.16) and the section on medicine in the Tianxuan Fu; here the reason is given: 'the inner is the belly and the outer is the mouth'. In 'why is Output strong and the Self at peace welcome in a woman's illness', 'the Self at peace' is the Self line still."
+      },
+      "see": ["LY.ILL.DYTJ.04", "LY.ILL.DYTJ.16", "LY.ILL.TXF.12", "LY.ILL.HZL.05"]
+    },
+    {
+      "id": "LY.ILL.HZL.05",
+      "topic": "总则",
+      "chapter": "病忌父兄",
+      "chapter_en": "Illness: Resource and Peer as the things to avoid",
+      "title": "病忌父兄·主爻伏鬼或伏兄弟或伏父母旺相大忌；乱动之卦只取主爻、休囚伏兄弟父母官鬼之下克世者死（兄无食、父母无药、官鬼真病）；八纯游魂卦病者沉重占小儿主死",
+      "rule": {
+        "yi": "主爻伏在鬼下，或伏在兄弟下，或伏在父母下，旺相是大忌。卦乱动时只取主爻：大抵休囚、伏在兄弟、父母、官鬼之下、又克世的，会死；因为兄弟没有食、父母没有药、官鬼是真病。凡得八纯卦、游魂卦，病人一定沉重，占小儿主死。问答：主爻伏鬼、伏兄伏父之下，就是财伏兄、财伏父母、官伏兄的道理，举一隅而三隅反；八纯、游魂、归魂三种卦，世持父母、官鬼、兄弟，或子孙伏在父母下，占大人是病重，占小儿是病死。",
+        "en": "The Subject line hidden under the ghost, or under Peer, or under Resource: if strong it is a great taboo. When the hexagram moves confusedly take only the Subject line: mostly one that is resting or trapped, hidden under Peer, Resource or the Pressure line and also controlling the Self, will die; for Peer has no food, Resource has no medicine and the Pressure line is a real illness. Whoever gets a pure hexagram or a Wandering Soul hexagram, the sick person is surely heavy, and for a small child it means death. Questions and answers: the Subject line hidden under the ghost, under Peer or under Resource is the principle of Wealth hidden under Peer, Wealth hidden under Resource, the official hidden under Peer, and 'raise one corner and the other three come back'; in the three kinds of hexagram, pure, Wandering Soul and Returning Soul, with the Self holding Resource, the Pressure line or Peer, or Output hidden under Resource, divining an adult it is a heavy illness and divining a small child the illness ends in death."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [454, 454],
+          "zh": ["主爻伏鬼，", "或伏兄弟；", "或伏父母，", "旺相大忌。"],
+          "yi": ["主爻伏在鬼下，", "或伏在兄弟下；", "或伏在父母下，", "旺相是大忌。"],
+          "en": ["The Subject line hidden under the ghost,", "or under Peer;", "or under Resource:", "if strong it is a great taboo."] },
+        { "by": "经", "book": "火珠林", "range": [455, 455],
+          "zh": ["乱动之卦，", "只取主爻，", "大抵休囚、伏兄弟、父母、官鬼之下，", "克世者死。", "盖兄无食，", "父母无药，", "官鬼真病。", "凡得八纯、游魂卦，", "病者决主沉重，", "占小儿主死。"],
+          "yi": ["乱动的卦，", "只取主爻，", "大抵休囚、伏在兄弟、父母、官鬼之下，", "又克世的，会死。", "因为兄弟没有食，", "父母没有药，", "官鬼是真病。", "凡得八纯卦、游魂卦，", "病人一定沉重，", "占小儿主死。"],
+          "en": ["When the hexagram moves confusedly,", "take only the Subject line:", "mostly one that is resting or trapped, hidden under Peer, Resource or the Pressure line,", "and also controlling the Self, will die.", "For Peer has no food,", "Resource has no medicine,", "and the Pressure line is a real illness.", "Whoever gets a pure hexagram or a Wandering Soul hexagram,", "the sick person is surely heavy,", "and for a small child it means death."] },
+        { "by": "经", "book": "火珠林", "range": [456, 456],
+          "zh": ["或问：主爻伏鬼，伏兄、伏父之下？", "曰：此即财伏兄，财伏父母，官伏兄之义，举一隅，则三隅反矣。"],
+          "yi": ["有人问：主爻伏鬼，伏在兄、伏在父之下，是什么道理？", "答：这就是财伏兄、财伏父母、官伏兄的道理，举出一隅，另外三隅就反推过来了。"],
+          "en": ["Someone asks: the Subject line hidden under the ghost, hidden under Peer or under Resource, what is the principle?", "The answer: this is Wealth hidden under Peer, Wealth hidden under Resource, and the official hidden under Peer; raise one corner and the other three come back."] },
+        { "by": "经", "book": "火珠林", "range": [457, 457],
+          "zh": ["又问：八纯、游魂、归魂卦，占病沉重，占小儿主死，何也？", "曰：此三卦，世持父母，官鬼，兄弟，或子孙伏父母下，占大人病重，占小儿病死。"],
+          "yi": ["又问：八纯、游魂、归魂卦，占病沉重，占小儿主死，为什么？", "答：这三种卦，世持父母、官鬼、兄弟，或子孙伏在父母下，占大人是病重，占小儿是病死。"],
+          "en": ["Asked again: in the pure, Wandering Soul and Returning Soul hexagrams, divining illness it is heavy and divining a small child it means death, why?", "The answer: in these three kinds of hexagram, with the Self holding Resource, the Pressure line or Peer, or Output hidden under Resource, divining an adult it is a heavy illness and divining a small child the illness ends in death."] }
+      ],
+      "note": {
+        "yi": "「主爻」是这一卦里代表病人的那一爻（用爻）。「兄无食，父母无药，官鬼真病」是这一节的解释：兄弟克财（食），父母克子孙（药），官鬼是病本身。「财伏兄」「财伏父母」「官伏兄」是「伏神」被飞神克的三种情形。「举一隅则三隅反」是《论语》的话，意思是举一个例子，别的照这个类推。「八纯」是八个纯卦（乾坤震巽坎离艮兑）；「游魂」「归魂」是卦名。第二问答里「世持父母、官鬼、兄弟，或子孙伏父母下」是说这三种卦在什么情形下会病重：世爻落在父母、官鬼、兄弟上，或子孙伏在父母下。「八纯游魂卦病重、占小儿主死」和天玄赋、易冒等处的八纯卦说法（LY.ILL.YM.12 一带）是同一类。",
+        "en": "The 'Subject line' is the line that stands for the sick person in the hexagram (the Subject line). 'Peer has no food, Resource has no medicine and the Pressure line is a real illness' is the explanation of this section: Peer controls Wealth (food), Resource controls Output (medicine), and the Pressure line is the illness itself. 'Wealth hidden under Peer', 'Wealth hidden under Resource' and 'the official hidden under Peer' are three cases of the hidden spirit being controlled by the flying spirit. 'Raise one corner and the other three come back' is a saying of the Analects, meaning that from one example the others follow by analogy. 'Pure' means the eight pure hexagrams (Qian, Kun, Zhen, Xun, Kan, Li, Gen, Dui); 'Wandering Soul' and 'Returning Soul' are names of hexagrams. The second question and answer, 'the Self holding Resource, the Pressure line or Peer, or Output hidden under Resource', says under what conditions these three kinds of hexagram are heavy: the Self line falling on Resource, the Pressure line or Peer, or Output hidden under Resource. 'A pure or Wandering Soul hexagram is a heavy illness, for a small child it means death' is the same kind of saying as the sayings on the pure hexagrams in the Tianxuan Fu, the Yi Mao and elsewhere (around LY.ILL.YM.12)."
+      },
+      "see": ["LY.ILL.HZL.04", "LY.ILL.HZL.01", "LY.ILL.HDY.01", "LY.ILL.DYTJ.05"]
+    },
+    {
+      "id": "LY.ILL.HZL.06",
+      "topic": "医药",
+      "chapter": "占医药",
+      "chapter_en": "Divining doctors and medicine",
+      "title": "占医药·以应为医以子为药、鬼爻旺相大忌独发；卦之疾病以用为主以鬼为病；金鬼肺腑喘嗽、木鬼四肢不遂肝胆、水鬼沉寒腰痛肾气吐泻、火鬼头痛发热加朱雀狂言、土鬼脾胃发胀黄肿瘟疫",
+      "rule": {
+        "yi": "以应为医生，以子孙为药；鬼爻旺相，最忌独发。卦里的疾病，以用爻为主，以鬼为病。金鬼：肺腑病、喘嗽、气急、虚怯、瘦瘠，或疮疥、血光，或筋骨病；木鬼：四肢不遂，肝胆主病，右痪左瘫，口眼歪斜；水鬼：沉塞、痼冷、腰痛、肾气淋沥、遗精、白浊、吐泻；火鬼：头痛发热、心胸焦渴，加朱雀则狂言谵语，阳症、伤寒、嗝逆；土鬼：脾胃发胀，黄肿虚浮，瘟疫时气。",
+        "en": "Take the Other as the doctor and Output as the medicine; the Pressure line strong is most feared moving alone. The illness of the hexagram takes the Subject line as the main and the ghost as the illness. A Metal ghost: illness of the lungs and viscera, panting and coughing, shortness of breath, deficiency and timidity, emaciation, or sores and scabies, bleeding, or an illness of the sinews and bones; a Wood ghost: the four limbs do not obey, the liver and gallbladder govern the illness, paralysis right and left, mouth and eyes awry; a Water ghost: stoppage, obstinate cold, pain in the waist, dribbling of the kidney qi, seminal emission, turbid urine, vomiting and diarrhoea; a Fire ghost: headache and fever, parched heart and chest, with the Vermilion Bird raving and delirium, a yang pattern, cold damage, hiccups; an Earth ghost: distension of the spleen and stomach, yellow swelling and puffiness, epidemics and seasonal qi."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [462, 462],
+          "zh": ["以应为医，", "以子为药；", "鬼爻旺相，", "大忌独发。"],
+          "yi": ["以应为医生，", "以子孙为药；", "鬼爻旺相，", "最忌独发。"],
+          "en": ["Take the Other as the doctor", "and Output as the medicine;", "the Pressure line strong", "is most feared moving alone."] },
+        { "by": "经", "book": "火珠林", "range": [463, 463],
+          "zh": ["夫卦之疾病，", "以用为主，", "以鬼为病。"],
+          "yi": ["卦里的疾病，", "以用爻为主，", "以鬼为病。"],
+          "en": ["The illness of the hexagram", "takes the Subject line as the main", "and the ghost as the illness."] },
+        { "by": "经", "book": "火珠林", "range": [464, 464],
+          "zh": ["金鬼，肺腑疾、喘嗽、气急、虚怯、瘦瘠、或疮疥、血光，或筋骨病。", "木鬼，四肢不遂。肝胆主病、右痪左瘫、口眼歪斜。"],
+          "yi": ["金鬼：肺腑病、喘嗽、气急、虚怯、瘦瘠，或者疮疥、血光，或者筋骨病。", "木鬼：四肢不听使唤；肝胆主病，右侧偏瘫、左侧瘫痪，口眼歪斜。"],
+          "en": ["A Metal ghost: illness of the lungs and viscera, panting and coughing, shortness of breath, deficiency and timidity, emaciation, or sores and scabies, bleeding, or an illness of the sinews and bones.", "A Wood ghost: the four limbs do not obey; the liver and gallbladder govern the illness, paralysis right and left, mouth and eyes awry."] },
+        { "by": "经", "book": "火珠林", "range": [465, 465],
+          "zh": ["水鬼，沉塞、痼冷、腰痛、肾气淋沥、遗精、白浊、吐泻。"],
+          "yi": ["水鬼：阻塞不通、顽固的寒冷、腰痛、肾气不固而小便淋沥、遗精、小便浑浊、呕吐腹泻。"],
+          "en": ["A Water ghost: stoppage, obstinate cold, pain in the waist, dribbling of the kidney qi, seminal emission, turbid urine, vomiting and diarrhoea."] },
+        { "by": "经", "book": "火珠林", "range": [466, 466],
+          "zh": ["火鬼，头痛发热、心胸焦渴、加朱雀狂言谵语、阳症、伤寒、嗝逆。", "土鬼，脾胃发胀；黄肿虚浮、瘟疫时气。"],
+          "yi": ["火鬼：头痛发热、心胸焦渴，加上朱雀则狂言谵语，还有阳症、伤寒、打嗝气逆。", "土鬼：脾胃胀满；发黄、浮肿、虚浮，还有瘟疫和时令的病气。"],
+          "en": ["A Fire ghost: headache and fever, parched heart and chest, with the Vermilion Bird raving and delirium, a yang pattern, cold damage, hiccups.", "An Earth ghost: distension of the spleen and stomach; yellow swelling and puffiness, epidemics and seasonal qi."] }
+      ],
+      "note": {
+        "yi": "「以应为医，以子为药」的分工和天玄赋（LY.ILL.TXF.12）、阐奥歌章医药章（LY.ILL.CA.09：应爻及外为医者、内卦身爻是病人）是同一套，这里说医是应、药是子孙。五行鬼的症候是天玄赋疾病章那一段（LY.ILL.TXF.03）的另一份，字句略有出入：天玄赋是「金鬼：肺腑病，咳嗽气，或疮疖、血光，或筋骨疼痛」，这里是「金鬼，肺腑疾、喘嗽、气急、虚怯、瘦瘠、或疮疥、血光，或筋骨病」，多了气急、虚怯、瘦瘠几项；水鬼这里有「沉塞、痼冷、腰痛、肾气淋沥、遗精、白浊、吐泻」，天玄赋是「沉寒痼冷，遗精白浊，小便淋沥，吐泻呕逆」。「嗝逆」按「打嗝、气逆」译。「阳症」是中医的阳证。这是中医术语，按字面译。",
+        "en": "The division of 'the Other as the doctor, Output as the medicine' is the same set as the Tianxuan Fu (LY.ILL.TXF.12) and the Chan'ao Gezhang's chapter on medicine (LY.ILL.CA.09: the Other line and the outer trigram are the doctor, the inner trigram and the Body line are the sick person), except that here the doctor is the Other and the medicine is Output. The symptoms of the ghost of each phase are another copy of that passage of the Tianxuan Fu's chapter on illness (LY.ILL.TXF.03), with small differences in wording: the Tianxuan Fu has 'a Metal ghost: illness of the lungs and viscera, coughing and qi, or sores and boils, bleeding, or aching of the sinews and bones', and this has 'a Metal ghost, illness of the lungs and viscera, panting and coughing, shortness of breath, deficiency and timidity, emaciation, or sores and scabies, bleeding, or an illness of the sinews and bones', with shortness of breath, deficiency and timidity and emaciation added; for the Water ghost this has 'stoppage, obstinate cold, pain in the waist, dribbling of the kidney qi, seminal emission, turbid urine, vomiting and diarrhoea', where the Tianxuan Fu has 'deep cold and obstinate chill, seminal emission and turbid urine, dribbling urine, vomiting, diarrhoea and retching'. 'Ge ni' is rendered 'hiccups'. A 'yang pattern' is the traditional medical yang pattern. These are terms of Chinese medicine and are rendered literally."
+      },
+      "see": ["LY.ILL.TXF.03", "LY.ILL.TXF.12", "LY.ILL.CA.09", "LY.ILL.HZL.07", "LY.ILL.TXF.13"]
+    },
+    {
+      "id": "LY.ILL.HZL.07",
+      "topic": "总则",
+      "chapter": "占医药",
+      "chapter_en": "Divining doctors and medicine",
+      "title": "占医药·占病必察用爻（占父母必要父母有气）；纵遇凶卦但主沉重不致丧亡、用爻空亡及不上卦更逢凶杀决主不起；用爻无气得旁爻动来生扶同生旺；凶杀临父母或父母空可言双亲有病；鬼爻持世沉重绝日轻可；鬼化鬼病进退；鬼带杀持世为瘵病",
+      "rule": {
+        "yi": "占病一定要察看用爻，占父母就一定要父母有气。纵然遇到凶卦，也只主沉重，不致丧亡；若用爻空亡或不上卦，又遇凶杀，一定不起。用爻无气，若有旁爻动来生扶，就和生旺一样，决没有灾。若凶杀临在父母上，或父母空，就可以说双亲有病，别的爻也一样。鬼爻持世，沉重，绝日轻可。鬼化鬼，病忽进忽退，或有变病，或旧病再发，或症候驳杂，一卦有两个鬼也一样。鬼爻持世，病难除根；鬼带杀持世，是瘵病，难脱体，是养老的病。",
+        "en": "In divining illness one must look at the Subject line; divining a parent the Resource line must have qi. Even meeting an ominous hexagram it only means heaviness and does not lead to death; but if the Subject line is Void or not in the hexagram and meets a killing as well, he surely does not rise. A Subject line without qi, if another line moves to generate and support it, is the same as strong and there is surely no harm. If a killing sits on Resource, or Resource is Void, one can say a parent is ill, and the other lines are the same. The Pressure line holding the Self: heavy, and light on a day of Extinction. A ghost changing into a ghost: the illness advances and retreats, or there is a changed illness, or an old illness breaks out again, or the symptoms are mixed, and two ghosts in one hexagram is the same. The Pressure line holding the Self: the illness is hard to root out; a ghost bringing a killing and holding the Self is a wasting illness that is hard to shake off, the illness of old age."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [467, 467],
+          "zh": ["凡占病，必察用爻，占父母，必要父母有气。", "纵遇凶卦，但主沉重，不致丧亡，若用爻空亡及不上卦，更逢凶杀，决主不起。", "用爻无气，若得旁爻动来生扶，此同生旺，决无咎处。", "若凶杀临父母，或父母空，便可言双亲有病，诸爻皆然。", "鬼爻持世，沉重，绝日轻可。", "鬼化鬼，其病进退，或有变病，或旧病再发，或症候驳杂，一卦二鬼亦然。", "鬼爻持世，病难除根，鬼带杀持世，为瘵病难脱体，乃养老病矣。"],
+          "yi": ["占病一定要察看用爻，占父母就一定要父母有气。", "纵然遇到凶卦，也只主沉重，不致丧亡；若用爻空亡或不上卦，又遇凶杀，一定不起。", "用爻无气，若有旁爻动来生扶，就和生旺一样，决没有灾。", "若凶杀临在父母上，或父母空，就可以说双亲有病，别的爻也一样。", "鬼爻持世，病沉重；到鬼爻绝的日子就轻些，可以好转。", "鬼化鬼，病忽进忽退，或有变病，或旧病再发，或症候驳杂，一卦有两个鬼也一样。", "鬼爻持世，病难除根；鬼带杀持世，是瘵病，难脱体，是养老的病。"],
+          "en": ["In divining illness one must look at the Subject line; divining a parent the Resource line must have qi.", "Even meeting an ominous hexagram it only means heaviness and does not lead to death; but if the Subject line is Void or not in the hexagram and meets a killing as well, he surely does not rise.", "A Subject line without qi, if another line moves to generate and support it, is the same as strong and there is surely no harm.", "If a killing sits on Resource, or Resource is Void, one can say a parent is ill, and the other lines are the same.", "The Pressure line holding the Self: heavy, and light on a day of Extinction.", "A ghost changing into a ghost: the illness advances and retreats, or there is a changed illness, or an old illness breaks out again, or the symptoms are mixed, and two ghosts in one hexagram is the same.", "The Pressure line holding the Self: the illness is hard to root out; a ghost bringing a killing and holding the Self is a wasting illness that is hard to shake off, the illness of old age."] }
+      ],
+      "note": {
+        "yi": "这一段和天玄赋「决轻重存亡之兆专察鬼爻」后面的注（LY.ILL.TXF.02）、「杀临父母，当忧堂上之亲」的用爻表（LY.ILL.TXF.01）是同一套；「鬼化鬼其病进退……鬼爻持世病难除根，鬼带杀持世乃瘵疾」两句在天玄赋的注里几乎一字不差。「绝日轻可」的「绝日」是鬼爻绝的日子。「瘵病」是痨病、消耗性的病，「养老病」按字面译作 the illness of old age，原文没有解释。「用爻」译作 Subject line。",
+        "en": "This passage is the same set as the note after the Tianxuan Fu's 'to decide light or heavy, life or death, look only at the Pressure line' (LY.ILL.TXF.02) and the table of the Subject line, 'a killing sitting on Resource: worry for the elder on the hall' (LY.ILL.TXF.01); the two sentences 'a ghost changing into a ghost, the illness advances and retreats ... the Pressure line holding the Self, the illness is hard to root out, a ghost bringing a killing and holding the Self is a wasting illness' are almost word for word the same in the Tianxuan Fu's note. The 'day of Extinction' of 'light on a day of Extinction' is a day on which the Pressure line is in Extinction. A 'wasting illness' is consumption, an illness that wears the body down, and 'the illness of old age' is rendered literally, and the original does not explain it. 'Yong yao' is rendered Subject line."
+      },
+      "see": ["LY.ILL.TXF.01", "LY.ILL.TXF.02", "LY.ILL.HZL.06", "LY.ILL.HZL.08"]
+    },
+    {
+      "id": "LY.ILL.HZL.08",
+      "topic": "生死",
+      "chapter": "占医药",
+      "chapter_en": "Divining doctors and medicine",
+      "title": "占医药·青龙临用爻或福德爻病重终可疗、青龙空亡卦无吉解病凶；白虎临父母当损、值财妻遭伤、子孙际遇终成否、兄弟逢之亦不昌、更并官爻临世上自身须忌灾殃",
+      "rule": {
+        "yi": "青龙临在用爻或福德爻上，病虽重，终究可治；青龙空亡、卦里又没有吉的化解，病凶。白虎临父母，父母当受损；若落在财上，妻子遭伤；遇上子孙，终究成否难定；兄弟遇上它，也不昌盛。再加官爻临在世上，自己就要忌灾殃。",
+        "en": "With the Azure Dragon sitting on the Subject line or the Output line, the illness, though heavy, can in the end be treated; with the Azure Dragon Void and the hexagram having no lucky resolution, the illness is ominous. The White Tiger sitting on Resource harms it; if it falls on Wealth the wife is injured; meeting Output, success in the end is uncertain; and Peer meeting it does not flourish either. And with the Pressure line also sitting on the Self, one must guard against calamity for oneself."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [468, 468],
+          "zh": ["青龙临用爻或福德爻，", "其病虽重终可疗。", "青龙空亡卦无吉解，", "病凶。"],
+          "yi": ["青龙临在用爻或福德爻上，", "病虽重，终究可治；", "青龙空亡、卦里又没有吉的化解，", "病情凶险。"],
+          "en": ["With the Azure Dragon sitting on the Subject line or the Output line,", "the illness, though heavy, can in the end be treated;", "with the Azure Dragon Void and the hexagram having no lucky resolution,", "the illness is ominous."] },
+        { "by": "经", "book": "火珠林", "range": [469, 469],
+          "zh": ["白虎临父母当损，", "若值财上妻遭伤。", "子孙际遇终成否，", "兄弟逢之亦不昌。", "更并官爻临世上，", "自身须忌有灾殃。"],
+          "yi": ["白虎临父母，父母当受损；", "若落在财上，妻子遭伤。", "子孙遇上它，终究成不成难定；", "兄弟遇上它，也不昌盛。", "再加官爻临在世上，", "自己就要忌灾殃。"],
+          "en": ["The White Tiger sitting on Resource harms it;", "if it falls on Wealth the wife is injured.", "Output meeting it, success in the end is uncertain;", "and Peer meeting it does not flourish either.", "And with the Pressure line also sitting on the Self,", "one must guard against calamity for oneself."] }
+      ],
+      "note": {
+        "yi": "这一段是天玄赋的注里引的「苍屏云」那首诗（LY.ILL.TXF.04）的另一份：「青龙空亡并福德，病人平日无阴骘……白虎加临主哭丧，临克父爻当有咎，并财妻位必遭伤。子孙际会终成否，兄弟相逢更不昌，更值官爻持世上，己身须恐有灾殃」——这里「白虎临父母当损，若值财上妻遭伤，子孙际遇终成否，兄弟逢之亦不昌，更并官爻临世上，自身须忌有灾殃」几句几乎一样，只是没有「苍屏云」三个字，也没有那一首前面的「青龙」几句。「终成否」按「终究成不成（难定）」译，原文没有说结果。「福德爻」译作 Output line。",
+        "en": "This passage is another copy of the poem quoted in the Tianxuan Fu's note as 'Cangping says' (LY.ILL.TXF.04): 'the Azure Dragon Void together with Output, the sick person has no hidden merit in ordinary days ... the White Tiger added means mourning, controlling the Resource line there will be harm, joining the Wealth position the wife will surely be injured; Output meeting it, success in the end is uncertain, Peer meeting it flourishes even less, and if in addition the Pressure line holds the Self, one must fear calamity for oneself'. Here 'the White Tiger sitting on Resource harms it, if it falls on Wealth the wife is injured, Output meeting it, success in the end is uncertain, Peer meeting it does not flourish either, and with the Pressure line also sitting on the Self, one must guard against calamity for oneself' is almost the same, only without the words 'Cangping says' and without the Azure Dragon lines before it in that poem. 'Zhong cheng fou' is rendered 'success in the end is uncertain', and the original does not say the outcome. 'Fu de yao' is rendered the Output line."
+      },
+      "see": ["LY.ILL.TXF.04", "LY.ILL.HZL.07", "LY.ILL.HZL.09"]
+    },
+    {
+      "id": "LY.ILL.HZL.09",
+      "topic": "医药",
+      "chapter": "占医药",
+      "chapter_en": "Divining doctors and medicine",
+      "title": "占医药·金鬼不宜针、木鬼不宜草木、水鬼不宜汤饮汤洗、火鬼不宜灸熨、土鬼不宜服丸药；金鬼可炙木鬼药方水鬼宜热剂土鬼宜木药；金鬼利南方木鬼利西方水鬼利土值火鬼利北方土鬼利东方求请医者；丑鬼不可食牛肉未子孙当食羊",
+      "rule": {
+        "yi": "金鬼不宜针，木鬼不宜草木，水鬼不宜汤饮汤洗之类，火鬼不宜灸熨，土鬼不宜服丸药；金鬼可以炙，木鬼用药方，火鬼带服鬼剂，水鬼宜服热剂，土鬼宜服木药。金鬼利南方，木鬼利西方，水鬼利土值，火鬼利北方，土鬼利东方，去求请医生。又：丑鬼不可食牛肉，未是子孙就该吃羊肉。",
+        "en": "A Metal ghost must not be needled, a Wood ghost must not have grasses and woods, a Water ghost must not have hot drinks or hot washing and the like, a Fire ghost must not have moxibustion or hot compresses, an Earth ghost must not take pills; a Metal ghost can be burned with moxa, a Wood ghost takes a prescription, a Fire ghost takes ghost medicine along, a Water ghost should take a hot remedy, an Earth ghost should take Wood medicine. A Metal ghost is favoured by the south, a Wood ghost by the west, a Water ghost by the earth quarter, a Fire ghost by the north and an Earth ghost by the east, in seeking and inviting a doctor. Again: a Chou ghost must not eat beef, and where Wei is Output one should eat mutton."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [470, 470],
+          "zh": ["金鬼不宜针，", "木鬼不宜草木，", "水鬼不宜汤饮汤洗之类，", "火鬼不宜灸熨，", "土鬼不宜服丸药。", "金鬼可炙，", "木鬼药方，", "火鬼带服鬼剂，", "水鬼宜服热剂，", "土鬼宜服木药。"],
+          "yi": ["金鬼不宜针，", "木鬼不宜草木，", "水鬼不宜用热汤饮用、热汤洗浴之类，", "火鬼不宜灸熨，", "土鬼不宜服丸药。", "金鬼可以炙，", "木鬼用药方，", "火鬼带服鬼剂，", "水鬼宜服热剂，", "土鬼宜服木药。"],
+          "en": ["A Metal ghost must not be needled,", "a Wood ghost must not have grasses and woods,", "a Water ghost must not have hot drinks or hot washing and the like,", "a Fire ghost must not have moxibustion or hot compresses,", "an Earth ghost must not take pills.", "A Metal ghost can be burned with moxa,", "a Wood ghost takes a prescription,", "a Fire ghost takes ghost medicine along,", "a Water ghost should take a hot remedy,", "an Earth ghost should take Wood medicine."] },
+        { "by": "经", "book": "火珠林", "range": [471, 471],
+          "zh": ["金鬼利南方，", "木鬼利西方，", "水鬼利土值，", "火鬼利北方，", "土鬼利东方求请医者。", "又，", "丑鬼不可(食)牛肉，", "未子孙当食羊。"],
+          "yi": ["金鬼利南方，", "木鬼利西方，", "水鬼利土值，", "火鬼利北方，", "土鬼利东方，去求请医生。", "另外：", "丑鬼不可（食）牛肉，", "未子孙当食羊。"],
+          "en": ["A Metal ghost is favoured by the south,", "a Wood ghost by the west,", "a Water ghost by the earth quarter,", "a Fire ghost by the north,", "and an Earth ghost by the east, in seeking and inviting a doctor.", "Again:", "a Chou ghost must not eat beef,", "and where Wei is Output one should eat mutton."] }
+      ],
+      "dispute": {
+        "yi": "治法和请医的方位，火珠林和天玄赋大体一致，有两处不同。一、土鬼：天玄赋（LY.ILL.TXF.13）是「土鬼宜锉散」，火珠林这里是「土鬼宜服木药」「土鬼不宜服丸药」；二、水鬼请医的方位：天玄赋是「水鬼利四散医人」，火珠林这里是「水鬼利土值」。增删卜易（LY.ILL.ZS.34）另有一说，请医的方位不看鬼的五行，看子孙和应爻的方位（见 TXF.13 的「打架」）。书里没有裁决。",
+        "en": "The treatment and the direction of the doctor are broadly agreed between the Huozhu Lin and the Tianxuan Fu, with two differences. One, the Earth ghost: the Tianxuan Fu (LY.ILL.TXF.13) has 'an Earth ghost is fit for cut powders', and the Huozhu Lin here has 'an Earth ghost should take Wood medicine' and 'an Earth ghost must not take pills'; two, the direction for a doctor for a Water ghost: the Tianxuan Fu has 'a Water ghost is favoured by a doctor from all quarters' and the Huozhu Lin here has 'a Water ghost by the earth quarter'. The Zengshan Buyi (LY.ILL.ZS.34) has yet another view, that the direction of the doctor is looked at not by the phase of the ghost but by the quarter of Output and the Other line (see the dispute in TXF.13). The books do not settle it."
+      },
+      "note": {
+        "yi": "这一段和天玄赋的医药一节（LY.ILL.TXF.13）相近：天玄赋是「火鬼宜凉剂，水鬼宜温剂或丸药，木鬼宜针，金鬼宜灸，土鬼宜锉散……金鬼利南方医人，木鬼利西方医人，水鬼利四散医人，火鬼利北方医人，土鬼利东方医人」。两处大部分一致（金宜灸不宜针、水宜热剂、请医的方位是克这一行的方位），不一致的是土鬼：天玄赋说宜锉散，这里说宜木药、不宜丸药；水鬼的方位，天玄赋是「四散」，这里是「土值」（字面译作 the earth quarter，「值」的意思原文没有解释，可能是「值土」）。「金鬼可炙，木鬼药方，火鬼带服鬼剂」中「带服鬼剂」的「鬼剂」不清楚，字面译作 ghost medicine。「丑鬼不可（食）牛肉」的「（食）」是原文里的圆括号。忌食鬼爻所属生肖的肉、宜食子孙所属生肖的肉，和洞林秘诀（LY.ILL.DYTJ.16）是同一个说法。",
+        "en": "This passage is close to the Tianxuan Fu's section on medicine (LY.ILL.TXF.13): the Tianxuan Fu has 'a Fire ghost is fit for a cooling remedy, a Water ghost for a warm remedy or pills, a Wood ghost for the needle, a Metal ghost for moxa, an Earth ghost for cut powders ... a Metal ghost is favoured by a doctor from the south, a Wood ghost by one from the west, a Water ghost by one from all quarters, a Fire ghost by one from the north, an Earth ghost by one from the east'. They mostly agree (moxa for Metal and no needle, a hot remedy for Water, and the direction of the doctor being the direction that controls the phase); where they differ is the Earth ghost: the Tianxuan Fu says cut powders, this says Wood medicine and not pills; and for the Water ghost's direction the Tianxuan Fu has 'all quarters' and this has 'the earth quarter' (rendered literally, the original does not explain 'zhi' (rule, hold), which may be 'ruled by Earth'). The 'ghost medicine' of 'a Fire ghost takes ghost medicine along' is not clear and is rendered literally. The '(shi)' of 'a Chou ghost must not (eat) beef' is a round bracket in the original. Avoiding the meat of the animal of the ghost line and eating the meat of the animal of Output is the same saying as the Dongling Mijue (LY.ILL.DYTJ.16)."
+      },
+      "see": ["LY.ILL.TXF.13", "LY.ILL.ZS.34", "LY.ILL.DYTJ.16", "LY.ILL.HZL.08", "LY.ILL.HZL.10", "LY.ILL.TXF.12"]
+    },
+    {
+      "id": "LY.ILL.HZL.10",
+      "topic": "病因",
+      "chapter": "占医药",
+      "chapter_en": "Divining doctors and medicine",
+      "title": "占医药·鬼爻在内病自内生、鬼在外灾自外至；火鬼必在南方、金鬼必在西方道路生灾主胸；金鬼病在肺家逢火作脓见木生风遇蛇虚闷",
+      "rule": {
+        "yi": "鬼爻在内，病从里面生；鬼在外，灾从外面来。火鬼必在南方；金鬼必在西方，路上生灾，又主胸；金鬼则病在肺，逢火成脓，见木生风，遇螣蛇则虚闷。",
+        "en": "The Pressure line inside, the illness arises from within; the ghost outside, the calamity comes from outside. A Fire ghost must be in the south; a Metal ghost must be in the west, calamity arising on the road, and it governs the chest as well; a Metal ghost then has the illness in the lungs, meeting Fire it makes pus, seeing Wood it breeds wind, and meeting the Snake it is a deficient oppression."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [472, 472],
+          "zh": ["鬼爻在内，", "病自内生，", "鬼又在外，", "灾自外至。", "火鬼必在南方；", "金鬼必在西方，", "道路生灾，", "又为主胸，", "金鬼则病在肺家，", "逢火作脓，", "见木生风，", "遇蛇虚闷。"],
+          "yi": ["鬼爻在内，", "病从里面生；", "鬼又在外，", "灾从外面来。", "火鬼必在南方；", "金鬼必在西方，", "路上生灾，", "而且又主胸部；", "金鬼则病在肺，", "遇火成脓，", "见木生风，", "遇蛇则虚闷。"],
+          "en": ["The Pressure line inside,", "the illness arises from within;", "the ghost being outside,", "the calamity comes from outside.", "A Fire ghost must be in the south;", "a Metal ghost must be in the west,", "calamity arising on the road,", "and it governs the chest as well;", "a Metal ghost then has the illness in the lungs,", "meeting Fire it makes pus,", "seeing Wood it breeds wind,", "and meeting the Snake it is a deficient oppression."] }
+      ],
+      "note": {
+        "yi": "「鬼爻在内，病自内生，鬼又在外，灾自外至」是内外分病的来处，和易林补遗「何处得病」（LY.ILL.EL.03）、天玄赋「六兽临官当分内外」（LY.ILL.TXF.09）是同一类说法。「遇蛇虚闷」的「蛇」是螣蛇；「又为主胸」一句读不确定，按「又主胸」译。「金鬼必在西方，道路生灾」是拿五行配方位（金在西）、又配「路上」取象。",
+        "en": "'The Pressure line inside, the illness arises from within; the ghost outside, the calamity comes from outside' is the division of where the illness comes from by inside and outside, of the same kind as the Yilin Buyi's 'where the illness was caught' (LY.ILL.EL.03) and the Tianxuan Fu's 'the six beasts on the official: tell inside from outside' (LY.ILL.TXF.09). The 'snake' of 'meeting the Snake' is the Coiling Snake; the line 'wei zhu xiong' (and it governs the chest) is not certain and is rendered 'and it governs the chest as well'. 'A Metal ghost must be in the west, calamity arising on the road' matches the phase to a quarter (Metal in the west) and takes the image of the road."
+      },
+      "see": ["LY.ILL.EL.03", "LY.ILL.TXF.09", "LY.ILL.HZL.09", "LY.ILL.DYTJ.14"]
+    }
+  ]
+}

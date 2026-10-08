@@ -1,0 +1,186 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "黄金策",
+  "chapter": "仕宦",
+  "chapter_en": "Holding office",
+  "ranges": {"卜筮大全": [7733, 7751], "卜筮正宗": [1972, 1982]},
+  "units": [
+    {
+      "id": "LY.CAREER.HJC.23",
+      "topic": "任所",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·巡察四方，路空则多忧惊险（旧注：钦差出巡、封王采木皆怕世应逢空；路爻空主途中惊险；世在五爻自空须防身死于外；世在五爻动及游魂卦世动是出巡之职）",
+      "rule": {
+        "yi": "钦差出巡，或者奉命去封王、采木，都怕世爻、应爻遇空；如果是路爻空亡的卦，主途中惊险；世爻在五爻而自己空亡，须提防死在外面，有冲克就不会这样；世在五爻发动，以及游魂卦世爻发动的，都是出巡的职位。",
+        "en": "For one sent by imperial commission on a tour, or to invest a prince or to gather timber, a Void Self or Other is much feared; if it is a hexagram with the road line Void, there will be danger and fright on the way; if the Self is on the fifth line and Void by itself, beware of dying abroad, though with a clash or control it is not so; and when the Self on the fifth line moves, or the Self moves in a Wandering-Soul hexagram, it is a post of touring."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7733, 7733],
+          "zh": ["巡察四方，路空则多忧惊险。"],
+          "yi": ["巡视查察四方，路爻空亡就多有忧虑惊险；"],
+          "en": ["On a tour of inspection of the four quarters, if the road line is Void there will be much worry and danger;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7734, 7734],
+          "zh": ["钦差出巡，或封王采木，皆怕世应逢空。", "若路爻空之卦，主途中惊险。", "世在五爻自空，须防身死于外，有冲克则不然。", "凡遇世在五爻动，及游魂卦世动者，皆是出巡之职。"],
+          "yi": ["钦差出巡，或者奉命去封王、采木，都怕世爻、应爻遇空。", "如果是路爻空亡的卦，主途中惊险。", "世爻在五爻而自己空亡，须提防死在外面，有冲克就不会这样。", "凡是世在五爻发动，以及游魂卦世爻发动的，都是出巡的职位。"],
+          "en": ["For one sent by imperial commission on a tour, or to invest a prince or to gather timber, a Void Self or Other is much feared.", "If it is a hexagram with the road line Void, there will be danger and fright on the way.", "If the Self is on the fifth line and Void by itself, beware of dying abroad, though with a clash or control it is not so.", "Whenever the Self on the fifth line moves, or the Self moves in a Wandering-Soul hexagram, it is a post of touring."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1972, 1972],
+          "zh": ["钦差出巡，怕世爻逢空。", "若世在五爻空，须防日月刑克，恐途中有患难莫测之祸害。"],
+          "yi": ["钦差出巡，怕世爻遇空。", "如果世爻在五爻而空亡，要提防日月刑克，恐怕途中有难以预料的祸患。"],
+          "en": ["For one sent on an imperial commission on a tour, a Void Self is feared.", "If the Self is on the fifth line and Void, beware of punishment or control by the Day or the Month, lest on the way there be a misfortune that cannot be foreseen."] }
+      ],
+      "note": {
+        "yi": "「钦差」是皇帝派出的差使，「封王」是奉命去册封藩王，「采木」是奉命去采办皇家用的木材，这些都是远行的差使。「路爻」书里这里没有解释。「游魂卦」是八宫卦里第七个卦（游魂）。第五爻在这里像是「出外」的位置，所以世在五爻是出巡的象，这和 LY.CAREER.HJC.08（世动逢空，出巡之职反为顺利）说的出巡不同：那里是世动逢空对出巡有利，这里是世应逢空怕出事，两条一起看：官位上世动逢空，出巡一类的差使反而顺；但差使走在路上时，世应逢空、路爻空要防惊险。",
+        "en": "'Imperial commission' is a mission sent by the emperor, 'to invest a prince' is going on the emperor's order to confer the title on a feudal prince, and 'to gather timber' is going on order to procure timber for the court, all of them missions to a far place. The book does not explain 'the road line' here. A 'Wandering-Soul hexagram' is the seventh hexagram of the eight palaces (the Wandering Soul). The fifth line here looks like the place of 'going out', so the Self on the fifth line is a sign of touring, which differs from what LY.CAREER.HJC.08 ('the Self moves and meets Void: for a post of touring it goes smoothly on the contrary') says of touring: there the Self moving into Void favours touring, and here the Self and the Other going Void is feared as bringing trouble; the two are to be read together: in a matter of rank, the Self moving into Void is on the contrary smooth for a mission of touring, but when the mission is on the road, a Void Self and Other or a Void road line must be guarded against for danger."
+      },
+      "see": ["LY.CAREER.HJC.08", "LY.CAREER.HJC.10"]
+    },
+    {
+      "id": "LY.CAREER.HJC.24",
+      "topic": "军旅",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·出征剿捕，福德兴而寇贼歼亡（旧注：将帅平居卜问不宜子孙发动主降调贬责、不宜应动克世；岁君月建冲动官鬼或世爻有敕命征讨；临敌卜问喜子孙发动必成剿捕之功；官鬼当贼寇论，世克应亦吉）",
+      "rule": {
+        "yi": "担任将帅或征讨之官的人，平时占问，不适宜子孙发动，主有降职调任、贬责，也不适宜应爻发动克世爻，主有意想不到的变故；太岁、月建冲动官鬼或世爻，主有敕命征讨的事。如果临阵对敌占问，就喜欢子孙发动，必成剿捕的功绩，再得到太岁、月建生合，还有升赏；这时官鬼不当作爵位，要当作贼寇来论，世克应也吉。",
+        "en": "For one holding the post of commander or an officer of punitive expeditions, in divining in ordinary times it is not fitting that Output moves, which means demotion, transfer and rebuke, nor that the Other moves and controls the Self, which means an unforeseen change; if the Tai Sui or the Month clashes Pressure or the Self into motion, there will be an imperial order for a punitive expedition. If the divination is made facing the enemy, it is welcome that Output moves, and one will surely achieve merit in suppressing the bandits, and if the Tai Sui and the Month also generate or combine, there will be promotion and reward as well; Pressure is then not taken as rank but as the bandits, and the Self controlling the Other is also auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7736, 7736],
+          "zh": ["出征剿捕，福德兴而寇贼歼亡；"],
+          "yi": ["出兵征讨、剿灭盗寇，福德（子孙）兴旺，寇贼就被歼灭；"],
+          "en": ["In going out to campaign and wipe out bandits, when Output flourishes the robbers are destroyed;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7737, 7740],
+          "zh": ["凡任将帅之职，或征讨之官，平居卜问，不宜子孙发动，主有降调贬责；", "亦不宜应动克世，主有不测变故。", "若岁君月建冲动官鬼，或世爻，主有敕命征讨之事。", "如临敌卜问，则喜子孙发动，必成剿捕之功，更得岁君月建生合，仍有升赏。", "官鬼不作爵位，当作贼寇论之。", "世克应亦吉。"],
+          "yi": ["凡是担任将帅的职位，或者征讨的官，平时占问，不适宜子孙发动，主有降职调任、贬责；", "也不适宜应爻发动克世爻，主有意想不到的变故。", "如果太岁、月建冲动官鬼或世爻，主有敕命征讨的事。", "如果临阵对敌占问，就喜欢子孙发动，必成剿捕的功绩，再得到太岁、月建生合，还有升赏。", "官鬼这时不当作爵位，要当作贼寇来论。", "世克应也吉。"],
+          "en": ["For one holding the post of commander or an officer of punitive expeditions, in divining in ordinary times it is not fitting that Output moves, which means demotion, transfer and rebuke;", "nor is it fitting that the Other moves and controls the Self, which means an unforeseen change.", "If the Tai Sui or the Month clashes Pressure or the Self into motion, there will be an imperial order for a punitive expedition.", "If the divination is made facing the enemy, it is welcome that Output moves, and one will surely achieve merit in suppressing the bandits, and if the Tai Sui and the Month also generate or combine, there will be promotion and reward as well.", "Pressure is then not taken as rank but as the bandits.", "The Self controlling the Other is also auspicious."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1974, 1974],
+          "zh": ["凡任将帅之职，或征讨之官，平居卜问，不宜子孙发动，主有降调；", "如临事问，则喜子孙发动，必成剿捕大功；", "更得岁君月建生合世爻，主有升赏。", "官鬼不作爵位，当作寇贼论。", "世克应亦吉。"],
+          "yi": ["凡是担任将帅的职位，或者征讨的官，平时占问，不适宜子孙发动，主有降职调任；", "如果临事占问，就喜欢子孙发动，必成剿捕的大功；", "再得到太岁、月建生合世爻，主有升赏。", "官鬼不当作爵位，要当作寇贼来论。", "世克应也吉。"],
+          "en": ["For one holding the post of commander or an officer of punitive expeditions, in divining in ordinary times it is not fitting that Output moves, which means demotion and transfer;", "if the divination is made at the time of the event, it is welcome that Output moves, and one will surely achieve great merit in suppressing the bandits;", "and if the Tai Sui and the Month also generate or combine with the Self, there will be promotion and reward.", "Pressure is not taken as rank but as the bandits.", "The Self controlling the Other is also auspicious."] }
+      ],
+      "note": {
+        "yi": "这一联要分两种问法：平时问（还没有开战，问自己的仕途）和临阵问（敌人当前，问这一仗）。平时问，子孙是「伤官之杀」，发动就降调贬责；临阵问，子孙是「克鬼」的神（官鬼这时是贼寇），发动就能灭贼。所以同一个子孙发动，平时凶、临阵吉，这和 LY.CAREER.HJC.03（子孙发动剥官削职）不矛盾，是用神换了：官鬼不再是你的官，而是你的敌人。「敕命征讨」是皇帝下令出兵，「剿捕」是围剿捕捉。",
+        "en": "This couplet must be read for two kinds of question: in ordinary times (no war has begun, and one asks about one's own career) and facing the enemy (the enemy is before one, and one asks about this battle). In ordinary times Output is 'the killer that harms office', and moving brings demotion and rebuke; facing the enemy Output is the spirit that controls Pressure (which is then the bandits), and moving can wipe them out. So the same moving Output is ominous in ordinary times and auspicious facing the enemy, which does not contradict LY.CAREER.HJC.03 (Output moving strips the office): the Subject has changed, and Pressure is no longer your office but your enemy. 'An imperial order for a punitive expedition' is the emperor ordering out the army, and 'suppress' is surrounding and seizing."
+      },
+      "see": ["LY.CAREER.HJC.03", "LY.CAREER.HJC.25"]
+    },
+    {
+      "id": "LY.CAREER.HJC.25",
+      "topic": "军旅",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·镇守边陲，卦爻静而华夷安泰（旧注：镇守不拘文武皆宜六爻安静，世应生合比和日辰月建不冲克则安然无警，世应空亡亦吉；官鬼发动世应冲克必多侵扰）",
+      "rule": {
+        "yi": "镇守一方，不论文官武职，都适宜六爻安静；世应生合比和，日辰月建不互相冲克，就能安睡在边庭，安然没有警报，世应空亡也吉；如果遇到官鬼发动、世应冲克，必定多有侵扰，要通变着断。",
+        "en": "In guarding a region, whether in a civil or military post, it is fitting that the six lines are still; if the Self and the Other generate, combine or are in harmony and the Day and the Month do not clash or control each other, one sleeps soundly at the border, at ease and without alarm, and the Self and the Other Void is also auspicious; if Pressure moves and the Self and the Other clash or control each other, there will surely be many incursions, and one should judge flexibly."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7742, 7742],
+          "zh": ["镇守边陲，卦爻静而华夷安泰。"],
+          "yi": ["镇守边疆，卦爻安静，华夏和外族就安稳太平。"],
+          "en": ["In guarding the frontier, when the hexagram and its lines are still, the Chinese and the border peoples are at peace."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7743, 7743],
+          "zh": ["镇守地方，不拘文官武职，皆宜六爻安静；", "世应生合比和，日辰月建，不相冲克，则鼾睡边庭，安然无警，世应空亡亦吉。", "若遇官鬼发动，世应冲克，必多侵扰，宜通变断之。"],
+          "yi": ["镇守地方，不论文官武职，都适宜六爻安静；", "世应生合比和，日辰、月建不互相冲克，就能安睡在边庭，安然没有警报，世应空亡也吉。", "如果遇到官鬼发动，世应冲克，必定多有侵扰，要通变着断。"],
+          "en": ["In guarding a region, whether in a civil or military post, it is fitting that the six lines are still;", "if the Self and the Other generate, combine or are in harmony, and the Day and the Month do not clash or control each other, one sleeps soundly at the border, at ease and without alarm, and the Self and the Other Void is also auspicious.", "If Pressure moves and the Self and the Other clash or control each other, there will surely be many incursions, and one should judge flexibly."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1976, 1976],
+          "zh": ["镇守地方，不拘文武官职，皆宜六爻安静，日辰月建不相冲克，则安然无惊；", "若遇官鬼发动，世应冲克，必多骚扰。", "用宜通变推之。"],
+          "yi": ["镇守地方，不论文武官职，都适宜六爻安静，日辰、月建不互相冲克，就安然没有惊扰；", "如果遇到官鬼发动，世应冲克，必定多有骚扰。", "用的时候要通变着推。"],
+          "en": ["In guarding a region, whether in a civil or military post, it is fitting that the six lines are still and the Day and the Month do not clash or control each other, and then one is at ease and without alarm;", "if Pressure moves and the Self and the Other clash or control each other, there will surely be many disturbances.", "In use it should be inferred flexibly."] }
+      ],
+      "note": {
+        "yi": "「华夷」是中原和边地的民族，「安泰」是平安。「鼾睡边庭」是说在边疆睡得安稳，不用戒备。「世应空亡亦吉」只有旧注写了：世应都空，双方都不动，边境无事。这一联讲的是「守」，和上一联 LY.CAREER.HJC.24 的「攻」（出征剿捕）正好相反：守要静，攻要动。旧注结尾「宜通变断之」、王洪绪「用宜通变推之」，都是提醒不要死守这条。",
+        "en": "'The Chinese and the border peoples' are the peoples of the heartland and of the border lands, and 'at peace' is peace and safety. 'Sleeps soundly at the border' says one sleeps easily on the frontier without having to be on guard. 'The Self and the Other Void is also auspicious' is only in the old commentary: when both the Self and the Other are Void, neither side moves and there is nothing on the border. This couplet speaks of 'defending', the very opposite of the preceding couplet, LY.CAREER.HJC.24, on 'attacking' (campaigning and suppressing bandits): defending wants stillness, and attacking wants movement. The old commentary's closing 'judge it flexibly' and Wang Hongxu's 'in use it should be inferred flexibly' both warn against holding to this rule rigidly."
+      },
+      "see": ["LY.CAREER.HJC.24"]
+    },
+    {
+      "id": "LY.CAREER.HJC.26",
+      "topic": "国朝",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·奏陈谏诤，那堪太岁刑冲（旧注：奏对陈疏上章谏诤赴召面君皆忌动爻冲克太岁亦忌刑克世爻；太岁月建生合世爻必见详允，冲克须防不测之祸；岁君衰静不带刑害虎蛇不见取用非大害；动空化空虚惊；有制伏冲散合住必得大臣申救；应动冲克世更防人奏劾）",
+      "rule": {
+        "yi": "上奏陈情、进呈奏章、上书、进谏，以及奉召面君这类事，都忌讳动爻冲克太岁，也忌讳世爻被刑克；如果太岁、月建生合世爻，必定得到详细审议并获准；一旦遇到冲克，须提防意外的祸患；太岁衰弱安静又不带刑、害、白虎、螣蛇，只是不被采用，没有大害；动爻空亡或化空，也只是虚惊；有制伏、冲散、合住的，必有大臣出来申救；应爻发动冲克世爻，更要提防有人上奏弹劾。",
+        "en": "For anything such as a memorial in audience, presenting a petition, submitting a written report, remonstrating, or going to an audience with the sovereign at his summons, it is feared that a moving line clashes or controls the Tai Sui, and also that the Self is punished or controlled; if the Tai Sui or the Month generates or combines with the Self, it will surely be examined in detail and approved; once a clash or control comes, beware of an unforeseen misfortune; if the Tai Sui is weak and still and carries no punishment, harm, White Tiger or Coiling Snake, one is only not adopted and there is no great harm; if the moving line is Void or turns into Void, it is only a false alarm; if there is something that subdues, clashes away or combines it, a high minister will surely come forward to plead and rescue; and if the Other moves and clashes or controls the Self, beware all the more of someone submitting an impeachment."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7745, 7745],
+          "zh": ["奏陈谏诤，那堪太岁刑冲；"],
+          "yi": ["上奏陈情、进谏诤言，哪里经得起太岁的刑冲；"],
+          "en": ["To submit a memorial or remonstrate, how can one withstand the Tai Sui's punishment or clash;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7746, 7746],
+          "zh": ["凡欲奏对、陈疏，上章、谏诤，及赴召面君类，皆忌动爻冲克太岁，亦忌刑克世爻。", "若太岁月建生合世爻，必见详允。", "一来冲克，须防不测之祸。", "岁君衰静，不带刑害虎蛇，主则不见取用，非有大害。", "动空化空，亦是虚惊。", "或有制伏冲散合住，必得大臣申救。", "应动冲克世爻，更防人奏劾。"],
+          "yi": ["凡是要奏对、陈疏、上章、谏诤，以及奉召面君这类事，都忌讳动爻冲克太岁，也忌讳刑克世爻。", "如果太岁、月建生合世爻，必定得到详细审议并获准。", "一旦遇到冲克，须提防意外的祸患。", "太岁衰弱安静，又不带刑、害、白虎、螣蛇，就是不被采用，没有大害。", "动爻空亡或者化空，也只是虚惊一场。", "有制伏、冲散、合住的，必有大臣出来申救。", "应爻发动冲克世爻，更要提防有人上奏弹劾。"],
+          "en": ["For anything such as an audience with a memorial, presenting a petition, submitting a written report, remonstrating, or going to an audience with the sovereign at his summons, it is feared that a moving line clashes or controls the Tai Sui, and it is also feared that the Self is punished or controlled.", "If the Tai Sui or the Month generates or combines with the Self, it will surely be examined in detail and approved.", "Once a clash or control comes, beware of an unforeseen misfortune.", "If the Tai Sui is weak and still and carries no punishment, harm, White Tiger or Coiling Snake, it means one is not adopted, and there is no great harm.", "If the moving line is Void or turns into Void, it is likewise only a false alarm.", "If there is something that subdues, clashes away or combines it, a high minister will surely come forward to plead and rescue.", "If the Other moves and clashes or controls the Self, beware all the more of someone submitting an impeachment."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1978, 1978],
+          "zh": ["凡遇奏对、陈疏、上章、谏诤及赴召面君类，皆忌动爻冲克，并忌太岁刑克世爻。", "若太岁月建生合世爻，必见谕允；", "如来冲克，须防不测之祸。"],
+          "yi": ["凡遇到奏对、陈疏、上章、谏诤和奉召面君这类事，都忌讳动爻冲克，也忌讳太岁刑克世爻。", "如果太岁、月建生合世爻，必定得到准许；", "如果来冲克，须提防意外的祸患。"],
+          "en": ["In anything such as an audience with a memorial, presenting a petition, submitting a written report, remonstrating, or going to an audience at the sovereign's summons, a moving line clashing or controlling is feared, and the Tai Sui punishing or controlling the Self is also feared.", "If the Tai Sui or the Month generates or combines with the Self, one will surely receive approval;", "if a clash or control comes, beware of an unforeseen misfortune."] }
+      ],
+      "note": {
+        "yi": "「奏对」是面奏回答皇帝，「陈疏」「上章」是上书，「谏诤」是进言规劝，「赴召面君」是奉召去见皇帝，「申救」是出面陈说、营救，「奏劾」是上奏弹劾。旧注「亦忌刑克世爻」没有说谁刑克世爻，王洪绪补明是「太岁刑克世爻」。旧注比王洪绪多出的几句（太岁衰静不带刑害虎蛇只是不被采用、动空化空是虚惊、有制伏冲散合住有大臣申救、应动冲克世防人弹劾），是在「冲克」这个凶象上分轻重：太岁衰静无煞只是不被采纳，有煞才是祸；动爻空或化空是虚惊；有人制住冲克的爻，就有大臣出来救。这一联是「面君」类事的判据，所以放在「国朝」一题下。",
+        "en": "'Audience' is replying to the emperor in person, 'a petition' and 'a written report' are writing to the throne, 'remonstrating' is offering advice and admonition, 'going to an audience at his summons' is being summoned to see the emperor, 'plead and rescue' is coming forward to speak and save, and 'impeachment' is submitting a memorial of impeachment. The old commentary's 'it is also feared that the Self is punished or controlled' does not say by whom, and Wang Hongxu makes it clear that it is 'the Tai Sui punishing or controlling the Self'. The extra sentences of the old commentary (the Tai Sui weak and still with no punishment, harm, Tiger or Snake is only not being adopted; a moving line Void or turning into Void is a false alarm; with something that subdues, clashes away or combines it, a minister pleads and rescues; the Other moving and clashing the Self, beware impeachment) grade the ominous sign of clash or control by weight: the Tai Sui weak and still without killers is only not being adopted, and only with killers is there misfortune; the moving line Void or turned Void is a false alarm; and when something holds in check the line that clashes or controls, a minister comes out to rescue. This couplet is the criterion for matters of facing the sovereign, hence it is placed under 'the court and the state'."
+      },
+      "see": ["LY.CAREER.HJC.07", "LY.CAREER.HJC.15"]
+    },
+    {
+      "id": "LY.CAREER.HJC.27",
+      "topic": "取象",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·僧道医官，岂可文书发动（旧注：僧道医官及阴阳官皆要子孙出现有气不空，父母发动必有灾悔；父带岁月日非身有灾病乃外来祸；子孙自空亦有大难，然子孙只宜安静、官鬼不宜空伏；王洪绪：僧道医官以子孙为用，父动则伤、用药不灵）",
+      "rule": {
+        "yi": "僧官、道官、医官和阴阳官，都要子孙出现、有气不空才吉。父母发动，必有灾祸悔恨；父母带太岁、月建、日辰，就不是自身有灾病，而是外来的祸；子孙自己空亡，也有大难；但子孙只适宜安静，官鬼不适宜空伏，两样都要顾到，要仔细。王洪绪说：僧官、道官、医官都以子孙为用，父母发动就伤害他们，用药不灵，反而不好。",
+        "en": "Monk-officials, Daoist officials, physician-officials and officials of yin-yang divination all need Output to appear, with breath and not Void, to be auspicious. If Resource moves, there will surely be calamity and regret; if Resource carries the Tai Sui, the Month or the Day, it is not calamity or illness in oneself but a misfortune from outside; if Output is Void by itself, there is also a great calamity; but Output should only be still and Pressure should not be Void or hidden, and both must be satisfied, with care. Wang Hongxu says: monk-officials, Daoist officials and physician-officials all take Output as the Subject, and if Resource moves it injures them, medicines do not work and on the contrary it is bad."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7748, 7748],
+          "zh": ["僧道医官，岂可文书发动。"],
+          "yi": ["僧官、道官、医官，怎么可以文书（父母）发动。"],
+          "en": ["For monk-officials, Daoist officials and physician-officials, how can Resource, the document line, move."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [7749, 7749],
+          "zh": ["僧道医官，及阴阳官，皆要子孙出现，有气不空为吉。", "父母发动，必有灾悔。", "父带太岁月建日辰，则非身有灾病，乃外来祸也。", "子孙自空，亦有大难。", "然子孙只宜安静，官鬼不宜空伏。", "虽两全，仔细为妙。"],
+          "yi": ["僧官、道官和阴阳官，都要子孙出现、有气不空才吉。", "父母发动，必有灾祸悔恨。", "父母带太岁、月建、日辰，就不是自身有灾病，而是外来的祸。", "子孙自己空亡，也有大难。", "但是子孙只适宜安静，官鬼不适宜空伏。", "虽然两样都要顾到，要仔细才好。"],
+          "en": ["Monk-officials, Daoist officials and officials of yin-yang divination all need Output to appear, with breath and not Void, to be auspicious.", "If Resource moves, there will surely be calamity and regret.", "If Resource carries the Tai Sui, the Month or the Day, it is not calamity or illness in oneself but a misfortune from outside.", "If Output is Void by itself, there is also a great calamity.", "But Output should only be still, and Pressure should not be Void or hidden.", "Though both must be satisfied, it is best to be careful."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1980, 1980],
+          "zh": ["僧道医官皆以子孙为用，如父动则伤僧道医官，则用药不灵，反为不美。", "克冲须防是非。"],
+          "yi": ["僧官、道官、医官都以子孙为用，如果父母发动就伤害僧官、道官、医官，用药不灵，反而不好。", "克冲要提防是非。"],
+          "en": ["Monk-officials, Daoist officials and physician-officials all take Output as the Subject, and if Resource moves it injures the monk, Daoist or physician official, medicines do not work and on the contrary it is bad.", "With a control or clash, beware of dispute."] }
+      ],
+      "note": {
+        "yi": "「僧官、道官」是管理僧道的官（僧纲、道纪一类），「医官」是太医院、医学的官，「阴阳官」是管天文、历数、风水的官。这几种官都是以子孙为用神：子孙是福德，也是僧道医药的象（见疾病域 LY.ILL.HDY.13 子孙是医药僧道）。父母是文书，发动就克子孙，所以不宜。旧注里的「官鬼不宜空伏」是说子孙虽好，也不能没有官鬼，因为这毕竟是占官。王洪绪只讲子孙为用、父动则伤。",
+        "en": "'Monk-officials and Daoist officials' are the officials who manage monks and Daoists (the Buddhist and the Daoist registrars), 'physician-officials' are officials of the Imperial Academy of Medicine and the medical offices, and 'officials of yin-yang divination' are those in charge of astronomy, the calendar and geomancy. For all of these kinds of officials Output is the Subject: Output is the blessing, and it is also the image of monks, Daoists, physicians and medicine (see in the domain of illness LY.ILL.HDY.13, Output is medicine, monks and Daoists). Resource is the documents, and moving it controls Output, which is why it is unsuitable. The old commentary's 'Pressure should not be Void or hidden' says that however good Output is, Pressure cannot be missing either, since this is after all divining an office. Wang Hongxu says only that Output is the Subject and that Resource moving injures it."
+      },
+      "see": ["LY.CAREER.HJC.07", "LY.ILL.HDY.13"]
+    },
+    {
+      "id": "LY.CAREER.HJC.28",
+      "topic": "总则",
+      "chapter": "仕宦",
+      "chapter_en": "Holding office",
+      "title": "仕宦·但随职分以推详，可识仕途之否泰（全章结语：按所任之职推断，才看得出仕途的顺逆）",
+      "rule": {
+        "yi": "占仕宦，要按所任的职位和职分来推断，才能看出仕途的顺逆。这是仕宦章的结语：前面各联是按官职的种类分的（风宪、牧民、将帅、出巡、谏官、僧道医官），用的时候先判断问的是哪一类职位，再取相应的一联。",
+        "en": "In divining official posts, one must infer according to the post held and its duties, and then the smoothness or blockage of an official career can be known. This is the closing line of the chapter on holding office: the couplets before it are divided by the kind of office (censorate, shepherding the people, commander, touring, remonstrance, monk, Daoist and physician officials), and in use one first judges what kind of post is being asked about and then takes the corresponding couplet."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [7751, 7751],
+          "zh": ["但随职分以推详，可识仕途之否泰。"],
+          "yi": ["只要顺着所任的职位和职分来推断，就能看出仕途的顺逆。"],
+          "en": ["Only follow the duties of the post held in inferring, and the smoothness or blockage of an official career can be known."] },
+        { "by": "经", "book": "卜筮正宗", "range": [1982, 1982],
+          "zh": ["但随职分以推详，可识仕途之否泰。"],
+          "yi": ["只要顺着所任的职位和职分来推断，就能看出仕途的顺逆。"],
+          "en": ["Only follow the duties of the post held in inferring, and the smoothness or blockage of an official career can be known."] }
+      ],
+      "note": {
+        "yi": "「职分」是官职和它的职责；「否泰」是否（不通）和泰（通）两个卦，指不顺和顺利。卜筮大全和卜筮正宗这一句字句相同。这一章里的各联，有的是通用的（财、官、父、子、兄在仕宦里的意思，见 LY.CAREER.HJC.01 至 HJC.06），有的是专讲某一类职位的（HJC.19 至 HJC.27），结语是提醒这一点。",
+        "en": "'The duties of the post' are the office and what it is charged with, and 'smoothness or blockage' are the two hexagrams Pi (blocked) and Tai (open), meaning unfavourable and favourable. The Bushi Daquan and the Bushi Zhengzong have this line in identical words. Some couplets of this chapter are general (what Wealth, Pressure, Resource, Output and Peer mean in holding office, see LY.CAREER.HJC.01 to HJC.06) and some speak of one kind of post (HJC.19 to HJC.27), and the closing line reminds one of this."
+      },
+      "see": ["LY.CAREER.HJC.01", "LY.CAREER.HJC.19"]
+    }
+  ]
+}

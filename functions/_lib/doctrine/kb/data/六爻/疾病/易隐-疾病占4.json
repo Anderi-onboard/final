@@ -1,0 +1,198 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "易隐",
+  "chapter": "疾病占",
+  "chapter_en": "Divining illness",
+  "ranges": {"易隐": [3017, 3029]},
+  "units": [
+    {
+      "id": "LY.ILL.YY.27",
+      "topic": "神祟",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "鬼崇·祈禳：以官鬼为用，无鬼或鬼空绝则无鬼崇；官鬼生合世用宜祈祷、官持世用先祷后医、鬼动克世用而福动救助宜禳保、世用持财逢火鬼动宜众保；阳鬼为神、阴官为鬼、鬼带书贵为神",
+      "rule": {
+        "yi": "以官鬼为用爻：卦里没有鬼，或者鬼遇到空、绝，就没有鬼崇。官鬼来生、合世爻和用爻的，适合祈祷；官爻持着世爻、用爻的，先祈祷后医治；鬼发动刑害克冲世爻、用爻，而有福神发动来救助的，适合禳解保佑；世爻、用爻持着财、又遇火鬼发动的，适合大家一起保祷。问祈禳的是哪一路神鬼：阳鬼是神，阴官是鬼；鬼带文书、贵人的，是神。",
+        "en": "The Pressure line is the Subject: if there is no ghost in the hexagram, or the ghost meets Void or Extinction, there are no ghostly influences. If the Pressure line generates or combines with the Self and the Subject, prayer is fitting; if Pressure holds the Self and Subject, pray first and treat afterwards; if the ghost moves to punish, harm, control or clash the Self and Subject and Fortune moves to rescue and help, exorcism and protection suit; if the Self and Subject hold Wealth and a Fire ghost moves, a communal rite of protection suits. To ask which spirit or ghost the prayer is for: a yang ghost is a spirit and a yin Pressure line is a ghost; a ghost carrying the Document and the Noble is a spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3019, 3019],
+          "zh": ["以官鬼为用，如卦无鬼及鬼逢空绝者，则无鬼崇也。", "官鬼生合世用者，宜祈祷也。", "官持世用者，先祷后医也。", "鬼动刑害克冲世用，得福动来救助者，宜禳保也。", "世用持财，逢火鬼动者，宜众保也。", "问祈禳是何神鬼，则阳鬼为神，阴官为鬼也。", "又鬼带书贵者，为神也。"],
+          "yi": ["以官鬼为用爻；如果卦里没有鬼，或者鬼遇到空、绝，就没有鬼崇。", "官鬼来生、合世爻和用爻的，适合祈祷。", "官爻持着世爻、用爻的，先祈祷后医治。", "鬼发动刑、害、克、冲世爻、用爻，而有福神发动来救助的，适合禳解保佑。", "世爻、用爻持着财，又遇火鬼发动的，适合大家一起保祷。", "问祈禳的是哪一路神鬼：阳鬼是神，阴官是鬼。", "又，鬼带文书、贵人的，是神。"],
+          "en": ["The Pressure line is the Subject; if there is no ghost in the hexagram, or the ghost meets Void or Extinction, there are no ghostly influences.", "If the Pressure line generates or combines with the Self and the Subject, prayer is fitting.", "If Pressure holds the Self and the Subject, pray first and treat afterwards.", "If the ghost moves to punish, harm, control or clash the Self and Subject and Fortune moves to rescue and help, exorcism and protection suit.", "If the Self and Subject hold Wealth and a Fire ghost moves, a communal rite of protection suits.", "To ask which spirit or ghost the prayer and exorcism is for: a yang ghost is a spirit and a yin Pressure line is a ghost.", "Also a ghost carrying the Document and the Noble is a spirit."] }
+      ],
+      "dispute": {
+        "yi": "怎么分神和鬼：易隐说「阳鬼为神，阴官为鬼」，按鬼爻是阴爻还是阳爻分；这和卜筮正宗的王洪绪「阳为神为男，阴为鬼为女」一致（LY.ILL.HJC.94），而黄金策的旧注和增删卜易的觉子都是按旺衰分——旺相是神、休囚是鬼（LY.ILL.HJC.94、LY.ILL.ZS.23），觉子还说鬼休囚或空破墓绝根本不是鬼神作祟。两种分法不同，书里没有裁决。",
+        "en": "How to tell a spirit from a ghost: the Yi Yin says 'a yang ghost is a spirit, a yin Pressure line is a ghost', by whether the Pressure line is a yin or a yang line; this agrees with Wang Hongxu of the Bushi Zhengzong, 'yang is a spirit and male, yin a ghost and female' (LY.ILL.HJC.94), while the old commentary of the Huangjin Ce and Juezi of the Zengshan Buyi both go by strength — strong is a spirit, resting or trapped a ghost (LY.ILL.HJC.94 and LY.ILL.ZS.23), and Juezi adds that if the ghost is resting, trapped, Void, broken, in a tomb or in Extinction it is not a ghost or spirit making trouble at all. The two divide differently and the books do not decide."
+      },
+      "note": {
+        "yi": "「祈祷」「禳保」「众保」是三种不同的仪式：祈祷是向神祈求，禳保是禳解并求保佑，众保是众人一起（如社里的会）保祷。「书贵」按字面是文书、贵人两颗星，书里没有再解释。",
+        "en": "'Qidao', 'rangbao' and 'zhongbao' are three different rites: prayer is asking a spirit, 'rangbao' is exorcism together with a request for protection, and 'zhongbao' is protection sought by many together (as in a village society). 'Shugui' is literally the Document and the Noble stars and the book does not explain further."
+      },
+      "see": ["LY.ILL.YY.26", "LY.ILL.YY.28", "LY.ILL.HJC.93", "LY.ILL.HJC.94", "LY.ILL.ZS.23"]
+    },
+    {
+      "id": "LY.ILL.YY.28",
+      "topic": "神祟",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "鬼崇·神与鬼的名目：阳金鬼庵堂关圣（在虎为七煞）、阴金鬼刀伤自刎痨瘵喘嗽虎伤之魂；阳木鬼东岳五圣家先、阴木鬼自缢疯疾跌扑刑杖死；阳水鬼观音真武三官水神河泊、阴水鬼投河服卤呕血；阳火鬼玄坛五福火神灶司、阴火鬼疮毒痨疫带血心疼烧死；阳土鬼城隍土谷太岁皮场大王、阴土鬼瘟疫咽喉臌胀黄疸压死",
+      "rule": {
+        "yi": "按五行和阴阳分神和鬼：阳金鬼是庵堂、关圣，带白虎的是七煞；阴金鬼是死于刀伤、自刎、痨病、喘嗽、虎伤的魂。阳木鬼是东岳、五圣、家先香火；阴木鬼是自缢、疯病、跌扑、被杖刑打死的魂。阳水鬼是观音、真武、三官、水神、张神、河泊、水官；阴水鬼是投河、喝卤水、呕血而死的魂。阳火鬼是玄坛、五福、火神、灶司的香火；阴火鬼是死于疮毒、痨病、瘟疫、带血、心痛、烧死的魂。阳土鬼是城隍、土谷、太岁、皮场大王和土神；阴土鬼是死于瘟疫、咽喉病、臌胀、黄疸、被压死的魂。",
+        "en": "Spirits and ghosts by element and by yin and yang: a yang Metal ghost is the temples and halls and Guan Sheng, and with the Tiger the Seven Killings; a yin Metal ghost is the souls of those who died of blade wounds, cutting their own throats, consumption, wheezing cough or a tiger's bite. A yang Wood ghost is the Eastern Peak, the Five Sages and the incense of family forebears; a yin Wood ghost the souls of those who hanged themselves or died of madness, falls and blows, or a beating with the rod. A yang Water ghost is Guanyin, Zhenwu, the Three Officials, the water spirits, the Zhang spirit, the Lord of the River and the Water Official; a yin Water ghost the souls of those who threw themselves into a river, drank brine or vomited blood. A yang Fire ghost is the incense of the Dark Altar, the Five Blessings, the Fire God and the Kitchen Official; a yin Fire ghost the souls of those who died of sores and poison, consumption, epidemic, bleeding, heart pain or burning. A yang Earth ghost is the City God, the Earth and Grain gods, the Tai Sui, the Great King of the Hide Market and earth spirits; a yin Earth ghost the souls of those who died of epidemic, throat disease, swelling, jaundice or being crushed."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3019, 3019],
+          "zh": ["阳金鬼，庵堂关圣，在虎七煞也。", "阴金鬼，则刀伤自刎痨瘵喘嗽虎伤之魂也。", "阳木鬼，束岳五圣家先香火也。", "阴木鬼，则自缢疯疾跌扑刑杖死之魂也。", "阳水鬼，观音真武三官水神张神河泊水官也。", "阴水鬼，则投河服滷呕血之魂也。", "阳火鬼，玄坛五福火神灶司香火也。", "阴火鬼，则疮毒痨(此处之字上疒下去)疫瘟带血心疼烧死之魂也。", "阳土鬼，城隍土谷太岁皮场大王土神也。", "阴土鬼，则瘟疫咽喉臌胀黄疸压死之魂也。"],
+          "yi": ["阳金鬼，是庵堂、关圣；带白虎的，是七煞。", "阴金鬼，是死于刀伤、自刎、痨病、喘嗽、虎伤的魂。", "阳木鬼，是东岳（原书写作「束岳」）、五圣、家先香火。", "阴木鬼，是自缢、疯病、跌扑、被杖刑打死的魂。", "阳水鬼，是观音、真武、三官、水神、张神、河泊、水官。", "阴水鬼，是投河、喝卤水、呕血而死的魂。", "阳火鬼，是玄坛、五福、火神、灶司的香火。", "阴火鬼，是死于疮毒、痨病（此处原书有一个上面病字头、下面「去」字的生僻字）、疫瘟、带血、心疼、烧死的魂。", "阳土鬼，是城隍、土谷、太岁、皮场大王和土神。", "阴土鬼，是死于瘟疫、咽喉病、臌胀、黄疸、被压死的魂。"],
+          "en": ["A yang Metal ghost is the temples and halls and Guan Sheng; with the Tiger, the Seven Killings.", "A yin Metal ghost is the souls of those who died of blade wounds, cutting their own throats, consumption, wheezing cough or a tiger's bite.", "A yang Wood ghost is the Eastern Peak (the book writes 'Shu Yue', probably a slip for 'Dong Yue'), the Five Sages and the incense of family forebears.", "A yin Wood ghost is the souls of those who hanged themselves or died of madness, falls and blows, or a beating with the rod.", "A yang Water ghost is Guanyin, Zhenwu, the Three Officials, the water spirits, the Zhang spirit, the Lord of the River and the Water Official.", "A yin Water ghost is the souls of those who threw themselves into a river, drank brine or vomited blood.", "A yang Fire ghost is the incense of the Dark Altar, the Five Blessings, the Fire God and the Kitchen Official.", "A yin Fire ghost is the souls of those who died of sores and poison, consumption together with (a rare ailment character which the transcriber notes here, written with the sickness radical above and 'go' below), epidemic, bleeding, heart pain or burning.", "A yang Earth ghost is the City God, the Earth and Grain gods, the Tai Sui, the Great King of the Hide Market and earth spirits.", "A yin Earth ghost is the souls of those who died of epidemic, throat disease, swelling, jaundice or being crushed."] }
+      ],
+      "dispute": {
+        "yi": "要不要把五行落实到具体的神：易隐按阳鬼、阴鬼列了很具体的名目（阳金鬼是庵堂关圣，阳木鬼是东岳五圣，阳水鬼是观音真武三官……），黄金策的旧注也列过（灶君、伤司、河伯江神，LY.ILL.HJC.97）；增删卜易的觉子认为不必把金官指为关公岳公这样的神，要问病人心里疑的是哪位再占一卦（LY.ILL.ZS.24），李我平更批评《易冒》《易林补遗》指定关岳（LY.ILL.ZS.25）。指名派和不指名派，书里没有裁决。",
+        "en": "Whether to fix the elements to particular named spirits: the Yi Yin gives very specific names by yang and yin ghost (a yang Metal ghost the temples and Guan Sheng, a yang Wood ghost the Eastern Peak and the Five Sages, a yang Water ghost Guanyin, Zhenwu and the Three Officials...), and the old commentary of the Huangjin Ce also lists names (the Kitchen God, the Injuring Office, the Lord of the River and river god, LY.ILL.HJC.97); Juezi of the Zengshan Buyi holds that one should not name Metal Pressure as Guan Gong, Yue Gong and the like but ask which spirit the patient has in mind and divine again (LY.ILL.ZS.24), and Li Woping criticises the Yi Mao and the Yilin Buyi for naming Guan and Yue (LY.ILL.ZS.25). The naming school and the non-naming school are not settled by the books."
+      },
+      "note": {
+        "yi": "阳鬼是神的一列（庙里的神），阴鬼是鬼的一列（死于什么的魂）。「关圣」是关帝（关羽），「玄坛」是赵公明（财神），「真武」是北方之神，「三官」是天、地、水三官，「五福」「五圣」「张神」「皮场大王」是民间信奉的神，书里没有一一解释，按字面译。「七煞」「在虎七煞」书里没有再解释。「滷」是卤水（盐卤，自尽用）。整理本在「阴火鬼」一句里也有那个生僻的病字的说明。",
+        "en": "The yang ghosts are the column of spirits (the gods of the temples) and the yin ghosts the column of ghosts (the souls of those who died of one cause or another). 'Guan Sheng' is Emperor Guan (Guan Yu), 'Xuantan' is Zhao Gongming (god of wealth), 'Zhenwu' is the god of the north, the 'Three Officials' are the Officials of Heaven, Earth and Water, and the 'Five Blessings', 'Five Sages', 'Zhang spirit' and 'Great King of the Hide Market' are gods worshipped among the people whom the book does not explain one by one, rendered literally. The 'Seven Killings' and 'with the Tiger the Seven Killings' are not explained further. 'Lu' is brine (salt brine, used to end one's life). In the sentence on the yin Fire ghost the transcriber again notes the rare ailment character."
+      },
+      "see": ["LY.ILL.YY.27", "LY.ILL.YY.29", "LY.ILL.HJC.97", "LY.ILL.HJC.103", "LY.ILL.ZS.23", "LY.ILL.ZS.24", "LY.ILL.ZS.25"]
+    },
+    {
+      "id": "LY.ILL.YY.29",
+      "topic": "神祟",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "鬼崇·鬼带的煞：加金虎刑杀死于非命、居游魂外卦客死他乡、加天火天烛独火烧死、天贼天盗劫杀因盗致死、沐浴咸池奸淫娼妓、木狼天缢缢死、风波浴盆浮沉溺死、羊刃刀砧屠刽鬼、暗金血刃产亡鬼、天刑天狱地狱牢狱入狱牢狱鬼、刀砧羊刃劫杀自刎鬼、华盖孤神僧道绝嗣鬼、螣蛇天怪精怪妖邪；鬼居太岁是当年岁君、居月日时是游野神",
+      "rule": {
+        "yi": "看鬼带的煞：鬼带金、白虎、刑煞的，是死于非命；鬼落在游魂卦的外卦的，是客死他乡；带天火、天烛、独火煞的，是烧死；带天贼、天盗、劫煞的，是因盗致死；带沐浴、咸池煞的，是奸淫、娼妓；带木狼、天缢煞的，是缢死；带风波、浴盆、浮沉煞的，是溺死；带羊刃、刀砧煞的，是屠夫刽子手的鬼；带暗金、血刃煞的，是产亡的鬼；带天刑、天狱、地狱、牢狱、入狱煞的，是牢狱的鬼；带刀砧、羊刃、劫煞的，是自刎的鬼；带华盖、孤神的，是僧道、绝了后的鬼；带螣蛇、天怪煞的，是精怪妖邪。鬼落在太岁上的，是当年的岁君；落在月、日、时上的，是游荡在野外的神。",
+        "en": "By the stars the ghost carries: a ghost carrying Metal, the Tiger and punishing stars is one who died an unnatural death; a ghost in the outer trigram of a Wandering Soul hexagram, one who died a stranger in a far land; with Heavenly Fire, Heavenly Candle and Lone Fire, burned to death; with Heavenly Thief, Heavenly Robber and Robbery-Killing, dead through robbers; with Bath and Xianchi, adultery and prostitution; with Wood Wolf and Heavenly Hanging, hanged; with Wind-and-Waves, Bath Basin and Floating-Sinking, drowned; with Goat Blade and Chopping Block, a butcher or executioner ghost; with Hidden Metal and Blood Blade, a ghost who died in childbirth; with Heavenly Punishment, Heavenly Prison, Earthly Prison, Jail and Entering-Prison, a jail ghost; with Chopping Block, Goat Blade and Robbery-Killing, a ghost who cut his own throat; with Canopy and Lone Spirit, a monk or Daoist, one who left no heir; with the Coiling Snake and Heavenly Monster, a sprite, monster or evil. A ghost on the Tai Sui is the Year Lord of the year, and one on the Month, Day or hour a wandering field spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3019, 3019],
+          "zh": ["又鬼加金虎刑杀者，死于非命也。", "鬼居游魂外卦者，客死他乡也。", "鬼加天火天烛独火杀者，烧死也。", "鬼加天贼天盗劫杀者，因盗致死也。", "鬼加沐浴咸池杀者，奸淫娼妓也。", "鬼加木狼，天缢杀者，缢死也。", "鬼加风波浴盆浮沉杀者，溺死也。", "鬼加羊刃刀砧杀者，屠刽鬼也。", "鬼带暗金血刃杀者，产亡鬼也。", "鬼带天刑天狱地狱牢狱入狱杀者，牢狱鬼也。", "鬼加刀砧羊刃劫杀者，自刎鬼也。", "鬼带华盖孤神者，僧道绝嗣鬼也。", "鬼加螣蛇天怪杀者，精怪妖邪也。", "鬼居太岁者，当年岁君也。", "鬼居月日时上者，游野神也。"],
+          "yi": ["又，鬼带金、白虎、刑煞的，是死于非命。", "鬼落在游魂卦的外卦里的，是客死他乡。", "鬼带天火、天烛、独火煞的，是烧死。", "鬼带天贼、天盗、劫煞的，是因为盗贼致死。", "鬼带沐浴、咸池煞的，是奸淫、娼妓。", "鬼带木狼、天缢煞的，是缢死。", "鬼带风波、浴盆、浮沉煞的，是溺死。", "鬼带羊刃、刀砧煞的，是屠夫、刽子手的鬼。", "鬼带暗金、血刃煞的，是产亡的鬼。", "鬼带天刑、天狱、地狱、牢狱、入狱煞的，是牢狱的鬼。", "鬼带刀砧、羊刃、劫煞的，是自刎的鬼。", "鬼带华盖、孤神的，是僧道、绝了后的鬼。", "鬼带螣蛇、天怪煞的，是精怪妖邪。", "鬼落在太岁上的，是当年的岁君。", "鬼落在月、日、时上的，是游荡在野外的神。"],
+          "en": ["Also a ghost carrying Metal, the Tiger and punishing stars: death by unnatural causes.", "A ghost in the outer trigram of a Wandering Soul hexagram: one who died a stranger in a far land.", "A ghost carrying Heavenly Fire, Heavenly Candle and Lone Fire: burned to death.", "A ghost carrying Heavenly Thief, Heavenly Robber and Robbery-Killing: dead through robbers.", "A ghost carrying Bath and Xianchi: adultery and prostitution.", "A ghost carrying Wood Wolf and Heavenly Hanging: hanged.", "A ghost carrying Wind-and-Waves, Bath Basin and Floating-Sinking: drowned.", "A ghost carrying Goat Blade and Chopping Block: a butcher or executioner ghost.", "A ghost carrying Hidden Metal and Blood Blade: a ghost who died in childbirth.", "A ghost carrying Heavenly Punishment, Heavenly Prison, Earthly Prison, Jail and Entering-Prison: a jail ghost.", "A ghost carrying Chopping Block, Goat Blade and Robbery-Killing: a ghost who cut his own throat.", "A ghost carrying Canopy and Lone Spirit: a monk or Daoist, one who left no heir.", "A ghost carrying the Coiling Snake and Heavenly Monster: a sprite, monster or evil.", "A ghost on the Tai Sui: the Year Lord of the year.", "A ghost on the Month, Day or hour: a wandering field spirit."] }
+      ],
+      "note": {
+        "yi": "天火、天烛、独火、天贼、天盗、劫煞、咸池、木狼、天缢、风波、浴盆、浮沉、羊刃、刀砧、暗金、血刃、天刑、天狱、地狱、牢狱、入狱、华盖、孤神、天怪都是神煞，书里只给了名目和它们指向的死因，没有解释每一颗从何而来。易冒有一套神煞起法（见易冒神煞章），但这里没有指明用哪一套。「岁君」就是太岁。「游魂」是八宫里每宫的第七卦。「刽」是刽子手，即行刑的人。",
+        "en": "Heavenly Fire, Heavenly Candle, Lone Fire, Heavenly Thief, Heavenly Robber, Robbery-Killing, Xianchi, Wood Wolf, Heavenly Hanging, Wind-and-Waves, Bath Basin, Floating-Sinking, Goat Blade, Chopping Block, Hidden Metal, Blood Blade, Heavenly Punishment, Heavenly Prison, Earthly Prison, Jail, Entering-Prison, Canopy, Lone Spirit and Heavenly Monster are all spirit-stars; the book gives only the names and the causes of death they point to and does not explain where each comes from. The Yi Mao has a scheme for setting these stars (see its chapter on spirit-stars) but this passage does not say which scheme is meant. 'Year Lord' is the Tai Sui. 'Wandering Soul' is the seventh hexagram of each palace among the eight. A 'gui' is an executioner, one who carries out the punishment."
+      },
+      "see": ["LY.ILL.YY.28", "LY.ILL.YY.30", "LY.ILL.HJC.103", "LY.ILL.ZS.23"]
+    },
+    {
+      "id": "LY.ILL.YY.30",
+      "topic": "神祟",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "鬼崇·是谁的鬼：父母伏鬼化鬼阳父阴母、兄弟阳兄弟阴姐妹、妻财阳妻奴阴妾婢、子孙阳男阴女；鬼在本宫内卦同姓、他宫外卦异姓；交重大鬼、单拆小鬼；衰墓老年旧鬼、生旺壮年新鬼、胎养孩童鬼；乾宫祖宗与父、坤宫祖妣与母、震坎艮男、巽离兑女；几个鬼按一水二火三木四金五土之数，旺相加倍、休如数、囚死减半",
+      "rule": {
+        "yi": "看是谁的鬼：父母爻下伏着鬼、或变出鬼的，阳爻是父亲，阴爻是母亲；兄弟爻下伏鬼、变鬼的，阳爻是兄弟，阴爻是姐妹；妻财爻下伏鬼、变鬼的，阳爻是妻子和奴仆，阴爻是妾和婢女；子孙爻下伏鬼、变鬼的，阳爻是男的，阴爻是女的。鬼在本宫内卦的，是同姓的鬼；在别的宫、外卦的，是异姓的鬼。发动的是大鬼，不动的是小鬼；衰弱、入墓的是年老的旧鬼，生旺的是壮年的新鬼，胎、养是孩童的鬼（阳男阴女）。按八卦：乾宫的鬼是祖宗和父亲，坤宫的鬼是祖母和母亲，震、坎、艮宫的鬼是男的，巽、离、兑宫的鬼是女的。问有几个鬼，按一水、二火、三木、四金、五土的数来推，旺相的加倍，休的照原数，囚、死的减半。",
+        "en": "Whose ghost it is: Resource with a ghost hidden beneath it or changing into a ghost — yang is the father, yin the mother; Peer with a ghost hidden beneath or changing into one — yang brothers, yin sisters; Wealth with a ghost — yang a wife or manservant, yin a concubine or maid; Output with a ghost — yang male, yin female. A ghost in the inner trigram of the home palace is a ghost of the same surname, and one in the outer trigram of another palace a ghost of another surname. A moving ghost is a great ghost and a still one a small ghost; weak or in a tomb, an old ghost of long standing; born or strong, a ghost of the prime of life, newly dead; at Womb or Nurture, a child's ghost (yang a boy, yin a girl). By the eight trigrams: a ghost in the Qian palace is an ancestor or the father, in Kun a grandmother or the mother, in Zhen, Kan or Gen male, in Xun, Li or Dui female. To ask how many ghosts there are, work by the numbers Water one, Fire two, Wood three, Metal four, Earth five: if strong, double it; if resting, as given; if trapped or dead, halve it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3019, 3019],
+          "zh": ["又父母伏鬼化鬼者，阳父阴母也。", "兄弟伏鬼化鬼者，阳兄弟，阴姐妹也。", "妻财伏鬼化鬼者，阳妻奴阴妾婢也。", "子孙伏鬼化鬼者，阳男阴女也。", "鬼在本宫内卦，同姓鬼也。", "鬼在他宫外卦，异姓鬼也。", "交重，大鬼。", "单拆，小鬼。", "衰墓，老年旧鬼。", "生旺，壮年新鬼。", "胎养，孩童鬼，阳男阴女也。", "又八卦乾宫鬼，祖宗与父。", "坤宫鬼，祖妣与母也。", "震坎艮宫鬼，男也。", "巽离兑宫鬼，女也。", "问有几鬼，以一水二火三木四金五土之数推之。", "旺相加倍，休如数，囚死减半也。"],
+          "yi": ["又，父母爻下伏着鬼、或变出鬼的，阳爻是父亲，阴爻是母亲。", "兄弟爻下伏着鬼、或变出鬼的，阳爻是兄弟，阴爻是姐妹。", "妻财爻下伏着鬼、或变出鬼的，阳爻是妻子和奴仆，阴爻是妾和婢女。", "子孙爻下伏着鬼、或变出鬼的，阳爻是男的，阴爻是女的。", "鬼在本宫的内卦，是同姓的鬼。", "鬼在别的宫、外卦，是异姓的鬼。", "发动的，是大鬼。", "不动的，是小鬼。", "衰弱、入墓的，是年老的旧鬼。", "生旺的，是壮年的新鬼。", "胎、养，是孩童的鬼，阳爻是男孩，阴爻是女孩。", "又按八卦：乾宫的鬼是祖宗和父亲。", "坤宫的鬼是祖母和母亲。", "震、坎、艮宫的鬼是男的。", "巽、离、兑宫的鬼是女的。", "问有几个鬼，按一水、二火、三木、四金、五土的数来推。", "旺相的加倍，休的照原数，囚、死的减半。"],
+          "en": ["Also Resource with a ghost hidden beneath it or changing into a ghost: yang is the father, yin the mother.", "Peer with a ghost hidden beneath it or changing into a ghost: yang, brothers; yin, sisters.", "Wealth with a ghost hidden beneath it or changing into a ghost: yang, a wife or manservant; yin, a concubine or maid.", "Output with a ghost hidden beneath it or changing into a ghost: yang, male; yin, female.", "A ghost in the inner trigram of the home palace: a ghost of the same surname.", "A ghost in the outer trigram of another palace: a ghost of another surname.", "Moving: a great ghost.", "Still: a small ghost.", "Weak or in a tomb: an old ghost of long standing.", "Born or strong: a ghost of the prime of life, newly dead.", "At Womb or Nurture: a child's ghost, yang a boy, yin a girl.", "Again by the eight trigrams: a ghost in the Qian palace is an ancestor or the father.", "A ghost in the Kun palace is a grandmother or the mother.", "A ghost in the Zhen, Kan or Gen palace is male.", "A ghost in the Xun, Li or Dui palace is female.", "To ask how many ghosts there are, work by the numbers: Water one, Fire two, Wood three, Metal four, Earth five.", "If strong, double it; if resting, as given; if trapped or dead, halve it."] }
+      ],
+      "note": {
+        "yi": "「交重」是发动的爻，「单拆」是不动的爻（单是阳爻、拆是阴爻）。「祖妣」是祖母。「坎」是中男，「艮」是少男，「巽」是长女，「离」是中女，「兑」是少女，这几宫的鬼按男女分。黄金策的旧注和王洪绪也有按长生、帝旺、衰弱、胎养分年龄、按乾巽分方位的说法（LY.ILL.HJC.94），这里多了按六亲、按本宫他宫分同姓异姓、按卦宫分男女和按五行之数推几个鬼几条；卦身推是谁的鬼见 LY.ILL.HJC.102。",
+        "en": "'Jiaozhong' is a moving line and 'danchai' a still line (dan a yang line, chai a yin line). 'Zubi' is the grandmother. Kan is the middle son, Gen the youngest son, Xun the eldest daughter, Li the middle daughter and Dui the youngest daughter, and the ghosts of these palaces are divided by sex. The old commentary and Wang Hongxu on the Huangjin Ce also have the age by Birth, Peak, decline, Womb and Nurture and the direction by Qian and Xun (LY.ILL.HJC.94); this adds telling by relation which ghost it is, the same or a different surname by home palace or another, sex by trigram, and the number of ghosts by the number of the element; for telling whose ghost it is by the Body see LY.ILL.HJC.102."
+      },
+      "see": ["LY.ILL.YY.29", "LY.ILL.YY.31", "LY.ILL.HJC.94", "LY.ILL.HJC.102", "LY.ILL.HJC.104"]
+    },
+    {
+      "id": "LY.ILL.YY.31",
+      "topic": "神祟",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "鬼崇·祭礼（曹子虚）：祈禳用何祭礼看鬼之食神；鬼属甲食在丙禄居巳宜炒鸡煎腐，乙食丁禄午宜干脯炒荳，丙食戊禄巳，丁食己禄午，戊食庚禄申宜三牲馒首果饼，己食辛禄酉宜鸡肉鱼馄饨，庚食壬禄亥宜猪首三牲，辛食癸禄子宜池鱼血羹麦面，壬食甲禄寅宜三牲时果新蔬，癸食乙禄卯宜鸡鹅鸭蔬果鸭蛋；送于何方以鬼爻支神定；子带龙雀素祭、带勾蛇虎武荤盘、伏化水鬼水父佛经、火鬼火父道醮、化财伏财福礼、化兄伏兄演戏众保",
+      "rule": {
+        "yi": "曹子虚说：祈禳用什么祭品礼数，要看鬼的食神。鬼属甲，食神在丙，禄在巳，用炒鸡、煎豆腐、酒、礼、纸钱纸马送走；鬼属乙，食神在丁，禄在午，用干肉脯、炒豆、酒、礼、纸钱纸马；属丙，食神在戊，禄在巳，同属甲的祭品；属丁，食神在己，禄在午，同属乙的祭品；属戊，食神在庚，禄在申，用三牲、馒头、果饼、酒、礼、纸钱纸马；属己，食神在辛，禄在酉，用鸡肉、鱼、馄饨、酒、礼、纸钱纸马；属庚，食神在壬，禄在亥，用猪头、三牲、酒、礼、纸钱纸马；属辛，食神在癸，禄在子，用池里的鱼、血羹、麦面、酒、礼、纸钱纸马；属壬，食神在甲，禄在寅，用三牲、时鲜的果子、新蔬菜、酒、礼、纸钱纸马；属癸，食神在乙，禄在卯，用鸡、鹅、鸭、蔬果、鸭蛋、酒、礼、纸钱纸马。送到哪个方向，以鬼爻的地支来定。如果是神，祈祷的礼数把子孙当作福神：子孙带青龙、朱雀的，适合素祭；带勾陈、螣蛇、白虎、玄武的，适合荤盘；子孙伏在水鬼或水父母下、或变出水鬼水父母的，适合念佛经；伏在火鬼或火父母下、或变出火鬼火父母的，适合道教的醮；子孙变出财、或伏在财下的，适合福礼；变出兄、或伏在兄下的，适合演戏、大家一起保祷。这是祈禳的占法。",
+        "en": "Cao Zixu says: what sacrifice and rite to use for prayer and exorcism depends on the ghost's food-star. If the ghost belongs to Jia, the food-star is Bing and the emolument is at Si, and one sends it off with stir-fried chicken, fried bean curd, wine, ritual gifts and paper money and horses; Yi: food-star Ding, emolument at Wu, dried meat, fried beans, wine, gifts and paper money and horses; Bing: food-star Wu, emolument at Si, as for Jia; Ding: food-star Ji, emolument at Wu, as for Yi; Wu: food-star Geng, emolument at Shen, the three sacrificial animals, steamed buns, fruit cakes, wine and gifts; Ji: food-star Xin, emolument at You, chicken, fish, wonton, wine and gifts; Geng: food-star Ren, emolument at Hai, a pig's head, the three animals, wine and gifts; Xin: food-star Gui, emolument at Zi, pond fish, blood soup, wheat noodles, wine and gifts; Ren: food-star Jia, emolument at Yin, the three animals, seasonal fruit, fresh vegetables, wine and gifts; Gui: food-star Yi, emolument at Mao, chicken, goose, duck, vegetables and fruit, duck eggs, wine and gifts. The direction in which to send it is fixed by the branch of the Pressure line. If it is a spirit, in the rites of prayer Output is taken as the spirit of blessing: Output carrying the Dragon and the Bird, a vegetarian sacrifice; carrying the Hook, Snake, Tiger and Tortoise, a meat platter; hidden beneath a Water ghost or Water Resource, or changing into one, Buddhist scripture; beneath a Fire ghost or Fire Resource, or changing into one, a Daoist ritual; changing into or beneath Wealth, a blessing rite; changing into or beneath Peer, a staged play and communal protection. This is the divination of prayer and exorcism."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3019, 3021],
+          "zh": ["曹子虚曰，祈禳用何祭礼，则视鬼之食神也。", "如鬼属甲，则食在丙而禄居巳也。", "宜用炒鸡煎腐酒礼财马送之也。"],
+          "yi": ["曹子虚说：祈禳用什么祭品礼数，就看鬼的食神。", "比如鬼属甲，食神在丙，禄在巳。", "适合用炒鸡、煎豆腐、酒和礼、纸钱纸马送走它。"],
+          "en": ["Cao Zixu says: what sacrifice and rite to use for prayer and exorcism depends on the ghost's food-star.", "For example, if the ghost belongs to Jia, its food-star is Bing and its emolument is at Si.", "Send it off with stir-fried chicken, fried bean curd, wine, ritual gifts and paper money and horses."] },
+        { "by": "经", "book": "易隐", "range": [3019, 3021],
+          "zh": ["鬼属乙，则食在丁而禄居午也，宜用干脯炒荳酒礼财马送之也。", "鬼属丙，则食在戊而禄居巳也，宜用炒鸡煎腐酒礼财马送之也。", "鬼属丁，则食在己而禄居午也，宜用干脯炒荳酒礼财马送之也。", "鬼属戊，则食在庚而禄居申也，宜用三牲馒首果饼酒礼财马送之也。", "鬼属己，则食在辛而禄居酉也，宜用鸡肉鱼馄饨酒礼财马送之也。", "鬼属庚，则食在壬而禄居亥也，宜用猪首三牲酒礼财马送之也。", "鬼属辛，则食在癸而禄居子也，宜用池鱼血羹麦面酒礼财马送之也。", "鬼属壬，则食在甲而禄居寅也，宜用三牲时果新蔬酒礼财马送之也。", "鬼属癸，则食在乙而禄居卯也，宜用鸡鹅鸭蔬果鸭蛋酒礼财马送之也。", "若夫送于何方，则以鬼爻之支神定之也。", "其在于神，则祈祷之礼，以子孙为福神也。", "子带龙雀者，宜素祭。", "子带勾蛇虎武者，宜荤盘。", "子伏水鬼水父下，或化水鬼水父者，宜佛经。", "子伏火鬼火父下，或化火鬼火父者，宜道醮。", "子化财伏财者，宜福礼，子化兄伏兄者，宜演戏众保也。", "此祈禳之占也。"],
+          "yi": ["鬼属乙，食神在丁，禄在午，适合用干肉脯、炒豆子、酒和礼、纸钱纸马送走它。", "鬼属丙，食神在戊，禄在巳，适合用炒鸡、煎豆腐、酒和礼、纸钱纸马送走它。", "鬼属丁，食神在己，禄在午，适合用干肉脯、炒豆子、酒和礼、纸钱纸马送走它。", "鬼属戊，食神在庚，禄在申，适合用三牲、馒头、果饼、酒和礼、纸钱纸马送走它。", "鬼属己，食神在辛，禄在酉，适合用鸡肉、鱼、馄饨、酒和礼、纸钱纸马送走它。", "鬼属庚，食神在壬，禄在亥，适合用猪头、三牲、酒和礼、纸钱纸马送走它。", "鬼属辛，食神在癸，禄在子，适合用池里的鱼、血羹、麦面、酒和礼、纸钱纸马送走它。", "鬼属壬，食神在甲，禄在寅，适合用三牲、时鲜果子、新蔬菜、酒和礼、纸钱纸马送走它。", "鬼属癸，食神在乙，禄在卯，适合用鸡、鹅、鸭、蔬菜水果、鸭蛋、酒和礼、纸钱纸马送走它。", "至于送到哪个方向，就以鬼爻的地支来定。", "如果是神，祈祷的礼数，把子孙当作福神。", "子孙带青龙、朱雀的，适合素祭。", "子孙带勾陈、螣蛇、白虎、玄武的，适合荤盘。", "子孙伏在水鬼或水父母下，或者变出水鬼水父母的，适合念佛经。", "子孙伏在火鬼或火父母下，或者变出火鬼火父母的，适合道教的醮。", "子孙变出财、或伏在财下的，适合福礼；子孙变出兄、或伏在兄下的，适合演戏、大家一起保祷。", "这是祈禳的占法。"],
+          "en": ["If the ghost belongs to Yi, its food-star is Ding and its emolument is at Wu; send it off with dried meat, fried beans, wine, ritual gifts and paper money and horses.", "If the ghost belongs to Bing, its food-star is Wu and its emolument is at Si; send it off with stir-fried chicken, fried bean curd, wine, ritual gifts and paper money and horses.", "If the ghost belongs to Ding, its food-star is Ji and its emolument is at Wu; send it off with dried meat, fried beans, wine, ritual gifts and paper money and horses.", "If the ghost belongs to Wu, its food-star is Geng and its emolument is at Shen; send it off with the three sacrificial animals, steamed buns, fruit cakes, wine, ritual gifts and paper money and horses.", "If the ghost belongs to Ji, its food-star is Xin and its emolument is at You; send it off with chicken, fish, wonton, wine, ritual gifts and paper money and horses.", "If the ghost belongs to Geng, its food-star is Ren and its emolument is at Hai; send it off with a pig's head, the three sacrificial animals, wine, ritual gifts and paper money and horses.", "If the ghost belongs to Xin, its food-star is Gui and its emolument is at Zi; send it off with pond fish, blood soup, wheat noodles, wine, ritual gifts and paper money and horses.", "If the ghost belongs to Ren, its food-star is Jia and its emolument is at Yin; send it off with the three sacrificial animals, seasonal fruit, fresh vegetables, wine, ritual gifts and paper money and horses.", "If the ghost belongs to Gui, its food-star is Yi and its emolument is at Mao; send it off with chicken, goose, duck, vegetables and fruit, duck eggs, wine, ritual gifts and paper money and horses.", "As for the direction in which to send it, it is fixed by the branch of the Pressure line.", "If it is a spirit, in the rites of prayer Output is taken as the spirit of blessing.", "If Output carries the Dragon and the Bird, a vegetarian sacrifice suits.", "If Output carries the Hook, Snake, Tiger and Tortoise, a meat platter suits.", "If Output is hidden beneath a Water ghost or Water Resource, or changes into a Water ghost or Water Resource, Buddhist scripture suits.", "If Output is hidden beneath a Fire ghost or Fire Resource, or changes into a Fire ghost or Fire Resource, a Daoist ritual suits.", "If Output changes into Wealth or is hidden beneath Wealth, a blessing rite suits; if Output changes into Peer or is hidden beneath Peer, a staged play and communal protection suit.", "This is the divination of prayer and exorcism."] }
+      ],
+      "note": {
+        "yi": "这一条在原书里跨了 3019、3021 两行。「食神」按字面是「鬼所属的天干所生的天干」（甲生丙、乙生丁……），「禄居某」是那个食神的禄位（丙禄在巳、丁禄在午、戊禄在巳、己禄在午、庚禄在申、辛禄在酉、壬禄在亥、癸禄在子、甲禄在寅、乙禄在卯）；书里没有另作解释，这里按上下文理解。「三牲」是牛、羊、猪（或猪、鸡、鱼），「财马」是纸钱纸马，「醮」是道教的法事。书里在这一段没有给出为什么某个天干配某种祭品。",
+        "en": "In the original this entry runs across lines 3019 and 3021. The 'food-star' (shishen) is literally the stem generated by the stem the ghost belongs to (Jia generates Bing, Yi generates Ding ...), and 'emolument at' is that food-star's emolument seat (Bing at Si, Ding at Wu, Wu at Si, Ji at Wu, Geng at Shen, Xin at You, Ren at Hai, Gui at Zi, Jia at Yin, Yi at Mao); the book does not explain this separately and it is understood here by context. The 'three sacrificial animals' are ox, sheep and pig (or pig, chicken and fish), 'caima' is paper money and paper horses, and 'jiao' is a Daoist rite. The book gives no reason in this passage why a given stem is matched with a given offering."
+      },
+      "see": ["LY.ILL.YY.30", "LY.ILL.YY.32"]
+    },
+    {
+      "id": "LY.ILL.YY.32",
+      "topic": "神祟",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "鬼崇·旧愿：子孙伏鬼下动克世用、或伏岁杀下动伤世用，必有旧愿未还；旺相愿大、休囚愿小；问因何许愿以官鬼为用——鬼伏世下用下是自己许、伏父母财子下是为父母妻子许、伏鬼下是因病讼许、伏兄下是因兄弟朋友争斗赌博许；六亲化出鬼亦然",
+      "rule": {
+        "yi": "又有旧愿没还的：子孙伏在鬼下面、发动克世爻、用爻，或者子孙伏在岁煞下面、发动伤世爻、用爻的，一定是有旧愿没有还；旺相的愿大，休囚的愿小。问是因为什么许的愿，以官鬼为用：鬼伏在世爻下、用爻下的，是为自己许的愿；鬼伏在父母、财、子孙下的，是为父母、妻子、子女许的愿；鬼伏在鬼下的，是因为病、官司许的愿；鬼伏在兄下的，是为兄弟朋友、争斗赌博许的愿。六亲变出鬼的也是这样（出自《源髓诀》）。",
+        "en": "There is also an old vow not yet paid: Output hidden beneath the ghost and moving to control the Self and Subject, or Output hidden beneath the Year-killing star and moving to harm the Self and Subject, means surely an old vow is not yet paid; if strong the vow is large, if resting or trapped small. To ask why the vow was made, the Pressure line is the Subject: a ghost hidden beneath the Self or the Subject line, a vow made for oneself; hidden beneath Resource, Wealth or Output, made for parents, wife or children; hidden beneath a ghost, made over illness or lawsuit; hidden beneath Peer, made over brothers, friends, brawls or gambling. The same holds when a relation changes out into a ghost (from the Yuan Sui Jue)."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3021, 3021],
+          "zh": ["又有旧愿未还者，但子孙伏鬼下动克世用，或子孙伏岁杀下动伤世用者，必有旧愿未还也。", "旺相愿大，休囚愿小也。", "至问因何许愿，以官鬼为用也。", "鬼伏世下用下者，因自己许也，鬼伏父母财子下，因父母妻子许，鬼伏鬼下因病讼许，鬼伏兄下因兄弟朋友争斗赌博许也。", "六亲化出鬼者亦然(出源髓诀)。"],
+          "yi": ["又有旧愿没还的：子孙伏在鬼下面、发动克世爻、用爻，或者子孙伏在岁煞下面、发动伤世爻、用爻的，一定是有旧愿没有还。", "旺相的愿大，休囚的愿小。", "至于问是因为什么许的愿，以官鬼为用。", "鬼伏在世爻下、用爻下的，是为自己许的愿；鬼伏在父母、财、子孙下的，是为父母、妻子、子女许的愿；鬼伏在鬼下，是因为病、官司许的愿；鬼伏在兄爻下，是为兄弟朋友、争斗赌博许的愿。", "六亲变出鬼的也是这样（出自《源髓诀》）。"],
+          "en": ["There is also an old vow not yet paid: Output hidden beneath the ghost and moving to control the Self and Subject, or Output hidden beneath the Year-killing star and moving to harm the Self and Subject: there is surely an old vow not yet paid.", "If strong, the vow is large; if resting or trapped, small.", "As for asking why the vow was made, the Pressure line is the Subject.", "A ghost hidden beneath the Self or the Subject line: a vow made for oneself; hidden beneath Resource, Wealth or Output: made for parents, wife or children; hidden beneath a ghost: made over illness or lawsuit; hidden beneath Peer: made over brothers, friends, brawls or gambling.", "The same holds when a relation changes out into a ghost (from the Yuan Sui Jue)."] }
+      ],
+      "note": {
+        "yi": "「岁杀」按字面是岁上的煞，书里没有再解释。「出源髓诀」的「源髓诀」是易隐引的书名，书里没有再介绍。这一条和黄金策讲的「持世则未酬旧愿，伏为有口无心」（LY.ILL.HJC.110）是同一类判断：都是从鬼爻的位置看是不是有旧愿未还；黄金策看鬼是不是持世、伏世下，这里另看子孙伏在鬼下。",
+        "en": "'The Year-killing star' (suisha) is literally a killing star of the year and the book does not explain further. The 'Yuan Sui Jue' is a work the Yi Yin cites and the book does not introduce. This entry is a judgment of the same kind as the Huangjin Ce's 'holding the Self: the old vow is not paid; hidden: a spoken word with no heart in it' (LY.ILL.HJC.110): both tell from the position of the Pressure line whether an old vow is unpaid; the Huangjin Ce looks at whether the ghost holds the Self or is hidden beneath it, and this looks in addition at Output hidden beneath the ghost."
+      },
+      "see": ["LY.ILL.YY.31", "LY.ILL.YY.33", "LY.ILL.HJC.109", "LY.ILL.HJC.110"]
+    },
+    {
+      "id": "LY.ILL.YY.33",
+      "topic": "病因",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "病起何方：以动爻断——火南水北木东金西，不论鬼之有无；有鬼不动取外卦；卦安静无鬼看鬼伏何爻之下、以飞神定（伏子北、丑寅东北、卯东、辰巳东南、午南、未申西南、酉西、戌亥西北）；乱动而鬼动以鬼所居之卦断；官鬼独发以鬼爻所值之支断；鬼在本宫内卦是本地得病、他宫外卦是他方得病",
+      "rule": {
+        "yi": "病是从哪个方向来的，以卦里的动爻来断：火是南，水是北，木是东，金是西，不管有没有鬼。卦里有鬼但不动的，就取外卦来断（乾西北、坤西南、巽东南、艮东北、离南、坎北、震东、兑西）。卦是安静的又没有鬼的，就看鬼伏在哪一爻下面，拿鬼上面的飞神来定灾祸的地方：伏在子下是北方，丑、寅下是东北，卯下是东，辰、巳下是东南，午下是南，未、申下是西南，酉下是西，戌、亥下是西北。卦乱动而鬼也动的，也拿鬼所在的卦来断；官鬼独自发动的，又拿鬼爻所值的地支来断。另外，鬼在本宫的内卦，就说是在本地得病；在别的宫、外卦，就说是在别处得病。",
+        "en": "Where the illness came from is judged by the moving lines in the hexagram: Fire is south, Water north, Wood east, Metal west, whether or not there is a ghost. If the hexagram has a ghost that does not move, judge by the outer trigram (Qian northwest, Kun southwest, Xun southeast, Gen northeast, Li south, Kan north, Zhen east, Dui west). If the hexagram is still and has no ghost, see under which line the ghost is hidden and use the flying line above the ghost to fix the place of the affliction: hidden beneath Zi, the north; beneath Chou or Yin, the northeast; beneath Mao, the east; beneath Chen or Si, the southeast; beneath Wu, the south; beneath Wei or Shen, the southwest; beneath You, the west; beneath Xu or Hai, the northwest. If the hexagram has lines moving in disorder and the ghost moves, judge by the trigram in which the ghost stands; if the Pressure line moves alone, judge by the branch that the Pressure line holds. Also a ghost in the inner trigram of the home palace: the illness was caught at home; in the outer trigram of another palace: caught elsewhere."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3025, 3025],
+          "zh": ["以卦中动爻断之。", "火南水北木东金西，不论鬼之有无也。", "如卦有鬼而不动者，则取外卦断之。", "乾在西北，坤在西南，巽在东南，艮在东北，离南，坎北，震东，兑西，是也。", "如卦安静，而无鬼者，则看鬼伏何爻之下，以鬼上飞神，定其灾处也。", "如鬼伏子下，则云北方。", "伏丑寅下，则云东北方。", "伏卯下，则东方。", "伏辰巳下，则云东南方。", "伏午下，则云南方。", "伏未申下，则西南方。", "伏酉下，则西方。", "伏戌亥下，则西北方也。", "若卦乱动而鬼动者，亦以鬼所居之卦断之也。", "若官鬼独发者，又以鬼爻所值之支神断之也。", "又鬼在本宫内卦，则言本地得病。", "在他宫外卦，则言他方得病也。"],
+          "yi": ["以卦里的动爻来断。", "火在南、水在北、木在东、金在西，不管有没有鬼。", "如果卦里有鬼但不动，就取外卦来断。", "乾在西北，坤在西南，巽在东南，艮在东北，离在南，坎在北，震在东，兑在西，就是这样。", "如果卦是安静的、又没有鬼，就看鬼伏在哪一爻下面，拿鬼上面的飞神来定灾祸的地方。", "如果鬼伏在子下面，就说是北方。", "伏在丑、寅下面，就说是东北方。", "伏在卯下面，是东方。", "伏在辰、巳下面，就说是东南方。", "伏在午下面，就说是南方。", "伏在未、申下面，是西南方。", "伏在酉下面，是西方。", "伏在戌、亥下面，是西北方。", "如果卦乱动而鬼也动，也拿鬼所在的卦来断。", "如果官鬼独自发动，又拿鬼爻所值的地支来断。", "又，鬼在本宫的内卦，就说是在本地得病。", "在别的宫、外卦，就说是在别处得病。"],
+          "en": ["Judge by the moving lines in the hexagram.", "Fire is south, Water north, Wood east, Metal west, whether or not there is a ghost.", "If the hexagram has a ghost that does not move, judge by the outer trigram.", "Qian is northwest, Kun southwest, Xun southeast, Gen northeast, Li south, Kan north, Zhen east, Dui west, and that is how it is.", "If the hexagram is still and has no ghost, see under which line the ghost is hidden and use the flying line above the ghost to fix the place of the affliction.", "If the ghost is hidden beneath Zi, say the north.", "Beneath Chou or Yin, say the northeast.", "Beneath Mao, the east.", "Beneath Chen or Si, say the southeast.", "Beneath Wu, say the south.", "Beneath Wei or Shen, the southwest.", "Beneath You, the west.", "Beneath Xu or Hai, the northwest.", "If the hexagram has lines moving in disorder and the ghost moves, judge by the trigram in which the ghost stands.", "If the Pressure line moves alone, judge by the branch that the Pressure line holds.", "Also a ghost in the inner trigram of the home palace: the illness was caught at home.", "In the outer trigram of another palace: the illness was caught elsewhere."] }
+      ],
+      "note": {
+        "yi": "这一条的方位依据是五行方位（火南水北木东金西）和后天八卦方位（乾西北……兑西），「飞神」是鬼所伏那一爻上面的那一爻的地支。易林补遗的「何处得病章」（第 1240 行起）讲同一件事，有更细的分法，见易林补遗一批。",
+        "en": "The directions rest on the element directions (Fire south, Water north, Wood east, Metal west) and the later-heaven trigram directions (Qian northwest ... Dui west), and the 'flying line' is the branch of the line above the one under which the ghost is hidden. The Yilin Buyi's chapter on where the illness was caught (from line 1240) treats the same matter with a finer division, and is taken with the Yilin Buyi batch."
+      },
+      "see": ["LY.ILL.YY.32", "LY.ILL.YY.34", "LY.ILL.HJC.11"]
+    },
+    {
+      "id": "LY.ILL.YY.34",
+      "topic": "病因",
+      "chapter": "疾病占",
+      "chapter_en": "Divining illness",
+      "title": "病起何年月日：以鬼爻长生之年月日定；土鬼动火生土，午年五月午日得病；土长生在申，或申年七月申日；鬼临辰戌丑未上，辰戌丑未年月日得病；金木水火鬼仿此",
+      "rule": {
+        "yi": "病是哪年哪月哪天得的，以鬼爻长生的年、月、日来定：比如土鬼发动、火生土，是午年、五月、午日得的病；土的长生在申，或者是申年、七月、申日得的病；鬼落在辰、戌、丑、未上，或者是辰、戌、丑、未的年、月、日得的病；其他金、木、水、火的鬼，都照这样推。",
+        "en": "When the illness was caught is fixed by the year, month or day in which the Pressure line is born: for example, if an Earth ghost moves and Fire generates Earth, the illness was caught in a Wu year, the fifth month, on a Wu day; Earth is born at Shen, or the illness was caught in a Shen year, the seventh month, on a Shen day; a ghost on Chen, Xu, Chou or Wei, the illness was caught in a year, month or day of Chen, Xu, Chou or Wei; for the Metal, Wood, Water and Fire ghosts, work by the same pattern."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [3029, 3029],
+          "zh": ["以鬼爻长生之年月日定之也。", "又如土鬼动，火生土，在午年五月午日得病也。", "土长生在申，或申年七月申日得病也。", "鬼临辰戌丑未上，或辰戌丑未年月日得病也。", "其他金木水火鬼，皆仿此推之。"],
+          "yi": ["以鬼爻长生的年、月、日来定。", "又比如土鬼发动，火生土，是在午年、五月、午日得的病。", "土的长生在申，或者是申年、七月、申日得的病。", "鬼落在辰、戌、丑、未上，或者是辰、戌、丑、未的年、月、日得的病。", "其他金、木、水、火的鬼，都照这样推。"],
+          "en": ["It is fixed by the year, month or day in which the Pressure line is born.", "Again, for example, if an Earth ghost moves and Fire generates Earth, the illness was caught in a Wu year, the fifth month, on a Wu day.", "Earth is born at Shen, or the illness was caught in a Shen year, the seventh month, on a Shen day.", "A ghost on Chen, Xu, Chou or Wei: the illness was caught in a year, month or day of Chen, Xu, Chou or Wei.", "For the Metal, Wood, Water and Fire ghosts, work by the same pattern."] }
+      ],
+      "note": {
+        "yi": "原文举的例子里，土鬼「火生土」在午年五月午日：午是火的旺位，火生土，所以取午；「土长生在申」是按水土同宫的长生（申）。这一条是「附占」，不是易隐疾病占里的主要事项。",
+        "en": "In the original's example the Earth ghost 'Fire generates Earth' falls in a Wu year, the fifth month, a Wu day: Wu is Fire's strong place and Fire generates Earth, so Wu is taken; 'Earth is born at Shen' follows the birth (Shen) of Water and Earth together. This entry is a subsidiary matter, not one of the main heads of the Yi Yin's section on illness."
+      },
+      "see": ["LY.ILL.YY.33", "LY.ILL.YY.35"]
+    }
+  ]
+}

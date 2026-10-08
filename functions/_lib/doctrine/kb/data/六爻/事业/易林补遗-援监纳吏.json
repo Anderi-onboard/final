@@ -1,0 +1,144 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "援监纳吏章第三十一",
+  "chapter_en": "Chapter 31: Purchasing a place in the Academy or as a clerk",
+  "ranges": {"易林补遗": [788, 799]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.71",
+      "topic": "求职",
+      "chapter": "援监纳吏章第三十一",
+      "chapter_en": "Chapter 31: Purchasing a place in the Academy or as a clerk",
+      "title": "援监纳吏总纲：以官爻为主、财象为凭；援监纳吏并一应奉例纳银求官者皆把世爻与官爻为主俱不宜空，空则不成纵成不久；世值旬空非久远、福神静旺永无殃；子孙虽为福德亦不可动动则伤官，又不可无无则少利",
+      "rule": {
+        "yi": "援监、纳吏，以及一切依照成例交银买官的，以官爻为主，以财爻为凭据，又都把世爻和官爻当主要来看，两个都不适宜落空：落空就办不成，即使办成也不长久。世爻落在旬空，不能长久；福神（子孙）安静而旺相，永远没有祸患。子孙虽然是福德，也不可以发动，一动就伤克官爻；也不可以没有，没有就少得利益。",
+        "en": "In purchasing a place in the Academy, purchasing a clerkship, and every case of buying office by paying silver according to the statute, take the Pressure line as the chief and the Wealth image as the ground, with the Self line and the Pressure line as the principal things, and neither should be Void: if Void it does not succeed, and even if it succeeds it does not last. If the Self falls on the ten-day Void it will not be long-lasting; if Output, the fortune spirit, is quiet and thriving there is never any calamity. Output, though it is Fortune Virtue, must not move, for if it moves it hurts the star of office; and it must not be absent, for without it there is little profit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [790, 790],
+          "zh": ["以官爻为主，财象为凭。"],
+          "yi": ["以官爻为主要看的，以财爻为凭据。"],
+          "en": ["Take the Pressure line as the chief to be looked at, and the Wealth image as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [791, 791],
+          "zh": ["世值旬空非久远，福神静旺永无殃。"],
+          "yi": ["世爻落在旬空，就不能长久；福神安静而旺相，就永远没有祸患。"],
+          "en": ["If the Self falls on the ten-day Void it will not be long-lasting; if Output, the fortune spirit, is quiet and thriving there is never any calamity."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [792, 792],
+          "zh": ["援监纳吏并一应奉例纳银求官者，皆把世爻与官爻为主，俱不宜空。", "空则不成，纵成不久。", "子孙虽为福德，亦不可动，动则伤官。", "又不可无，无则少利。"],
+          "yi": ["援监、纳吏，以及一切依照成例交银求官的，都以世爻和官爻为主，两个都不适宜落空。", "落空就办不成，即使办成也不会长久。", "子孙虽然是福德，也不可以发动，一动就伤克官爻。", "也不可以没有，没有就少得利益。"],
+          "en": ["For purchasing a place in the Academy, purchasing a clerkship, and every case of seeking office by paying silver according to the statute, the Self line and the Pressure line are taken as the chief, and neither should be Void.", "If Void it does not succeed, and even if it succeeds it does not last.", "Output, though it is Fortune Virtue, must not move either, for if it moves it hurts the star of office.", "Nor must it be absent, for without it there is little profit."] }
+      ],
+      "note": {
+        "yi": "「援监」是援例捐监，即捐钱取得国子监生的资格；「纳吏」是捐钱买一个吏的名额；「奉例纳银」是依照朝廷的捐纳成例交银。「旬空」是该旬里落空的两个地支（见术语表）。「福神」「福德」都是子孙。第一段解末尾两句（「身世之爻，若被鬼来冲克……决主名成利就」）和后面诀下解的头两句文字相同，是书里重复排印的，只在下一条引一处。这一条与增删卜易「援例」一组（ZS.22 起）取同一个关系：财、官、世三样缺一不可。",
+        "en": "'Yuanjian' is entering the Imperial Academy by contribution, that is obtaining the standing of an Academy student by paying; 'naji' is buying a place as a clerk; 'feng li na yin' is paying silver by the statute of contributions. 'Xunkong' is the two branches that fall Void in that ten-day week (see the glossary). 'Fushen' and 'fude' are both Output. The last two sentences of the first explanation ('If the Body and Self lines are clashed or controlled by Pressure ... one will surely win name and profit') are the same words as the first two sentences of the explanation after the next verse; the book prints them twice, and they are quoted only once, in the next entry. This entry takes the same relation as the 'contribution' group of the Zengshan Buyi (from ZS.22): of Wealth, the star of office and the Self, none can be lacking."
+      },
+      "see": ["LY.CAREER.EL.72", "LY.CAREER.ZS.22", "LY.CAREER.ZS.23", "LY.CAREER.ZS.24", "LY.CAREER.ZS.25", "LY.CAREER.HJC.03"]
+    },
+    {
+      "id": "LY.CAREER.EL.72",
+      "topic": "求职",
+      "chapter": "援监纳吏章第三十一",
+      "chapter_en": "Chapter 31: Purchasing a place in the Academy or as a clerk",
+      "title": "援监纳吏：鬼克身爻遭责罚、财生世象必荣昌；身世之爻若被鬼来冲克反受其殃，如得鬼爻持世再加财动来生决主名成利就",
+      "rule": {
+        "yi": "官鬼克制身爻，就遭责罚；财爻生世爻，就一定荣昌。身爻、世爻这两爻，如果被官鬼来冲克，反而受它的祸害；如果官鬼爻持世，再加上财爻发动来生它，一定名成利就。",
+        "en": "If Pressure controls the Body line one suffers reproof and punishment; if Wealth generates the Self image one will surely prosper. As for the Body and Self lines, if Pressure comes to clash or control them, one suffers its calamity instead; if the Pressure line holds the Self and Wealth moves to generate it, one will surely win name and profit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [793, 793],
+          "zh": ["鬼克身爻遭责罚，财生世象必荣昌，"],
+          "yi": ["官鬼克制身爻，就遭责罚；财爻生世爻，就一定荣昌。"],
+          "en": ["If Pressure controls the Body line one suffers reproof and punishment; if Wealth generates the Self image one will surely prosper."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [794, 794],
+          "zh": ["身世之爻。", "若被鬼来冲克，反受其殃。", "如得鬼爻持世，再加财动来生，决主名成利就。"],
+          "yi": ["身爻和世爻这两条爻：", "如果被官鬼来冲、来克，反而受它的祸害。", "如果官鬼爻持世，再加上财爻发动来生它，一定主名成利就。"],
+          "en": ["As for the Body and Self lines:", "if Pressure comes to clash or control them, one suffers its calamity instead.", "If the Pressure line holds the Self and Wealth moves to generate it, one will surely win name and profit."] }
+      ],
+      "note": {
+        "yi": "「身世之爻」是身爻（卦身）和世爻。官鬼本来是求官的用神，克世身又要受责罚，书里要分的是：官鬼冲克世身是祸，官鬼持世而财爻来生是福。第一段解末尾的两句与这里解的第二、三句文字相同，是书里重复排印的。这一条与黄金策仕宦「鬼杀伤身」（HJC.13）取同一个关系，官鬼旺、财爻发动来生，与增删卜易「妻摇鬼旺，定然执王拜丹墀」（ZS.23）相合。",
+        "en": "'Shen shi zhi yao' is the Body line (the Body of the hexagram) and the Self line. Pressure is the Subject for seeking office, yet when it controls the Self or Body one suffers reproof, and what the book is distinguishing is this: Pressure clashing or controlling the Self or Body is calamity, while Pressure holding the Self with Wealth generating it is fortune. The two sentences at the end of the first explanation are the same words as the second and third sentences of the explanation here, which the book prints twice. This entry takes the same relation as 'a baleful Pressure injuring the Body' in the Huangjin Ce on official careers (HJC.13), and Pressure thriving with Wealth moving to generate it agrees with 'when Wealth sways and Pressure thrives, one will surely bow at the vermilion steps of the court' in the Zengshan Buyi (ZS.23)."
+      },
+      "see": ["LY.CAREER.EL.71", "LY.CAREER.EL.73", "LY.CAREER.HJC.13", "LY.CAREER.ZS.23"]
+    },
+    {
+      "id": "LY.CAREER.EL.73",
+      "topic": "求职",
+      "chapter": "援监纳吏章第三十一",
+      "chapter_en": "Chapter 31: Purchasing a place in the Academy or as a clerk",
+      "title": "援监纳吏：夫化子孙难出仕、妻之兄弟利源伤；官爻若化子孙又难出仕，妻财如变兄弟或卦中兄爻发动不惟无所得反主亏伤",
+      "rule": {
+        "yi": "官（夫）爻化成子孙，就难以出来做官；妻财变成兄弟，财路就被伤。官爻如果化成子孙，又难出仕；妻财如果变成兄弟，或者卦中兄爻发动，不但没有所得，反而主亏损受伤。",
+        "en": "If the husband line, Pressure, changes into Output, it is hard to come out into office; if Wealth, the wife, changes into Peer, the source of profit is hurt. If the Pressure line changes into Output it is again hard to come out into office; if Wealth changes into Peer, or a Peer line moves in the hexagram, one gains nothing, and on the contrary suffers loss and injury."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [793, 793],
+          "zh": ["夫化子孙难出仕，妻之兄弟利源伤。"],
+          "yi": ["官（夫）化成子孙，就难以出来做官；妻财变成兄弟，财路就被伤。"],
+          "en": ["If the husband line, Pressure, changes into Output, it is hard to come out into office; if Wealth, the wife, changes into Peer, the source of profit is hurt."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [794, 794],
+          "zh": ["官爻若化子孙，又难出仕。", "妻财如变兄弟、或卦中兄爻发动，不惟无所得，反主亏伤。"],
+          "yi": ["官爻如果化成子孙，又难以出来做官。", "妻财如果变成兄弟，或者卦中兄爻发动，不但没有所得，反而主亏损受伤。"],
+          "en": ["If the Pressure line changes into Output, it is again hard to come out into office.", "If Wealth changes into Peer, or a Peer line moves in the hexagram, one gains nothing, and on the contrary suffers loss and injury."] }
+      ],
+      "note": {
+        "yi": "诀里的「夫」按解里的「官爻」译：六亲里官鬼是夫、妻财是妻，诀把两个放成一对，解里就写成「官爻」「妻财」。「利源」是财路。这一条与前面仕宦升迁「官化子孙非降即调」（EL.56）、「财化兄弟减俸粮」（EL.57）取同一个关系。",
+        "en": "The 'fu', husband, in the verse is translated after 'the Pressure line' in the explanation: among the six kin Pressure is the husband and Wealth the wife, and the verse puts the two as a pair, while the explanation writes them as 'the Pressure line' and 'Wealth'. 'Liyuan' is the source of profit. This entry takes the same relations as 'if Pressure changes into Output it is demotion or transfer' (EL.56) and 'Wealth changing into Peer cuts salary and grain' (EL.57) in the preceding chapter on official promotion."
+      },
+      "see": ["LY.CAREER.EL.72", "LY.CAREER.EL.74", "LY.CAREER.EL.56", "LY.CAREER.EL.57", "LY.CAREER.ZS.24", "LY.CAREER.ZS.25"]
+    },
+    {
+      "id": "LY.CAREER.EL.74",
+      "topic": "求职",
+      "chapter": "援监纳吏章第三十一",
+      "chapter_en": "Chapter 31: Purchasing a place in the Academy or as a clerk",
+      "title": "援监纳吏：买官纳吏选阴阳、僧道医官共审详；僧官道官阴阳官医官使典等类皆宜鬼旺财兴，爻中有鬼无财有名无实，有财无鬼名利皆虚",
+      "rule": {
+        "yi": "买官、纳吏、选阴阳官，以及僧官、道官、医官，都要仔细审察；僧官、道官、阴阳官、医官、使典这一类，都适宜官鬼旺相、财爻兴旺；爻里有官鬼没有财，有名无实；有财爻没有官鬼，名和利都落空。",
+        "en": "Buying office, buying a clerkship, being selected as a Yin-Yang official, and the monk, Daoist and medical officials, are all to be examined in detail; for monk-officials, Daoist officials, Yin-Yang officials, medical officials, clerks and the like, it is fitting that Pressure be thriving and Wealth flourishing; if there is Pressure among the lines but no Wealth, there is a name without substance; if there is Wealth but no Pressure, both name and profit are empty."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [791, 791],
+          "zh": ["买官纳吏选阴阳，僧道医官共审详，"],
+          "yi": ["买官、纳吏、选阴阳官，僧道医官，都要仔细审察。"],
+          "en": ["Buying office, buying a clerkship, being selected as a Yin-Yang official, and the monk, Daoist and medical officials, are all to be examined in detail."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [797, 799],
+          "zh": ["僧官、道官、阴阳官、医官、使典等类，皆宜鬼旺财兴。", "爻中有鬼无财，有名无实。", "有财无鬼，名利皆虚。"],
+          "yi": ["僧官、道官、阴阳官、医官、使典这一类，都适宜官鬼旺相、财爻兴旺。", "卦爻里有官鬼没有财爻，有名无实。", "有财爻没有官鬼，名和利都是空的。"],
+          "en": ["For monk-officials, Daoist officials, Yin-Yang officials, medical officials, clerks of the establishment and the like, it is fitting that Pressure be thriving and Wealth flourishing.", "If there is Pressure among the lines but no Wealth, there is a name without substance.", "If there is Wealth but no Pressure, both name and profit are empty."] }
+      ],
+      "note": {
+        "yi": "「阴阳官」是地方上掌管阴阳（天文历数、选择吉日）的小官；「僧官」「道官」是管僧、道的官；「医官」是医学的官；「使典」是衙门里办事的差役、典吏一类。这几类都是靠捐纳或选授得来的小官职，所以要官鬼（名）和财爻（利）两样都在。这一条与黄金策仕宦「僧道医官，岂可文书发动」（HJC.27）、增删卜易「僧官医官·亦喜官文发动」（ZS.53）说的是同一类人，但取法不同：那两处看子孙，这里看官鬼和财。",
+        "en": "'Yin-Yang official' is a minor local official in charge of yin and yang (the calendar and astronomy, and the choice of lucky days); 'monk-officials' and 'Daoist officials' are the officials who supervise monks and Daoists; 'medical official' is an official of medicine; 'shidian' are the runners and clerks who do the work in a yamen. These are all minor posts obtained by contribution or selection, so both Pressure (the name) and Wealth (the profit) must be present. This entry speaks of the same kinds of men as 'for monk, Daoist and medical officials, how could the document move' in the Huangjin Ce on official careers (HJC.27) and 'monk-officials and medical officials also like the star of office and the document to move' in the Zengshan Buyi (ZS.53), but takes a different method: those two look at Output, and this one looks at Pressure and Wealth."
+      },
+      "see": ["LY.CAREER.EL.73", "LY.CAREER.EL.75", "LY.CAREER.HJC.27", "LY.CAREER.ZS.53"]
+    },
+    {
+      "id": "LY.CAREER.EL.75",
+      "topic": "求职",
+      "chapter": "援监纳吏章第三十一",
+      "chapter_en": "Chapter 31: Purchasing a place in the Academy or as a clerk",
+      "title": "援监纳吏：吏典财官宜旺相、贡生父鬼忌空亡、太学父兴官旺处定显声名播四方；论恩贡选贡岁贡监生等类，虽用官爻再凭父母，此二象俱不可空，若得父官有气定然名播京都",
+      "rule": {
+        "yi": "吏典，财爻、官爻适宜旺相；贡生，父爻、官鬼最忌空亡；入太学，父爻兴旺、官爻旺相的地方，一定声名显扬、传遍四方。恩贡、选贡、岁贡、监生这一类，虽然用的是官爻，还要凭父母爻，这两个象都不可落空；如果父爻、官爻有气，一定名传京城。",
+        "en": "For a clerk of the establishment, Wealth and the star of office should be thriving; for a tribute student, Resource and Pressure must avoid Void; for the Imperial Academy, where Resource flourishes and the star of office is thriving, fame will surely be made manifest and spread in all quarters. For the grace tribute, selected tribute, annual tribute, Academy students and the like, though the Pressure line is the one used, one must rely also on Resource, and these two images must not be Void; if Resource and the star of office have qi, the name will surely be known throughout the capital."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [795, 795],
+          "zh": ["吏典财官宜旺相，贡生父鬼忌空亡，", "太学父兴官旺处，定显声名播四方。"],
+          "yi": ["吏典，财爻、官爻适宜旺相；贡生，父爻、官鬼最忌空亡；", "入太学，父爻兴旺、官爻旺相的地方，一定声名显扬、传遍四方。"],
+          "en": ["For a clerk of the establishment, Wealth and the star of office should be thriving; for a tribute student, Resource and Pressure must avoid Void;", "for the Imperial Academy, where Resource flourishes and the star of office is thriving, fame will surely be made manifest and spread in all quarters."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [797, 799],
+          "zh": ["又论恩贡、选贡、岁贡、监生等类，虽用官爻，再凭父母，此二象俱不可空，若得父官有气，定然名播京都。"],
+          "yi": ["再说恩贡、选贡、岁贡、监生这一类，虽然用的是官爻，还要凭父母爻，这两个象都不可落空；如果父爻、官爻有气，一定名传京城。"],
+          "en": ["As for the grace tribute, selected tribute, annual tribute, Academy students and the like, though the Pressure line is the one used, one must rely also on Resource, and these two images must not be Void; if Resource and the star of office have qi, the name will surely be known throughout the capital."] }
+      ],
+      "note": {
+        "yi": "「吏典」是衙门里的书吏；「贡生」是从地方学校选送到国子监的生员，有恩贡、选贡、岁贡等名目；「太学」「监生」是国子监的学生。所以援监就是捐钱取得监生的资格。这里三种身份分别取象：吏典取财、官，贡生取父、鬼，太学取父、官；解里把贡生、监生合起来说，只说官爻加父母。",
+        "en": "'Lidian' are the clerks of a yamen; 'gongsheng' are students sent up from the local schools to the Imperial Academy, under the names of grace tribute, selected tribute, annual tribute and so on; 'taixue' and 'jiansheng' are the students of the Imperial Academy. So 'yuanjian' is obtaining the standing of an Academy student by paying. The three kinds of standing here each take their own image: the clerk takes Wealth and the star of office, the tribute student Resource and Pressure, and the Academy student Resource and the star of office; the explanation speaks of the tribute students and Academy students together and says only the Pressure line with Resource."
+      },
+      "see": ["LY.CAREER.EL.74", "LY.CAREER.HJC.05"]
+    }
+  ]
+}

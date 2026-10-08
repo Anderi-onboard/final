@@ -1,0 +1,328 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "卜筮正宗",
+  "chapter": "散见各篇",
+  "chapter_en": "Passages on setting out and travellers scattered through the book",
+  "ranges": {"卜筮正宗": [187, 5330]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.BSZZ.01",
+      "topic": "平安",
+      "chapter": "启蒙节要·四十六、六亲发动诀",
+      "chapter_en": "Qimeng Jieyao, no. 46: the verse on the moving of the six relations",
+      "title": "六亲发动诀·行人句：父动则行人书信动，子孙发动行人买卖身康泰，官鬼克兄弟出外逃亡定见灾，财爻发动行人在外身将动，兄弟交重克财若带吉神有助则出路行人便未来",
+      "rule": {
+        "yi": "六亲发动的诀里，和行人、出外有关的几句：父母爻发动，盼望的行人有书信的动静；子孙发动，行人、做买卖的人身体康泰；官鬼克兄弟，出外或逃亡的人必定见灾；财爻发动，在外的行人将要动身；兄弟交重去克财，如果带着吉神有助，出路上的行人还没有来。",
+        "en": "The lines of the verse on the six relations that bear on travellers and going out: when the Resource line moves, the letters of the traveller one is watching for begin to stir; when Output moves, travellers and traders are well and at ease; when Pressure controls the Peer, those who go out or flee will surely meet disaster; when the Wealth line moves, the traveller abroad is about to set out; when the Peer lines are crowded with movement and control Wealth, if they carry an auspicious spirit and are helped, the traveller on the road has not yet come."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [254, 254],
+          "zh": ["观望行人书信动，"],
+          "yi": ["观望行人书信动，"],
+          "en": ["for a traveller one is watching for, news and letters stir,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [255, 255],
+          "zh": ["行人买卖身康泰，"],
+          "yi": ["行人买卖身康泰，"],
+          "en": ["travellers and traders are well and at ease,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [256, 256],
+          "zh": ["出外逃亡定见灾，"],
+          "yi": ["出外逃亡定见灾，"],
+          "en": ["going out or fleeing, one will surely meet disaster,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [257, 257],
+          "zh": ["行人在外身将动，"],
+          "yi": ["行人在外身将动，"],
+          "en": ["a traveller abroad is about to set out,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [258, 258],
+          "zh": ["若带吉神为有助，", "出路行人便未来，"],
+          "yi": ["如果带着吉神有助，", "出路上的行人还没有来，"],
+          "en": ["if it carries an auspicious spirit it is helped,", "the traveller on the road has not yet come,"] }
+      ],
+      "note": {
+        "yi": "这一首诗每一联先说哪个六亲发动、再说各种占的结果；这里只取其中说行人和出外的那一句，前面的「父动」「子孙发动」等是同一联的开头，没有拆进引文里。",
+        "en": "In this verse each couplet begins by naming the relation that moves and then lists the results for various divinations; only the line on travellers and going out is taken here, and the opening phrases naming the moving relation (the Resource moves, Output moves and so on) belong to the same couplet and are not split into the quotations."
+      },
+      "see": ["LY.TRAVEL.HJC.54", "LY.TRAVEL.HJC.55"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.02",
+      "topic": "去留",
+      "chapter": "启蒙节要·三十一、通玄赋",
+      "chapter_en": "Qimeng Jieyao, no. 31: the Tongxuan rhapsody",
+      "title": "通玄赋·出行宜世动、归魂不出疆，用神发动值三合则行人立回：出行要世爻动；归魂卦不出边疆；用爻发动逢三合，行人马上回来",
+      "rule": {
+        "yi": "出行适宜世爻发动；归魂卦不出疆界；用爻发动又遇三合，行人立刻回到家。",
+        "en": "Setting out is fit when the Self moves; a Returning Soul hexagram does not leave the border; when the Subject moves and meets a three-harmony, the traveller is back home at once."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [187, 187],
+          "zh": ["出行宜世动，", "归魂不出疆；", "用动值三合，", "行人立回庄。"],
+          "yi": ["出行适宜世爻发动，", "归魂卦不出疆界；", "用爻发动又遇三合，", "行人立刻回到家。"],
+          "en": ["Setting out is fit when the Self moves,", "a Returning Soul hexagram does not leave the border;", "when the Subject moves and meets a three-harmony,", "the traveller is back home at once."] }
+      ],
+      "dispute": {
+        "yi": "《增删卜易》三合章说：占出行，用神在三合之内，被合而留；占行人，用神在三合之内，被合不返。这里却说用爻发动值三合，行人立回。两处都有「三合」，但一说被合住不回、一说立回，没有一本说明区别。",
+        "en": "The chapter on three-harmony in the Zengshan Buyi says that in setting out a Subject inside a three-harmony is combined shut and stays, and for a traveller it is combined shut and does not return; this verse says that a Subject that moves and meets a three-harmony means the traveller returns at once. Both name three-harmony, one saying the traveller is held and the other that he is back, and neither book explains the difference."
+      },
+      "see": ["LY.TRAVEL.ZS.48", "LY.TRAVEL.ZS.47"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.03",
+      "topic": "避难",
+      "chapter": "启蒙节要·三十三、诸爻持世诀",
+      "chapter_en": "Qimeng Jieyao, no. 33: the verse on lines holding the Self",
+      "title": "诸爻持世诀·子孙持世避乱许安：子孙持世事无忧，占避乱可以安稳",
+      "rule": {
+        "yi": "子孙持世，事事无忧；占避乱，许他可以平安。",
+        "en": "When Output holds the Self, there is nothing to worry about; in divining for escaping disorder, safety is promised."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [198, 198],
+          "zh": ["避乱许安失可得，"],
+          "yi": ["占避乱，许他可以平安，"],
+          "en": ["in divining for escaping disorder, safety is promised,"] }
+      ],
+      "note": {
+        "yi": "这一联的上一句是「子孙持世事无忧」，避乱一句只是这一联里和出行相关的一小句。",
+        "en": "The preceding line of the couplet is \"Output holding the Self means nothing to worry about\"; the line on escaping disorder is only the small part of the couplet that bears on this domain."
+      },
+      "see": ["LY.TRAVEL.HJC.88", "LY.TRAVEL.ZS.42"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.04",
+      "topic": "路途",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·路上有官休出外、宅中有鬼勿居家：五爻为道路，官鬼在五爻发动，途中惊险，不宜出外，灾咎按所临六神断；二爻为住宅，鬼动二爻不利，得子孙持世发动才无害，不然宜迁店铺",
+      "rule": {
+        "yi": "五爻是道路，官鬼落在五爻发动，路上一定多有惊险，不适宜出外，要知道是什么灾咎，按它所临的六神来断，白虎是风波，玄武是盗贼。二爻是住宅，在家求财，鬼爻动在二爻必然不利，按它所临的五行断，火鬼忌火烛之类；得子孙持世发动，差不多就没有害，如果没有子孙发动，宜迁换店铺来化解。",
+        "en": "The fifth line is the road: when Pressure sits on it and moves, there will surely be many frights and dangers on the way, and it is unfit to go out; to know what calamity, judge by the six spirits it carries, the White Tiger meaning storms and the Dark Tortoise thieves. The second line is the dwelling: for seeking wealth at home, Pressure moving on this line is surely unfavourable, judged by the element it carries, a Fire Pressure fearing fire and candles and the like; with Output holding the Self and moving there is hardly any harm, and with no Output moving it is resolved by moving the shop."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2733, 2733],
+          "zh": ["路上有官休出外"],
+          "yi": ["路上有官休出外"],
+          "en": ["If there is an official on the road, do not go out"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2733, 2733],
+          "zh": ["五爻为道路，临官发动，途中必多惊险，不宜出外。", "要知有何灾咎，以所临六神断，如白虎为风波，玄武为盗贼之类。"],
+          "yi": ["五爻是道路，官鬼落在五爻发动，路上一定多有惊险，不适宜出外。", "要知道是什么灾咎，按它所临的六神来断，比如白虎是风波，玄武是盗贼之类。"],
+          "en": ["The fifth line is the road; Pressure on it and moving means many frights and dangers on the way, and it is unfit to go out.", "To know what calamity, judge by the six spirits it carries, for example the White Tiger means storms and the Dark Tortoise means thieves."] },
+        { "by": "经", "book": "卜筮正宗", "range": [2735, 2735],
+          "zh": ["宅中有鬼勿居家"],
+          "yi": ["宅中有鬼勿居家"],
+          "en": ["If there is Pressure in the house, do not stay at home"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2735, 2735],
+          "zh": ["二爻为住宅，在家求财，鬼动此爻必然不利，以所临五行断，火鬼忌火烛类。", "得子孙持世发动，庶几无害，如无子孙发动，宜迁店铺可解。"],
+          "yi": ["二爻是住宅，在家求财，鬼爻动在二爻必然不利，按它所临的五行断，火鬼忌火烛之类。", "得子孙持世发动，差不多就没有害，如果没有子孙发动，宜迁换店铺来化解。"],
+          "en": ["The second line is the dwelling; for seeking wealth at home, Pressure moving on this line is surely unfavourable, judged by the element it carries, a Fire Pressure fearing fire and candles and the like.", "With Output holding the Self and moving there is hardly any harm; with no Output moving, it is resolved by moving the shop."] }
+      ],
+      "see": ["LY.TRAVEL.ZS.39", "LY.TRAVEL.ZS.06"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.05",
+      "topic": "归期",
+      "chapter": "八、辩贵人禄马之谬",
+      "chapter_en": "Section 8: Refuting the error about Nobles, Salary and Post Horse",
+      "title": "辩贵人禄马之谬·卜行人当察用神：用神临驿马动则归期可定，驿马动而用爻受伤则不可以驿马断其来——驿马是行动之宿，不是用神",
+      "rule": {
+        "yi": "占行人要先看用神：用神临着驿马发动，回来的日期可以定；如果驿马发动而用爻受了伤，不可以拿驿马来断他会来。",
+        "en": "In divining for a traveller, look first at the Subject: if the Subject sits on the Post Horse and moves, the day of return can be fixed; if the Post Horse moves but the Subject line is injured, one cannot judge his coming from the Post Horse."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1073, 1075],
+          "zh": ["且如卜行人，当察用神，如用神临驿马动，归期可定；", "如驿马动而用爻受伤，不可以驿马断其来。"],
+          "yi": ["且如占行人，要先看用神，如果用神临着驿马发动，回来的日期可以定；", "如果驿马发动而用爻受了伤，不可以拿驿马来断他会来。"],
+          "en": ["In divining for a traveller, look first at the Subject: if the Subject sits on the Post Horse and moves, the day of return can be fixed;", "if the Post Horse moves but the Subject line is injured, one cannot judge his coming from the Post Horse."] }
+      ],
+      "see": ["LY.TRAVEL.HJC.53"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.06",
+      "topic": "归期",
+      "chapter": "十八问答·第二问·回头之克",
+      "chapter_en": "Eighteen questions, no. 2: the turning-back control",
+      "title": "十八问答·第二问·书中例，占仆何日回：亥水财爻为用神，不谓月破，却怕重重土动伤它，「双拳不敌四手」，不仅难盼归期，还防途中不测，后来午月火旺合未助土，中途遇害",
+      "rule": {
+        "yi": "回头克的道理是：凡遇回头克，彻底克尽。书中例：巳月丁亥日有人占仆人哪天回来，得夬卦变履卦：亥水财爻是用神，亥水虽然是月建，不叫月破，但是不宜重重土爻发动来伤它。谚语说「双拳不敌四手」，不但难盼他回来，还要提防途中不测；后来到午月火旺、合未助土的时候，仆人在中途遇害了。",
+        "en": "On the turning-back control: whatever meets a turning-back control is controlled through and through. Worked example: in the Si month, on a Dinghai day, a man divined on what day his servant would return and got Guai changing to Lü (Treading): the Wealth Hai-water is the Subject; though Hai-water is the Month it is not called Month-break, but it must not be injured by crowded movement of Earth lines. As the saying goes, two fists are no match for four hands; there is not only little hope for his return but beware of mishap on the road. Later, in the Wu month, when Fire was strong, combined Wei and helped Earth, the servant was killed on the way."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3651, 3651],
+          "zh": ["凡遇回头克者，彻底克尽。", "原用二神遇之则凶，忌仇二神遇之反吉也。"],
+          "yi": ["凡遇回头克的，彻底克尽。", "原用二神遇到它就凶，忌神仇神遇到它反而吉。"],
+          "en": ["Whatever meets a turning-back control is controlled through and through.", "The original two spirits (the Subject and its Support) are ill when they meet it, while the Adversary and the enemy spirit are lucky when they meet it."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [3732, 3732],
+          "zh": ["巳月丁亥日，一人占仆何日回，得夬之履卦："],
+          "yi": ["巳月丁亥日，有人占仆人哪天回来，得夬卦变履卦："],
+          "en": ["In the Si month, on a Dinghai day, a man divined on what day his servant would return and got Guai changing to Lü (Treading):"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [3746, 3746],
+          "zh": ["断曰：亥水财爻为用神，亥水虽是月建，不谓月破，但不宜重重土动伤之。", "谚云“双拳不敌四手”，不独难望归期，还防途中不测。", "后至午月火旺合未助土时，中途遇害矣！"],
+          "yi": ["断曰：亥水财爻是用神，亥水虽然是月建，不叫月破，但是不宜重重土爻发动来伤它。", "谚语说「双拳不敌四手」，不但难盼他回来，还要提防途中不测。", "后来到午月火旺、合未助土的时候，仆人在中途遇害了！"],
+          "en": ["Judgement: the Wealth Hai-water is the Subject; though Hai-water is the Month it is not called Month-break, but it must not be injured by crowded movement of Earth lines.", "As the saying goes, two fists are no match for four hands; there is not only little hope for his return but beware of mishap on the road.", "Later, in the Wu month, when Fire was strong, combined Wei and helped Earth, the servant was killed on the way!"] }
+      ],
+      "note": {
+        "yi": "这一例收在第二问「回头克」下面，但判词用的是「重重土动伤财」，没有提回头克；引的那句「回头克」的总说是这一问的开头，本库照原位置放。",
+        "en": "The example is placed under the second question on the turning-back control, but its judgement rests on crowded Earth lines injuring Wealth and does not mention a turning-back control; the general statement quoted is the opening of that question, kept here in its original place."
+      },
+      "see": ["LY.TRAVEL.ZS.20"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.07",
+      "topic": "平安",
+      "chapter": "十八问答·第十二问·四生墓绝吉凶",
+      "chapter_en": "Eighteen questions, no. 12: Life, Tomb and Extinction, luck and ill",
+      "title": "十八问答·第十二问·书中例，占子在楚生理何日回、叔占侄在外平安：前卦子孙伏于世爻丑土墓库之下又墓于日辰，后卦子孙现而化墓、寅木原神真破真空，申金月建官鬼临道路发动，两卦并看是不祥之兆；后来果然传来五月长江履舟而死的口信",
+      "rule": {
+        "yi": "四生墓绝有三种：生墓绝于日辰是一，生墓绝于飞爻是二，动而变出来的是三。用神墓绝，有救就无凶。书中例：申月癸丑日有人占儿子在楚地做生意哪天回，得损卦：申金子孙伏在世爻丑土的墓库之下，本来就不宜，怎能又墓在日辰？令郎恐怕有大患；他说，近来有信，里面说八月起身，所以才占他来不来，我说这一卦难以断他的归期；他的叔叔说，我来占侄子在外平安与否，又得无妄卦变颐卦：前一卦子孙不现且入墓，后一卦现身却化墓，何况原神寅木是真破真空、没有生助，又有申金月建官鬼临在道路上发动，两卦并看，是不祥之兆；他说，前些日子有口信传来说五月在长江翻船死了，这个信息我已经听到，卦理很明白，所以才开玩笑去占。",
+        "en": "Life, Tomb and Extinction come in three kinds: in the Day is one, in the flying line is two, and what comes out by moving and changing is three. A Subject in the tomb or extinct is not ill if there is rescue. Worked example: in the Shen month, on a Guichou day, a man divined on what day his son, trading in Chu, would return and got Sun: Output Shen-metal is hidden under the tomb store Chou-earth of the Self line, which is already unfit, and how can it be in the tomb of the Day as well? Your son may meet a great misfortune. He said: a letter came recently saying he would set out in the eighth month, so I asked whether he would come; I said this hexagram could not fix his day of return. His uncle said: I came to divine whether my nephew is safe abroad, and he got Wuwang changing to Yi: in the former hexagram Output is hidden and in the tomb; in the latter it appears but changes into a tomb, and moreover the Support Yin-wood is truly broken and Void with no help, and Pressure Shen-metal, the Month, sits on the road and moves; read together, the two hexagrams are an ominous sign. He said: a few days ago word came that he died in the fifth month when his boat capsized on the Yangtze; I had already heard it, and the hexagram principle is very clear, so I divined as a jest."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [4703, 4703],
+          "zh": ["第十二问：四生墓绝吉凶何以断之？", "答曰：四生墓绝有三；", "生墓绝于日辰一也；", "生墓绝于飞爻二也；", "动而变出者三也。", "忌辰畏生，祸来不小；", "用神墓绝，有救无凶。", "定法如是，活变在人。"],
+          "yi": ["第十二问：四生墓绝的吉凶怎么断？", "回答说：四生墓绝有三种；", "生墓绝于日辰是第一种，", "生墓绝于飞爻是第二种，", "动而变出来的是第三种。", "忌神遇生，祸来不小；", "用神墓绝，有救就没有凶。", "定法是这样，灵活变通在于人。"],
+          "en": ["Question 12: how are the luck and ill of Life, Tomb and Extinction judged?", "Answer: Life, Tomb and Extinction come in three kinds;", "in the Day is the first,", "in the flying line is the second,", "what comes out by moving and changing is the third.", "when the Adversary meets Life, the calamity that comes is not small;", "a Subject in the tomb or extinct is not ill if there is rescue.", "The fixed rule is so; the flexible turn is up to the man."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4785, 4785],
+          "zh": ["申月癸丑日，占子在楚生理何日回，得损卦："],
+          "yi": ["申月癸丑日，有人占儿子在楚地做生意哪天回，得损卦："],
+          "en": ["In the Shen month, on a Guichou day, a man divined on what day his son, trading in Chu, would return and got Sun:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4792, 4792],
+          "zh": ["断曰：申金子孙伏于世爻丑土墓库之下，本是不宜，岂可又墓于日辰？", "令郎恐有大患。", "彼曰：近有信至，内云八月起身，故占其来否。", "予曰：此卦难以断其归期。"],
+          "yi": ["断曰：申金子孙伏在世爻丑土的墓库之下，本来就不宜，怎能又墓在日辰？", "令郎恐怕有大患。", "他说：近来有信，里面说八月起身，所以才占他来不来。", "我说：这一卦难以断他的归期。"],
+          "en": ["Judgement: Output Shen-metal is hidden under the tomb store Chou-earth of the Self line, which is already unfit, and how can it be in the tomb of the Day as well?", "Your son may meet a great misfortune.", "He said: a letter came recently saying he would set out in the eighth month, so I asked whether he would come.", "I said: this hexagram cannot fix his day of return."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4793, 4793],
+          "zh": ["乃叔曰：我来占侄在外平安否。", "又得无妄之颐卦："],
+          "yi": ["他的叔叔说：我来占侄子在外平安与否。", "又得无妄卦变颐卦："],
+          "en": ["His uncle said: I came to divine whether my nephew is safe abroad.", "And he got Wuwang changing to Yi:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4801, 4801],
+          "zh": ["断曰：前卦子孙不现入墓，后卦现而化墓，况寅木原神乃是真破真空，并无生助；", "又申金月建官鬼临于道路发动，两卦并看，不祥之兆也。", "彼曰：前日有口信来说，五月长江履舟而死，此信已闻得，卦理甚明，故戏卜之耳。"],
+          "yi": ["断曰：前一卦子孙不现且入墓，后一卦现身却化墓，何况原神寅木是真破真空、没有生助；", "又有申金月建官鬼临在道路上发动，两卦并看，是不祥之兆。", "他说：前些日子有口信传来说五月在长江翻船死了，这个消息我已经听到，卦理很明白，所以才开玩笑去占。"],
+          "en": ["Judgement: in the former hexagram Output is hidden and in the tomb; in the latter it appears but changes into a tomb, and moreover the Support Yin-wood is truly broken and Void with no help;", "and Pressure Shen-metal, the Month, sits on the road and moves; read together, the two hexagrams are an ominous sign.", "He said: a few days ago word came that he died in the fifth month when his boat capsized on the Yangtze; I had already heard it, and the hexagram principle is very clear, so I divined as a jest."] }
+      ],
+      "note": {
+        "yi": "「令郎」是称对方的儿子；原文里「予」是作者王洪绪，「彼」是来占的人。第二卦是同一家的叔叔来占，所以放在一起。",
+        "en": "\"Your son\" is the honorific for the questioner's son. In the text the author is Wang Hongxu and \"he\" is the person who came to divine. The second hexagram was divined by the young man's uncle in the same household, so the two are kept together."
+      },
+      "see": ["LY.TRAVEL.ZS.18"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.08",
+      "topic": "去留",
+      "chapter": "十八问答·第十五问·独静独发",
+      "chapter_en": "Eighteen questions, no. 15: sole still and sole moving",
+      "title": "十八问答·第十五问·书中例，占自去寻父回：寅木独发克父爻持世，自身不能动、父也见不到，要等冲克寅木之年月；再占得革之既济，世化申金回头生，果于申年八月寻父回家",
+      "rule": {
+        "yi": "独静独发只能看事情成败的快慢，至于吉凶要推用神，舍掉用神去决断的，迂腐而且错误。书中例：午月丙午日占亲自去寻找父亲能不能回来，得大有卦变离卦：一位懂易的朋友拿着这一卦问我，寅木一爻独发，正月能见到吗？我说不是的，卦中父爻持世，被寅木克制，自己不能动，父亲也见不到，想让自己动身见到父亲，必须等到冲克寅木的年月；让他再占一卦合起来决断，得革卦变既济卦：这一卦正合前一卦，前一卦应在冲开寅木的申，这一卦世爻化出申金回头生，也应在申；果然在申年八月寻父回了家，应在申年，是前卦冲去忌神、后卦化出申金父母用神生世的缘故。",
+        "en": "Sole still and sole moving only show how fast or slow the matter succeeds or fails; luck and ill must be reckoned from the Subject, and to decide while setting the Subject aside is pedantic and wrong. Worked example: in the Wu month, on a Bingwu day, a man divined about going himself to seek his father and bringing him back, and got Dayou changing to Li: a friend who knew the Changes held up this hexagram and asked me whether Yin-wood moving alone meant he would see his father in the first month. I said no; the Resource line holds the Self and is controlled by Yin-wood, so he cannot move himself and cannot see his father; to set out and see his father, he must wait for a year or month that clashes or controls Yin-wood. I told him to divine again to settle it together, and he got Ge changing to Jiji: this hexagram agrees exactly with the former; the former answered at Shen, which clashes Yin open, and this one has the Self changing into Shen-metal that turns back to give life, which also answers at Shen. Indeed in the eighth month of a Shen year he went to seek his father and came home with him. It answered in the Shen year because the former hexagram clashed away the Adversary and the latter changed into Shen-metal, the Resource and Subject, to give life to the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [5075, 5075],
+          "zh": ["然独静独发不过观事之成败迟速，至于吉凶当推用神，若舍用神而决事者，迂且谬也。"],
+          "yi": ["独静独发不过是看事情成败的快慢，至于吉凶要推用神，如果舍掉用神去决断，迂腐而且错误。"],
+          "en": ["Sole still and sole moving only show how fast or slow the matter succeeds or fails; luck and ill must be reckoned from the Subject, and to decide while setting the Subject aside is pedantic and wrong."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5077, 5077],
+          "zh": ["午月丙午日，占自去寻父回，得大有之离卦："],
+          "yi": ["午月丙午日，占亲自去寻找父亲回来，得大有卦变离卦："],
+          "en": ["In the Wu month, on a Bingwu day, a man divined about going himself to seek his father and bring him back, and got Dayou changing to Li:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5084, 5084],
+          "zh": ["一友人知《易》，同问其父，执此卦对予曰：寅木一爻独发，正月得见否？", "予曰：非也。", "卦中父爻持世，被寅木克制，自身不能动，父亦不得见也；", "欲身动见父，必待冲克寅木之年月也。"],
+          "yi": ["一位懂易的朋友一起问他的父亲，拿着这一卦对我说：寅木一爻独发，正月能见到吗？", "我说：不是的。", "卦中父爻持世，被寅木克制，自己不能动，父亲也见不到。", "想让自己动身见到父亲，必须等到冲克寅木的年月。"],
+          "en": ["A friend who knew the Changes asked about the father too, and holding up this hexagram said to me: Yin-wood moving alone, can he be seen in the first month?", "I said: no.", "The Resource line holds the Self and is controlled by Yin-wood, so he cannot move himself and cannot see his father.", "To set out and see his father, he must wait for a year or month that clashes or controls Yin-wood."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5086, 5086],
+          "zh": ["命彼再占一卦合决之，得革之既济卦："],
+          "yi": ["叫他再占一卦合起来决断，得革卦变既济卦："],
+          "en": ["I told him to divine again to settle it together, and he got Ge changing to Jiji:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5093, 5093],
+          "zh": ["断曰：此卦正合前卦，前卦应冲开寅木者申也，此卦世化申金回头生，亦应申也。", "果于申年八月寻父回家。", "应于申年者，前卦冲去忌神，后卦化出申金父母用神生世也。"],
+          "yi": ["断曰：这一卦正合前一卦，前一卦应在冲开寅木的申，这一卦世爻化出申金回头生，也应在申。", "果然在申年八月寻父回了家。", "应在申年，是前一卦冲去了忌神，后一卦化出申金父母用神来生世。"],
+          "en": ["Judgement: this hexagram agrees exactly with the former; the former answered at Shen, which clashes Yin open, and this one has the Self changing into Shen-metal that turns back to give life, which also answers at Shen.", "Indeed in the eighth month of a Shen year he went to seek his father and came home with him.", "It answered in the Shen year because the former hexagram clashed away the Adversary and the latter changed into Shen-metal, the Resource and Subject, to give life to the Self."] }
+      ],
+      "note": {
+        "yi": "「予」是作者王洪绪；「一友人」是另一位也懂《易》的人。注意这个例子里的父母爻，是儿子要找的父亲，所以在这一例里它是用神。",
+        "en": "The author is Wang Hongxu, and the friend is another man who also knew the Changes. The Resource line in this example is the father the son is looking for, so here it is the Subject."
+      },
+      "see": ["LY.TRAVEL.ZS.17", "LY.TRAVEL.ZS.28"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.09",
+      "topic": "归期",
+      "chapter": "十八问答·第十五问·独静独发",
+      "chapter_en": "Eighteen questions, no. 15: sole still and sole moving",
+      "title": "十八问答·第十五问·书中例，占父远出何日回：外卦伏吟在外有忧愁之象，内卦辰土父母化巳火回头之生、世爻午火化卯木助火生之，并无害；第四爻午火独静，五月必归；后三四月父在湖广生理，省城兵乱，五月方归",
+      "rule": {
+        "yi": "书中例：寅月甲辰日占父亲远出哪天回，得遁卦变归妹卦：外卦伏吟，在外有忧愁之象；他问有没有害，我说内卦辰土父母化出巳火回头之生，世爻午火化出卯木助火生它，并无害处；第四爻午火独静，五月必定回来；后来三、四月父亲在湖广做生意，不料省城兵乱，五月才回。",
+        "en": "Worked example: in the Yin month, on a Jiachen day, a man divined on what day his father, gone on a long journey, would return, and got Dun changing to Guimei: the outer trigram is in Hidden Chant, a sign of worry abroad. He asked whether there was harm, and I said: the Resource Chen-earth of the inner trigram changes into Si-fire, a turning-back life, and the Self Wu-fire changes into Mao-wood which helps the fire and gives it life, so there is no harm; the fourth line Wu-fire is alone still, so he will surely come back in the fifth month. Afterwards, in the third and fourth months the father was trading in Huguang, and unexpectedly the provincial capital fell into mutiny, and he came back only in the fifth month."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [5075, 5075],
+          "zh": ["然独静独发不过观事之成败迟速，至于吉凶当推用神，若舍用神而决事者，迂且谬也。"],
+          "yi": ["独静独发不过是看事情成败的快慢，至于吉凶要推用神，如果舍掉用神去决断，迂腐而且错误。"],
+          "en": ["Sole still and sole moving only show how fast or slow the matter succeeds or fails; luck and ill must be reckoned from the Subject, and to decide while setting the Subject aside is pedantic and wrong."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5148, 5148],
+          "zh": ["寅月甲辰日，占父远出何日回，得遁之归妹卦："],
+          "yi": ["寅月甲辰日，占父亲远出哪天回，得遁卦变归妹卦："],
+          "en": ["In the Yin month, on a Jiachen day, a man divined on what day his father, gone on a long journey, would return, and got Dun changing to Guimei:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5170, 5170],
+          "zh": ["断曰：外卦伏吟，在外有忧愁之象。", "彼曰：无害否？", "答曰：内卦辰土父母化巳火回头之生，世爻午火化卯木助火生之，并无有害；", "第四爻午火独静，五月必归也。", "后三四月乃父在湖广生理，不料省城兵乱，五月方归。"],
+          "yi": ["断语：外卦是伏吟，在外面有忧愁的迹象。", "他问：没有害吗？", "我说：内卦辰土父母化出巳火回头之生，世爻午火化出卯木助火生它，并无害处；", "第四爻午火独静，五月必定回来。", "后来三、四月父亲在湖广做生意，不料省城兵乱，五月才回。"],
+          "en": ["Judgement: the outer trigram is in Hidden Chant, a sign of worry abroad.", "He asked: is there no harm?", "I said: the Resource Chen-earth of the inner trigram changes into Si-fire, a turning-back life, and the Self Wu-fire changes into Mao-wood which helps the fire and gives it life, so there is no harm;", "the fourth line Wu-fire is alone still, so he will surely come back in the fifth month.", "Afterwards, in the third and fourth months the father was trading in Huguang, and unexpectedly the provincial capital fell into mutiny, and he came back only in the fifth month."] }
+      ],
+      "see": ["LY.TRAVEL.BSZZ.08"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.10",
+      "topic": "归期",
+      "chapter": "十八问答·第十八问·诚明不验",
+      "chapter_en": "Eighteen questions, no. 18: sincere and shrewd, yet not borne out",
+      "title": "十八问答·第十八问·书中例，占伯父何日回：用神伏藏受克而不来，若问平安则父母卯木被日月动爻冲克必不安，问来不来不能这样断；后来果然不来，在外平安（与《增删卜易》同一卦，被占的人是母亲）",
+      "rule": {
+        "yi": "书中例：酉月戊申日占伯父哪天回来，得旅卦变艮卦：这一卦如果问伯父平安与否，卯木父母伏而不现，被日月动爻冲克，必定不平安；现在问的是回不回来，不这样断，只能断用神伏藏受克所以不来；后来果然没有来，他在外面平安。",
+        "en": "Worked example: in the You month, on a Wushen day, a man divined on what day his uncle would come back and got Lü (the Traveller) changing to Gen: had this hexagram been asked about the uncle's safety, the Resource Mao-wood is hidden and does not appear, clashed and controlled by the Month, the Day and the moving lines, and he would surely be unwell; but the question is whether he comes back, so it is not judged that way, and one can only judge that the Subject is hidden and controlled and so does not come; in the end he did not come, and he was safe abroad."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [5321, 5321],
+          "zh": ["第十八问：卜者心诚，断者精明，亦有验，何也？", "答曰：此其故在卜者而不在断者，乃卜者之意虽诚，或密事难以语人，或问此而意别有在也，所以有不验之故耳。"],
+          "yi": ["第十八问：卜者心诚，断者精明，也有不验的，为什么？", "回答说：原因在卜的人不在断的人，是卜的人心意虽然诚，但有的是秘密的事难以对人说，或者问的是这件事、心里想的却是别的事，所以才有不验的缘故。"],
+          "en": ["Question 18: when the diviner is sincere and the judge shrewd, it may still not be borne out; why?", "Answer: the reason lies with the one who divines and not the one who judges: though his intent is sincere, either it is a secret matter he cannot tell, or he asks about this while his mind is on something else, and so it is not borne out."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5323, 5323],
+          "zh": ["酉月戊申日，占伯父何日回，得旅之艮卦："],
+          "yi": ["酉月戊申日，占伯父哪天回来，得旅卦变艮卦："],
+          "en": ["In the You month, on a Wushen day, a man divined on what day his uncle would come back, and got Lü (the Traveller) changing to Gen:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [5330, 5330],
+          "zh": ["此卦若问伯父平安否，卯木父母伏而不现，被日月动爻克冲，必不安矣；", "今问其回来否，不以此断，只可断用神伏藏受克不来。", "后果不来，在外平安。"],
+          "yi": ["这一卦如果问伯父平安与否，卯木父母伏而不现，被日月动爻冲克，必定不平安；", "现在问的是回不回来，不这样断，只能断用神伏藏受克所以不来。", "后来果然没有来，他在外面平安。"],
+          "en": ["Had this hexagram been asked about the uncle's safety, the Resource Mao-wood is hidden and does not appear, clashed and controlled by the Month, the Day and the moving lines, and he would surely be unwell;", "but the question now is whether he comes back, so it is not judged that way, and one can only judge that the Subject is hidden and controlled and so does not come.", "In the end he did not come, and he was safe abroad."] }
+      ],
+      "note": {
+        "yi": "同一个卦、同一个日子、同样的判词，《增删卜易》行人章记的是占「母」在外何时来，这里记的是占「伯父」何日回——两本书对被占的人说法不同，判词一字不差地相同。",
+        "en": "The same hexagram, the same date and the same judgement are recorded in the chapter on travellers in the Zengshan Buyi as divining when a mother abroad would come; here it is an uncle. The two books name a different person, with the judgement word for word the same."
+      },
+      "see": ["LY.TRAVEL.ZS.23"]
+    },
+    {
+      "id": "LY.TRAVEL.BSZZ.11",
+      "topic": "风险",
+      "chapter": "总断千金赋",
+      "chapter_en": "The Rhapsody of a Thousand Golden Judgements",
+      "title": "总断千金赋·出行最怕往亡，如系吉神终获利：往亡是凶煞，出行遇到它即使大象吉利也断凶是因为它主死，但它若临所喜之爻、发动生扶拱合世身用爻，就当利不当害——神煞的分量轻，五行的分量重",
+      "rule": {
+        "yi": "出行最怕往亡，但如果往亡落在吉神上，终究获利。往亡是凶煞，出行遇到它，即使整个卦象吉利，也断为凶，因为它主死；但如果它落在所喜的爻上、发动来生扶拱合世身和用爻，我一定认为有利而不认为有害。因为神煞的权重轻、五行的权重重。",
+        "en": "Setting out most fears Wangwang, but if it sits on an auspicious spirit one gains in the end. Wangwang is a baleful star: when setting out meets it, even if the whole hexagram looks lucky it is judged ill, because it speaks of death; but if it sits on a welcome line and moves to give life to, support, embrace or combine with the Self, the Body and the Subject, I must take it as profit and not as harm, because the weight of the stars is light and the weight of the five elements is heavy."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1280, 1280],
+          "zh": ["出行最怕往亡，", "如系吉神终获利。"],
+          "yi": ["出行最怕往亡，", "如果是吉神终究获利。"],
+          "en": ["Setting out most fears Wangwang,", "but if it is an auspicious spirit one gains in the end."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1282, 1282],
+          "zh": ["往亡，凶煞也，出行遇之，虽大象吉利，竟断其凶，因死之故也，若临所喜之爻动来生扶拱合世身用爻者，吾必以为利而不以为害也。"],
+          "yi": ["往亡是凶煞，出行遇到它，即使整个卦象吉利，也断为凶，因为它主死；但如果它落在所喜的爻上、发动来生扶拱合世身和用爻，我一定认为有利而不认为有害。"],
+          "en": ["Wangwang is a baleful star: when setting out meets it, even if the whole hexagram looks lucky it is judged ill, because it speaks of death; but if it sits on a welcome line and moves to give life to, support, embrace or combine with the Self, the Body and the Subject, I must take it as profit and not as harm."] }
+      ],
+      "note": {
+        "yi": "这一联的前半是「虎兴而遇吉神……疾病大宜天喜，若临凶煞必生悲」，这里只取出行一句；「往亡」是旧时选日用的凶煞，主出行不利。",
+        "en": "The first half of the couplet speaks of the White Tiger, the Dragon, the Dark Tortoise, the Vermilion Bird and the Tianxi star for illness; only the line on setting out is taken here. Wangwang is a baleful star of the old day-selection lore, held to make setting out unfavourable."
+      },
+      "see": ["LY.TRAVEL.HJC.101"]
+    }
+  ]
+}

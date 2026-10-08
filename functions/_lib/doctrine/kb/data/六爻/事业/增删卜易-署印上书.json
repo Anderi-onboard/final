@@ -1,0 +1,264 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "增删卜易",
+  "chapter": "署印谋差章、面圣上书劾奏章",
+  "chapter_en": "Chapters on seeking a seal-holding post, and on audiences, memorials and impeachments",
+  "ranges": {"增删卜易": [10703, 10791]},
+  "units": [
+    {
+      "id": "LY.CAREER.ZS.27",
+      "topic": "差役",
+      "chapter": "署印谋差章",
+      "chapter_en": "Chapter on seeking to act in a seal-holding post or a commission",
+      "title": "署印谋差·财与官星不可有一而不旺，子孙兄弟不可有一而动摇；世陷财空不如守己，官空世破且让他人；衰世随鬼入墓、世动化克化鬼、子孙兄弟持世，自投罗网",
+      "rule": {
+        "yi": "谋署理印务、谋差事：财星和官星不能有一个不旺相，子孙和兄弟不能有一个发动摇动；世爻失陷、财落空，不如守住自己；官星落空、世爻被破，暂且让给别人；用钱去谋的，和援例一样推断。衰弱的世爻随官鬼入墓，世爻发动变克、变鬼，子孙或兄弟持世，这时去谋署印、营求差事，是自己投进罗网。",
+        "en": "On seeking to act in a seal-holding post or to scheme for a commission: of the star of Wealth and the star of office neither may fail to be thriving, and of Output and Peer neither may move or sway; if the Self is lost and Wealth is Void, it is better to keep to oneself; if the star of office is Void and the Self is broken, let others have it for now; for one who seeks it with money, judge as for buying office by precedent. If a weak Self follows Pressure into the tomb, or the Self moves and turns into a control or into Pressure, or Output or Peer holds the Self, then seeking to act in a seal-holding post or to scheme for a commission is walking into the net oneself."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10705, 10705],
+          "zh": ["财与官星，不可有一而不旺；", "子孙兄弟，不可有一而动摇。", "世陷财空，不如守己；", "官空世破，且让他人。", "用财而图者，与援例同推。"],
+          "yi": ["财星和官星，不能有一个不旺相；", "子孙和兄弟，不能有一个发动摇动。", "世爻失陷、财落空，不如守住自己；", "官星落空、世爻被破，暂且让给别人。", "用钱去谋的，和援例一样推断。"],
+          "en": ["Of the star of Wealth and the star of office, neither may fail to be thriving;", "of Output and Peer, neither may move or sway.", "If the Self is lost and Wealth is Void, it is better to keep to oneself;", "if the star of office is Void and the Self is broken, let others have it for now.", "For one who seeks it with money, judge as for buying office by precedent."] },
+        { "by": "经", "book": "增删卜易", "range": [10706, 10706],
+          "zh": ["衰世随鬼入墓，世动化克化鬼，子孙兄弟持世，谋署营差，自投罗网。"],
+          "yi": ["衰弱的世爻随官鬼入墓，世爻发动变克、变鬼，子孙或兄弟持世，去谋署理印务、营求差事，是自己投进罗网。"],
+          "en": ["If a weak Self follows Pressure into the tomb, or the Self moves and turns into a control or into Pressure, or Output or Peer holds the Self, then seeking to act in a seal-holding post or to scheme for a commission is walking into the net oneself."] }
+      ],
+      "note": {
+        "yi": "「署印」是暂时代理掌印的官（署理）；「营差」是营求差遣。书里没有另外解释，这里按字面和上下文读。",
+        "en": "'Shuyin' is temporarily acting as the official who holds the seal, and 'yingchai' is scheming for a commission; the book does not explain them, and they are read here from the letter and the context."
+      },
+      "see": ["LY.CAREER.ZS.18", "LY.CAREER.ZS.19", "LY.CAREER.ZS.22"]
+    },
+    {
+      "id": "LY.CAREER.ZS.28",
+      "topic": "成否",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·旺父持世，宜日月岁五以维持（父母为文书奏章，持世合世奏必见准，再得岁五日月动爻生合，见用无疑）",
+      "rule": {
+        "yi": "上书奏事，父母爻就是文书、奏章：旺相的父母爻持世、合世，奏章必定被批准；再得到太岁、五爻和日月、动爻来生合的，被采用无疑。",
+        "en": "In submitting a memorial the Resource line is the document and the memorial: if a thriving Resource line holds or combines with the Self, the memorial will surely be approved, and if Tai Sui, the fifth line, the Day, the Month or a moving line also generates or combines with it, it will be adopted without doubt."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10712, 10712],
+          "zh": ["旺父持世，宜日月岁五以维持。", "父母为文书、奏章，持世、合世，奏必见准，再得岁五及日月动爻生合者，见用无疑。"],
+          "yi": ["旺相的父母爻持世，适合有日月、太岁、五爻来扶持。", "父母爻是文书、奏章，持世、合世，奏章必定被批准；再得到太岁、五爻和日月、动爻来生合的，被采用无疑。"],
+          "en": ["A thriving Resource line holding the Self does well with the Day, the Month, Tai Sui or the fifth line to sustain it.", "The Resource line is documents and memorials: if it holds or combines with the Self, the memorial will surely be approved, and if Tai Sui, the fifth line, the Day, the Month or a moving line also generates or combines with it, it will be adopted without doubt."] }
+      ],
+      "see": ["LY.CAREER.ZS.29", "LY.CAREER.ZS.30"]
+    },
+    {
+      "id": "LY.CAREER.ZS.29",
+      "topic": "成否",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·兄弟临身，喜父母化吉而拱合（兄弟持世，日月生之，或世、父母动而化吉，或世化父以生世，皆得喜动龙颜、因文见用）",
+      "rule": {
+        "yi": "兄弟临身时，喜欢父母爻变吉并来拱合：兄弟持世，有日月生它，或者世爻、父母爻发动变吉，或者世爻变出父母爻来生世，都能使皇上龙颜大悦，因为奏章被采用。",
+        "en": "If Peer sits on the Body, it is good that the Resource line turns auspicious and holds up and combines: if Peer holds the Self and the Day and Month generate it, or the Self or the Resource line moves and turns auspicious, or the Self turns into Resource to generate the Self, all of these please the dragon countenance, and one is employed because of the document."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10713, 10715],
+          "zh": ["兄弟临身，喜父母化吉而拱合。", "兄弟持世，日月生之，或世爻、父母爻动而化吉，或世化父以生世，以上皆得喜动龙颜，因文见用。"],
+          "yi": ["兄弟临身，喜欢父母爻变吉并来拱合。", "兄弟持世，有日月生它，或者世爻、父母爻发动变吉，或者世爻变出父母爻来生世，以上都能使皇上龙颜大悦，因为奏章被采用。"],
+          "en": ["If Peer sits on the Body, it is good that Resource turns auspicious and holds up and combines.", "If Peer holds the Self and the Day and Month generate it, or the Self or the Resource line moves and turns auspicious, or the Self turns into Resource to generate the Self, all of these please the dragon countenance, and one is employed because of the document."] }
+      ],
+      "see": ["LY.CAREER.ZS.28", "LY.CAREER.ZS.30"]
+    },
+    {
+      "id": "LY.CAREER.ZS.30",
+      "topic": "风险",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·财爻持世破文书（财爻持世或发动，克破文书，无益之奏；父母持世、财官同动则喜，因财动生官、官动生世）",
+      "rule": {
+        "yi": "财爻持世或发动，会克破文书，是没有益处的奏章；但如果父母持世，财和官一起发动，又是好的，因为财动生官、官动生世。",
+        "en": "If the Wealth line holds the Self or moves, it controls and breaks the document, and the memorial is of no use; but if Resource holds the Self and Wealth and the star of office move together, that is good again, because Wealth moves to generate the star of office and the star of office moves to generate the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10716, 10716],
+          "zh": ["财爻持世破文书。", "财爻持世、财爻发动，克破文书，无益之奏。", "倘得父母持世，财官同动者而又喜之，其故以财动而生官，官动而生世也。"],
+          "yi": ["财爻持世会破坏文书。", "财爻持世、财爻发动，克破文书，是没有益处的奏章。", "如果父母持世，财和官一起发动的，又是好的，原因是财动生官、官动生世。"],
+          "en": ["A Wealth line holding the Self breaks the document.", "If the Wealth line holds the Self or moves, it controls and breaks the document, and the memorial is of no use.", "If Resource holds the Self and Wealth and the star of office move together, that is good again, because Wealth moves to generate the star of office and the star of office moves to generate the Self."] }
+      ],
+      "see": ["LY.CAREER.ZS.28", "LY.CAREER.ZS.31"]
+    },
+    {
+      "id": "LY.CAREER.ZS.31",
+      "topic": "风险",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·子福临身防降罚（子孙克官，有职之官陈奏忌见，持世或发动轻则降罚重则休官；无职之人看来人之念：为求名者见之不成名，恐其有祸者见之必无祸）",
+      "rule": {
+        "yi": "上书陈奏时子孙持世或发动：子孙是克官星的神，有官职的人上奏陈事，不宜见到它，轻的降职受罚，重的罢官；没有官职的人要看来占者心里的念头：本来是为了求功名的，见子孙必定不成名；担心会有祸患的，见子孙必定没有祸。",
+        "en": "When Output holds the Self or moves in a memorial: Output is the spirit that controls the star of office, and for an official with a post who submits a memorial it is not good to see it: at the lightest there is demotion and punishment, at the worst dismissal; for a man without office one must look at the thought of the one who comes: if he does this in order to seek a name, seeing Output means he will surely not gain a name; if he fears that it may bring him misfortune, seeing Output means there will surely be none."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10717, 10717],
+          "zh": ["子福临身防降罚。", "子孙为克官之神，有职之官而陈奏者，不宜见之，或持世，或发动，轻则降罚，重则休官。", "无职之人而陈奏者，有两论，须察来人之念；", "彼行此事，原为求名者，见之必不成名；", "彼行此事，恐其有祸者，见之必无祸。"],
+          "yi": ["子孙和福神临身，要防备降职受罚。", "子孙是克官星的神，有官职的人上奏陈事，不宜见到它，不论持世还是发动，轻的降职受罚，重的罢官。", "没有官职的人上奏陈事，有两种论法，要看来占的人心里的念头；", "他做这件事，本来是为了求功名的，见到它必定不成名；", "他做这件事，担心会有祸患的，见到它必定没有祸。"],
+          "en": ["With Output and the lucky spirit on the Body, guard against demotion and punishment.", "Output is the spirit that controls the star of office; for an official with a post who submits a memorial, it is not good to see it, whether it holds the Self or moves: at the lightest there is demotion and punishment, at the worst dismissal from office.", "For a man without office who submits a memorial there are two ways of judging, and one must look at the thought of the one who comes;", "if he does this in order to seek a name, seeing it means he will surely not gain a name;", "if he does this fearing that it may bring him misfortune, seeing it means there will surely be none."] }
+      ],
+      "see": ["LY.CAREER.ZS.30", "LY.CAREER.ZS.33", "LY.CAREER.HJC.03"]
+    },
+    {
+      "id": "LY.CAREER.ZS.32",
+      "topic": "风险",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·世临空破，难以回天（世临旬空月破、临绝化绝、入三墓，不蒙见准宜早知机；世动变凶或岁五日月动爻冲克世，不惟难回天且防不测）",
+      "rule": {
+        "yi": "上书时世爻临空、临破，难以挽回圣意：世爻临旬空、月破，以及临绝、变绝、入三墓的，得不到批准，应当早点察觉时机；世爻发动变凶，或者太岁、五爻、日月、动爻冲克世爻的，不但难以挽回，而且要防备想不到的祸患。",
+        "en": "In a memorial, if the Self falls on Void or break, it is hard to turn heaven round: if the Self falls on Void or Month-break, or on extinction or turns into extinction, or enters the three tombs, the request will not be approved, and one should read the moment early; if the Self moves and turns bad, or Tai Sui, the fifth line, the Day, the Month or a moving line clashes with or controls the Self, it is not only hard to turn heaven round but one must guard against unforeseen misfortune."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10718, 10718],
+          "zh": ["世临空破，难以回天。", "世临旬空、月破，及临绝、化绝，及入三墓者，不蒙见准，宜早知机。", "世动变凶，或岁五日月动爻冲克世爻者，不惟难以回天，且防不测之祸。"],
+          "yi": ["世爻临空、临破，难以挽回圣意。", "世爻临旬空、月破，以及临绝、变绝，以及入三墓的，得不到批准，应当早点察觉时机。", "世爻发动变凶，或者太岁、五爻、日月、动爻冲克世爻的，不但难以挽回，而且要防备想不到的祸患。"],
+          "en": ["If the Self falls on Void or break, it is hard to turn heaven round.", "If the Self falls on Void or Month-break, or on extinction or turns into extinction, or enters the three tombs, the request will not be approved, and one should read the moment early.", "If the Self moves and turns bad, or Tai Sui, the fifth line, the Day, the Month or a moving line clashes with or controls the Self, it is not only hard to turn heaven round but one must guard against unforeseen misfortune."] }
+      ],
+      "see": ["LY.CAREER.ZS.34", "LY.CAREER.HJC.26"]
+    },
+    {
+      "id": "LY.CAREER.ZS.33",
+      "topic": "成否",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·子动临身，力能折槛（野鹤：有职之官陈奏忌子动，但条陈将相、诤谏君非这类事则以子孙为福神，反喜子孙持世，面折庭诤可保无祸；古以子发乾宫为吉，非也；书中例：旅卦，劾奏权奸，果蒙准行）",
+      "rule": {
+        "yi": "条陈将相、诤谏君过、弹劾奸臣这类事，和一般的奏事不一样：这里子孙要当福神用，所以反而喜欢子孙持世，即使当面诤谏也可以保证没有祸。但有官职的人如果只是为了保全功名，子孙发动时千万不要去做。古人以子孙在乾宫发动为吉，是不对的，子孙是制住官鬼的福神，没有听说只在乾宫才是福神。",
+        "en": "For proposals about the generals and chancellors, remonstrance against the ruler's faults and the impeachment of a treacherous minister, the rule differs from ordinary memorials: here Output is used as the lucky spirit, so Output holding the Self is welcome instead, and even if one contends to the ruler's face one can be sure of no misfortune. But an official who only wants to preserve his rank must not do it when Output moves. The ancients took Output moving in the Qian palace as auspicious, which is wrong: Output is the lucky spirit that restrains Pressure, and it has never been heard that it is so only in the Qian palace."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10719, 10719],
+          "zh": ["子动临身，力能折槛。"],
+          "yi": ["子孙发动临身，有力量像朱云那样折断殿槛、直言进谏。"],
+          "en": ["With Output moving on the Body, one has the strength to break the railing."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10719, 10720],
+          "zh": ["野鹤曰：或疑前说子动克官，不宜见之，此喜子孙持世者，何也？", "殊不知须看事之大小耳。", "有职之官，行此事者，预料此事，设不准行，定然革职。", "子孙者，即为克官之神也。", "欲保全功名，子孙发动，切勿行之。", "倘若条陈将相，诤谏君非，若得准行，名垂青史；", "如不见准，祸及其身。", "此处则以子孙为福神矣，所以反喜子孙持世，即使面折庭诤，可保无祸。", "古以子发乾宫为吉，非也。", "夫子孙为制鬼之福神，未闻独在乾宫而为福神也。"],
+          "yi": ["野鹤说：有人怀疑，前面说子孙发动克官星，不宜见到它，这里却喜欢子孙持世，是为什么？", "殊不知要看事情的大小。", "有官职的人做这件事，事先就料到，如果不批准施行，必定革职。", "子孙，就是克官星的神。", "想要保全功名，子孙发动的时候，千万不要去做。", "如果是向将相条陈、直言劝谏君主的过失，若得到批准施行，名垂青史；", "如果不被批准，祸患落到自己身上。", "这里就以子孙为福神了，所以反而喜欢子孙持世，即使当面折服、在朝廷上直言争谏，也可以保证没有祸。", "古人以子孙在乾宫发动为吉，是不对的。", "子孙是制住官鬼的福神，没有听说只在乾宫才是福神。"],
+          "en": ["The Old Man of Yehe says: someone may doubt it: earlier it was said that a moving Output controls the star of office and is not welcome, yet here Output holding the Self is welcome; why?", "It is not understood that one must look at the size of the matter.", "An official with a post who does this foresees that if it is not approved he will certainly be dismissed.", "Output is the spirit that controls the star of office.", "If one wants to preserve one's rank, when Output moves one must not do it.", "But if one submits a proposal about the generals and chancellors, or remonstrates against the ruler's faults, then if it is approved and carried out, one's name goes down in history;", "if it is not approved, misfortune falls on oneself.", "Here Output is taken as the lucky spirit, so Output holding the Self is welcome instead, and even if one confronts the ruler to his face and contends in court, one can be sure of no misfortune.", "The ancients took Output moving in the Qian palace as auspicious, which is wrong.", "Output is the lucky spirit that restrains Pressure; it has never been heard that it is the lucky spirit only in the Qian palace."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10721, 10721],
+          "zh": ["如：巳年巳月丁卯日(旬空：戌亥)，占劾奏，得“旅卦”"],
+          "yi": ["例如：巳年巳月丁卯日（旬空：戌、亥），占弹劾上奏，得到旅卦。"],
+          "en": ["For example: in a Si year, Si month, on a Dingmao day (void: Xu and Hai), a divination on impeaching a minister gave Lü."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10728, 10728],
+          "zh": ["占者问曰：我欲劾奏权奸，恐其根固，反受其害，尔详此卦何如？", "余曰：彼虽根深蒂固，今已坏矣。", "问：何以知之。", "余曰：应爻酉金，长生于巳年巳月，岂非根固耶？", "今被岁月克之、卯日冲之，有伤无救，所以知其权势自此衰矣。", "又问：我有害否？", "余曰：子孙持世，何害之有？", "果蒙准行，奸势大败。"],
+          "yi": ["来占的人问：我想弹劾权奸，担心他根基牢固，反而被他所害，请你详细看看这个卦怎么样？", "我说：他虽然根深蒂固，现在已经坏了。", "问：凭什么知道？", "我说：应爻是酉金，在巳年巳月长生，难道不是根基牢固吗？", "现在被太岁、月建克它，又被卯日冲它，只有伤害没有救助，所以知道他的权势从此衰落了。", "又问：我有没有害处？", "我说：子孙持世，有什么害处？", "结果果然被批准施行，奸臣的势力大败。"],
+          "en": ["The man who came to divine asked: I wish to impeach a powerful and treacherous minister, but fear his roots are firm and I shall be harmed instead; please examine this hexagram carefully, how is it?", "I said: though his roots are deep and firm, they are now spoiled.", "He asked: how do you know?", "I said: the Other line is You Metal, which is born in a Si year and Si month; is that not firm roots?", "But now the year and the month control it and the Mao day clashes it, with injury and no rescue, so I know his power will decline from now on.", "He asked again: will I be harmed?", "I said: Output holds the Self, so what harm could there be?", "And indeed it was approved and carried out, and the treacherous faction was utterly defeated."] }
+      ],
+      "note": {
+        "yi": "「折槛」是汉朝朱云当面直谏、攀折殿槛的典故，书里没有讲，译文是按通行的意思注的。前一条（ZS.31）说有官职的人上奏忌见子孙，这一条说子孙持世反吉，野鹤自己的解释是：要看事情的大小。",
+        "en": "'Breaking the railing' alludes to Zhu Yun of Han, who remonstrated to the emperor's face and clung to and broke the palace railing; the book does not tell it, and the translation gives the usual sense. The previous entry (ZS.31) says an official with a post should not see Output in a memorial and this one says Output holding the Self is good instead; the Old Man's own explanation is that it depends on the size of the matter."
+      },
+      "see": ["LY.CAREER.ZS.31", "LY.CAREER.ZS.34"]
+    },
+    {
+      "id": "LY.CAREER.ZS.34",
+      "topic": "风险",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·最忌官爻克世，犹嫌助鬼伤身（官鬼克世已兆凶，再加财动助鬼祸难免；世变鬼、回头克、随鬼入墓、反吟、卦变绝、世被冲克者，事非重大急宜止之）",
+      "rule": {
+        "yi": "上书最忌官爻克世爻，也嫌弃帮助官鬼伤害自身：官鬼克世已经预兆凶象，再加上财发动来帮助官鬼的，灾祸难免；世爻变出官鬼、变出回头克、随官鬼入墓、卦得反吟、卦变成绝、世爻被冲克的，事情如果不是重大的，要赶紧停止。",
+        "en": "In a memorial what is most to be avoided is the Pressure line controlling the Self, and also disliked is helping Pressure to injure the Body: when Pressure controls the Self it already foretells ill, and if Wealth also moves to help Pressure the misfortune cannot be avoided; if the Self turns into Pressure, or into a returning control, or follows Pressure into the tomb, or the hexagram gets Reversed Chant or changes into extinction, or the Self is clashed or controlled, unless the matter is grave it should be stopped at once."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10729, 10729],
+          "zh": ["最忌官爻克世，犹嫌助鬼伤身。", "官鬼克世，已兆凶征，再加财动而助鬼者，其祸难免。", "世爻变鬼，动化回头之克，随鬼入墓，卦得反吟，卦变绝，世被冲克者，事非重大，急宜止之。"],
+          "yi": ["最忌讳官爻克世爻，也嫌弃帮助官鬼伤害自身。", "官鬼克世，已经预兆凶象，再加上财发动来帮助官鬼的，灾祸难以避免。", "世爻变出官鬼，发动变出回头克，随官鬼入墓，卦得反吟，卦变成绝，世爻被冲克的，事情如果不是重大的，要赶紧停止。"],
+          "en": ["Most to be avoided is the Pressure line controlling the Self, and also disliked is helping Pressure to injure the Body.", "When Pressure controls the Self it already foretells ill, and if Wealth also moves to help Pressure, the misfortune cannot be avoided.", "If the Self turns into Pressure, or moves into a returning control, follows Pressure into the tomb, the hexagram gets Reversed Chant or changes into extinction, or the Self is clashed or controlled, unless the matter is grave it should be stopped at once."] }
+      ],
+      "see": ["LY.CAREER.ZS.32", "LY.CAREER.ZS.35", "LY.CAREER.ZS.06"]
+    },
+    {
+      "id": "LY.CAREER.ZS.35",
+      "topic": "风险",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·岁五生身防受制，六爻恍惚且休行（太岁生世必须在卦爻里出现才算；五爻生世为吉也防受克空衰破绝，有生名无生实；书中例：中孚之损，巳火生世而受克，此书宜止，后果不准行；野鹤：有益于国之事不必占，可此可彼之事须世与父爻无伤、岁五日月相生才可行）",
+      "rule": {
+        "yi": "太岁生世必须在卦爻里出现才算数，不在卦爻中就生不了世；五爻生世当作吉的，也要防它受克、落空、衰弱、被破、入绝，有生的名义没有生的实际；六爻恍惚不定就不要上书。野鹤说：真有益于国的事，舍身为国也不辞，不必占卜；事情可做可不做之间的，必须世爻与父爻都没有刑冲克破，而且太岁、五爻、日月相生，才可以做；爻中乱动、用神元神非旺非衰、克多生少的，就应当停止。",
+        "en": "For Tai Sui to generate the Self it must appear among the lines, and if it is not among the lines it cannot generate the Self; taking the fifth line generating the Self as auspicious, one must also guard against its being controlled, Void, weak, broken or extinct, which would give the name of generation and not the substance; if the six lines are vague and unsettled, do not submit the memorial. The Old Man of Yehe says: if the matter truly benefits the state one gives oneself for the country and refuses nothing, and there is no need of divination; for a matter that could go either way, it may be done only if the Self and the Resource line are free of punishment, clash, control and break and Tai Sui, the fifth line, the Day and the Month generate them; if the lines move in disorder, the Subject and Support are neither thriving nor weak, or controls outnumber generations, it should be stopped."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10730, 10730],
+          "zh": ["岁五生身防受制，六爻恍惚且休行。", "太岁生世，必要入爻，不在爻中，不能生世。", "如今岁子年，须看卦中有子爻者是也。", "至以五爻生世为吉者，亦防受克及空衰破绝，有生之名而无生之实。"],
+          "yi": ["太岁、五爻生身，要防备受制；六爻恍惚不定，暂且不要行动。", "太岁生世爻，必须进入卦爻中，不在爻中，就不能生世。", "比如今年是子年，必须看卦中有子爻的才是。", "至于把五爻生世当作吉的，也要防备它受克以及落空、衰弱、被破、绝，有生的名义而没有生的实际。"],
+          "en": ["If Tai Sui or the fifth line generates the Body, guard against being restrained; if the six lines are vague and unsettled, do not act for now.", "For Tai Sui to generate the Self it must be in the lines; if it is not among the lines it cannot generate the Self.", "For example, if this year is a Zi year, one must see whether the hexagram has a Zi line.", "As for taking the fifth line generating the Self as auspicious, one must guard against its being controlled, or Void, weak, broken or extinct, which would give the name of generation and not the substance."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10732, 10732],
+          "zh": ["如：申月戊辰日(旬空：戌亥)，占上书，得“中孚之损”"],
+          "yi": ["例如：申月戊辰日（旬空：戌、亥），占上书，得到中孚卦变损卦。"],
+          "en": ["For example: in the Shen month on a Wuchen day (void: Xu and Hai), a divination on submitting a memorial gave Zhongfu changing into Sun."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10737, 10737],
+          "zh": ["断曰：五位巳火生世，吉矣！", "而不宜巳火受克，此书宜止。", "问曰：有害否？", "余曰：巳火虽则不能生世，而卦中幸无克世之爻，利与害皆无也。", "后此人上书，惟不准行而已。"],
+          "yi": ["断语说：五爻的巳火生世爻，是吉的！", "但是巳火不宜受克，这个上书应当停止。", "问：有没有害处？", "我说：巳火虽然不能生世，但卦中幸好没有克世的爻，利和害都没有。", "后来这个人上书，只是没有被批准施行罢了。"],
+          "en": ["The judgment said: Si Fire in the fifth place generates the Self, which is auspicious!", "But Si Fire should not be controlled, and this memorial should be stopped.", "He asked: will there be harm?", "I said: though Si Fire cannot generate the Self, fortunately there is no line in the hexagram that controls the Self, so there is neither gain nor harm.", "Afterwards this man submitted the memorial, and it was merely not approved."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10738, 10738],
+          "zh": ["野鹤曰：凡上书劾奏，果有兴利除害，有益于国者，舍身而为国，虽赴汤蹈火而不辞，何用占卜？", "如果事无关系，或因忿而抱不平、或以直而报怨，事在两可之间者，必得世与父爻皆无刑冲克破，及岁五日月相生，方可行之。", "倘爻中乱动，而用神元神非旺非衰，或克多生少，六爻恍惚者，即宜止之，言出祸随，得不慎乎？"],
+          "yi": ["野鹤说：凡是上书弹劾，如果真是兴利除害、有益于国家的事，舍身为国，赴汤蹈火也不推辞，何必占卜？", "如果事情没有重大关系，或者因为愤恨而抱不平，或者以正直为名而报私怨，事情在可做可不做之间的，必须世爻与父爻都没有刑、冲、克、破，以及太岁、五爻、日月相生，才可以去做。", "如果爻中乱动，而用神、元神非旺非衰，或者克多生少，六爻恍惚不定的，就应当停止，话一出口祸患就跟着来，怎能不谨慎呢？"],
+          "en": ["The Old Man of Yehe says: whenever one submits a memorial or impeachment, if it truly promotes benefit and removes harm and is of use to the state, one gives oneself for the country and refuses nothing even in boiling water and fire, so what need of divination?", "If the matter is of no consequence, or one is moved by anger to take up an injustice, or repays a grudge in the name of uprightness, a matter that could go either way, it may be done only if the Self and the Resource line are free of punishment, clash, control and break, and Tai Sui, the fifth line, the Day and the Month generate them.", "If the lines move in disorder, and the Subject and the Support are neither thriving nor weak, or controls outnumber generations, or the six lines are vague and unsettled, one should stop; once the words are out misfortune follows, so how could one not be careful?"] }
+      ],
+      "see": ["LY.CAREER.ZS.34", "LY.CAREER.ZS.36"]
+    },
+    {
+      "id": "LY.CAREER.ZS.36",
+      "topic": "成否",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·父旺官生，叨蒙赠爵；旺官持世，平步青云（旺父持世官动生之，旺官持世日月生之：官则官上加官，士则身登台阁，平人立见平步登云；野鹤：断卦最重来人之一念，借上书作阶梯求名者，官旺文不旺亦可许封官，因文乃敲门瓦）",
+      "rule": {
+        "yi": "上书求赠爵封官：父母旺相、官星生它，或者旺相的官星持世，或者旺相的父母持世、官星发动生它，或者旺官持世、有日月生它，做官的就官上加官，读书人就位至台阁，平民得到这个卦，立刻平步青云。野鹤说：断卦最看重的是来占的人心里的那个念头；借上书当阶梯来求功名的人，官星旺相而文书不旺，也可以答应他得到赠官封职，因为他本来的念头是为了得官，文书只是敲门砖，所以看重官星而不看重父母。",
+        "en": "On submitting a memorial to win a bestowed rank or office: if Resource is thriving and the star of office generates it, or a thriving star of office holds the Self, or a thriving Resource holds the Self and the star of office moves to generate it, or a thriving star of office holds the Self and the Day and Month generate it, an official gets office added to office, a scholar reaches the high ministries, and a commoner who gets it at once climbs to the clouds. The Old Man of Yehe says: the most important thing in judging a hexagram is the one thought of the person who comes; for one who uses a memorial as a ladder to seek a name, if the star of office is thriving though the document is not, one may still grant that he will be given a post and title, because his first thought was to gain office and the document is only the tile to knock at the door, so the star of office is weighed and not Resource."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10739, 10740],
+          "zh": ["父旺官生，叨蒙赠爵；", "旺官持世，平步青云。", "旺父持世，官动生之；", "旺官持世，日月生之；", "官则官上加官；", "士则身登台阁；", "平人得者，立见平步登云。"],
+          "yi": ["父母旺相、官星生它，能蒙受赠予爵位；", "旺相的官星持世，平步青云。", "旺相的父母持世，官星发动去生它；", "旺相的官星持世，有日月生它；", "做官的就官上加官；", "读书人就位至台阁；", "平民得到的，立刻就能平步登云。"],
+          "en": ["With Resource thriving and the star of office generating it, one is favoured with a bestowed rank;", "a thriving star of office holding the Self means a smooth climb to the clouds.", "A thriving Resource line holds the Self and the star of office moves to generate it;", "a thriving star of office holds the Self and the Day and Month generate it;", "for an official it is office added to office;", "for a scholar it is to reach the high ministries;", "for a commoner who gets it, he immediately climbs to the clouds."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10741, 10741], "literal": ["父母"],
+          "zh": ["野鹤曰：断卦者，最重来人之一念。", "此行有为人为己者；", "有为父母自身而雪怨者；", "有为保全人己之功名者；", "有为财利而行者；", "有为免自己之赔累，或辨下属之赔累者；", "为类固多，在人通变。", "夫士民上书，虽则亦有忠心为国者，然亦有借作阶梯而求名者，倘得官旺而文不旺，亦可许之赠职封官，其故盖因彼之初念原为得官，文乃敲门之瓦耳，所以重官而不重父。"],
+          "yi": ["野鹤说：断卦的人，最看重的是来占的人心里的那一个念头。", "这件事有为别人也为自己的；", "有为父母、为自己洗雪冤屈的；", "有为保全别人和自己功名的；", "有为财利而做的；", "有为了免除自己的赔累，或为下属辩明赔累的；", "这类事本来很多，要靠人灵活变通。", "士人百姓上书，虽然也有忠心为国的，但也有借此作为阶梯来求功名的；如果得到官星旺相而文书不旺，也可以答应他得到赠官封职，原因是他最初的念头本来是为了得官，文书只是敲门的砖瓦，所以看重官星而不看重父母爻。"],
+          "en": ["The Old Man of Yehe says: for one who judges hexagrams, the most important thing is the single thought of the person who comes.", "In this undertaking some act for others and for themselves;", "some to clear a grievance for their parents or themselves;", "some to preserve their own and others' rank;", "some for gain;", "some to be spared their own liabilities or to explain their subordinates' liabilities;", "There are many such kinds, and it is for the man to adapt.", "Scholars and commoners who submit memorials include some who are loyal to the state, but also some who use it as a ladder to seek a name; if the star of office is thriving though the document is not thriving, one may grant that he will be given a post and title, because his first thought was to gain office and the document was only the tile to knock at the door, so the star of office is weighed and not Resource."] }
+      ],
+      "see": ["LY.CAREER.ZS.35", "LY.CAREER.ZS.37"]
+    },
+    {
+      "id": "LY.CAREER.ZS.37",
+      "topic": "风险",
+      "chapter": "面圣、上书、叩阍、献策、条陈、劾奏章",
+      "chapter_en": "Chapter on audiences with the emperor, memorials, petitions, proposals and impeachments",
+      "title": "上书·我念为名，忌子孙之发动；我念为名，忌兄弟而临身（书中例：大壮之夬，父母持世文书极旺而子动伤官，名坏；讼之履，旺文生世而兄弟持世，奏上而钱财终破）",
+      "rule": {
+        "yi": "为求功名而上书，忌讳子孙发动，忌讳兄弟临身：父母持世、文书再旺，只要子孙一动伤官，为名的人文书旺也没用；旺相的文书生世、但兄弟持世，上司的奏章可以上去，自己的钱财终究要破，销账不准。",
+        "en": "When one submits a memorial to seek a name, Output moving is to be avoided and Peer on the Body is to be avoided: if Resource holds the Self and the document is extremely thriving, once Output moves to injure the star of office a thriving document is of no use to one who seeks a name; if a thriving document generates the Self but Peer holds the Self, the superior's memorial goes up but one's own money is bound to be lost and the write-off is not approved."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10742, 10742],
+          "zh": ["我念为名，忌子孙之发动；", "我念为名，忌兄弟而临身。"],
+          "yi": ["我的念头是为了求功名，忌讳子孙发动；", "我的念头是为了求功名，忌讳兄弟临身。"],
+          "en": ["If my thought is for a name, Output moving is to be avoided;", "if my thought is for a name, Peer on the Body is to be avoided."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10743, 10743],
+          "zh": ["如：午月丙辰日(旬空：子丑)，出具文伸枉，保全功名，得“大壮之夬”"],
+          "yi": ["例如：午月丙辰日（旬空：子、丑），占出具文书申冤、保全功名，得到大壮卦变夬卦。"],
+          "en": ["For example: in the Wu month on a Bingchen day (void: Zi and Chou), a divination on filing a document to redress a wrong and preserve his rank gave Dazhuang changing into Guai."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10783, 10783],
+          "zh": ["父母持世，月建文书极旺，但不宜子动伤官，七八月申金得令之秋，功名坏矣！", "果蒙上台题保，未蒙准行，八月削职，此乃为名者，文旺亦属无益。"],
+          "yi": ["父母持世，月建这个文书非常旺，但是不宜子孙发动伤官，七、八月申金得令的秋天，功名就坏了！", "结果上司题请保全他，但没有得到批准施行，八月被削职，这就是为求名的人，文书旺相也没有益处。"],
+          "en": ["Resource holds the Self and the Month, as the document, is extremely thriving, but Output moving to injure the star of office is unwelcome, and in the autumn of the seventh and eighth months when Shen Metal holds the season, his rank would be ruined!", "In the end the superior petitioned to preserve him but it was not approved and carried out, and in the eighth month he was stripped of office: for one whose thought is a name, a thriving document is of no use either."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10784, 10784],
+          "zh": ["又如：卯月辛丑日(旬空：辰巳)，占具文辨患开销，得“讼之履”"],
+          "yi": ["又例：卯月辛丑日（旬空：辰、巳），占出具文书辨明祸患、销账开脱，得到讼卦变履卦。"],
+          "en": ["Another: in the Mao month on a Xinchou day (void: Chen and Si), a divination on filing a document to explain a trouble and have the account cleared gave Song changing into Lü."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10790, 10790],
+          "zh": ["旺文虽则生世，不宜兄弟持世，上司之章奏定行，我财终是要破，后题请，不准开销。"],
+          "yi": ["旺相的文书虽然生世，但兄弟持世不好，上司的奏章一定会上去，但我的钱财终究要被破，后来题请，没有批准销账。"],
+          "en": ["A thriving document does generate the Self, but Peer holding the Self is unwelcome; the superior's memorial would surely go up, but my money was bound to be lost, and afterwards the petition was not approved to write off the account."] }
+      ],
+      "see": ["LY.CAREER.ZS.36", "LY.CAREER.ZS.31"]
+    }
+  ]
+}

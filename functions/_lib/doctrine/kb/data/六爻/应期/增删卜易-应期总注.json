@@ -1,0 +1,257 @@
+{
+  "shushu": "六爻",
+  "domain": "应期",
+  "work": "增删卜易",
+  "chapter": "各门类应期总注章等",
+  "chapter_en": "The general notes on timing, with the Month-break and Void chapters",
+  "ranges": {"增删卜易": [2546, 2824]},
+  "units": [
+    {
+      "id": "LY.TIMING.ZS.01",
+      "topic": "静动",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "静而逢值逢冲、动而逢合逢值：主事爻安静的，逢它值日或被冲的日子应；主事爻发动的，逢合日或值日应",
+      "rule": {
+        "yi": "主事的爻安静而遇到值日、遇到冲：比如主事爻落在子水不动，后来遇到子日、午日就应验；其余照这个类推。主事的爻发动而遇到合、遇到值日：比如主事爻落在子水发动，后来遇到子日、丑日就应验；其余照这个类推。",
+        "en": "The line that rules the matter, still, meets its ruling day or a clash: for example, if the line ruling the matter sits on Zi-water and does not move, it answers on a later Zi day or Wu day; the rest follow this. The line ruling the matter, moving, meets a combination or its ruling day: for example, if the line ruling the matter sits on Zi-water and moves, it answers on a later Zi day or Chou day; the rest follow this."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2792, 2792],
+          "zh": ["静而逢值、逢冲：且如主事爻临子水不动，后逢子日、午日应之。", "余仿此。", "动而逢合逢值：且如主事爻临子水发动，后遇子日丑日应之。", "余仿此。"],
+          "yi": ["静而逢值、逢冲：比如主事爻落在子水不动，后来遇到子日、午日就应验。", "其余照这个类推。", "动而逢合逢值：比如主事爻落在子水发动，后来遇到子日、丑日就应验。", "其余照这个类推。"],
+          "en": ["Still and meeting its ruling day or a clash: for example, if the line ruling the matter sits on Zi-water and does not move, it answers on a later Zi day or Wu day.", "The rest follow this.", "Moving and meeting a combination or its ruling day: for example, if the line ruling the matter sits on Zi-water and moves, it answers on a later Zi day or Chou day.", "The rest follow this."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.02",
+      "topic": "旺衰",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "太旺者逢墓逢冲、衰绝者遇生遇旺：太旺的在入墓或被冲的日子应，休囚无气的要等逢生或逢旺的月日才应",
+      "rule": {
+        "yi": "太旺的，遇到墓、遇到冲：比如主事爻落在午火，又遇到巳午月日占卦，或者卦中巳午爻太多，后来遇到亥子日应验，又有戌日应验，那是火入墓。衰绝的，遇到生、遇到旺：比如主事爻属金，在巳午月日占卦，就是休囚无气，后来遇到土月土日，或到秋令当时，就旺了；其余照这个类推。",
+        "en": "A line that is too strong meets the tomb or a clash: for example, if the line ruling the matter sits on Wu-fire and the divination falls in a Si or Wu month or day, or there are too many Si or Wu lines in the hexagram, it answers on a later Hai or Zi day, and also on a Xu day, which is Fire entering the tomb. A line that is weak or extinct meets life or strength: for example, if the line ruling the matter is Metal and the divination falls in a Si or Wu month or day, it is resting and without breath; later, in an Earth month or day, or when autumn takes command, it is strong; the rest follow this."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2793, 2793],
+          "zh": ["太旺者，逢墓、逢冲：如主事爻临午火，又遇巳午月日占卦；", "或卦中巳午爻太多，后逢亥子日应之，又有戌日应之，乃火之入墓也。", "余仿此。"],
+          "yi": ["太旺者，逢墓、逢冲：比如主事爻落在午火，又遇到巳午月日占卦；", "或者卦中巳午爻太多，后来遇到亥子日应验，又有戌日应验，那是火入墓。", "其余照这个类推。"],
+          "en": ["A line that is too strong meets the tomb or a clash: for example, if the line ruling the matter sits on Wu-fire and the divination falls in a Si or Wu month or day;", "or there are too many Si or Wu lines in the hexagram, it answers on a later Hai or Zi day, and also on a Xu day, which is Fire entering the tomb.", "The rest follow this."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2794, 2794],
+          "zh": ["衰绝者，遇生、遇旺：如主事爻属金，占卦于巳午月日，即是休囚无气。", "后逢土月日，或至秋令当时，则旺矣。", "余仿此。"],
+          "yi": ["衰绝者，遇生、遇旺：比如主事爻属金，在巳午月日占卦，就是休囚无气。", "后来遇到土月土日，或到秋令当时，就旺了。", "其余照这个类推。"],
+          "en": ["A line that is weak or extinct meets life or strength: for example, if the line ruling the matter is Metal and the divination falls in a Si or Wu month or day, it is resting and without breath.", "Later, in an Earth month or day, or when autumn takes command, it is strong.", "The rest follow this."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.03",
+      "topic": "墓库",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "入三墓俱喜冲开：主事爻入墓，在冲开墓的日子应——主事爻午火，火墓在戌，后逢辰日应",
+      "rule": {
+        "yi": "入了三墓，都喜欢被冲开：比如主事爻落在午火，火的墓在戌，后来遇到辰日就应验；其余照这个类推。",
+        "en": "A line that has entered one of the three tombs is glad to be clashed open: for example, if the line ruling the matter sits on Wu-fire, whose tomb is Xu, it answers on a later Chen day; the rest follow this."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2795, 2795],
+          "zh": ["入三墓，俱喜冲开：如主事爻临午火，火墓于戌，后逢辰日则应之。", "余仿此。"],
+          "yi": ["入三墓，都喜欢冲开：比如主事爻落在午火，火的墓在戌，后来遇到辰日就应验。", "其余照这个类推。"],
+          "en": ["Entering the three tombs, all are glad to be clashed open: for example, if the line ruling the matter sits on Wu-fire, whose tomb is Xu, it answers on a later Chen day.", "The rest follow this."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.04",
+      "topic": "合冲",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "遇六合亦宜相击：主事爻与日月作合、或动与爻合、或动而化合，不管吉凶都要等冲开它的月日应——主象临子与丑作合，后逢午未日应",
+      "rule": {
+        "yi": "遇到六合，也适宜相互冲击：主事爻与日月作合，或发动与别的爻合，或发动而化出合，不管是凶是吉，必定等到冲开它的月日才应验。就像主象落在子，与丑作合，后来遇到午日、未日应验。其余照这个类推。",
+        "en": "Meeting a six-combine, it is likewise fit to be struck by a clash: if the line ruling the matter forms a combination with the Month or the Day, or moves and combines with another line, or moves and changes into a combination, whether it is ill or lucky it answers only in the month or day that clashes it open. For example, if the principal image sits on Zi and forms a combination with Chou, it answers on a later Wu or Wei day. The rest follow this."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2796, 2796],
+          "zh": ["遇六合，亦宜相击：如主事爻与日月作合，或动与爻合，或动而化合，或凶，或吉，必待冲开之月日应之。", "即如主象临子，与丑作合，后逢午未日应之是也。", "余仿此。"],
+          "yi": ["遇六合，也适宜相击：主事爻与日月作合，或发动与别的爻合，或发动而化出合，不管是凶是吉，必定等到冲开它的月日才应验。", "就像主象落在子，与丑作合，后来遇到午日、未日应验。", "其余照这个类推。"],
+          "en": ["Meeting a six-combine, it is likewise fit to be struck by a clash: if the line ruling the matter forms a combination with the Month or the Day, or moves and combines with another line, or moves and changes into a combination, whether it is ill or lucky it answers only in the month or day that clashes it open.", "For example, if the principal image sits on Zi and forms a combination with Chou, it answers on a later Wu or Wei day.", "The rest follow this."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.05",
+      "topic": "空破",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "月破喜逢填合、旬空最爱填冲：月破的在逢合日或填实的月日应；旬空的详见旬空章",
+      "rule": {
+        "yi": "月破的，喜欢遇到填实或合：比如子月占卦，主事爻落在午火，是月破，后来遇到未日应验，叫做破而逢合；又有遇到午月应验，填实了就不破了；其余照这个类推。旬空的最喜欢被填实或冲：详见旬空章。",
+        "en": "A line struck by the Month-break is glad to meet a filling or a combination: for example, if the divination falls in the Zi month and the line ruling the matter sits on Wu-fire, it is broken by the Month, and it answers on a later Wei day, which is called a break that meets a combination; it may also answer in the Wu month, when it is filled and no longer broken; the rest follow this. A Void line most loves to be filled or clashed: see the chapter on the Void."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2797, 2797],
+          "zh": ["月破喜逢填合：如子月占卦，主事爻临午火，乃为月破，后逢未日应之，谓之破而逢合。", "又有逢午月应之，填实之日则不破矣。", "余仿此。"],
+          "yi": ["月破喜逢填合：比如子月占卦，主事爻落在午火，是月破，后来遇到未日应验，叫做破而逢合。", "又有遇到午月应验，填实了就不破了。", "其余照这个类推。"],
+          "en": ["A Month-break is glad to meet a filling or a combination: for example, if the divination falls in the Zi month and the line ruling the matter sits on Wu-fire, it is broken by the Month, and it answers on a later Wei day, which is called a break that meets a combination.", "It may also answer in the Wu month, when it is filled and no longer broken.", "The rest follow this."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2798, 2798],
+          "zh": ["旬空最爱填冲：详旬空章。"],
+          "yi": ["旬空最爱被填实或冲：详见旬空章。"],
+          "en": ["A Void line most loves to be filled or clashed: see the chapter on the Void."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.06",
+      "topic": "受克",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "大象吉而受克须待克神受克、大象凶而受克须防克者逢生：用神吉象被克，等克它的爻受克时才吉；凶象被克，要防克它的爻逢生时更凶",
+      "rule": {
+        "yi": "大局象吉而用神受克，必须等到克它的神受克：比如用神落在辰土，得到日月动爻生扶，是大局吉象；如果被寅卯克害，后来遇到申酉日，冲克克神就吉。大局象凶而用神受克，须防克它的神逢生：同前面说的，用神落在辰土，既没有日月动爻生扶，是大局凶象；再遇到寅卯克制它，后来遇到寅卯亥日就凶。",
+        "en": "When the overall image is lucky but the Subject is controlled, one must wait until the controlling spirit is itself controlled: for example, if the Subject sits on Chen-earth and is given life and support by the Month, the Day and moving lines, the overall image is lucky; if it is harmed by Yin and Mao, then on a later Shen or You day, when the controlling spirit is clashed and controlled, it is lucky. When the overall image is ill and the Subject is controlled, beware of the controller meeting life: as before, if the Subject sits on Chen-earth and has no life or support from the Month, the Day or moving lines, the overall image is ill; if Yin and Mao also control it, then on a later Yin, Mao or Hai day it is ill."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2799, 2799],
+          "zh": ["大象吉而受克，须待克神受克：如用神临辰土，得日月动爻生扶，乃为大象吉也。", "倘被寅卯克害，后逢申酉日，冲克克神则吉。", "余仿此。"],
+          "yi": ["大象吉而受克，须待克神受克：比如用神落在辰土，得到日月动爻生扶，是大局吉象。", "如果被寅卯克害，后来遇到申酉日，冲克克神就吉。", "其余照这个类推。"],
+          "en": ["The overall image lucky but the Subject controlled, one must wait until the controlling spirit is itself controlled: for example, if the Subject sits on Chen-earth and is given life and support by the Month, the Day and moving lines, the overall image is lucky.", "If it is harmed by Yin and Mao, then on a later Shen or You day, when the controlling spirit is clashed and controlled, it is lucky.", "The rest follow this."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2800, 2800],
+          "zh": ["大象凶而受克，须防克者逢生：即如前说，用神临辰土，既无日月动爻生扶，乃为大象凶也。", "再逢寅卯克制者，后逢寅卯亥日则凶。"],
+          "yi": ["大象凶而受克，须防克它的神逢生：同前面说的，用神落在辰土，既没有日月动爻生扶，是大局凶象。", "再遇到寅卯克制它，后来遇到寅卯亥日就凶。"],
+          "en": ["The overall image ill and the Subject controlled, beware of the controller meeting life: as before, if the Subject sits on Chen-earth and has no life or support from the Month, the Day or moving lines, the overall image is ill.", "If Yin and Mao also control it, then on a later Yin, Mao or Hai day it is ill."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.07",
+      "topic": "总则",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "元神来助来扶贵看用神衰旺、忌神来冲来克须观元气兴衰：元神帮助用神，要看用神是衰是旺；忌神冲克用神，要看元神是兴是衰；详见元神忌神章",
+      "rule": {
+        "yi": "元神来帮助来扶持，要紧的是看用神的衰旺；忌神来冲来克，必须看元气的兴衰：详见元神忌神章。",
+        "en": "When the Support comes to help and support, what matters is the strength or weakness of the Subject; when the Adversary comes to clash and control, one must look at the rise or fall of the Support: see the chapter on the Support and the Adversary."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2801, 2801], "literal": ["元神", "忌神"],
+          "zh": ["元神来助来扶，贵看用神衰旺：忌神来冲来克，须观元气兴衰：详元神忌神章。"],
+          "yi": ["元神来帮助来扶持，要紧的是看用神的衰旺；忌神来冲来克，必须看元气的兴衰：详见元神忌神章。"],
+          "en": ["When the Support comes to help and support, what matters is the strength or weakness of the Subject; when the Adversary comes to clash and control, one must look at the rise or fall of the Support: see the chapter on the Support and the Adversary."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.08",
+      "topic": "进退",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "化进神逢值逢合、化退神忌值忌冲：化进神的在值日或合日应，有应在申月日的也有应在巳月日的；化退神的怕值日怕冲；也有应在独发独静的，详见独发章；有应在变爻动爻的日子",
+      "rule": {
+        "yi": "变成进神的，遇到值日、遇到合：比如申发动变出酉，是进神，不管是福是祸，有应在申月申日的，有应在巳月巳日的；其余照这个类推。变成退神的，忌讳值日、忌讳冲：比如酉发动变出申，是退神，不管是凶是吉，有应在申月申日的，有应在寅月寅日的；其余照这个类推。偶尔也有应在独发独静上的，详见独发章。偶尔也有应在变爻、动爻上的：比如爻落在戌土，变出酉金，它的吉凶有应在戌日的，有应在酉日的；其余照这个类推。",
+        "en": "A line that changes into an Advancing spirit meets its ruling day or a combination: for example, Shen moving and changing into You is an Advancing spirit, and whether it brings fortune or misfortune, sometimes it answers in a Shen month or day and sometimes in a Si month or day; the rest follow this. A line that changes into a Retreating spirit fears its ruling day and fears a clash: for example, You moving and changing into Shen is a Retreating spirit, and whether it is ill or lucky, sometimes it answers in a Shen month or day and sometimes in a Yin month or day; the rest follow this. Now and then it answers on a sole moving or sole still line: see the chapter on sole movement. Now and then it answers on the changed line or the moving line: for example, if a line sits on Xu-earth and changes into You-metal, its luck or ill sometimes answers on a Xu day and sometimes on a You day; the rest follow this."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2802, 2802],
+          "zh": ["化进神，逢值逢合：如申动化酉乃为进神。", "为福为祸，有应申月日者，有应巳月日者。", "余仿此。", "化退神，忌值忌冲：如酉动化申乃为退神。", "为凶为吉，有应申月日者，有应寅月日者。", "余仿此。", "间有应于独发独静：详独发章。"],
+          "yi": ["化进神，逢值逢合：比如申发动变出酉，是进神。", "不管是福是祸，有应在申月申日的，有应在巳月巳日的。", "其余照这个类推。", "化退神，忌值忌冲：比如酉发动变出申，是退神。", "不管是凶是吉，有应在申月申日的，有应在寅月寅日的。", "其余照这个类推。", "偶尔也有应在独发独静上的：详见独发章。"],
+          "en": ["Changing into an Advancing spirit, it meets its ruling day or a combination: for example, Shen moving and changing into You is an Advancing spirit.", "Whether it brings fortune or misfortune, sometimes it answers in a Shen month or day and sometimes in a Si month or day.", "The rest follow this.", "Changing into a Retreating spirit, it fears its ruling day and fears a clash: for example, You moving and changing into Shen is a Retreating spirit.", "Whether it is ill or lucky, sometimes it answers in a Shen month or day and sometimes in a Yin month or day.", "The rest follow this.", "Now and then it answers on a sole moving or sole still line: see the chapter on sole movement."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2803, 2803],
+          "zh": ["间有应于变爻动爻：如爻临戌土，变出酉金，其吉凶有戌日应者，有酉日应者。", "余仿此。"],
+          "yi": ["偶尔也有应在变爻、动爻上的：比如爻落在戌土，变出酉金，它的吉凶有应在戌日的，有应在酉日的。", "其余照这个类推。"],
+          "en": ["Now and then it answers on the changed line or the moving line: for example, if a line sits on Xu-earth and changes into You-metal, its luck or ill sometimes answers on a Xu day and sometimes on a You day.", "The rest follow this."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.09",
+      "topic": "远近",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "勿谓爻之不验远近当分：远事定在年月，近事应在日时；也有占远应近、占近应远、占月应年、占日应时的",
+      "rule": {
+        "yi": "不要说爻不灵验，远近应当分清：远的事，定在年月；近的事，应在日时。再偶尔也有占远事却应在近处、占近事却应在远处、占月份却应在年份、占日子却应在时辰的，也是应该知道的。",
+        "en": "Do not say the lines are not borne out; near and far should be told apart: a far matter is fixed by year or month, a near one answers by day or hour. Now and then a far matter divined answers near, a near matter divined answers far, a month asked answers in a year, or a day asked answers in an hour, and this too should be known."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2804, 2804],
+          "zh": ["勿谓爻之不验，远近当分：远事，定之于年月；", "近事，应之于日时。", "再间有占远应近、占近应远、占月应年、占日应时者，亦所当知。"],
+          "yi": ["不要说爻不灵验，远近应当分清：远的事，定在年月；", "近的事，应在日时。", "再偶尔也有占远事却应在近处、占近事却应在远处、占月份却应在年份、占日子却应在时辰的，也是应该知道的。"],
+          "en": ["Do not say the lines are not borne out; near and far should be told apart: a far matter is fixed by year or month;", "a near one answers by day or hour.", "Now and then a far matter divined answers near, a near matter divined answers far, a month asked answers in a year, or a day asked answers in an hour, and this too should be known."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.10",
+      "topic": "再占",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "倘遇卦之不明再占是法：卦象恍惚不明的，再占一卦，不可乱断",
+      "rule": {
+        "yi": "如果遇到卦象不明白，再占一次是办法：卦象恍惚的，再占一卦，不可乱断。",
+        "en": "If a hexagram is unclear, divining again is the remedy: when a hexagram is hazy, divine another, and do not judge rashly."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2805, 2805],
+          "zh": ["倘遇卦之不明，再占是法：卦有恍惚者，再占一卦，不可妄断。"],
+          "yi": ["如果遇到卦象不明白，再占一次是办法：卦象恍惚的，再占一卦，不可乱断。"],
+          "en": ["If a hexagram is unclear, divining again is the remedy: when a hexagram is hazy, divine another, and do not judge rashly."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.11",
+      "topic": "空破",
+      "chapter": "各门类应期总注章",
+      "chapter_en": "The general notes on timing for every kind of divination",
+      "title": "世空元动须待元神逢值、世衰元静必须元气逢冲：世爻空而元神动的，等元神逢值日；世爻衰而元神静的，等元神被冲——甲辰旬占求财得困之坎主亥日得财，秋占图谋得困卦巳日成事",
+      "rule": {
+        "yi": "世爻空了而元神发动的，必须等元神遇到值日：比如甲辰旬里占求财，得困卦变坎卦，断亥日得财；其余照这个类推。世爻衰而元神安静的，必须等元神被冲：比如秋天占谋划的事，得困卦，后来遇到巳日事情成了；其余照这个类推。",
+        "en": "When the Self is Void and the Support moves, one must wait until the Support meets its ruling day: for example, in a Jiachen decade a man divined for wealth and got Kun changing to Kan, and it was judged he would get wealth on a Hai day; the rest follow this. When the Self is weak and the Support is still, one must wait until the Support is clashed: for example, in autumn a man divined about a scheme and got Kun, and the matter was accomplished on a later Si day; the rest follow this."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2806, 2806], "literal": ["元神"],
+          "zh": ["世空元动，须待元神逢值：如甲辰旬占求财，得困之坎，主亥日得财。", "余仿此。", "世衰元静，必须元气逢冲：如秋占图谋，得困卦，后逢巳日成事。", "余仿此。"],
+          "yi": ["世空元动，须待元神逢值：比如甲辰旬占求财，得困卦变坎卦，断亥日得财。", "其余照这个类推。", "世衰元静，必须元气逢冲：比如秋天占谋划的事，得困卦，后来遇到巳日事情成了。", "其余照这个类推。"],
+          "en": ["When the Self is Void and the Support moves, one must wait until the Support meets its ruling day: for example, in a Jiachen decade a man divined for wealth and got Kun changing to Kan, and it was judged he would get wealth on a Hai day.", "The rest follow this.", "When the Self is weak and the Support is still, one must wait until the Support is clashed: for example, in autumn a man divined about a scheme and got Kun, and the matter was accomplished on a later Si day.", "The rest follow this."] }
+      ]
+    },
+    {
+      "id": "LY.TIMING.ZS.12",
+      "topic": "空破",
+      "chapter": "月破章",
+      "chapter_en": "The chapter on the Month-break",
+      "title": "月破章·用神月破虽破而动则能伤爻、变则能伤动：目下虽破出月不破，今日虽破值日不破、逢合之日不破，近应日时远应年月，只有静而不动又无生助的才到底破了",
+      "rule": {
+        "yi": "诸书都把用神临月破叫做悖时，像枯根朽木，逢生生不起，逢伤伤得更重；虽然现在卦里，有也像没有；伏在卦中，终究难透出来；就算有日辰生它，也不能生；动而作忌神的，也不能为害，作变爻的，也不能伤克动爻。野鹤说：我验证过，动就能伤爻，变就能伤动，为什么？神灵的兆示机缘在动，事情没有吉凶就不会动；既然动了，就有祸福的根基；目下虽然破，出了这个月就不破；今天虽然破，到实破的日子就不破，逢合的日子不破，近的应在日时，远的应在年月；只有静而不动，又没有日辰动爻生助的，才到底破了。",
+        "en": "All the books call a Subject on the Month-break \"out of season\", like a withered root or rotten wood, which if given life is not raised and if injured is injured the more; though it is on the hexagram it is as if absent; hidden in the hexagram, it is hard to bring out in the end; even given life by the Day, it cannot be raised; moving as the Adversary, it cannot do harm; as a changed line, it cannot injure the moving line. Yehe says: I have found it borne out that it can injure a line if it moves and can injure the moving line if it changes into it. Why? The spirits give their sign in moving, and if a matter had neither luck nor ill it would not move; once it moves, there is a basis of fortune or misfortune. Though it is broken now, it is not broken once the month is out; though it is broken today, it is not broken on the day that fills the break, nor on the day it is combined; near answers by day and hour, far by year and month. Only one that is still, does not move, and has no life or support from the Day or a moving line is broken to the end."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [2823, 2823], "literal": ["忌神"],
+          "zh": ["诸书皆以用神临月破，谓之“悖时”，如枯根朽木，逢生生之不起，逢伤伤者更重。", "虽现于卦，有亦如无；", "伏于卦中，终难透露。", "即有日辰之生，亦不能生。", "动而作忌神者，亦不能为害，作变爻者，亦不能伤克动爻。"],
+          "yi": ["诸书都把用神临月破叫做「悖时」，像枯根朽木，逢生生不起，逢伤伤得更重。", "虽然现在卦里，有也像没有；", "伏在卦中，终究难透出来。", "就算有日辰生它，也不能生。", "动而作忌神的，也不能为害，作变爻的，也不能伤克动爻。"],
+          "en": ["All the books call a Subject on the Month-break \"out of season\", like a withered root or rotten wood, which if given life is not raised and if injured is injured the more.", "Though it is on the hexagram it is as if absent;", "hidden in the hexagram, it is hard to bring out in the end.", "Even given life by the Day, it cannot be raised.", "Moving as the Adversary, it cannot do harm; as a changed line, it cannot injure or control the moving line."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [2824, 2824],
+          "zh": ["野鹤曰：余得其验，动则能伤于爻，变则能伤于动，何也？", "神兆机于动，事之无吉无凶则不动矣。", "既动，则有祸福之基。", "目下虽破，出月则不破。", "今日虽破，实破之日则不破，逢合之日则不破，近应日时，远应年月。", "惟静而不动，又无日辰动爻生助，实则到底而破矣。"],
+          "yi": ["野鹤说：我验证过，动就能伤爻，变就能伤动，为什么？", "神灵的兆示机缘在动，事情没有吉凶就不会动。", "既然动了，就有祸福的根基。", "目下虽然破，出了这个月就不破。", "今天虽然破，到实破的日子就不破，逢合的日子不破，近的应在日时，远的应在年月。", "只有静而不动，又没有日辰动爻生助的，才到底破了。"],
+          "en": ["Yehe says: I have found it borne out that it can injure a line if it moves and can injure the moving line if it changes into it. Why?", "The spirits give their sign in moving, and if a matter had neither luck nor ill it would not move.", "Once it moves, there is a basis of fortune or misfortune.", "Though it is broken now, it is not broken once the month is out.", "Though it is broken today, it is not broken on the day that fills the break, nor on the day it is combined; near answers by day and hour, far by year and month.", "Only one that is still, does not move, and has no life or support from the Day or a moving line is broken to the end."] }
+      ],
+      "see": ["LY.TIMING.BSZZ.16"]
+    },
+    {
+      "id": "LY.TIMING.ZS.13",
+      "topic": "空破",
+      "chapter": "旬空章",
+      "chapter_en": "The chapter on the Void",
+      "title": "旬空章·野鹤论旬空：旺不为空、动不为空、动而化空、伏而旺相、有日建动爻生扶都不为空；月破为空、有气不动为空、伏而被克为空、真空为空；遇旬空命再占，卦吉的许出旬不空，卦凶的许空",
+      "rule": {
+        "yi": "野鹤说：旺的不算空，动的不算空，动而化空、伏而旺相，都不算空，有日建动爻生扶的，也不算空；月破算空，有气但不动也算空，伏而被克也算空，真空是空。（真空的意思：春天的土、夏天的金、秋天的木、整个冬天遇火，是真空。）我刚学占卜时，凡是遇到旬空，茫然分不清，想断成到底全空，却又应在填实的日子而不空，当作不空，却又到底全空；后来得到多占的办法，凡是遇到旬空，叫他再占一卦，卦吉的，许他出旬就不空；卦凶的，许他是空了。",
+        "en": "Yehe says: a strong line is not Void, a moving line is not Void, a line that moves and changes into the Void or is hidden and strong is not Void, and one given life and support by the Day Branch or a moving line is not Void; a line struck by the Month-break counts as Void, a line with breath that does not move also counts as Void, a hidden line that is controlled counts as Void, and a true Void is Void. (A true Void: Earth in spring, Metal in summer, Wood in autumn, and Fire in all three winter months.) When I first learned divination I was at a loss whenever I met the Void: I wanted to judge it wholly empty, yet it answered on the day of filling and was not empty; I took it as not empty, yet it was wholly empty in the end. Later I got the method of divining several times: whenever the Void is met, have the man divine again; if the hexagram is lucky, promise that it is not Void once the period is out; if the hexagram is ill, promise that it is Void."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [2546, 2546],
+          "zh": ["野鹤曰：旺不为空，动不为空，动而化空，伏而旺相，皆不为空，有日建动爻生扶者，亦不为空，月破为空，有气不动亦为空，伏而被克亦为空，真空为空。", "（真空者：春土、夏金、秋是木，三冬逢火是真空。）"],
+          "yi": ["野鹤说：旺的不算空，动的不算空，动而化空、伏而旺相，都不算空，有日建动爻生扶的，也不算空，月破算空，有气不动也算空，伏而被克也算空，真空是空。", "（真空的意思：春天的土、夏天的金、秋天的木、整个冬天遇火，是真空。）"],
+          "en": ["Yehe says: a strong line is not Void, a moving line is not Void, a line that moves and changes into the Void or is hidden and strong is not Void, and one given life and support by the Day Branch or a moving line is not Void; a line struck by the Month-break counts as Void, a line with breath that does not move also counts as Void, a hidden line that is controlled counts as Void, and a true Void is Void.", "(A true Void: Earth in spring, Metal in summer, Wood in autumn, and Fire in all three winter months.)"] },
+        { "by": "野鹤", "book": "增删卜易", "range": [2547, 2547],
+          "zh": ["余初学卜，凡遇旬空，茫然莫辨，欲断为到底全空，却又应乎填实之日而不空，以之为不空，却又到底全空。", "后得多占之法，凡遇旬空，命之再占，卦吉者，许之出旬而不空；", "卦凶者，许之空矣。"],
+          "yi": ["我刚学占卜时，凡是遇到旬空，茫然分不清，想断成到底全空，却又应在填实的日子而不空，当作不空，却又到底全空。", "后来得到多占的办法，凡是遇到旬空，叫他再占一卦，卦吉的，许他出旬就不空；", "卦凶的，许他是空了。"],
+          "en": ["When I first learned divination I was at a loss whenever I met the Void: I wanted to judge it wholly empty, yet it answered on the day of filling and was not empty; I took it as not empty, yet it was wholly empty in the end.", "Later I got the method of divining several times: whenever the Void is met, have the man divine again; if the hexagram is lucky, promise that it is not Void once the period is out;", "if the hexagram is ill, promise that it is Void."] }
+      ],
+      "see": ["LY.TIMING.BSZZ.15", "LY.TIMING.ZS.10"]
+    }
+  ]
+}

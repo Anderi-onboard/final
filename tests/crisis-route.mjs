@@ -60,7 +60,11 @@ function loadRouter(respond) {
   vm.createContext(sandbox);
   /* One script, not four: a script's top-level const is script-scoped, so
      loading these separately hides prompt-checks' constants from the router. */
-  const bundle = ['liuyao-engine.js', 'prompt-checks.js', 'liuyao-ai.js', 'prompt-router.js']
+  /* ⚠️ 2026-09-14 起还要带上这三个:老链路作废之后,`interpretWithRouter` 少一块
+     就直接抛「四节点管线缺件」。这不是测试的负担,是测试终于测到了真实装配 ——
+     从前它在一个缺三个模块的世界里也能绿。 */
+  const bundle = ['liuyao-engine.js', 'liuyao-verdict.js', 'liuyao-relations.js',
+                  'liuyao-features.js', 'prompt-checks.js', 'liuyao-ai.js', 'prompt-router.js']
     .map((f) => readFileSync(`${ROOT}/${f}`, 'utf8')).join('\n;\n');
   vm.runInContext(bundle, sandbox, { filename: 'bundle.js' });
   return sandbox;
@@ -73,11 +77,15 @@ const board = (() => {
   });
 })();
 
-// ── the crisis answer must reach the reader ────────────────────────────────
-let sawStream = false;
+/* ── the crisis answer must reach the reader ───────────────────────────────
+   ⚠️ **2026-09-14 起它停在更早的地方。** 老链路是一次调用,所以危机只能在那
+   一次(流式)上被认出来;四节点里 M1 第一个跑,危机在**它**身上就返回了。
+   这比原来好:一个说自己想死的人,不会先被路由进「婚恋库」再被拦下来。
+   所以下面数的是「后面三站一次都没发」,而不再是「那一次是流式的」。 */
+const rolesCalled = [];
 const win = loadRouter((url, init) => {
   const payload = JSON.parse(init.body);
-  if (payload.stream === true) sawStream = true;
+  rolesCalled.push(payload.role || '(no role)');
   // Exactly what functions/api/claude.js returns for built.route === 'crisis'.
   return Promise.resolve(new Response(
     JSON.stringify({ route: 'crisis', crisis: true, text: CRISIS_TEXT, model: null }),
@@ -93,7 +101,8 @@ const result = await win.BWPromptRouter.interpret({
   onDelta: (_t, full) => { delivered = full; }
 });
 
-assert.ok(sawStream, 'the reading is requested as a stream — the premise of this test is gone');
+assert.deepEqual(rolesCalled, ['m1'],
+  '危机应当在 M1 就停住,后面一站都不该发出去 —— 实际发了:' + rolesCalled.join(' '));
 assert.ok(result && result.reading,
   'a crisis answer resolved with no reading: the JSON response fell through to the SSE '
   + 'reader, which finds no data: records and returns "". That renders as the generic '
@@ -122,5 +131,21 @@ const readerAt = streamFn.indexOf('r.body.getReader()');
 assert.ok(jsonAt > 0 && jsonAt < readerAt,
   'the content-type check must come before getReader(), or a JSON answer is parsed as SSE');
 
-console.log('crisis route OK — a JSON answer reaches the reader, an empty one errors, '
-  + 'and the content type is read before the body is treated as a stream');
+/* ── 闸本身必须跑在四节点上,不能跟着老链路一起退役 ──────────────────────
+   它原来挂在 `buildSystemPrompt()` 的路由里,而那条路由 2026-09-14 作废了。
+   **删一条路径时要数清楚它顺手扛着什么** —— 这条差一点就跟着没了。 */
+const server = readFileSync(`${ROOT}/functions/api/claude.js`, 'utf8');
+const nodeBranch = server.slice(server.indexOf("if (role === 'm1' || role === 'm2'"));
+const gateAt = nodeBranch.indexOf("PromptEngine.gate(");
+const buildAt = nodeBranch.indexOf('buildNode(role, body)');
+assert.ok(gateAt > 0, '四节点分支里没有危机闸 —— 老路由退役之后它就是唯一的入口了');
+assert.ok(gateAt < buildAt,
+  '危机闸必须跑在 buildNode 之前:一个说自己想死的人,不该先被路由到「婚恋库」');
+/* 领了免费额度再返回求助信息,等于那条求助信息花掉了他唯一一次免费解读。 */
+const crisisBranch = server.slice(server.indexOf("if (built.route === 'crisis')"),
+                                  server.indexOf("if (built.error)"));
+assert.match(crisisBranch, /releaseFreeReading/,
+  '危机分支没有把免费额度还回去 —— 闸跑在它前面,额度已经被领走了');
+
+console.log('crisis route OK — 停在 M1、后三站不发、求助信息送达、免费额度退回,'
+  + '且 content-type 在 getReader() 之前读');

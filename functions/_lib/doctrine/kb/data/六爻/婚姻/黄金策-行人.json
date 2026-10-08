@@ -1,0 +1,44 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "行人章",
+  "chapter_en": "Chapter on travellers",
+  "ranges": {"卜筮大全": [9439, 9440], "卜筮正宗": [3519, 3519], "易隐": [2731, 2731]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.97",
+      "topic": "入赘再嫁",
+      "chapter": "行人章",
+      "chapter_en": "Chapter on travellers",
+      "title": "用伏应财之下，身赘他家：出门在外的人，用爻伏在应爻的妻财下面，是入赘在别人家不想回来；财动生合世爻能带妻回家；财与伏神不相生合只是替人掌财，不是女婿",
+      "rule": {
+        "yi": "问出门在外的人为什么不回来：他的用爻伏在应爻的妻财下面，就是入赘在别人家，不想回来了。如果妻财动来生合世爻，他会带着妻子回家；妻财如果和伏神不相生合，那只是替别人掌管钱财，或者依靠别人家，不是入赘的女婿。王洪绪补充：要伏在应位的阴爻财下面才是入赘；落在阳爻上、生合世爻或身爻的，是替别人掌财不回来。",
+        "en": "Asking why a traveller does not come home: if his Subject line is hidden beneath the Wealth line on the Other, he has married into another's house and does not think of returning. If Wealth moves and generates or combines with the Self line, he will bring his wife home; if Wealth does not generate or combine with the hidden spirit, he is only managing another's money or depending on another family, and is not a son-in-law by marriage. Wang Hongxu adds: it is marrying in only when he is hidden beneath the yin Wealth in the Other's place; if it falls on a yang line and generates or combines with Self or the Body, he is managing another's money and does not return."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9439, 9439],
+          "zh": ["用伏应财之下，身赘他家；"],
+          "yi": ["用爻伏在应爻的财爻之下，自身就入赘到别人家；"],
+          "en": ["The Subject hidden beneath the Wealth on the Other line: he has married into another's house;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [9440, 9440],
+          "zh": ["用爻伏于应上，妻财之下，必然身赘他家，不思归也。", "财动生合世爻，掣妇归家。", "财爻若与伏神不相生合，乃是与人掌财，或是倚靠他家，非婚婿也。"],
+          "yi": ["用爻伏在应爻上、妻财爻下面，一定是自身入赘在别人家，不想回来了。", "妻财爻动来生合世爻，他会带着妻子回家。", "妻财爻如果和伏神不相生相合，那是替别人掌管钱财，或者是依靠别人家，不是入赘的女婿。"],
+          "en": ["If the Subject is hidden on the Other line beneath the Wealth line, he has surely married into another's house and does not think of coming home.", "If Wealth moves and generates or combines with the Self line, he will bring his wife back home.", "If the Wealth line does not generate or combine with the hidden spirit, he is managing money for someone or depending on another family, and is not a son-in-law by marriage."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3519, 3519],
+          "zh": ["用爻伏于应位阴财之下，必赘他人；", "若临阳象生合世身，必代他人掌财不返。"],
+          "yi": ["用爻伏在应位的阴爻财下面，一定入赘别人家；", "如果落在阳爻上，生合世爻或身爻，一定是替别人掌管钱财，不回来。"],
+          "en": ["If the Subject is hidden beneath the yin Wealth in the Other's place, he has surely married into another family;", "if it falls on a yang line and generates or combines with Self or the Body, he is surely managing another's money and does not return."] },
+        { "by": "游南子", "book": "易隐", "range": [2731, 2731],
+          "zh": ["用伏应爻财下者，身赘他乡也。", "用入应爻财库者，踪羁富室也。"],
+          "yi": ["用爻伏在应爻的财爻下面的，自身入赘在他乡。", "用爻进入应爻财爻的库里的，行踪被拘留在富户人家。"],
+          "en": ["One whose Subject is hidden beneath the Wealth on the Other line has married into a house in another place.", "One whose Subject enters the tomb of the Wealth on the Other line has his whereabouts held in a rich house."] }
+      ],
+      "note": {
+        "yi": "这是《黄金策》行人章里的一联，问的是出门在外的人（用爻）在哪里、为什么不回来。旧注只要求用爻伏在应爻的妻财下面；王洪绪限定为伏在「应位阴财」之下才是入赘，落在阳爻上是替人掌财，两家说法有一点出入。《易隐》有一句相近的话。这一联收进婚姻域，是因为它讲「赘」；行人章的其他各联不收。",
+        "en": "This couplet is in the Huangjin Ce's chapter on travellers and asks where the traveller (the Subject line) is and why he does not come home. The old commentary requires only that the Subject be hidden beneath the Wealth line on the Other; Wang Hongxu restricts it to 'beneath the yin Wealth in the Other's place' for marrying in, and says that on a yang line it means managing another's money, so the two differ a little. The Yi Yin has a similar sentence. The couplet is included in the marriage domain because it speaks of marrying into a house; the other couplets of the travellers chapter are not taken."
+      },
+      "see": ["LY.MARRY.YY.17", "LY.MARRY.YM.32", "LY.MARRY.HJC.50", "LY.MARRY.HJC.52"]
+    }
+  ]
+}

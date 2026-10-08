@@ -1,0 +1,182 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "海底眼",
+  "chapter": "婚姻之外散在各处的婚姻句",
+  "chapter_en": "Marriage lines scattered outside the marriage chapter",
+  "ranges": {"海底眼": [279, 512]},
+  "units": [
+    {
+      "id": "LY.MARRY.HDY.06",
+      "topic": "动变",
+      "chapter": "六亲爻动",
+      "chapter_en": "The relatives moving",
+      "title": "六亲爻动断婚姻：父动子息难得，子动喜笑成姻缘（旺动伤夫），财动如意，兄动求妻难谐，官动婚姻未就生疑滞",
+      "rule": {
+        "yi": "《海底眼》的「六亲爻动」一节，给每一种六亲爻发动列了一首诗，每首诗里有一句是断婚姻的：父母爻动，婚姻和子息都难得（子孙变成父母，被克）；子孙爻动，婚姻喜悦是一段好姻缘（但小注说：旺而动，伤丈夫）；妻财爻动，婚姻称心如意；兄弟爻动，求娶妻子难以和谐；官鬼爻动，婚姻还没有成，生出疑虑阻滞。每首诗的其余各句讲病、官司、买卖、行人，这里不收。",
+        "en": "The Haidi Yan's section on 'the relatives moving' gives each relative a poem, and each poem has one line for marriage: Resource moving, marriage and children are hard to get (Output changes into Resource and is controlled); Output moving, marriage is glad and a fated match (but the small note says: strong and moving, it harms the husband); Wealth moving, marriage is as wished; Peer moving, seeking a wife is hard to bring to harmony; Pressure moving, the marriage is not yet made and doubt and hindrance arise. The other lines of each poem speak of illness, lawsuits, trade and travellers and are not included here."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [279, 279],
+          "zh": ["婚姻子息应难得（子变父克），"],
+          "yi": ["婚姻和子息应该难得（小注：子孙变出父母，被父母克）。"],
+          "en": ["Marriage and children should be hard to get (annotation: Output changes into Resource and is controlled)."] },
+        { "by": "经", "book": "海底眼", "range": [283, 283],
+          "zh": ["婚姻喜笑是姻缘（旺动伤夫）。"],
+          "yi": ["婚姻喜悦欢笑，是一段好姻缘（小注：旺而动，伤丈夫）。"],
+          "en": ["Marriage is glad and laughing, a fated match (annotation: strong and moving, it harms the husband)."] },
+        { "by": "经", "book": "海底眼", "range": [287, 287],
+          "zh": ["婚姻如意乐无虞（财为妻主）。"],
+          "yi": ["婚姻称心如意，欢乐没有忧虑（小注：财爻是妻子的主爻）。"],
+          "en": ["Marriage is as wished, joyful and free of worry (annotation: the Wealth line is the master of the wife)."] },
+        { "by": "经", "book": "海底眼", "range": [291, 291],
+          "zh": ["求妻买婢事难谐（同上断之）。"],
+          "yi": ["求娶妻子、买婢女，事情难以和谐（小注：照上面一样断）。"],
+          "en": ["Seeking a wife or buying a maid, the matter is hard to bring to harmony (annotation: judge it as above)."] },
+        { "by": "经", "book": "海底眼", "range": [295, 295],
+          "zh": ["官鬼从来克兄弟（鬼动克兄），", "婚姻未就生疑滞（鬼动狐疑），"],
+          "yi": ["官鬼爻一向克兄弟爻（小注：鬼动克兄），", "婚姻还没有成，生出疑虑阻滞（小注：鬼动就狐疑不决）。"],
+          "en": ["The Pressure line has always controlled the Peer line (annotation: Pressure moving controls Peer),", "the marriage is not yet made and doubt and hindrance arise (annotation: Pressure moving means doubt and hesitation)."] }
+      ],
+      "dispute": {
+        "yi": "这五句和同一本书别处的说法有出入。第一，子孙爻动：这里说「喜笑是姻缘」，而本书婚姻章（LY.MARRY.HDY.01）说「子旺伤夫夫有疑」，小注「旺动伤夫」把两边并在一起，没有再往下分；第二，妻财爻动：这里说「如意」，本书别处说占妻看财要静（LY.MARRY.HDY.07），《火珠林》也说妻财独发「必克翁姑」（LY.MARRY.HZL.27）。书里没有把这几处说圆。",
+        "en": "These five lines do not all agree with the rest of the same book. First, for Output moving, this says 'glad and a fated match', while the marriage chapter of this book (LY.MARRY.HDY.01) says 'a strong Output line harms the husband and he is in doubt'; the small note 'strong and moving harms the husband' sets the two side by side and goes no further. Second, for Wealth moving, this says 'as wished', while elsewhere in the book the Subject line for taking a wife should be still (LY.MARRY.HDY.07), and the Huozhulin says a Wealth line moving alone 'must harm the parents-in-law' (LY.MARRY.HZL.27). The book does not reconcile them."
+      },
+      "note": {
+        "yi": "每一首里括号里的小注是书里自己的夹注，和正文写在一起，所以引文里带着它们。兄弟爻动那一首的头一句是「兄弟同人克了财」（兄动克财，小注说「同」是同类），它是「求妻买婢事难谐」的缘由，但中间隔着病、应举两句，没有一起收。这一组诗在别的书里也有，字句略有出入：《断易天机》（LY.MARRY.DYTJ.12 至 DYTJ.16）、《卜筮大全》第 3147 行起、《卜筮正宗》第 254 行起、《易隐》第 50 行起、《火珠林》第 1008 行起。《海底眼》这一本的独异之处是给每一句都加了小注，并且兄弟爻动那一首里有「求妻买婢事难谐」一句，《火珠林》的同一首里没有。",
+        "en": "The bracketed small notes in each poem are the book's own interlinear notes, written together with the text, so they are carried in the quotations. The first line of the Peer poem is 'a Peer moving controls Wealth' (the note says 'same' means the same kind), which is the reason for 'seeking a wife or buying a maid is hard to harmonize'; but two lines on illness and examinations lie between them, and they are not taken together. The same set of poems appears in other books with small differences: the Duanyi Tianji (LY.MARRY.DYTJ.12 to DYTJ.16), the Bushi Daquan from line 3147, the Bushi Zhengzong from line 254, the Yi Yin from line 50 and the Huozhulin from line 1008. What is peculiar to the Haidi Yan is that it adds a small note to every line, and that its Peer poem has the line 'seeking a wife or buying a maid is hard to bring to harmony', which the Huozhulin's poem does not have."
+      },
+      "see": ["LY.MARRY.HDY.01", "LY.MARRY.HDY.02", "LY.MARRY.HDY.07", "LY.MARRY.HZL.22", "LY.MARRY.HZL.27", "LY.MARRY.DYTJ.12", "LY.MARRY.DYTJ.13", "LY.MARRY.DYTJ.14", "LY.MARRY.DYTJ.15", "LY.MARRY.DYTJ.16", "LY.MARRY.DYTJ.19"]
+    },
+    {
+      "id": "LY.MARRY.HDY.07",
+      "topic": "总则",
+      "chapter": "飞伏·用爻",
+      "chapter_en": "Flying and hidden: the Subject line",
+      "title": "娶妻买婢，用爻宜静，有气为先",
+      "rule": {
+        "yi": "娶妻、买婢女这一类事（同一排里还有买房宅坟田、住庵、拜见人、寻失物、申冤），用爻宜静，以有气（旺相有力）为先。这一排之后的「取索借债、读书请客、生产求归、脱货赎解、官员待次、散事解灾」眉批也标「宜静」；再后面「改易叙职、告欲干求、脱诈失约、行人远信、出行迁移」则标「宜动」。",
+        "en": "For taking a wife or buying a maid (in the same row: houses, tombs and fields, staying in a hermitage, calling on someone, looking for lost goods, righting a wrong) the Subject line should be still, and having breath comes first. The marginal comment marks the row after it too ('claims and loans, reading, inviting guests, childbirth, releasing goods, an official awaiting a post, dispersing trouble') as 'should be still'; the row after that ('changing posts, petitioning, cheating and broken promises, letters from travellers, journeys and moves') is marked 'should move'."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [450, 450],
+          "zh": ["娶妻买婢，", "屋宅坟田，", "住庵谒人，", "失物理冤。", "用爻宜静，", "有气为先，"],
+          "yi": ["娶妻、买婢女，", "房屋宅子、坟地田地，", "住到庵里、拜见人，", "找失物、申冤：", "用爻宜静，", "有气（旺相有力）为先。"],
+          "en": ["Taking a wife, buying a maid,", "houses and dwellings, tombs and fields,", "staying in a hermitage, calling on someone,", "looking for lost goods, righting a wrong:", "the Subject line should be still,", "and having breath (being strong and in season) comes first."] }
+      ],
+      "dispute": {
+        "yi": "同一本书前面说占妻要看财爻「宜动」（LY.MARRY.HDY.02），这里又说娶妻用爻「宜静」，两处相反，书里没有解释。《火珠林》（LY.MARRY.HZL.04）和《易林补遗》（LY.MARRY.YL.19）都说占妻看财要静。",
+        "en": "Earlier the same book says that for divining a wife the Wealth line 'should move' (LY.MARRY.HDY.02), and here that the Subject line for taking a wife 'should be still'; the two are opposite and the book does not explain. The Huozhulin (LY.MARRY.HZL.04) and the Yilin Buyi (LY.MARRY.YL.19) both say that in divining a wife the Wealth line should be still."
+      },
+      "note": {
+        "yi": "这一排的头一句「娶妻买婢」是婚姻在这份「用爻宜静」名单里的位置。原文这一行紧接着还有两排：「取索借债……散事解灾」后面括着眉批「宜静」，「改易叙职……出行迁移」后面括着眉批「宜动」，婚姻不在第二排里。眉批「宜静」在原文里放在第二排的后面，读法是它管着前面两排，这里照此读；书里没有再多说。《断易天机》（LY.MARRY.DYTJ.18）有同一句，作「娶妻买妾，用爻宜静，有气为先」，只差「婢」和「妾」一个字。",
+        "en": "The first phrase of this row, 'taking a wife and buying a maid', is where marriage stands in this list of matters where the Subject line should be still. In the original two more rows follow: 'claims and loans ... dispersing trouble' is followed by the marginal comment 'should be still', and 'changing posts ... journeys and moves' by 'should move'; marriage is not in the second. The comment 'should be still' comes after the second row in the original, and it is read here as governing the two rows before it; the book says nothing more. The Duanyi Tianji (LY.MARRY.DYTJ.18) has the same line as 'taking a wife or a concubine, the Subject line should be still, and having breath comes first', differing only in 'concubine' for 'maid'."
+      },
+      "see": ["LY.MARRY.HDY.02", "LY.MARRY.HZL.04", "LY.MARRY.YL.19", "LY.MARRY.DYTJ.18"]
+    },
+    {
+      "id": "LY.MARRY.HDY.08",
+      "topic": "成否",
+      "chapter": "六合",
+      "chapter_en": "Six-combines",
+      "title": "辰日合酉、午合未、亥日寅爻六合神：用神旺相长生皆可顺，财鬼婚姻便结亲",
+      "rule": {
+        "yi": "日辰和用神爻六合（辰日合酉、午合未、亥日合寅），用神又旺相或长生，事情都顺；占婚姻时，妻财和官鬼爻遇上这样的六合，婚事就结成。",
+        "en": "When the Day six-combines the Subject line (a Chen day combines You, Wu combines Wei, a Hai day combines Yin), and the Subject is strong or in its birth state, things all go smoothly; in a marriage divination, when the Wealth and Pressure lines meet such a six-combine, the match is made."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [436, 436],
+          "zh": ["辰日合酉午合未，", "亥日寅爻六合神，", "旺相长生皆可顺，", "财鬼婚姻便结亲"],
+          "yi": ["辰日合酉，午合未，", "亥日和寅爻是六合的神；", "旺相、长生都可以顺，", "妻财、官鬼（占）婚姻，就结成亲。"],
+          "en": ["A Chen day combines You, Wu combines Wei,", "and a Hai day and the Yin line are the six-combine spirits;", "strong and in season, or in the birth state, all can go smoothly,", "and for Wealth and Pressure in a marriage, the match is made."] }
+      ],
+      "note": {
+        "yi": "「辰日合酉、午合未、亥日寅爻」是举例：辰酉合、午未合、亥寅合。「财鬼」是妻财和官鬼，占婚姻时的两个用神，男占看财、女占看鬼。原文后面括着一条眉批「凶神即凶陈」，前后读不通，没有收。",
+        "en": "'A Chen day combines You, Wu combines Wei, a Hai day the Yin line' are examples: Chen-You, Wu-Wei and Hai-Yin are the branch combinations. 'Wealth and Pressure' are the two Subject lines for a marriage, Wealth for a man's divination and Pressure for a woman's. A marginal comment follows in brackets, 'the malign spirit is the malign array', which does not read through with what precedes it and is left out."
+      },
+      "see": ["LY.MARRY.ZS.28", "LY.MARRY.HZL.22", "LY.MARRY.YM.25"]
+    },
+    {
+      "id": "LY.MARRY.HDY.09",
+      "topic": "媒妁",
+      "chapter": "间爻",
+      "chapter_en": "Between lines",
+      "title": "世应当中两间爻，发动则所求多阻隔：间为中人不可动，兄动脱诈口舌，鬼动见祸，占婚姻为某人诡谲",
+      "rule": {
+        "yi": "世爻和应爻中间的两个间爻，代表中间人（占婚姻就是媒人），不可发动，动了就有阻隔：兄弟爻动，主诈骗、口舌；官鬼爻动，主人事上受阻隔、见祸；占婚姻，就是某个人在使诈。",
+        "en": "The two between lines between Self and Other stand for the go-betweens (in a marriage, the matchmakers) and must not move; moving, they bring hindrance to what is sought: a Peer line moving means cheating and quarrels, a Pressure line moving means people and affairs are cut off and misfortune shows; in a marriage divination it is some person acting deceitfully."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [482, 482],
+          "zh": ["世应当中两间爻，发动所求多阻隔，"],
+          "yi": ["世爻和应爻当中的两个间爻，发动，所求的事多有阻隔。"],
+          "en": ["The two between lines lying between Self and Other, if they move, what is sought meets many hindrances."] },
+        { "by": "经", "book": "海底眼", "range": [482, 482],
+          "zh": ["（间为中人，不可发动，兄动脱诈，鬼动见祸。）"],
+          "yi": ["（小注：间爻是中人，不可发动；兄弟爻动就诈骗，官鬼爻动就见祸。）"],
+          "en": ["(annotation: the between lines are the go-betweens and must not move; a Peer line moving means cheating, a Pressure line moving means misfortune shows.)"] },
+        { "by": "经", "book": "海底眼", "range": [484, 484],
+          "zh": ["凡世应中间两爻为中人，不可动，动则有隔。", "兄弟动主脱诈口舌，官鬼动主人事见隔，占婚姻为某人诡谲，"],
+          "yi": ["凡是世爻和应爻中间的两个爻是中人，不可发动，发动就有阻隔。", "兄弟爻动主诈骗、口舌，官鬼爻动主人事上见阻隔，占婚姻就是某个人在使诈，"],
+          "en": ["The two lines between Self and Other are the go-betweens and must not move; moving, there is hindrance.", "A Peer line moving means cheating and quarrels, a Pressure line moving means people and affairs are cut off, and in a marriage divination it is some person acting deceitfully,"] }
+      ],
+      "note": {
+        "yi": "第 482 行的诗里，「假饶有无事分明，又见切切方始得」两句意思不清（大概是说事情看着有没有都分明了，还要再切切实实地看到才算得），没有收，只收头两句和小注。第 484 行接着往下列「占生产为老娘，占事为阻隔……」，是别的事里间爻各指什么人，不属婚姻，没有收。",
+        "en": "In the poem at line 482 the two lines 'even if there is or is not, and the matter is clear, it is only obtained when it is seen again earnestly' are unclear (perhaps: even if the matter seems clear either way, it counts as got only when seen again in earnest) and are left out; only the first two lines and the small note are taken. Line 484 goes on to say who the between lines are in other matters ('in childbirth the midwife, in affairs a hinderer ...'), which is not about marriage and is not taken."
+      },
+      "see": ["LY.MARRY.HDY.05", "LY.MARRY.ZS.34", "LY.MARRY.HJC.94", "LY.MARRY.YM.05", "LY.MARRY.DYTJ.17"]
+    },
+    {
+      "id": "LY.MARRY.HDY.10",
+      "topic": "夫妻",
+      "chapter": "六亲持世",
+      "chapter_en": "The relatives on Self",
+      "title": "六亲持世断夫妻：父母持世夫妻不同床、老来终求他姓之子；兄弟持世克妻财",
+      "rule": {
+        "yi": "《海底眼》的「六亲持世」诗里，和夫妻有关的两句：父母爻持世，夫妻不合、不同床（书里写的是「相合」，疑是「相克」之误），到老终究要过继别姓的儿子（小注：父母必克子孙）；兄弟爻持世，克妻财（小注：兄弟必克财）。",
+        "en": "Two lines of the Haidi Yan's poem on 'the relatives on Self' touch husband and wife: with the Resource line on Self, husband and wife do not share a bed (the book writes 'combine', probably a slip for 'control'), and in the end one must seek a son of another surname (annotation: Resource must control Output); with the Peer line on Self, Wealth is controlled (annotation: Peer must control Wealth)."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [324, 324],
+          "zh": ["父母持世身忧苦（父主难宰），", "身带文书及官鬼（父赖官生），", "夫妻相合不同床（夫妇不宜），", "到者终求他姓子（父必克子）。"],
+          "yi": ["父母爻持世，自身忧愁辛苦（小注：父母主难以主持），", "自身带着文书和官鬼（小注：父母靠官鬼生），", "夫妻相合却不同床（小注：夫妇不相宜），", "到者（疑为「到老」）终究要求别姓的儿子（小注：父母必克子）。"],
+          "en": ["With Resource on Self one is anxious and toiling (annotation: Resource is hard to manage),", "carrying documents and Pressure (annotation: Resource depends on Pressure to be generated),", "husband and wife 'combine' yet do not share a bed (annotation: husband and wife are not suited),", "at the last (probably 'in old age') one must in the end seek a son of another surname (annotation: Resource must control Output)."] },
+        { "by": "经", "book": "海底眼", "range": [336, 336],
+          "zh": ["兄弟持世克妻财（兄必克财），"],
+          "yi": ["兄弟爻持世，克妻财（小注：兄弟必克财），"],
+          "en": ["With a Peer line on Self, Wealth is controlled (annotation: Peer must control Wealth),"] }
+      ],
+      "note": {
+        "yi": "「相合不同床」读不通：相合而不同床，自相矛盾。《卜筮全书》的「诸爻持世诀」同一句作「夫妻相克不和同、到老要求他姓之子」（LY.MARRY.BSQS.08），这里的「相合」「到者」像是「相克」「到老」抄错了，《火珠林》所附歌诀第 945 行也作「夫妻相克不和同，到老用求他姓子」。译文照原文译，括号里注出。第 336 行后面三句讲官司、口舌、损财，不属婚姻，没有收。",
+        "en": "'Combine yet do not share a bed' is self-contradictory. The Bushi Quanshu's poem on the lines holding Self has the same line as 'husband and wife control each other and do not agree, in old age one must seek a son of another surname' (LY.MARRY.BSQS.08); 'combine' and 'at the last' here look like miscopies of 'control' and 'in old age'. The verse appended to the Huozhulin, at line 945, also reads 'husband and wife control each other and do not agree, in old age one must seek a son of another surname'. The translation follows the text as written, with the doubt marked in brackets. The three lines after line 336 speak of lawsuits, quarrels and loss of money, not marriage, and are not taken."
+      },
+      "see": ["LY.MARRY.BSQS.08", "LY.MARRY.BSQS.09", "LY.MARRY.TXF.22"]
+    },
+    {
+      "id": "LY.MARRY.HDY.11",
+      "topic": "成否",
+      "chapter": "有无",
+      "chapter_en": "Present and absent",
+      "title": "结婚买婢成诸事，卦无财子闹重重：用爻出现为有、不现为无",
+      "rule": {
+        "yi": "结婚、买婢女这一类求成的事，卦里没有妻财和子孙，就是困难重重。眉批说明什么叫「无」：用爻在卦里出现叫「有」，用爻不现叫「无」。",
+        "en": "For marriage, buying a maid and other matters one wants to bring about, if the hexagram has no Wealth or Output line, trouble comes on trouble. The marginal comment explains 'no': the Subject line appearing in the hexagram is 'present', not appearing is 'absent'."
+      },
+      "quotes": [
+        { "by": "经", "book": "海底眼", "range": [512, 512],
+          "zh": ["结婚买婢成诸事，", "卦无财子闹重重。"],
+          "yi": ["结婚、买婢女，成办这些事，", "卦里没有妻财、子孙，就闹得重重叠叠。"],
+          "en": ["For marriage and buying a maid, bringing such matters about,", "if the hexagram has no Wealth or Output, trouble comes on trouble."] },
+        { "by": "海底眼眉批", "book": "海底眼", "range": [512, 512],
+          "zh": ["用爻出现谓之有，", "用爻不现谓之无。"],
+          "yi": ["用爻在卦里出现，叫做「有」；", "用爻不出现，叫做「无」。"],
+          "en": ["The Subject line appearing is called 'present';", "the Subject line not appearing is called 'absent'."] }
+      ],
+      "note": {
+        "yi": "这一首诗前两句是「五行忧者先忧否，无鬼忧官喜落空」，讲的是忧事和官讼，没有收。「财子」是妻财和子孙：妻财是妻，子孙是福神，结婚时两个都要有。「无」按眉批的定义是不出现在卦里（比如伏在别爻之下），不是旺衰的衰。",
+        "en": "The first two lines of this poem, 'in the five elements the worried one worries first about denial; without Pressure he worries about the officials, and is glad if it is Void', speak of worries and lawsuits and are not taken. 'Wealth and Output' are the Wealth line, the wife, and the Output line, the line of fortune; a marriage needs both. 'Absent' by the marginal comment's definition means not appearing in the hexagram (for example hidden beneath another line), and is not the 'weak' of strong and weak."
+      },
+      "see": ["LY.MARRY.HDY.07", "LY.MARRY.HJC.18", "LY.MARRY.YL.29"]
+    }
+  ]
+}

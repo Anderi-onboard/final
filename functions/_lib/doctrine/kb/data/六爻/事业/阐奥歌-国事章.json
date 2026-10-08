@@ -1,0 +1,122 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "阐奥歌章",
+  "chapter": "国事章",
+  "chapter_en": "Verse on affairs of state",
+  "ranges": {"卜筮大全": [3808, 3828]},
+  "units": [
+    {
+      "id": "LY.CAREER.CA.22",
+      "topic": "国朝",
+      "chapter": "国事章",
+      "chapter_en": "Verse on affairs of state",
+      "title": "筮国家占天子：卦从本宫、世爻取，本宫为国、世为君；初民二士三大夫、四公侯五君六宗庙社稷神；六爻各要生合旺相，一位不得其所则一国不宁",
+      "rule": {
+        "yi": "占国家、占天子，从卦的本宫和世爻上取：本宫是国，世是君；本宫和世旺相比和，得圣明之主。六爻各有所主：初是民、二是士、三是大夫、四是公侯、五是君、六是宗庙社稷神；动静刚柔各要得当；六爻都要生合旺相，只要有一位不得其所，整个国家就不安宁。",
+        "en": "To divine for the state or the Son of Heaven, take from the palace of the hexagram and from the Self: the palace is the state and the Self is the lord, and when they are strong and in accord there is a sage ruler. The six lines each stand for a rank: the first the common people, the second the scholars, the third the grandees, the fourth the dukes and marquises, the fifth the lord, the sixth the ancestral temple and the altars of land and grain; moving or still, hard or soft, each should be in its right place; the six lines should all be generated, combined and strong, and if a single place is not where it should be, the whole country is unsettled."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3811, 3811],
+          "zh": ["若筮国家占天子，", "卦从本宫世上取。", "本宫为国世为君，"],
+          "yi": ["如果占国家、占天子，", "卦要从本宫、世上取；", "本宫是国，世是君，"],
+          "en": ["If one divines for the state or for the Son of Heaven,", "the hexagram is to be taken from its palace and from the Self;", "the palace is the state and the Self is the lord,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3812, 3812],
+          "zh": ["本宫者，看所占之卦，在何宫即为国，世爻即为君王也。"],
+          "yi": ["本宫，就是看所占的卦在哪个宫，那个宫就是国；世爻就是君王。"],
+          "en": ["The palace: look at which palace the divined hexagram is in, and that palace is the state; the Self line is the lord and king."] },
+        { "by": "经", "book": "卜筮大全", "range": [3814, 3814],
+          "zh": ["旺相比和得圣主。", "初民二士三大夫，", "四作公侯君在五。", "六为宗庙社稷神，", "动静刚柔宜得所。"],
+          "yi": ["旺相比和，得到圣明之主。", "初是民，二是士，三是大夫，", "四是公侯，君在第五；", "六是宗庙和社稷之神，", "动静刚柔，都要各得其所。"],
+          "en": ["Strong and in accord, one gets a sage ruler.", "The first is the people, the second the scholars, the third the grandees,", "the fourth the dukes and marquises, the lord in the fifth;", "the sixth is the ancestral temple and the gods of land and grain;", "moving or still, hard or soft, each should be in its right place."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3814, 3814],
+          "zh": ["六爻各要生合旺相，苟一位不得其所，则一国不宁矣。"],
+          "yi": ["六爻各自要生合旺相，假如有一位不得其所，整个国家就不得安宁了。"],
+          "en": ["Each of the six lines must be generated, combined and strong; if a single place is not where it should be, the whole country is not at peace."] }
+      ],
+      "see": ["LY.CAREER.HJC.64", "LY.CAREER.HZL.06", "LY.CAREER.YM.04"]
+    },
+    {
+      "id": "LY.CAREER.CA.23",
+      "topic": "国朝",
+      "chapter": "国事章",
+      "chapter_en": "Verse on affairs of state",
+      "title": "国事占大杀为灾：金主兵、水动主洪水之灾、土动主修治城垒；震离坎兑四方见应在边方、坤艮宫中事未宁；六爻不动卦无杀则天下太平",
+      "rule": {
+        "yi": "国事占里，大杀是灾星：金主兵戈，水动主洪水之灾，土动主有修治城垒（或攻城）的事；大杀见于震、离、坎、兑四宫，应在边远的地方；见于坤、艮宫，国内的事情还没安宁；六爻不动、卦里没有杀，天下人民歌唱太平。",
+        "en": "In divining affairs of state the Great Baleful spirit brings calamity: Metal rules weapons, Water moving means flood, Earth moving means the repair of city walls (or the assault on a city); when it appears in the four palaces Zhen, Li, Kan and Dui, it falls on the border regions; in the palaces Kun and Gen affairs at home are not yet settled; with the six lines still and no baleful spirit in the hexagram, the people of the world sing of peace."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3815, 3815],
+          "zh": ["大杀为灾金主兵，"],
+          "yi": ["大杀是灾，金主兵戈，"],
+          "en": ["The Great Baleful spirit is calamity, and Metal rules weapons,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3816, 3816],
+          "zh": ["大杀：正戌、二巳、三午、四未、五寅、六卯、七辰、八亥、九子、十丑、十一申、十二酉是也。"],
+          "yi": ["大杀：正月在戌，二月在巳，三月在午，四月在未，五月在寅，六月在卯，七月在辰，八月在亥，九月在子，十月在丑，十一月在申，十二月在酉。"],
+          "en": ["The Great Baleful spirit: Xu in the first month, Si in the second, Wu in the third, Wei in the fourth, Yin in the fifth, Mao in the sixth, Chen in the seventh, Hai in the eighth, Zi in the ninth, Chou in the tenth, Shen in the eleventh, You in the twelfth."] },
+        { "by": "经", "book": "卜筮大全", "range": [3817, 3817],
+          "zh": ["水为昏垫土攻城。"],
+          "yi": ["水是昏垫（水淹），土是攻城。"],
+          "en": ["Water is flooding and submerging, Earth is the assault on a city."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3818, 3818],
+          "zh": ["水动主有洪水之灾，土动主有修治城垒之事。"],
+          "yi": ["水动，主有洪水的灾；土动，主有修治城垒的事。"],
+          "en": ["Water moving means the calamity of flood; Earth moving means the repair of city walls and ramparts."] },
+        { "by": "经", "book": "卜筮大全", "range": [3819, 3819],
+          "zh": ["震离坎兑四方见，"],
+          "yi": ["震、离、坎、兑四个方位见到，"],
+          "en": ["Seen in the four quarters Zhen, Li, Kan and Dui,"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3820, 3820],
+          "zh": ["若遇此四宫，应在边方也。"],
+          "yi": ["如果遇到这四个宫，应在边远的地方。"],
+          "en": ["If it meets these four palaces, it falls on the border regions."] },
+        { "by": "经", "book": "卜筮大全", "range": [3821, 3821],
+          "zh": ["坤艮宫中事未宁。", "六爻不动卦无杀，", "天下人民歌太平。"],
+          "yi": ["坤、艮宫中，事情还没有安宁。", "六爻不动，卦里没有杀，", "天下人民歌唱太平。"],
+          "en": ["in the palaces Kun and Gen, affairs are not yet settled.", "With the six lines still and no baleful spirit in the hexagram,", "the people of the world sing of peace."] }
+      ],
+      "see": ["LY.CAREER.EL.28", "LY.CAREER.YM.05"]
+    },
+    {
+      "id": "LY.CAREER.CA.24",
+      "topic": "军旅",
+      "chapter": "国事章",
+      "chapter_en": "Verse on affairs of state",
+      "title": "出兵交战：子孙宜强，鬼旺则彼赢我亡；财为草粮兄莫克、父为旌帜忌摇扬",
+      "rule": {
+        "yi": "出兵交战，子孙要强；官鬼旺，对方赢、我必败亡；财是粮草，不要被兄弟克；父母是旌旗，忌讳摇动飘扬。",
+        "en": "In sending out troops to battle, Output should be strong; if Pressure is strong the other side wins and we are surely lost; Wealth is the fodder and grain and should not be controlled by Peer; Resource is the banner and standard and should not be shaken and flying."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3824, 3824],
+          "zh": ["出兵交战子当强，", "鬼旺他赢我必亡。", "财是草粮兄莫克，", "父为旌帜忌摇扬。"],
+          "yi": ["出兵交战，子孙应当强；", "官鬼旺，他赢，我必定败亡。", "财是粮草，兄弟不要来克；", "父母是旌旗，忌讳摇动飘扬。"],
+          "en": ["In sending out troops to battle, Output should be strong;", "if Pressure is strong, he wins and we are surely lost.", "Wealth is the fodder and grain, which Peer should not control;", "Resource is the banner and standard, which should not be shaken and flying."] }
+      ],
+      "see": ["LY.CAREER.HZL.09", "LY.CAREER.HZL.10", "LY.CAREER.EL.30", "LY.CAREER.EL.33"]
+    },
+    {
+      "id": "LY.CAREER.CA.25",
+      "topic": "军旅",
+      "chapter": "国事章",
+      "chapter_en": "Verse on affairs of state",
+      "title": "水爻带鬼来克我须防劫寨攻营；有气无气断输赢：世为我将、应为彼军、日辰为我卒、官鬼为彼兵，我克他胜、他克我负；财兴克父斩将夺旌、兄弟交重夺粮劫草",
+      "rule": {
+        "yi": "水爻带着官鬼来克我，要防备劫寨和攻营；还要看有气没气，才能断兵机的输赢。决胜负，以世、应、日辰、官星来论：世是我方将领，应是对方军队，日辰是我方士卒，官鬼是对方兵；我克他，我胜；他克我，我负。财动克父，必定斩将夺旗；兄弟交重发动，必定夺粮劫草。",
+        "en": "A Water line carrying Pressure and coming to control us: guard against the raiding of the camp and the assault on the encampment; then see whether there is qi or none, and only then judge the winning or losing of the military affair. To decide victory, reckon by the Self, the Other, the Day and the star of office: the Self is our general, the Other is their army, the Day is our soldiers, Pressure is their troops; if we control them, we win; if they control us, we lose. If Wealth rises and controls Resource, the general is surely cut down and the banner seized; if Peer moves, grain is surely seized and fodder raided."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [3827, 3827],
+          "zh": ["水爻带鬼来克我，", "须防劫寨及攻营。", "却看有气并无气，", "方断兵机输与赢。"],
+          "yi": ["水爻带着官鬼来克我，", "必须防备劫寨和攻营。", "再看有气、没有气，", "才能断兵机的输与赢。"],
+          "en": ["A Water line carrying Pressure and coming to control me,", "one must guard against the raiding of the camp and the assault on the encampment.", "Then see whether there is qi or none,", "and only then judge the winning and losing of the military affair."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [3828, 3828],
+          "zh": ["若决胜负，以世应日辰官星论之。", "世为我将，应为彼军，日辰为我卒，官鬼为彼兵。", "我克他，我胜。", "他克我，我负。", "若财兴克父，必斩将夺旌。", "兄弟交重，必夺粮劫草。"],
+          "yi": ["要决定胜负，以世、应、日辰、官星来论。", "世是我方将领，应是对方军队，日辰是我方士卒，官鬼是对方的兵。", "我克他，我胜。", "他克我，我败。", "若是财动克父，必定斩将夺旗。", "兄弟交重发动，必定夺粮劫草。"],
+          "en": ["To decide victory or defeat, reckon by the Self, the Other, the Day and the star of office.", "The Self is our general, the Other is their army, the Day is our soldiers, and Pressure is their troops.", "If we control them, we win.", "If they control us, we lose.", "If Wealth rises and controls Resource, the general is surely cut down and the banner seized.", "If Peer moves, grain is surely seized and fodder raided."] }
+      ],
+      "see": ["LY.CAREER.HZL.10", "LY.CAREER.EL.27"]
+    }
+  ]
+}

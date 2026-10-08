@@ -1,0 +1,513 @@
+{
+  "shushu": "六爻",
+  "domain": "出行",
+  "work": "黄金策",
+  "chapter": "避乱",
+  "chapter_en": "Fleeing disorder",
+  "ranges": {"卜筮正宗": [1607, 1646]},
+  "units": [
+    {
+      "id": "LY.TRAVEL.HJC.86",
+      "topic": "风险",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·火动克身恐有燎毛之苦、水兴伤世必成灭顶之灾：火鬼发动克世主火烧之祸，水鬼克世主水患",
+      "rule": {
+        "yi": "卦中火鬼发动来克世，主有火烧的祸；水鬼克世，主有水患。",
+        "en": "If a Fire Pressure line in the hexagram moves to control the Self, there is the calamity of fire; if a Water Pressure line controls the Self, there is the danger of water."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1607, 1607],
+          "zh": ["火动克身，", "恐有燎毛之苦；", "水兴伤世，", "必成灭顶之灾"],
+          "yi": ["火鬼发动克身，", "恐怕有火烧毛发的苦；", "水鬼兴旺伤世，", "必定酿成灭顶之灾"],
+          "en": ["If a Fire Pressure line moves to control the Self,", "I fear the pain of singed hair;", "if a Water Pressure line flourishes and injures the Self,", "it will surely become the calamity of going under the water"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1607, 1607],
+          "zh": ["卦中火鬼动来克世，主有火烧之祸；", "若水鬼克世，主有水患。"],
+          "yi": ["卦中火鬼发动来克世，主有火烧的祸；", "如果是水鬼克世，主有水患。"],
+          "en": ["If a Fire Pressure line in the hexagram moves to control the Self, there is the calamity of fire;", "if a Water Pressure line controls the Self, there is the danger of water."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.87",
+      "topic": "风险",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·父若空亡包裹须防失脱、妻如落陷财物当虑遗亡：父爻空亡防包裹失脱及父母有不测，财空防失财物否则妻妾有殃，子孙空忧小口",
+      "rule": {
+        "yi": "父爻空亡，不只是包裹会丢失，还要提防父母有意想不到的忧患；财爻空了，要提防丢失财物，否则妻妾有灾；子孙空，就担忧小孩。",
+        "en": "If the Resource line is Void, not only may the baggage be lost but one must guard against some unforeseen worry for the parents; if Wealth is Void, guard against losing goods, or else wife and concubines meet trouble; if Output is Void, there is worry for the small children."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1609, 1609],
+          "zh": ["父若空亡，", "包裹须防失脱；", "妻如落陷，", "财物当虑遗亡"],
+          "yi": ["父母爻如果空亡，", "行李包裹要提防遗失；", "妻财如果落入陷地，", "财物应当担心遗失"],
+          "en": ["If the Resource line is Void,", "guard against losing baggage and parcels;", "if Wealth falls into a pit,", "one should fear the loss of goods"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1609, 1609], "literal": ["父母"],
+          "zh": ["父爻空亡，非包裹失脱，须防父母有不测之忧；", "财空防失财物，否则妻妾有殃；", "子孙空则忧小口。", "惧推之。"],
+          "yi": ["父爻空亡，不只是包裹会丢失，还要提防父母有意想不到的忧患；", "财爻空了，要提防丢失财物，否则妻妾有灾；", "子孙空，就担忧小孩。", "其余照此类推。"],
+          "en": ["If the Resource line is Void, not only may the baggage be lost but one must guard against some unforeseen worry for the parents;", "if Wealth is Void, guard against losing goods, or else wife and concubines meet trouble;", "if Output is Void, there is worry for the small children.", "The rest follow by analogy."] }
+      ],
+      "note": {
+        "yi": "注文最后一句原文作「惧推之」，按文意应是「类推之」，译文按「类推」翻。",
+        "en": "The last sentence of the note reads \"fear it\" in the text, which by the sense should be \"reason it out by analogy\", and the translation follows that."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.88",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·五位交重两处身家无下落：五爻发动东奔西走避乱不暇，再遇日辰动爻冲散世爻，必无安身之所",
+      "rule": {
+        "yi": "第五爻发动，就东奔西走，躲避战乱都来不及，人和家宅两处；再遇到日辰、动爻冲散世爻，必定没有安身的地方。",
+        "en": "When the fifth line moves, one runs east and west with no time even to flee the disorder, for both person and house; if the Day or a moving line also clashes the Self apart, one will surely have no place to settle."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1611, 1611],
+          "zh": ["五位交重，", "两处身家无下落"],
+          "yi": ["第五爻交重发动，", "人和家两处都没有着落"],
+          "en": ["If the fifth line moves,", "neither the person nor the household has a place to settle"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1611, 1611],
+          "zh": ["凡遇五爻发动，东奔西走，避乱不暇，身宅两处，更遇日辰动爻冲散世爻，必无安身下落之所。"],
+          "yi": ["凡是遇到五爻发动，就东奔西走，躲避战乱都来不及，人和家宅两处，再遇到日辰、动爻冲散世爻，必定没有安身的地方。"],
+          "en": ["Whenever the fifth line moves, one runs east and west with no time even to flee the disorder; for both person and house, if the Day or a moving line also clashes the Self apart, one will surely have no place to settle."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.89",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·六爻乱动一家骨肉各西东：六冲卦及六爻乱动，父母冲散，兄弟夫妇骨肉各自逃命，不能聚在一处",
+      "rule": {
+        "yi": "六冲卦以及六爻乱动的，主父母被冲散，兄弟、夫妇、骨肉各自逃命，不能聚在一处。",
+        "en": "A six-clash hexagram or one with the six lines moving in disorder means the parents are scattered, and brothers, husband and wife, and kin each flee for their lives and cannot gather in one place."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1613, 1613],
+          "zh": ["六爻乱动，", "一家骨肉各西东"],
+          "yi": ["六爻乱动，", "一家骨肉各自东西分散"],
+          "en": ["If the six lines move in disorder,", "the whole family, flesh and blood, scatters east and west"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1613, 1613], "literal": ["父母", "兄弟"],
+          "zh": ["六冲卦及六爻乱动者，主父母冲散，兄弟夫妇骨肉各自逃命，不能聚于一处。"],
+          "yi": ["六冲卦以及六爻乱动的，主父母被冲散，兄弟、夫妇、骨肉各自逃命，不能聚在一处。"],
+          "en": ["A six-clash hexagram or one with the six lines moving in disorder means the parents are scattered, and brothers, husband and wife, and kin each flee for their lives and cannot gather in one place."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.90",
+      "topic": "风险",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·福德鬼位刑冲带煞则官兵不道：子孙发动本吉，若带刑害虎蛇又变出官鬼，是官兵乘乱劫掠",
+      "rule": {
+        "yi": "子孙发动固然是吉兆，但如果带着刑害、白虎螣蛇，又变出官鬼，就是官兵趁乱劫掠。",
+        "en": "Output moving is of course an auspicious sign, but if it carries punishment and harm, the White Tiger or the Coiling Snake, and also changes into Pressure, it is government soldiers plundering in the disorder."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1615, 1615],
+          "zh": ["福德鬼位刑冲带煞，", "则官兵不道"],
+          "yi": ["福德和鬼的位置带着刑、冲、煞，", "就是官兵不守规矩"],
+          "en": ["If Output and the Pressure position carry punishment, clash and a baleful star,", "then the government soldiers behave lawlessly"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1615, 1615],
+          "zh": ["子动固是吉兆，若带刑害虎蛇而又变出官鬼者，乃是官兵乘乱劫掠。"],
+          "yi": ["子孙发动固然是吉兆，若带着刑害、虎蛇而又变出官鬼，就是官兵趁乱劫掠。"],
+          "en": ["Output moving is of course an auspicious sign, but if it carries punishment and harm, the Tiger or the Snake, and also changes into Pressure, it is government soldiers plundering in the disorder."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.91",
+      "topic": "风险",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·官变兄爻克合伤财则妻妾遭淫：官动刑克世爻、合住财爻则身被擒妻遭淫污；不伤世只合财爻则自身无事妻被辱；更化兄爻被奸难放回",
+      "rule": {
+        "yi": "官鬼发动刑克世爻、合住财爻，那么本人被擒，妻子遭到淫辱；如果不伤世而只是合住财爻，自己虽然没事，妻子会被侮辱；再化出兄爻，被奸污之后难望放回。",
+        "en": "If Pressure moves to punish or control the Self and combines with the Wealth line, the person is seized and his wife is defiled; if it does not injure the Self but only combines with the Wealth line, though he is unharmed his wife is outraged; if it further changes into a Peer line, once she is violated there is little hope that she will be let go."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1617, 1617],
+          "zh": ["官变兄爻克合伤财，", "则妻妾遭淫"],
+          "yi": ["官鬼变出兄爻，克合并伤到财爻，", "妻妾就会遭到淫辱"],
+          "en": ["If Pressure changes into a Peer line that controls, combines with and injures Wealth,", "wife and concubines will suffer rape"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1617, 1617],
+          "zh": ["官动刑克世爻，合住财爻，则身被擒，妻遭淫污；", "如不伤世而但合财爻者，自身虽无事，妻被辱也；", "更化兄爻，被奸而难望放回。"],
+          "yi": ["官鬼发动刑克世爻，合住财爻，那么本人被擒，妻子遭到淫辱；", "如果不伤世而只是合住财爻，自己虽然没事，妻子会被侮辱；", "再化出兄爻，被奸污之后难望放回。"],
+          "en": ["If Pressure moves to punish or control the Self and combines with the Wealth line, the person is seized and his wife is defiled;", "if it does not injure the Self but only combines with the Wealth line, though he is unharmed his wife is outraged;", "if it further changes into a Peer line, once she is violated there is little hope that she will be let go."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.92",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·妻去生扶只为贪财翻作祸：鬼动最喜衰绝，若有财动去生扶它，必因贪财惹祸；世指自己这一方，应指别人那一方",
+      "rule": {
+        "yi": "鬼爻发动最喜欢衰、绝，如果有财爻发动去生扶它，必定因为贪财惹祸；世指自己这一方，应指别人那一方。",
+        "en": "Pressure moving is best when it is weak or extinct; if a moving Wealth line comes to give it life and support, one will surely bring trouble on oneself through greed; the Self is my own side, the Other the other people's side."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1619, 1619],
+          "zh": ["妻去生扶，", "只为贪财翻作祸"],
+          "yi": ["财爻去生扶（鬼爻），", "只是因为贪财反而成了祸"],
+          "en": ["If Wealth goes to give life and support to Pressure,", "it is only greed for goods turning into disaster"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1619, 1619],
+          "zh": ["鬼动最喜衰绝，若有财动生扶，必因贪财惹祸。", "世以己方，应以人言。"],
+          "yi": ["鬼爻发动最喜欢衰、绝，如果有财爻发动去生扶它，必定因为贪财惹祸。", "世指自己这一方，应指别人那一方。"],
+          "en": ["Pressure moving is best when it is weak or extinct; if a moving Wealth line comes to give it life and support, one will surely bring trouble on oneself through greed.", "The Self is my own side, the Other the other people's side."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.93",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·子来冲动皆因儿哭惹成灾：鬼爻安静最吉，若被子孙冲动，必有小孩啼叫被发觉而受害；福神旺相官鬼衰弱则无妨",
+      "rule": {
+        "yi": "鬼爻安静最吉，如果被子孙冲动，必定有小孩啼哭叫喊，因此被发觉，遭到他们的害；如果福神旺相、官鬼衰弱，就无妨。",
+        "en": "Pressure still is the best; if Output clashes it into movement, a small child will surely cry out, and so the hiders are discovered and harmed by them; if Output is strong and Pressure weak, there is no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1621, 1621],
+          "zh": ["子来冲动，", "皆因儿哭惹成灾"],
+          "yi": ["子孙来冲动（鬼爻），", "都是因为小孩哭闹惹成灾祸"],
+          "en": ["If Output comes to clash Pressure into movement,", "it is all a child's crying that brings on the disaster"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1621, 1621],
+          "zh": ["鬼静最吉，若被子孙冲动，必有小儿啼叫，因而知觉，乃被其害，福旺官衰不妨。"],
+          "yi": ["鬼爻安静最吉，如果被子孙冲动，必定有小孩啼哭叫喊，因此被发觉，遭到他们的害；福神旺相、官鬼衰弱就无妨。"],
+          "en": ["Pressure still is the best; if Output clashes it into movement, a small child will surely cry out, and so the hiders are discovered and harmed by them; if Output is strong and Pressure weak, there is no harm."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.94",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·得值六亲生旺虽险何妨、如临四绝刑伤逢屯即死：用爻遭克必有灾，受伤的爻生旺不致伤命只怕落绝地，衰弱则一克即倒必致丧命",
+      "rule": {
+        "yi": "用爻遭克必定有灾咎；如果受伤的爻正值生旺，不至于伤命，只怕它落在绝地；如果遇到衰弱，一克就倒，必定丧命。",
+        "en": "If the Subject line is controlled there is surely calamity; if the injured line is in a strong, thriving place it will not cost the life, and what is feared is only its falling in extinction; if it is weak, one control knocks it down and the life is surely lost."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1623, 1623],
+          "zh": ["得值六亲生旺，", "虽险何妨；", "如临四绝刑伤，", "逢屯即死"],
+          "yi": ["遇到六亲生旺，", "虽然险也无妨；", "如果临到四绝、又遭刑伤，", "一遇到困厄就会死"],
+          "en": ["If one meets the six relations strong and thriving,", "though it is perilous there is no harm;", "if one is on the four extinctions and punished and injured,", "meeting adversity one dies"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1623, 1623],
+          "zh": ["用爻遭克必有灾咎。", "若受伤之爻如值生旺，不致伤命，唯怕临于绝地；", "若遇衰弱，一克即倒，而必致丧命也。"],
+          "yi": ["用爻遭克必定有灾咎。", "如果受伤的爻正值生旺，不至于伤命，只怕它落在绝地；", "如果遇到衰弱，一克就倒，必定丧命。"],
+          "en": ["If the Subject line is controlled there is surely calamity.", "If the injured line is in a strong, thriving place it will not cost the life, and what is feared is only its falling in extinction;", "if it is weak, one control knocks it down and the life is surely lost."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.95",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·世遇乱离既已逐爻而决、时遭患难亦当随象以推：刑罚、官府捉拿、仇家报复、无妄之灾也要占避害，大概与避乱相似，所以并附列",
+      "rule": {
+        "yi": "除了避乱，还有避害的占：有刑罚加身、户役牵累，或官府捉拿、仇家报复，或祸从无辜的事上起、灾殃从意外中生，不躲避终究要被害；这类占大概与避乱相似，所以附在这里，按同样的办法逐爻、随象推断。",
+        "en": "Besides fleeing disorder there is divination for avoiding harm: when punishment is laid on one, or household duties drag one in, or the authorities come to seize one, or an enemy takes revenge, or calamity springs from nothing one has done and misfortune from the unforeseen, one is harmed in the end if one does not avoid it; such divinations are much like fleeing disorder, so they are appended here and judged by the same method, line by line and following the images."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1625, 1625],
+          "zh": ["世遇乱离，", "既已逐爻而决矣；", "时遭患难，", "亦当随象以推之"],
+          "yi": ["世人遇到乱离，", "已经逐爻来决断了；", "时世遭到患难，", "也该顺着卦象来推断"],
+          "en": ["When a man meets disorder and dispersal,", "it has already been decided line by line;", "when the times bring affliction,", "it should likewise be reasoned out by following the images"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1625, 1625],
+          "zh": ["平居无事，何暇占卜？", "或刑罚所加，户投所累，或官府捉拿，仇家报复，或祸起于无辜，殃生于不测，苟不避之，终为所害，是以不能无避害之占也。", "然大概与避乱相似，故并附列之。"],
+          "yi": ["平常安居没事，哪有空占卜？", "或者是刑罚加身、户役牵累，或者官府来捉拿、仇家来报复，或者祸从无辜的事上起、灾殃从意外中生，如果不躲避它，终究要被它害，所以不能没有避害的占卜。", "不过大概和避乱相似，所以一并附在这里。"],
+          "en": ["Living at ease with nothing amiss, who has time to divine?", "Or punishment is laid on one, or household duties drag one in, or the authorities come to seize one, or an enemy takes revenge, or calamity springs from nothing one has done and misfortune from the unforeseen: if one does not avoid it one is harmed in the end, so one cannot do without divination for avoiding harm.", "But in general it is much like fleeing disorder, so it is appended together here."] }
+      ],
+      "note": {
+        "yi": "「户役」是按户摊派的差役、徭役。从这里往下的几联，说的多半是避祸（躲官府、仇家、差役），不限于兵乱。",
+        "en": "\"Household duties\" are the corvée and services levied on each household. From here on the couplets mostly concern avoiding harm (hiding from the authorities, enemies and runners) and are not limited to war and banditry."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.96",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·最怕官爻克世则必难回避：脱祸避祸遇鬼动伤世都不能避，鬼持世也一样；鬼空绝静或伏在世下，当前无事，将来当令恐怕又被发觉",
+      "rule": {
+        "yi": "脱祸、避祸的占，遇到鬼爻发动伤世，都不能躲避，鬼爻持世也一样；如果鬼爻空绝安静，或者伏在世爻下面，眼下没事，后来当令时恐怕又被发觉。",
+        "en": "In escaping or avoiding calamity, if Pressure moves and injures the Self one cannot avoid it, and the same is true when Pressure holds the Self; if the Pressure line is Void or extinct and still, or hidden under the Self, there is no trouble for now, but when it comes into season later one fears it will be discovered again."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1627, 1627],
+          "zh": ["最怕官爻克世，", "则必难回避"],
+          "yi": ["最怕官爻克世，", "那就一定难以回避"],
+          "en": ["Most to be feared is the Pressure line controlling the Self,", "and then it surely cannot be avoided"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1627, 1627],
+          "zh": ["凡脱祸避祸，遇鬼动伤世，皆不能避，持世亦然。", "若鬼空绝静，如伏于世下者，日下无事，后当令恐复发觉。"],
+          "yi": ["凡是脱祸、避祸，遇到鬼发动伤世，都不能躲避，鬼持世也是这样。", "如果鬼空绝安静，或者伏在世爻下面，眼下没事，后来当令时恐怕又被发觉。"],
+          "en": ["In escaping or avoiding calamity, if Pressure moves and injures the Self one cannot avoid it, and the same is true when Pressure holds the Self.", "If Pressure is Void or extinct and still, or hidden under the Self, there is no trouble for now, but when it comes into season later one fears it will be discovered again."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.97",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·大宜福德临身则终可逃生：子孙能制鬼，是解神，临身世、或在旁爻发动、或值月建日辰，即使遇官鬼也无妨，大怕落空亡墓绝受制",
+      "rule": {
+        "yi": "子孙能制住鬼，是解神；如果临在身、世上，或者在旁边的爻发动，或者值月建、日辰，即使遇到官鬼也无妨，最终可以逃生；最怕子孙落空亡、入墓绝或受制。",
+        "en": "Output can control Pressure and is the loosening spirit; if it stands on the Body or the Self, or moves in another line, or stands on the Month or the Day, there is no harm even when Pressure appears, and one can in the end escape with one's life; what is feared most is its falling into Void, the tomb or extinction, or being controlled."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1629, 1629],
+          "zh": ["大宜福德临身，", "则终可逃生"],
+          "yi": ["最适宜福德临在身上，", "那样终究可以逃生"],
+          "en": ["It is most fitting for Output to stand on the Self,", "and then one can in the end escape with one's life"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1629, 1629],
+          "zh": ["子孙能制鬼，为解神，若临身世或在旁爻发动，或值月建日辰，虽遇官鬼亦不妨事，大怕空亡墓绝受制。"],
+          "yi": ["子孙能制住鬼，是解神；如果临在身、世上，或者在旁边的爻发动，或者值月建、日辰，即使遇到官鬼也无妨，最怕空亡、墓绝、受制。"],
+          "en": ["Output can control Pressure and is the loosening spirit; if it stands on the Body or the Self, or moves in another line, or stands on the Month or the Day, there is no harm even when Pressure appears; what is feared most is its falling into Void, the tomb or extinction, or being controlled."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.98",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·官化父冲必有文书挨捕：旺爻发动名已入册或有官批在外，鬼爻也动则事紧急，父化官、官化父刑克世爻必着公差搜捕",
+      "rule": {
+        "yi": "旺相的爻发动，名字已经入了册，或者官府的批文已经在外；鬼爻也发动，事情紧急；父母化官、官鬼化父母，刑克世爻的，必定派公差来搜捕。",
+        "en": "A strong line moves: the name is already entered in the register, or there is an official order out; if the Pressure line also moves, the matter is urgent; if Resource changes into Pressure or Pressure into Resource and punishes or controls the Self, officers will surely be sent to hunt one down."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1631, 1631],
+          "zh": ["官化父冲，", "必有文书挨捕"],
+          "yi": ["官鬼化出父母（文书）来冲，", "必定有文书来搜捕"],
+          "en": ["If Pressure changes into the document line and clashes,", "there will surely be a warrant to hunt them down"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1631, 1631],
+          "zh": ["旺爻发动，名已入册，或有官批在外。", "鬼爻亦动，事体紧急。", "父化官、官化父刑克世爻者，必着公差挨捕。"],
+          "yi": ["旺相的爻发动，名字已经入了册，或者有官府的批文在外；", "鬼爻也发动，事情紧急；", "父化官、官化父，刑克世爻的，必定派公差来搜捕。"],
+          "en": ["A strong line moves: the name is already entered in the register, or there is an official order out;", "if the Pressure line also moves, the matter is urgent;", "if Resource changes into Pressure or Pressure into Resource and punishes or controls the Self, officers will surely be sent to hunt one down."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.99",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·日冲官散必多亲友维持：官动固难逃避，若有日辰动爻冲散克制它，必有心腹亲友替我周旋解释",
+      "rule": {
+        "yi": "官鬼发动固然难以逃避，但如果有日辰、动爻冲散、克制它，必定有心腹亲友替我周旋、解释。",
+        "en": "Pressure moving is of course hard to escape, but if the Day or a moving line clashes it apart or controls it, there will surely be trusted relatives and friends to negotiate and explain for me."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1633, 1633],
+          "zh": ["日冲官散，", "必多亲友维持"],
+          "yi": ["日辰冲散官鬼，", "必定有很多亲友出力维持"],
+          "en": ["If the Day clashes Pressure apart,", "many relatives and friends will surely help to see one through"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1633, 1633],
+          "zh": ["官动固难逃避，若得日辰动爻冲散克制之，必有心腹亲友与我周旋解释。"],
+          "yi": ["官动固然难以逃避，但如果有日辰、动爻冲散、克制它，必定有心腹亲友替我周旋、解释。"],
+          "en": ["Pressure moving is of course hard to escape, but if the Day or a moving line clashes it apart or controls it, there will surely be trusted relatives and friends to negotiate and explain for me."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.100",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·鬼伏而兄弟冲提祸由骨肉：官鬼伏藏而被兄弟冲开飞神提起，或兄弟冲动官鬼来刑克，是自家骨肉搜踪捕迹，难逃",
+      "rule": {
+        "yi": "官鬼伏藏而被兄弟爻冲开飞神、提拔出来的，或者兄弟冲动官鬼来刑克的，是自家骨肉在搜踪捕迹，恐怕难以逃避。",
+        "en": "If hidden Pressure is raised out by Peer clashing the flying line, or Peer clashes Pressure into movement and it comes to punish or control, it is one's own flesh and blood tracking one down, and escape is likely hard."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1635, 1635],
+          "zh": ["鬼伏而兄弟冲提，", "祸由骨肉"],
+          "yi": ["鬼爻伏藏而被兄弟爻冲出提起，", "祸是出自骨肉亲人"],
+          "en": ["If Pressure is hidden and Peer clashes it out and raises it,", "the disaster comes from one's own flesh and blood"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1635, 1635],
+          "zh": ["官伏而被兄弟冲飞提拔者，或兄弟冲动官鬼来刑克者，是自家骨肉搜踪捕迹，恐难逃避也。"],
+          "yi": ["官鬼伏藏而被兄弟冲开飞神、提拔出来的，或者兄弟冲动官鬼来刑克的，是自家骨肉在搜踪捕迹，恐怕难以逃避。"],
+          "en": ["If hidden Pressure is raised out by Peer clashing the flying line, or Peer clashes Pressure into movement and it comes to punish or control, it is one's own flesh and blood tracking one down, and escape is likely hard."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.101",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·官静而旁爻刑克事出吏书：鬼爻安静而卦中爻动刑克世爻，是衙役和仇家陷害；化出兄爻则想敲诈财物",
+      "rule": {
+        "yi": "鬼爻安静，而卦中有爻发动刑克世爻的，是衙役和仇家陷害；如果化出兄爻，他们是想敲诈财物。",
+        "en": "If Pressure is still but a moving line in the hexagram punishes or controls the Self, it is yamen runners and enemies framing one; if it changes into a Peer line, they want to extort money."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1637, 1637],
+          "zh": ["官静而旁爻刑克，", "事出吏书"],
+          "yi": ["官鬼安静而旁边的爻来刑克，", "事情是出自吏员书办"],
+          "en": ["If Pressure is still and another line comes to punish or control,", "the matter comes from clerks and scribes"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1637, 1637],
+          "zh": ["鬼静而卦中爻动刑克世爻者，乃是下役及仇家陷害也；", "若化兄爻，彼欲索诈财物。"],
+          "yi": ["鬼爻安静，而卦中有爻发动刑克世爻的，是衙役及仇家陷害；", "如果化出兄爻，他们是想敲诈财物。"],
+          "en": ["If Pressure is still but a moving line in the hexagram punishes or controls the Self, it is yamen runners and enemies framing one;", "if it changes into a Peer line, they want to extort money."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.102",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·应若遭伤当累众：官鬼伤克应爻必然连累别人，月建日辰伤克应爻也一样",
+      "rule": {
+        "yi": "官鬼伤克应爻，必定连累别人；月建、日辰伤克应爻也是这样。",
+        "en": "If Pressure injures or controls the Other line, others will surely be dragged in; the same holds when the Month or the Day does it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1639, 1639],
+          "zh": ["应若遭伤当累众"],
+          "yi": ["应爻如果遭到伤害就会连累众人"],
+          "en": ["If the Other is injured, others will be dragged in"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1639, 1639],
+          "zh": ["官鬼伤克应爻，必然累及他人，月建日辰亦然。"],
+          "yi": ["官鬼伤克应爻，必定连累别人；月建、日辰伤克应爻也是这样。"],
+          "en": ["If Pressure injures or controls the Other line, others will surely be dragged in; the same holds when the Month or the Day does it."] }
+      ],
+      "note": {
+        "yi": "原书这一行把两联写在一起（「应若遭伤当累众……」「妻如受克定伤财……」），这里按联拆成两条。",
+        "en": "The book writes two couplets together on this line (\"if the Other is injured, others are dragged in ...\" and \"if Wealth is controlled, money is surely lost ...\"); they are split here into two entries."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.103",
+      "topic": "风险",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·妻如受克定伤财：财爻受克一定伤财，再遇兄弟发动必定破费财物",
+      "rule": {
+        "yi": "财爻如果受克，一定要伤财；如果又遇到兄弟发动，必定破费钱财。",
+        "en": "If the Wealth line is controlled, money is surely lost; if a Peer line also moves, there will surely be expense and loss of money."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1639, 1639],
+          "zh": ["妻如受克定伤财"],
+          "yi": ["妻财如果受克，一定伤财"],
+          "en": ["If Wealth is controlled, money is surely lost"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1639, 1639],
+          "zh": ["如遇兄动，必主破费财物。"],
+          "yi": ["如果遇到兄弟发动，必定要破费钱财。"],
+          "en": ["If a Peer line moves as well, there will surely be expense and loss of money."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.104",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·偏喜六爻安静：六爻不动、官爻没有被冲并的，患难可以躲过，户役可以脱免",
+      "rule": {
+        "yi": "六爻不动，官爻没有被冲、并的，患难可以躲过，户役可以脱免。",
+        "en": "If the six lines do not move and the Pressure line is neither clashed nor joined, trouble can be avoided and household duties escaped."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1640, 1640],
+          "zh": ["偏喜六爻安静"],
+          "yi": ["特别喜欢六爻安静"],
+          "en": ["It is especially welcome that the six lines are still"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1640, 1640],
+          "zh": ["六爻不动，官爻无冲并者，患难可避，户役可脱。"],
+          "yi": ["六爻不动，官爻没有被冲、并的，患难可以躲过，户役可以脱免。"],
+          "en": ["If the six lines do not move and the Pressure line is neither clashed nor joined, trouble can be avoided and household duties escaped."] }
+      ],
+      "note": {
+        "yi": "原书这一行也把两联写在一起（「偏喜六爻安静……」「又宜一卦无官……」），这里按联拆成两条。",
+        "en": "The book also writes two couplets together on this line (\"it is especially welcome that the six lines are still ...\" and \"it is also fitting that the hexagram has no Pressure ...\"); they are split here into two entries."
+      }
+    },
+    {
+      "id": "LY.TRAVEL.HJC.105",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·又宜一卦无官：没有官鬼，事情必定平安，官鬼空亡也吉",
+      "rule": {
+        "yi": "整个卦里没有官鬼，事情必定平安；官鬼空亡也吉。",
+        "en": "With no Pressure in the whole hexagram the matter is surely safe; Pressure Void is also lucky."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1640, 1640],
+          "zh": ["又宜一卦无官"],
+          "yi": ["又适宜整个卦里没有官鬼"],
+          "en": ["It is also fitting for the whole hexagram to have no Pressure"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1640, 1640],
+          "zh": ["无官鬼则主事必平安，空亡亦吉。"],
+          "yi": ["没有官鬼，事情必定平安；官鬼空亡也吉。"],
+          "en": ["With no Pressure the matter is surely safe; Pressure Void is also lucky."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.106",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·或身世之逢空：世、身落空亡，百事消散，即使有鬼动也无妨",
+      "rule": {
+        "yi": "世爻、身落在空亡，百事消散，即使有鬼爻发动也无妨。",
+        "en": "If the Self and Body are Void, all things melt away, and even if Pressure moves there is no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1641, 1641],
+          "zh": ["或身世之逢空"],
+          "yi": ["或者身、世遇到空亡"],
+          "en": ["Or if the Body and the Self meet Void"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1641, 1641],
+          "zh": ["世身空亡，百事消散，虽有鬼动亦不妨事。"],
+          "yi": ["世、身落空亡，百事消散，即使有鬼爻发动也无妨。"],
+          "en": ["If the Self and Body are Void, all things melt away, and even if Pressure moves there is no harm."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.107",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·或用神之得地：用神旺相而没有刑冲克害，又不化死墓空绝，都是吉兆",
+      "rule": {
+        "yi": "用神旺相而没有刑冲克害，又不化出死、墓、空、绝，都是吉兆。",
+        "en": "If the Subject is strong and free of punishment, clash, control and harm, and does not change into death, tomb, Void or extinction, all are auspicious signs."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1643, 1643],
+          "zh": ["或用神之得地"],
+          "yi": ["或者用神得地"],
+          "en": ["Or if the Subject is well placed"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1643, 1643],
+          "zh": ["用神旺相而无刑冲克害，不化死墓空绝，皆为吉兆。"],
+          "yi": ["用神旺相而没有刑冲克害，不化出死、墓、空、绝，都是吉兆。"],
+          "en": ["If the Subject is strong and free of punishment, clash, control and harm, and does not change into death, tomb, Void or extinction, all are auspicious signs."] }
+      ]
+    },
+    {
+      "id": "LY.TRAVEL.HJC.108",
+      "topic": "避难",
+      "chapter": "避乱",
+      "chapter_en": "Fleeing disorder",
+      "title": "避乱·天来大事也无妨、海样深仇何足虑：总括上面四节，卦中只要有一个吉神，决然无事",
+      "rule": {
+        "yi": "这两句总括上面四节：卦中只要有一个吉神，决然无事，天大的事也无妨，海一样深的仇怨也不必忧虑。",
+        "en": "These two lines sum up the four sections above: so long as the hexagram has one auspicious spirit, there will certainly be no trouble; even a matter as great as heaven does no harm, and a grudge as deep as the sea is nothing to worry over."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [1645, 1645],
+          "zh": ["天来大事也无妨，", "海样深仇何足虑"],
+          "yi": ["天大的事也无妨，", "海一样深的仇怨又何必忧虑"],
+          "en": ["Even a matter as great as heaven does no harm,", "and a grudge as deep as the sea is nothing to worry over"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [1645, 1645],
+          "zh": ["此二句总上文四节，总结而言，卦中有一吉神，决然无事也。"],
+          "yi": ["这两句总括上面四节，总结起来说，卦中只要有一个吉神，就决然无事。"],
+          "en": ["These two lines sum up the four sections above: in sum, so long as the hexagram has one auspicious spirit, there will certainly be no trouble."] }
+      ],
+      "note": {
+        "yi": "这一章最后的一段（第 1647 行）是对读者的话——「事有百端，理无二致」，要融会贯通，不是判断规则，没有收。",
+        "en": "The last paragraph of the chapter (line 1647) is advice to the reader — \"affairs are hundredfold but the principle is one\" — to master it all and reason from principle; it is not a rule of judgement and is not included."
+      }
+    }
+  ]
+}

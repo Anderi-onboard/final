@@ -1,0 +1,396 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易隐",
+  "chapter": "官禄占",
+  "chapter_en": "Divining office and salary",
+  "ranges": {"易隐": [2600, 2680]},
+  "units": [
+    {
+      "id": "LY.CAREER.YY.14",
+      "topic": "任所",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·在任（一）：官加贵禄临扶身世到任操权；父加贵马临扶身世临庭掌印；官加龙贵在阳宫阳爻旺相政声籍甚",
+      "rule": {
+        "yi": "在任，到任之后的权势和声望：官星带贵人、禄，临到并扶助身爻、世爻的，到任就掌实权；印星带贵人、驿马，临到并扶助身爻、世爻的，上堂就掌印；官星带青龙、贵人，落在阳宫的阳爻上又旺相的，政绩的名声很大。",
+        "en": "In office, power and repute after taking up the post. If the star of office carrying the Noble and Emolument comes to the Body and Self and supports them, he holds real power on taking up the post; if the seal line carrying the Noble and the Horse does so, he holds the seal when he takes his seat; if the star of office carrying the Dragon and the Noble sits on a yang line in a yang palace and is thriving, his name for government is great."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2640, 2640],
+          "zh": ["官加贵禄临扶身世者，到任操权也。", "父加贵马临扶身世者，临庭掌印也。", "官加龙贵，在阳宫阳爻旺相者，政声籍甚也。"],
+          "yi": ["官星带着贵人、禄，临到并扶助身爻、世爻的，到任之后掌有实权。", "印星带着贵人、驿马，临到并扶助身爻、世爻的，上堂就掌印。", "官星带着青龙、贵人，在阳宫的阳爻上又旺相的，政绩的名声很大。"],
+          "en": ["If the star of office carrying the Noble and Emolument comes to the Body and Self and supports them, he holds real power on taking up the post.", "If the seal line carrying the Noble and the Horse comes to the Body and Self and supports them, when he takes his seat in the hall he holds the seal.", "If the star of office carrying the Dragon and the Noble is on a yang line in a yang palace and thriving, his name for government is great."] }
+      ],
+      "note": {
+        "yi": "这一节开头的「官」「父」都是单字，按上一章的用法译成官星、印星（印绶，即父母爻）；「贵」是贵人，「禄」「马」是禄神、驿马，「龙」是青龙，都是神煞。「籍甚」是名声很大。",
+        "en": "The single characters 'official' and 'father' at the head of this passage are rendered, as in the previous chapter, as the star of office and the seal line (the seal and ribbon, that is the Resource line); 'Noble' is the Noble, 'Emolument' and 'Horse' are the Emolument spirit and the Post Horse, and 'Dragon' is the Azure Dragon, all spirit-stars. 'Jijia' means a great name."
+      },
+      "see": ["LY.CAREER.YY.13", "LY.CAREER.YY.15", "LY.CAREER.HJC.02", "LY.CAREER.ZS.11"]
+    },
+    {
+      "id": "LY.CAREER.YY.15",
+      "topic": "任所",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·在任（二）：父受伤财空绝地瘠民贫；父身动兄世动政繁赋缺；日并兄动伤世吏多舞文；兄化子孙克世民多梗化",
+      "rule": {
+        "yi": "在任，任所的民情和属吏：印星受伤而财爻落空、绝的，任所地瘠民贫；印星、身爻发动，而兄爻、世爻也发动的，政事繁杂而赋税不足；日辰合着发动的兄爻伤世爻的，属吏多半舞文弄法；兄爻变出子孙来克世爻的，百姓多半顽梗，不服教化。",
+        "en": "In office, the people and the clerks of the post. If the seal line is injured and Wealth is Void or extinct, the land is barren and the people poor; if the seal line and the Body move, and the Peer line and the Self also move, government business is heavy and taxes fall short; if the Day joins a moving Peer line in injuring the Self, the clerks mostly twist the written law; if a Peer line turns into Output and that controls the Self, the people are mostly stubborn and refuse to be reformed."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2640, 2640],
+          "zh": ["父受伤而财空绝者，地瘠民贫也。", "父身动而兄世动者，政繁赋缺也。", "日并兄动伤世者，吏多舞文也。", "兄化子孙克世者，民多梗化也。"],
+          "yi": ["印星受伤，而财爻落空、绝的，任所地瘠民贫。", "印星、身爻发动，而兄爻、世爻也发动的，政事繁杂而赋税不足。", "日辰合着发动的兄爻一起伤世爻的，属吏多半舞文弄法。", "兄爻变出子孙来克世爻的，百姓多半顽梗，不服教化。"],
+          "en": ["If the seal line is injured and Wealth is Void or extinct, the land is barren and the people poor.", "If the seal line and the Body move, and the Peer line and the Self also move, government business is heavy and taxes fall short.", "If the Day joins a moving Peer line in injuring the Self, the clerks mostly twist the written law.", "If a Peer line turns into Output and that controls the Self, the people are mostly stubborn and refuse to be reformed."] }
+      ],
+      "note": {
+        "yi": "「舞文」是玩弄法令文书，「梗化」是顽固不服从教化。第一句里「父」是单字，这里按上一条译成印星；印星受伤可以读作官府的庇护不足，但书里没有解释，译文不加。",
+        "en": "'Wuwen' is twisting laws and documents, and 'genghua' is stubbornly refusing reform. The single character 'father' in the first sentence is rendered as the seal line, as in the previous entry; an injured seal line could be read as too little protection from the government, but the book does not explain it, and the translation adds nothing."
+      },
+      "see": ["LY.CAREER.YY.14", "LY.CAREER.YY.16", "LY.CAREER.HJC.22", "LY.CAREER.ZS.13"]
+    },
+    {
+      "id": "LY.CAREER.YY.16",
+      "topic": "升迁",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·在任（三）：道路爻空巡方使者多惊；子孙旺动剿捕官奏凯；太岁伤官朝仕必黜；月日生世外任可升",
+      "rule": {
+        "yi": "在任，差使和升黜：道路这一爻落空，出外巡视的使者多受惊吓；子孙旺相发动，负责剿捕的官员奏报凯旋；太岁伤官星，在朝为官的必被罢黜；月建、日辰生世爻，外任的官可以升迁。",
+        "en": "In office, commissions, promotion and dismissal. If the road line is Void, the envoy touring his district is often alarmed; if Output is thriving and moving, the officer in charge of suppressing bandits reports victory; if Tai Sui injures the star of office, an official at court is surely dismissed; if the Month and Day generate the Self, an official in a post outside can be promoted."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2640, 2640],
+          "zh": ["道路爻空，巡方之使多惊。", "子孙旺动，剿捕之官奏凯。", "太岁伤官，朝仕必黜。", "月日生世，外任可升。"],
+          "yi": ["道路这一爻落空，出外巡视的使者多受惊吓。", "子孙旺相发动，负责剿捕的官员奏报凯旋。", "太岁伤官星，在朝为官的必被罢黜。", "月建、日辰生世爻，外任的官可以升迁。"],
+          "en": ["If the road line is Void, the envoy touring his district is often alarmed.", "If Output is thriving and moving, the officer in charge of suppressing bandits reports victory.", "If Tai Sui injures the star of office, an official at court will surely be dismissed.", "If the Month and Day generate the Self, an official in a post outside can be promoted."] }
+      ],
+      "note": {
+        "yi": "「道路」是上一章鬼谷分爻表里的名目之一，书里没有写是哪一爻（见 YY.13）。「巡方」是出外巡视地方的差使，「奏凯」是奏报得胜。「朝仕」是在朝廷任职的官，「外任」是在京城以外任职。",
+        "en": "'The road' is one of the names in the Guigu table of the previous chapter, and the book does not say which line it is (see YY.13). 'Xunfang' is the commission of touring the districts, and 'zoukai' is reporting a victory. 'Chaoshi' is an official serving at court and 'waiten' is serving outside the capital."
+      },
+      "see": ["LY.CAREER.YY.15", "LY.CAREER.YY.17", "LY.CAREER.HJC.23", "LY.CAREER.HJC.24", "LY.CAREER.ZS.15"]
+    },
+    {
+      "id": "LY.CAREER.YY.17",
+      "topic": "贵人",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·在任（四）：官化财非奖则荐；官贵旺动生合世目下蒙荐；岁月带父旺动朝有宣勅；太岁五爻动生合世征召入朝；官世临五爻或太岁得父动生合名书御榻；三传加财动生合世受赐赍",
+      "rule": {
+        "yi": "在任，荐举、宣敕和征召：官星变出财爻，不是受嘉奖就是被荐举；官星、贵人旺相发动、来生合世爻的，眼前就蒙人荐举；太岁、月建带着印星旺相发动的，朝廷有宣读的敕命；太岁与五爻发动、来生合世爻的，被征召入朝；官爻、世爻临在五爻或太岁上，又得印星发动来生合的，名字上了御榻；三传带着财爻发动、来生合世爻的，受赏赐。",
+        "en": "In office, recommendation, edicts and summons. If the star of office turns into Wealth, he is either commended or recommended; if the star of office and the Noble are thriving and moving and generate or combine with the Self, he is recommended right away; if Tai Sui and the Month carry the seal line, thriving and moving, an edict is proclaimed at court; if Tai Sui and the fifth line move to generate or combine with the Self, he is summoned to court; if the Pressure line and the Self sit on the fifth line or on Tai Sui and a moving seal line generates or combines with them, his name is written on the imperial couch; if the three rulers carrying Wealth move to generate or combine with the Self, he receives gifts."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2640, 2640],
+          "zh": ["官化财，非奖，则荐也。", "官贵旺动生合世者，目下蒙荐也。", "岁月带父旺动者，朝有宣勅也。", "太岁与五爻动来生合世者，徵召入朝也。", "官爻世爻临五爻或临太岁，得父动来生合者，名书御榻也。", "三传加财动生合世者，受赐赍也。"],
+          "yi": ["官星变出财爻，不是受嘉奖，就是被荐举。", "官星、贵人旺相发动，来生合世爻的，眼前就蒙人荐举。", "太岁、月建带着印星旺相发动的，朝廷有宣读的敕命。", "太岁与五爻发动，来生合世爻的，被征召入朝。", "官爻、世爻临在五爻上或太岁上，又得印星发动来生合的，名字写上了御榻。", "三传（太岁、月建、日辰）带着财爻发动，来生合世爻的，受到赏赐。"],
+          "en": ["If the star of office turns into Wealth, he is either commended or recommended.", "If the star of office and the Noble are thriving and moving and generate or combine with the Self, he is recommended right away.", "If Tai Sui and the Month carry the seal line, thriving and moving, an imperial edict is proclaimed at court.", "If Tai Sui and the fifth line move to generate or combine with the Self, he is summoned to court.", "If the Pressure line and the Self line sit on the fifth line or on Tai Sui and a moving seal line generates or combines with them, his name is written on the imperial couch.", "If the three rulers carrying Wealth move to generate or combine with the Self, he receives gifts of reward."] }
+      ],
+      "note": {
+        "yi": "「名书御榻」按字面译：名字写在御座旁，大概是说皇帝亲自留意、记下了他的名字。「宣勅」是宣读皇帝的敕命，「赐赍」是赏赐财物。三传在这部书里是太岁、月建、日辰（见术语表），不是大六壬的三传。",
+        "en": "'Ming shu yu ta' is translated by the letter: the name is written beside the imperial seat, presumably meaning that the emperor himself has noted his name. 'Xuan chi' is the proclamation of an imperial order and 'cixi' is a bestowal of goods. The three rulers in this book are Tai Sui, the Month and the Day (see the glossary), and not the three transmissions of Da Liu Ren."
+      },
+      "see": ["LY.CAREER.YY.16", "LY.CAREER.YY.18", "LY.CAREER.HJC.05", "LY.CAREER.HJC.07"]
+    },
+    {
+      "id": "LY.CAREER.YY.18",
+      "topic": "贵人",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·在任（五）：太岁五爻生合父母椿萱受赠；生合妻财室人受诰；生合子孙儿孙得荫；生合官鬼祖妣恩荣",
+      "rule": {
+        "yi": "在任，封赠：太岁与五爻生合哪一亲的爻，哪一亲就受恩典：生合父母爻，父母受封赠；生合妻财，妻子受诰命；生合子孙，儿孙得到荫庇；生合官鬼，已故的祖母得恩荣。",
+        "en": "In office, honours conferred on kin. Whichever kin line Tai Sui and the fifth line generate or combine with, those kin receive the favour: if Resource, his parents receive honorary titles; if Wealth, his wife receives an imperial patent; if Output, his sons and grandsons gain hereditary privilege; if Pressure, his late grandmother receives the grace of honours."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2640, 2640],
+          "zh": ["太岁与五爻生合父母，椿萱受赠。", "生合妻财，室人受诰。", "生合子孙，儿孙得荫。", "生合官鬼，祖妣恩荣也。"],
+          "yi": ["太岁与五爻来生合父母爻，父母受到封赠。", "（太岁与五爻）生合妻财，妻子受诰命。", "（太岁与五爻）生合子孙，儿孙得到荫庇。", "（太岁与五爻）生合官鬼，祖妣（已故的祖母）得到恩荣。"],
+          "en": ["If Tai Sui and the fifth line generate or combine with Resource, his parents receive honorary titles.", "If they generate or combine with Wealth, his wife receives an imperial patent.", "If they generate or combine with Output, his sons and grandsons gain hereditary privilege.", "If they generate or combine with Pressure, his late grandmother receives the grace of honours."] }
+      ],
+      "note": {
+        "yi": "「椿萱」是父亲和母亲（椿指父、萱指母）；「诰」是皇帝封赠官员及其亲属的诏令，「荫」是官员的子孙凭父祖的官位得到入仕或入学的资格。后三句省了主语，承上一句，仍是太岁与五爻。「祖妣」字面是已故的祖母。",
+        "en": "'Chunxuan' means the father and the mother ('chun' for the father and 'xuan' for the mother); 'gao' is the imperial decree by which an official and his kin are given titles, and 'yin' is the privilege by which an official's descendants enter service or school on the strength of the rank of a father or grandfather. The last three sentences leave out the subject, following on from the previous one, and it is still Tai Sui and the fifth line. 'Zubi' is literally a deceased grandmother."
+      },
+      "see": ["LY.CAREER.YY.17", "LY.CAREER.YY.19", "LY.CAREER.ZS.20"]
+    },
+    {
+      "id": "LY.CAREER.YY.19",
+      "topic": "风险",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·在任（六）：财化福加俸秩；财化兄罚俸粮；月日刑害克破官世或贵官动伤身世被人弹劾；官父逢空死墓绝胎、刑害克破或动化福空死墓绝胎刑害克破俱降职；世官空动将失职；官化退神",
+      "rule": {
+        "yi": "在任，俸禄、弹劾和降职：财爻变出子孙，加俸加秩；财爻变出兄爻，被罚俸禄钱粮；月建、日辰刑、害、克、破官爻、世爻，或者贵人、官星发动伤身爻、世爻的，被人弹劾；官星、印星遇到空、死、墓、绝、胎，或被刑、害、克、破，或者发动变出子孙、变成空、死、墓、绝、胎、变成刑、害、克、破的，都降职；世爻、官星落空而发动的，将要失去职位；官星变成退神（括号里是退神的四个干支）。",
+        "en": "In office, salary, impeachment and demotion. If Wealth turns into Output, his salary and rank are raised; if Wealth turns into a Peer line, his salary and grain are docked; if the Month and Day punish, harm, control or break the Pressure line or the Self line, or the Noble and star of office move to injure the Body and Self, he is impeached; if the star of office and the seal meet Void, death, tomb, extinction or the womb stage, or are punished, harmed, controlled or broken, or move and turn into Output, or into Void, death, tomb, extinction, the womb stage, punishment, harm, control or breaking, he is demoted; if the Self and the star of office are Void and moving, he is about to lose his post; the star of office turning into a Retreating spirit is also listed, followed in brackets by the four ganzhi of the Retreating spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2640, 2640],
+          "zh": ["财化福者，加俸秩。", "财化兄者，罚俸粮也。", "月日刑害克破官爻世爻，或贵官动伤身世者，被人弹劾也。", "官父逢空死墓绝胎，与被刑害克破，或官父动化福，化空死墓绝胎，或化刑害克破者，俱降职也。", "世官空动者，将失职也。", "官化退神。", "(丁丑丁未壬辰壬戌)。"],
+          "yi": ["财爻变出福神（子孙），增加俸禄品秩。", "财爻变出兄爻，被罚俸禄钱粮。", "月建、日辰刑、害、克、破官爻、世爻，或者贵人、官星发动伤身爻、世爻的，被人弹劾。", "官星、印星遇到空、死、墓、绝、胎，以及被刑、害、克、破，或者官星、印星发动变出福神，变成空、死、墓、绝、胎，或变成刑、害、克、破的，都是降职。", "世爻、官星落空而发动的，将要失去职位。", "官星变成退神。", "（丁丑、丁未、壬辰、壬戌。）"],
+          "en": ["If Wealth turns into Output, the fortune spirit, his salary and rank are raised.", "If Wealth turns into a Peer line, his salary and grain are docked.", "If the Month and Day punish, harm, control or break the Pressure line or the Self line, or the Noble and star of office move to injure the Body and Self, he is impeached by others.", "If the star of office and the seal meet Void, death, tomb, extinction or the womb stage, or are punished, harmed, controlled or broken, or if they move and turn into Output, the fortune spirit, or turn into Void, death, tomb, extinction or the womb stage, or into punishment, harm, control or breaking, in every case he is demoted.", "If the Self and the star of office are Void and moving, he is about to lose his post.", "If the star of office turns into a Retreating spirit.", "(Dingchou, Dingwei, Renchen, Renxu.)"] },
+        { "by": "书中例", "book": "易隐", "range": [2673, 2673],
+          "zh": ["庚寅年庚辰月甲戌旬戊寅日，占为官安否，得剥之观。", "本宫午官，伏墓戌土下，午为自刑，傍爻子动冲官伤官，必曾冒犯官长，官不蒞事。", "本宫父母，又值旬空季空，此因文书不明，而忤上台也，问之果然。"],
+          "yi": ["庚寅年庚辰月，甲戌旬戊寅日，占做官平安与否，得剥卦变观卦。", "本宫的午火官星，伏在墓库戌土下面，午又是自刑；旁边的子水发动，冲官星、伤官星，必定曾经冒犯上司，官不能理事。", "本宫的父母爻，又遇旬空、季空，这是因为文书不清，得罪了上级衙门；问他，果然如此。"],
+          "en": ["In the Gengyin year, Gengchen month, Jiaxu decade, on a Wuyin day, a divination on whether his tenure of office was safe gave Bo changing into Guan.", "The Wu Fire star of office of the home palace lies hidden under Xu Earth, its tomb, and Wu punishes itself; the side Zi Water line moves, clashing with and injuring the star of office, so he must have offended his superior, and the official does not attend to affairs.", "The Resource line of the home palace also falls in the decade Void and the seasonal Void; this is because his documents were unclear and he offended the higher office; asked, it was indeed so."] }
+      ],
+      "note": {
+        "yi": "「福」是福神（子孙），「官化退神」后面的括号（丁丑、丁未、壬辰、壬戌）是退神的干支：《卜筮全书》写「退神者，壬戌、壬辰、丁丑、丁未」，《断易天机》也写「丁丑、丁未、壬辰、壬戌，四者为退神」，和这里一致。这一句在书里只写了条件、没有写结果，和前后句一起列在失职之后，译文照录，不替它补结论。附断例是《易隐》官禄占末尾的一例，放在最相关的这一条下。「季空」书里没有解释，按字面是当季的空。「官不蒞事」是官员不能到任办事。",
+        "en": "'Fu' is the fortune spirit (Output), and the bracket after 'the star of office turns into a Retreating spirit', (Dingchou, Dingwei, Renchen, Renxu), gives the ganzhi of the Retreating spirit: the Bushi Quanshu writes 'the Retreating spirit is Renxu, Renchen, Dingchou and Dingwei', and the Duanyi Tianji also writes 'Dingchou, Dingwei, Renchen, Renxu, these four are the Retreating spirit', in agreement with this. The sentence gives only a condition and no result in the book, and stands with the sentences before and after it after the loss of a post; the translation records it and does not supply a conclusion. The example is one of those appended at the end of this chapter of the Yi Yin, and is placed under the entry it illustrates most. 'Jikong' is not explained in the book and is read literally as the Void of the season. 'Guan bu li shi' means the official cannot take up his duties."
+      },
+      "see": ["LY.CAREER.YY.18", "LY.CAREER.YY.20", "LY.CAREER.HJC.04", "LY.CAREER.HJC.15", "LY.CAREER.ZS.38", "LY.CAREER.ZS.40"]
+    },
+    {
+      "id": "LY.CAREER.YY.20",
+      "topic": "风险",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·在任（七）：游魂化归魂宜致仕；世空杀动宜避罪；世持官加大杀动、鬼带亡劫动伤衰世、世身命爻俱空死墓绝者皆死于任所",
+      "rule": {
+        "yi": "在任，退休、避罪和死在任上：游魂卦变归魂卦的，适宜退休（致仕）；世爻落空、凶煞发动的，适宜避罪；世爻持官星加大杀发动，或者官鬼带亡神、劫杀发动伤到衰弱的世爻，或者世爻、身爻、命爻都遇空、死、墓、绝的，都会死在任所。",
+        "en": "In office, retirement, evading a charge and dying at one's post. If a Wandering Soul hexagram turns into a Returning Soul hexagram, it is fitting to retire from office; if the Self is Void and a baleful spirit moves, it is fitting to evade a charge; if the Self holds the star of office and a great baleful spirit is added and moves, or Pressure carrying the Lost Spirit and Robbery moves to injure a weak Self, or the Self line, the Body line and the Life line are all Void, dead, in tomb or extinct, in every case he dies at his post."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2640, 2640],
+          "zh": ["游魂化归魂者，宜致仕也。", "世空杀动者，宜避罪也。", "世持官，加大杀动，或鬼带亡劫动伤衰世，或世爻身爻命爻俱空死墓绝者，皆死于任所也。"],
+          "yi": ["游魂卦变归魂卦的，适宜退休致仕。", "世爻落空、凶煞发动的，适宜避罪。", "世爻持官星，加上大杀发动，或者官鬼带着亡神、劫杀发动，伤到衰弱的世爻，或者世爻、身爻、命爻都遇空、死、墓、绝的，都死在任所。"],
+          "en": ["If a Wandering Soul hexagram turns into a Returning Soul hexagram, it is fitting to retire from office.", "If the Self is Void and a baleful spirit moves, it is fitting to evade a charge.", "If the Self holds the star of office and a great baleful spirit is added and moves, or Pressure carrying the Lost Spirit and Robbery moves to injure a weak Self, or the Self line, the Body line and the Life line are all Void, dead, in tomb or extinct, in every case he dies at his post."] },
+        { "by": "书中例", "book": "易隐", "range": [2676, 2676],
+          "zh": ["庚寅年壬午月甲戌日，占在任安否，得归妹之泰。", "午得化入戌墓，丑印化入辰墓，主灾死，惟致仕可免也。"],
+          "yi": ["庚寅年壬午月，甲戌日，占在任上平安与否，得归妹卦变泰卦。", "午火变入戌墓，丑土的印星变入辰墓，主有灾祸甚至死亡，只有退休才能免。"],
+          "en": ["In the Gengyin year, Renwu month, on a Jiaxu day, a divination on whether his tenure in office was safe gave Guimei changing into Tai.", "Wu Fire turns into its tomb at Xu, and the Chou Earth seal turns into its tomb at Chen, which means disaster or even death, and only retiring from office can avoid it."] }
+      ],
+      "dispute": {
+        "yi": "「世空杀动」宜避罪，是黄金策仕宦章「身空杀动，避祸之征」（HJC.16）一路的说法；增删卜易（ZS.43）明说这样断不对：忌神发动而世爻落空，等到世爻出空的月份日子，必定遭它的害，怎么能避开。易隐这里没有给理由，也没有提出空的那一天。",
+        "en": "'The Self Void and a baleful spirit moving: evade a charge' is the same line of saying as the Huangjin Ce's 'Body Void and baleful spirit moving, a sign of avoiding misfortune' (HJC.16); the Zengshan Buyi (ZS.43) says plainly that this is wrong to judge so: when the Adversary moves and the Self is Void, the month or day when the Self leaves Void will surely bring its harm, so how could one avoid it. The Yi Yin gives no reason here and does not mention the day of leaving Void."
+      },
+      "note": {
+        "yi": "「致仕」是官员退休，「避罪」是躲开罪责。「大杀」「亡劫」是神煞的统称和简称（亡神、劫杀）。「命爻」书里没有说是哪一爻。游魂、归魂是八宫卦的两种位置（定义见术语表）。附断例的卦「归妹之泰」，书里说午化入戌、丑化入辰，译文照字面译，没有重排卦核对。",
+        "en": "'Zhishi' is an official's retirement and 'bizui' is avoiding blame. 'Great baleful spirit' and 'Wangjie' are a general name and an abbreviation for spirit-stars (the Lost Spirit and Robbery). The book does not say which line is the 'Life line'. The Wandering Soul and Returning Soul are two positions among the hexagrams of the eight palaces (defined in the glossary). For the example hexagram 'Guimei to Tai' the book says that Wu turns into Xu and Chou into Chen; the translation follows the letter and has not recast the hexagram to check."
+      },
+      "see": ["LY.CAREER.YY.19", "LY.CAREER.YY.21", "LY.CAREER.HJC.16", "LY.CAREER.HJC.09", "LY.CAREER.ZS.43", "LY.CAREER.ZS.46"]
+    },
+    {
+      "id": "LY.CAREER.YY.21",
+      "topic": "升迁",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·升迁（一）：世为臣应为君；世应生合比和者升；世生应我求进，应生世人荐举；应冲克世外除，应生合世内除",
+      "rule": {
+        "yi": "升迁，世应论君臣：世爻是臣子，应爻是君上；世爻、应爻相生、相合、比和的，升迁；世爻生应爻，是我自己谋求进用，应爻生世爻，是别人荐举我；应爻冲克世爻，是外放任命，应爻生合世爻，是在京内任命。",
+        "en": "Promotion, the Self and the Other as subject and ruler. The Self is the subject and the Other is the ruler; if the Self and the Other generate, combine or are in harmony, he is promoted; if the Self generates the Other, it is I who seek advancement, and if the Other generates the Self, others recommend me; if the Other clashes with or controls the Self, he is appointed outside, and if the Other generates or combines with the Self, he is appointed within the capital."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2644, 2644],
+          "zh": ["世为臣，应为君。", "世应生合比和者，升。", "世生应我求进，应生世人荐举。", "应冲克世外除，应生合世内除也。"],
+          "yi": ["世爻是臣子，应爻是君上。", "世爻、应爻相生、相合、比和的，升迁。", "世爻生应爻，是我自己谋求进用；应爻生世爻，是别人荐举我。", "应爻冲克世爻，是外放任命（外除）；应爻生合世爻，是在京内任命（内除）。"],
+          "en": ["The Self is the subject and the Other is the ruler.", "If the Self and the Other generate, combine or are in harmony, he is promoted.", "If the Self generates the Other, it is I who seek advancement; if the Other generates the Self, others recommend me.", "If the Other clashes with or controls the Self, he is appointed outside; if the Other generates or combines with the Self, he is appointed within the capital."] }
+      ],
+      "note": {
+        "yi": "「外除」是任命到京城以外的职位，「内除」是任命到京城之内的职位。第三句里的「人」译作别人，指有人在上面推荐我，和应爻是君上不是一回事。",
+        "en": "'Waichu' is appointment to a post outside the capital and 'neichu' is appointment to a post within it. 'Ren' in the third sentence is rendered as 'others', meaning that someone above recommends me, which is not the same as the Other line being the ruler."
+      },
+      "see": ["LY.CAREER.YY.20", "LY.CAREER.YY.22", "LY.CAREER.HJC.02", "LY.CAREER.ZS.01"]
+    },
+    {
+      "id": "LY.CAREER.YY.22",
+      "topic": "升迁",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·升迁（二）：世官旺动、财子同动、财独发、岁月生扶身世、官临唐符国印动、鬼加雀带雷火杀动者升；官化财平升；鬼化鬼逢进神超迁；逢退神调简；归魂官旺静复任；游魂官旺动远升；两父两官旺动鸳鸯求仕",
+      "rule": {
+        "yi": "升迁的格局：世爻、官星旺相发动的，升；财爻、子孙一起发动的，升；财爻单独发动的，升；太岁、月建生扶身爻、世爻的，升；官星临唐符、国印而发动的，升；官鬼带朱雀、带雷火杀发动的，升；官星变财爻的，平稳而升；官鬼变官鬼遇到进神的，越级升迁；遇到退神的，调到事务简单的缺；归魂卦、官爻旺相安静的，必定复任；游魂卦、官爻旺相发动的，必定升到远处；游魂变游魂的，升了再升，而且在远处；卦里有两个父爻、两个官爻旺相发动的，是鸳鸯求仕。",
+        "en": "The patterns of promotion. If the Self and the star of office are thriving and moving, he is promoted; if Wealth and Output move together, he is promoted; if Wealth moves alone, he is promoted; if Tai Sui and the Month generate or support the Body and Self, he is promoted; if the star of office sits on Tangfu or the State Seal and moves, he is promoted; if Pressure with the Bird and the Thunder-Fire spirit moves, he is promoted; if the star of office turns into Wealth, he is promoted smoothly; if Pressure turns into Pressure and meets an Advancing spirit, he is promoted beyond his rank; if it meets a Retreating spirit, he is transferred to an easier post; in a Returning Soul hexagram with the Pressure line thriving and still, he returns to his post; in a Wandering Soul hexagram with the Pressure line thriving and moving, he is promoted far away; if a Wandering Soul turns into a Wandering Soul, he is promoted and then promoted again, in a distant place; if the hexagram has two seal lines and two star-of-office lines thriving and moving, it is 'mandarin ducks seeking office'."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2644, 2644],
+          "zh": ["世官旺动者升，财子同动者升，财爻独发者升，岁月生扶身世者升，官临唐符国印动者升，鬼加雀带雷火杀动者升，官化财者平升，鬼化鬼逢进神(甲子甲午己卯己酉)则超迁。", "逢退神则调简。", "归魂卦，官爻旺静者必复任。", "游魂卦，官爻旺动者，必远升。", "游魂化游魂，升后再升，远处也。", "卦有两父两官旺动者，鸳鸯求仕也。"],
+          "yi": ["世爻、官星旺相发动的，升；财爻、子孙一起发动的，升；财爻单独发动的，升；太岁、月建生扶身爻、世爻的，升；官星临唐符、国印发动的，升；官鬼带朱雀、带雷火杀发动的，升；官星变财爻的，平稳而升；官鬼变官鬼遇到进神（甲子、甲午、己卯、己酉）的，越级升迁。", "遇到退神，则调到事务简单的缺。", "归魂卦，官爻旺相安静的，必定复任。", "游魂卦，官爻旺相发动的，必定升到远处。", "游魂卦变游魂卦，升了之后再升，而且在远处。", "卦里有两个父爻、两个官爻旺相发动的，是鸳鸯求仕。"],
+          "en": ["If the Self and the star of office are thriving and moving, he is promoted; if Wealth and Output move together, he is promoted; if the Wealth line moves alone, he is promoted; if Tai Sui and the Month generate or support the Body and Self, he is promoted; if the star of office sits on Tangfu or the State Seal and moves, he is promoted; if Pressure with the Bird and the Thunder-Fire spirit moves, he is promoted; if the star of office turns into Wealth, he is promoted smoothly; if Pressure turns into Pressure and meets an Advancing spirit (Jiazi, Jiawu, Jimao, Jiyou), he is promoted beyond his rank.", "If it meets a Retreating spirit, he is transferred to an easier post.", "In a Returning Soul hexagram, if the Pressure line is thriving and still, he surely returns to his post.", "In a Wandering Soul hexagram, if the Pressure line is thriving and moving, he is surely promoted to a distant place.", "If a Wandering Soul hexagram turns into a Wandering Soul hexagram, he is promoted and then promoted again, in a distant place.", "If the hexagram has two seal lines and two star-of-office lines, thriving and moving, it is 'mandarin ducks seeking office'."] }
+      ],
+      "note": {
+        "yi": "这一句里有几处书里没有解释：「唐符」「国印」「雷火杀」是神煞；进神后面括号里的甲子、甲午、己卯、己酉是进神的干支：《卜筮全书》写「进神者，甲子、甲午、己卯、己酉」，和这里一致；「调简」按字面是调到简缺，即事务少的职位；「鸳鸯求仕」没有解释，按字面是成双地求官，译文不替它加意思。「复任」是回到原来的职位。",
+        "en": "A few things in this passage are not explained in the book: 'Tangfu', 'the State Seal' and 'Thunder-Fire' are spirit-stars; the Jiazi, Jiawu, Jimao and Jiyou in brackets after the Advancing spirit are the ganzhi of the Advancing spirit: the Bushi Quanshu writes 'the Advancing spirit is Jiazi, Jiawu, Jimao and Jiyou', in agreement with this; 'tiaojian' is by the letter a transfer to a light post, that is one with few duties; 'mandarin ducks seeking office' has no explanation and by the letter means seeking office in a pair, and the translation does not add a sense to it. 'Furen' is returning to one's former post."
+      },
+      "see": ["LY.CAREER.YY.21", "LY.CAREER.YY.23", "LY.CAREER.ZS.15", "LY.CAREER.ZS.08"]
+    },
+    {
+      "id": "LY.CAREER.YY.23",
+      "topic": "升迁",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·升迁（三）：内旺外衰宜守旧；内衰外旺宜图新；内外俱旺彼此如意；雀临门户爻动吉报至；世空官空、官爻安静伏藏、身动刑岁月者皆不升",
+      "rule": {
+        "yi": "升迁，守旧还是图新，以及不升的情形：内卦旺相、外卦衰弱，适宜守着旧职；内卦衰弱、外卦旺相，适宜谋求新职；内外都旺相，两头都称心；朱雀临在门户爻上发动的，喜报到来；世爻落空、官星落空，或者官爻安静伏藏，以及身爻发动、刑到太岁月建的，都不升迁。",
+        "en": "Promotion, keeping the old post or seeking a new one, and when there is no promotion. If the inside is thriving and the outside weak, it is fitting to keep the old post; if the inside is weak and the outside thriving, it is fitting to seek a new post; if both are thriving, either way goes as wished; if the Bird sits on the door-and-gate line and it moves, good news arrives; if the Self is Void and the star of office is Void, or the Pressure line is still and hidden, or the Body moves to punish Tai Sui and the Month, in every case he is not promoted."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2644, 2644],
+          "zh": ["内旺外衰，宜守旧。", "内衰外旺，宜图新。", "内外俱旺，彼此如意也。", "雀临门户爻动者，吉报至也。", "若世空官空或官爻安静伏藏，与身动刑岁月者，皆不升也。"],
+          "yi": ["内卦旺相、外卦衰弱的，适宜守着旧职。", "内卦衰弱、外卦旺相的，适宜谋求新职。", "内外都旺相，守旧、谋新两头都称心。", "朱雀临在门户爻上而发动的，喜报到来。", "如果世爻落空、官星落空，或者官爻安静伏藏，以及身爻发动、刑到太岁月建的，都不升迁。"],
+          "en": ["If the inside is thriving and the outside weak, it is fitting to keep the old post.", "If the inside is weak and the outside thriving, it is fitting to seek a new post.", "If inside and outside are both thriving, either way goes as wished.", "If the Bird sits on the door-and-gate line and it moves, good news arrives.", "If the Self is Void and the star of office is Void, or the Pressure line is still and hidden, or the Body moves to punish Tai Sui and the Month, in every case he is not promoted."] }
+      ],
+      "note": {
+        "yi": "「内」「外」指内卦和外卦。「门户爻」书里没有说是哪一爻，译文不替它定。",
+        "en": "'Inside' and 'outside' mean the inner and outer trigrams. The book does not say which line is the 'door-and-gate line', and the translation does not fix it."
+      },
+      "see": ["LY.CAREER.YY.22", "LY.CAREER.YY.24", "LY.CAREER.ZS.08"]
+    },
+    {
+      "id": "LY.CAREER.YY.24",
+      "topic": "应期",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·替代：官旺者官逢死墓绝日代；子旺动者即时可代；卦无官者绝日可代；外卦阳者代速阴者替迟；占代官来者以应爻生旺世爻墓绝之日或官爻生旺月日为期",
+      "rule": {
+        "yi": "被人替代：官星旺相的，到官星遇死、墓、绝的日子被人替代；子孙旺相发动的，立刻就可以被替代；卦里没有官星的，到官星绝的日子可以被替代；外卦是阳的，替代得快，是阴的，替代得慢。占接替自己的官员什么时候来，以应爻生旺、世爻入墓入绝的日子为期，或者以官爻生旺的月、日为期。",
+        "en": "Replacement. If the star of office is thriving, he is replaced on the day when it meets death, tomb or extinction; if Output is thriving and moving, he can be replaced at once; if the hexagram has no star of office, he can be replaced on the day of its extinction; if the outer trigram is yang the replacement is quick and if yin, slow. To divine when the official who will take over comes, take as the term the day when the Other is born or thriving and the Self goes into tomb or extinction, or the month or day when the Pressure line is born or thriving."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2648, 2648],
+          "zh": ["官旺者，官逢死墓绝日代也。", "子旺动者，即时可代。", "卦无官者，绝日可代。", "外卦阳者代速，阴者替迟也。", "占代官来者，以应爻生旺世爻墓绝之日为期，或官爻生旺月日为期也。"],
+          "yi": ["官星旺相的，到官星遇死、墓、绝的日子被人替代。", "子孙旺相发动的，立刻就可以被替代。", "卦里没有官星的，到官星绝的日子可以被替代。", "外卦是阳的，替代得快；是阴的，替代得慢。", "占接替自己的官员什么时候来，以应爻生旺、世爻入墓入绝的日子为期，或者以官爻生旺的月、日为期。"],
+          "en": ["If the star of office is thriving, he is replaced on the day when the star of office meets death, tomb or extinction.", "If Output is thriving and moving, he can be replaced at once.", "If the hexagram has no star of office, he can be replaced on the day of its extinction.", "If the outer trigram is yang the replacement is quick; if it is yin the replacement is slow.", "To divine when the official who will take over comes, take as the term the day when the Other is born or thriving and the Self goes into tomb or extinction, or the month or day when the Pressure line is born or thriving."] }
+      ],
+      "note": {
+        "yi": "最后一句「以应爻生旺世爻墓绝之日为期」可以读成应爻生旺、世爻墓绝两件事同日，也可以读成两个日子，书里没有断开，译文保留原样。",
+        "en": "In the last sentence, 'the day when the Other is born or thriving and the Self goes into tomb or extinction' can be read either as two events falling on the same day or as two alternative days; the book does not separate them, and the translation keeps it as written."
+      },
+      "see": ["LY.CAREER.YY.23", "LY.CAREER.YY.25", "LY.CAREER.HJC.10"]
+    },
+    {
+      "id": "LY.CAREER.YY.25",
+      "topic": "取象",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·贪廉（一）：官印皆旺财爻不见者廉；世持兄旺动者贪；世下伏兄化兄者贪",
+      "rule": {
+        "yi": "为官贪还是廉：官星、印星都旺相，财爻不出现的，清廉；世爻持兄爻、旺相发动的，贪；世爻下伏着兄爻、又变成兄爻的，贪。",
+        "en": "Greed or integrity in office. If the star of office and the seal are both thriving and the Wealth line does not appear, he is incorruptible; if the Self holds a Peer line that is thriving and moving, he is greedy; if a Peer line lies hidden under the Self and turns into a Peer line, he is greedy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2652, 2654],
+          "zh": ["官印皆旺，财爻不见者廉。", "世持兄旺动者，贪也。", "世下伏兄化兄者，贪也。"],
+          "yi": ["官星、印星都旺相，财爻不出现的，清廉。", "世爻持兄爻，旺相发动的，贪。", "世爻下伏着兄爻、又变成兄爻的，贪。"],
+          "en": ["If the star of office and the seal are both thriving and the Wealth line does not appear, he is incorruptible.", "If the Self holds a Peer line that is thriving and moving, he is greedy.", "If a Peer line lies hidden under the Self and turns into a Peer line, he is greedy."] }
+      ],
+      "see": ["LY.CAREER.YY.24", "LY.CAREER.YY.26", "LY.CAREER.HJC.04", "LY.CAREER.ZS.12"]
+    },
+    {
+      "id": "LY.CAREER.YY.26",
+      "topic": "取象",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·贪廉（二）：世持虎鬼加刑刃劫杀动者酷；世持鬼加玄武咸池荒芜四废杀动者罢软；世持虎鬼加雷火卒暴杀动者浮躁；世加天解天赦喝散动者昭雪滞狱",
+      "rule": {
+        "yi": "为官的品性：世爻持白虎、官鬼，再加刑、刃、劫杀发动的，酷；世爻持官鬼，再加玄武、咸池、荒芜、四废杀发动的，疲软无能；世爻持白虎、官鬼，再加雷火、卒暴杀发动的，浮躁；世爻带天解、天赦、喝散发动的，能为积压的冤狱昭雪。",
+        "en": "The character of the official. If the Self holds the Tiger and Pressure and the punishing, blade and Robbery spirits are added and move, he is cruel; if the Self holds Pressure and the Dark Tortoise, Xianchi, Huangwu and the Four Wastes baleful spirits are added and move, he is feeble and soft; if the Self holds the Tiger and Pressure and the Thunder-Fire and Sudden-Violence baleful spirits are added and move, he is rash and restless; if the Self carries Tianjie, Tianshe and Hesan and they move, he clears and redresses cases long held up in prison."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2652, 2654],
+          "zh": ["世持虎鬼，加刑刃劫杀动者，酷也。", "世持鬼，加玄武咸池荒芜四废杀动者，罢软也。", "世持虎鬼，加雷火卒暴杀动者，浮躁也。", "世加天解天赦喝散动者，昭雪滞狱也。"],
+          "yi": ["世爻持白虎、官鬼，再加刑、刃、劫杀发动的，酷。", "世爻持官鬼，再加玄武、咸池、荒芜、四废杀发动的，疲软无能。", "世爻持白虎、官鬼，再加雷火、卒暴杀发动的，浮躁。", "世爻带天解、天赦、喝散发动的，能为积压的冤狱昭雪。"],
+          "en": ["If the Self holds the Tiger and Pressure and the punishing, blade and Robbery spirits are added and move, he is cruel.", "If the Self holds Pressure and the Dark Tortoise, Xianchi, Huangwu and the Four Wastes baleful spirits are added and move, he is feeble and soft.", "If the Self holds the Tiger and Pressure and the Thunder-Fire and Sudden-Violence baleful spirits are added and move, he is rash and restless.", "If the Self carries Tianjie, Tianshe and Hesan and they move, he clears and redresses cases long held up in prison."] }
+      ],
+      "note": {
+        "yi": "第一句「刑刃劫杀」分在两行里，中间被断行隔开（「加刑刃」在上一行末，「劫杀动者」在下一行首），这里连起来读。「罢软」的「罢」读作疲。天解、天赦、喝散、荒芜、四废、卒暴、咸池等都是神煞，书里没有逐个解释，译文只音译或按字面译。「滞狱」是拖着没有判决的案子。",
+        "en": "In the first sentence 'xing ren jie sha' is split across two lines, 'adding the punishment and blade' at the end of the earlier line and 'Robbery moving' at the start of the next, and is read here joined up. In 'ruan' of 'baruan', the character 'ba' is read as 'pi', weary. Tianjie, Tianshe, Hesan, Huangwu, the Four Wastes, Cubao, Xianchi and the others are spirit-stars that the book does not explain one by one, and the translation only gives their sounds or translates them by the letter. 'Zhiyu' is a case dragging on without judgment."
+      },
+      "see": ["LY.CAREER.YY.25", "LY.CAREER.YY.27", "LY.CAREER.HJC.12", "LY.CAREER.HJC.13"]
+    },
+    {
+      "id": "LY.CAREER.YY.27",
+      "topic": "取象",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·贪廉（三）：财空鬼旺廉名振而囊槖空；父空官旺爵位高而琴鹤随；父母为行李；初爻为吏民，初爻克官克世主贤明，世官克初主苛刻，生初主慈爱",
+      "rule": {
+        "yi": "清名与属吏：财爻落空、官鬼旺相的，清廉的名声很响，而口袋是空的；父爻落空、官星旺相的，爵位高，身边只有琴和鹤相随；父母爻是行李。初爻代表属吏和百姓：初爻克官星、克世爻的，主这个官贤明，属吏百姓亲近他；世爻、官爻克初爻的，主这个官苛刻，属吏百姓畏惧躲避他；生初爻的，主这个官慈爱属吏百姓。",
+        "en": "A clean name, and the clerks and people. If Wealth is Void and Pressure thriving, his name for incorruptibility rings out while his purse is empty; if the seal line is Void and the star of office thriving, his rank is high while only the zither and the crane follow him; the Resource line is the baggage. The first line stands for clerks and people: if the first line controls the star of office or the Self, he is wise and enlightened and the clerks and people are close to him; if the Self line or the Pressure line controls the first line, he is harsh and the clerks and people fear and avoid him; if it generates the first line, he is kind and loving towards them."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2652, 2654],
+          "zh": ["财空鬼旺者，廉名振而囊槖空也。", "父空官旺者，爵位高而琴鹤随也。", "(父母为行李)。", "又初爻为吏民，初爻克官克世者，主贤明，吏民亲迩也。", "世爻官爻克初者，主苛刻，吏民畏避。", "生初爻者，主慈爱吏民也。"],
+          "yi": ["财爻落空、官鬼旺相的，清廉的名声很响，而口袋是空的。", "父爻落空、官星旺相的，爵位高，而身边只有琴和鹤相随。", "（父母爻是行李。）", "又，初爻代表属吏和百姓；初爻克官星、克世爻的，主这个官贤明，属吏和百姓亲近他。", "世爻、官爻克初爻的，主这个官苛刻，属吏和百姓畏惧躲避他。", "生初爻的，主这个官慈爱属吏和百姓。"],
+          "en": ["If Wealth is Void and Pressure is thriving, his name for incorruptibility rings out while his purse is empty.", "If the seal line is Void and the star of office thriving, his rank is high while only the zither and the crane follow him.", "(The Resource line stands for baggage.)", "Again, the first line stands for clerks and people; if the first line controls the star of office or the Self, it means he is wise and enlightened, and the clerks and people are close to him.", "If the Self line or the Pressure line controls the first line, he is harsh, and the clerks and people fear and avoid him.", "If it generates the first line, he is kind and loving towards the clerks and people."] }
+      ],
+      "note": {
+        "yi": "「琴鹤」用的是宋代赵抃只带一张琴、一只鹤去赴任的典故，比喻做官清廉；「囊槖」是口袋。「父空官旺」的父单字，按上面的用法译成印星；括号里的「父母为行李」是说父母爻代表行李（见 YY.13 赴任的分爻）。最后一句的主语省了，承上一句，是世爻、官爻。",
+        "en": "'Qin he' is the allusion to Zhao Bian of the Song, who went to his post taking only one zither and one crane, an image of an incorruptible official; 'nangtuo' is a bag. The single character 'father' in 'father Void, official thriving' is rendered as the seal line as above; the bracket 'the Resource line is baggage' says that the Resource line stands for baggage (see the division of lines for going to the post in YY.13). The subject of the last sentence is left out, following on from the previous one, and is the Self line and the Pressure line."
+      },
+      "see": ["LY.CAREER.YY.26", "LY.CAREER.YY.28", "LY.CAREER.HJC.18", "LY.CAREER.HJC.19"]
+    },
+    {
+      "id": "LY.CAREER.YY.28",
+      "topic": "应期",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·官职退复（一）：子旺动父休空官墓绝必退职；欲知退职岁时以卦身为主，从卦身数到占卜之月，数几位失职几月",
+      "rule": {
+        "yi": "官职退复，失去职位：子孙旺相发动，父爻休囚落空，官星入墓入绝的，必定退职。想知道哪年哪月退职，只以卦身为主：从卦身所在的地支顺数到占卜的那个月，数过几个位置，就失职几个月——丑月占得噬嗑，卦身在戌，戌、亥、子，三位，失职三个月；午月占得艮，卦身在巳，一位，一个月；辰月占得蛊，卦身在寅，两位，两个月。其余照这样推。",
+        "en": "Loss and recovery of office, losing the post. If Output is thriving and moving, the seal line is resting and Void, and the star of office is in tomb or extinct, he surely loses his post. To know the year and time of losing it, take the hexagram Body as the main thing: count from the branch where the Body lies to the month of the divination, and the number of places passed is the number of months of the post lost. In a Chou month, getting Shihe with the Body at Xu: Xu, Hai, Zi, three places, the post is lost for three months; in a Wu month, getting Gen with the Body at Si: one place, one month; in a Chen month, getting Gu with the Body at Yin: two places, two months. The rest follow this."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2659, 2659],
+          "zh": ["子旺动，父休空，官墓绝者，必退职也。", "欲知退职岁时，但以卦身为主。", "如丑月来卜，得噬嗑卦，身在戌也，则戌亥子，退度三位，乃失职三月也。", "又如午月来卜，得艮卦，身在巳也。", "退度一位，乃失职一月也。", "又如辰月来卜，得蛊卦，身在寅也，退度二位，乃失职二月也。", "(余仿此)。"],
+          "yi": ["子孙旺相发动，父爻休囚落空，官星入墓入绝的，必定退职。", "想知道退职的年月，只以卦身为主。", "比如丑月来占，得噬嗑卦，卦身在戌，那么戌、亥、子，退过三个位置，是失职三个月。", "又比如午月来占，得艮卦，卦身在巳。", "退过一个位置，是失职一个月。", "又比如辰月来占，得蛊卦，卦身在寅，退过两个位置，是失职两个月。", "（其余照这样推。）"],
+          "en": ["If Output is thriving and moving, the seal line is resting and Void, and the star of office is in tomb or extinct, he surely loses his post.", "To know the year and time of losing the post, take the hexagram Body as the main thing.", "For example, if one divines in a Chou month and gets Shihe, with the Body at Xu, then Xu, Hai, Zi: retreating through three places means the post is lost for three months.", "Again, if one divines in a Wu month and gets Gen, the Body is at Si.", "Retreating one place means the post is lost for one month.", "Again, if one divines in a Chen month and gets Gu, with the Body at Yin, retreating through two places means the post is lost for two months.", "(The rest follow this.)"] }
+      ],
+      "note": {
+        "yi": "三个例子数的都是从卦身的地支顺着地支次序数到占卜月的地支：戌、亥、子、丑（过三位），巳、午（过一位），寅、卯、辰（过两位）。这三个卦身也和通行的起法相符：噬嗑世在五爻、阴世从午起，数到五爻是戌；艮世在上爻、阳世从子起，数到上爻是巳；蛊世在三爻、阳世从子起，数到三爻是寅。「退度」的「退」是退职的退，不是倒着数。",
+        "en": "In all three examples the count runs forward along the order of the branches from the branch of the Body to the branch of the month of the divination: Xu, Hai, Zi, Chou (three places passed), Si, Wu (one place), Yin, Mao, Chen (two places). The three Bodies also agree with the usual way of finding it: in Shihe the Self is on the fifth line and a yin Self counts from Wu, which reaches Xu at the fifth; in Gen the Self is on the top line and a yang Self counts from Zi, which reaches Si at the top; in Gu the Self is on the third line and a yang Self counts from Zi, which reaches Yin at the third. The 'retreat' of 'retreating through places' is the retreat of retiring from office and not counting backwards."
+      },
+      "see": ["LY.CAREER.YY.27", "LY.CAREER.YY.29", "LY.CAREER.HJC.16"]
+    },
+    {
+      "id": "LY.CAREER.YY.29",
+      "topic": "成否",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·官职退复（二）：官遇三传生扶必起复；世下伏官伏印马必官印临值之年月日起官；官父持身世旺静必冲动官印之年月日起官；旁爻带贵马旺动生官印得贵人提拔；旁爻兄弟带亡劫隔神刑冲官印必有匪人相隔",
+      "rule": {
+        "yi": "起复，重新起用：官星遇到三传（太岁、月建、日辰）生扶的，必定起复；世爻下伏着官星，或伏着印星、驿马的，必定在官星、印星当值的年月日起复；官星、印星持身爻、世爻，旺相安静的，必定在冲动官星、印星的年月日起复；旁边的爻带贵人、驿马，旺相发动，来生身爻、世爻上的官星、印星的，必得贵人提拔，在相生的年月日起复；旁边的兄弟爻旺相发动，带亡神、劫杀、隔神来刑、冲、克、害身爻、世爻上的官星、印星的，必有小人从中阻隔、坏事。",
+        "en": "Being recalled to office. If the star of office meets generation and support from the three rulers, he is surely recalled; if the star of office lies hidden under the Self, or the seal and the Horse lie hidden, he is recalled in the year, month or day when the star of office and seal rule; if the star of office and seal hold the Body and Self, thriving and still, he is recalled in the year, month or day that clashes them into motion; if a side line carrying the Noble and the Horse is thriving and moving and generates the star of office and seal on the Body and Self, he gets a patron's promotion and is recalled in the year, month or day of generation; if a side Peer line is thriving and moving, carrying the Lost Spirit, Robbery and the obstructing spirit, and punishes, clashes, controls or harms the star of office and seal on the Body and Self, there will surely be bad men who stand between and spoil the matter."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2659, 2659],
+          "zh": ["又官遇三传生扶者，必起复也。", "世下伏官，与伏印马者，必官印临值之年月日起官也。", "官父持身世旺静者，必冲动官印之年月日起官也。", "旁爻带贵马旺动来生身世上官印者，必得贵人提拔。", "以相生之年月日起官也。", "若旁爻兄弟旺动，带亡劫隔神来刑冲克害身世上官印者，必有匪人相隔坏事也。"],
+          "yi": ["又，官星遇到三传（太岁、月建、日辰）生扶的，必定起复。", "世爻下伏着官星，以及伏着印星、驿马的，必定在官星、印星当值的年月日起复做官。", "官星、印星持身爻、世爻，旺相安静的，必定在冲动官星、印星的年月日起复做官。", "旁边的爻带着贵人、驿马，旺相发动，来生身爻、世爻上的官星、印星的，必定得到贵人提拔。", "以相生的年月日起复做官。", "如果旁边的兄弟爻旺相发动，带着亡神、劫杀、隔神，来刑、冲、克、害身爻、世爻上的官星、印星，必有小人从中阻隔、坏事。"],
+          "en": ["Again, if the star of office meets generation and support from the three rulers, he is surely recalled to office.", "If the star of office lies hidden under the Self, or the seal and the Horse lie hidden, he is surely recalled to office in the year, month or day when the star of office and seal rule.", "If the star of office and the seal hold the Body and Self and are thriving and still, he is surely recalled in the year, month or day that clashes the star of office and seal into motion.", "If a side line carrying the Noble and the Horse is thriving and moving and generates the star of office and seal on the Body and Self, he surely gets a patron's promotion.", "He is recalled to office in the year, month or day of generation.", "But if a side Peer line is thriving and moving, carrying the Lost Spirit, Robbery and the obstructing spirit, and comes to punish, clash, control or harm the star of office and seal on the Body and Self, there will surely be bad men who stand between and spoil the matter."] },
+        { "by": "书中例", "book": "易隐", "range": [2677, 2677],
+          "zh": ["是月是日有占起官者，得剥之晋。", "世临子水，伏申金，金生水为印绶。", "又寅年午月戌日，马聚于申，世下伏印马，后必起官。", "但嫌本宫午官伏戌墓下，须待壬辰年冲开戌墓，透出午官，又辰年与世爻飞伏申子三合，故其年上寅月，可用财求谋，官生在寅也。", "丙午月得官，官旺于午也。", "近则未月到任，远则戌月到任也。", "土为印绶，未与午官六合，戌与午官三合也。"],
+          "yi": ["这个月这一天有人占起复做官，得剥卦变晋卦。", "世爻临子水，伏着申金，金生水，是印绶。", "又是寅年、午月、戌日，驿马聚在申，世爻下面伏着印星和驿马，后来必定起复做官。", "但是嫌本宫的午火官星伏在戌墓下面，必须等到壬辰年冲开戌墓，透出午火官星；而且辰年与世爻的飞神子水、伏神申金三合，所以那一年到寅月，可以用钱财去谋求，官星生在寅。", "丙午月得到官职，官星在午旺。", "近的话是未月到任，远的话是戌月到任。", "土是印绶，未与午官星六合，戌与午官星三合。"],
+          "en": ["In that month and on that day someone divined on being recalled to office and got Bo changing into Jin.", "The Self sits on Zi Water, with Shen Metal hidden, and Metal generates Water, so it is the seal and ribbon.", "It is also a Yin year, Wu month and Xu day, and the Horse gathers at Shen, and the seal and the Horse lie hidden under the Self, so he will surely be recalled to office later.", "But what is disliked is that the Wu Fire star of office of the home palace lies hidden under the Xu tomb; he must wait for the Renchen year, when the Xu tomb is clashed open and the Wu Fire star of office comes out; moreover the Chen year forms a three-harmony with the flying Zi Water and the hidden Shen Metal of the Self line, so in that year by the Yin month he can use money to seek it, since the star of office is born in Yin.", "He gets the office in the Bingwu month, since the star of office is thriving in Wu.", "Nearer, he takes up his post in the Wei month; further off, in the Xu month.", "Earth is the seal and ribbon, and Wei forms a six-combination with the Wu star of office, and Xu forms a three-harmony with it."] }
+      ],
+      "note": {
+        "yi": "附断例是《易隐》官禄占末尾的一例，放在最相关的这一条下；书里没有说占的是哪一年的什么日子，只说「是月是日」，接的是前一例庚寅年壬午月甲戌日。「隔神」是神煞的一种，书里没有解释。第四、五句里「相生之年月日」承上一句，是旁边的贵人、驿马生到官星、印星的年月日。",
+        "en": "The example is one of those appended at the end of this chapter of the Yi Yin, and is placed under the entry it illustrates most; the book does not give the year or day of the divination, saying only 'that month, that day', following on the previous example of the Gengyin year, Renwu month, Jiaxu day. 'Geshen' is a kind of spirit-star that the book does not explain. In the fourth and fifth sentences 'the year, month or day of generation' follows on from the previous sentence, and is the year, month or day in which the side Noble and Post Horse generate the star of office and seal."
+      },
+      "see": ["LY.CAREER.YY.28", "LY.CAREER.YY.30", "LY.CAREER.HJC.06", "LY.CAREER.ZS.47"]
+    },
+    {
+      "id": "LY.CAREER.YY.30",
+      "topic": "风险",
+      "chapter": "官禄占",
+      "chapter_en": "Divining office and salary",
+      "title": "官禄占·丁忧起复：财带白衣杀或财加虎杀会月建动刑克父母阳丁父艰阴丁母艰；二爻五爻带白衣杀旺动伤世克官二母忧五父忧；后遇生合官印之年月起复",
+      "rule": {
+        "yi": "丁忧起复，遭父母之丧和重新起用：财爻带白衣杀，或财爻加白虎杀，又会合月建，发动来刑克父母爻的，阳爻是遭父亲的丧，阴爻是遭母亲的丧；二爻、五爻（二爻是母，五爻是父）带白衣杀旺相发动，伤世爻、克官星的，二爻是母亲的丧事，五爻是父亲的丧事；后来遇到生合官星、印星的年月，必定起复，或者官星、印星生旺的年月起复做官。",
+        "en": "Mourning and recall. If the Wealth line carries the White Garment baleful spirit, or Wealth carries the Tiger spirit and meets the Month, and moves to punish or control the Resource line, then if it is yang he is in mourning for his father and if yin for his mother; if the second or fifth line (the second is the mother and the fifth the father) carries the White Garment spirit, thriving and moving, and injures the Self and controls the star of office, the second line means mourning for the mother and the fifth line mourning for the father; later, in the year or month that generates or combines with the star of office and seal, he is surely recalled, or in the year or month when the star of office and seal are born or thriving he is recalled to office."
+      },
+      "quotes": [
+        { "by": "经", "book": "易隐", "range": [2664, 2664],
+          "zh": ["凡财爻带白衣杀，或财加虎杀，会月建动来刑克父母爻者，阳丁父艰，阴丁母艰也。", "又二爻五爻(二为母五为父)带白衣杀旺动伤世克官者，二爻则母忧，五爻则父忧也。", "后遇生合官印之年月必起复，或官印生旺之年月起官也。"],
+          "yi": ["凡是财爻带着白衣杀，或者财爻加白虎杀，又会合月建，发动来刑克父母爻的，阳爻是遭父亲的丧，阴爻是遭母亲的丧。", "又，二爻、五爻（二爻是母，五爻是父）带着白衣杀，旺相发动，伤世爻、克官星的，二爻是母亲的丧事，五爻是父亲的丧事。", "后来遇到生合官星、印星的年月，必定起复；或者官星、印星生旺的年月，起复做官。"],
+          "en": ["Whenever the Wealth line carries the White Garment baleful spirit, or Wealth carries the Tiger spirit and meets the Month, and moves to punish or control the Resource line, then if it is yang he is in mourning for his father and if yin for his mother.", "Again, if the second or fifth line (the second is the mother and the fifth the father) carries the White Garment baleful spirit, thriving and moving, and injures the Self and controls the star of office, the second line means mourning for the mother and the fifth line mourning for the father.", "Later, in the year or month that generates or combines with the star of office and seal, he is surely recalled; or in the year or month when the star of office and seal are born or thriving, he is recalled to office."] }
+      ],
+      "note": {
+        "yi": "「丁忧」「丁父艰」「丁母艰」都是遭父母之丧，官员须去职回家守丧（「丁制」，见 YY.01）；「白衣杀」是主孝服的神煞。「阳丁父艰，阴丁母艰」是看被刑克的那一爻是阳还是阴。",
+        "en": "'Dingyou', 'ding fu jian' and 'ding mu jian' all mean mourning for a parent, when an official must leave his post and go home to keep mourning ('dingzhi', see YY.01); 'White Garment' is the spirit-star that signifies mourning dress. 'Yang for the father's mourning, yin for the mother's' depends on whether the line being punished or controlled is yang or yin."
+      },
+      "see": ["LY.CAREER.YY.29", "LY.CAREER.YY.01", "LY.CAREER.HJC.11", "LY.CAREER.ZS.21"]
+    }
+  ]
+}

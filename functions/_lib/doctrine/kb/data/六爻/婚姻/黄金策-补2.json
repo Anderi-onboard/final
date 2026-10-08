@@ -1,0 +1,88 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "身命章·家宅千金赋",
+  "chapter_en": "Person and fate; the household rhapsody",
+  "ranges": {"卜筮大全": [6030, 9654]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.105",
+      "topic": "夫妻",
+      "chapter": "身命",
+      "chapter_en": "Person and fate",
+      "title": "遇兄则财莫能聚（旧注：兄乃克剥破败阻滞之神，世或逢之，主克妻妾、破耗多端、一生不聚财物）",
+      "rule": {
+        "yi": "《黄金策》身命章说：「遇到兄弟爻，钱财就聚不起来。」旧注解释：兄弟爻是克剥、破败、阻滞的神，世爻如果碰上它，主克妻妾，破耗多端，一辈子聚不起钱财。",
+        "en": "The Huangjin Ce's chapter on one's person and fate says: 'Meeting a Peer line, wealth cannot gather.' The old commentary explains: the Peer line is the spirit of stripping, ruin, breaking and blocking; if Self meets it, the wife and concubines are controlled, losses come in many ways, and wealth never gathers in a whole life."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6030, 6030],
+          "zh": ["遇兄则财莫能聚；"],
+          "yi": ["遇到兄弟爻，钱财就聚不起来；"],
+          "en": ["Meeting a Peer line, wealth cannot gather;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6031, 6031],
+          "zh": ["至兄乃克剥破败阻滞之神。", "世或逢之，主克妻妾，破耗多端，一生不聚财物。"],
+          "yi": ["至于兄弟爻，是克剥、破败、阻滞的神。", "世爻要是碰上它，主克妻妾，破耗多端，一生聚不起钱财。"],
+          "en": ["As for the Peer line, it is the spirit of stripping, ruin and blocking.", "If Self meets it, it means the wife and concubines are controlled, losses come in many ways, and wealth never gathers in a whole life."] }
+      ],
+      "dispute": {
+        "yi": "这句旧注正是《增删卜易》批评的对象。野鹤（LY.MARRY.ZS.35）说：「既以为克妻，又以为破耗，照这样说，世上伤了妻子的人都是贫困的人。假使穷人白头偕老、富人断弦，又怎么解释？」所以主张分开占：占妻子占一卦、占钱财另占一卦，不能一卦断到底。",
+        "en": "This commentary line is exactly what the Zengshan Buyi attacks. The Old Man of Yehe (LY.MARRY.ZS.35) says: 'Since it is taken both as harming the wife and as wasting wealth, by that reasoning all the people in the world who have lost a wife are poor. Suppose the poor grow old together while the rich lose their wives: how would that be explained?' So he argues for divining separately, one hexagram for the wife and another for wealth, and not judging everything from a single hexagram."
+      },
+      "see": ["LY.MARRY.ZS.35", "LY.MARRY.HJC.73", "LY.MARRY.YL.16"]
+    },
+    {
+      "id": "LY.MARRY.HJC.106",
+      "topic": "入赘再嫁",
+      "chapter": "家宅千金赋",
+      "chapter_en": "The household rhapsody",
+      "title": "家宅千金赋·父入子宫后娘来就、子临父位随母嫁人；阴兄化阳兄嫂赘晚夫、阴子变阳子女招婿；父化父外娘晚位、财化财当娶双妻",
+      "rule": {
+        "yi": "讲一家人构成的几联里，和婚嫁有关的有：父母爻进入子孙的宫位，一定有继母来；子孙爻落在父母爻的位置，一定是随着母亲改嫁。阴爻兄弟化成阳爻兄弟，嫂子招赘晚夫、同住一处；阴爻子孙变成阳爻子孙，女儿招婿、同在一家。父母爻化成父母爻，是外来的继母；妻财爻化成妻财爻，当娶两位妻子。",
+        "en": "Among the couplets on how a household is made up, these concern marriage: the Resource line entering the Output's palace, a stepmother will surely come; the Output line sitting in the Resource's place, he or she will surely follow the mother when she remarries. A yin Peer line changing into a yang Peer line: the sister-in-law takes a later husband in, living under the same roof; a yin Output line changing into a yang Output line: the daughter takes a son-in-law and they live in the same house. Resource changing into Resource: a stepmother from outside; Wealth changing into Wealth: he will marry two wives."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9650, 9650],
+          "zh": ["父入子宫，必主后娘来就；", "子临父位，定主随母嫁人。"],
+          "yi": ["父母爻进入子孙的宫位，一定有继母来；", "子孙爻落在父母爻的位置，一定是随着母亲改嫁。"],
+          "en": ["The Resource line entering the Output's palace: a stepmother will surely come;", "the Output line sitting in the Resource's place: he or she will surely follow the mother when she remarries."] },
+        { "by": "经", "book": "卜筮大全", "range": [9651, 9653],
+          "zh": ["阴兄化入阳兄，嫂赘晚夫同舍；", "阴子变入阳子，女招婿而同家。", "父化父，外娘晚位；", "财化财，当娶双妻。"],
+          "yi": ["阴爻兄弟化成阳爻兄弟，嫂子招赘晚夫，同住一处；", "阴爻子孙变成阳爻子孙，女儿招婿，同在一家；", "父母爻化成父母爻，是外来的继母，后来的位次；", "妻财爻化成妻财爻，当娶两位妻子。"],
+          "en": ["A yin Peer line changing into a yang Peer line: the sister-in-law takes a later husband in, living under the same roof;", "a yin Output line changing into a yang Output line: the daughter takes a son-in-law and they live in the same house;", "Resource changing into Resource: a second mother from outside, in a later place;", "Wealth changing into Wealth: he will marry two wives."] }
+      ],
+      "note": {
+        "yi": "这几联在《黄金策》家宅章的千金赋里，没有旧注。「晚夫」是后来的丈夫，「外娘晚位」是外面来的、位次在后的继母。原文夹在一大段讲家宅人口的话中间，和婚嫁无关的联（如「二姓同居必有两重兄弟」「兄化鬼以空亡」）没有收。《增删卜易》婚姻章里也说「财化财」未必两度婚（LY.MARRY.ZS.15），与这里的「当娶双妻」不同。",
+        "en": "These couplets are in the household rhapsody of the Huangjin Ce and have no old commentary. 'A later husband' is a husband taken afterwards, and 'a second mother from outside, in a later place' is a stepmother who comes from outside and ranks later. In the original they are set in a long run of lines on the people of a household, and the couplets unrelated to marriage (such as 'two surnames living together must have two sets of brothers' and 'Peer turning to Pressure and Void') are not taken. The marriage chapter of the Zengshan Buyi also says that Wealth turning to Wealth is not necessarily two marriages (LY.MARRY.ZS.15), which differs from 'he will marry two wives' here."
+      },
+      "see": ["LY.MARRY.ZS.15", "LY.MARRY.YY.08", "LY.MARRY.HJC.50", "LY.MARRY.HJC.51"]
+    },
+    {
+      "id": "LY.MARRY.HJC.107",
+      "topic": "外遇",
+      "chapter": "家宅千金赋",
+      "chapter_en": "The household rhapsody",
+      "title": "家宅千金赋·天喜星临必然嫁娶添丁；咸池入酉花酒生涯；财入咸池化鬼女多独守、子临寡宿化官男主孤虚",
+      "rule": {
+        "yi": "天喜星临着，一定有嫁娶、添丁的事。咸池星落在酉上，一定过着花酒的生涯。妻财爻临着咸池而化成官鬼，女子多半独守空房；子孙爻临着寡宿而化成官鬼，男子多是孤独空虚。",
+        "en": "When the Tianxi star arrives there will surely be weddings and new births. The Xianchi star entering You means a life of flowers and wine. Wealth on the Xianchi star changing into Pressure: the woman is mostly left to keep alone; Output on the Widow star changing into Pressure: the man is lonely and empty."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9654, 9654],
+          "zh": ["天喜星临，必然嫁娶添丁。"],
+          "yi": ["天喜星临着，一定有嫁娶、添丁的事。"],
+          "en": ["When the Tianxi star arrives there will surely be weddings and new births."] },
+        { "by": "经", "book": "卜筮大全", "range": [9654, 9654],
+          "zh": ["咸池入酉，必然花酒生涯。", "财入咸池化鬼，女多独守；", "子临寡宿化官，男主孤虚。"],
+          "yi": ["咸池星落在酉上，一定过着花酒的生涯。", "妻财爻临着咸池而化成官鬼，女子多半独守空房；", "子孙爻临着寡宿而化成官鬼，男子多是孤独空虚。"],
+          "en": ["The Xianchi star entering You means a life of flowers and wine, surely.", "Wealth on the Xianchi star changing into Pressure: the woman is mostly left to keep alone;", "Output on the Widow star changing into Pressure: the man is lonely and empty."] }
+      ],
+      "note": {
+        "yi": "「寡宿」是与「孤辰」相对的神煞，主孤独；「孤虚」是孤独空虚。原文在这里没有解释，也没有说「财」「子」是哪一爻（译文按上下文译作妻财爻、子孙爻）。同一行里讲丧门、披头、五鬼、羊刃的几联与婚姻无关，没有收。",
+        "en": "The 'Widow star' is the star that pairs with the 'Lonely star' and rules solitude; 'lonely and empty' is solitary and hollow. The original does not explain it here or say which lines 'Wealth' and 'Output' are (the translation follows the context and takes them as the Wealth and Output lines). The couplets in the same line on the Mourning Gate, Dishevelled Hair, the Five Ghosts and the Sheep Blade have nothing to do with marriage and are not taken."
+      },
+      "see": ["LY.MARRY.BSQS.07", "LY.MARRY.HJC.62", "LY.MARRY.TXF.15"]
+    }
+  ]
+}

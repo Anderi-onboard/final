@@ -45,7 +45,10 @@ const BLOCKED = [
   /^\/palette-overview\.html$/i,
   /^\/baoxianghua-compositions\.html$/i,
   /^\/(tests|scripts|tools|eval|artifacts|copywriting|qa)(\/|$)/i,
-  /^\/\.(git|env|dev\.vars)/i
+  /^\/\.(git|env|dev\.vars)/i,
+  /* Agent skills (.claude/skills/*). Deployed with everything else; measured
+     200 on the preview site 2026-09-28 before this line existed. */
+  /^\/\.claude(\/|$)/i
 ];
 
 export async function onRequest(context) {

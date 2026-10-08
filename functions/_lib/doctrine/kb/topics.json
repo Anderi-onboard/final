@@ -1,0 +1,563 @@
+{
+  "_说明": "术数、问题域、主题三张表。id 里的代号从这里取;主题的 key 写进每条规则的 topic。五门共用同一套主题,所以同一个主题下能把几门放在一起看(联合)。",
+  "shushu": [
+    {
+      "key": "六爻",
+      "code": "LY",
+      "en": "Liu Yao (six-line coin divination)"
+    },
+    {
+      "key": "梅花易数",
+      "code": "MH",
+      "en": "Meihua Yishu (plum-blossom numerology)"
+    },
+    {
+      "key": "大六壬",
+      "code": "LR",
+      "en": "Da Liu Ren"
+    },
+    {
+      "key": "奇门遁甲",
+      "code": "QM",
+      "en": "Qimen Dunjia"
+    },
+    {
+      "key": "紫微斗数",
+      "code": "ZW",
+      "en": "Zi Wei Dou Shu (purple-star astrology)"
+    }
+  ],
+  "domains": [
+    {
+      "key": "求财",
+      "code": "WEALTH",
+      "en": "Wealth and business",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: what stands for money"
+        },
+        {
+          "key": "有无",
+          "en": "Is there money, and how much"
+        },
+        {
+          "key": "难易",
+          "en": "Easy or hard to get; who holds it"
+        },
+        {
+          "key": "动变",
+          "en": "Moving lines and what they turn into"
+        },
+        {
+          "key": "应期",
+          "en": "Timing: when the money or the price comes"
+        },
+        {
+          "key": "取象",
+          "en": "Reading the images: from whom, what kind, which place"
+        },
+        {
+          "key": "买卖",
+          "en": "Buying, stockpiling and selling goods"
+        },
+        {
+          "key": "开店",
+          "en": "Opening a shop, partnership, brokers"
+        },
+        {
+          "key": "借贷",
+          "en": "Borrowing, lending, debts, savings societies"
+        },
+        {
+          "key": "公门九流",
+          "en": "Official money, patrons, earning by a trade or skill"
+        },
+        {
+          "key": "博戏",
+          "en": "Gambling and contests"
+        },
+        {
+          "key": "畜养渔猎",
+          "en": "Livestock, fishing, hunting, mining"
+        },
+        {
+          "key": "风险",
+          "en": "Risks: theft, disputes, losses, a bad year"
+        },
+        {
+          "key": "心术",
+          "en": "The asker's intent"
+        }
+      ]
+    },
+    {
+      "key": "婚姻",
+      "code": "MARRY",
+      "en": "Marriage and relationships",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: the Subject, the Self and Other, yin and yang"
+        },
+        {
+          "key": "成否",
+          "en": "Will it succeed: easy or hard to bring about"
+        },
+        {
+          "key": "动变",
+          "en": "Moving lines and what they turn into"
+        },
+        {
+          "key": "媒妁",
+          "en": "Go-betweens and the between lines"
+        },
+        {
+          "key": "对方",
+          "en": "The other party: character, looks, family, age"
+        },
+        {
+          "key": "聘嫁",
+          "en": "Betrothal gifts, dowry, and the two families"
+        },
+        {
+          "key": "夫妻",
+          "en": "Life together: harmony, who dominates, harm to a spouse"
+        },
+        {
+          "key": "外遇",
+          "en": "Infidelity and improper relations"
+        },
+        {
+          "key": "入赘再嫁",
+          "en": "Marrying into a wife's family, remarriage, concubines and maids"
+        },
+        {
+          "key": "应期",
+          "en": "Timing: when the match is made or the wedding held"
+        },
+        {
+          "key": "风险",
+          "en": "Risks: obstruction, broken promises, bad omens"
+        },
+        {
+          "key": "子嗣",
+          "en": "Children in the marriage"
+        },
+        {
+          "key": "家人",
+          "en": "Parents and in-laws: whether the match harms them"
+        },
+        {
+          "key": "取象",
+          "en": "Reading the images: what a spirit, star or asking-purpose says about the match"
+        }
+      ]
+    },
+    {
+      "key": "疾病",
+      "code": "ILL",
+      "en": "Illness",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: whose illness, which line stands for the patient, strong and weak"
+        },
+        {
+          "key": "症候",
+          "en": "Symptoms: which organ or part is ill, by phase, trigram, position and spirit"
+        },
+        {
+          "key": "病因",
+          "en": "Cause: how the illness was contracted, and from what"
+        },
+        {
+          "key": "轻重",
+          "en": "Light or heavy, new or old, better or worse by day and night"
+        },
+        {
+          "key": "生死",
+          "en": "Life or death: will the patient recover, and the signs of danger"
+        },
+        {
+          "key": "动变",
+          "en": "Moving lines and what they turn into"
+        },
+        {
+          "key": "应期",
+          "en": "Timing: when the illness lifts or worsens, and when death may come"
+        },
+        {
+          "key": "医药",
+          "en": "Doctors and medicine: which doctor, which remedy, when to treat"
+        },
+        {
+          "key": "神祟",
+          "en": "Spirits and curses: prayer, vows and what to sacrifice"
+        },
+        {
+          "key": "他人病",
+          "en": "Whose illness: parents, children, husband or wife, brothers, servants"
+        },
+        {
+          "key": "痘疹",
+          "en": "Smallpox and measles"
+        },
+        {
+          "key": "取象",
+          "en": "Reading the images: colour, direction and kind of person or spirit"
+        },
+        {
+          "key": "风险",
+          "en": "Warnings: what to guard against"
+        }
+      ]
+    },
+    {
+      "key": "事业",
+      "code": "CAREER",
+      "en": "Career and office",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: which line is the post, the document, the patron; strong and weak"
+        },
+        {
+          "key": "成否",
+          "en": "Will it come: seeking a post, a commission, a recommendation; easy or hard"
+        },
+        {
+          "key": "动变",
+          "en": "Moving lines and what they turn into"
+        },
+        {
+          "key": "升迁",
+          "en": "Promotion, transfer, posting and rank: which way, how far"
+        },
+        {
+          "key": "任所",
+          "en": "In office: how the post goes, the term, dismissal, impeachment, leaving office"
+        },
+        {
+          "key": "贵人",
+          "en": "Patrons and superiors: calling on the great, recommendations, who helps or blocks"
+        },
+        {
+          "key": "差役",
+          "en": "Clerks, runners and stewards: enlisting, serving, leaving service"
+        },
+        {
+          "key": "军旅",
+          "en": "Soldiers, campaigns and military posts"
+        },
+        {
+          "key": "国朝",
+          "en": "The court and the state: ruler, ministers, the realm"
+        },
+        {
+          "key": "求职",
+          "en": "Finding work: a tutor's post, an apprenticeship, hiring"
+        },
+        {
+          "key": "应期",
+          "en": "Timing: when the post comes, changes or ends"
+        },
+        {
+          "key": "取象",
+          "en": "Reading the images: what kind of post, which office, which place"
+        },
+        {
+          "key": "风险",
+          "en": "Risks: obstruction, demotion, impeachment, plots, a bad year"
+        }
+      ]
+    },
+    {
+      "key": "考试",
+      "code": "EXAM",
+      "en": "Examinations",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: which line is the candidate, the writing, the official star; strong and weak"
+        },
+        {
+          "key": "成否",
+          "en": "Will one pass or be chosen: signs for and against"
+        },
+        {
+          "key": "动变",
+          "en": "Moving lines and what they turn into"
+        },
+        {
+          "key": "学业",
+          "en": "Study: whether study will come to anything, which classic to take up"
+        },
+        {
+          "key": "延师",
+          "en": "Teachers and schools: engaging, following or keeping a teacher"
+        },
+        {
+          "key": "小考",
+          "en": "The minor examinations: county, prefecture, circuit, annual and qualifying, the stipend"
+        },
+        {
+          "key": "乡会试",
+          "en": "The provincial, metropolitan and palace examinations"
+        },
+        {
+          "key": "武试",
+          "en": "The military examination"
+        },
+        {
+          "key": "名次",
+          "en": "Rank and the list: grade, first place, the supplementary list"
+        },
+        {
+          "key": "应期",
+          "en": "Timing: when the list is posted and the result known"
+        },
+        {
+          "key": "取象",
+          "en": "Reading the images: the classic, the examiner, the hall, the paper"
+        },
+        {
+          "key": "风险",
+          "en": "Risks: illness at the hall, mourning, intrigue, failure"
+        }
+      ]
+    },
+    {
+      "key": "出行",
+      "code": "TRAVEL",
+      "en": "Travel",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: which line is the traveller, the destination, the baggage and the purse"
+        },
+        {
+          "key": "去留",
+          "en": "Go or stay: whether one can set out, delays and detentions"
+        },
+        {
+          "key": "同行",
+          "en": "Companions: the between lines, fellow travellers, sharing a boat"
+        },
+        {
+          "key": "路途",
+          "en": "The road: dangers, thieves, storms, losses and gains on the way"
+        },
+        {
+          "key": "动变",
+          "en": "Moving lines and what they turn into"
+        },
+        {
+          "key": "方位",
+          "en": "Direction: which way to go and which to avoid"
+        },
+        {
+          "key": "舟行",
+          "en": "Travel by boat: buying and hiring a boat, wind, safety, the crew"
+        },
+        {
+          "key": "归期",
+          "en": "Return: whether and when an absent person comes home"
+        },
+        {
+          "key": "平安",
+          "en": "The traveller abroad: safety, sickness, detention, where he is"
+        },
+        {
+          "key": "音信",
+          "en": "Letters and news from the traveller"
+        },
+        {
+          "key": "避难",
+          "en": "Fleeing disorder: bandits, soldiers, escape and hiding"
+        },
+        {
+          "key": "应期",
+          "en": "Timing: the day or month of setting out or of arrival"
+        },
+        {
+          "key": "取象",
+          "en": "Reading the images: what the six spirits and palaces show on the road"
+        },
+        {
+          "key": "风险",
+          "en": "Risks: robbery, storm, lawsuit, illness on the way"
+        }
+      ]
+    },
+    {
+      "key": "失物",
+      "code": "LOST",
+      "en": "Lost things",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: what stands for the lost thing"
+        },
+        {
+          "key": "寻得",
+          "en": "Whether it can be found"
+        },
+        {
+          "key": "处所",
+          "en": "Where it is: place and distance"
+        },
+        {
+          "key": "逃亡",
+          "en": "Runaways"
+        },
+        {
+          "key": "盗贼",
+          "en": "Theft: whether stolen, and by whom"
+        },
+        {
+          "key": "人物",
+          "en": "The thief: build, kind and company"
+        },
+        {
+          "key": "捕获",
+          "en": "Catching the thief"
+        },
+        {
+          "key": "应期",
+          "en": "When it turns up"
+        },
+        {
+          "key": "取象",
+          "en": "Images: elements, branches and objects"
+        },
+        {
+          "key": "风险",
+          "en": "Guarding against loss and theft"
+        }
+      ]
+    },
+    {
+      "key": "官非",
+      "code": "LAWSUIT",
+      "en": "Lawsuits and disputes",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: who is who in a lawsuit"
+        },
+        {
+          "key": "起讼",
+          "en": "Whether a suit is lodged and accepted"
+        },
+        {
+          "key": "胜负",
+          "en": "Who wins and who loses"
+        },
+        {
+          "key": "和解",
+          "en": "Settlement and reconciliation"
+        },
+        {
+          "key": "人物",
+          "en": "The parties, witnesses and the magistrate"
+        },
+        {
+          "key": "文书",
+          "en": "Papers and records"
+        },
+        {
+          "key": "钱财",
+          "en": "Money, bribes and costs"
+        },
+        {
+          "key": "罪名",
+          "en": "The charge and the sentence"
+        },
+        {
+          "key": "狱囚",
+          "en": "Prison and release"
+        },
+        {
+          "key": "消散",
+          "en": "When the matter fades away"
+        },
+        {
+          "key": "避讼",
+          "en": "Avoiding a suit"
+        },
+        {
+          "key": "动变",
+          "en": "Movement and change"
+        },
+        {
+          "key": "应期",
+          "en": "When it is settled"
+        },
+        {
+          "key": "风险",
+          "en": "Pitfalls"
+        }
+      ]
+    },
+    {
+      "key": "应期",
+      "code": "TIMING",
+      "en": "Timing",
+      "topics": [
+        {
+          "key": "总则",
+          "en": "Principles: how the day is found"
+        },
+        {
+          "key": "静动",
+          "en": "Still and moving lines"
+        },
+        {
+          "key": "旺衰",
+          "en": "Strength and weakness"
+        },
+        {
+          "key": "墓库",
+          "en": "The tomb and storehouse"
+        },
+        {
+          "key": "合冲",
+          "en": "Combination and clash"
+        },
+        {
+          "key": "空破",
+          "en": "The Void and the Month-break"
+        },
+        {
+          "key": "受克",
+          "en": "When the Subject is controlled"
+        },
+        {
+          "key": "进退",
+          "en": "Advancing and Retreating spirits"
+        },
+        {
+          "key": "远近",
+          "en": "Near and far: day, month and year"
+        },
+        {
+          "key": "再占",
+          "en": "Divining again"
+        },
+        {
+          "key": "天时",
+          "en": "Weather and sky"
+        },
+        {
+          "key": "病程",
+          "en": "The course of an illness"
+        },
+        {
+          "key": "求取",
+          "en": "Gains, visitors and news"
+        }
+      ]
+    }
+  ]
+}

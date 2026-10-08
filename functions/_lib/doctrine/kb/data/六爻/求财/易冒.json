@@ -1,0 +1,908 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "易冒",
+  "chapter": "理财章第六十六",
+  "chapter_en": "Chapter 66: Managing wealth",
+  "ranges": {"易冒": [1, 2000]},
+  "units": [
+    {
+      "id": "LY.WEALTH.YM.01",
+      "topic": "总则",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "趋利之占皆以妻财为用；干谒宜官，商旅忌鬼动",
+      "rule": {
+        "yi": "凡是谋利的占卜，都以妻财为用神；因事而求，偶尔兼用别的象；所以求见权贵宜看官，财官都不能没有气，商旅忌鬼，官鬼哪里宜于发动。",
+        "en": "All divinations that pursue profit take Wealth as the Subject; they are sought for a particular matter and occasionally take in other images; so to petition a superior look to Pressure, neither Wealth nor Pressure may lose its qi, merchants and travellers avoid Pressure, and Pressure is in no way fit to move."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1487, 1487],
+          "zh": ["凡趋利之占，", "皆以妻财为用，", "因事而求，", "偶兼他象，", "是故干谒宜官，", "财官不可丧气，", "商旅忌鬼，", "官鬼岂宜交重。"],
+          "yi": ["凡是谋利的占卜，", "都以妻财为用神；", "因具体的事而求，", "偶尔兼用别的象；", "所以求见权贵宜看官爻，", "财、官都不能没有气；", "经商旅行的人忌讳鬼，", "官鬼哪里宜于发动。"],
+          "en": ["All divinations that pursue profit", "take Wealth as the Subject;", "they are sought for a particular matter,", "and occasionally take in other images as well;", "so to petition a superior look to Pressure,", "and neither Wealth nor Pressure may lose its qi;", "merchants and travellers avoid Pressure,", "and Pressure is in no way fit to move."] },
+        { "by": "易冒注", "book": "易冒", "range": [1488, 1488],
+          "zh": ["行商若财爻旺相，", "或鬼动不值雀武蛇虎，", "亦为有利，", "倘妻财空破，", "即应讼盗惊灾。"],
+          "yi": ["行商如果财爻旺相，", "或者鬼发动，又没有遇上朱雀、玄武、螣蛇、白虎，", "也是有利的；", "如果妻财空破，", "就应了官司、盗窃、惊恐、灾祸。"],
+          "en": ["A travelling merchant, if the Wealth line is thriving,", "or if Pressure moves without meeting the Vermilion Bird, the Dark Tortoise, the Coiling Snake or the White Tiger,", "still profits;", "but if Wealth falls Void or is broken,", "there will be lawsuits, theft, fright and calamity."] },
+        { "by": "易冒注", "book": "易冒", "range": [1486, 1486],
+          "zh": ["内详干谒、囤积、贾肆、托本、寄货、公门、博戏、借贷、觅物、订会、巫医优娼工技缘募迎客、脱产、行险、索逋、夺报发伏造作、脱置诸问"],
+          "yi": ["本章细讲：干谒（求见权贵）、囤积、开店铺、托本、寄货、公门、博戏、借贷、觅物、订会、巫医、优娼、工技、缘募、迎客、脱产、行险、索逋、夺报、发伏、造作，以及脱货、置货的各种占问。"],
+          "en": ["This chapter treats in detail: petitioning superiors, stockpiling, running a shop, entrusting capital, consigning goods, official channels, gambling, borrowing and lending, seeking things, forming savings clubs, shamans and doctors, entertainers and courtesans, craftsmen, temple fund-raising, receiving guests, selling property, risky ventures, collecting debts, seizing rewards, unearthing hidden things, fabrication, and the divinations of selling off or laying in goods."] }
+      ],
+      "note": {
+        "yi": "「雀武蛇虎」是朱雀、玄武、螣蛇、白虎的简写。第三段是本章开头的细目，列出这一章要讲的各种占问，本库按原文顺序译出。",
+        "en": "'Que Wu She Hu' abbreviates the Vermilion Bird, the Dark Tortoise, the Coiling Snake and the White Tiger. The third passage is the chapter's table of contents at its head, translated in the original order."
+      },
+      "see": ["LY.WEALTH.DYTJ.30", "LY.WEALTH.DYTJ.34", "LY.WEALTH.HJC.01"]
+    },
+    {
+      "id": "LY.WEALTH.YM.02",
+      "topic": "买卖",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "囤积：审看脱手时的衰旺；春脱宜木象乘财，冬售恶火爻为用；占时财神要有生扶、无破坏",
+      "rule": {
+        "yi": "囤积货物，要看脱手那个时节财的衰旺，养殖种植也同这样看；春天出手的，宜木象的财旺；冬天卖出的，忌火爻作用神。注：要考察占卦当时，财神也要有生扶、无破坏，日后遇上那个时节才得厚利；如果占的时候本来破散、没有救援，即使日后遇上时节，利也薄。",
+        "en": "In stockpiling, examine the thriving or weakness of Wealth at the time the goods will be sold, and raising and planting are read the same way; for what is sold in spring a Wood image riding on Wealth is fitting, and for what is sold in winter a Fire line as the Subject is disliked. The note adds: the Wealth spirit at the time of the divination must also have support and no breakage, and only then, meeting that season later, is the profit rich; if at the time of the divination it was already scattered and without rescue, then even meeting the season later the profit is thin."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1489, 1489],
+          "zh": ["囤积审脱时衰旺，", "养育种植类之。", "脱于春者，", "宜木象之乘财，", "售于冬者，", "恶火爻之为用。"],
+          "yi": ["囤积货物，要审看脱手时财的衰旺，", "养殖、种植也同类看待。", "春天出手的，", "宜木象的财旺；", "冬天卖出的，", "忌火爻作用神。"],
+          "en": ["In stockpiling, examine the thriving or weakness of Wealth at the time of selling;", "raising and planting are treated in the same way.", "For what is sold in spring,", "a Wood image riding on Wealth is fitting;", "for what is sold in winter,", "a Fire line as the Subject is disliked."] },
+        { "by": "易冒注", "book": "易冒", "range": [1490, 1490],
+          "zh": ["当考所筮之时，", "亦宜财神有生扶，无破坏，", "后复遇时，方得厚利，", "倘占时原属破散，失救援，", "纵后遇时，亦利薄也。"],
+          "yi": ["要考察占卦当时的时节，", "财神也要有生扶、没有破坏，", "日后再遇到那个时节，才得厚利；", "如果占的时候本来破散、没有救援，", "即使日后遇上时节，利也薄。"],
+          "en": ["One should examine the time of the divination:", "the Wealth spirit should have support and no breakage;", "only when the season is met again later is the profit rich;", "if at the time of the divination it was already scattered and without rescue,", "even meeting the season later the profit is thin."] }
+      ],
+      "see": ["LY.WEALTH.YM.03", "LY.WEALTH.HJC.26"]
+    },
+    {
+      "id": "LY.WEALTH.YM.03",
+      "topic": "应期",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "财审有蒂，遇时则芳；脱地有定则考时，脱时无定则随占；贾肆只论占时财的衰旺",
+      "rule": {
+        "yi": "财要看有没有根蒂，有蒂遇到时节就旺，财神没有根，遇到时节也平常；出手的地方定了，就考察时节；出手的时间不定，就按占卦当时的状态。注：比如开店铺这一行，只论占卦当时财的衰旺，不能拿日后的日子时辰作应验。",
+        "en": "Wealth must be examined for whether it has a stem: with a stem it blooms when its season meets it, without a root it is ordinary even then; where the place of sale is fixed, examine the season; where the time of sale is not fixed, follow the state at the time of the divination. The note adds: for a business such as a shop, judge only the thriving or weakness of Wealth at the time of the divination and do not take a later day or hour as the date it comes true."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1491, 1491],
+          "zh": ["财审有蒂，遇时则芳，", "财神无根，遇时亦常。", "脱地有定则考时，", "脱时无定则随占。"],
+          "yi": ["财要审看有没有根蒂，有蒂，遇到时节就旺；", "财神没有根，遇到时节也只是平常。", "出手的地方定了，就考察时节；", "出手的时间不定，就按占卦当时的状态。"],
+          "en": ["Wealth must be examined for whether it has a stem, and with a stem it blooms when its season meets it;", "with the Wealth spirit rootless, meeting its season is only ordinary.", "Where the place of sale is fixed, examine the season;", "where the time of sale is not fixed, follow the state at the time of the divination."] },
+        { "by": "易冒注", "book": "易冒", "range": [1492, 1492],
+          "zh": ["如贾肆之业，", "止论时下占财衰旺，", "不可以后来日时为应。"],
+          "yi": ["比如开店铺这一行，", "只论占卦当时财的衰旺，", "不能拿以后的日子时辰作应验。"],
+          "en": ["For a business such as a shop,", "judge only the thriving or weakness of Wealth at the time of the divination,", "and do not take a later day or hour as the date it comes true."] }
+      ],
+      "see": ["LY.WEALTH.YM.02", "LY.WEALTH.DYTJ.04"]
+    },
+    {
+      "id": "LY.WEALTH.YM.04",
+      "topic": "开店",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "贾肆求长久、托本寄货求始终：三冲有始无终；应爻破散先忠后佞、空绝先亲后疏、克世怀叵测；四者有一，财旺也不用",
+      "rule": {
+        "yi": "开店铺求长久，托本钱、寄货求始终如一；三冲的卦有始无终；应爻破散，先忠后佞；应爻空绝，先亲后疏；应爻克世，心怀叵测、侵吞；这四种有一种，即使财没有被克破，也不要用。注：占开业得财神旺相，如果没有伙伴，即使遇三冲，不久也还有利可做；只有托寄遇冲，一定没有始终，财再旺也不能做。",
+        "en": "A shop seeks to last, and entrusting capital or consigning goods seeks to be constant from start to finish; a Six-Clash pattern has a beginning without an end; the Other broken or scattered is first loyal and later crafty; the Other Void or cut off is first close and later distant; the Other controlling the Self bears unfathomable designs and embezzles; if any one of these four is present, even with Wealth not controlled or broken, do not use it. The note adds: in divining a business, if the Wealth spirit is thriving and there is no partner, then even meeting the three clashes there is still profit to be made for a while; only in entrusting or consigning, meeting a clash surely has no start and finish, and however thriving Wealth is it must not be done."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1493, 1493],
+          "zh": ["贾肆之问，亦利久长；", "托本寄货之问，又利始终。", "故三冲有始而无终，", "应爻破散，先忠而后侫，", "应爻空绝，先亲而后疏，", "应爻克世，怀叵测而侵没也。", "四者有一，纵财无克破，亦弗用之。"],
+          "yi": ["开店铺的占问，也求长久；", "托本钱、寄货的占问，又求始终如一。", "所以三冲的卦，有开头没有结尾；", "应爻破散，先忠厚后奸佞；", "应爻空绝，先亲近后疏远；", "应爻克世，心怀叵测、侵吞干净。", "这四种有一种，即使财没有被克破，也不要用。"],
+          "en": ["A shop's divination also seeks to last;", "an entrusting of capital or consigning of goods seeks to be constant from start to finish.", "So a hexagram of three clashes has a beginning and no end;", "the Other broken or scattered, first loyal and later crafty;", "the Other Void or cut off, first close and later distant;", "the Other controlling the Self, bearing unfathomable designs and swallowing everything.", "If any one of these four is present, even with Wealth not controlled or broken, do not use it."] },
+        { "by": "易冒注", "book": "易冒", "range": [1494, 1494],
+          "zh": ["凡占业得财神旺相，如无伙伴，", "虽遇三冲，但不久而亦有利可为，", "惟托寄遇冲，断无终始，", "财虽旺相，不可行也。"],
+          "yi": ["凡是占开业，得财神旺相，如果没有伙伴，", "即使遇到三冲，不久也还有利可做；", "只有托寄遇到冲，断然没有始终，", "财再旺相，也不能做。"],
+          "en": ["In divining a business, if the Wealth spirit is thriving and there is no partner,", "even meeting the three clashes there is still profit to be made for a while;", "only in entrusting or consigning, meeting a clash surely has no start and finish,", "and however thriving Wealth is, it must not be done."] }
+      ],
+      "note": {
+        "yi": "「三冲」指卦中三处相冲，原文没有另作解释；本库译作「三冲」。",
+        "en": "The 'three clashes' are three clashing pairs in the hexagram, which the text does not gloss further."
+      },
+      "see": ["LY.WEALTH.YL.04", "LY.WEALTH.YL.24", "LY.WEALTH.YY.25"]
+    },
+    {
+      "id": "LY.WEALTH.YM.05",
+      "topic": "博戏",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "趋利公门要把握官的喜怒；博戏须详应象克生；应克世，财旺也先赢后输",
+      "rule": {
+        "yi": "在公门谋利，要把握官的喜怒；求财、博戏，要仔细看应的生克。注：官鬼空破，是官不重；如果官克世，主有刑责，所以财虽旺也不吉。应爻克世，是对方胜我，财再旺也一定先赢后输。",
+        "en": "To seek profit through official channels, master the official's likes and dislikes; in seeking wealth or gambling, examine closely how the Other generates or controls. The note adds: Pressure Void or broken means the official is not weighty; if Pressure controls the Self there is punishment, so even a thriving Wealth is not auspicious. The Other controlling the Self means the other side beats me, and however thriving Wealth is, one first wins and then loses."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1495, 1495],
+          "zh": ["趋利公门，", "当控官心喜怒，", "求财博戏，", "须详应象克生。"],
+          "yi": ["在公门谋利，", "要把握官心的喜怒；", "求财、博戏，", "要仔细看应的生克。"],
+          "en": ["To seek profit through official channels,", "master the official's likes and dislikes;", "in seeking wealth or gambling,", "examine closely how the Other generates or controls."] },
+        { "by": "易冒注", "book": "易冒", "range": [1496, 1496],
+          "zh": ["官鬼空破，乃官不重也，", "若克世主有刑责，故财虽旺不吉。", "应爻克世，乃彼胜我也，", "财虽旺必先赢后输。"],
+          "yi": ["官鬼空破，是官不重；", "如果官克世，主有刑责，所以财虽旺也不吉。", "应爻克世，是对方胜过我，", "财再旺也一定先赢后输。"],
+          "en": ["Pressure Void or broken means the official is not weighty;", "if Pressure controls the Self there is punishment, so even a thriving Wealth is not auspicious.", "The Other controlling the Self means the other side beats me,", "and however thriving Wealth is, one first wins and then loses."] }
+      ],
+      "see": ["LY.WEALTH.YL.53", "LY.WEALTH.DYTJ.10"]
+    },
+    {
+      "id": "LY.WEALTH.YM.06",
+      "topic": "借贷",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "借贷戒应空（虚诺）；觅物忌世空（难得）；畋猎同；买货世空，财在卦也难买",
+      "rule": {
+        "yi": "借贷要戒应空，那是空头许诺；觅物忌世空，那是难得；打猎也一样。注：买货如果遇世空，妻财即使在卦上，也主难买。",
+        "en": "In borrowing and lending beware the Other falling Void, which is an empty promise; in seeking a thing beware the Self falling Void, which means it is hard to get; hunting is the same. The note adds: in buying goods, if the Self falls Void, even with Wealth in the hexagram it is hard to buy."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1497, 1497],
+          "zh": ["借贷戒应空，是谓虚诺；", "觅物忌世空，是谓难得也。", "畋猎如之。"],
+          "yi": ["借贷要戒应空，这叫虚假的许诺；", "觅物忌世空，这叫难得；", "打猎也是这样。"],
+          "en": ["In borrowing and lending beware the Other falling Void, which is called an empty promise;", "in seeking a thing beware the Self falling Void, which is called hard to get;", "hunting is the same."] },
+        { "by": "易冒注", "book": "易冒", "range": [1498, 1498],
+          "zh": ["买货若遇世空，", "妻财虽有在卦，", "亦主难买。"],
+          "yi": ["买货如果遇到世空，", "妻财即使在卦上，", "也主难买。"],
+          "en": ["In buying goods, if the Self falls Void,", "even with Wealth in the hexagram,", "it is hard to buy."] }
+      ],
+      "see": ["LY.WEALTH.ZS.27", "LY.WEALTH.YL.33", "LY.WEALTH.HJC.33"]
+    },
+    {
+      "id": "LY.WEALTH.YM.07",
+      "topic": "取象",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "所求之物不同，用神不同：飞禽走兽用子孙，衣服舟车用父母",
+      "rule": {
+        "yi": "再看所求的是什么东西，要分它的用神：飞禽走兽这类有灵性的，不用财而用子孙；衣服、舟车这类器具，不用财而用父母。",
+        "en": "Then look at what is being sought, and tell its Subject: for winged and running creatures, the living kinds, use Output instead of Wealth; for tools such as clothing, boats and carts, use Resource instead of Wealth."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1499, 1499],
+          "zh": ["复观所求，当分其用，", "飞走之灵，不用财而用子孙，", "衣服舟车之具，不用财而用父母。"],
+          "yi": ["再看所求的是什么，要分它的用神：", "飞禽走兽这类有灵性的，不用财而用子孙；", "衣服、舟车这类器具，不用财而用父母。"],
+          "en": ["Then look at what is sought, and tell its Subject:", "for winged and running creatures, the living kinds, use Output instead of Wealth;", "for tools such as clothing, boats and carts, use Resource instead of Wealth."] }
+      ],
+      "see": ["LY.WEALTH.YL.45", "LY.WEALTH.ZS.29"]
+    },
+    {
+      "id": "LY.WEALTH.YM.08",
+      "topic": "借贷",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "订会：贞合冲不聚，世应空不会，财官陷不成；筮得会，财当日月可获；三冲、应坏、克世不良",
+      "rule": {
+        "yi": "订会（合会、摇会）和谋事相类：贞卦合了又变冲，就聚不成；世应空，就不成会；财官陷落，就不成；替人说合也是这样。占是否得会，财值日、值月就可以得到；占能否有始有终，三冲、应坏、克世都不好。",
+        "en": "Forming a savings club is like scheming a matter: a Zhen hexagram that combines and then turns to a clash does not gather; the Self and Other Void means no club; Wealth and Pressure sunk means it does not come about; brokering for another is the same. Divining whether the club is obtained: it can be had when Wealth rules the day or the month; divining whether it lasts to the end: three clashes, the Other spoiled, or the Other controlling the Self are all bad."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1500, 1502],
+          "zh": ["订会类于谋事，", "贞合冲则不聚，", "世应空则不会，", "财官陷则不成也，", "为人说合亦然。", "若筮得会，财当日月可获也；", "若筮有终，三冲应坏克世非良也。"],
+          "yi": ["订会和谋事相类：", "贞卦合了又变冲，就聚不成；", "世应空，就不成会；", "财官陷落，就不成；", "替人说合也是这样。", "如果筮问能不能得会，财值日、值月就可以获得；", "如果筮问能不能有始有终，三冲、应坏、克世都不好。"],
+          "en": ["Forming a club is like scheming a matter:", "if the Zhen hexagram combines and then turns to a clash, the group will not gather;", "with the Self and Other Void, there is no club;", "with Wealth and Pressure sunk, it does not come about;", "brokering for another is the same.", "If you divine whether the club is obtained, it can be had when Wealth rules the day or the month;", "if you divine whether it lasts to the end, three clashes, a spoiled Other, or the Other controlling the Self are all not good."] },
+        { "by": "易冒注", "book": "易冒", "range": [1503, 1503],
+          "zh": ["财当日月，", "如酉建丁酉日，占庚子日摇会，得水地比，果获之是也。", "再如寅建乙卯日，占何时得会，遇丰之离，其后午月方获，是财当月也。", "余仿此。"],
+          "yi": ["财值日月，", "比如酉月丁酉日，占庚子日摇会，得水地比卦，果然得到了。", "再如寅月乙卯日，占什么时候得会，遇到丰变离，日后午月才得到，这是财值月。", "其余照这样类推。"],
+          "en": ["'Wealth ruling the day or month':", "for example, in a You month on a Ding You day, divining a club to be shaken on a Geng Zi day, the Bi hexagram, Water over Earth, was got, and it was in fact obtained.", "Or in a Yin month on a Yi Mao day, divining when the club would be obtained, meeting Feng changing to Li, it was got only afterwards in a Wu month; this is Wealth ruling the month.", "The rest follow this."] }
+      ],
+      "note": {
+        "yi": "「贞合冲」读法不定：可读作贞卦由合变冲，也可读作贞卦逢合、逢冲；这里取前一种。第二段的两个卦例是书里附的小注。",
+        "en": "How to read 'Zhen combining and clashing' is not settled: it can mean the Zhen hexagram turning from a combination to a clash, or the Zhen hexagram meeting a combination or a clash; this entry takes the first. The two cases in the second passage are the book's own small note."
+      },
+      "see": ["LY.WEALTH.YL.46", "LY.WEALTH.YL.47", "LY.WEALTH.YL.48", "LY.WEALTH.ZS.31"]
+    },
+    {
+      "id": "LY.WEALTH.YM.09",
+      "topic": "公门九流",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "巫医、优娼以官鬼为专；工技忌应克世；僧道缘募恶应爻空；行次迎客、脱产求交，应空则无人来、无人与",
+      "rule": {
+        "yi": "巫医的利在名誉，专看官鬼；优娼的利在鼓舞，也以官鬼为务；工技之人重情好，忌应克世；僧道的缘募重悦从，恶应爻空；出门迎客，对方空了谁来；卖产业求成交，应空了谁来买；成交有指定的对象，就和谋事一样。注：有的兼用官，有的兼用应，而财神不可脱。",
+        "en": "For shamans and doctors the profit lies in reputation and the Pressure line is the specialist; for actors and courtesans the profit lies in drumming and dancing, and Pressure is again the business; for craftsmen good feeling counts and the Other controlling the Self is avoided; for monks and priests raising alms, willing agreement counts and the Other line falling Void is disliked; in going out to meet guests, if the other side is Void who will come; in selling property to close a deal, if the Other is Void who will take it; if the deal has a named counterpart it is the same as scheming a matter. The note adds: some also use Pressure, some also use the Other, but the Wealth spirit must not be lost."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1504, 1504],
+          "zh": ["巫医之利也贵名誉，官鬼为专；", "优娼之利也贵皷舞，亦官鬼为务。", "工技之于人事也贵情好，忌应克世；", "僧道之于缘募也贵悦从，恶应爻空。", "行次迎客，彼空谁来；", "脱产求交，应空谁与也，", "交有所指，则同谋事矣。"],
+          "yi": ["巫医的利在名誉，专看官鬼；", "优娼的利在鼓乐歌舞，也以官鬼为务。", "工技之人，重情谊和好，忌应克世；", "僧道的缘募，重欢喜听从，恶应爻空。", "出门迎客，对方空了，谁来；", "卖产业求成交，应空了，谁来买；", "成交有指定的对象，就和谋事一样了。"],
+          "en": ["For shamans and doctors the profit lies in reputation, and Pressure is the specialist;", "for actors and courtesans the profit lies in drum and dance, and Pressure is again the business.", "For craftsmen good feeling counts, and the Other controlling the Self is avoided;", "for monks and priests raising alms, willing agreement counts, and the Other line falling Void is disliked.", "In going out to meet guests, if the other side is Void, who will come;", "in selling property to close a deal, if the Other is Void, who will take it;", "if the deal has a named counterpart, it becomes the same as scheming a matter."] },
+        { "by": "易冒注", "book": "易冒", "range": [1505, 1505],
+          "zh": ["或兼用官，", "或兼用应，", "而财神不可脱也。"],
+          "yi": ["有的兼用官，", "有的兼用应，", "而财神不能没有。"],
+          "en": ["Some also use Pressure,", "some also use the Other,", "but the Wealth spirit must not be lost."] }
+      ],
+      "see": ["LY.WEALTH.HJC.29", "LY.WEALTH.YL.06", "LY.WEALTH.YL.11", "LY.WEALTH.YL.13", "LY.WEALTH.YL.14", "LY.WEALTH.YY.20"]
+    },
+    {
+      "id": "LY.WEALTH.YM.10",
+      "topic": "风险",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "行险求财，此非营生之本：世墓随墓、应克世、官克世、鬼爻发动，都有害；加玄武盗、朱雀斗、勾陈拦、螣蛇惊、白虎疾，惟青龙可凶而吉",
+      "rule": {
+        "yi": "行险求财不是谋生的根本，书里不谈它的利，只把害讲明：动伤随墓，害大；应克世，路上遇强盗；官克世，路上遭罗网；鬼爻发动，如虎卧当道。要去哪里呢？加玄武是盗寇之凶，加朱雀是争斗之患，勾陈是拦阻的人，螣蛇是风波之惊，白虎是灾病之危，只有青龙能把凶变吉。注：非分的求取，凶多吉少，常常身家性命一起搭上，所以有告诫的话。",
+        "en": "Seeking wealth by risk is not the root of livelihood, and the book does not speak of its profit but makes its harm plain: a moving line that harms and follows into the tomb brings great harm; the Other controlling the Self means meeting bandits on the road; Pressure controlling the Self means meeting nets on the road; a moving Pressure line is a tiger lying across the path. Where would one go? With the Dark Tortoise it is the ill of robbers, with the Vermilion Bird the trouble of quarrels, Hook Earth means people who block the way, the Coiling Snake the fright of wind and waves, the White Tiger the danger of disaster and illness, and only the Azure Dragon can turn ill into good. The note adds: a demand beyond one's lot brings more ill than good and often costs the whole household and the person, so the book gives a warning."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1506, 1506],
+          "zh": ["若行险求财，此非营生之本，", "未言其利，行明其害也。", "动伤随墓而害大，", "应克世而途遇强梁，", "官克世而路遭罗网，", "鬼爻发动，虎卧当道。", "欲往何哉，", "加元武为寇盗之凶，", "加朱雀为斗争之患，", "勾陈为拦阻之人，", "螣蛇为风波之骇，", "白虎为灾疾之危，", "惟青龙可以凶而吉也。"],
+          "yi": ["行险求财，这不是谋生的根本，", "书里不谈它的利，只把它的害讲明。", "动伤、随墓，害大；", "应克世，路上遇到强盗；", "官克世，路上遭遇罗网；", "鬼爻发动，如同猛虎卧在当道。", "想去哪里呢？", "加了玄武，是盗寇之凶；", "加了朱雀，是争斗之患；", "勾陈，是拦阻的人；", "螣蛇，是风波的惊骇；", "白虎，是灾病的危险；", "只有青龙可以由凶转吉。"],
+          "en": ["Seeking wealth by risk is not the root of livelihood;", "the book does not speak of its profit but makes its harm plain.", "A moving line that harms and follows into the tomb brings great harm;", "the Other controlling the Self means meeting bandits on the road;", "Pressure controlling the Self means meeting nets on the road;", "a moving Pressure line is like a tiger lying across the path.", "Where would one go?", "With the Dark Tortoise added, it is the ill of robbers;", "with the Vermilion Bird added, the trouble of quarrels;", "Hook Earth is people who block the way;", "the Coiling Snake is the fright of wind and waves;", "the White Tiger is the danger of disaster and illness;", "only the Azure Dragon can turn ill into good."] },
+        { "by": "易冒注", "book": "易冒", "range": [1507, 1507],
+          "zh": ["非分之求，凶多吉少，", "常身家俱殉，故有戒词。"],
+          "yi": ["非分的谋求，凶多吉少，", "常常身家性命一起搭上，所以有告诫的话。"],
+          "en": ["A demand beyond one's lot brings more ill than good,", "and often costs the whole household and the person, so the book gives a warning."] }
+      ],
+      "note": {
+        "yi": "这一段用「加玄武」而不是「玄武」，原文写作「元武」（避讳字形），这里译作玄武。",
+        "en": "This passage writes the Dark Tortoise with a variant character (a taboo-avoiding form) and it is translated as the Dark Tortoise."
+      },
+      "see": ["LY.WEALTH.ZS.32", "LY.WEALTH.CA.06", "LY.WEALTH.DYTJ.40"]
+    },
+    {
+      "id": "LY.WEALTH.YM.11",
+      "topic": "借贷",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "索逋者，应克世为负心；夺报者，兄爻动为攘光",
+      "rule": {
+        "yi": "追债的，应爻克世是对方负心；夺取报酬的，兄爻发动是被抢夺一空。",
+        "en": "For collecting debts, the Other controlling the Self means the debtor is faithless; for seizing a reward, the Peer line moving means being stripped bare."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1507, 1507],
+          "zh": ["索逋者，", "应克世为负心，", "夺报者，", "兄爻动为攘光。"],
+          "yi": ["追债的，应爻克世，", "是对方负心；", "夺取报酬的，", "兄爻发动，是被抢夺一空。"],
+          "en": ["For collecting debts, the Other line controlling the Self", "means the debtor is faithless;", "for seizing a reward,", "the Peer line moving means being stripped bare."] }
+      ],
+      "note": {
+        "yi": "「夺报」「攘光」的确切含义书里没有解释，这里照字面译作夺取报酬、抢夺一空，不确定。",
+        "en": "The exact senses of 'seizing a reward' and 'stripped bare' are not explained in the book and are translated by their words, without certainty."
+      },
+      "see": ["LY.WEALTH.YL.37", "LY.WEALTH.ZS.28"]
+    },
+    {
+      "id": "LY.WEALTH.YM.12",
+      "topic": "动变",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "脱货宜动，留货宜静；发伏藏宜伏而现，造作宜变而建；财临变爻又值日月建为吉",
+      "rule": {
+        "yi": "脱货宜动，留货宜静；发掘伏藏的宜伏着的财出现，造作的宜财变出来而得建旺。注：发伏，如开矿淘沙取宝藏；造作，如木匠、土工、针线、织机；财临变爻，再遇日建或月建，就吉。",
+        "en": "To sell off goods, movement suits; to hold goods, stillness suits; for unearthing hidden things, a hidden Wealth should come to show, and for fabrication, a Wealth that changes should be raised by the month or day. The note adds: unearthing means things like mining, panning sand and recovering buried treasure, and fabrication things like carpentry, earthwork, needlework and weaving; Wealth on a changed line meeting the Day or Month ruler is auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1508, 1508],
+          "zh": ["脱者宜动，", "留者宜静，", "发伏藏者宜伏而现，", "假造作者宜变而建。"],
+          "yi": ["脱货的宜动，", "留货的宜静，", "发掘伏藏的，宜伏着的财出现，", "造作的，宜财变出来而得建旺。"],
+          "en": ["To sell off goods, movement suits;", "to hold goods, stillness suits;", "for unearthing hidden things, the hidden Wealth should come to show;", "for fabrication, a Wealth that changes should be raised by the ruler."] },
+        { "by": "易冒注", "book": "易冒", "range": [1509, 1509],
+          "zh": ["发伏，如开矿淘沙取藏之类。", "假造作，如木匠土工针线机织之类。", "财临变爻，复值日月建为吉。"],
+          "yi": ["发伏，如开矿、淘沙、取宝藏之类；", "造作，如木匠、土工、针线、织机之类；", "财临在变爻上，再遇日建或月建，就吉。"],
+          "en": ["'Unearthing' means things like mining, panning sand and recovering buried treasure;", "'fabrication' means things like carpentry, earthwork, needlework and weaving;", "with Wealth on a changed line and meeting the Day or Month ruler, it is auspicious."] }
+      ],
+      "see": ["LY.WEALTH.YL.17", "LY.WEALTH.YY.15"]
+    },
+    {
+      "id": "LY.WEALTH.YM.13",
+      "topic": "买卖",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "货价贵贱：进货宜财衰易买，出货宜财旺得价；财生旺价贵，衰病价贱；财逢合而当遇，财逢冲而当起",
+      "rule": {
+        "yi": "财逢合，那时能遇上；财逢冲，那时会起来；买进货物，财宜衰，容易买；卖出货物，财宜旺，才得价；财逢生旺，应价贵；财逢衰病，应价贱。这是说货价贵贱、收进和发出的合宜。",
+        "en": "Wealth meeting a combination is met at that time; Wealth meeting a clash rises at that time; for goods coming in, Wealth is best weak, and they are easy to buy; for goods going out, Wealth is best thriving, and the price is had; Wealth meeting life or a thriving state foretells a high price; Wealth meeting weakness or sickness foretells a low price. This speaks of the price of goods and of what is fit in taking in and sending out."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1510, 1510],
+          "zh": ["财逢合而当遇，", "财逢冲而当起，", "货人宜衰则易买，", "货出宜旺则得价，", "财逢生旺当征贵，", "财逢衰病当征贱也。"],
+          "yi": ["财逢合，那时能遇上；", "财逢冲，那时会起来；", "买进货物，财宜衰，就容易买；", "卖出货物，财宜旺，才得好价；", "财逢生旺，应价贵；", "财逢衰病，应价贱。"],
+          "en": ["Wealth meeting a combination is met at that time;", "Wealth meeting a clash rises at that time;", "for goods coming in, Wealth is best weak, and they are easy to buy;", "for goods going out, Wealth is best thriving, and a good price is had;", "Wealth meeting life or a thriving state foretells a high price;", "Wealth meeting weakness or sickness foretells a low price."] },
+        { "by": "易冒注", "book": "易冒", "range": [1511, 1511],
+          "zh": ["此言货价贵贱，", "收发之宜。"],
+          "yi": ["这是说货价的贵贱，", "收进、发出的合宜。"],
+          "en": ["This speaks of the price of goods, high or low,", "and of what is fit in taking in and sending out."] }
+      ],
+      "see": ["LY.WEALTH.ZS.20", "LY.WEALTH.ZS.21", "LY.WEALTH.HJC.16"]
+    },
+    {
+      "id": "LY.WEALTH.YM.14",
+      "topic": "应期",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "财爻生克补救：绝得生则脱，空得填则获，破得补则复，无见时而得，旺墓库而收，衰得旺则长；化进神日增，化退神日减",
+      "rule": {
+        "yi": "财爻绝，得生就能出手；财爻空，得到填实就获得；财爻破，得到补救就恢复；财爻无（不上卦），到了那个时候得到；财爻旺，逢墓库收进；财爻衰，得旺就增长；化进神的日日增，化退神的日日减；利厚的是财化生，利薄的是妻化克。",
+        "en": "Wealth cut off gives up its goods when given life; Wealth Void is gained when filled; Wealth broken is restored when repaired; Wealth absent is gained when its time appears; Wealth thriving is gathered at the tomb; Wealth weak grows when it gains strength; changing into an Advancing spirit it grows daily, into a Retreating spirit it shrinks daily; a rich profit is Wealth changing into life, a thin profit is Wealth changing into control."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1512, 1512],
+          "zh": ["财爻绝，得生则脱，", "财爻空，得填则获，", "财爻破，得补则复，", "财爻无，见时而得，", "财爻旺，墓库而收，", "财爻衰，得旺则长也。", "化进神者日增，化退神者日减，", "利厚者财化生，利薄者妻化克也。"],
+          "yi": ["财爻绝，得到生就能出手；", "财爻空，得到填实就获得；", "财爻破，得到补救就恢复；", "财爻没有（不上卦），到了它出现的时候得到；", "财爻旺，在墓库那天收进；", "财爻衰，得到旺就增长。", "化成进神的，一天比一天增；化成退神的，一天比一天减；", "利厚的是财化生，利薄的是妻财化克。"],
+          "en": ["Wealth cut off gives up its goods when given life;", "Wealth Void is gained when it is filled;", "Wealth broken is restored when it is repaired;", "Wealth absent is gained when its time appears;", "Wealth thriving is gathered at the tomb;", "Wealth weak grows when it gains strength.", "Changing into an Advancing spirit it grows daily; into a Retreating spirit it shrinks daily;", "a rich profit is Wealth changing into life, a thin profit is Wealth changing into control."] },
+        { "by": "易冒注", "book": "易冒", "range": [1513, 1513],
+          "zh": ["此言财爻生克补救之法。"],
+          "yi": ["这是说财爻生克补救的办法。"],
+          "en": ["This speaks of the ways to repair Wealth by generation and control."] }
+      ],
+      "see": ["LY.WEALTH.YY.07", "LY.WEALTH.ZS.19", "LY.WEALTH.TXF.11", "LY.WEALTH.YL.19"]
+    },
+    {
+      "id": "LY.WEALTH.YM.15",
+      "topic": "买卖",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "脱货之利：游魂财旺宜行、归魂财衰宜止；六冲改图得利、六合守而生财；财坐世本地脱、居应他乡脱、现间爻中途生息",
+      "rule": {
+        "yi": "游魂卦财旺宜行动，归魂卦财衰宜停止；六冲卦宜改变谋划而得利，六合卦宜守着而生财；财坐世爻，遂在本地脱货的心愿，财居应爻，在他乡脱货称心，财现在间爻，在中途反而生息。",
+        "en": "In a Wandering Soul hexagram with thriving Wealth it is fit to move, in a Returning Soul hexagram with weak Wealth it is fit to stop; a Six-Clash hexagram is fit for changing plans to gain, and a Six-Combine hexagram for holding fast and breeding wealth; Wealth sitting on the Self fulfils selling at home, on the Other it suits selling in another place, and showing on a between line it breeds interest on the way."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1514, 1514],
+          "zh": ["游魂财旺宜行，归魂财衰宜止，", "六冲宜改图而得利，", "六合宜需守而生财。", "坐世遂本地之求，", "居应称他乡之脱，", "现于间爻，中途反生息也。"],
+          "yi": ["游魂卦财旺，宜于行动；归魂卦财衰，宜于停止；", "六冲卦宜改变谋划而得利；", "六合卦宜守着不动而生财。", "财坐在世爻上，遂了在本地脱货的心愿；", "财居在应爻上，在他乡脱货称心；", "财现在间爻上，在中途反而生息。"],
+          "en": ["In a Wandering Soul hexagram with thriving Wealth it is fit to move, in a Returning Soul hexagram with weak Wealth it is fit to stop;", "a Six-Clash hexagram is fit for changing plans to gain;", "a Six-Combine hexagram is fit for holding fast and breeding wealth.", "Wealth sitting on the Self fulfils selling at home;", "Wealth on the Other suits selling in another place;", "Wealth showing on a between line breeds interest on the way."] },
+        { "by": "易冒注", "book": "易冒", "range": [1515, 1515],
+          "zh": ["此言脱货之利。"],
+          "yi": ["这是说脱货的利。"],
+          "en": ["This speaks of the profit in selling off goods."] }
+      ],
+      "see": ["LY.WEALTH.YL.35", "LY.WEALTH.HJC.16"]
+    },
+    {
+      "id": "LY.WEALTH.YM.16",
+      "topic": "买卖",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "置货之宜：财衰于内买宜近乡，财休于外置宜远所；衰而旺价先屈后伸，旺而变衰物先金后土；卦无财而衰价贱难买，无财而旺价贵难买",
+      "rule": {
+        "yi": "财在内卦衰，买货宜在近乡；财在外卦休，置货宜到远处；财衰而变旺，价钱先屈后伸；财旺而变衰，货物先金后土；卦里无财而财又衰，价贱却买不到；卦里无财而财又旺，价贵也买不起；只有财出现而衰，才满心买得到；财叠现而旺，才如意脱得了。",
+        "en": "With Wealth weak in the inner trigram, it is fit to buy in a nearby village; with Wealth resting in the outer trigram, it is fit to lay in goods at a distant place; weak and then thriving, the price is first bent and then stretched; thriving and then changing to weak, the goods are first gold and then earth; a hexagram without Wealth whose Wealth is also weak has a cheap price and yet cannot be bought; one without Wealth whose Wealth is thriving has a dear price and cannot be bought; only Wealth showing and weak lets one buy to one's heart's content, and doubled and thriving lets one sell as one wishes."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1516, 1516],
+          "zh": ["财衰于内，买宜近乡，", "财休于外，置宜远所。", "衰而旺，其价先屈而后伸，", "旺而变衰，其物先金而后土也。", "卦无财而财且衰，价贱而不得买，", "卦无财而财且旺，价贵而不能买，", "惟现而衰，满心得置，", "叠而旺，遂意得脱。"],
+          "yi": ["财在内卦衰，买货宜在近乡；", "财在外卦休，置货宜到远处。", "财衰而变旺，价钱先屈后伸；", "旺而变衰，货物先是金、后是土。", "卦里无财而财又衰，价贱却买不到；", "卦里无财而财又旺，价贵也买不起；", "只有财出现而衰，才满心买得到；", "财叠现而旺，才如意脱得了。"],
+          "en": ["With Wealth weak in the inner trigram, it is fit to buy in a nearby village;", "with Wealth resting in the outer trigram, it is fit to lay in goods at a distant place.", "Wealth weak and then thriving, the price is first bent and then stretched;", "thriving and then changing to weak, the goods are first gold and then earth.", "A hexagram without Wealth whose Wealth is also weak has a cheap price and yet cannot be bought;", "one without Wealth whose Wealth is thriving has a dear price and cannot be bought either;", "only Wealth showing and weak lets one buy to one's heart's content;", "Wealth doubled and thriving lets one sell as one wishes."] },
+        { "by": "易冒注", "book": "易冒", "range": [1517, 1517],
+          "zh": ["此言置货之宜。"],
+          "yi": ["这是说置货的合宜。"],
+          "en": ["This speaks of what is fit in laying in goods."] }
+      ],
+      "note": {
+        "yi": "「财衰于内」「财休于外」的「内」「外」，原文没有写「卦」，这里按内外卦译。",
+        "en": "The 'inner' and 'outer' in these lines are written without the word 'trigram' in the original and are read as the inner and outer trigrams."
+      },
+      "see": ["LY.WEALTH.YM.13", "LY.WEALTH.YL.19"]
+    },
+    {
+      "id": "LY.WEALTH.YM.17",
+      "topic": "取象",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "脱货吉方在财生之处，置货吉方在世生之所",
+      "rule": {
+        "yi": "脱货往哪个方向吉：财生的那个方位，独发看它的宫，重复出现看它的所属；置货往哪个方向吉：世生的那个地方就行了。",
+        "en": "Which direction is auspicious for selling off goods: the place where Wealth is born; for a single moving line look to its palace, for one appearing twice look to its affiliation; which is auspicious for laying in goods: only the place where the Self is born."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1518, 1518],
+          "zh": ["脱货何为吉方，财生之处也，", "独发求宫，重见求属。", "置货何为吉方，世生之所而已。"],
+          "yi": ["脱货往哪个方向吉，是财所生的那个方位；", "独发的，看它的宫；重复出现的，看它的所属。", "置货往哪个方向吉，是世所生的地方就行了。"],
+          "en": ["Which direction is auspicious for selling off goods: the place where Wealth is born;", "for a single moving line look to its palace, for one appearing twice look to its affiliation.", "Which is auspicious for laying in goods: only the place where the Self is born."] },
+        { "by": "易冒注", "book": "易冒", "range": [1520, 1520],
+          "zh": ["此言置脱吉方。"],
+          "yi": ["这是说置货、脱货的吉方。"],
+          "en": ["This speaks of the auspicious directions for laying in and selling off goods."] }
+      ],
+      "see": ["LY.WEALTH.DYTJ.16"]
+    },
+    {
+      "id": "LY.WEALTH.YM.18",
+      "topic": "取象",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "问什么货好：分类占，财旺取妻财所属、财病取子孙所属；类金玉石、类水鱼盐、类火陶冶、类木百果、类土五谷；六神各主一类",
+      "rule": {
+        "yi": "问哪种货好，没有一定的办法，要分类占；财旺，就取妻财所属的东西，财有病，就取子孙所属的东西，用五行六神来考察：属金的像玉石，属水的像鱼盐，属火的像陶冶，属木的像百果，属土的像五谷；青龙木利，用于喜庆；白虎金利，用于丧屠；玄武水利，用于酒食；朱雀火利，用于市肆；螣蛇土利，用于出入；勾陈人事之利，用于农田。有所指才去求，不要自己妄断。",
+        "en": "Asked which goods are good, there is no fixed method, and one divines by kinds: with Wealth thriving take what belongs to Wealth, with Wealth ill take what belongs to Output, and examine by the five phases and six spirits; the kind of Metal is jade and stone, of Water fish and salt, of Fire pottery and smelting, of Wood the hundred fruits, of Earth the five grains; the Azure Dragon and Wood profit in joyous occasions, the White Tiger and Metal in funerals and butchery, the Dark Tortoise and Water in wine and food, the Vermilion Bird and Fire in markets and shops, the Coiling Snake and Earth in coming and going, Hook Earth in human affairs and farmland. Seek only what you have in mind and do not judge rashly."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1521, 1521],
+          "zh": ["问何货为善，无是法也，", "当分类占之，间有筮焉。", "财旺则以妻财所属，", "财病则以子孙所属，", "五行六神而考也。", "类金者玉石像焉，类水者鱼盐像焉，", "类火者陶冶像焉，类木者百果像焉，", "类土者五谷像焉。", "青龙木利，喜庆为用也，", "白虎金利，丧屠为用也，", "元武水利，酒食为用也，", "朱雀火利，市肆为用也，", "螣蛇土利，出入为用也，", "勾陈人事之利，农田为用也。", "有指而求，无自妄也。"],
+          "yi": ["问哪种货好，没有一定的办法，", "应当分类来占，有时另起一卦。", "财旺，就取妻财所属的东西；", "财有病，就取子孙所属的东西；", "用五行六神来考察。", "属金的像玉石，属水的像鱼盐，", "属火的像陶冶，属木的像百果，", "属土的像五谷。", "青龙、木利，用于喜庆；", "白虎、金利，用于丧事屠宰；", "玄武、水利，用于酒食；", "朱雀、火利，用于市肆；", "螣蛇、土利，用于出入；", "勾陈，人事之利，用于农田。", "有所指才去求，不要自己妄断。"],
+          "en": ["Asked which goods are good, there is no fixed method,", "and one should divine by kinds, sometimes casting a separate hexagram.", "with Wealth thriving take what belongs to Wealth;", "with Wealth ill take what belongs to Output;", "and examine by the five phases and six spirits.", "The kind of Metal is jade and stone, of Water fish and salt,", "of Fire pottery and smelting, of Wood the hundred fruits,", "of Earth the five grains.", "The Azure Dragon and Wood profit in joyous occasions;", "the White Tiger and Metal in funerals and butchery;", "the Dark Tortoise and Water in wine and food;", "the Vermilion Bird and Fire in markets and shops;", "the Coiling Snake and Earth in coming and going;", "Hook Earth in human affairs and farmland.", "Seek only what you have in mind and do not judge rashly."] },
+        { "by": "易冒注", "book": "易冒", "range": [1522, 1522],
+          "zh": ["问者意属何类，", "然后以象像之，", "万弗自逞聪明，", "以妄言语而误趋避也。"],
+          "yi": ["问的人心里属意哪一类，", "然后用象去对应它，", "千万不要自逞聪明，", "胡乱说话而误了人的趋避。"],
+          "en": ["Whatever kind the asker has in mind,", "match it with the image,", "and never show off one's own cleverness,", "speaking rashly and misleading the asker's choice of what to seek and avoid."] }
+      ],
+      "note": {
+        "yi": "「元武」是玄武的避讳字形。「间有筮焉」是说有时另起一卦，各家断法不同，这里取字面意思。",
+        "en": "'Yuan Wu' is a taboo-avoiding form of the Dark Tortoise. 'Now and then cast a hexagram' is taken literally as casting a separate hexagram."
+      },
+      "see": ["LY.WEALTH.DYTJ.38", "LY.WEALTH.YM.07"]
+    },
+    {
+      "id": "LY.WEALTH.YM.19",
+      "topic": "总则",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "六亲喜忌：子孙生财，喜有而有喜无；官鬼耗财，安静不喜动；兄弟克财，喜静；父母辛劳，喜抑；益财者宜动，损财者宜静",
+      "rule": {
+        "yi": "子孙生我的财，喜欢有，有了就喜、无了也喜；官鬼耗我的财，吉在安静，不喜摇动；兄弟克我的财，喜静不喜动；父母是辛劳，喜抑不喜扬；凡是有益于财的，宜其动，损害财的，宜其静。",
+        "en": "Output generates my Wealth: it is welcome and glad to be there, and glad also if it is absent; Pressure drains my Wealth: it is auspicious when quiet and it is not glad to be moved; Peer controls my Wealth: it is glad to be still and not glad to move; Resource is toil: it is glad to be held down and not raised; whatever benefits Wealth should move, and whatever harms Wealth should be still."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1523, 1523],
+          "zh": ["夫子孙生我财，喜有而有喜无，", "官鬼耗我财，吉安而不喜摇，", "兄弟克我财，喜静而不喜动，", "父母为辛劳，喜抑而不喜扬。", "凡益财者宜其动，", "损财者宜其静也。"],
+          "yi": ["子孙生我的财，喜有，有的时候欢喜、无的时候也不忌；", "官鬼耗我的财，安静才吉，不喜摇动；", "兄弟克我的财，喜静，不喜动；", "父母是辛劳，喜抑，不喜扬。", "凡是有益于财的，宜其动；", "损害财的，宜其静。"],
+          "en": ["Output generates my Wealth: it is welcome, glad to be there and no harm if absent;", "Pressure drains my Wealth: it is auspicious quiet and not glad to be moved;", "Peer controls my Wealth: it is glad to be still and not glad to move;", "Resource is toil: it is glad to be held down and not raised.", "Whatever benefits Wealth should move,", "and whatever harms Wealth should be still."] },
+        { "by": "易冒注", "book": "易冒", "range": [1524, 1524],
+          "zh": ["此言六亲喜忌。"],
+          "yi": ["这是说六亲的喜和忌。"],
+          "en": ["This speaks of what each of the six relations likes and dislikes."] }
+      ],
+      "note": {
+        "yi": "「喜有而有喜无」的确切断句不定，这里译作「喜欢有、无也不忌」，不确定。",
+        "en": "How exactly to punctuate 'glad to have and glad to lack' is not settled, and it is rendered loosely as 'welcome, and no harm if absent', without certainty."
+      },
+      "see": ["LY.WEALTH.DYTJ.32", "LY.WEALTH.DYTJ.27", "LY.WEALTH.DYTJ.28"]
+    },
+    {
+      "id": "LY.WEALTH.YM.20",
+      "topic": "风险",
+      "chapter": "理财章第六十六",
+      "chapter_en": "Chapter 66: Managing wealth",
+      "title": "传言得萃卦，经营折本，占者当戒；求财、兴贩尤忌",
+      "rule": {
+        "yi": "相传得到萃卦，经营就要折本，占卜的人应当引以为戒。注：京房《易传》里萃卦的数缺而无补，因此戒占求财，兴贩尤其忌。",
+        "en": "It is handed down that getting the Cui hexagram means trade loses its capital, and the one who divines should take warning. The note adds: in Jing Fang's Commentary the count for Cui is missing and unmade up, so seeking wealth is warned against, and hawking goods most of all."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1525, 1525],
+          "zh": ["传言得萃，", "而经营折本，", "当为占者之戒云。"],
+          "yi": ["相传得到萃卦，", "经营就要折本，", "占卜的人应当引以为戒。"],
+          "en": ["It is handed down that getting the Cui hexagram", "means the business loses its capital,", "and the one who divines should take warning."] },
+        { "by": "易冒注", "book": "易冒", "range": [1526, 1526],
+          "zh": ["京子传，", "以萃数缺无补，", "因戒占求财，", "兴贩尤忌。"],
+          "yi": ["京房《易传》里，", "萃卦的数缺而无补，", "因此戒占求财，", "兴贩尤其忌。"],
+          "en": ["In Jing Fang's Commentary,", "the count for Cui is missing and unmade up,", "so seeking wealth is warned against,", "and hawking goods most of all."] }
+      ],
+      "note": {
+        "yi": "原文写作「京子传」，这里读作京房《易传》；「数缺无补」的意思是萃卦在京房《易传》的那套数里缺了，书里没有更多解释。",
+        "en": "The original reads 'Jing zi zhuan', taken here as Jing Fang's Commentary on the Changes; 'the count is missing and unmade up' means Cui is lacking in that work's numbering, and the book explains no further."
+      },
+      "see": ["LY.WEALTH.DYTJ.15", "LY.WEALTH.HJC.19"]
+    },
+    {
+      "id": "LY.WEALTH.YM.21",
+      "topic": "应期",
+      "chapter": "独发章第二十九",
+      "chapter_en": "Chapter 29: A single moving line",
+      "title": "独发独静定时日：先看用神定有无（求财看财旺而有财），再以独发独静之爻定其时",
+      "rule": {
+        "yi": "有人说，独发独静只是给吉凶的兆头：求财要遇财旺才有财，求官遇官旺才有官，行人看用神的生克定迟速，病人看用神的衰旺定死生，然后再用独发、独静的那一爻定日期，就常有应验，这才是持平的说法。注：独发独静可以定日期、察事情的应验，若拿它定吉凶，就要审用爻，不可拘执。",
+        "en": "Someone says that a single moving or single still line only gives an omen of good or ill: in seeking wealth it takes a thriving Wealth to have wealth, in seeking office a thriving Pressure to have office; for a traveller the Subject's generation or control fixes how slow or quick, for a sick person the Subject's strength or weakness decides life or death; then use the single moving or still line to fix the date, and it is often verified; this is the balanced account. The note adds: a single moving or still line can fix the date and check how the matter answers, but to use it to fix good or ill one must examine the Subject line and not cling to it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [495, 495],
+          "zh": ["或曰，", "独发独静，止为吉凶告兆也。", "如求财遇财旺而有财，", "求官遇官旺而有官，", "行人遇用神生克而定其迟速，", "病人遇用神衰旺而决其死生，", "然后以独发独静之爻定其时，", "则每有验，", "此为论之中也。"],
+          "yi": ["有人说，", "独发独静，只是给吉凶的兆头。", "比如求财，遇到财旺才有财；", "求官，遇到官旺才有官；", "行人，看用神的生克定它的迟速；", "病人，看用神的衰旺决它的死生；", "然后再用独发、独静的那一爻定它的日期，", "就常有应验，", "这才是持平的说法。"],
+          "en": ["Someone says:", "a single moving or single still line only gives an omen of good or ill.", "In seeking wealth, it takes a thriving Wealth to have wealth;", "in seeking office, a thriving Pressure to have office;", "for a traveller, the Subject's generation or control fixes how slow or quick;", "for a sick person, the Subject's strength or weakness decides life or death;", "and then use the single moving or single still line to fix the date,", "and it is often verified;", "this is the balanced account."] },
+        { "by": "易冒注", "book": "易冒", "range": [496, 496],
+          "zh": ["独发独静可以定时日、察事应，", "若遂以定吉凶，", "则须审用爻，", "不可执也。"],
+          "yi": ["独发、独静可以定日期、察事情的应验，", "如果拿它来定吉凶，", "就必须审看用爻，", "不可拘执。"],
+          "en": ["A single moving or still line can fix the date and check how the matter answers,", "but to use it to fix good or ill,", "one must examine the Subject line", "and not cling to it."] },
+        { "by": "书中例", "book": "易冒", "range": [491, 491],
+          "zh": ["如求财遇否之临而占八，", "乙卯日而得财。"],
+          "yi": ["比如求财，得否卦变临卦，静爻是八，", "在乙卯日得到了财。"],
+          "en": ["Take seeking wealth, getting Pi changing to Lin, with the still line an eight:", "wealth was obtained on a Yi Mao day."] },
+        { "by": "书中例", "book": "易冒", "range": [494, 494],
+          "zh": ["如寅建己亥日占求财，", "得否之临，", "卯财长生，", "兄破不克妻爻，", "主应有财，", "不得于癸卯而得于乙卯者，", "日值干支财也；"],
+          "yi": ["比如寅月己亥日占求财，", "得否卦变临卦，", "卯上的财长生，", "兄弟破了也不克妻爻，", "主应该有财；", "不在癸卯日得而在乙卯日得的，", "是因为乙卯日的日干和日支都值财。"],
+          "en": ["For example, in a Yin month on a Ji Hai day, divining for wealth,", "getting Pi changing to Lin,", "the Wealth at Mao being born,", "and Peer broken and not controlling the Wealth line,", "it means there should be wealth;", "that it came not on a Gui Mao day but on a Yi Mao day", "was because the stem and branch of the Yi Mao day both ruled Wealth."] }
+      ],
+      "note": {
+        "yi": "第三、四段是书里的卦例，只收判断和应验的日子。「占八」是说独静之爻是八（少阴）。两个例子前后出入：第一个只说「乙卯日而得财」，第二个的小注说明为什么不在癸卯日而在乙卯日。",
+        "en": "The third and fourth passages are the book's cases, taken only for the judgement and the day it came true. 'Divined an eight' means the single still line was an eight (lesser yin). The two cases are related: the first says only that wealth came on a Yi Mao day, and the second explains why it came on a Yi Mao day rather than a Gui Mao day."
+      },
+      "see": ["LY.WEALTH.DYTJ.04", "LY.WEALTH.YM.14"]
+    },
+    {
+      "id": "LY.WEALTH.YM.22",
+      "topic": "总则",
+      "chapter": "无鬼章第三十二",
+      "chapter_en": "Chapter 32: No Pressure",
+      "title": "求财无鬼，须分主客：同本而权落他人，空拳而我无遭遇",
+      "rule": {
+        "yi": "求财而卦里没有鬼，要分主客：合本经营的，权落到别人手里；空手求财的，我没有遭遇。",
+        "en": "Seeking wealth with no Pressure in the hexagram, tell host from guest: with jointly held capital the power falls to another, and with empty hands I meet nothing."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [558, 558],
+          "zh": ["求财无鬼，", "须分主客，", "同本而权落他人，", "空拳而我无遭遇也；"],
+          "yi": ["求财而卦里没有鬼，", "要分主客：", "合本经营的，权落到别人手里；", "空手求财的，我没有遭遇。"],
+          "en": ["Seeking wealth with no Pressure in the hexagram,", "tell host from guest:", "with jointly held capital, the power falls to another;", "with empty hands, I meet nothing."] }
+      ],
+      "note": {
+        "yi": "「主客」在这里指出本钱的一方和出力的一方，书里没有明说，这里取此意，不确定。",
+        "en": "'Host and guest' here probably means the party who puts up capital and the party who does the work; the book does not say so plainly and this is a reading, without certainty."
+      },
+      "see": ["LY.WEALTH.DYTJ.17", "LY.WEALTH.TXF.02", "LY.WEALTH.YY.09"]
+    },
+    {
+      "id": "LY.WEALTH.YM.23",
+      "topic": "风险",
+      "chapter": "随墓章第三十五",
+      "chapter_en": "Chapter 35: Following into the tomb",
+      "title": "世墓：求财被溺于狭邪之地",
+      "rule": {
+        "yi": "世爻入墓，求财会被沉溺在声色场所；这一条和占穴的一条，都只说世墓。",
+        "en": "With the Self line in the tomb, one seeking wealth is drowned in the districts of vice; this line and the one about graves speak only of the Self's tomb."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [606, 606],
+          "zh": ["求财被溺于狭邪之地，"],
+          "yi": ["求财，被沉溺在狭邪（声色）之地；"],
+          "en": ["In seeking wealth, one is drowned in the districts of vice;"] }
+      ],
+      "note": {
+        "yi": "下一句是占穴，「或犯夫古塚之尸」；后面的小注说：这两句只说世墓。",
+        "en": "The next line, on divining a grave site, adds 'or one may offend the corpse in an old tomb'; the small note after it says that these two lines speak only of the Self's tomb."
+      },
+      "see": ["LY.WEALTH.DYTJ.20"]
+    },
+    {
+      "id": "LY.WEALTH.YM.24",
+      "topic": "风险",
+      "chapter": "助伤章第三十六",
+      "chapter_en": "Chapter 36: Helping and harming",
+      "title": "助鬼伤身：世爻受鬼克而鬼长生于日；求财有妄求之害",
+      "rule": {
+        "yi": "助鬼伤身，是指世爻被鬼克，而鬼又在日辰长生，就是引祸来害自己；这样的卦，求财有妄求的害处，出行有行险的忧虑。",
+        "en": "'Helping Pressure to harm the Body' means the Self line is controlled by Pressure while Pressure is born on the Day, which is drawing calamity to harm oneself; in such a hexagram, seeking wealth harms through an unwarranted demand, and travelling brings the danger of a risky course."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [614, 614],
+          "zh": ["助鬼伤身，", "以世爻受鬼克，", "而鬼长生于日，", "是为引祸以自害。"],
+          "yi": ["助鬼伤身，", "是指世爻受鬼克，", "而鬼又在日辰长生，", "这就是引祸来害自己。"],
+          "en": ["'Helping Pressure to harm the Body':", "the Self line is controlled by Pressure,", "and Pressure is born on the Day,", "which is drawing calamity to harm oneself."] },
+        { "by": "经", "book": "易冒", "range": [622, 622],
+          "zh": ["求财有妄求之害，", "出行有行险之虞；"],
+          "yi": ["求财，有妄求的害处；", "出行，有行险的忧虑；"],
+          "en": ["in seeking wealth, the harm of an unwarranted demand;", "in travelling, the danger of a risky course;"] }
+      ],
+      "note": {
+        "yi": "第二段出自一长串「占……」的清单，本库只取求财、出行两句。",
+        "en": "The second passage is from a long list of 'divining such-and-such' clauses, of which this library takes only the two on wealth and travel."
+      },
+      "see": ["LY.WEALTH.DYTJ.22", "LY.WEALTH.YM.10"]
+    },
+    {
+      "id": "LY.WEALTH.YM.25",
+      "topic": "畜养渔猎",
+      "chapter": "畜养章第六十八",
+      "chapter_en": "Chapter 68: Raising animals",
+      "title": "畜养：求物的身命用子孙，以物取利用妻财",
+      "rule": {
+        "yi": "禽兽这类东西，以子孙为其所属，因为它是积蓄利的来源；有时用财，有时用子，办法有两种：求这只动物自己的身命，用子孙；靠这只动物取利，用财。",
+        "en": "Creatures are assigned to Output because it is the source that stores up profit; sometimes Wealth is used and sometimes Output, and there are two methods: to seek the animal's own body and life, use Output; to take profit through the animal, use Wealth."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1556, 1556],
+          "zh": ["夫禽兽之物，以子孙为属者，以其蓄利之源也。", "或用于财，或用于子，", "其法有二：", "盖求物身命则用子，", "以物取利则用财。"],
+          "yi": ["禽兽这类东西，以子孙为其所属，是因为它是积蓄利的来源。", "有时用财，有时用子，", "办法有两种：", "求这只动物自己的身命，用子孙；", "靠这只动物取利，用财。"],
+          "en": ["Creatures are assigned to Output, because it is the source that stores up profit.", "Sometimes Wealth is used and sometimes Output,", "and there are two methods:", "to seek the animal's own body and life, use Output;", "to take profit through the animal, use Wealth."] }
+      ],
+      "see": ["LY.WEALTH.YM.31", "LY.WEALTH.DYTJ.47"]
+    },
+    {
+      "id": "LY.WEALTH.YM.26",
+      "topic": "畜养渔猎",
+      "chapter": "畜养章第六十八",
+      "chapter_en": "Chapter 68: Raising animals",
+      "title": "畜养忌官鬼（物之灾）、白虎（物之屠）",
+      "rule": {
+        "yi": "卦属、爻属、生属，都载在五行里，要考察；官鬼是物的灾，白虎是物的屠，占畜养都忌。注：官鬼是疾病，白虎是刀砧，都忌。",
+        "en": "The hexagram's kind, the line's kind and the birth kind are all recorded in the five phases and are to be examined; Pressure is the animal's calamity and the White Tiger its slaughter, and both are avoided in divining raising animals. The note adds: Pressure is illness and the White Tiger is knife and block; both are to be avoided."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1557, 1557],
+          "zh": ["卦属爻属生属，而载于五行者察之，", "官鬼之神，是为物之灾也，", "白虎之煞，是为物之屠也，", "畜养之筮忌之。"],
+          "yi": ["卦属、爻属、生属，载在五行里的，要考察；", "官鬼这个神，是物的灾；", "白虎这个煞，是物的屠；", "占畜养的，忌这两样。"],
+          "en": ["The hexagram's kind, the line's kind and the birth kind, recorded in the five phases, are to be examined;", "Pressure is the animal's calamity;", "the White Tiger is its slaughter;", "in divining raising animals, both are avoided."] },
+        { "by": "易冒注", "book": "易冒", "range": [1558, 1558],
+          "zh": ["官鬼为疾，", "白虎为刀砧，", "并忌。"],
+          "yi": ["官鬼是疾病，", "白虎是刀砧，", "两样都要忌讳。"],
+          "en": ["Pressure is illness,", "the White Tiger is knife and block,", "and both are avoided."] }
+      ],
+      "see": ["LY.WEALTH.DYTJ.48", "LY.WEALTH.DYTJ.51"]
+    },
+    {
+      "id": "LY.WEALTH.YM.27",
+      "topic": "畜养渔猎",
+      "chapter": "畜养章第六十八",
+      "chapter_en": "Chapter 68: Raising animals",
+      "title": "牧马牧牛：鬼不动于乾坤宫、不入五六爻、不现丑午位，再看子孙衰旺；耕牛厩马纵病不屠，白虎无拘",
+      "rule": {
+        "yi": "牧马牧牛，鬼不能在乾、坤宫发动，不能入五、六爻，不能现在丑、午的位置，然后看子孙的衰旺，白虎就不用拘忌，因为耕牛、马厩里的马，即使生病也不会被屠宰。",
+        "en": "In herding horses and oxen, Pressure must not move in the Qian or Kun palace, must not enter the fifth or sixth line, and must not show at the Chou or Wu position; then look at the strength or weakness of Output, and the White Tiger need not be feared, since a working ox or a stabled horse, even if it falls ill, is not slaughtered."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1559, 1559],
+          "zh": ["是故牧马牧牛，", "鬼不可动于乾坤之宫，", "鬼不可入于五六之爻，", "鬼不可现于丑午之位，", "然后考子孙之衰旺，", "而白虎无拘，", "盖耕牛厩马，纵病而弗屠也。"],
+          "yi": ["牧马、牧牛，", "鬼不能在乾、坤宫发动，", "鬼不能入五爻、六爻，", "鬼不能现在丑、午的位置，", "然后再看子孙的衰旺，", "白虎就不用拘忌，", "因为耕牛、马厩里的马，即使生病也不会被屠宰。"],
+          "en": ["In herding horses and oxen,", "Pressure must not move in the Qian or Kun palace,", "must not enter the fifth or sixth line,", "and must not show at the Chou or Wu position;", "then look at the strength or weakness of Output,", "and the White Tiger need not be feared,", "since a working ox or a stabled horse, even if it falls ill, is not slaughtered."] }
+      ],
+      "see": ["LY.WEALTH.DYTJ.48", "LY.WEALTH.HZL.15"]
+    },
+    {
+      "id": "LY.WEALTH.YM.28",
+      "topic": "畜养渔猎",
+      "chapter": "畜养章第六十八",
+      "chapter_en": "Chapter 68: Raising animals",
+      "title": "鸡鸭鸟鹅以子孙为物身：旺肥衰瘠，空散则亡，破绝则死；初爻是其位、酉是其命，忌鬼犯；虎为宰、鬼为疾，不可动",
+      "rule": {
+        "yi": "鸡、鸭、鸟、鹅这类，以子孙为它们的身：旺则肥，衰则瘦，空散则亡，破绝则死；初爻是它们的位，酉是它们的命，都忌鬼来犯；虎是它们的屠宰，鬼是它们的疾病，都不可发动。注：这是说畜禽的消长肥瘦；如果是贩鸡养鸭，求财就要以财神为用。",
+        "en": "Chickens, ducks, birds and geese take Output as their body: thriving they grow fat, weak they grow thin, Void or scattered they die out, broken or cut off they die; the first line is their place and You is their natal branch, and both dislike being offended by Pressure; the Tiger is their slaughterer and Pressure their illness, and neither may move. The note adds: this speaks of how creatures grow or shrink, fat or lean; if the business is hawking chickens and raising ducks for money, take the Wealth spirit as the Subject."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1561, 1562],
+          "zh": ["鸡鸭鸟鹅之属，则以子孙为物身，", "旺肥衰瘠，", "空散则亡，破绝则死也。", "初爻是其位也，", "酉是其命也，", "皆忌鬼犯；", "虎为其宰，鬼为其疾，皆不可动。"],
+          "yi": ["鸡鸭鸟鹅这类，以子孙为它们的身：", "旺就肥，衰就瘦，", "空散就亡，破绝就死。", "初爻是它们的位，", "酉是它们的命，", "都忌鬼来犯；", "虎是它们的屠宰，鬼是它们的疾病，都不可发动。"],
+          "en": ["Chickens, ducks, birds and geese take Output as their body:", "thriving they grow fat, weak they grow thin,", "Void or scattered they die out, broken or cut off they die.", "The first line is their place,", "You is their natal branch,", "and both dislike being offended by Pressure;", "the Tiger is their slaughterer and Pressure their illness, and neither may move."] },
+        { "by": "易冒注", "book": "易冒", "range": [1563, 1563],
+          "zh": ["此言畜禽消长肥瘠。", "若贩鸡哺鸭，", "求财当以财神为用。"],
+          "yi": ["这是说畜禽的消长、肥瘦；", "如果是贩鸡养鸭，", "求财就要以财神为用。"],
+          "en": ["This speaks of how creatures grow or shrink, fat or lean;", "if the business is hawking chickens and raising ducks,", "for money take the Wealth spirit as the Subject."] }
+      ],
+      "note": {
+        "yi": "「酉是其命」的「酉」是鸡的生肖地支。",
+        "en": "The 'You' in 'You is their natal branch' is the branch of the chicken."
+      },
+      "see": ["LY.WEALTH.DYTJ.47", "LY.WEALTH.HZL.15"]
+    },
+    {
+      "id": "LY.WEALTH.YM.29",
+      "topic": "畜养渔猎",
+      "chapter": "畜养章第六十八",
+      "chapter_en": "Chapter 68: Raising animals",
+      "title": "猫犬彘豕羊鹿：鬼依二三四爻、寅午未戌亥位为凶，发于坎兑艮宫不利；子孙喜旺，白虎喜宁",
+      "rule": {
+        "yi": "猫、犬、猪、羊、鹿这类，没有不以鬼依在二、三、四爻和寅、午、未、戌、亥位为凶的，鬼发在坎、兑、艮宫也不利，而子孙喜欢旺，白虎喜欢宁静。注：二爻是猫犬，三爻是猪，四爻是羊鹿，寅是猫、午是鹿之类。",
+        "en": "For cats, dogs, pigs, sheep and deer, Pressure resting on the second, third or fourth line, or on the Yin, Wu, Wei, Xu or Hai positions, is always ominous, and Pressure moving in the Kan, Dui or Gen palace is unfavourable, while Output likes to be thriving and the White Tiger likes to be quiet. The note adds: the second line is cats and dogs, the third pigs, the fourth sheep and deer, and Yin is the cat and Wu the deer, and so on."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1564, 1564],
+          "zh": ["猫犬彘豕羊鹿者，", "莫不以鬼依二三四爻、寅午未戌亥之位为凶，", "发于坎兑艮之宫为不利，", "而子孙喜旺、白虎喜宁也。"],
+          "yi": ["猫、犬、猪、羊、鹿这类，", "没有不以鬼依在二、三、四爻和寅、午、未、戌、亥位为凶的，", "鬼发在坎、兑、艮宫也不利，", "而子孙喜欢旺，白虎喜欢宁静。"],
+          "en": ["For cats, dogs, pigs, sheep and deer,", "Pressure resting on the second, third or fourth line, or on the Yin, Wu, Wei, Xu or Hai positions, is always ominous;", "Pressure moving in the Kan, Dui or Gen palace is unfavourable,", "while Output likes to be thriving and the White Tiger likes to be quiet."] },
+        { "by": "易冒注", "book": "易冒", "range": [1565, 1565],
+          "zh": ["二爻猫犬，", "三爻彘豕，", "四爻羊鹿，", "寅猫午鹿之属是也。"],
+          "yi": ["二爻是猫犬，", "三爻是猪，", "四爻是羊鹿，", "寅是猫、午是鹿之类都是。"],
+          "en": ["The second line is cats and dogs,", "the third is pigs,", "the fourth is sheep and deer,", "and Yin is the cat and Wu the deer, and so on."] }
+      ],
+      "see": ["LY.WEALTH.DYTJ.47", "LY.WEALTH.DYTJ.48"]
+    },
+    {
+      "id": "LY.WEALTH.YM.30",
+      "topic": "畜养渔猎",
+      "chapter": "畜养章第六十八",
+      "chapter_en": "Chapter 68: Raising animals",
+      "title": "养鱼养鸟斗虫畜牝：以财考、以利求、以息问，还要计其时",
+      "rule": {
+        "yi": "鬼守在亥，鱼必消亡；鬼困在申，猴要死；所以养鱼要拿财来考察，养黄鸟、斗虫要拿利来求，畜养母畜要拿息（生息）来问，还要计算它的时节。注：不只以财为用，还要考察得利的时候，如夏天养、秋天斗，就喜金财。",
+        "en": "With Pressure guarding Hai, the fish must dwindle; with it trapped at Shen, the monkey dies; so in raising fish look by Wealth, in keeping orioles and fighting insects seek by profit, in keeping breeding stock ask by its increase, and reckon the season besides. The note adds: not only Wealth is the Subject; one must also examine the time the profit comes, so that raising in summer for fighting in autumn favours Metal Wealth."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1566, 1566],
+          "zh": ["夫鬼守于亥者鱼必消，", "困于申者猴死，", "所以养鱼而信以财考，", "养黄鸟斗虫而信以利求，", "畜牝而今以息问也，", "当复计其时尔。"],
+          "yi": ["鬼守在亥，鱼必消亡；", "鬼困在申，猴要死；", "所以养鱼，要凭财来考察，", "养黄鸟、斗虫，要凭利来求，", "畜养母畜，如今要凭息来问，", "还要再计算它的时节。"],
+          "en": ["With Pressure guarding Hai, the fish must dwindle;", "with it trapped at Shen, the monkey dies;", "so in raising fish, examine by Wealth;", "in keeping orioles and fighting insects, seek by profit;", "in keeping breeding stock, ask now by its increase;", "and reckon the season besides."] },
+        { "by": "易冒注", "book": "易冒", "range": [1567, 1567],
+          "zh": ["不惟以财为用，", "复当考其获利之时，", "如夏畜秋斗则喜金财。"],
+          "yi": ["不只是以财为用，", "还要考察得利的时候，", "比如夏天养、秋天斗，就喜欢金财。"],
+          "en": ["Not only is Wealth the Subject;", "one must also examine the time the profit comes,", "so that raising in summer for fighting in autumn favours Metal Wealth."] }
+      ],
+      "see": ["LY.WEALTH.YL.56", "LY.WEALTH.DYTJ.54"]
+    },
+    {
+      "id": "LY.WEALTH.YM.31",
+      "topic": "畜养渔猎",
+      "chapter": "畜养章第六十八",
+      "chapter_en": "Chapter 68: Raising animals",
+      "title": "卜禽兽肥瘠死生，专说物之身，用子孙；若以畜养待趋利，专说人之得，用妻财",
+      "rule": {
+        "yi": "占禽兽的肥瘦生死，是专说动物自身，务必用子孙；如果是靠畜养禽兽来等着获利，是专说人的所得，就务必用妻财。",
+        "en": "In divining whether animals are fat or lean, alive or dead, one speaks solely of the animal itself and must use Output; if one keeps animals in order to wait for profit, one speaks solely of the person's gain and must use Wealth."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1568, 1568],
+          "zh": ["是故卜禽兽之肥瘠死生者，专物之身而言也，务用子孙；", "若以禽兽之畜养而待趋利者，专人之得而言也，因曰务用妻财。"],
+          "yi": ["占禽兽的肥瘦、生死，是专说动物自身，务必用子孙；", "如果是靠畜养禽兽等着获利，是专说人的所得，就说务必用妻财。"],
+          "en": ["In divining whether animals are fat or lean, alive or dead, one speaks solely of the animal itself and must use Output;", "if one keeps animals to wait for profit, one speaks solely of the person's gain, and so it is said one must use Wealth."] }
+      ],
+      "see": ["LY.WEALTH.YM.25", "LY.WEALTH.DYTJ.51"]
+    },
+    {
+      "id": "LY.WEALTH.YM.32",
+      "topic": "借贷",
+      "chapter": "出纳章第七十二",
+      "chapter_en": "Chapter 72: Paying out and taking in",
+      "title": "出纳之分：我给人叫出、我受人叫纳；我业当出，卦冲财坏毋留；我货当出，卦冲财旺及时；当纳反是",
+      "rule": {
+        "yi": "出和纳的交易，兼看人和己：我给人叫出，我接受人叫纳，问对方弃也算出，问对方受也算纳。所以我的产业当出，卦冲财坏就不必留；我的房子当出，卦冲、鬼动、内坏就不是我住的；我的货当出，卦冲财旺就及时；该纳的则相反。",
+        "en": "In dealings of paying out and taking in, consider both the other person and oneself: what I give to another is 'out', what I receive from another is 'in', and asking whether the other gives up counts as out, asking whether the other receives counts as in. So when my estate is to go out, a clash in the hexagram and Wealth spoiled means there is no need to keep it; when my house is to go out, a clash, Pressure moving and the inner spoiled means it is not mine to live in; when my goods are to go out, a clash and Wealth thriving means it is timely; for what is to come in it is the reverse."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1606, 1606],
+          "zh": ["出纳之交，兼参人己，", "我与人曰出，", "我受人曰纳，", "问彼弃亦为出，", "问彼受亦为纳也。"],
+          "yi": ["出纳的交易，兼看人和己：", "我给人叫作出，", "我接受人叫作纳，", "问对方弃，也算出；", "问对方受，也算纳。"],
+          "en": ["In dealings of paying out and taking in, consider both the other person and oneself:", "what I give to another is 'out',", "what I receive from another is 'in',", "asking whether the other gives up counts as out,", "asking whether the other receives counts as in."] },
+        { "by": "经", "book": "易冒", "range": [1607, 1607],
+          "zh": ["是以我业当出，卦冲财坏而毋留，", "我屋当出，卦冲鬼动内坏而非我居，", "其货当出，卦冲财旺而及时，", "当纳而反是。"],
+          "yi": ["所以我的产业当出，卦冲、财坏，就不必留；", "我的房子当出，卦冲、鬼动、内坏，就不是我住的；", "我的货当出，卦冲、财旺，就及时；", "该纳的则相反。"],
+          "en": ["So when my estate is to go out, a clash in the hexagram and Wealth spoiled means there is no need to keep it;", "when my house is to go out, a clash, Pressure moving and the inner spoiled means it is not mine to live in;", "when my goods are to go out, a clash and Wealth thriving means it is timely;", "for what is to come in it is the reverse."] }
+      ],
+      "see": ["LY.WEALTH.YM.33", "LY.WEALTH.YM.37"]
+    },
+    {
+      "id": "LY.WEALTH.YM.33",
+      "topic": "难易",
+      "chapter": "出纳章第七十二",
+      "chapter_en": "Chapter 72: Paying out and taking in",
+      "title": "问对方脱不脱、纳不纳：应实父完则屋脱，应实财完则业与货脱；贞冲、应动、应坏则不纳",
+      "rule": {
+        "yi": "问对方的房子能不能脱手，应爻充实、父母爻完好就脱得了；问对方的产业和货能不能脱手，应爻充实、财爻完好就脱得了；问对方肯不肯接受，贞卦逢冲、应爻发动、应爻坏了，就不接受。",
+        "en": "Whether the other side's house can be sold: with the Other solid and Resource intact it sells; whether the other side's estate and goods can be sold: with the Other solid and Wealth intact they sell; whether the other side will accept: a Zhen hexagram that meets a clash, the Other moving or the Other spoiled means he will not accept."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1609, 1610],
+          "zh": ["筮彼屋脱否，应实父完则脱。", "彼业与货脱否，应实财完则脱。", "筮彼纳否，贞冲、应动、应坏则不纳也。"],
+          "yi": ["问对方的房子脱得了脱不了，应爻充实、父母爻完好就脱得了；", "问对方的产业和货脱得了脱不了，应爻充实、财爻完好就脱得了；", "问对方肯不肯接受，贞卦逢冲、应动、应坏，就不接受。"],
+          "en": ["Whether the other side's house can be sold: with the Other solid and Resource intact, it sells;", "whether the other side's estate and goods can be sold: with the Other solid and Wealth intact, they sell;", "whether the other side will accept: a Zhen hexagram that meets a clash, the Other moving or the Other spoiled means he will not accept."] }
+      ],
+      "see": ["LY.WEALTH.YM.32"]
+    },
+    {
+      "id": "LY.WEALTH.YM.34",
+      "topic": "风险",
+      "chapter": "出纳章第七十二",
+      "chapter_en": "Chapter 72: Paying out and taking in",
+      "title": "欲纳其物而无祸，类防讼；欲纳而无争，戒应克",
+      "rule": {
+        "yi": "想接受他的东西而不遭祸，要像防打官司那样防；想接受而不起争执，要戒应爻克世。注：随墓、助伤、鬼动、官克世，是有祸；应克世，是有争。",
+        "en": "To take in his goods without misfortune, guard as one guards against a lawsuit; to take them in without dispute, beware of the Other controlling the Self. The note adds: following into the tomb, helping to harm, Pressure moving or Pressure controlling the Self means misfortune; the Other controlling the Self means dispute."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1611, 1611],
+          "zh": ["欲纳其物而无祸者，类防讼也，", "欲纳其物而无争者，戒应克也。"],
+          "yi": ["想接受他的东西而不遭祸的，要像防打官司一样防；", "想接受而不起争执的，要戒应爻克世。"],
+          "en": ["To take in his goods without misfortune, guard as one guards against a lawsuit;", "to take them in without dispute, beware of the Other controlling the Self."] },
+        { "by": "易冒注", "book": "易冒", "range": [1612, 1612],
+          "zh": ["随墓助伤、鬼动官克谓有祸，", "应克世谓有争。"],
+          "yi": ["随墓、助伤、鬼动、官克世，是说有祸；", "应克世，是说有争。"],
+          "en": ["Following into the tomb, helping to harm, Pressure moving or Pressure controlling the Self means misfortune;", "the Other controlling the Self means dispute."] }
+      ],
+      "see": ["LY.WEALTH.YM.32"]
+    },
+    {
+      "id": "LY.WEALTH.YM.35",
+      "topic": "难易",
+      "chapter": "出纳章第七十二",
+      "chapter_en": "Chapter 72: Paying out and taking in",
+      "title": "脱产而图更置，世空父坏则不得；脱货而财不耗，财实则不散",
+      "rule": {
+        "yi": "想卖掉产业、另外置办的，世空、父母爻坏了就办不成；想卖掉货而钱不耗散的，财爻充实就不散。",
+        "en": "One who wants to sell an estate and lay in another cannot if the Self is Void or Resource spoiled; one who wants to sell goods without the money being wasted will not lose it if Wealth is solid."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1613, 1613],
+          "zh": ["欲脱其产，而图更置者，世空父坏则不得也，", "欲脱其货而财不耗者，财实则不散也。"],
+          "yi": ["想脱手产业、又想另外置办的，世空、父母爻坏了，就办不成；", "想脱手货物而钱又不耗散的，财爻充实就不会散。"],
+          "en": ["One who wants to sell an estate and lay in another cannot if the Self is Void or Resource spoiled;", "one who wants to sell goods without the money being wasted will not lose it if Wealth is solid."] }
+      ],
+      "see": ["LY.WEALTH.YM.33"]
+    },
+    {
+      "id": "LY.WEALTH.YM.36",
+      "topic": "难易",
+      "chapter": "出纳章第七十二",
+      "chapter_en": "Chapter 72: Paying out and taking in",
+      "title": "送物求纳：六冲、应动、应坏则不纳；财化退不纳财货，子化退不纳牲禽；应克世，空破则怒挥，静实则罄而不报",
+      "rule": {
+        "yi": "送东西求人接受：六冲、应动、应坏，就不接受；财化退，就不收钱财货物；子孙化退，就不收牲畜禽鸟；如果应克世，应空破，对方发怒挥手赶走，应安静充实，则收下一空而不回报。注：父母化退不受书信文书，官鬼化退不受图像，兄弟化退不受成双成对的东西。",
+        "en": "Sending a gift and asking it be accepted: a Six-Clash hexagram, the Other moving or the Other spoiled means it will not be accepted; Wealth changing into a retreating spirit means money and goods are not taken; Output changing into a retreating spirit means livestock and birds are not taken; if the Other controls the Self, with the Other Void or broken he angrily waves it away, and if quiet and solid he takes it all and gives nothing back. The note adds: Resource changing into a retreating spirit does not accept letters and documents, Pressure does not accept pictures, and Peer does not accept things in pairs."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1614, 1614],
+          "zh": ["筮送物求纳，", "六冲、应动、应坏则不纳也，", "财化退而不纳财货，", "子化退而不纳牲禽，", "若应克世者，", "空破则怒麾，", "静实则罄，", "收而不报也。"],
+          "yi": ["送东西求人接受：", "六冲、应动、应坏，就不接受；", "财化退，就不收钱财货物；", "子孙化退，就不收牲畜禽鸟；", "如果应克世，", "应空破，就发怒挥手赶走；", "安静充实，就全部收光，", "收下了却不回报。"],
+          "en": ["Sending a gift and asking it be accepted:", "a Six-Clash hexagram, the Other moving or the Other spoiled means it will not be accepted;", "Wealth changing into a retreating spirit, money and goods are not taken;", "Output changing into a retreating spirit, livestock and birds are not taken;", "if the Other controls the Self,", "with the Other Void or broken he angrily waves it away;", "quiet and solid, he takes the lot,", "and takes it without repaying."] },
+        { "by": "易冒注", "book": "易冒", "range": [1615, 1615],
+          "zh": ["父母退不受书文，", "官鬼退不受图像，", "兄弟退不受双对物也。"],
+          "yi": ["父母化退，不受书信文书；", "官鬼化退，不受图像；", "兄弟化退，不受成双成对的东西。"],
+          "en": ["Resource changing into a retreating spirit does not accept letters and documents;", "Pressure does not accept pictures;", "and Peer does not accept things in pairs."] }
+      ],
+      "note": {
+        "yi": "「收而不报」「罄」等字，原文没有解释，这里照字面译。",
+        "en": "The words for 'take it and give nothing back' and 'exhaust' are not explained in the original and are translated literally."
+      },
+      "see": ["LY.WEALTH.YM.32"]
+    },
+    {
+      "id": "LY.WEALTH.YM.37",
+      "topic": "总则",
+      "chapter": "出纳章第七十二",
+      "chapter_en": "Chapter 72: Paying out and taking in",
+      "title": "出纳之分：出利交重、不嫌用坏；纳利用变、卦喜静生",
+      "rule": {
+        "yi": "大抵出的时候，利在爻交重，不嫌用神坏；纳的时候，利在用神变，卦喜欢静而生；这就是出与纳的区别。",
+        "en": "In general, when paying out the gain lies in the lines being doubled and there is no objection to a spoiled Subject; when taking in the gain lies in the Subject changing, and the hexagram likes to be still and generating; this is the difference between out and in."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1616, 1616],
+          "zh": ["大抵出利交重，", "不嫌用坏，", "纳利用变，", "卦喜静生，", "此出纳之分也。"],
+          "yi": ["大抵出的时候，利在爻交重，", "不嫌用神坏；", "纳的时候，利在用神变，", "卦喜欢静而生；", "这就是出与纳的区别。"],
+          "en": ["In general, when paying out, the gain lies in the lines being doubled,", "with no objection to a spoiled Subject;", "when taking in, the gain lies in the Subject changing,", "and the hexagram likes to be still and generating;", "this is the difference between out and in."] }
+      ],
+      "note": {
+        "yi": "这一句里「用」指用神，原文写作「用」。",
+        "en": "In this sentence 'use' means the Subject."
+      },
+      "see": ["LY.WEALTH.YM.32"]
+    },
+    {
+      "id": "LY.WEALTH.YM.38",
+      "topic": "借贷",
+      "chapter": "取质章第七十三",
+      "chapter_en": "Chapter 73: Redeeming pledges",
+      "title": "平交取质：先审用爻；舟车房屋服御用父，土田货贝宝玩用财，禽兽用子孙；应克世有攘心，贞合冲、世应空无成，官虚用坏难全归",
+      "rule": {
+        "yi": "有东西押在别人那里去取回，何必起卦？因为世道到了末世，人情物情难测，所以卜吉再去，先审用爻：人看六亲，物随用象；舟车、房屋、服御这类多用父，土田、货贝、宝玩多用财，禽兽这类有生气的多用子孙；平常交往的取质，应克世，对方有侵占的心；贞卦合了又冲、世应空，就办不成；官虚、用神坏，怎能全数取回。",
+        "en": "When there is a pledge to be redeemed, why bother to cast? Because in a late age the feelings of people and things are hard to fathom, so one divines the auspicious time before going, and first examines the Subject line: for people look to the six relations, for things follow the image of the Subject; for boats, carts, houses and daily articles mostly use Resource, for land, goods, cowries, treasures and curios mostly use Wealth, and for living creatures mostly use Output; in an ordinary redemption, the Other controlling the Self means he has a mind to seize it, a Zhen hexagram that combines and then clashes, or the Self and Other Void, means it cannot be done, and with Pressure empty and the Subject spoiled how could it be fully returned."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1621, 1621],
+          "zh": ["有质而取，何用揲筮，", "事在季世，物情难测，", "则卜吉而往，先审用爻。"],
+          "yi": ["有东西押在别人那里要取回，何必用蓍草起卦？", "只因事在末世，人情物情难测，", "所以卜到吉再去，先审用爻。"],
+          "en": ["When there is a pledge to be redeemed, why bother to cast the stalks?", "It is only that in a late age the feelings of people and things are hard to fathom,", "so one divines the auspicious time before going, and first examines the Subject line."] },
+        { "by": "经", "book": "易冒", "range": [1622, 1622],
+          "zh": ["人以六亲，物随用象，", "凡舟车房屋服御之物多用父，", "凡土田货贝宝玩之具多用财，", "凡禽兽生动之类多用子孙。", "平交取质，", "应克世而有攘心，", "贞合冲、世应空而无成事，", "官虚、用坏岂得全归。"],
+          "yi": ["人看六亲，物随用象：", "舟车、房屋、服御之物多用父，", "土田、货贝、宝玩之具多用财，", "禽兽这类有生气的多用子孙。", "平常交往的取质，", "应克世，对方有侵占的心；", "贞卦合了又冲、世应空，就办不成；", "官虚、用坏，怎么能全数取回。"],
+          "en": ["For people look to the six relations, for things follow the image of the Subject:", "for boats, carts, houses and daily articles mostly use Resource,", "for land, goods, cowries, treasures and curios mostly use Wealth,", "for living creatures mostly use Output.", "In an ordinary redemption,", "the Other controlling the Self means he has a mind to seize it;", "a Zhen hexagram that combines and then clashes, or the Self and Other Void, means it cannot be done;", "with Pressure empty and the Subject spoiled, how could it be fully returned."] }
+      ],
+      "note": {
+        "yi": "第一段里「事在季世」的「季世」是衰乱之世，这里译作「末世」。",
+        "en": "'Ji shi' in the first passage means a declining, disordered age and is rendered 'a late age'."
+      },
+      "see": ["LY.WEALTH.YL.45", "LY.WEALTH.YM.07"]
+    },
+    {
+      "id": "LY.WEALTH.YM.39",
+      "topic": "风险",
+      "chapter": "取质章第七十三",
+      "chapter_en": "Chapter 73: Redeeming pledges",
+      "title": "劫质：先考用象安危，再察官应生克；鬼兴难脱虎穴，随助或陷泥犁；用神生扶有归期；忌克世，最喜官空",
+      "rule": {
+        "yi": "被劫持押住的质：又和平常交往不同，先考用象的安危，后察官和应的生克；鬼兴旺就难脱虎穴，随墓、助伤就可能陷入地狱；所以人和物的存亡看用神就能知道，回来的日子，用神有生扶就有期。大抵质押的情理兼有交与的意思，所以忌讳克世；被劫持的形势像遭难，最喜官空。",
+        "en": "For a pledge held by force, it differs from an ordinary redemption: first examine the image of the Subject for safety or danger, then examine how Pressure and the Other generate or control; Pressure thriving makes it hard to escape the tiger's den, and following into the tomb or helping to harm may drop one into hell; so whether people and things survive can be seen from the Subject, and the day of return is fixed when the Subject is generated and supported. In general a pledge involves both handing over and receiving, so the Self being controlled is avoided; being held by force is like meeting misfortune, and Pressure Void is most welcome."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1623, 1623],
+          "zh": ["若驱掳劫质，又异平交，", "先考用象，安危，后察官应生克。", "鬼兴而难脱虎穴，", "随助而或陷泥犁，", "故人物存亡察用神而可见，", "来归时日，用生扶而有期。"],
+          "yi": ["被驱赶掳掠劫持押住的质，又和平常交往不同，", "先考察用象的安危，后察官和应的生克。", "鬼兴旺，就难脱虎穴；", "随墓、助伤，或者陷入地狱；", "所以人和物的存亡，看用神就能知道；", "回来的日子，用神有生扶就有期。"],
+          "en": ["For a pledge taken by force, it differs from an ordinary redemption:", "first examine the image of the Subject for safety or danger, then examine how Pressure and the Other generate or control.", "With Pressure thriving, it is hard to escape the tiger's den;", "with following into the tomb or helping to harm, one may drop into hell;", "so whether people and things survive can be seen from the Subject;", "the day of return is fixed when the Subject is generated and supported."] },
+        { "by": "经", "book": "易冒", "range": [1624, 1624],
+          "zh": ["大抵信质情兼交与，", "故忌克世，", "劫质势比蒙难，", "最喜官空，", "此其分也。"],
+          "yi": ["大抵质押的情理兼有交与的意思，", "所以忌讳克世；", "被劫持的形势像遭难，", "最喜欢官空，", "这就是两者的区别。"],
+          "en": ["In general a pledge involves both handing over and receiving,", "so the Self being controlled is avoided;", "being held by force is like meeting misfortune,", "and Pressure Void is most welcome;", "this is the difference between the two."] }
+      ],
+      "see": ["LY.WEALTH.YM.38"]
+    }
+  ]
+}

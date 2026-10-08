@@ -1,0 +1,248 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易冒",
+  "chapter": "军机章第四十三(上)",
+  "chapter_en": "Chapter 43: Military affairs (part 1)",
+  "ranges": {"易冒": [833, 855]},
+  "units": [
+    {
+      "id": "LY.CAREER.YM.11",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机总纲：国事莫大于用兵，出师之要先分彼我、专以世应为凭；统论安攘以福鬼而断——世为我应为敌、喜世强而制应，福为兵鬼为寇、宜旺而克官；世克应则胜、应克世则负、比和则胜负相等，世坏虽克应亦曳甲而归、应坏虽克世亦夺旗而返",
+      "rule": {
+        "yi": "国事再大，没有比用兵更大的，古代圣王对它很慎重：是尽人力来应天功，也曾用蓍草来谋划（对外之事）。出师的要点，是先分清彼此，形成主客，专以世应为凭据。统论安内攘外，就用福神和官鬼来断：世是我、应是敌，喜欢世强而制住应；福是兵、鬼是寇，宜福旺而克住官鬼，朝廷谋划的胜负在这里就看得出来了。兵占先看世应：世克应就胜，应克世就负，世应比和就胜负相等；世生应的，我方怯弱；应生世的，对方退让。再看子孙是我的兵，旺相发动就勇往直前，休囚空破就不能奋进；官鬼是对方的贼寇，旺相就强横，休囚就溃散。如果世坏，即使克应、动子孙，也只能抛甲而归；如果应坏，即使克世、动官鬼，也夺旗而返。",
+        "en": "Of all affairs of state none is greater than the use of troops, and the sage kings of old were careful about it: one exhausts what men can do to answer Heaven's work, and has also consulted the stalks when planning matters outside. The essential in sending out troops is first to distinguish them from us, to form host and guest, and to rely wholly on the Self and the Other. In judging both pacification and repelling, decide by Output and Pressure: the Self is me and the Other is the enemy, and one is glad for the Self to be strong and to control the Other; Output is the troops and Pressure is the bandits, and it is fitting for Output to be thriving and to control Pressure, and the court's planning of victory and defeat is seen in this. In divining about the army, first look at the Self and the Other: if the Self controls the Other one wins, if the Other controls the Self one loses, and if the Self and the Other are in accord, victory and defeat are even; if the Self generates the Other, my side is timid; if the Other generates the Self, the other side gives way. Then look at Output as my troops: if thriving and moving they press bravely forward, if resting, imprisoned, Void or broken they cannot press on; Pressure is the other side's bandits: if thriving they are violent and overbearing, if resting or imprisoned they are routed. If the Self is damaged, even if one controls the Other and moves Output one can only drag one's armour and come home; if the Other is damaged, even if it controls the Self and one moves Pressure, one still seizes their banner and returns."
+      },
+      "quotes": [
+        { "by": "易冒注", "book": "易冒", "range": [835, 835],
+          "zh": ["内详立营、攻守、水陆迟速、遣将用计、拜将、用间，问守、问战、问款、问降时日，防守、防刺、行刺、内应、火攻、因粮讨战沿剿，求援、求济、救援、守城、敌来被困等问"],
+          "yi": ["本章细讲立营、攻守、水陆迟速、遣将用计、拜将、用间，问守、问战、问款、问降的时日，防守、防刺、行刺、内应、火攻、因粮讨战沿剿，求援、求济、救援、守城、敌来被困等问。"],
+          "en": ["This chapter treats in detail setting up camp, attack and defence, the speed of land and water movement, sending out commanders and using stratagems, appointing a general, using spies, the times for asking about defence, battle, truce and surrender, defence, guarding against assassins, carrying out assassination, inside collaborators, attack by fire, taking provisions and fighting along the way, asking for relief and aid, rescue, defending a city, and the enemy coming and one being besieged."] },
+        { "by": "经", "book": "易冒", "range": [836, 836],
+          "zh": ["国事之大，莫大于用兵，古圣王慎之，盖尽人力以应天功，亦尝谋于蓍而作外也。", "出师之要，先分彼我，形成主客，专以世应为凭。", "统论安攘，则以福鬼而断，世为我，应为敌，喜世强而制应；", "福为兵，鬼为寇，宜于旺而克官，庙算胜负于是见矣。"],
+          "yi": ["国事再大，没有比用兵更大的，古代圣王对它很慎重：是尽人力来应天功，也曾用蓍草来谋划对外之事。", "出师的要点，先分清彼此，形成主客，专以世应为凭据。", "统论安内攘外，就用福神和官鬼来断：世是我，应是敌，喜欢世强而制住应；", "福是兵，鬼是寇，宜福旺而克住官鬼，朝廷谋划的胜负在这里就看得出来了。"],
+          "en": ["Of all affairs of state none is greater than the use of troops, and the sage kings of old were careful about it: one exhausts what men can do to answer Heaven's work, and has also consulted the stalks when planning matters outside.", "The essential in sending out troops is first to distinguish them from us, to form host and guest, and to rely wholly on the Self and the Other.", "In judging both pacification and repelling, decide by Output and Pressure: the Self is me and the Other is the enemy, and one is glad for the Self to be strong and to control the Other;", "Output is the troops and Pressure is the bandits, and it is fitting for Output to be thriving and to control Pressure, and the court's planning of victory and defeat is seen in this."] },
+        { "by": "易冒注", "book": "易冒", "range": [837, 837],
+          "zh": ["兵占先观世应，世克应则胜，应克世则负，世应比和则胜岁等；", "世生应者我怯，应生世者彼让。", "复考子孙为我兵，旺相发动则勇往，休囚空破则不摒（？）；", "鬼为彼贼，旺相强梁，休囚披靡。", "如世坏，虽克应动子孙，亦曵甲而归；", "若应坏，虽克世动官鬼，亦夺旗而返。"],
+          "yi": ["兵占先看世应：世克应就胜，应克世就负，世应比和就胜负相等；", "世生应的，我方怯弱；应生世的，对方退让。", "再看子孙是我的兵，旺相发动就勇往直前，休囚空破就不能奋进；", "官鬼是对方的贼寇，旺相就强横，休囚就溃散。", "如果世坏，即使克应、动子孙，也只能抛甲而归；", "如果应坏，即使克世、动官鬼，也夺旗而返。"],
+          "en": ["In divining about the army, first look at the Self and the Other: if the Self controls the Other one wins, if the Other controls the Self one loses, and if the Self and the Other are in accord, victory and defeat are even;", "if the Self generates the Other, my side is timid; if the Other generates the Self, the other side gives way.", "Then look at Output as my troops: if thriving and moving they press bravely forward, if resting, imprisoned, Void or broken they cannot press on;", "Pressure is the other side's bandits: if thriving they are violent and overbearing, if resting or imprisoned they are routed.", "If the Self is damaged, even if one controls the Other and moves Output one can only drag one's armour and come home;", "if the Other is damaged, even if it controls the Self and one moves Pressure, one still seizes their banner and returns."] }
+      ],
+      "note": {
+        "yi": "「安攘」是安内攘外。「作外」是处理对外的事。「庙算」是朝廷的谋划。「胜岁等」疑是「胜负等」；「休囚空破则不摒（？）」的「摒」字书里自己标了问号，疑是「不振」，按文意译作「不能奋进」。「曵甲」是拖着甲胄，形容败退。这一条与易林补遗出师征伐「世应」一组（EL.12 起）、易隐征战占「彼己」（YY.54）、黄金策「观世应之旺衰」（HJC.86）取同一套：世是我、应是彼、子孙是兵、官鬼是敌。",
+        "en": "'Anrang' is pacifying within and repelling without. 'Zuo wai' is handling external affairs. 'Miaosuan' is the court's planning. 'Sheng sui deng' is presumably 'sheng fu deng', victory and defeat even; the 'bing' of 'xiuqiu kong po ze bu bing(?)' carries a question mark in the book itself and is presumably 'zhen', and by the sense it is translated 'cannot press on'. 'Yejia' is dragging one's armour, describing a retreat in defeat. This entry takes the same set as the Self and Other group in the Yilin Buyi on sending out troops (from EL.12), the 'we and they' in the Yi Yin war divination (YY.54), and 'watch the strength of the Self and the Other' in the Huangjin Ce (HJC.86): the Self is me, the Other is the enemy, Output is the troops and Pressure is the enemy."
+      },
+      "see": ["LY.CAREER.YM.12", "LY.CAREER.EL.12", "LY.CAREER.EL.64", "LY.CAREER.YY.54", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.YM.12",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：问立营下寨安危凭鬼，内外毋墓绝反伏空破犯则麾幕不安、两象毋冲击犯则将士离心不可次舍；筮兵次舍最忌鬼摇恐为敌人劫掠、最恶内卦犯疾及六冲上下乖离",
+      "rule": {
+        "yi": "问立营下寨，安危凭官鬼来断：内外卦不要入墓、绝、反吟、伏吟、空、破，犯了就军帐不安；内外两象不要冲击，犯了就将士离心，不可驻扎。占兵驻扎，最忌官鬼发动，恐怕被敌人劫掠；最厌内卦犯疾，以及六冲，上下乖离。",
+        "en": "In asking about setting up camp, safety or danger is judged by Pressure: the inner and outer must not meet tomb, extinction, Reversed Chant, Hidden Chant, Void or break, for if they do the commander's tent is uneasy; the two images must not clash, for if they do officers and men are at odds and the troops cannot be quartered. In divining about the quartering of troops, Pressure moving is most to be avoided, for fear of raiding by the enemy, and what is most disliked is the inner trigram being sick, and a six-clash, with high and low estranged."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [838, 838],
+          "zh": ["如问立营下寨，安危凭鬼，", "而内外毋墓绝反伏空破，犯则麾幕不安；", "两象毋冲击，犯则将士离心，不可次舍。"],
+          "yi": ["如果问立营下寨，安危凭官鬼来断，", "而内外卦不要入墓、绝、反吟、伏吟、空、破，犯了就军帐不安；", "内外两象不要冲击，犯了就将士离心，不可驻扎。"],
+          "en": ["If one asks about setting up camp, safety or danger is judged by Pressure,", "and the inner and outer must not meet tomb, extinction, Reversed Chant, Hidden Chant, Void or break, for if they do the commander's tent is uneasy;", "the two images must not clash, for if they do officers and men are at odds and the troops cannot be quartered."] },
+        { "by": "易冒注", "book": "易冒", "range": [839, 839],
+          "zh": ["筮兵次舍，最忌鬼摇，恐为敌人劫掠。", "最恶内卦犯疾，及六冲，上下乖离。"],
+          "yi": ["占兵驻扎，最忌官鬼发动，恐怕被敌人劫掠；", "最厌内卦犯疾，以及六冲，上下乖离。"],
+          "en": ["In divining about the quartering of troops, Pressure moving is most to be avoided, for fear of raiding by the enemy;", "what is most disliked is the inner trigram being sick, and a six-clash, with high and low estranged."] }
+      ],
+      "note": {
+        "yi": "「麾幕」是主帅的军帐。「墓绝反伏空破」里的「反伏」是反吟、伏吟（见术语表）。「次舍」是军队驻扎。「内卦犯疾」是内卦带病（旺衰上有伤），书里没有细说。",
+        "en": "'Huimu' is the commander's tent. The 'fanfu' of 'mu jue fan fu kong po' is Reversed Chant and Hidden Chant (see the glossary). 'Cishe' is the quartering of an army. 'The inner trigram being sick' is the inner trigram being ill (damaged in strength), which the book does not go into."
+      },
+      "see": ["LY.CAREER.YM.11", "LY.CAREER.YM.13", "LY.CAREER.YY.51", "LY.CAREER.YY.53"]
+    },
+    {
+      "id": "LY.CAREER.YM.13",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：问城攻守、兵行水陆、战利迟速、遣将用计皆以世应占之，朝廷拜将及择人用间乃三军大任必仁勇达变当以宾应辨；六占皆论胜负忌世坏及应克世、随官入墓助鬼伤身主覆军之败，用间类于嘱托应爻空破散绝则机谋泄漏、应爻克冲世位乃反奸之徒",
+      "rule": {
+        "yi": "问攻守城池、兵走水路还是陆路、作战的利钝快慢，以及遣将用计，志在必胜，都以世应来占。如果朝廷拜将，以及选人用间，这是三军的大任，必须仁、勇、通达应变，应当用宾位的应来辨别。以上六种占问，都是论胜负，只忌世坏和应克世，而随官入墓、助鬼伤身，主有覆军的失败。只有用间不同，类似嘱托：应爻空、破、散、绝，机谋就泄漏；应爻克冲世位，就是反间叛奸的人。君王用蓍草任命将领，也像用间的办法。古来用兵，没有比求将更大的，没有比用间更难的：或者内部结为骨肉，或者情谊兼有师友，所以用宾位的应。",
+        "en": "In asking about attacking or defending a city, whether the troops go by water or land, the speed and advantage of a battle, and sending out commanders and using stratagems, with the aim of certain victory, all are divined by the Self and the Other. If the court appoints a general, or a man is chosen to act as a spy, this is the great charge of the three armies, and he must be benevolent, brave and flexible; it should be judged by the Other, the guest's position. In these six kinds of question, victory and defeat are discussed, and only the Self being damaged and the Other controlling the Self are feared, while following the star of office into the tomb and helping Pressure to injure the Body mean the defeat of the army. Only using spies is different, being like entrusting a task: if the Other is Void, broken, scattered or extinct, the scheme leaks out; if the Other clashes with or controls the Self's place, he is a man who turns traitor. When the sovereign appoints a general by the stalks, it is also like the method of using spies. In the use of troops of old, nothing was greater than seeking a general and nothing harder than using spies: either one binds them as kin from within, or the feeling is that of teacher and friend, and so the Other, the guest's position, is used."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [840, 840],
+          "zh": ["问城攻守，兵行水陆，战利迟速，及遣将用计，意在必胜，皆以世应占之。", "若朝廷拜将，及择人用间者，乃三军之大任，必仁勇达变，当以宾应辨也。"],
+          "yi": ["问攻守城池、兵走水路还是陆路、作战的利钝快慢，以及遣将用计，志在必胜，都以世应来占。", "如果朝廷拜将，以及选人用间，这是三军的大任，必须仁、勇、通达应变，应当用宾位的应来辨别。"],
+          "en": ["In asking about attacking or defending a city, whether the troops go by water or land, the speed and advantage of a battle, and sending out commanders and using stratagems, with the aim of certain victory, all are divined by the Self and the Other.", "If the court appoints a general, or a man is chosen to act as a spy, this is the great charge of the three armies, and he must be benevolent, brave and flexible; it should be judged by the Other, the guest's position."] },
+        { "by": "易冒注", "book": "易冒", "range": [841, 841],
+          "zh": ["六占皆论胜负，惟忌世坏及应克世，而随官入墓、助鬼伤身，主有覆军之败。", "惟用间不同，类于嘱托，应爻空破散绝，机谋泄漏；应爻克冲世位，乃反奸之徒。", "君蓍任将，亦如用间之法。", "盖古之用兵，莫大于求将，莫难于用间，或内结骨肉，或谊兼师友，故用宾应也。"],
+          "yi": ["以上六种占问，都是论胜负，只忌世坏和应克世，而随官入墓、助鬼伤身，主有覆军的失败。", "只有用间不同，类似嘱托：应爻空、破、散、绝，机谋就泄漏；应爻克冲世位，就是反间叛奸的人。", "君王用蓍草任命将领，也像用间的办法。", "古来用兵，没有比求将更大的，没有比用间更难的：或者内部结为骨肉，或者情谊兼有师友，所以用宾位的应。"],
+          "en": ["In these six kinds of question, victory and defeat are discussed, and only the Self being damaged and the Other controlling the Self are feared, while following the star of office into the tomb and helping Pressure to injure the Body mean the defeat of the army.", "Only using spies is different, being like entrusting a task: if the Other is Void, broken, scattered or extinct, the scheme leaks out; if the Other clashes with or controls the Self's place, he is a man who turns traitor.", "When the sovereign appoints a general by the stalks, it is also like the method of using spies.", "In the use of troops of old, nothing was greater than seeking a general and nothing harder than using spies: either one binds them as kin from within, or the feeling is that of teacher and friend, and so the Other, the guest's position, is used."] }
+      ],
+      "note": {
+        "yi": "「宾应」是应爻，在这里它是被用的将、被用的间，处在宾的位置。「用间」是派间谍、离间敌人。「君蓍任将」是君王用占筮来选将。「随官入墓、助鬼伤身」见增删卜易对它们的另一说法（ZS.06）；这里是军事占，取凶。这一条与易林补遗出师征伐里「用间」「择将」的取法（EL.12 起）和黄金策「将福官之强弱」（HJC.86）取同一类象。",
+        "en": "'Bin ying', the guest Other, is the Other line, which here is the general or spy who is employed, in the guest's position. 'Yongjian' is sending spies and sowing dissension in the enemy. 'Jun shi ren jiang' is the sovereign choosing a general by divination. 'Following the star of office into the tomb' and 'helping Pressure to injure the Body' have another account in the Zengshan Buyi (ZS.06); here, in a military divination, they are taken as ominous. This entry takes the same kind of images as the choosing of generals and use of spies in the Yilin Buyi on sending out troops (from EL.12) and 'weigh the strength of Output and the star of office' in the Huangjin Ce (HJC.86)."
+      },
+      "see": ["LY.CAREER.YM.12", "LY.CAREER.YM.14", "LY.CAREER.ZS.06", "LY.CAREER.EL.12", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.YM.14",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：问守问战以胜负分彼我、问款问降以忠奸察应爻，时日利战得时而我利、防守无虞鬼动而来侵、应克世为蚕食；得应坏世克应则成百战百胜之功、世坏应克世则忍三战三怯之耻，敌降于己己款于敌皆察应爻真伪忌应克世，卜日时如秋时用兵则利金爻持世、亥日出师则利火爻属应",
+      "rule": {
+        "yi": "问守、问战，要以胜负分清彼此；问款（议和）、问降，要以忠奸来察看应爻。时日利于战，得时就对我有利；防守没有忧虑，官鬼一动就有来侵犯的。应克世是蚕食。得到应坏、世克应，就成百战百胜的功劳；世坏、应克世，就要忍受三战三怯的耻辱。敌人降于我，或我向敌人议和，都要察看应爻的真假，忌讳应克世。如果是卜日时的占：比如秋天用兵，就利于金爻持世；亥日出师，就利于火爻属应。",
+        "en": "In asking about defence and about battle, distinguish the two sides by victory and defeat; in asking about truce and surrender, examine the Other line by loyalty or treachery. If the day and hour favour battle, getting the right time benefits me; if defence is free from worry, Pressure moving means an invader is coming; the Other controlling the Self is nibbling away like a silkworm. If the Other is broken and the Self controls the Other, the merit of a hundred battles and a hundred victories is accomplished; if the Self is damaged and the Other controls the Self, one must bear the shame of three battles and three times of cowardice. When an enemy surrenders to me, or I seek a truce with an enemy, in both cases one examines whether the Other is true or false, and the Other controlling the Self is taboo. In divining the day and hour, for example if one uses troops in autumn it is favourable for a Metal line to hold the Self, and if one sends out the army on a Hai day it is favourable for a Fire line to belong to the Other."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [842, 842],
+          "zh": ["问守问战，当以胜负分彼我；", "问款问降，当以忠奸察应爻。", "时日利战，得时而我利，", "防守无虞，鬼动而来侵。应克世为蚕食也。"],
+          "yi": ["问守、问战，要以胜负分清彼此；", "问款、问降，要以忠奸来察看应爻。", "时日利于战，得时就对我有利；", "防守没有忧虑，官鬼一动就有来侵犯的。应克世是蚕食。"],
+          "en": ["In asking about defence and about battle, distinguish the two sides by victory and defeat;", "in asking about truce and surrender, examine the Other line by loyalty or treachery.", "If the day and hour favour battle, getting the right time benefits me;", "if defence is free from worry, Pressure moving means an invader is coming; the Other controlling the Self is nibbling away like a silkworm."] },
+        { "by": "易冒注", "book": "易冒", "range": [843, 843],
+          "zh": ["得应坏世克应，则成百战百胜之功，世坏应克世，则忍三战三怯之耻。", "敌降于己，己款于敌，皆察应爻真伪，忌应克世。", "若卜日时之占，如用兵于秋时，则利金爻持世，出师于亥日，则利火爻属应也。"],
+          "yi": ["得到应坏、世克应，就成百战百胜的功劳；世坏、应克世，就要忍受三战三怯的耻辱。", "敌人降于我，或我向敌人议和，都要察看应爻的真假，忌讳应克世。", "如果是卜日时的占：比如秋天用兵，就利于金爻持世；亥日出师，就利于火爻属应。"],
+          "en": ["If the Other is broken and the Self controls the Other, the merit of a hundred battles and a hundred victories is accomplished; if the Self is damaged and the Other controls the Self, one must bear the shame of three battles and three times of cowardice.", "When an enemy surrenders to me, or I seek a truce with an enemy, in both cases one examines whether the Other is true or false, and the Other controlling the Self is taboo.", "In divining the day and hour, for example if one uses troops in autumn it is favourable for a Metal line to hold the Self, and if one sends out the army on a Hai day it is favourable for a Fire line to belong to the Other."] }
+      ],
+      "note": {
+        "yi": "「款」是议和、投诚。「蚕食」是一点一点吞掉。「三战三怯」是屡战屡怯（《史记》里曹沫三战三北的意思）。「秋时用兵利金爻持世」是秋属金，「亥日出师利火爻属应」是亥属水、水克火，火属应就是对方属火而被克，书里没有解释这一层，按五行读出来的。这一条与易隐征战占「方向」（YY.53）、黄金策「观世应之旺衰」（HJC.86）取同一个关系：世克应胜、应克世负。",
+        "en": "'Kuan' is seeking peace and offering submission. 'Cansi' is eating away bit by bit like a silkworm. 'Three battles and three times of cowardice' is being timid again and again in battle (in the sense of Cao Mo's three defeats in the Shiji). That 'in autumn a Metal line holding the Self is favourable' is because autumn belongs to Metal; 'on a Hai day a Fire line belonging to the Other is favourable' is because Hai is Water and Water controls Fire, so with Fire on the Other the other side is of Fire and is controlled; the book does not explain this layer, and it is read by the five elements. This entry takes the same relation as the 'direction' section of the Yi Yin war divination (YY.53) and 'watch the strength of the Self and the Other' in the Huangjin Ce (HJC.86): the Self controlling the Other wins, the Other controlling the Self loses."
+      },
+      "see": ["LY.CAREER.YM.13", "LY.CAREER.YM.15", "LY.CAREER.YY.53", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.YM.15",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：防刺以鬼为刺客恶其动、行刺以应为所刺好其疾；若随墓助伤防刺大凶、鬼动鬼克世亦凶惟空破为吉，行刺应坏敌人数尽可以得志，或世坏随墓助伤敌人虽灭我亦随亡，或鬼兴而世旺敌虽刺我我数未终，吉内藏凶凶中有吉辨之",
+      "rule": {
+        "yi": "防备刺客，以官鬼为刺客，厌恶它发动；去行刺，以应为被刺的人，喜欢它有疾（坏）。如果随墓、助伤，防刺就大凶；官鬼动、官鬼克世也凶，只有空、破才是吉。行刺时应坏，敌人命数尽了，可以得志；或者世坏、随墓助伤，敌人虽然灭了，我也跟着亡；或者官鬼兴旺而世旺，敌人虽然来刺我，我的命数还没有终结。吉里藏着凶，凶中有吉，要分辨。",
+        "en": "In guarding against assassins, Pressure is the assassin and its moving is disliked; in carrying out an assassination, the Other is the man to be stabbed and it is liked to be sick. If one follows into the tomb or helps Pressure to injure, guarding against an assassin is greatly ominous; Pressure moving, or Pressure controlling the Self, is also ominous, and only Void or break is auspicious. In carrying out an assassination, if the Other is damaged the enemy's number is used up and one can achieve one's aim; or if the Self is damaged and follows into the tomb or helps Pressure to injure, although the enemy is wiped out, I too die with him; or if Pressure flourishes and the Self is thriving, although the enemy strikes at me my number is not yet at its end. Ill lies hidden within good, and good within ill, so one must tell them apart."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [844, 844],
+          "zh": ["防刺鬼为刺客也，恶其动；", "行剌应为所剌也，好其疾。"],
+          "yi": ["防备刺客，以官鬼为刺客，厌恶它发动；", "去行刺，以应为被刺的人，喜欢它有疾（坏）。"],
+          "en": ["In guarding against assassins, Pressure is the assassin and its moving is disliked;", "in carrying out an assassination, the Other is the man to be stabbed and it is liked to be sick."] },
+        { "by": "易冒注", "book": "易冒", "range": [845, 845],
+          "zh": ["若随墓助伤，防剌大凶，鬼动鬼克世亦凶，惟空破为吉。", "行剌应坏敌人数尽，可以得志，或世坏随墓助伤，敌人虽灭，我亦随亡，或鬼兴而世旺，敌虽剌我，我数未终也。", "吉内藏凶，凶中有吉，辨之。"],
+          "yi": ["如果随墓、助伤，防刺就大凶；官鬼动、官鬼克世也凶，只有空、破才是吉。", "行刺时应坏，敌人命数尽了，可以得志；或者世坏、随墓助伤，敌人虽然灭了，我也跟着亡；或者官鬼兴旺而世旺，敌人虽然来刺我，我的命数还没有终结。", "吉里藏着凶，凶中有吉，要分辨。"],
+          "en": ["If one follows into the tomb or helps Pressure to injure, guarding against an assassin is greatly ominous; Pressure moving, or Pressure controlling the Self, is also ominous, and only Void or break is auspicious.", "In carrying out an assassination, if the Other is damaged the enemy's number is used up and one can achieve one's aim; or if the Self is damaged and follows into the tomb or helps Pressure to injure, although the enemy is wiped out, I too die with him; or if Pressure flourishes and the Self is thriving, although the enemy strikes at me my number is not yet at its end.", "Ill lies hidden within good, and good within ill, so one must tell them apart."] }
+      ],
+      "note": {
+        "yi": "「刺」「剌」在书里混用，都是行刺。「数」是命数、气数。「防刺」是防备被刺，「行刺」是我方去刺敌。这一条与易隐征战占「鬼暗动加大杀劫杀刑刃克世防刺客，遇福动必擒」（YY.56）取同一类象：官鬼暗动克世是刺客来；福神动能擒拿。",
+        "en": "'Ci' and 'la' are used interchangeably in the book, both meaning assassination. 'Shu' is one's allotted number, one's allotted span. 'Fang ci' is guarding against being stabbed, and 'xing ci' is my side going to stab the enemy. This entry takes the same kind of image as 'if Pressure moves hidden with great baleful spirits, Robbery and the blade controlling the Self, guard against an assassin, and if Output moves he is surely seized' in the Yi Yin war divination (YY.56): Pressure moving in the dark and controlling the Self is the assassin coming, and Output moving can seize him."
+      },
+      "see": ["LY.CAREER.YM.14", "LY.CAREER.YM.16", "LY.CAREER.YY.56"]
+    },
+    {
+      "id": "LY.CAREER.YM.16",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：用应如用间、用火如用计、鬼动则谋败；因粮于敌截饷于途、财旺则计得；内应可任法如用间但不可鬼动则功未成而先败，用火法如用计务在胜负然水火为民害之大者亦忌鬼动或谋泄流祸",
+      "rule": {
+        "yi": "用内应，如同用间；用火攻，如同用计；官鬼一动，谋划就败了。取粮于敌、截敌军粮饷于途中，财爻旺相，计谋就得手。内应可以委任，办法如同用间，只是不可官鬼发动，发动就功劳未成而先败；用火的办法如同用计，务求取胜，但水、火是百姓最大的祸害，也忌官鬼发动，否则谋划泄漏、祸患流布。",
+        "en": "Using an inside collaborator is like using a spy, and using fire is like using a stratagem; if Pressure moves, the scheme fails. In taking provisions from the enemy and intercepting the pay and grain on the road, if Wealth is thriving the plan succeeds. An inside collaborator can be appointed, and the method is like that of using spies, but Pressure must not move, for if it does the merit is not yet won and one is first defeated; the method of using fire is like that of a stratagem, and one must aim at victory, but water and fire are the greatest harms to the people, and Pressure moving is also to be avoided, otherwise the scheme leaks out and calamity spreads."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [846, 846],
+          "zh": ["用应如用间，用火如用计，鬼动则谋败焉。", "因粮于敌，截饷于途，财旺则计得焉。"],
+          "yi": ["用内应如同用间，用火攻如同用计，官鬼一动，谋划就败了。", "取粮于敌、截敌军粮饷于途中，财爻旺相，计谋就得手。"],
+          "en": ["Using an inside collaborator is like using a spy, and using fire is like using a stratagem; if Pressure moves, the scheme fails.", "In taking provisions from the enemy and intercepting the pay and grain on the road, if Wealth is thriving the plan succeeds."] },
+        { "by": "易冒注", "book": "易冒", "range": [847, 849],
+          "zh": ["内应可任，法如用间，但不可鬼动，则功未成而先败；", "用火法如用计，务在胜负，然水火为民害之大者，亦忌鬼动，或谋泄流祸。"],
+          "yi": ["内应可以委任，办法如同用间，只是不可官鬼发动，发动就功劳未成而先败；", "用火的办法如同用计，务求取胜，但水、火是百姓最大的祸害，也忌官鬼发动，否则谋划泄漏、祸患流布。"],
+          "en": ["An inside collaborator can be appointed, and the method is like that of using spies, but Pressure must not move, for if it does the merit is not yet won and one is first defeated;", "the method of using fire is like that of a stratagem, and one must aim at victory, but water and fire are the greatest harms to the people, and Pressure moving is also to be avoided, otherwise the scheme leaks out and calamity spreads."] }
+      ],
+      "note": {
+        "yi": "「应」在这里是内应（敌方内部接应我们的人）。「因粮」是就地取粮，「截饷」是中途截取敌人的粮饷。「用火如用计」是火攻要有周密的计谋。「水火为民害之大者」是水淹、火攻会连累百姓。书里这一条用的是同一个官鬼动忌：谋密则成，鬼动则泄。",
+        "en": "'Ying' here is the inside collaborator (a man inside the enemy camp who responds to us). 'Yinliang' is taking grain on the spot, and 'jiexiang' is intercepting the enemy's pay and grain on the way. 'Using fire is like using a stratagem' is that an attack by fire needs a careful stratagem. 'Water and fire are the greatest harms to the people' is that flooding and attack by fire fall on the common people. This entry uses the same taboo of Pressure moving: if the plan is secret it succeeds, and if Pressure moves it leaks."
+      },
+      "see": ["LY.CAREER.YM.15", "LY.CAREER.YM.17", "LY.CAREER.YY.59", "LY.CAREER.HJC.88"]
+    },
+    {
+      "id": "LY.CAREER.YM.17",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：寇有地而用应、寇无地而用鬼；两军对迎法世应之克生、四野剿除度鬼福之强弱；若据城郭成两军之势则考世应生克虚实以为胜负，如流寇无定必四向剿灭则论福鬼强弱",
+      "rule": {
+        "yi": "敌寇有据点的，用应来看；敌寇没有据点的，用官鬼来看。所以两军对阵，按世应的相克相生来断；四野围剿，则衡量官鬼和福神的强弱。如果敌人占据城郭，形成两军对阵之势，就考察世应的生克虚实来断胜负；如果是流窜无定的流寇，必须四面围剿消灭，就论福神与官鬼的强弱。",
+        "en": "If the bandits hold a base, look at the Other; if they have no base, look at Pressure. So when two armies face each other, follow the generation and control of the Self and the Other; when the countryside is being swept clean on all sides, weigh the strength of Pressure and Output. If the enemy holds a walled city and forms the posture of two armies, examine the generation, control, emptiness and fullness of the Self and the Other to decide victory and defeat; if they are roving bandits with no fixed place and must be wiped out from all four directions, then discuss the strength of Output and Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [850, 850],
+          "zh": ["盖或寇有地而用应，寇无地而用鬼。", "是以两军对迎，法世应之克生，四野剿除，度鬼福之强弱也。"],
+          "yi": ["敌寇有据点的，用应来看；敌寇没有据点的，用官鬼来看。", "所以两军对阵，按世应的相克相生来断；四野围剿，则衡量官鬼和福神的强弱。"],
+          "en": ["If the bandits hold a base, look at the Other; if they have no base, look at Pressure.", "So when two armies face each other, follow the generation and control of the Self and the Other; when the countryside is being swept clean on all sides, weigh the strength of Pressure and Output."] },
+        { "by": "易冒注", "book": "易冒", "range": [851, 851],
+          "zh": ["若据城郭，成两军之势，则考世应生克虚实以为胜负。", "如流寇无定，必四向剿灭之，则论福鬼强弱。"],
+          "yi": ["如果敌人占据城郭，形成两军对阵之势，就考察世应的生克虚实来断胜负；", "如果是流窜无定的流寇，必须四面围剿消灭，就论福神与官鬼的强弱。"],
+          "en": ["If the enemy holds a walled city and forms the posture of two armies, examine the generation, control, emptiness and fullness of the Self and the Other to decide victory and defeat;", "if they are roving bandits with no fixed place and must be wiped out from all four directions, then discuss the strength of Output and Pressure."] }
+      ],
+      "note": {
+        "yi": "「寇有地」是有城郭、据点的敌人，「流寇」是到处流窜没有固定地盘的敌人。「福鬼」是福神（子孙）和官鬼。这一条与黄金策征战「世持子而被伤」「应临官而遭克」（HJC.93、HJC.94）取不同的看法：那里是看世应，这里按敌人有没有据点，分用世应、福鬼。",
+        "en": "'Kou you di' is an enemy that has a walled city or a base, and 'liukou' are roving bandits with no fixed ground. 'Fugui' is the fortune spirit (Output) and Pressure. This entry takes a different view from 'if the Self holds Output but is injured' and 'if the Other rests on the star of office and is controlled' in the Huangjin Ce on campaigns (HJC.93, HJC.94): there the Self and the Other are looked at, and here one uses the Self and the Other or Output and Pressure according to whether the enemy has a base."
+      },
+      "see": ["LY.CAREER.YM.16", "LY.CAREER.YM.18", "LY.CAREER.HJC.93", "LY.CAREER.HJC.94"]
+    },
+    {
+      "id": "LY.CAREER.YM.18",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：飞檄求援应疾则不援克世则不轨，上书求济六冲五疑君象冲克世爻则不允济，同仇相援则如用师；应空破散则无周急之情，应克世爻非惟不援尚有他奸，五爻空破散绝谓之五疑盖五爻为君克冲世爻恐逆耳不允，彼困我救断如用师",
+      "rule": {
+        "yi": "发檄文求救兵，应爻有疾（坏）就不救，应克世就是不轨。上书求济，卦是六冲、五疑，君象冲克世爻，就不允济。同仇相援，就如同用兵来断。应爻空、破、散，就没有周济急难的情意；应克世爻，不只是不救援，还有别的奸谋。五爻空、破、散、绝，叫做五疑，因为五爻是君，冲克世爻，恐怕逆耳不被允准。对方有困难、我去救援，断法如同用兵。",
+        "en": "In sending a dispatch by fast courier to ask for relief troops, if the Other is sick no help comes, and if it controls the Self it is disloyal. In petitioning in writing for aid, with a six-clash and the five doubts, if the sovereign image clashes with or controls the Self line, the aid is not granted. Mutual help between those who share a hatred is judged like using troops. If the Other is Void, broken or scattered, there is no feeling for relieving distress; if the Other line controls the Self, there is not only no help but some other treachery. If the fifth line is Void, broken, scattered or extinct, it is called the five doubts, because the fifth line is the sovereign and if it clashes with or controls the Self line, I fear what I say jars on his ear and is not granted. If the other side is in difficulty and I go to its rescue, it is judged like using troops."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [852, 852],
+          "zh": ["飞檄求援，应疾则为不援，克世则为不轨。", "上书求济，六冲五疑，君象冲克世爻，则不允济。", "同仇相援，则如用师也。"],
+          "yi": ["发檄文求救兵，应爻有疾（坏）就不救，应克世就是不轨。", "上书求济，卦是六冲、五疑，君象冲克世爻，就不允济。", "同仇相援，就如同用兵来断。"],
+          "en": ["In sending a dispatch by fast courier to ask for relief troops, if the Other is sick no help comes, and if it controls the Self it is disloyal.", "In petitioning in writing for aid, with a six-clash and the five doubts, if the sovereign image clashes with or controls the Self line, the aid is not granted.", "Mutual help between those who share a hatred is judged like using troops."] },
+        { "by": "易冒注", "book": "易冒", "range": [853, 853],
+          "zh": ["应空破散，则无周急之情；应克世爻，非惟不援，尚有他奸也。", "五爻空破散绝，谓之五疑，盖五爻为君，克冲世爻，恐逆耳不允。", "彼困我救，断如用师。"],
+          "yi": ["应爻空、破、散，就没有周济急难的情意；应克世爻，不只是不救援，还有别的奸谋。", "五爻空、破、散、绝，叫做五疑，因为五爻是君，冲克世爻，恐怕逆耳不被允准。", "对方有困难、我去救援，断法如同用兵。"],
+          "en": ["If the Other is Void, broken or scattered, there is no feeling for relieving distress; if the Other line controls the Self, there is not only no help but some other treachery.", "If the fifth line is Void, broken, scattered or extinct, it is called the five doubts, because the fifth line is the sovereign and if it clashes with or controls the Self line, I fear what I say jars on his ear and is not granted.", "If the other side is in difficulty and I go to its rescue, it is judged like using troops."] }
+      ],
+      "note": {
+        "yi": "「飞檄」是紧急的檄文，「求济」是请求接济。「周急」是救济急难。「五疑」书里自己解释：五爻空、破、散、绝。「不轨」是不守本分、有二心。「同仇相援」是有共同敌人的两方互相救援，「彼困我救」是对方有难我去救，都按用兵断。",
+        "en": "'Feixi' is an urgent dispatch, and 'qiuji' is asking for aid. 'Zhouji' is relieving distress. The 'five doubts' are explained by the book itself: the fifth line Void, broken, scattered or extinct. 'Bugui' is not keeping to one's place and having a divided heart. 'Tongchou xiangyuan' is two sides with a common enemy helping each other, and 'bi kun wo jiu' is going to the rescue of the other side in difficulty, and both are judged like using troops."
+      },
+      "see": ["LY.CAREER.YM.17", "LY.CAREER.YM.19", "LY.CAREER.EL.21"]
+    },
+    {
+      "id": "LY.CAREER.YM.19",
+      "topic": "军旅",
+      "chapter": "军机章第四十三",
+      "chapter_en": "Chapter 43: Military affairs",
+      "title": "军机：筮城虑破鬼动鬼克则危、筮敌来期应克应动则速、筮军被困世墓世伤则凶；若患破城不拘父母反专官鬼发动克世则危",
+      "rule": {
+        "yi": "占城池，担心被攻破，官鬼动、官鬼克世就危险；占敌人来的日期，应克应、应动就快；占军队被围困，世入墓、世受伤就凶。如果担心城被攻破，不用看父母，反而专看官鬼：官鬼发动克世就危险。",
+        "en": "In divining about a city, if one fears it will be broken, Pressure moving or Pressure controlling the Self is dangerous; in divining the date the enemy will come, the Other controlling or the Other moving means quickly; in divining about an army that has been besieged, the Self entering the tomb or being injured is ominous. If one fears a city will be broken, one does not look at Resource but looks only at Pressure: Pressure moving and controlling the Self is dangerous."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [854, 854],
+          "zh": ["筮城虑破，鬼动鬼克则危。", "筮敌来期，应克应动则速。", "筮军被困，世墓世伤则凶也。"],
+          "yi": ["占城池，担心被攻破，官鬼动、官鬼克世就危险；", "占敌人来的日期，应克应、应动就快；", "占军队被围困，世入墓、世受伤就凶。"],
+          "en": ["In divining about a city, if one fears it will be broken, Pressure moving or Pressure controlling the Self is dangerous;", "in divining the date the enemy will come, the Other controlling or the Other moving means quickly;", "in divining about an army that has been besieged, the Self entering the tomb or being injured is ominous."] },
+        { "by": "易冒注", "book": "易冒", "range": [855, 855],
+          "zh": ["若患破城，不拘父母，反专官鬼，发动克世则危。"],
+          "yi": ["如果担心城被攻破，不用看父母，反而专看官鬼：官鬼发动克世就危险。"],
+          "en": ["If one fears a city will be broken, one does not look at Resource but looks only at Pressure: Pressure moving and controlling the Self is dangerous."] }
+      ],
+      "note": {
+        "yi": "「筮城虑破」是占一座城守不守得住。「应克应动则速」按文意是应爻克世、应爻发动，敌人来得快（「应克应」疑为「应克世」之误，书里就是这几个字，这里按「应克世、应动」译）。城池平常以父母为城（见易隐朝廷占城池 YY.40），这里反而专看官鬼，因为是怕城破、官鬼就是攻城的敌人。",
+        "en": "'Shi cheng lu po' is divining whether a city can be held. 'Ying ke ying dong ze su' is by the sense the Other controlling the Self and the Other moving, and the enemy comes quickly (the 'ying ke ying' is presumably a miswriting of 'ying ke shi', the Other controlling the Self; the book has just these characters and it is translated here as 'the Other controls the Self, the Other moves'). A city is ordinarily taken as Resource (see the divination on the city in the Yi Yin divination on the court, YY.40), but here Pressure alone is looked at, because one fears the city being broken and Pressure is the enemy attacking it."
+      },
+      "see": ["LY.CAREER.YM.18", "LY.CAREER.YM.20", "LY.CAREER.YY.40"]
+    }
+  ]
+}

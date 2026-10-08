@@ -1,0 +1,92 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "户役(第四十一章,章名在原文中缺失)",
+  "chapter_en": "Household service (Chapter 41; the title is missing from the text)",
+  "ranges": {"易林补遗": [900, 904]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.109",
+      "topic": "差役",
+      "chapter": "户役(第四十一章,章名在原文中缺失)",
+      "chapter_en": "Household service (Chapter 41; the title is missing from the text)",
+      "title": "户役轻重：以官鬼为主、生克为凭；民当户役有轻重之不同，卦出官爻取旺衰之可验；官旺则役重、官衰则役轻，克世则厚而非薄、伤身则重而不轻，带青龙而吉、加白虎而凶；或空或绝皆主无忧，鬼纵休囚克世还当繁重，官虽旺相生世赔费还轻，值青龙终无责罚临白虎必犯官刑",
+      "rule": {
+        "yi": "百姓承当户役，有轻重的不同；卦里出现的官爻，看它的旺衰就可以验证。官爻居于旺相，役一定高大强劲；休囚，才细小；官克世爻，役厚而不薄；伤身爻，役重而不轻；带青龙是吉，加白虎是凶。要知道户役的轻重，必须看官爻的衰旺：旺就重大，衰就轻微；或者落空，或者入绝，都主没有忧虑；官鬼即使休囚，如果克世，还是繁重；官爻虽然旺相，但生世爻，赔费还轻；值青龙，终究没有责罚；临白虎，必定触犯官刑。",
+        "en": "The people bear household services of lighter and heavier kinds, and the Pressure line that appears in the hexagram can be tested by its strength or weakness. If it is in a thriving place the service will certainly be high and strong; if it is resting or imprisoned it is small and fine; if it controls the Self the service is thick and not thin; if it hurts the Body it is heavy and not light; carrying the Azure Dragon it is called auspicious, and adding the White Tiger it is called ominous. To know whether the household service is light or heavy, look at the strength of the Pressure line: if thriving it is heavy and large, if weak it is light and slight; if Void or extinct, in either case there is nothing to worry about; even if Pressure is resting or imprisoned, if it controls the Self the burden will still be heavy; even if the star of office is thriving, if it generates the Self the cost of making up shortfalls is still light; on the Azure Dragon there is in the end no blame or punishment, and on the White Tiger one will surely run into official punishment."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [900, 900],
+          "zh": ["以官鬼为主，生克为凭。"],
+          "yi": ["以官鬼为主要看的，以生克为凭据。"],
+          "en": ["Take Pressure as the chief to be looked at, and generation and control as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [901, 901],
+          "zh": ["民当户役有轻重之不同，卦出官爻取旺衰之可验。", "凡居旺相必高强，若得休囚方细小，", "克世则厚而非薄，伤身则重而不轻。", "带青龙而道吉，加白虎以言凶。"],
+          "yi": ["百姓承当户役，有轻重的不同；卦里出现的官爻，看它的旺衰就可以验证。", "官爻居于旺相，役一定高大强劲；如果休囚，才细小；", "官爻克世，役厚而不薄；伤身，役重而不轻。", "带青龙，就说吉；加白虎，就说凶。"],
+          "en": ["The people bear household services of lighter and heavier kinds, and the Pressure line that appears in the hexagram can be tested by its strength or weakness.", "If it is in a thriving place the service will certainly be high and strong; if it is resting or imprisoned it is small and fine;", "if it controls the Self the service is thick and not thin; if it hurts the Body it is heavy and not light.", "carrying the Azure Dragon it is called auspicious, and adding the White Tiger it is called ominous."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [902, 902],
+          "zh": ["要知户役轻重，须看官爻衰旺，旺则重大，衰则轻微。", "或空或绝，皆主无忧。", "鬼纵休囚，克世还当繁重。", "官虽旺相，生世赔费还轻。", "值青龙终无责罚，临白虎必犯官刑。"],
+          "yi": ["要知道户役的轻重，必须看官爻的衰旺：旺就重大，衰就轻微。", "或者落空，或者入绝，都主没有忧虑。", "官鬼即使休囚，如果克世，还是繁重。", "官爻虽然旺相，如果生世，赔费还轻。", "值青龙，终究没有责罚；临白虎，必定触犯官刑。"],
+          "en": ["To know whether the household service is light or heavy, look at the strength of the Pressure line: if thriving it is heavy and large, if weak it is light and slight.", "If Void or extinct, in either case there is nothing to worry about.", "Even if Pressure is resting or imprisoned, if it controls the Self the burden will still be heavy.", "Even if the star of office is thriving, if it generates the Self the cost of making up shortfalls is still light.", "On the Azure Dragon there is in the end no blame or punishment; on the White Tiger one will surely run into official punishment."] }
+      ],
+      "note": {
+        "yi": "「户役」是民户承当的徭役，应指里甲、粮长、解户一类（明代的户役）；「解户」是押送钱粮解往官府的户，「赔」是赔补短欠。章名在书里缺，按内容拟为「户役」（见谋差顶役一条的说明）。这一章与前面各章不同：官鬼在这里就是役，旺则役重、衰则役轻，「重」「轻」说的是负担，不是吉凶；青龙带吉、白虎带凶才说吉凶。「细小」「高强」是役的大小轻重。",
+        "en": "'Huyi', household service, is the corvée borne by a household, and presumably means the kind of service of the neighbourhood-and-tithing system, grain captains and conveyor households (household service under the Ming); 'jiehu' is a household that conveys money and grain to the authorities, and 'pei' is making up a shortfall. The chapter title is missing in the book and is supplied as 'household service' from the content (see the note to the entry on seeking a commission). This chapter differs from the earlier ones: Pressure here is the service itself, so when thriving the service is heavy and when weak it is light; 'heavy' and 'light' speak of the burden and not of good or ill, and it is the Azure Dragon and the White Tiger that carry good and ill. 'Xixiao' and 'gaoqiang' are the size and weight of the service."
+      },
+      "see": ["LY.CAREER.EL.110", "LY.CAREER.EL.111", "LY.CAREER.EL.106"]
+    },
+    {
+      "id": "LY.CAREER.EL.110",
+      "topic": "差役",
+      "chapter": "户役(第四十一章,章名在原文中缺失)",
+      "chapter_en": "Household service (Chapter 41; the title is missing from the text)",
+      "title": "户役轻重：月建临官应佥魁首、日辰克鬼当审轻微，官爻值世估高名、福德加身登下榜；官临月建至重之差，鬼值世爻次重之役，鬼逢日月克伤轻徭可必，子孙世或发动其户亦轻",
+      "rule": {
+        "yi": "月建临在官爻上，应被派作魁首（最重的役）；日辰克官鬼，应审定为轻微。官爻值世，估定是高名（高等户，役重）；福德加身，登下榜（下等户，役轻）。具体说：官临月建，是最重的差；鬼值世爻，是次重的役；官鬼遇到日月克伤，役轻是可以断定的；子孙持世或者发动，这个户也轻。",
+        "en": "If the Month rests on the star of office, one should be assigned as the headman; if the Day controls Pressure, one should judge it light and slight. If the Pressure line holds the Self, one is reckoned of high name; if Output, the fortune virtue, is added to the Body, one ascends the lower roll. In detail: the star of office on the Month is the heaviest commission; Pressure on the Self line is the next heaviest service; if Pressure meets the control and injury of the Day and the Month, lightness can be affirmed; if Output holds the Self or moves, the household too is light."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [903, 903],
+          "zh": ["月建临官应佥魁首，日辰克鬼当审轻微。", "官爻值世估高名，福德加身登下榜，"],
+          "yi": ["月建临在官爻上，应被派作魁首；日辰克官鬼，应审定为轻微。", "官爻值世，估定是高名；福德加在身上，就登下榜。"],
+          "en": ["If the Month rests on the star of office, one should be assigned as the headman; if the Day controls Pressure, one should judge it light and slight.", "If the Pressure line holds the Self, one is reckoned of high name; if Output, the fortune virtue, is added to the Body, one ascends the lower roll."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [904, 904],
+          "zh": ["官临月建，至重之差。", "鬼值世爻，次重之役。", "鬼逢日月克伤，轻摇可必。", "子孙世或发动，其户亦轻。"],
+          "yi": ["官临月建，是最重的差。", "鬼值世爻，是次重的役。", "官鬼遇到日月克伤，役轻是可以断定的。", "子孙持世或者发动，这个户也轻。"],
+          "en": ["The star of office on the Month is the heaviest commission.", "Pressure on the Self line is the next heaviest service.", "If Pressure meets the control and injury of the Day and the Month, lightness can be affirmed.", "If Output holds the Self or moves, the household too is light."] }
+      ],
+      "note": {
+        "yi": "「魁首」是户役里最重的一名（如里长、粮长之首），「佥」是佥派、派定。「估高名」「登下榜」按文意是被定在高等户、下等户：官爻值世是高等户（役重），福德加身是下等户（役轻）；「榜」是户等的名册。「轻摇」疑是「轻徭」，徭役轻。这一条只取诀的前四句和解的前四句，后面的变化（子化官、官化子、兄弟动等）在下一条（EL.111）。",
+        "en": "'Kuishou', the headman, is the heaviest single place in the household services (such as the head of the tithing or the head of the grain captains), and 'qian' is to assign and to appoint. 'Gu gaoming' and 'deng xiabang' are by the sense being placed among households of high and low grade: the Pressure line holding the Self is a household of high grade (heavy service), and Output added to the Body is a household of low grade (light service); 'bang' is the register of household grades. The 'yao' of 'qing yao' is presumably 'yao', corvée, so 'light corvée'. This entry takes only the first four clauses of the verse and the first four sentences of the explanation; the changes that follow (Output into Pressure, Pressure into Output, Peer moving and so on) are in the next entry (EL.111)."
+      },
+      "see": ["LY.CAREER.EL.109", "LY.CAREER.EL.111"]
+    },
+    {
+      "id": "LY.CAREER.EL.111",
+      "topic": "差役",
+      "chapter": "户役(第四十一章,章名在原文中缺失)",
+      "chapter_en": "Household service (Chapter 41; the title is missing from the text)",
+      "title": "户役轻重：子化官则将轻作重、官化子则改祸成祥，兄弟动时多破费、子孙旺处少亏伤，用爻强弱端详解户浅深预定；子变官爻解轻赔赊，鬼之子象役大赔微，兄弟发动或持世上定多赔赊，子孙旺相或值身爻费财稍可",
+      "rule": {
+        "yi": "子孙化成官，就把轻变成重；官化成子孙，就转祸为祥。兄弟发动时，多破费；子孙旺相处，少亏损。要细看用爻的强弱，解户的深浅就预先定了。具体说：子孙变成官爻，解运看着轻，赔补赊欠却有；官鬼变成子孙的象，役大、赔补却小；兄弟发动或者持世，一定多赔补、多赊欠；子孙旺相或者临在身爻上，花费钱财还算可以。",
+        "en": "If Output changes into the star of office, light is made heavy; if the star of office changes into Output, calamity is turned to fortune. When Peer moves there is much expense; where Output thrives there is little loss. Examine the strength of the Subject line, and the depth or shallowness of the conveyor household's burden is settled in advance. In detail: if Output changes into the Pressure line, the conveyance is light but there are shortfalls and arrears; if Pressure changes into the Output image, the service is great but the shortfall is slight; if Peer moves or rests on the Self, there will surely be many shortfalls and arrears; if Output is thriving or rests on the Body line, the cost in wealth is somewhat tolerable."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [903, 903],
+          "zh": ["子化官则将轻作重，官化子则改祸成祥，", "兄弟动时多破费，子孙旺处少亏伤。", "用爻强弱端详，解户浅深预定。"],
+          "yi": ["子孙化成官，就把轻变成重；官化成子孙，就转祸为祥；", "兄弟发动时，多破费；子孙旺相处，少亏损。", "用爻的强弱要细细审详，解户（押运钱粮的户）役的深浅就预先定了。"],
+          "en": ["If Output changes into the star of office, light is made heavy; if the star of office changes into Output, calamity is turned to fortune;", "when Peer moves there is much expense; where Output thrives there is little loss.", "Examine the strength of the Subject line, and the depth or shallowness of the conveyor household's burden is settled in advance."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [904, 904],
+          "zh": ["子变官爻，解轻赔赊。", "鬼之子象，役大赔微。", "兄弟发动或持世上，定多赔赊。", "子孙旺相或值身爻，费财稍可。"],
+          "yi": ["子孙变成官爻，解运看着轻，赔补赊欠却有。", "官鬼变成子孙的象，役大、赔补却小。", "兄弟发动或者持世，一定多赔补、多赊欠。", "子孙旺相或者临在身爻上，花费钱财还算可以。"],
+          "en": ["If Output changes into the Pressure line, the conveyance is light but there are shortfalls and arrears.", "If Pressure changes into the Output image, the service is great but the shortfall is slight.", "If Peer moves or rests on the Self, there will surely be many shortfalls and arrears.", "If Output is thriving or rests on the Body line, the cost in wealth is somewhat tolerable."] }
+      ],
+      "note": {
+        "yi": "「赔赊」是赔补、赊欠（解户押运钱粮，短少的要自己赔补）。「子变官爻，解轻赔赊」「鬼之子象，役大赔微」与诀里「子化官则将轻作重」「官化子则改祸成祥」放在一起读：子化官是外面看着轻、赔补却多，官化子是役虽大、赔补却小；这是按文意的读法，书里没有再解释。「用爻」是官鬼（这一章以官鬼为主）。",
+        "en": "'Peishe' is making up shortfalls and arrears (a conveyor household that carries money and grain must make up what falls short out of its own pocket). 'If Output changes into the Pressure line, the conveyance is light but there are shortfalls and arrears' and 'if Pressure changes into the Output image, the service is great but the shortfall is slight' are read together with the verse's 'if Output changes into the star of office, light is made heavy' and 'if the star of office changes into Output, calamity is turned to fortune': Output into Pressure looks light on the outside but the shortfalls are many, and Pressure into Output is a great service but with a small shortfall; this is a reading by the sense and the book does not explain it further. 'Yongyao', the Subject line, is Pressure (the chief of this chapter)."
+      },
+      "see": ["LY.CAREER.EL.110", "LY.CAREER.EL.109", "LY.CAREER.EL.56"]
+    }
+  ]
+}

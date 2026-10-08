@@ -1,0 +1,332 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "增删卜易",
+  "chapter": "防参劾章、养亲告病辞官章、营造公务防患章",
+  "chapter_en": "Chapters on guarding against impeachment, on resignation and leave, and on public works",
+  "ranges": {"增删卜易": [10792, 10915]},
+  "units": [
+    {
+      "id": "LY.CAREER.ZS.38",
+      "topic": "风险",
+      "chapter": "防参劾、虑大计、及已有事尚未结案者章",
+      "chapter_en": "Chapter on guarding against impeachment and the great evaluation, and on cases not yet closed",
+      "title": "防参劾·世旺官旺，忧心冰解；旺官持世，喜映双眉（世与官星旺相，再得日月动爻生扶、世官临日月、动而变吉，防参劾、已参未结案、虑大计者皆无忧，且蒙卓异；书中例：丰之旅，被参而保本随至）",
+      "rule": {
+        "yi": "防备被参劾、担心大计考核、案子还没结的人：世爻与官星都旺相，再有日月、动爻生扶，或者世爻、官爻临在日月上，或者发动变吉，就没有什么可忧虑的：防参劾的无忧，已被参劾而未结案的无忧，担心大计的不但无忧，还一定被评为卓异；凡是旺相的官星持世，也同样推断。",
+        "en": "For one who guards against impeachment, fears the great evaluation, or has a case not yet closed: if the Self and the star of office are both thriving, and the Day, Month or a moving line also generates and supports them, or the Self or the Pressure line sits on the Day or Month, or they move and turn auspicious, there is nothing to fear: one guarding against impeachment has nothing to fear, one already impeached whose case is not closed has nothing to fear, and one who fears the great evaluation not only has nothing to fear but will surely be rated outstanding; whenever a thriving star of office holds the Self, judge in the same way."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10794, 10795],
+          "zh": ["世旺官旺，忧心冰解，旺官持世，喜映双眉。", "世与官星旺相，何虑何忧？", "再得日月动爻生扶，或得世爻、官爻临于日月，及动而变吉，防参劾者何虑？", "已参而未结案者无忧，虑大计者，不且无忧，定蒙卓异。", "凡得旺官持世，亦同此推。"],
+          "yi": ["世爻旺相、官星旺相，忧愁的心就像冰一样化解；旺相的官星持世，喜气映在双眉上。", "世爻与官星都旺相，有什么可忧虑的？", "再得到日月、动爻生扶，或者世爻、官爻临在日月上，以及发动变吉，防备被参劾的人有什么可虑？", "已经被参劾但还没结案的人没有忧虑，担心大计的人，不但没有忧虑，一定会被评为卓异。", "凡是得到旺相的官星持世，也同样推断。"],
+          "en": ["With the Self thriving and the star of office thriving, the heart's worry melts like ice; a thriving star of office holding the Self brings joy to both brows.", "If the Self and the star of office are thriving, what is there to fear or worry about?", "If the Day, Month or a moving line also generates and supports them, or the Self or the Pressure line sits on the Day or Month, or they move and turn auspicious, what has one to fear who is guarding against impeachment?", "One already impeached whose case is not yet closed has nothing to fear, and one who fears the great evaluation not only has nothing to fear but will surely be rated outstanding.", "Whenever a thriving star of office holds the Self, judge in the same way."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10796, 10796],
+          "zh": ["如：未月戊申日(旬空：寅卯)，占因迟误军粮，已被参劾，得“丰之旅”"],
+          "yi": ["例如：未月戊申日（旬空：寅、卯），占因为耽误了军粮已被参劾的事，得到丰卦变旅卦。"],
+          "en": ["For example: in the Wei month on a Wushen day (void: Yin and Mao), a divination for one already impeached for delaying army grain gave Feng changing into Lü."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10835, 10835],
+          "zh": ["断曰：世临日建，月建生之，动出戌宫又来相生，官爵无恙。", "彼不以为然，岂知因获奇功，保本随至，功名仍复保全。", "或曰：卯木子孙发动，如何不克官？", "余曰：木绝于申，所以有救。"],
+          "yi": ["断语说：世爻临在日辰上，月建生它，发动变出的戌土又来相生，官位爵禄没有妨碍。", "他不以为然，哪知道因为立了奇功，保举的奏章随后就到了，功名仍然保全了。", "有人问：卯木子孙发动，怎么不克官星？", "我说：木在申上绝，所以有救。"],
+          "en": ["The judgment said: the Self sits on the Day branch and the Month generates it, and the Xu branch it moves out to generates it again, so rank and title are untouched.", "He did not think so, but then through winning an unusual merit the memorial recommending him arrived soon after, and his rank was preserved all the same.", "Someone asked: the Mao Wood Output line moves, so how does it not control the star of office?", "I said: Wood is extinct in Shen, so there is rescue."] }
+      ],
+      "note": {
+        "yi": "「参劾」是被言官弹劾；「大计」「计典」是定期考核官员政绩的制度。书里没有解释，这里按通行的意思注。",
+        "en": "'Canhe' is being impeached by the censors, and 'daji' and 'jidian' are the periodic evaluation of officials' performance; the book does not explain them, and they are glossed here in the usual sense."
+      },
+      "see": ["LY.CAREER.ZS.39", "LY.CAREER.ZS.44", "LY.CAREER.HJC.15"]
+    },
+    {
+      "id": "LY.CAREER.ZS.39",
+      "topic": "风险",
+      "chapter": "防参劾、虑大计、及已有事尚未结案者章",
+      "chapter_en": "Chapter on guarding against impeachment and the great evaluation, and on cases not yet closed",
+      "title": "防参劾·福世孙摇身化子，官空鬼破变爻克（子孙持世、子孙动于卦中、世动化子孙，官破官空，及动而化回头之克，皆主罢职休官；书中例：旅之明夷，不信易数者果落职）",
+      "rule": {
+        "yi": "子孙持世、子孙在卦中发动、世爻发动变出子孙，官星被破或落空，以及发动变出回头克，都主被罢职、休官。",
+        "en": "If Output holds the Self, or Output moves in the hexagram, or the Self moves and turns into Output, or the star of office is broken or Void, or it moves and turns into a returning control, all mean dismissal and removal from office."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10836, 10837],
+          "zh": ["福世孙摇身化子，官空鬼破变爻克。", "子孙持世、子孙动于卦中、世动化子孙、，官破官空，及动而化回头之克，皆主罢职休官。"],
+          "yi": ["福神持世、子孙摇动、自身又变出子孙，官星落空、官鬼被破，变出的爻来克。", "子孙持世、子孙在卦中发动、世爻发动变出子孙，官星被破或落空，以及发动变出回头克，都主被罢职、休官。"],
+          "en": ["With Output on the Self and Output swaying, and the Body turning into Output; the star of office Void and Pressure broken, with a changed line that controls.", "If Output holds the Self, or Output moves in the hexagram, or the Self moves and turns into Output, or the star of office is broken or Void, or it moves and turns into a returning control, all mean dismissal and removal from office."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10839, 10839],
+          "zh": ["如：寅月丁巳日(旬空：子丑)，占虑计典，得“旅之明夷”"],
+          "yi": ["例如：寅月丁巳日（旬空：子、丑），占担心大计考核的事，得到旅卦变明夷卦。"],
+          "en": ["For example: in the Yin month on a Dingsi day (void: Zi and Chou), a divination on fear of the great evaluation gave Lü changing into Mingyi."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10879, 10879],
+          "zh": ["此公素行不检，颇藉势要，生平不信易数。", "偶占之，余断曰：子孙持世，虽化回头之克，世亦受克，所以外卦巳酉丑纵成金局以生伏神之官，亦无用矣。", "果落职。"],
+          "yi": ["这位先生平日行为不检点，很依仗权势，一辈子不信易数。", "偶然占了一卦，我断道：子孙持世，虽然变出回头克，世爻也受克，所以外卦巳、酉、丑纵然合成金局去生伏神里的官星，也没有用了。", "结果被罢了职。"],
+          "en": ["This gentleman was ordinarily careless in his conduct, relied much on powerful connections, and all his life did not believe in the Yi numbers.", "He divined once by chance, and I judged: Output holds the Self, and though it turns into a returning control the Self is controlled as well, so even if Si, You and Chou in the outer trigram form a Metal frame to generate the star of office in the hidden line, it is of no use.", "He was indeed dismissed."] }
+      ],
+      "see": ["LY.CAREER.ZS.38", "LY.CAREER.ZS.40", "LY.CAREER.HJC.03"]
+    },
+    {
+      "id": "LY.CAREER.ZS.40",
+      "topic": "风险",
+      "chapter": "防参劾、虑大计、及已有事尚未结案者章",
+      "chapter_en": "Chapter on guarding against impeachment and the great evaluation, and on cases not yet closed",
+      "title": "防参劾·子动财空，减禄罚俸（兄弟持世或发动、财破财空、财动化凶，官爻旺相罚俸而已，官失陷则利名俱丧）",
+      "rule": {
+        "yi": "被参劾的情形：子孙发动、财落空，减俸、罚俸；兄弟持世或发动，或者财被破、财落空，以及财发动变凶，如果官爻旺相，不过罚俸而已；官星如果失陷，那么利益和功名都丧失了。",
+        "en": "In the case of impeachment: with Output moving and Wealth Void, there is a cut in salary and a fine; if Peer holds the Self or moves, or Wealth is broken or Void, or Wealth moves and turns bad, then if the Pressure line is thriving it comes to no more than a fine; if the star of office is lost, both gain and rank are lost."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10880, 10880],
+          "zh": ["子动财空，减禄罚俸。", "兄弟持世，兄弟发动，或财破财空，及财动化凶，倘得官爻旺相，罚俸而已；", "官若失陷，则利名俱丧也。"],
+          "yi": ["子孙发动、财落空，减俸、罚俸。", "兄弟持世、兄弟发动，或者财被破、财落空，以及财发动变凶，如果官爻旺相，不过罚俸而已；", "官星如果失陷，那么利益和功名都丧失了。"],
+          "en": ["With Output moving and Wealth Void, there is a cut in salary and a fine.", "If Peer holds the Self or Peer moves, or Wealth is broken or Void, or Wealth moves and turns bad, then if the Pressure line is thriving it comes to no more than a fine;", "if the star of office is lost, then both gain and rank are lost."] }
+      ],
+      "see": ["LY.CAREER.ZS.39", "LY.CAREER.ZS.41", "LY.CAREER.HJC.04"]
+    },
+    {
+      "id": "LY.CAREER.ZS.41",
+      "topic": "风险",
+      "chapter": "防参劾、虑大计、及已有事尚未结案者章",
+      "chapter_en": "Chapter on guarding against impeachment and the great evaluation, and on cases not yet closed",
+      "title": "防参劾·身衰鬼克，贬责凌呵（世衰无生扶，又有岁五日月动爻刑冲克世，或官动克世、世随鬼入墓、世动化鬼化克、虎蛇刑克世，轻则贬罚重则刑狱；轻重看世爻有救无救）",
+      "rule": {
+        "yi": "世爻衰弱、官鬼来克，遭贬责、受凌辱。世爻衰弱又得不到生扶，又有太岁、五爻、日月、动爻刑冲克世，或者官星发动克世，或者世爻随官鬼入墓，世爻发动变鬼、变克，以及白虎、螣蛇刑克世爻的，轻的贬官受罚，重的坐牢。轻重要看世爻有没有救：世爻有救，是轻的；世爻休囚又被刑伤冲克，是重的。",
+        "en": "With the Self weak and Pressure controlling it, there is demotion, reproof and abuse. If the Self is weak and gets no generation or support, and Tai Sui, the fifth line, the Day, the Month or a moving line punishes, clashes with or controls the Self, or the star of office moves to control the Self, or the Self follows Pressure into the tomb, or the Self moves and turns into Pressure or into a control, or the White Tiger or the Coiling Snake punishes or controls the Self, then at the lightest there is demotion and punishment, at the worst prison. Light or heavy depends on whether the Self has a rescue: it is light when the Self has a rescue, and heavy when the Self is resting or trapped and is also punished, injured, clashed or controlled."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10881, 10882],
+          "zh": ["身衰鬼克，贬责凌呵。", "世衰不遇生扶，又有岁五日月动爻刑冲克世，或官动克世，或世随鬼入墓，世动化鬼、化克，及虎蛇刑克世爻者，轻则贬罚，重则刑狱。", "或曰：何以为之轻重？", "余曰：轻者，乃世爻之有救也；", "重者，乃世爻休囚，又被刑伤冲克也。"],
+          "yi": ["世身衰弱、官鬼来克，遭到贬责、凌辱和呵斥。", "世爻衰弱又遇不到生扶，又有太岁、五爻、日月、动爻刑冲克世，或者官星发动克世，或者世爻随官鬼入墓，世爻发动变鬼、变克，以及白虎、螣蛇刑克世爻的，轻的贬官受罚，重的坐牢。", "有人问：怎么分轻重？", "我说：轻的，是世爻有救；", "重的，是世爻休囚，又被刑伤冲克。"],
+          "en": ["With the Body weak and Pressure controlling it, there is demotion, reproof and abuse.", "If the Self is weak and gets no generation or support, and Tai Sui, the fifth line, the Day, the Month or a moving line punishes, clashes with or controls the Self, or the star of office moves to control the Self, or the Self follows Pressure into the tomb, or the Self moves and turns into Pressure or into a control, or the White Tiger or the Coiling Snake punishes or controls the Self, then at the lightest there is demotion and punishment, at the worst prison.", "Someone asked: how does one tell light from heavy?", "I said: it is light when the Self has a rescue;", "it is heavy when the Self is resting or trapped and is also punished, injured, clashed or controlled."] }
+      ],
+      "see": ["LY.CAREER.ZS.40", "LY.CAREER.ZS.42", "LY.CAREER.HJC.15"]
+    },
+    {
+      "id": "LY.CAREER.ZS.42",
+      "topic": "任所",
+      "chapter": "防参劾、虑大计、及已有事尚未结案者章",
+      "chapter_en": "Chapter on guarding against impeachment and the great evaluation, and on cases not yet closed",
+      "title": "防参劾·世静世空官又陷，终须林下作闲人（世空是退休之兆，官又空破休囚者削职无疑）",
+      "rule": {
+        "yi": "世爻安静又落空，官星又失陷，终究要回到山林做个闲人：世爻落空是退休的征兆，官星又落空、被破、休囚的，削职无疑。",
+        "en": "If the Self is still and Void and the star of office is also lost, one must in the end go back to the woods as an idle man: a Void Self is a sign of retirement, and if the star of office is also Void, broken, or resting or trapped, dismissal is certain."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10883, 10883],
+          "zh": ["世静世空官又陷，终须林下作闲人。", "世空者，退休之兆，官又空破休囚者，削职无疑。"],
+          "yi": ["世爻安静又落空，官星又失陷，终究要回到山林做个闲人。", "世爻落空，是退休的征兆；官星又落空、被破、休囚的，削职无疑。"],
+          "en": ["If the Self is still and Void and the star of office is also lost, one must in the end go back to the woods as an idle man.", "A Void Self is a sign of retirement; if the star of office is also Void, broken, or resting or trapped, dismissal is certain."] }
+      ],
+      "see": ["LY.CAREER.ZS.43", "LY.CAREER.HJC.16"]
+    },
+    {
+      "id": "LY.CAREER.ZS.43",
+      "topic": "风险",
+      "chapter": "防参劾、虑大计、及已有事尚未结案者章",
+      "chapter_en": "Chapter on guarding against impeachment and the great evaluation, and on cases not yet closed",
+      "title": "防参劾·世陷逢生，煞兴何碍（古说「身空煞动，避祸之征」作者以为非：忌神动而世空，待世出空之月日必遭其害，何能避；唯世空逢元神动而相生，忌神动亦无碍）",
+      "rule": {
+        "yi": "世爻失陷但遇到生扶，凶煞兴旺也没有妨碍。古人有「身空煞动是避祸的征兆」的说法，增删卜易认为不对：忌神在卦中发动，世爻落空，等到世爻出空的月份日子，必定遭它的害，怎么能避开？只有世爻落空而遇到元神发动来生它，卦中即使有忌神发动也没有妨碍，因为等到世爻出空那天，忌神反而去生元神，元神再生世爻。",
+        "en": "If the Self is lost but meets generation, there is no harm even when baleful spirits flourish. The ancients said 'a Void Body and a moving baleful spirit are a sign of avoiding disaster', which the Zeng Shan Bu Yi holds to be wrong: when the Adversary moves in the hexagram and the Self is Void, in the month or on the day the Self leaves the Void it will surely be harmed, so how could it avoid it? Only when the Self is Void and meets the Support moving to generate it is there no harm even though the Adversary moves, because by the day the Self leaves the Void the Adversary instead generates the Support and the Support generates the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10884, 10884],
+          "zh": ["世陷逢生，煞兴何碍。", "古有：身空煞动，避祸之征，余以为非也。", "盖忌神动于卦中，世爻空者，待世爻出空之月日，必遭其害，何能避之？", "惟世空逢元神动而相生，卦中虽有忌神发动亦无碍矣，以其待世爻出空之日，忌神反生元神而生世也。"],
+          "yi": ["世爻失陷但遇到生扶，凶煞兴旺又有什么妨碍。", "古人有「身空煞动，避祸的征兆」的说法，我认为不对。", "因为忌神在卦中发动，世爻落空的，等到世爻出空的月份日子，必定遭它的害，怎么能避开？", "只有世爻落空而遇到元神发动来生它的，卦中即使有忌神发动也没有妨碍，因为等世爻出空的那天，忌神反而去生元神、元神再生世爻。"],
+          "en": ["If the Self is lost but meets generation, what harm is there if baleful spirits flourish?", "The ancients said 'a Void Body and a moving baleful spirit are a sign of avoiding disaster', which I think is wrong.", "For when the Adversary moves in the hexagram and the Self is Void, once the month or day comes in which the Self leaves the Void it will surely be harmed, so how could it avoid it?", "Only when the Self is Void and meets the Support moving to generate it is there no harm even though the Adversary moves in the hexagram, because by the day the Self leaves the Void the Adversary instead generates the Support and the Support generates the Self."] }
+      ],
+      "dispute": {
+        "yi": "黄金策仕宦章说「身空杀动，避祸之征」（LY.CAREER.HJC.16），旧注解作鬼发动被月日岁君伤克，是避祸脱灾；增删卜易引了「身空煞动，避祸之征」，明说「余以为非也」，理由是世爻出空之日必遭其害。",
+        "en": "The Huangjin Ce's chapter on holding office says 'a Void Body and a moving baleful spirit are a sign of avoiding disaster' (LY.CAREER.HJC.16), and the old commentary explains it as Pressure moving and being injured and controlled by the Month, Day and Tai Sui, which is escaping disaster; the Zeng Shan Bu Yi quotes 'a Void Body and a moving baleful spirit are a sign of avoiding disaster' and says outright 'I think it is wrong', its reason being that on the day the Self leaves the Void it will surely be harmed."
+      },
+      "see": ["LY.CAREER.HJC.16", "LY.CAREER.ZS.42", "LY.CAREER.ZS.44"]
+    },
+    {
+      "id": "LY.CAREER.ZS.44",
+      "topic": "风险",
+      "chapter": "防参劾、虑大计、及已有事尚未结案者章",
+      "chapter_en": "Chapter on guarding against impeachment and the great evaluation, and on cases not yet closed",
+      "title": "防参劾·官隆世陷，身辱官存（凶兆中官爻持世或官伏世下而旺，虽见责罚官职犹存；野鹤：世遇五爻之克，官旺生合世或旺官持世，虽辱仍有官；书中例：井之中孚，世空逢日冲暗动，官局生应，位已属他人，后果调换）",
+      "rule": {
+        "yi": "官星兴旺而世爻失陷，自身受辱但官位还在：凡是遇到凶兆，如果官爻持世，或者官星伏在世爻下面而且旺相，虽然受到责罚，官职还保留（古说：身边伏鬼若不落空，官职还在）。野鹤说：世爻被五爻所克，只要官星旺相、生合世爻，或者旺相的官星持世，虽然遭到羞辱，仍然会有官职。",
+        "en": "With the star of office flourishing and the Self lost, one is humiliated but keeps the office: whenever an ill omen comes, if the Pressure line holds the Self, or the star of office lies hidden under the Self and is thriving, one is censured and punished but the office remains (the old saying: if Pressure lies hidden beside the Body and is not Void, the office remains). The Old Man of Yehe says: if the Self is controlled by the fifth line but the star of office is thriving and generates or combines with the Self, or a thriving star of office holds the Self, one meets disgrace but still has office."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10885, 10885],
+          "zh": ["官隆世陷，身辱官存。", "古有：身边伏鬼若非空，官职犹在。", "谓凡遇凶兆，若得官爻持世，或官伏世下而旺，虽见责罚，而官职犹存。"],
+          "yi": ["官星兴旺而世爻失陷，自身受辱但官位还在。", "古人有「身边伏着官鬼，如果不落空，官职还在」的说法。", "意思是凡是遇到凶兆，如果官爻持世，或者官星伏在世爻下面而且旺相，虽然受到责罚，官职还保留。"],
+          "en": ["With the star of office flourishing and the Self lost, one is humiliated but keeps the office.", "The ancients said: 'if Pressure lies hidden beside the Body and is not Void, the office remains.'", "It means that whenever an ill omen comes, if the Pressure line holds the Self, or the star of office lies hidden under the Self and is thriving, one is censured and punished but the office remains."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10886, 10886],
+          "zh": ["野鹤曰：世遇五爻之克，若得官旺生合世爻，及旺官持世，虽则逢辱，仍复有官。"],
+          "yi": ["野鹤说：世爻被五爻所克，如果官星旺相生合世爻，以及旺相的官星持世，虽然遭到羞辱，仍然会有官职。"],
+          "en": ["The Old Man of Yehe says: if the Self is controlled by the fifth line, but the star of office is thriving and generates or combines with the Self, or a thriving star of office holds the Self, one meets disgrace but still has office."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10886, 10886],
+          "zh": ["如：丑月戊辰日(旬空：戌亥)，占防参劾，得“井之中孚”"],
+          "yi": ["例如：丑月戊辰日（旬空：戌、亥），占防备参劾，得到井卦变中孚卦。"],
+          "en": ["For example: in the Chou month on a Wuchen day (void: Xu and Hai), a divination on guarding against impeachment gave Jing changing into Zhongfu."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10894, 10894],
+          "zh": ["断曰：此卦甚奇，世空而逢日冲不为空矣，世不受克而暗动，虽无参论，恐要离任。", "彼曰：既无参论，如何离任？", "余曰：世爻暗兴，必主动摇，且内卦巳酉丑合成官局以生应爻，故知此位已属他人矣。", "后因裁他处之缺，上司题留他处之官顶此公之位，换此公回京另补，此亦少经见之事甚矣，知几者神哉！"],
+          "yi": ["断语说：这个卦很奇特，世爻落空但遇到日辰冲，就不算空了，世爻不受克却暗动，虽然没有被参劾的议论，恐怕要离任。", "他说：既然没有被参劾的议论，怎么会离任？", "我说：世爻暗中兴起，必定主有动摇，而且内卦巳、酉、丑合成官局去生应爻，所以知道这个位置已经属于别人了。", "后来因为裁撤了别处的缺，上司题请把别处的官留下来顶这位先生的职位，让这位先生回京另外补缺，这也是很少见到的事，能知道机微的人真神啊！"],
+          "en": ["The judgment said: this hexagram is most unusual; the Self is Void but meets a clash from the Day and so is no longer Void; it is not controlled yet moves in secret, so though there is no talk of impeachment, I fear he must leave his post.", "He said: if there is no talk of impeachment, how can I leave my post?", "I said: the Self stirs in secret, which surely means a shake-up, and moreover the inner trigram Si, You and Chou combines into a Pressure frame to generate the Other, so I knew the post already belonged to another.", "Later, because a post elsewhere was abolished, the superior petitioned to keep the officer of that post to take this gentleman's place and sent this gentleman back to the capital to be given another post; this too is a very rare thing, and how divine are those who know the signs!"] }
+      ],
+      "see": ["LY.CAREER.HJC.17", "LY.CAREER.ZS.43", "LY.CAREER.ZS.45"]
+    },
+    {
+      "id": "LY.CAREER.ZS.45",
+      "topic": "风险",
+      "chapter": "防参劾、虑大计、及已有事尚未结案者章",
+      "chapter_en": "Chapter on guarding against impeachment and the great evaluation, and on cases not yet closed",
+      "title": "防参劾·身实官陷，位去身安（世旺不受伤克，官破官空或被刑冲克害或动变凶，官禄虽失而身不受伤）",
+      "rule": {
+        "yi": "自身实在、官星失陷，官位丢了但人平安：世爻旺相、不受伤克，而官星被破、落空，或被刑冲克害，或发动变凶，官职俸禄虽然丢了，人不会受伤害。",
+        "en": "With the Body solid and the star of office lost, the post goes but the person is safe: if the Self is thriving and not injured or controlled, while the star of office is broken or Void, or punished, clashed, controlled or harmed, or moves and turns bad, the office and salary are lost but the person is not harmed."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10895, 10895],
+          "zh": ["身实官陷，位去身安。", "世爻旺相不受伤克，官破官空，及被刑冲克害，或动而变凶者，官禄虽失，身不逢伤。"],
+          "yi": ["自身实在、官星失陷，官位丢了但人平安。", "世爻旺相不受伤克，官星被破、落空，以及被刑冲克害，或者发动变凶的，官职俸禄虽然丢了，人不会受伤害。"],
+          "en": ["With the Body solid and the star of office lost, the post goes but the person is safe.", "If the Self is thriving and not injured or controlled, while the star of office is broken or Void, or punished, clashed, controlled or harmed, or moves and turns bad, the office and salary are lost but the person is not harmed."] }
+      ],
+      "see": ["LY.CAREER.ZS.44", "LY.CAREER.ZS.42"]
+    },
+    {
+      "id": "LY.CAREER.ZS.46",
+      "topic": "任所",
+      "chapter": "养亲、告病、辞官章",
+      "chapter_en": "Chapter on caring for a parent, sick leave and resignation",
+      "title": "养亲告病辞官·子世子兴，必能遂愿；官克官也，总不如心（子孙持世或发动，无官之累，能遂偷闲；官星持世或官动克世合世，难脱利名缰锁）",
+      "rule": {
+        "yi": "养亲、告病、辞官：子孙持世、子孙发动，就没有官职的牵累，必定能如愿偷闲；官星持世，以及官星发动克世、合世的，难以摆脱名利的缰绳和锁链。",
+        "en": "To care for a parent, take sick leave or resign: if Output holds the Self or Output moves, there is no burden of office and one will surely get the leisure one wants; if the star of office holds the Self, or the star of office moves to control or combine with the Self, one can hardly break free from the reins and chains of rank and profit."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10900, 10900],
+          "zh": ["子世子兴，必能遂愿；", "官克官也，总不如心。", "子孙持世，子孙发动，乃无官之累，必能遂我偷闲。", "若官星持世、及官动克世合世者，难脱利名缰锁。"],
+          "yi": ["子孙持世、子孙兴旺，必定能如愿；", "官星克官，总归不称心。", "子孙持世、子孙发动，就是没有官职的牵累，必定能遂我偷闲的心愿。", "如果官星持世，以及官星发动克世、合世的，难以摆脱名利的缰绳和锁链。"],
+          "en": ["With Output on the Self and flourishing, one will surely get one's wish;", "Pressure controlling the office, it never goes as one wishes.", "If Output holds the Self or Output moves, there is no burden of office, and one will surely get the leisure one wants.", "If the star of office holds the Self, or the star of office moves to control or combine with the Self, one can hardly break free from the reins and chains of rank and profit."] }
+      ],
+      "note": {
+        "yi": "「官克官也」原文如此，字面不通；后一句注文把它讲成「官星持世、官动克世合世」，译文照字面译，不另改字。",
+        "en": "'Pressure controls Pressure' is how the text reads and it does not make sense literally; the following note explains it as 'the star of office holds the Self, or moves to control or combine with the Self', and the translation follows the letter without emending."
+      },
+      "see": ["LY.CAREER.ZS.47"]
+    },
+    {
+      "id": "LY.CAREER.ZS.47",
+      "topic": "任所",
+      "chapter": "养亲、告病、辞官章",
+      "chapter_en": "Chapter on caring for a parent, sick leave and resignation",
+      "title": "养亲告病辞官·告假不忌反吟，休致须宜化退（告病养亲是暂归，得反吟应将来再任故不忌；辞官不宜反吟，得伏吟必不能行；官化退、世化退告假辞官皆遂意；世与官化进神则王事羁身难歇手）",
+      "rule": {
+        "yi": "告假、告病、奉养父母是暂时回去的事，得反吟卦不忌讳（应了将来还会再任职）；辞官的人不宜见反吟，得伏吟一定走不成；官星或世爻变退神，告假、辞官都能如意；世爻与官星变进神，公事缠身，难以歇手。",
+        "en": "Taking leave, sick leave and caring for a parent are temporary returns home, and a Reversed Chant hexagram is not feared (it means one will take office again); for one resigning Reversed Chant is not suitable, and with Hidden Chant one surely cannot go; if the star of office or the Self turns into a Retreating line, leave and resignation are both granted as wished; if the Self and the star of office turn into Advancing lines, state business holds one fast and it is hard to stop."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10901, 10901],
+          "zh": ["告假不忌反吟，休致须宜化退。", "告病及养亲，乃暂归之事，得反吟卦者，乃应将来再任，故不忌之。", "惟辞官者，不宜见之，非目下屡辞不获，乃将来远入畱台；", "若得伏吟，必不能行。", "官化退，世爻化退，告假辞官，皆得遂意。", "世与官星而化进神者，王事羁身，难以歇手。"],
+          "yi": ["告假不忌讳反吟，告老退休必须变退神。", "告病和奉养父母，是暂时回去的事，得反吟卦的，是应了将来还会再任职，所以不忌讳。", "只有辞官的人，不宜见到它，不是眼前屡次请辞都不获准，就是将来远远地进入留台；", "如果得到伏吟，一定走不成。", "官星变退神、世爻变退神，告假、辞官，都能如意。", "世爻与官星变进神的，公事缠身，难以歇手。"],
+          "en": ["For taking leave Reversed Chant is not feared; for retirement a change into a Retreating line is needed.", "Taking leave for illness or to care for a parent is a temporary return home, and one who gets a Reversed Chant hexagram will take office again in future, so it is not feared.", "Only for one resigning is it not suitable to see it: either repeated resignations are not granted now, or in future one will go far off into the Liutai;", "if one gets Hidden Chant, one surely cannot go.", "If the star of office turns into a Retreating line, or the Self turns into a Retreating line, leave and resignation are both granted as wished.", "If the Self and the star of office turn into Advancing lines, state business holds one fast and it is hard to stop."] }
+      ],
+      "note": {
+        "yi": "「留台」书里没有解释；译文照字面保留。反吟、伏吟的定义见术语表。",
+        "en": "The book does not explain 'Liutai', and the translation keeps it as it stands. Reversed Chant and Hidden Chant are defined in the glossary."
+      },
+      "see": ["LY.CAREER.ZS.46"]
+    },
+    {
+      "id": "LY.CAREER.ZS.48",
+      "topic": "差役",
+      "chapter": "修陵修河，一切营造公务防患章",
+      "chapter_en": "Chapter on repairing tombs and rivers and guarding against trouble in all public works",
+      "title": "营造公务防患·福摇子动无忧，鬼克兄冲有患（子孙持世或动于卦中，事无忧虑有始有终；官鬼克世受累，兄克兄动赔财，鬼兄持世同推）",
+      "rule": {
+        "yi": "修陵修河等营造公务防患：福神摇动、子孙发动没有忧虑，官鬼克、兄弟冲就有祸患；子孙持世或在卦中发动，事情没有忧虑，有始有终；官鬼克世会受累，兄弟克世、发动会赔钱，官鬼、兄弟持世的也同样推断。",
+        "en": "Guarding against trouble in works such as repairing tombs and rivers: with the lucky spirit swaying and Output moving there is nothing to worry about, and with Pressure controlling and Peer clashing there is trouble; if Output holds the Self or moves in the hexagram, the matter has nothing to worry about and has a beginning and an end; if Pressure controls the Self one is burdened, if Peer controls the Self or moves one loses money, and the same judgment holds when Pressure or Peer holds the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10906, 10906],
+          "zh": ["福摇子动无忧，鬼克兄冲有患。", "子孙持世，子动卦中，事无忧虑，有始有终。", "官鬼克世而受累，兄克兄动而赔财，鬼兄持世者同推。"],
+          "yi": ["福神摇动、子孙发动没有忧虑，官鬼克、兄弟冲就有祸患。", "子孙持世、子孙在卦中发动，事情没有忧虑，有始有终。", "官鬼克世会受累，兄弟克世、发动会赔钱，官鬼、兄弟持世的也同样推断。"],
+          "en": ["With the lucky spirit swaying and Output moving there is nothing to worry about, and with Pressure controlling and Peer clashing there is trouble.", "If Output holds the Self or moves in the hexagram, the matter has nothing to worry about and has a beginning and an end.", "If Pressure controls the Self one is burdened, if Peer controls the Self or moves one loses money, and the same judgment holds when Pressure or Peer holds the Self."] }
+      ],
+      "see": ["LY.CAREER.ZS.49", "LY.CAREER.ZS.52"]
+    },
+    {
+      "id": "LY.CAREER.ZS.49",
+      "topic": "差役",
+      "chapter": "修陵修河，一切营造公务防患章",
+      "chapter_en": "Chapter on repairing tombs and rivers and guarding against trouble in all public works",
+      "title": "营造公务防患·父世官生，因公加爵（父母持世，官星动而生合世爻，必因公事加官）",
+      "rule": {
+        "yi": "父母持世，官星发动生合世爻，必定因为办公事而加官。",
+        "en": "If Resource holds the Self and the star of office moves to generate or combine with the Self, one will surely gain office through public business."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10907, 10907],
+          "zh": ["父世官生，因公加爵。", "父母持世，官星动而生合世爻者，必因公事加官。"],
+          "yi": ["父母持世、官星来生，因为办公事而加官晋爵。", "父母持世，官星发动生合世爻的，必定因为公事加官。"],
+          "en": ["With Resource on the Self and the star of office generating it, one gains rank through public service.", "If Resource holds the Self and the star of office moves to generate or combine with the Self, one will surely gain office through public business."] }
+      ],
+      "see": ["LY.CAREER.ZS.48", "LY.CAREER.ZS.50"]
+    },
+    {
+      "id": "LY.CAREER.ZS.50",
+      "topic": "差役",
+      "chapter": "修陵修河，一切营造公务防患章",
+      "chapter_en": "Chapter on repairing tombs and rivers and guarding against trouble in all public works",
+      "title": "营造公务防患·财兴官旺，利获名荣（旺官持世财动相生，因公得利、远许名荣；旺财持世、世动化财生世同断）",
+      "rule": {
+        "yi": "财兴旺、官星旺相，既得利益又得荣名：旺相的官星持世，财发动来生它，不但因公事获利，还将得到名誉荣耀；旺相的财持世，或者世爻发动变出财来生世，也同样断。",
+        "en": "With Wealth flourishing and the star of office thriving, one wins both gain and honour: if a thriving star of office holds the Self and Wealth moves to generate it, one not only gains from public business but will in due time win honour; the same judgment holds when a thriving Wealth line holds the Self, or the Self moves and turns into Wealth to generate the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10908, 10908],
+          "zh": ["财兴官旺，利获名荣。", "旺官持世，财动相生，不惟因公得利，远许名荣。", "旺财持世，世动化财生世，皆同此断。"],
+          "yi": ["财兴旺、官星旺相，获得利益和名誉。", "旺相的官星持世，财发动来生它，不但因公事获利，还将得到名誉荣耀。", "旺相的财持世，世爻发动变出财来生世的，都同样断。"],
+          "en": ["With Wealth flourishing and the star of office thriving, one wins both gain and honour.", "If a thriving star of office holds the Self and Wealth moves to generate it, one not only gains from public business but will in due time win honour.", "The same judgment holds when a thriving Wealth line holds the Self, or the Self moves and turns into Wealth to generate the Self."] }
+      ],
+      "see": ["LY.CAREER.ZS.49", "LY.CAREER.ZS.51"]
+    },
+    {
+      "id": "LY.CAREER.ZS.51",
+      "topic": "成否",
+      "chapter": "修陵修河，一切营造公务防患章",
+      "chapter_en": "Chapter on repairing tombs and rivers and guarding against trouble in all public works",
+      "title": "营造公务防患·六冲不久，六合坚牢（工程以父爻为用神，用神不旺或受冲克又得六冲卦必不坚久，化冲亦然；世休囚被克将来遭害；父旺得六合卦永远坚牢）",
+      "rule": {
+        "yi": "看工程牢不牢：工程都以父爻为用神；用神不旺，或者受冲克，又得六冲卦的，必定不坚固长久，变冲的也一样；还要看世爻旺不旺，世爻如果休囚被克，将来终究要遭它的害；只有父爻旺相、又得六合卦的，才永远坚固牢靠。",
+        "en": "To tell whether a work will be firm: in construction the Resource line is always the Subject; if the Subject is not thriving, or is clashed or controlled, and the hexagram is also Six-Clash, the work will surely not be firm and lasting, and so also when it turns into a clash; one must also see whether the Self is thriving, for if the Self is resting or trapped and controlled one will in the end suffer harm from it; only when the Resource line is thriving and the hexagram is also Six-Combine will it be firm and secure for ever."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10909, 10909],
+          "zh": ["六冲不久，六合坚牢。", "工程皆以父爻为用神，用神不旺，或受冲克，又得六冲卦者，必不坚久，化冲者亦然。", "又看世爻旺否，世若休囚被克，将来终遭其害，惟喜父爻旺相，又得六合卦者，永远坚牢。"],
+          "yi": ["六冲卦不长久，六合卦坚固牢靠。", "工程都以父爻为用神，用神不旺，或者受冲克，又得六冲卦的，必定不坚固长久，变冲的也一样。", "还要看世爻旺不旺，世爻如果休囚被克，将来终究要遭它的害；只喜欢父爻旺相，又得六合卦的，永远坚固牢靠。"],
+          "en": ["A Six-Clash hexagram does not last; a Six-Combine hexagram is firm and secure.", "In construction works the Resource line is always the Subject; if the Subject is not thriving, or is clashed or controlled, and the hexagram is also Six-Clash, the work will surely not be firm and lasting, and so also when it turns into a clash.", "One must also see whether the Self is thriving: if the Self is resting or trapped and controlled, one will in the end suffer harm from it; only when the Resource line is thriving and the hexagram is also Six-Combine will it be firm and secure for ever."] }
+      ],
+      "note": {
+        "yi": "这一条看的是工程本身牢不牢（父爻为用神），上面几条看的是办这件公务的人自己吉凶。",
+        "en": "This entry judges whether the work itself is sound (the Resource line as the Subject); the entries above judge the fortune of the man who handles the public business."
+      },
+      "see": ["LY.CAREER.ZS.50", "LY.CAREER.ZS.52"]
+    },
+    {
+      "id": "LY.CAREER.ZS.52",
+      "topic": "差役",
+      "chapter": "修陵修河，一切营造公务防患章",
+      "chapter_en": "Chapter on repairing tombs and rivers and guarding against trouble in all public works",
+      "title": "营造公务防患·野鹤：初入工程防患宜子孙动，已见疏虞防患则子动伤官；觉子：初入工程兄动虑赔财，已见疏虞兄兴防罚俸",
+      "rule": {
+        "yi": "占公务防患要分两个阶段：刚开始进入工程而防备祸患的，适合子孙动摇，子孙发动就没有忧虑；如果已经出现了疏漏失误而防备祸患的，必然是在为功名担忧，子孙发动反而伤官星，怎么能说子孙动就没有忧虑呢。觉子补充：刚开始进入工程，兄弟发动要担心赔钱；已经出现疏漏，兄弟兴旺要防备罚俸。",
+        "en": "In divining public business and guarding against trouble one must tell two stages apart: for one who has just begun a works project and guards against trouble, Output swaying is good, for when Output moves there is nothing to worry about; but for one who has already seen a lapse and guards against trouble, he is surely anxious for his rank, and Output moving then injures the star of office, so how could it be said that when Output moves there is nothing to worry about? Juezi adds: at the start of a works project, when Peer moves one fears losing money; once a lapse has appeared, when Peer flourishes guard against a fine of salary."
+      },
+      "quotes": [
+        { "by": "野鹤", "book": "增删卜易", "range": [10911, 10911],
+          "zh": ["野鹤曰：凡占公务，初入工程而防患者，宜子孙动摇，子动无忧。", "倘若已见疏虞而防患者，必有功名之虑矣，子动则伤官也。", "岂曰：子动而无忧乎？"],
+          "yi": ["野鹤说：凡是占公务，刚开始进入工程而防备祸患的，适合子孙动摇，子孙发动就没有忧虑。", "如果已经出现了疏漏失误而防备祸患的，必然是在为功名担忧，子孙发动就会伤官星。", "怎么能说子孙发动就没有忧虑呢？"],
+          "en": ["The Old Man of Yehe says: in divining public business, one who has just begun a works project and guards against trouble does well with Output swaying, for when Output moves there is nothing to worry about.", "But one who has already seen a lapse and guards against trouble is surely anxious for his rank, and when Output moves it injures the star of office.", "How could it be said that when Output moves there is nothing to worry about?"] },
+        { "by": "觉子", "book": "增删卜易", "range": [10913, 10913],
+          "zh": ["觉子曰：初入工程，兄动则虑赔财；", "已见疏虞，兄兴则防罚俸。"],
+          "yi": ["觉子说：刚开始进入工程，兄弟发动就要担心赔钱；", "已经出现疏漏，兄弟兴旺就要防备罚俸。"],
+          "en": ["Juezi says: at the start of a works project, when Peer moves one fears losing money;", "once a lapse has appeared, when Peer flourishes guard against a fine of salary."] }
+      ],
+      "see": ["LY.CAREER.ZS.48", "LY.CAREER.ZS.51"]
+    }
+  ]
+}

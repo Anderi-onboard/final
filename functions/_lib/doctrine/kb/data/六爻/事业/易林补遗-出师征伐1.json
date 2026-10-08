@@ -1,0 +1,522 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "易林补遗",
+  "chapter": "出师征伐章第五(上)",
+  "chapter_en": "Chapter 5: Sending out troops and campaigning (part 1)",
+  "ranges": {"易林补遗": [317, 359]},
+  "units": [
+    {
+      "id": "LY.CAREER.EL.12",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐总纲：以世应为主、福德为凭；折杀执俘全凭勇略，观时制变各用机谋；传受三略六韬、八门九遁，虽识奇门之胜负，还凭易卦之吉凶",
+      "rule": {
+        "yi": "出师征伐，以世爻、应爻为主，福德（子孙）为凭据。杀敌擒俘全凭勇气谋略，观察时机、应付变化各用机智谋划，传自黄石公、姜太公的《三略》《六韬》，诸葛孔明推演的八门九遁；虽然知道奇门的胜负，还要凭易卦的吉凶来断。",
+        "en": "In sending out troops and campaigning, take the Self and the Other as the chief and Fortune Virtue (Output) as the ground. Killing the enemy and taking prisoners rest wholly on courage and strategy, and watching the moment and mastering change each use wit and planning; the Three Strategies and the Six Secret Teachings handed down from Huang Shigong and Jiang Taigong and the Eight Gates and Nine Escapes spread out by Zhuge Kongming are known, but though one may know the victories and defeats of Qimen, one still relies on the good and ill of the hexagram."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [319, 319],
+          "zh": ["以世应为主，福德为凭"],
+          "yi": ["以世应为主，福德为凭。"],
+          "en": ["Take the Self and the Other as the chief, and Fortune Virtue (Output) as the ground."] },
+        { "by": "经", "book": "易林补遗", "range": [320, 320],
+          "zh": ["折杀执俘全凭勇略，观时制变各用机谋，", "传受黄姜之三略六韬，布演孔明之八门九遁，", "虽识奇门之胜负，还凭易卦之吉凶。"],
+          "yi": ["杀敌擒俘全凭勇气谋略，观察时机、应付变化各用机智谋划，", "传自黄石公、姜太公的《三略》《六韬》，诸葛孔明推演的八门九遁，", "虽然知道奇门的胜负，还要凭易卦的吉凶。"],
+          "en": ["Killing the enemy and taking prisoners rest wholly on courage and strategy, and watching the moment and mastering change each use wit and planning;", "the Three Strategies and the Six Secret Teachings are handed down from Huang and Jiang, and the Eight Gates and Nine Escapes are spread out by Zhuge Kongming;", "though one may know the victories and defeats of Qimen, one still relies on the good and ill of the hexagram."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [321, 321],
+          "zh": ["彼我命将出师，各用谋臣参赞，故先贤授韬略之然国师布遁奇之阵，神策异谋决使全胜也。"],
+          "yi": ["敌我双方任命将帅出兵，各自用谋臣参谋辅佐，所以先贤传授韬略，国师布置遁甲奇门之阵，神妙的策略、奇特的谋划，必使全胜。"],
+          "en": ["Both sides appoint commanders and send out troops, each using counsellors to advise and assist, and so the worthies of old passed down the strategies, and the state preceptor lays out the formations of Dunjia and Qimen, whose marvellous plans and unusual schemes are meant to secure total victory."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [322, 322],
+          "zh": ["三略者，黄遁全上略、中略、下略也。", "姜子牙六韬者，文韬、武韬、龙韬、虎韬、豹韬、犬韬也。", "八门者，休生伤杜景死惊开是也。", "九遁者，乃阳数九遁阴数九遁也。"],
+          "yi": ["《三略》，就是黄（石公）的上略、中略、下略。", "姜子牙的《六韬》，就是文韬、武韬、龙韬、虎韬、豹韬、犬韬。", "八门，就是休、生、伤、杜、景、死、惊、开。", "九遁，就是阳数的九遁和阴数的九遁。"],
+          "en": ["The Three Strategies are the Upper, Middle and Lower Strategies of Huang (Shigong).", "Jiang Ziya's Six Secret Teachings are the Civil, Martial, Dragon, Tiger, Leopard and Hound Teachings.", "The Eight Gates are the Rest, Life, Harm, Block, Scene, Death, Fright and Open gates.", "The Nine Escapes are the nine escapes of the yang numbers and the nine escapes of the yin numbers."] }
+      ],
+      "note": {
+        "yi": "小标「以世应为主，福德为凭」是这一章的取法：世爻、应爻定彼己，子孙（福德）是兵将。第二句「三略者，黄遁全上略」的「黄遁全」文字有误，按文意是黄石公。第一联里「全」字在「全凭勇略」的前面，书里没有标点，译文按语气分成三组。「韬略」是兵法。这一章的头一联就把易卦和奇门并提，后面各条也常常两门并用。",
+        "en": "The subtitle, 'the Self and the Other as chief, Fortune Virtue as the ground', gives the method of this chapter: the Self and the Other fix them and us, and Output (Fortune Virtue) is the troops and generals. The 'Huang Dun Quan' in the second sentence is a miswriting, and by sense is Huang Shigong. The couplets of the verse are unpunctuated in the book and are divided here into three groups by their rhythm. 'Taolue' is the art of war. The very first couplet of this chapter names the hexagram and Qimen together, and the entries after it often use the two together."
+      },
+      "see": ["LY.CAREER.EL.11", "LY.CAREER.EL.13", "LY.CAREER.YY.50", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.EL.13",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：为什么奇门与易卦并用——运筹决胜、一失祸大；奇者三奇乙丙丁、门者八门、九星配合；独用奇门则彼此皆知同从吉门岂得并胜；太乙统宗天之数、奇门遁甲地之数、大六壬神人之数，总归八卦不离五行；易卦上应天时下通人事",
+      "rule": {
+        "yi": "为什么奇门要和易卦并用：在帷幄中运筹、在千里外决胜，功成名就就在史册上留给后世；如果有勇无谋、见识浅短，一着失误，小则陷身失职，大则国破家亡，祸患就从这里开始。所以说，虽然知道奇门的胜负，还要评断易卦的吉凶。奇是三奇乙、丙、丁；门是八门，各配八卦方位，但并非固定，有超神、接气的起例，每时改换，再与九星配合来定吉凶；九星是天心、天柱属金，天冲、天辅属木，天蓬属水，天英属火，天芮、天禽、天任属土。决断交战胜负，奇门、易卦两样都要精通。只用奇门，如果彼此都知道、双方都从吉门进兵，难道能一起获胜吗？何况奇门以接气、超神为主，前后难评，差之毫厘就谬以千里。此外还有太乙统宗是天之数，奇门遁甲是地之数，大六壬是神人之数，这几种数总归于八卦，各种变化不离五行；军中虽用这些数，哪比得上易卦把衰旺动静生克看得清清楚楚，不但推断军务的一个方面，而且能指点万民的趋避。易卦上应天时、下通人事，彰明往事、察知未来，开物成务、验证休咎存亡的机微，衡量判断的人必须精细详审，才不会有差错。",
+        "en": "Why Qimen is used together with the hexagram. Planning within the tent and deciding victory a thousand miles off, one who succeeds and wins fame leaves a record in the annals for later ages; but with courage and no wit, and shallow knowledge, a single slip means at the least personal ruin and loss of post, and at the most the fall of the state and ruin of the house, and calamity begins from there. So it is said: though one may know the victories and defeats of Qimen, one still judges the good and ill of the hexagram. The Wonders are the three Wonders Yi, Bing and Ding; the gates are the Eight Gates, each matched with a trigram direction, but not fixed, for there are the rules of leaping the spirit and joining the qi, and they change with every hour, and are then combined with the nine stars to fix good and ill; the nine stars are Tianxin and Tianzhu in Metal, Tianchong and Tianfu in Wood, Tianpeng in Water, Tianying in Fire, and Tianrui, Tianqin and Tianren in Earth. To decide the victory or defeat of a battle one must be expert in both Qimen and the hexagram. If one uses Qimen alone and both sides know it and both advance by auspicious gates, how can both win? Besides, Qimen depends on joining the qi and leaping the spirit, which is hard to judge forwards and backwards, and a hair's breadth of error becomes a thousand miles. Besides these there are the Taiyi Tongzong, the number of Heaven, Qimen Dunjia, the number of Earth, and the Da Liu Ren, the number of spirits and men; these numbers all return to the eight trigrams, and all changes do not leave the five elements; though the army uses these numbers, how do they compare with the hexagram, which sees plainly strength and weakness, motion and stillness, generation and control, and can not only work out one side of military affairs but also point the way for the myriad people to seek or avoid. The hexagram answers above to the seasons of Heaven and below reaches human affairs, shows the past and discerns the future, opens things and completes affairs, and tests the springs of good and ill and survival and loss; one who weighs and judges must be fine and thorough, and only then will there be no error."
+      },
+      "quotes": [
+        { "by": "易林补遗解", "book": "易林补遗", "range": [322, 322],
+          "zh": ["运筹于帷幄之中，决胜于千里之外，功成名就则青史班班以贻后世，倘若勇无谋浅量编浅，机关一失，小则陷身失职，大则破国亡家。", "祸从此始，岂云小可哉？", "故曰虽识奇门之胜负，还评易卦之吉凶。", "奇者，三奇，乙丙丁是也。", "门者，八门已注篇首，坎是休门，艮是生门、震是伤门、巽是杜门、离是景门、坤是死门、兑是惊门、乾是开门，虽曰八门岂为定例，自有超神接气起例，而惟此门时时改易变化无穷，再与九星配合，以定吉凶。", "九星者，天心天柱居于金，天冲天辅居于木，天蓬居于水，天英居于火，天芮天禽天任居于土，凡决交征之胜负，须要奇门易卦二者皆精方与此事，乃得万举万全。", "独用奇门者，倘然彼此皆知二敌俱从吉门而进，岂得并胜乎？", "况奇门者，所用接气超神为主，其中前后难评，倘若差之毫厘？", "谬之千里，况兵家得失所系匪轻，务宜精细参详，不可鲁莽推测，其中更有太乙统宗，天之数也。", "奇门遁甲，地之数也。", "大六壬，神人之数也。", "二数总归八卦，诸般不离五行。", "军中虽用奇门遁甲并大六壬等数者，曾如易卦与衰动静生克了然，不但推军务之一端，而更指万民之趣避。", "易卦者，上应天时下通人事，彰往察来，慎损益盈亏之理，开物成务验休咎存亡之机。", "衡者必要精详，庶无差误也。"],
+          "yi": ["在帷幄之中运筹谋划，在千里之外决定胜负，功成名就就在青史上灿然留给后世；倘若有勇无谋、见识浅短、气量狭小，机关一失，小则陷身失职，大则国破家亡。", "祸患就从这里开始，怎么能说是小事呢？", "所以说，虽然知道奇门的胜负，还要评断易卦的吉凶。", "奇，就是三奇：乙、丙、丁。", "门，就是八门，篇首已经注明：坎是休门，艮是生门，震是伤门，巽是杜门，离是景门，坤是死门，兑是惊门，乾是开门；虽说是八门，哪里是固定的规例，自有超神、接气的起例，而这些门时时改换，变化无穷，再与九星配合，来定吉凶。", "九星：天心、天柱属金，天冲、天辅属木，天蓬属水，天英属火，天芮、天禽、天任属土；凡是决断交战的胜负，必须奇门、易卦两样都精通，才能参与这件事，才能万举万全。", "只用奇门的，如果彼此都知道，双方都从吉门进兵，难道能一起获胜吗？", "何况奇门是以接气、超神为主，其中前后难以评断，倘若差了毫厘，", "就会错到千里；何况兵家的得失关系不轻，务必精细地参详，不可鲁莽推测；此外还有太乙统宗，是天之数。", "奇门遁甲，是地之数。", "大六壬，是神人之数。", "（这几种）数总归于八卦，各种变化不离五行。", "军中虽然用奇门遁甲和大六壬等数术，但哪比得上易卦把衰旺动静生克看得清清楚楚，不但能推断军务的一个方面，而且更能指点万民的趋避。", "易卦，上应天时、下通人事，彰明往事、察知未来，慎重对待损益盈亏的道理，开物成务、验证休咎存亡的机微。", "衡量判断的人必须精细详审，才不会有差错。"],
+          "en": ["Planning within the tent and deciding victory a thousand miles away, one who succeeds and wins fame leaves a brilliant record in the annals for later ages; but if there is courage without wit, shallow knowledge and narrow capacity, one slip in the machinery means at the least personal ruin and loss of post, and at the most the fall of the state and ruin of the house.", "Calamity begins from here; how can it be called a small matter?", "So it is said that though one may know the victories and defeats of Qimen, one still judges the good and ill of the hexagram.", "The Wonders are the three Wonders: Yi, Bing and Ding.", "The gates are the Eight Gates, already noted at the head of the text: Kan is the Rest gate, Gen the Life gate, Zhen the Harm gate, Xun the Block gate, Li the Scene gate, Kun the Death gate, Dui the Fright gate and Qian the Open gate; though they are called the Eight Gates, how could this be a fixed rule? There are the rules of leaping the spirit and joining the qi, and these gates change from hour to hour with endless variation, and are then combined with the nine stars to fix good and ill.", "The nine stars: Tianxin and Tianzhu belong to Metal, Tianchong and Tianfu to Wood, Tianpeng to Water, Tianying to Fire, and Tianrui, Tianqin and Tianren to Earth; to decide the victory or defeat of a battle, one must be expert in both Qimen and the hexagram before one can take part in the affair, and only then will every undertaking be complete.", "If one uses Qimen alone and both sides know it and both advance by auspicious gates, how can both win?", "Besides, Qimen depends on joining the qi and leaping the spirit, which is hard to judge forwards and backwards, and if one errs by a hair's breadth,", "one errs by a thousand miles; moreover the gains and losses of the soldier are no light matter, and one must examine finely and not guess rashly; besides these there is the Taiyi Tongzong, which is the number of Heaven.", "Qimen Dunjia is the number of Earth.", "Da Liu Ren is the number of spirits and men.", "These numbers all return to the eight trigrams, and all changes do not leave the five elements.", "Though the army uses Qimen Dunjia, Da Liu Ren and other arts, how do they compare with the hexagram, which sees plainly strength and weakness, motion and stillness, generation and control, and can not only work out one side of military affairs but also point the way for the myriad people to seek or avoid.", "The hexagram answers above to the seasons of Heaven and below reaches human affairs, shows the past and discerns the future, takes care over the principles of loss and gain and waxing and waning, opens things and completes affairs, and tests the springs of good and ill and survival and loss.", "One who weighs and judges must be fine and thorough, and only then will there be no error."] }
+      ],
+      "note": {
+        "yi": "这一段是《易林补遗》对奇门、太乙、大六壬的背景介绍，放在这一章里是为了说明为什么征战要易卦与奇门并用；奇门的详细规则，留给奇门遁甲那一门的专书。「量编浅」的「编」疑是「褊」（狭小），「谬之千里」前一句断在「差之毫厘？」的问号处，文意是「差之毫厘，谬以千里」，译文接起来；「二数总归八卦」的「二数」疑是「三数」（上面讲了太乙、奇门、大六壬三种），译文写成「这几种数」。「曾如」是「何如」。「超神接气」是奇门遁甲起局时的两种置闰办法，书里没有解释。",
+        "en": "This passage is the Yilin Buyi's background on Qimen, Taiyi and Da Liu Ren, and it is placed in this chapter to explain why war divination uses the hexagram and Qimen together; the detailed rules of Qimen are left to the books of the Qimen Dunjia art. The 'bian' of 'liang bian qian' is presumably 'bian', narrow; the sentence is cut at the question mark of 'a hair's breadth off?', and the sense is 'a hair's breadth off, a thousand miles astray', which the translation joins; the 'two numbers' of 'the two numbers all return to the eight trigrams' is presumably 'three numbers' (the passage has named Taiyi, Qimen and Da Liu Ren), and the translation writes 'these numbers'. 'Zeng ru' is 'he ru', how do they compare. 'Leaping the spirit and joining the qi' are the two methods of intercalation used in setting up a Qimen Dunjia chart, which the book does not explain."
+      },
+      "see": ["LY.CAREER.EL.12", "LY.CAREER.EL.14"]
+    },
+    {
+      "id": "LY.CAREER.EL.14",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：鬼煞司权纵往开休生不吉，福神当道虽行伤死杜无殃（《烟波钓叟歌》八门遇开休生诸事称情；出兵最嫌官鬼交重，鬼动纵往吉门决难取胜；子孙旺相发动或持世虽践凶门亦无所害）",
+      "rule": {
+        "yi": "官鬼和凶煞当权，纵然走开、休、生三个吉门也不吉；福神（子孙）当道，即使走伤、死、杜三个凶门也没有灾殃。《烟波钓叟歌》说：八门遇到开、休、生，诸事遇到都称心。凡是占出兵的卦，最嫌官鬼重叠发动，官鬼如果发动，纵然往吉门去，一定难以取胜；如果走子孙旺相发动或持世爻的方位，即使踏上凶门，也没有妨害。",
+        "en": "If Pressure and baleful spirits hold power, even going by the three auspicious gates, Open, Rest and Life, is not auspicious; if the fortune spirit, Output, holds the road, even going by the three ill gates, Harm, Death and Block, brings no disaster. The Yanbo Diaosou Ge says: if the Eight Gates meet Open, Rest and Life, all matters met are to one's mind. In a hexagram for sending out troops, what is most disliked is Pressure moving in double; if Pressure moves, even going by an auspicious gate one surely finds it hard to win; if one goes by the quarter where Output is thriving and moving or holds the Self, even stepping on an ill gate does no harm."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [323, 323],
+          "zh": ["鬼煞司权，纵往开休生，不吉。", "福神当道，虽行伤死杜，无殃。"],
+          "yi": ["官鬼和凶煞当权，纵然往开、休、生三门走，也不吉；", "福神当道，即使走伤、死、杜三门，也没有灾殃。"],
+          "en": ["If Pressure and baleful spirits hold power, even going by Open, Rest and Life is not auspicious;", "if the fortune spirit, Output, holds the road, even going by Harm, Death and Block brings no disaster."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [324, 324],
+          "zh": ["烟波钓叟歌云：八门若遇开休生，诸事逢之总称情。", "凡卜出兵之卦，最嫌官鬼交重，鬼如动者，纵往吉门，决难取胜。", "若行子孙旺相发动或持世爻，虽践凶门，亦无所害。"],
+          "yi": ["《烟波钓叟歌》说：八门如果遇到开、休、生，诸事遇到都称心。", "凡是占出兵的卦，最嫌官鬼重叠发动，官鬼如果发动，纵然往吉门去，一定难以取胜。", "如果走子孙旺相发动或持世爻的方位，即使踏上凶门，也没有妨害。"],
+          "en": ["The Yanbo Diaosou Ge says: if the Eight Gates meet Open, Rest and Life, all matters met are to one's mind.", "In a hexagram for sending out troops, what is most disliked is Pressure moving in double; if Pressure moves, even going by an auspicious gate one surely finds it hard to win.", "If one goes by the quarter where Output is thriving and moving or holds the Self, even stepping on an ill gate does no harm."] }
+      ],
+      "note": {
+        "yi": "「鬼煞司权」的鬼煞是官鬼和凶煞；「福神」是子孙（见术语表）。《烟波钓叟歌》是奇门遁甲的歌诀，「开休生」是三个吉门，「伤死杜」是凶门。这一条是整个这章的核心判断：选门走哪个方位，最后看的是官鬼与子孙谁当权，不是单看门的吉凶。",
+        "en": "'Pressure and baleful spirits' are Pressure and the ill spirits; the 'fortune spirit' is Output (see the glossary). The Yanbo Diaosou Ge is a rhyme of the Qimen Dunjia art, and Open, Rest and Life are the three auspicious gates and Harm, Death and Block the ill gates. This entry is the core judgment of the whole chapter: in choosing which gate and which direction to take, what is finally looked at is which of Pressure and Output holds power, and not the good or ill of the gate alone."
+      },
+      "see": ["LY.CAREER.EL.13", "LY.CAREER.EL.15", "LY.CAREER.HJC.86", "LY.CAREER.YY.55"]
+    },
+    {
+      "id": "LY.CAREER.EL.15",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：八门与官鬼子孙——鬼值坤宫嫌死门、子临兑卦利惊门，伤门云凶而震有将星征反胜、休门云吉而坎兴大杀战还输，艮发青龙生方大利、乾摇白虎开处非宜，离福交重景上喜悦、巽发杜门战去暌违",
+      "rule": {
+        "yi": "八门要和官鬼、子孙的位置合着看：官鬼值在坤宫，嫌死门；子孙临在兑卦，只利惊门。伤门说是凶，但震宫发动带将星，出征反而得胜；休门说是吉，但坎宫兴起大杀，作战反而输。艮宫发动青龙，往生门的方向大利；乾宫摇动白虎，走开门的地方不适宜；离宫福神重叠发动，走景门能得喜悦；巽宫发动，走杜门去作战相差很远。将军和兵卒要知道忌讳进哪个门、利于走哪个方向，须推算官鬼值在哪一宫、官星临在哪个卦象，不要进那一门；又看子孙在哪一卦、福神在哪一爻，宜从那个门走。比如坤宫官鬼发动，最忌死门；兑卦子孙摇动，惊门可以进；伤门是祸害，但震宫有将星、福德，就是好的。",
+        "en": "The Eight Gates are read together with the positions of Pressure and Output. Pressure on the Kun palace dislikes the Death gate; Output on the Dui trigram favours only the Fright gate. The Harm gate is said to be ill, yet if Zhen moves with the General star, a campaign wins instead; the Rest gate is said to be auspicious, yet if Kan raises a great baleful spirit, the battle is lost instead. If the Azure Dragon moves in Gen, the direction of the Life gate is greatly favourable; if the White Tiger stirs in Qian, the place of the Open gate is unsuitable; if the fortune spirit doubles in Li, going by the Scene gate brings joy; if Xun moves, going to battle by the Block gate goes much against one. Commanders and soldiers who want to know which gate to avoid and which direction to take must work out in which palace Pressure sits and on which image the star of office lies, and not enter that gate; again, see in which trigram Output lies and on which line the fortune spirit is, and take that gate. For example, if Pressure moves in the Kun palace, the Death gate is most to be avoided; if Output stirs in Dui, the Fright gate may be entered; the Harm gate is a calamity, but if there is the General star and Fortune Virtue (Output) in the Zhen palace it is good."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [325, 325],
+          "zh": ["鬼值坤宫却嫌死户，子临兑卦惟利惊门。", "伤户云凶，震动将星征反胜，休门曰吉，坎兴大杀战还输。", "艮内发青龙生方大利，乾中摇白虎开处非宜，", "离福交重景上行来能喜悦，巽宫发动杜门战去甚暌违。"],
+          "yi": ["官鬼值在坤宫，反而嫌死门；子孙临在兑卦，只利于惊门。", "伤门说是凶，但震宫发动带将星，出征反而得胜；休门说是吉，但坎宫兴起大杀，作战反而输。", "艮宫里发动青龙，往生门的方向大利；乾宫中摇动白虎，走开门的地方不适宜；", "离宫福神重叠发动，走景门能得喜悦；巽宫发动，走杜门去作战相差很远。"],
+          "en": ["Pressure on the Kun palace dislikes the Death gate; Output on the Dui trigram favours only the Fright gate.", "The Harm gate is said to be ill, yet if Zhen moves with the General star, a campaign wins instead; the Rest gate is said to be auspicious, yet if Kan raises a great baleful spirit, the battle is lost instead.", "If the Azure Dragon moves in Gen, the direction of the Life gate is greatly favourable; if the White Tiger stirs in Qian, the place of the Open gate is unsuitable;", "if the fortune spirit doubles in Li, going by the Scene gate brings joy; if Xun moves, going to battle by the Block gate goes much against one."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [327, 329],
+          "zh": ["将军兵卒，要知忌入何门，利行何向，须推鬼值何宫，官临何象，莫入其门。", "又看子居谁卦，福在谁爻，宜由此户。", "且如坤宫鬼动，大忌死门。", "兑卦子摇，惊门可进，伤门为祸害，震宫有将星福德乃为佳。"],
+          "yi": ["将军和兵卒，要知道忌讳进哪个门、利于走哪个方向，须推算官鬼值在哪一宫、官星临在哪个卦象，不要进那一门。", "又看子孙在哪一卦、福神在哪一爻，宜从那个门走。", "比如坤宫官鬼发动，最忌死门。", "兑卦子孙摇动，惊门可以进；伤门是祸害，但震宫有将星、福德，就是好的。"],
+          "en": ["Commanders and soldiers who want to know which gate to avoid and which direction to take must work out in which palace Pressure sits and on which image the star of office lies, and not enter that gate.", "Again, see in which trigram Output lies and on which line the fortune spirit is, and take that gate.", "For example, if Pressure moves in the Kun palace, the Death gate is most to be avoided.", "If Output stirs in Dui, the Fright gate may be entered; the Harm gate is a calamity, but if there is the General star and Fortune Virtue (Output) in the Zhen palace it is good."] }
+      ],
+      "note": {
+        "yi": "「死户」「景上」的「户」「上」都是门。「鬼值坤宫」按八卦的方位对应奇门八门：坎休、艮生、震伤、巽杜、离景、坤死、兑惊、乾开。「将星」「大杀」是神煞（起例见 EL.16）。第二联「伤户云凶……休门曰吉」是反例：凶门里有吉的爻象仍然可行，吉门里有凶的爻象也不可行，和 EL.14 的「鬼煞司权纵往开休生不吉」是同一个意思。「暌违」按字面是背离，译作「相差很远」。",
+        "en": "In 'si hu' and 'jing shang' the 'hu' and 'shang' stand for gates. 'Pressure on the Kun palace' follows the matching of the eight trigrams with the Eight Gates of Qimen: Kan Rest, Gen Life, Zhen Harm, Xun Block, Li Scene, Kun Death, Dui Fright, Qian Open. The 'General star' and the 'great baleful spirit' are spirit-stars (their rules of setting out are in EL.16). The second couplet, 'the Harm gate is said to be ill ... the Rest gate is said to be good', gives the counter-cases: an ill gate with an auspicious line image can still be taken, and an auspicious gate with an ill line image cannot, which is the same sense as 'if Pressure and baleful spirits hold power, going by Open, Rest and Life is not auspicious' in EL.14. 'Kuiwei' is by the letter going against, and is translated 'goes much against one'."
+      },
+      "see": ["LY.CAREER.EL.14", "LY.CAREER.EL.16", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.EL.16",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：将星起例（正午二卯三子四酉、五月又到午，周而复始，休门祯祥）、坎卦有大煞官鬼难获福、大煞起例（正犬二蛇三月马四未五寅六卯七辰八亥九鼠十牛十一申，国家遇此岂安邦）",
+      "rule": {
+        "yi": "将星的起例：正月在午，二月在卯，三月在子，四月在酉，五月又到午，只有这四个位置，周而复始；休门于是吉祥。坎卦有大煞，官鬼爻难得福。大煞的起例说：正月在犬（戌），二月在蛇（巳），三月在马（午），四月在未，五月在寅，六月在卯，七月在辰，八月在亥，九月忌鼠（子），十月在牛（丑），十一月在申方，「十一」金鸡（酉）为大煞；国家遇到这个，怎么能安邦？",
+        "en": "The setting out of the General star: in the first month at Wu, the second at Mao, the third at Zi, the fourth at You, the fifth again at Wu; only these four places, going round and round; the Rest gate then is auspicious. Kan has the great baleful spirit, and the Pressure line there finds it hard to gain fortune. The setting out of the great baleful spirit says: the first month the dog (Xu), the second the snake (Si), the third month the horse (Wu), the fourth Wei, the fifth Yin, the sixth Mao, the seventh Chen, the eighth Hai, the ninth month beware the rat (Zi), the tenth the ox (Chou), the eleventh in the quarter of Shen, and 'the eleventh' the golden cock (You) is the great baleful spirit; a state meeting this, how can it keep the peace?"
+      },
+      "quotes": [
+        { "by": "易林补遗解", "book": "易林补遗", "range": [327, 329],
+          "zh": ["将星起例，正月午、二月卯、三月子、四月酉、五月又到午，土只此四位，周而复始，休户作祯祥。", "坎卦有大煞，鬼爻难获福。", "大煞起例云：正犬、二蛇、三月马、四未、五寅、六卯当、七辰、八亥、九忌鼠、十牛、十一在申方，十一金鸡为大煞，国家遇此岂安邦？"],
+          "yi": ["将星的起例：正月在午，二月在卯，三月在子，四月在酉，五月又到午，只有这四个位置，周而复始，休门于是吉祥。", "坎卦有大煞，官鬼爻难得福。", "大煞的起例说：正月在犬（戌），二月在蛇（巳），三月在马（午），四月在未，五月在寅，六月在卯，七月在辰，八月在亥，九月忌鼠（子），十月在牛（丑），十一月在申方，「十一」金鸡（酉）为大煞；国家遇到这个，怎么能安邦？"],
+          "en": ["The setting out of the General star: in the first month at Wu, the second at Mao, the third at Zi, the fourth at You, the fifth again at Wu; only these four places, going round and round; the Rest gate then is auspicious.", "Kan has the great baleful spirit, and the Pressure line there finds it hard to gain fortune.", "The setting out of the great baleful spirit says: the first month the dog (Xu), the second the snake (Si), the third month the horse (Wu), the fourth Wei, the fifth Yin, the sixth Mao, the seventh Chen, the eighth Hai, the ninth month beware the rat (Zi), the tenth the ox (Chou), the eleventh in the quarter of Shen, and 'the eleventh' the golden cock (You) is the great baleful spirit; a state meeting this, how can it keep the peace?"] }
+      ],
+      "note": {
+        "yi": "第一句「土只此四位」的「土」疑是「止」，译作「只有这四个位置」。「休户作祯祥」连着将星这一句，按字面是休门吉祥。大煞起例里，书里写了两个「十一」：「十一在申方」和「十一金鸡为大煞」，后一个疑是「十二」（酉为金鸡），译文照字面写出并加了引号；生肖对应：犬戌、蛇巳、马午、鼠子、牛丑、金鸡酉。两个起例都是十二个月里的地支位置，书里没有说明它们的来由。",
+        "en": "In the first sentence the 'tu' of 'tu zhi ci si wei' is presumably 'zhi', only, and is translated 'only these four places'. 'Xiu hu zuo zhenxiang' runs on from the sentence on the General star, and by the letter the Rest gate is auspicious. In the setting out of the great baleful spirit the book writes two 'elevenths': 'the eleventh in the quarter of Shen' and 'the eleventh the golden cock is the great baleful spirit', the second presumably 'twelfth' (You is the golden cock), and the translation writes it by the letter in quotation marks; the animals correspond as dog Xu, snake Si, horse Wu, rat Zi, ox Chou, golden cock You. Both are positions of the branches through the twelve months, and the book does not explain their origin."
+      },
+      "see": ["LY.CAREER.EL.15", "LY.CAREER.EL.17", "LY.CAREER.YY.55"]
+    },
+    {
+      "id": "LY.CAREER.EL.17",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：福带青龙摇艮丙进生门人获全功，鬼临白虎动乾中纵入开门未能取胜；离家子动宜步景门，巽土官兴杜门莫往",
+      "rule": {
+        "yi": "福神带青龙在艮宫丙位摇动，如果进生门，人获全功；官鬼临白虎在乾宫中发动，纵然进开门也未能取胜。离宫子孙发动，宜走景门；巽宫土爻官鬼兴起，不要往杜门去。",
+        "en": "If the fortune spirit carrying the Azure Dragon stirs at Bing in Gen and one enters the Life gate, one wins complete success; if Pressure on the White Tiger moves in Qian, even entering the Open gate one cannot win. If Output moves in Li, it is fit to take the Scene gate; if an Earth Pressure line rises in Xun, do not go by the Block gate."
+      },
+      "quotes": [
+        { "by": "易林补遗解", "book": "易林补遗", "range": [327, 329],
+          "zh": ["福带青龙摇艮丙，如进生门，人获全功，鬼临白虎动乾中，纵入开门未能取胜。", "离家子动，宜步景门，巽土官兴，杜门莫往。"],
+          "yi": ["福神带青龙在艮宫丙位摇动，如果进生门，人获全功；官鬼临白虎在乾宫中发动，纵然进开门也未能取胜。", "离宫子孙发动，宜走景门；巽宫土爻官鬼兴起，不要往杜门去。"],
+          "en": ["If the fortune spirit carrying the Azure Dragon stirs at Bing in Gen and one enters the Life gate, one wins complete success; if Pressure on the White Tiger moves in Qian, even entering the Open gate one cannot win.", "If Output moves in Li, it is fit to take the Scene gate; if an Earth Pressure line rises in Xun, do not go by the Block gate."] }
+      ],
+      "note": {
+        "yi": "「艮丙」是艮卦纳的天干丙（艮纳丙）；「摇」是发动。这两句是 EL.15 那首诗的举例。",
+        "en": "'Gen Bing' is the stem Bing that Gen takes in the Najia system (Gen takes Bing); 'yao' is to move. The two sentences are illustrations of the verse in EL.15."
+      },
+      "see": ["LY.CAREER.EL.16", "LY.CAREER.EL.18", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.EL.18",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：乙丙丁奇得无不利，庚辛癸煞见无不凶；乙日奇丙月奇丁星奇，甲变三奇吉，变庚辛癸皆不祥；天禄诀（壬甲从乾起…）；冬至后阳令、夏至后阴升，乾内甲外壬/内壬外甲，坤内乙外癸/内癸外乙；举例",
+      "rule": {
+        "yi": "乙、丙、丁三奇，遇到没有不利的；庚、辛、癸三煞，遇到没有不凶的。乙是日奇，丙是月奇，丁是星奇，甲变成三奇自然吉利；如果变成庚、辛、癸之象，都不吉祥。卦配十干，要看规则：天禄诀说「壬甲从乾起，乙癸向坤求，丙向艮方取，丁出兑家游，戊自坎中觅，己用离为头，庚震及辛巽」。诀里震、巽、坎、离、艮、兑各属一个干，只有乾、坤两卦每个属于两个干，又要接合阴阳之道：冬至后阳令之时，乾是内卦甲、外卦壬，坤是内卦乙、外卦癸；夏至后阴升的节令，乾是内壬外甲，坤是内癸外乙。又说用兵：冬至后，卜得乾变遁卦，就是甲变成月奇；乾变履卦，就是甲变成星奇；乾变否卦，就是甲变成日奇；这样的卦爻得到大胜。又说夏至后，卜得否变归妹，甲被庚所伤；乾变巽卦，甲遭辛所克；凡是得到这类卦爻，人宜出战（原文如此）。",
+        "en": "The three Wonders Yi, Bing and Ding are never unfavourable when met; the three baleful stems Geng, Xin and Gui are never other than ominous when seen. Yi is the Sun Wonder, Bing the Moon Wonder, Ding the Star Wonder, and when Jia changes into the three Wonders it is naturally auspicious; if it changes into the images of Geng, Xin and Gui, none is auspicious. How hexagrams match the ten stems must be seen from the rule: the Tianlu rhyme says 'Ren and Jia start from Qian, Yi and Gui seek Kun, Bing is taken from Gen, Ding goes out to Dui, Wu is found in Kan, Ji takes Li as head, Geng is Zhen and Xin is Xun'. In the rhyme Zhen, Xun, Kan, Li, Gen and Dui each belong to one stem, and only Qian and Kun each belong to two, and the way of yin and yang must also be joined: after the Winter Solstice, in the season when yang commands, Qian has Jia inside and Ren outside and Kun Yi inside and Gui outside; after the Summer Solstice, in the season when yin rises, Qian has Ren inside and Jia outside and Kun Gui inside and Yi outside. Again for troops: after the Winter Solstice, if one casts Qian changing into Dun, Jia has changed into the Moon Wonder; Qian changing into Lu, Jia has changed into the Star Wonder; Qian changing into Pi, Jia has changed into the Sun Wonder; such lines bring great victory. Again after the Summer Solstice, if one casts Pi changing into Guimei, Jia is injured by Geng; Qian changing into Xun, Jia is controlled by Xin; whoever gets such lines, men are fit to go out and fight (as the text reads)."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [330, 330],
+          "zh": ["乙丙丁奇，得无不利。", "庚辛癸煞，见无不凶。"],
+          "yi": ["乙、丙、丁三奇，遇到没有不利的；", "庚、辛、癸三煞，遇到没有不凶的。"],
+          "en": ["The three Wonders Yi, Bing and Ding are never unfavourable when met;", "the three baleful stems Geng, Xin and Gui are never other than ominous when seen."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [331, 331],
+          "zh": ["乙者日奇，丙者月奇，丁者星奇，甲变三奇自然吉利。", "如变庚辛癸象，皆不为祥，要知卦配十干，须看范围。", "数丙天禄诀云：壬甲从乾起，乙癸向坤求，丙向艮方取，丁出兑家游，戊自坎中觅，已用离为头，庚震及辛巽，天禄最为攸。", "诀内震巽坎离艮兑各属一千，惟乾坤二象每属二下，又接阴阳之道，冬至后阳令之时，乾者内甲外壬，坤者内乙外癸。", "夏至后阴升之节，乾者内壬外甲，坤者内癸外乙。", "又论也兵冬至后，卜得乾之遁卦，即甲变月奇，又如乾之履卦，即甲变星奇，设若乾之否卦，即甲变日奇。", "如此卦爻得之大胜。", "又论夏至后，卜得否之归妹，甲被庚伤，乾之巽卦。", "甲遭辛克，凡得此等卦爻，人宜出战者也。"],
+          "yi": ["乙是日奇，丙是月奇，丁是星奇，甲变成三奇自然吉利。", "如果变成庚、辛、癸之象，都不吉祥；要知道卦怎样配十干，须看规则。", "数丙天禄诀说：壬、甲从乾起，乙、癸向坤求，丙向艮方取，丁出兑家游，戊自坎中觅，己用离为头，庚属震、辛属巽，天禄最为所系。", "诀里震、巽、坎、离、艮、兑各属一个干，只有乾、坤两卦每个属于两个干，又要接合阴阳之道：冬至后阳令之时，乾是内卦甲、外卦壬，坤是内卦乙、外卦癸。", "夏至后阴气上升的节令，乾是内壬外甲，坤是内癸外乙。", "又说用兵：冬至后，卜得乾变遁卦，就是甲变成月奇；乾变履卦，就是甲变成星奇；乾变否卦，就是甲变成日奇。", "这样的卦爻得到，大胜。", "又说夏至后，卜得否变归妹，甲被庚所伤；乾变巽卦，", "甲遭辛所克；凡是得到这类卦爻，人宜出战（原文如此）。"],
+          "en": ["Yi is the Sun Wonder, Bing the Moon Wonder, Ding the Star Wonder, and when Jia changes into the three Wonders it is naturally auspicious.", "If it changes into the images of Geng, Xin and Gui, none is auspicious; to know how hexagrams match the ten stems, one must look at the rule.", "The Tianlu rhyme says: Ren and Jia start from Qian, Yi and Gui seek Kun, Bing is taken from Gen, Ding goes out to Dui, Wu is found in Kan, Ji takes Li as head, Geng is Zhen and Xin is Xun, and the Tianlu is what is most relied on.", "In the rhyme Zhen, Xun, Kan, Li, Gen and Dui each belong to one stem, and only Qian and Kun each belong to two, and the way of yin and yang must also be joined: after the Winter Solstice, in the season when yang commands, Qian has Jia inside and Ren outside, and Kun has Yi inside and Gui outside.", "After the Summer Solstice, in the season when yin rises, Qian has Ren inside and Jia outside, and Kun has Gui inside and Yi outside.", "Again for troops: after the Winter Solstice, if one casts Qian changing into Dun, Jia has changed into the Moon Wonder; Qian changing into Lu, Jia has changed into the Star Wonder; Qian changing into Pi, Jia has changed into the Sun Wonder.", "Such lines, when got, bring great victory.", "Again after the Summer Solstice, if one casts Pi changing into Guimei, Jia is injured by Geng; Qian changing into Xun,", "Jia is controlled by Xin; whoever gets such lines, men are fit to go out and fight (as the text reads)."] }
+      ],
+      "note": {
+        "yi": "这一条的天干是纳甲：乾纳甲壬、坤纳乙癸、艮纳丙、兑纳丁、坎纳戊、离纳己、震纳庚、巽纳辛。三奇乙丙丁分别是日奇、月奇、星奇。书里几处字面有问题：「数丙天禄诀」的「数丙」不明；「各属一千」的「千」是「干」；「二下」是「二干」。最后一句「甲遭辛克，凡得此等卦爻，人宜出战者也」按上下文，甲被庚、辛所伤是不吉的，而前面说变庚辛癸皆不祥，所以这里「宜出战」很可能脱了「不」字（应是「不宜出战」），译文照字面写出并标明「原文如此」，请读者不要照字面当作可以出战的依据。「遁」「履」「否」「归妹」「巽」是卦名，书里写作「乾之遁卦」「乾之履卦」等。",
+        "en": "The stems in this entry are those of the Najia system: Qian takes Jia and Ren, Kun Yi and Gui, Gen Bing, Dui Ding, Kan Wu, Li Ji, Zhen Geng and Xun Xin; the three Wonders Yi, Bing and Ding are the Sun, Moon and Star Wonders. Several wordings in the book are defective: the 'shu Bing' of 'shu Bing Tianlu jue' is unclear; the 'qian', thousand, of 'ge shu yi qian' is 'gan', stem; and 'er xia' is 'er gan', two stems. In the last sentence, 'Jia is controlled by Xin; whoever gets such lines, men are fit to go out and fight', by the context Jia being injured by Geng and Xin is not auspicious, and the passage before says that a change into Geng, Xin or Gui is never auspicious, so 'fit to go out and fight' very probably lacks the character 'not' (it should be 'not fit to go out and fight'); the translation writes it by the letter and marks it 'as the text reads', and the reader should not take it literally as a ground for fighting. 'Dun', 'Lu', 'Pi', 'Guimei' and 'Xun' are hexagram names, which the book writes as 'Qian changing into Dun' and so on."
+      },
+      "see": ["LY.CAREER.EL.17", "LY.CAREER.EL.19"]
+    },
+    {
+      "id": "LY.CAREER.EL.19",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：伏吟反吟犯者急须回避，大煞劫煞动时切莫交征；伏吟有二（卦犯伏吟八纯卦、爻犯伏吟寅变寅辰变辰），反吟有二（卦犯反吟姤卦及乾巽互变、爻犯反吟），行兵又忌大煞劫煞交重；劫煞起例；伏吟大煞劫煞犯一不祥，无犯方美",
+      "rule": {
+        "yi": "犯了伏吟、反吟的，急须回避；大煞、劫煞发动的时候，切莫交战。占交战最忌伏吟、反吟。伏吟有两种：卦犯伏吟（如乾见乾、坎见坎一类的八纯卦），爻犯伏吟（如寅变寅、辰变辰一类，随变夬、需变屯就是）。反吟也有两种：卦犯反吟（下巽上乾的姤卦一类，或者乾变巽、巽变乾），爻犯反吟。用兵的时候又忌大煞、劫煞重叠。劫煞的起例：正月逢亥，二月申，三月随蛇（巳），四月寅，五月循环又到亥，周而复始。伏吟、大煞、劫煞，犯一样就不吉祥，都不犯才好。",
+        "en": "Those who have hit Hidden Chant or Reversed Chant must withdraw urgently; when the great baleful spirit and Robbery move, on no account join battle. In divining for battle, Hidden Chant and Reversed Chant are most to be avoided. Hidden Chant is of two kinds: the hexagram hitting Hidden Chant (the eight pure hexagrams, such as Qian meeting Qian or Kan meeting Kan) and a line hitting Hidden Chant (such as Yin changing into Yin or Chen into Chen, as Sui changing into Guai or Xu into Zhun). Reversed Chant is also of two kinds: the hexagram hitting Reversed Chant (Gou with Xun below and Qian above, and the like, or Qian changing into Xun and Xun into Qian) and a line hitting Reversed Chant. In moving troops one also fears the great baleful spirit and Robbery doubled. The setting out of Robbery: in the first month at Hai, the second Shen, the third following the snake (Si), the fourth Yin, the fifth going round again to Hai, going round and round. Hidden Chant, the great baleful spirit or Robbery, if any one is hit it is inauspicious; to hit none is best."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [332, 332],
+          "zh": ["伏吟反吟犯者，急须回避。", "大煞劫煞动时，切莫交征。"],
+          "yi": ["犯了伏吟、反吟的，急须回避；", "大煞、劫煞发动的时候，切莫交战。"],
+          "en": ["Those who have hit Hidden Chant or Reversed Chant must withdraw urgently;", "when the great baleful spirit and Robbery move, on no account join battle."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [333, 333],
+          "zh": ["欲识伏吟反吟之法，当明卦按十二地支，亦看范围数内，地福诀云：子向北方坎、丑寅艮上山、卯起东方震、辰巳巽风间、午见南离火、未申坤地关。", "酉在兑方，取戌亥属乾垣。", "如占交战最忌伏吟反吟。", "伏吟者有二：有卦犯伏吟、有爻犯伏吟。", "卦犯者如乾见乾、坎见坎之类八纯卦是也。", "爻犯者，如寅变寅、辰变辰之类，随变夬，需变屯卦是也。", "反吟者亦有二：有卦犯反吟、有爻犯反吟。", "卦犯者，下巽上乾；", "姤卦之类，或乾变巽、巽变乾皆是也。", "行兵之际又忌大煞，劫煞交重。", "大煞起例已注章首。", "劫煞起例，云正月逢亥，二月申、三月随蛇、四月寅、五月循还又到亥，周而复始定其神，煞兴天狱煞同，出征者以上反吟。", "伏吟大煞、劫煞犯一不祥，无犯方美也。"],
+          "yi": ["想认识伏吟、反吟的办法，应当明白卦按十二地支（配方位），也看范围的数；《地福诀》说：子向北方坎，丑、寅在艮山上，卯起在东方震，辰、巳在巽风之间，午见南方离火，未、申是坤地之关。", "酉在兑方，戌、亥属于乾垣。", "如果占交战，最忌伏吟、反吟。", "伏吟有两种：有卦犯伏吟，有爻犯伏吟。", "卦犯伏吟，如乾见乾、坎见坎之类，就是八纯卦。", "爻犯伏吟，如寅变寅、辰变辰之类，随变夬、需变屯卦就是。", "反吟也有两种：有卦犯反吟，有爻犯反吟。", "卦犯反吟的，是下卦巽、上卦乾；", "就是姤卦之类，或者乾变巽、巽变乾，都是。", "用兵的时候又忌大煞、劫煞重叠。", "大煞的起例已经注在章首。", "劫煞的起例说：正月逢亥，二月申，三月随蛇（巳），四月寅，五月循环又到亥，周而复始来定这个神煞；煞兴起，天狱煞相同；出征的人以上（这些）和反吟（同样忌）。", "伏吟、大煞、劫煞，犯一样就不吉祥，都不犯才好。"],
+          "en": ["To know the method of Hidden Chant and Reversed Chant, one must understand that the hexagrams are matched to the twelve branches, and also look at the numbers within the scope; the Difu rhyme says: Zi faces north, Kan; Chou and Yin are on the mountain of Gen; Mao rises in the east, Zhen; Chen and Si are in the wind of Xun; Wu meets the fire of Li in the south; Wei and Shen are the gate of the earth of Kun.", "You is in the quarter of Dui, and Xu and Hai belong to the enclosure of Qian.", "If one divines for battle, Hidden Chant and Reversed Chant are most to be avoided.", "Hidden Chant is of two kinds: the hexagram may hit Hidden Chant, or a line may hit Hidden Chant.", "A hexagram hitting Hidden Chant is such as Qian meeting Qian or Kan meeting Kan, that is, the eight pure hexagrams.", "A line hitting Hidden Chant is such as Yin changing into Yin or Chen into Chen, as Sui changing into Guai or Xu into Zhun.", "Reversed Chant is also of two kinds: the hexagram may hit Reversed Chant, or a line may hit Reversed Chant.", "A hexagram hitting Reversed Chant is one with Xun below and Qian above;", "that is, Gou and the like, or Qian changing into Xun and Xun changing into Qian, are all so.", "In moving troops one also fears the great baleful spirit and Robbery doubled.", "The setting out of the great baleful spirit is already noted at the head of the chapter.", "The setting out of Robbery says: in the first month at Hai, the second Shen, the third following the snake (Si), the fourth Yin, the fifth going round again to Hai, going round and round to fix this spirit; when the baleful spirit rises, the Heavenly Prison baleful spirit is the same; for one going on a campaign, the above and Reversed Chant (are avoided alike).", "Hidden Chant, the great baleful spirit and Robbery: to hit any one is inauspicious, and to hit none is best."] }
+      ],
+      "note": {
+        "yi": "伏吟、反吟的定义见术语表；这里书里把它们分成卦与爻两种，卦伏吟是八纯卦，卦反吟是姤一类（下巽上乾）或乾巽互变，爻伏吟是爻变出同一个地支，这些和术语表里的说法是一致的。「地福诀」是把十二地支配八卦方位的歌诀。第十二句里「出征者以上反吟」文字有残缺，译文只照字面写出，不补意思；「天狱煞」是一种神煞。「随变夬、需变屯」是爻伏吟的例子，书里没有展开。",
+        "en": "Hidden Chant and Reversed Chant are defined in the glossary; here the book divides each into a hexagram kind and a line kind: a hexagram in Hidden Chant is a pure hexagram, a hexagram in Reversed Chant is the Gou kind (Xun below, Qian above) or Qian and Xun exchanging, and a line in Hidden Chant is a line that changes into the same branch, which agree with what the glossary says. The 'Difu rhyme' is a rhyme matching the twelve branches to the directions of the eight trigrams. In the twelfth sentence 'chuzheng zhe yi shang fanyin' is defective, and the translation records it by the letter without supplying a sense; the 'Heavenly Prison baleful spirit' is a spirit-star. 'Sui changing into Guai, Xu into Zhun' are examples of line Hidden Chant that the book does not spell out."
+      },
+      "see": ["LY.CAREER.EL.18", "LY.CAREER.EL.20", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.EL.20",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：易卦大忌六爻兴二鬼，奇门最喜三奇游六仪；军中之卦最嫌官鬼爻兴，二官皆动祸不可当，一鬼动变鬼爻亦有患害；六仪甲子甲辰甲申甲午；三奇得使；夏至后乾之泰、遁之艮，丙得子孙临日月布阵必有祯祥",
+      "rule": {
+        "yi": "易卦里最忌六爻里兴起两个官鬼，奇门里最喜三奇游行在六仪上。军中的卦，最嫌官鬼爻兴起，如果遇到两个官都发动，祸不可当；纵然只有一个官鬼发动变出官鬼爻，也有祸害。奇门的办法，却喜欢三奇，如果在六仪之上，好处加倍。六仪是甲子、甲辰、甲申、甲午（原文只列这四个）；又（门）开甲午、甲戌，利于遇见星奇；甲子、甲申，喜欢遇见日奇；甲寅、甲辰，遇月奇更吉。虽说是三奇游六仪，也就是说三奇得使者。经书说：三奇得使确实可取，六甲遇到它不是小补。譬如夏至后，乾变泰、遁变艮就是。这类卦中，丙得到子孙临日、月，凡是出兵布阵必有吉祥。",
+        "en": "In the hexagram the great taboo is two Pressure lines rising among the six lines; in Qimen what is best liked is the three Wonders roaming over the six Instruments. In a hexagram for the army, what is most disliked is a Pressure line rising; if both Pressure lines move the calamity cannot be withstood; even a single Pressure moving and changing into a Pressure line brings harm. The method of Qimen likes the three Wonders, and if they are over the six Instruments the benefit is doubled. The six Instruments are Jiazi, Jiachen, Jiashen and Jiawu (the text lists only these four); again, with Jiawu and Jiaxu open, it favours meeting the Star Wonder; with Jiazi and Jiashen, the Sun Wonder is pleasing to meet; with Jiayin and Jiachen, the Moon Wonder is better still. Though called the three Wonders roaming over the six Instruments, it also means the three Wonders getting the envoy. The classic says: the three Wonders getting the envoy are truly worth taking, and for the six Jia to meet them is no small help. For example, after the Summer Solstice, Qian changing into Tai or Dun changing into Gen. In such hexagrams, if Bing has Output on the Day or Month, any sending out of troops or drawing up of lines is sure to be auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [334, 334],
+          "zh": ["易卦之中，大忌六爻兴二鬼。", "奇门之内，最喜三奇游六仪。"],
+          "yi": ["易卦里最忌六爻里兴起两个官鬼，", "奇门里最喜三奇游行在六仪上。"],
+          "en": ["In the hexagram the great taboo is two Pressure lines rising among the six lines;", "in Qimen what is best liked is the three Wonders roaming over the six Instruments."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [335, 335],
+          "zh": ["军中之卦，最嫌官鬼爻兴，倘遇二官皆动，祸不可当。", "纵然一鬼动变鬼爻亦有患害。", "奇门之法，却喜三奇，若在六仪之上，其美倍加。", "六仪者，甲子、甲辰、甲申、甲午是也。", "又开甲午、甲戌，利见星奇。", "甲子、甲申，日奇喜遇。", "甲寅、甲辰、月奇更吉。", "虽曰三奇游六仪，亦谓三奇得使者也。", "经云三奇得使诚堪取，六甲遇之非小裱。", "乙逢犬马丙鼠猴，六丁壬女骑龙虎。", "譬如夏至后，乾之泰、遁之艮者是也。", "此等卦中，丙得子孙临日月，一应与兵布阵必有祯祥。"],
+          "yi": ["军中的卦，最嫌官鬼爻兴起，如果遇到两个官都发动，祸不可当。", "纵然只有一个官鬼发动、变出官鬼爻，也有祸害。", "奇门的办法，却喜欢三奇，如果在六仪之上，好处加倍。", "六仪是甲子、甲辰、甲申、甲午（原文只列这四个）。", "又（门）开甲午、甲戌，利于遇见星奇。", "甲子、甲申，喜欢遇见日奇。", "甲寅、甲辰，遇月奇更吉。", "虽说是三奇游六仪，也就是说三奇得使者。", "经书说：三奇得使确实可取，六甲遇到它不是小补。", "乙逢犬马，丙逢鼠猴，六丁、壬、女骑龙虎。", "譬如夏至后，乾变泰、遁变艮就是。", "这类卦中，丙得到子孙临日、月，凡是出兵布阵必有吉祥。"],
+          "en": ["In a hexagram for the army, what is most disliked is a Pressure line rising; if both Pressure lines move, the calamity cannot be withstood.", "Even a single Pressure moving and changing into a Pressure line brings harm.", "The method of Qimen likes the three Wonders, and if they are over the six Instruments the benefit is doubled.", "The six Instruments are Jiazi, Jiachen, Jiashen and Jiawu (the text lists only these four).", "Again, with Jiawu and Jiaxu open, it favours meeting the Star Wonder.", "With Jiazi and Jiashen, the Sun Wonder is pleasing to meet.", "With Jiayin and Jiachen, the Moon Wonder is better still.", "Though called the three Wonders roaming over the six Instruments, it also means the three Wonders getting the envoy.", "The classic says: the three Wonders getting the envoy are truly worth taking, and for the six Jia to meet them is no small help.", "Yi meets the dog and horse, Bing meets the rat and monkey, and Liu Ding, Ren and the maiden ride the dragon and tiger.", "For example, after the Summer Solstice, Qian changing into Tai or Dun changing into Gen.", "In such hexagrams, if Bing has Output on the Day or Month, any sending out of troops or drawing up of lines is sure to be auspicious."] }
+      ],
+      "note": {
+        "yi": "六仪在奇门里一般是戊、己、庚、辛、壬、癸，这里书里写成甲子、甲辰、甲申、甲午，只列了四个，译文照字面。「非小裱」的「裱」疑是「补」（非小补），译文按「不是小补」译；「乙逢犬马丙鼠猴，六丁壬女骑龙虎」是三奇得使的口诀，书里没有展开，译文照字面。「官」在「二官皆动」里指官鬼。「遁之艮」是遁变艮，书里的写法；第十二句的「丙得子孙临日月」的「丙」是三奇里的月奇。",
+        "en": "In Qimen the six Instruments are usually Wu, Ji, Geng, Xin, Ren and Gui; here the book writes Jiazi, Jiachen, Jiashen and Jiawu, listing only four, and the translation follows the letter. The 'biao' of 'fei xiao biao' is presumably 'bu', help, and the translation reads 'no small help'; 'Yi meets the dog and horse, Bing the rat and monkey, Liu Ding, Ren and the maiden ride the dragon and tiger' is a rhyme for the three Wonders getting the envoy that the book does not spell out, and the translation follows the letter. 'Official' in 'both officials move' means Pressure. 'Dun zhi Gen' is the book's way of writing Dun changing into Gen; the 'Bing' of 'Bing has Output on the Day or Month' is the Moon Wonder among the three Wonders."
+      },
+      "see": ["LY.CAREER.EL.19", "LY.CAREER.EL.21", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.EL.21",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：卦若兴隆七纵七擒皆逐意，门如旺相百战百胜总如心，旺衰辨盈亏、动静知兴息；八卦旺衰不取五行而按八节（立春至春分艮旺震相…冬至至立春坎旺艮相）",
+      "rule": {
+        "yi": "卦如果兴隆，七纵七擒都能如意；门如果旺相，百战百胜都能称心。旺衰能辨出盈亏，动静能知道兴息。八卦的旺衰不取乾兑金、震巽木、坎水、离火、坤艮土（那样的五行），而是由八个节气生出八卦的状态，各按它的时节：立春到春分，艮旺、震相；春分到立夏，震旺、巽相；立夏到夏至，巽旺、离相；夏至到立秋，离旺、坤相；立秋到秋分，坤旺、兑相；秋分到立冬，兑旺、乾相；立冬到冬至，乾旺、坎相；冬至到立春，坎旺、艮相。",
+        "en": "If the hexagram flourishes, seven releases and seven captures go as wished; if the gate is thriving, a hundred battles and a hundred victories are all to one's mind. Strength and weakness can tell waxing from waning, and motion and stillness can tell rising from ceasing. The strength of the eight trigrams is not taken from the elements Qian and Dui Metal, Zhen and Xun Wood, Kan Water, Li Fire, Kun and Gen Earth, but from the eight solar terms which produce the states of the eight trigrams, each by its season: from the Start of Spring to the Spring Equinox, Gen thrives and Zhen assists; from the Spring Equinox to the Start of Summer, Zhen thrives and Xun assists; from the Start of Summer to the Summer Solstice, Xun thrives and Li assists; from the Summer Solstice to the Start of Autumn, Li thrives and Kun assists; from the Start of Autumn to the Autumn Equinox, Kun thrives and Dui assists; from the Autumn Equinox to the Start of Winter, Dui thrives and Qian assists; from the Start of Winter to the Winter Solstice, Qian thrives and Kan assists; from the Winter Solstice to the Start of Spring, Kan thrives and Gen assists."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [337, 338],
+          "zh": ["卦若兴隆，七纵七擒皆逐意。", "门如旺相，百战百胜总如心。", "旺衰能辨乎盈亏，动静可知乎兴息。"],
+          "yi": ["卦如果兴隆，七纵七擒都能如意；", "门如果旺相，百战百胜都能称心。", "旺衰能辨出盈亏，动静能知道兴息。"],
+          "en": ["If the hexagram flourishes, seven releases and seven captures go as wished;", "if the gate is thriving, a hundred battles and a hundred victories are all to one's mind.", "Strength and weakness can tell waxing from waning, and motion and stillness can tell rising from ceasing."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [337, 338],
+          "zh": ["八卦旺衰又不取乾兑金、震巽木、坎水、离火、坤艮土也，自有八节而生八卦，各按其时立春至春分，艮旺震相，春分至立夏，震旺巽相，立夏至夏至，巽旺离相，夏至至立秋，离旺坤相。", "立秋至秋分，坤旺兑相。", "秋分至立冬，兑旺乾相。", "立冬至冬至，乾旺坎相。", "冬至至立春，坎旺艮相。"],
+          "yi": ["八卦的旺衰又不取乾兑金、震巽木、坎水、离火、坤艮土（那样的五行），而是由八个节气生出八卦的状态，各按它的时节：立春到春分，艮旺、震相；春分到立夏，震旺、巽相；立夏到夏至，巽旺、离相；夏至到立秋，离旺、坤相。", "立秋到秋分，坤旺、兑相。", "秋分到立冬，兑旺、乾相。", "立冬到冬至，乾旺、坎相。", "冬至到立春，坎旺、艮相。"],
+          "en": ["The strength of the eight trigrams is not taken from the elements Qian and Dui Metal, Zhen and Xun Wood, Kan Water, Li Fire, Kun and Gen Earth, but from the eight solar terms which produce the states of the eight trigrams, each by its season: from the Start of Spring to the Spring Equinox, Gen thrives and Zhen assists; from the Spring Equinox to the Start of Summer, Zhen thrives and Xun assists; from the Start of Summer to the Summer Solstice, Xun thrives and Li assists; from the Summer Solstice to the Start of Autumn, Li thrives and Kun assists.", "From the Start of Autumn to the Autumn Equinox, Kun thrives and Dui assists.", "From the Autumn Equinox to the Start of Winter, Dui thrives and Qian assists.", "From the Start of Winter to the Winter Solstice, Qian thrives and Kan assists.", "From the Winter Solstice to the Start of Spring, Kan thrives and Gen assists."] }
+      ],
+      "note": {
+        "yi": "这里是「八卦随节气的旺相」的另一种写法：只写旺、相两个状态，八个节气各让一个卦旺、一个卦相，而不是用乾兑属金、震巽属木那样的五行；易隐征战占「方向」（YY.51）把八个状态全部列出来了，旺、相和这里完全一致。「七纵七擒」是诸葛亮七擒孟获的故事，比喻出兵从容如意。",
+        "en": "This is another way of writing the strength of the eight trigrams by solar term: only the two states, thriving and assisting, are written, with each of the eight solar terms giving one trigram thriving and one assisting, and not by the elements, Qian and Dui Metal, Zhen and Xun Wood and so on; the 'direction' section of the Yi Yin war divination (YY.51) lists all eight states, and its thriving and assisting agree exactly with this. 'Seven releases and seven captures' is the story of Zhuge Liang capturing Meng Huo seven times, an image of going out with troops calmly and as wished."
+      },
+      "see": ["LY.CAREER.EL.20", "LY.CAREER.EL.22", "LY.CAREER.YY.51", "LY.CAREER.YY.32"]
+    },
+    {
+      "id": "LY.CAREER.EL.22",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：占出战以内卦为我外卦为他，内旺外衰更遇吉神发动东征西讨威镇华夷；奇门亦按八节旺衰——立春后生门旺、春分后伤门当道、立夏后杜门虽旺不祥取景门、夏至后景门大吉、立秋后死门不宜取惊门、秋分后惊门开门、立冬后开门旺休门相、冬至后休生二门",
+      "rule": {
+        "yi": "占出战，以内卦为我，外卦为他。如果得到内卦旺相、外卦衰弱，又遇吉神发动，东征西讨，威镇华夏和夷狄。奇门也有旺衰，也都按八个节气：立春后，生门太旺；春分后，伤门当道，只嫌大象（卦象）少加，反而取木能生火，用景门；立夏后，杜门虽旺也不吉祥，所以取火相的景门，用它得胜；夏至后，正值景门大吉；立秋后，虽然现在死门当令，不宜前进，应当取金相的惊门；秋分后，惊门当令，进兵没有不亨通的，水相的开门也吉；立冬后，开门正旺，休门作相门，两个门都好；冬至后，休门旺、生门相，两个门都能导向吉祥。",
+        "en": "In divining for going out to fight, take the inner trigram as me and the outer as them. If the inner is thriving and the outer weak, and an auspicious spirit also moves, campaigning east and west one overawes the Chinese and the barbarians. Qimen too has its strength and weakness, also by the eight solar terms: after the Start of Spring the Life gate is very strong; after the Spring Equinox the Harm gate holds the road, but as the great image adds little, one instead takes the fact that Wood can generate Fire and uses the Scene gate; after the Start of Summer the Block gate, though strong, is not auspicious, so one takes the Scene gate that Fire assists and wins by it; after the Summer Solstice the Scene gate is exactly in season and greatly auspicious; after the Start of Autumn, though the Death gate is now in season, it is not fit to advance, and one should take the Fright gate that Metal assists; after the Autumn Equinox the Fright gate commands and none who advance fail to prosper, and the Open gate that Water assists is also auspicious; after the Start of Winter the Open gate is exactly thriving, and the Rest gate acts as the assisting gate, both gates being good; after the Winter Solstice the Rest gate thrives and the Life gate assists, and both gates can lead to good fortune."
+      },
+      "quotes": [
+        { "by": "易林补遗解", "book": "易林补遗", "range": [338, 338],
+          "zh": ["凡占出战，以内卦为我，外卦为他。", "若得内旺外衰，更遇吉神发动，东征西讨威镇华夷。", "奇门亦有旺衰，亦皆按于八节，立春后生门太旺，春分后伤门当道，只嫌大象少加，反取木能生火，景门用之。", "立夏后，杜门虽旺亦不为祥，故取火相景门用之得胜。", "夏至后，正值景门大吉。", "立秋后，虽今死门不宜前进，当取金相惊门。", "秋分后，惊门之令进无不亨，水相开门亦吉。", "立冬后，开门正旺，休作相门，二房俱美。", "冬至后，休旺生相二门，俱能迪吉。"],
+          "yi": ["凡是占出战，以内卦为我，外卦为他。", "如果得到内卦旺相、外卦衰弱，又遇吉神发动，东征西讨，威镇华夏和夷狄。", "奇门也有旺衰，也都按八个节气：立春后，生门太旺；春分后，伤门当道，只嫌大象（卦象）少加，反而取木能生火，用景门。", "立夏后，杜门虽旺也不吉祥，所以取火相的景门，用它得胜。", "夏至以后，景门正当其令，大吉。", "立秋后，虽然现在死门当令，不宜前进，应当取金相的惊门。", "秋分后，惊门当令，进兵没有不亨通的，水相的开门也吉。", "立冬后，开门正旺，休门作相门，两个门都好。", "冬至后，休门旺、生门相，两个门都能导向吉祥。"],
+          "en": ["In divining for going out to fight, take the inner trigram as me and the outer as them.", "If the inner is thriving and the outer weak, and an auspicious spirit also moves, campaigning east and west one overawes the Chinese and the barbarians.", "Qimen too has its strength and weakness, also by the eight solar terms: after the Start of Spring the Life gate is very strong; after the Spring Equinox the Harm gate holds the road, but as the great image adds little, one instead takes the fact that Wood can generate Fire and uses the Scene gate.", "After the Start of Summer the Block gate, though strong, is not auspicious, so one takes the Scene gate that Fire assists and wins by it.", "After the Summer Solstice the Scene gate is exactly in season and greatly auspicious.", "After the Start of Autumn, though the Death gate is now in season, it is not fit to advance, and one should take the Fright gate that Metal assists.", "After the Autumn Equinox the Fright gate commands and none who advance fail to prosper, and the Open gate that Water assists is also auspicious.", "After the Start of Winter the Open gate is exactly thriving, and the Rest gate acts as the assisting gate, both gates being good.", "After the Winter Solstice the Rest gate thrives and the Life gate assists, and both gates can lead to good fortune."] }
+      ],
+      "note": {
+        "yi": "这一条后半是奇门八门随节气的旺相，和六爻的断法没有直接关系，留在这里是因为书里把它排在「内卦为我、外卦为他」之后一起讲。第三句「只嫌大象少加」文字不顺，译文照字面。「华夷」是中原和外族。",
+        "en": "The second half of this entry is the strength of the Eight Gates of Qimen through the solar terms, which has no direct bearing on the judgments of the six lines, and it is kept here because the book sets it after 'the inner is me, the outer is them' in the same discussion. 'Zhi xian daxiang shao jia' in the third sentence does not run smoothly, and the translation follows the letter. 'Hua yi' is the Chinese and the foreign peoples."
+      },
+      "see": ["LY.CAREER.EL.21", "LY.CAREER.EL.23", "LY.CAREER.YY.53"]
+    },
+    {
+      "id": "LY.CAREER.EL.23",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：六爻安静宜守不宜攻，二卦交重利征不利止；卦爻安静无暗动、应不克世只宜坚壁不出；内动外摇速宜出战，停留则长彼之智",
+      "rule": {
+        "yi": "六爻安静，宜守不宜攻；内外两卦都发动，利于出征、不利于停留。卦爻安静、又没有暗动的，应爻又不克世爻，只宜坚壁不出；「二卦」就是内外卦，如果内卦动、外卦摇，要赶快出战，停留下来就增长了对方的智谋。",
+        "en": "If the six lines are still, it is fit to hold and not to attack; if both trigrams, inner and outer, move in double, it favours going out and does not favour staying. If the lines are still and nothing moves secretly and the Other does not control the Self, it is only fit to hold the walls and not go out; the 'two trigrams' are the inner and outer, and if the inner moves and the outer shakes, one should go out to fight quickly, since staying only increases the enemy's wit."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [339, 339],
+          "zh": ["六爻安静宜守不宜攻，二卦交重利征不利止。"],
+          "yi": ["六爻安静，宜守不宜攻；内外两卦都发动，利于出征、不利于停留。"],
+          "en": ["If the six lines are still, it is fit to hold and not to attack; if both trigrams move in double, it favours going out and does not favour staying."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [340, 340],
+          "zh": ["卦爻安静更无暗动者、应又不克世爻，只宜坚壁不出。", "二卦者，内外也。", "若内动外摇，速宜出战，停留则长彼之智矣！"],
+          "yi": ["卦爻安静、又没有暗动的，应爻又不克世爻，只宜坚壁不出。", "「二卦」，就是内外卦。", "如果内动外摇，要赶快出战，停留下来就增长了对方的智谋！"],
+          "en": ["If the lines are still and nothing moves secretly and the Other does not control the Self, it is only fit to hold the walls and not go out.", "The 'two trigrams' are the inner and outer.", "If the inner moves and the outer shakes, one should go out to fight quickly, since staying only increases the enemy's wit!"] }
+      ],
+      "note": {
+        "yi": "「应又不克世爻」指应爻不克世爻。「暗动」是日辰冲动静爻（见 EL.28）。这一条与易隐征战占「方向」里的「内旺外衰可战、内衰外旺宜守」（YY.53）是同一类取法，但这里看的是动静，那里看的是旺衰。",
+        "en": "'The Other does not control the Self' means the Other line does not control the Self line. 'Secret movement' is a still line clashed into motion by the Day (see EL.28). This entry takes the same kind of view as 'if the inner is thriving and the outer weak one can fight, if the inner is weak and the outer thriving hold' in the Yi Yin 'direction' section (YY.53), but this one looks at motion and stillness, and that one at strength and weakness."
+      },
+      "see": ["LY.CAREER.EL.22", "LY.CAREER.EL.24", "LY.CAREER.YY.53"]
+    },
+    {
+      "id": "LY.CAREER.EL.24",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：内城本寨外是他营——内卦与本宫皆为本国又为我之营寨，他宫与外卦咸作他邦更作彼之营寨；内卦兴则吾营坚固，外卦弱则彼寨萧条",
+      "rule": {
+        "yi": "内卦是本城、本寨，外卦是对方的营。内卦和本宫都是本国，也是我的营寨；他宫和外卦都是他国，也是对方的营寨。内卦兴旺，我的营寨就坚固；外卦衰弱，对方的寨子就萧条。",
+        "en": "The inner trigram is my own city and camp, and the outer is their camp. The inner trigram and the home palace are both my own state and also my camp; another palace and the outer trigram are both another state and also their camp. If the inner trigram flourishes my camp is firm; if the outer trigram is weak their camp is desolate."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [341, 341],
+          "zh": ["内城本寨，外是他营。"],
+          "yi": ["内卦是本城、本寨，外卦是对方的营。"],
+          "en": ["The inner trigram is my own city and camp, and the outer is their camp."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [342, 342],
+          "zh": ["内卦与本宫皆为本国，又为我之营寨。", "他宫与外卦咸作他邦，更作彼之营寨。", "内卦兴，则吾营坚固。", "外卦弱，则彼寨萧条。"],
+          "yi": ["内卦和本宫都是本国，也是我的营寨。", "他宫和外卦都是他国，也是对方的营寨。", "内卦兴旺，我的营寨就坚固。", "外卦衰弱，对方的寨子就萧条。"],
+          "en": ["The inner trigram and the home palace are both my own state, and also my camp.", "Another palace and the outer trigram are both another state, and also their camp.", "If the inner trigram flourishes, my camp is firm.", "If the outer trigram is weak, their camp is desolate."] }
+      ],
+      "note": {
+        "yi": "这一条和易隐征战占「方向」第一句「内卦为我寨，外卦为彼营」（YY.51）相同；这里多了「本宫」「他宫」：本宫是占得的卦所属的宫，他宫是别的宫（与 EL.02 的「亲宫」「本卦」取法相接）。",
+        "en": "This entry is the same as the first sentence of the Yi Yin 'direction' section, 'the inner trigram is my camp and the outer is theirs' (YY.51); here it adds 'home palace' and 'another palace': the home palace is the palace to which the hexagram cast belongs and another palace is any other (continuing the view of 'the home palace' and 'the original hexagram' in EL.02)."
+      },
+      "see": ["LY.CAREER.EL.23", "LY.CAREER.EL.25", "LY.CAREER.YY.51"]
+    },
+    {
+      "id": "LY.CAREER.EL.25",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：世为主师之谋、应用贼魁之计；世旺主将心忠力勇、旺动耀武扬威，世衰听卑智陋、衰动谋孤势寡强施为；应旺彼强梁善略，应休囚彼懦无能",
+      "rule": {
+        "yi": "世爻是主帅的谋略，应爻是贼首的计策。交兵对敌必须分清彼我，才能决定输赢，所以以世爻为主将，应爻为贼首。世旺，主将忠心有力、勇敢，如果旺相又发动，就耀武扬威、勤于厮杀；世衰弱，就见闻低下、智谋浅陋；世衰而动，谋划孤立、势力单薄，却勉强行事。应旺相，对方必定强横而善于谋略；应休囚，对方就怯懦无能。所以经书说：一卦中间的主宰，无非凭世、应。",
+        "en": "The Self is the commander's strategy and the Other is the bandit chief's scheme. In engaging and facing the enemy one must tell them from us before deciding victory or defeat, so the Self is the commander and the Other is the bandit chief. If the Self is thriving, the commander is loyal, strong and brave, and if thriving and moving he parades his prowess and is diligent in slaughter; if the Self is weak, his knowledge is low and his wit shallow; if the Self is weak and moves, his plans are lonely and his strength thin, yet he forces himself to act. If the Other is thriving, they are surely violent and good at strategy; if the Other is resting or trapped, they are cowardly and incapable. So the classic says: what rules a hexagram is nothing other than the Self and the Other."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [343, 343],
+          "zh": ["世为主师之谋，应用贼魁之计。"],
+          "yi": ["世爻是主帅的谋略，应爻是贼首的计策。"],
+          "en": ["The Self is the commander's strategy and the Other is the bandit chief's scheme."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [344, 344],
+          "zh": ["夫交兵对敌必分彼我，方决输赢。", "故以世为主将，应作贼魁。", "如世旺则主将心忠力勇，若旺动则耀武扬威，勤以厮杀。", "世若衰微，则听卑智陋。", "世若衰动，谋孤势寡强施为。", "如应值旺相，彼必强梁善略。", "应若休囚，则彼懦无能。", "故经云：一卦中间主宰，莫非凭世应。"],
+          "yi": ["交兵对敌必须分清彼我，才能决定输赢。", "所以以世爻为主将，应爻为贼首。", "世旺，主将忠心有力、勇敢，如果旺相又发动，就耀武扬威、勤于厮杀。", "世衰弱，就见闻低下、智谋浅陋。", "世衰而动，谋划孤立、势力单薄，却勉强行事。", "应旺相，对方必定强横而善于谋略。", "应休囚，对方就怯懦无能。", "所以经书说：一卦中间的主宰，无非凭世、应。"],
+          "en": ["In engaging and facing the enemy one must tell them from us before deciding victory or defeat.", "So the Self is the commander and the Other is the bandit chief.", "If the Self is thriving, the commander is loyal, strong and brave, and if thriving and moving he parades his prowess and is diligent in slaughter.", "If the Self is weak, his knowledge is low and his wit shallow.", "If the Self is weak and moves, his plans are lonely and his strength thin, yet he forces himself to act.", "If the Other is thriving, they are surely violent and good at strategy.", "If the Other is resting or trapped, they are cowardly and incapable.", "So the classic says: what rules a hexagram is nothing other than the Self and the Other."] }
+      ],
+      "note": {
+        "yi": "「听卑」字面不顺，按上下文是见闻低下；「强施为」是勉强去做。「贼魁」是贼首，即对方的主帅。这一条与易隐征战占「彼己」（YY.54）的「世为我帅，应为彼将」是同一个取法。",
+        "en": "'Ting bei' does not run smoothly by the letter and by the context means low knowledge; 'qiang shi wei' is forcing oneself to act. 'Zeikui' is the bandit chief, the enemy's commander. This entry takes the same view as 'the Self is my commander and the Other the enemy's general' in the Yi Yin 'them and us' section (YY.54)."
+      },
+      "see": ["LY.CAREER.EL.24", "LY.CAREER.EL.26", "LY.CAREER.YY.54", "LY.CAREER.HJC.86"]
+    },
+    {
+      "id": "LY.CAREER.EL.26",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：安营立寨推八卦之显幽，监阵交锋阐各爻之生克；行兵出战先择地安营（乾宫利西北、巽卦利东南），六爻之内有彼生我我生彼我克彼彼克我，须详彼此吉凶以决输赢",
+      "rule": {
+        "yi": "安营立寨，要推八卦的显与幽；监阵交锋，要阐明各爻的生克。行兵出战，先要选地安营，易卦中自有九宫八卦：乾宫利于西北之地，巽卦利于东南的方位，其余照此推。各爻，是一卦上下的六爻，却不知道还有变出的六爻、有伏出的六爻、又有互卦起作用的爻；六爻之内，有彼生我、我生彼，有我克彼、彼克我，必须详察彼此的吉凶，来判定输赢的道理。",
+        "en": "In pitching camp and setting up stockades, work out the manifest and hidden of the eight trigrams; in supervising the formation and engaging, make clear the generation and control of each line. In moving troops to battle, first choose the ground for the camp, and in the hexagram there are of itself the nine palaces and eight trigrams: the Qian palace favours the northwest and Xun the southeast, and the rest follow this. The lines are the six lines above and below in a hexagram, but one does not know that there are also the six lines of the changed hexagram, the six hidden lines and the lines acting in the nuclear hexagram; among the six lines, there is them generating me and me generating them, me controlling them and them controlling me, and one must examine the good and ill of both sides to decide the principle of winning and losing."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [345, 345],
+          "zh": ["安营立寨，推八卦之显幽。", "监阵交锋，阐各爻之生克。"],
+          "yi": ["安营立寨，要推八卦的显与幽；", "监阵交锋，要阐明各爻的生克。"],
+          "en": ["In pitching camp and setting up stockades, work out the manifest and hidden of the eight trigrams;", "in supervising the formation and engaging, make clear the generation and control of each line."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [346, 346],
+          "zh": ["行兵出战，先要择地安营。", "易卦之中，自有九宫八卦也。", "如乾宫利于西北之地。", "巽卦利于东南之方，余皆仿此。", "各爻者，一卦之间上下六爻，竟不知有变出六爻、有伏出六爻、又有互卦作用之爻。", "六爻之内，有彼生我、我生彼，有我克彼、彼克我。", "须详彼此吉凶，已决输赢之理。"],
+          "yi": ["行兵出战，先要选地安营。", "易卦中自有九宫八卦。", "比如乾宫，利于西北方向的地方。", "巽卦利于东南的方位，其余照此推。", "各爻，是一卦之间上下的六爻，却不知道还有变出的六爻、有伏出的六爻、又有互卦起作用的爻。", "六爻之中，有对方生我、我生对方，有我克对方、对方克我。", "必须详察彼此的吉凶，来判定输赢的道理。"],
+          "en": ["In moving troops to battle, first choose the ground for the camp.", "In the hexagram there are of itself the nine palaces and eight trigrams.", "The Qian palace, for example, favours the northwest.", "Xun favours the southeast, and the rest follow this.", "The lines are the six lines above and below in a hexagram, but one does not know that there are also the six lines of the changed hexagram, the six hidden lines and the lines acting in the nuclear hexagram.", "Among the six lines there is them generating me and me generating them, me controlling them and them controlling me.", "One must examine the good and ill of both sides to decide the principle of winning and losing."] }
+      ],
+      "note": {
+        "yi": "「显幽」是明显与隐伏（本卦与伏、变等），「互卦」是由第二、三、四爻和第三、四、五爻合成的卦。「九宫八卦」指八个卦各配一个方位（乾西北、巽东南等）。",
+        "en": "'Xian you' is manifest and hidden (the original hexagram against the hidden and changed lines and so on); the 'nuclear hexagram' is the hexagram formed from the second, third and fourth lines and the third, fourth and fifth lines. 'The nine palaces and eight trigrams' means that each of the eight trigrams is matched to a direction (Qian northwest, Xun southeast and so on)."
+      },
+      "see": ["LY.CAREER.EL.25", "LY.CAREER.EL.27", "LY.CAREER.YY.53"]
+    },
+    {
+      "id": "LY.CAREER.EL.27",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：世克应爻师勇兵强可剿伐，应伤世象贼多凶炽莫撄锋；世克应则决胜，世旺动带福神克应克鬼势如破竹，世旺克而无吉神助反被日辰动爻克世虽胜未全功，世衰应旺只可御敌；世化子孙应化官鬼宜假途灭敌，子孙伏世下冲应克应暗渡陈仓；应克世彼赢按兵守候，应旺动克世或鬼煞同克彼合谋夹战；应上加兄弟诡谲、玄武偷营、白虎猖獗",
+      "rule": {
+        "yi": "世爻克应爻，师勇兵强，可以剿伐；应爻伤世象，贼多势凶，不要触其锋。世克应爻，我必定取胜；世爻旺相发动而带福神克应、克官鬼的，势如破竹，一战就奏凯；世爻旺相克应但没有吉神发动帮助，反而被日辰、动爻克世的，虽然能取胜却没有获得全功；世衰应旺，对方虽然受克，也只可以抵御；（这样）没有得到奇谋善策，不能大规模专门征伐。世变子孙、应变官鬼的，宜用借路灭敌的计策，又不可再战邀功；子孙伏在世爻下面，而冲应、克应的，必须暗渡陈仓。应克世，必定对方赢，暂且按兵守候；应旺而克世的，来势必定不可轻视；应旺相发动克世，或者同旺相的官鬼、凶煞一起来克的，对方必定合谋夹击，机关难测。应爻上如果加兄弟，（对方）非常诡诈；加玄武，必定偷营；加白虎，猖獗突击得很厉害。",
+        "en": "If the Self controls the Other, the troops are brave and strong and one can campaign; if the Other injures the Self image, the bandits are many and fierce and one must not touch their edge. If the Self controls the Other, I surely win; if the Self is thriving and moving and carries the fortune spirit, Output, and controls the Other and controls Pressure, the force is like splitting bamboo and one wins in a single battle; if the Self is thriving and controls but no auspicious spirit moves to help, and instead the Day or a moving line controls the Self, though one can win one does not gain complete success; if the Self is weak and the Other thriving, though they are controlled, one can only fend them off, and without marvellous plans and good strategies one cannot make large expeditions. If the Self turns into Output and the Other into Pressure, it is fit to destroy the enemy by borrowing a road, and one must not fight again to seek credit; if Output lies hidden under the Self and clashes with or controls the Other, one must secretly cross at Chencang. If the Other controls the Self, they surely win, and for the moment one holds the troops and waits; if the Other is thriving and controls the Self, its force is surely not to be made light of; if the Other is thriving and moving and controls the Self, or thriving Pressure and baleful spirits come to control together, they will surely plot together and attack from both sides, and their stratagems are hard to fathom. If a Peer line is added on the Other, they are extremely crafty; with the Dark Tortoise, they will surely raid the camp; with the White Tiger, they are fiercely and violently aggressive."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [347, 347],
+          "zh": ["世克应爻，师勇兵强剿伐。", "应伤世象，贼多凶炽莫撄锋。"],
+          "yi": ["世爻克应爻，师勇兵强，可以剿伐；", "应爻伤世象，贼多势凶，不要触其锋。"],
+          "en": ["If the Self controls the Other, the troops are brave and strong and one can campaign;", "if the Other injures the Self image, the bandits are many and fierce and one must not touch their edge."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [348, 350],
+          "zh": ["如世克应爻者，则我决胜。", "世若旺动而带福神克应，克鬼者，则席卷长驱、势如破竹，一战而奏凯矣！", "世若旺克而不带吉神动助，反被日辰动爻克世者，虽能取胜未获全功。", "若世衰应旺，彼虽受克，只可御敌而已。", "未得奇谋善策大专征伐。", "若世化子孙应化官鬼者，宜以假途灭敌，又不可复战邀功，若子孙伏于世下而冲应克应者，必须暗渡陈仓。", "如应克世者，必定彼赢，暂且按兵守候。", "应若旺而克世者，其势决识。", "应旺而动克世或同旺相鬼煞来克者，彼必合谋而夹战，机关匡测。", "应上若加兄弟非常诡谲，加玄武必定偷营，加白虎，猖獗突甚。"],
+          "yi": ["世克应爻，我必定取胜。", "世爻旺相发动而带福神克应、克官鬼的，势如破竹，一战就奏凯。", "世爻旺相克应但没有吉神发动帮助，反而被日辰、动爻克世的，虽然能取胜却没有获得全功。", "世衰应旺，对方虽然受克，也只可以抵御。", "（这样）没有得到奇谋善策，不能大规模专门征伐。", "世变子孙、应变官鬼的，宜用借路灭敌的计策，又不可再战邀功；子孙伏在世爻下面，而冲应、克应的，必须暗渡陈仓。", "应克世，必定对方赢，暂且按兵守候。", "应旺而克世的，来势必定不可轻视（原文「决识」）。", "应旺相发动克世，或者同旺相的官鬼、凶煞一起来克的，对方必定合谋夹击，机关难测。", "应爻上如果加兄弟，（对方）非常诡诈；加玄武，必定偷营；加白虎，猖獗突击得很厉害。"],
+          "en": ["If the Self controls the Other, I surely win.", "If the Self is thriving and moving and carries the fortune spirit, Output, and controls the Other and controls Pressure, the force is like splitting bamboo and one wins in a single battle.", "If the Self is thriving and controls but no auspicious spirit moves to help, and instead the Day or a moving line controls the Self, though one can win one does not gain complete success.", "If the Self is weak and the Other thriving, though they are controlled, one can only fend them off.", "Without marvellous plans and good strategies one cannot make large expeditions.", "If the Self turns into Output and the Other into Pressure, it is fit to destroy the enemy by borrowing a road, and one must not fight again to seek credit; if Output lies hidden under the Self and clashes with or controls the Other, one must secretly cross at Chencang.", "If the Other controls the Self, they surely win, and for the moment one holds the troops and waits.", "If the Other is thriving and controls the Self, its force is surely not to be made light of (the text reads 'jue shi').", "If the Other is thriving and moving and controls the Self, or thriving Pressure and baleful spirits come to control together, they will surely plot together and attack from both sides, and their stratagems are hard to fathom.", "If a Peer line is added on the Other, they are extremely crafty; with the Dark Tortoise, they will surely raid the camp; with the White Tiger, they are fiercely and violently aggressive."] }
+      ],
+      "note": {
+        "yi": "「席卷长驱」「势如破竹」是势头猛烈、一路取胜；「假途灭敌」（假道伐虢）是借路灭掉敌人，「暗渡陈仓」是明里修栈道、暗里绕道偷袭，这两个典故书里自己写出来了。「其势决识」文字有误，疑是「其势炽盛」一类，译文按「不可轻视」译并标出原文；「机关匡测」的「匡」是「叵」（不可）。第四、五句「世衰应旺……只可御敌而已，未得奇谋善策大专征伐」连读：世弱应强时只能防御。",
+        "en": "'Xi juan chang qu' and 'shi ru po zhu' mean a fierce momentum and winning all the way; 'jia tu mie di' (borrowing the road to destroy Guo) is destroying the enemy by borrowing a passage, and 'an du Chencang' is openly repairing the plank road while secretly going round to raid, both allusions the book writes out itself. 'Qi shi jue shi' is defective, presumably something like 'its force is blazing', and the translation reads 'not to be made light of' and marks the original; the 'kuang' of 'jiguan kuang ce' is 'po', cannot. The fourth and fifth sentences, 'if the Self is weak and the Other thriving ... one can only fend them off, and without marvellous plans and good strategies one cannot make large expeditions', read on together: when the Self is weak and the Other strong one can only defend."
+      },
+      "see": ["LY.CAREER.EL.26", "LY.CAREER.EL.28", "LY.CAREER.YY.54", "LY.CAREER.YY.55", "LY.CAREER.HJC.86", "LY.CAREER.HJC.93", "LY.CAREER.HJC.94"]
+    },
+    {
+      "id": "LY.CAREER.EL.28",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：杀不克身值交重无大害，杀如伤世虽居安静且休征；杀即大煞（劫煞亡神小白虎大白虎，官鬼亦作杀神）；诸煞旺动不克身世无大害，不旺不动而所克害身世必生祸，旺动克身世祸骤来；杀并日辰冲克静世名暗动，有阴谋窃劫之患；大煞劫煞亡神小白虎大白虎的起例",
+      "rule": {
+        "yi": "煞不克身，即使重叠发动也没有大害；煞如果伤世，虽然在安静中也暂且不要出征。「杀」就是大煞，有劫煞，也有亡神，又有小白虎、大白虎，官鬼也当作杀神。如果各煞或旺相或发动、但不克身爻、世爻，必定没有大害；如果不旺不动，而所克的（爻）有害于身爻、世爻，必定生祸，要谨慎提防；如果各煞或旺相或发动来克身、世，祸会骤然来到，绝非小事。如果煞和日辰一起冲克安静的世爻，叫作暗动，必有阴谋窃劫的祸患；想察觉什么时候来害，须推官鬼和煞生旺的时期。所以经书说「福来而不知，祸来而不觉」，正是说这个。大煞、劫煞的起例已经注在前面；亡神煞的起例说：正月起亥顺行十二位；小白虎，就是庚、辛日起白虎；大白虎，是正月起申顺行十二位。",
+        "en": "If a baleful spirit does not control the Body, even if it moves in double there is no great harm; if a baleful spirit injures the Self, even if it is still, for the time being do not set out. 'Sha' is the great baleful spirit, and there are Robbery, the Lost Spirit, the Lesser White Tiger and the Greater White Tiger, and Pressure too is counted as a baleful spirit. If the various baleful spirits are thriving or moving but do not control the Body and Self, there is surely no great harm; if they are neither thriving nor moving but what they control does harm to the Body and Self, disaster surely arises and one must guard carefully; if the baleful spirits are thriving or moving and come to control the Body and Self, the disaster comes suddenly and is no small matter. If a baleful spirit joins the Day in clashing with and controlling a still Self, it is called secret motion, and there will surely be the danger of plots and plunder; to find out when the harm will come, work out the period when Pressure and the baleful spirit are born or thriving. So the classic says 'fortune comes and one does not know, disaster comes and one does not feel', which says exactly this. The setting out of the great baleful spirit and Robbery is noted earlier; the setting out of the Lost Spirit says: from the first month start at Hai and go through the twelve places; the Lesser White Tiger is the White Tiger starting on Geng and Xin days; the Greater White Tiger starts at Shen in the first month and goes through the twelve places."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [351, 351],
+          "zh": ["杀不克身，值交重无大害。", "杀如伤世，虽居安静且休征。"],
+          "yi": ["煞不克身，逢重叠发动也没有大害；", "煞如果伤世，虽然在安静中也暂且不要出征。"],
+          "en": ["If a baleful spirit does not control the Body, even if it moves in double there is no great harm;", "if a baleful spirit injures the Self, even if it is still, for the time being do not set out."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [352, 352],
+          "zh": ["夫杀者，大煞也，有劫煞、也有亡神、又有小白虎、大白虎，官鬼亦作杀神也。", "若诸杀或旺或动不克身世者，决无大害，若不旺不动而所克，害于身世者，必然生祸，谨慎提防。", "若诸杀或旺或动来克身世者，其祸骤来决非小可。", "若杀并日辰冲克静世者，名为暗动，必有阴谋窃劫之患，欲察何时来害，须推鬼煞生旺之期。", "故经云福来而不知，祸来而不觉，正此之谓也。", "大煞、劫煞，例注在前，亡神杀例云：正月起亥顺行十二位是也。", "小白虎，即庚辛日起白虎是也。", "大白虎者，正月起申顺行十二位是也。"],
+          "yi": ["「杀」就是大煞，有劫煞，也有亡神，又有小白虎、大白虎，官鬼也当作杀神。", "如果各煞或旺相或发动、但不克身爻、世爻，必定没有大害；如果不旺不动，而所克的（爻）有害于身爻、世爻，必定生祸，要谨慎提防。", "如果各煞或旺相或发动来克身、世，祸会骤然来到，绝非小事。", "如果煞和日辰一起冲克安静的世爻，叫作暗动，必有阴谋窃劫的祸患；想察觉什么时候来害，须推官鬼和煞生旺的时期。", "所以经书说「福来而不知，祸来而不觉」，正是说这个。", "大煞、劫煞的起例已经注在前面；亡神煞的起例说：正月起亥顺行十二位。", "小白虎，就是庚、辛日起白虎（的位置）。", "大白虎，是正月起申顺行十二位。"],
+          "en": ["'Sha' is the great baleful spirit, and there are Robbery, the Lost Spirit, the Lesser White Tiger and the Greater White Tiger, and Pressure too is counted as a baleful spirit.", "If the various baleful spirits are thriving or moving but do not control the Body and Self, there is surely no great harm; if they are neither thriving nor moving but what they control does harm to the Body and Self, disaster surely arises and one must guard carefully.", "If the baleful spirits are thriving or moving and come to control the Body and Self, the disaster comes suddenly and is no small matter.", "If a baleful spirit joins the Day in clashing with and controlling a still Self, it is called secret motion, and there will surely be the danger of plots and plunder; to find out when the harm will come, work out the period when Pressure and the baleful spirit are born or thriving.", "So the classic says 'fortune comes and one does not know, disaster comes and one does not feel', which says exactly this.", "The setting out of the great baleful spirit and Robbery is noted earlier; the setting out of the Lost Spirit says: from the first month start at Hai and go through the twelve places.", "The Lesser White Tiger is the White Tiger starting on Geng and Xin days.", "The Greater White Tiger starts at Shen in the first month and goes through the twelve places."] }
+      ],
+      "note": {
+        "yi": "「身世」是身爻和世爻。「暗动」是静爻被日辰冲动（见术语表）。「小白虎」「大白虎」是两种神煞，书里写了起例：小白虎庚辛日起白虎（日干在庚、辛时白虎位置的算法），大白虎正月起申顺行。第二个「若诸杀」那一句里「不旺不动而所克」的主语省略，译文按文意写成「所克的（爻）」。这一条与易隐征战占「彼己」里的「鬼暗动加大杀劫杀刑刃克世防刺客」（YY.56）取同一件事。",
+        "en": "'Shishen' is the Body and Self lines. 'Secret motion' is a still line clashed into motion by the Day (see the glossary). The 'Lesser White Tiger' and the 'Greater White Tiger' are two spirit-stars whose setting out the book writes: the Lesser starts on Geng and Xin days (the rule for the position of the White Tiger when the day stem is Geng or Xin), and the Greater starts at Shen in the first month. The subject of 'neither thriving nor moving but what it controls' in the second sentence is left out, and the translation follows the sense as 'what it controls'. This entry takes up the same matter as 'if Pressure moves in secret with a great baleful spirit, Robbery, punishment and the blade and controls the Self, guard against assassins' in the Yi Yin 'them and us' section (YY.56)."
+      },
+      "see": ["LY.CAREER.EL.27", "LY.CAREER.EL.29", "LY.CAREER.YY.56", "LY.CAREER.HJC.109"]
+    },
+    {
+      "id": "LY.CAREER.EL.29",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：世陷我军有难、应空贼寇罹危；世为主将宜雄强对垒不宜空陷；值旬空月破不可妄自争先，先则有害、迟则有益；世居阳象兵贵神速速行大利",
+      "rule": {
+        "yi": "世爻陷落，我军有难；应爻落空，贼寇陷于危险。世是主将，要靠雄强来对垒折冲，哪里适宜落空陷落？如果值旬空，或者临月破的宫位，不可妄自争先，争先就有害，迟缓就有益。单爻属阳，发动成为老阳，主过去的缘由；又说阳主迅速，所以世居阳象，用兵贵在神速，迅速行动大利，迟缓就大害。这是大道理，所以不再琐碎细说。",
+        "en": "If the Self sinks, my army is in trouble; if the Other is Void, the bandits fall into danger. The Self is the commander, and must face the enemy by strength and stoutness; how can it be fit for it to be Void or sunk? If it meets decade Void or sits in a Month-break palace, one must not recklessly press ahead, for pressing ahead brings harm and delay brings benefit. A single line that is yang becomes old yang when it moves and governs the reasons of the past; again it is said that yang governs speed, so when the Self sits on a yang image, in using troops swiftness is prized, and acting swiftly is greatly favourable and delay greatly harmful. This is a great principle, so it is not detailed trivially."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [353, 353],
+          "zh": ["世陷，我军有难。", "应空，贼寇罹危。"],
+          "yi": ["世爻陷落，我军有难；", "应爻落空，贼寇陷于危险。"],
+          "en": ["If the Self sinks, my army is in trouble;", "if the Other is Void, the bandits fall into danger."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [354, 354],
+          "zh": ["凡世为主将，惟伏雄强对垒折衡，岂宜空陷于？", "若值旬空，或临月破宫，不可妄自争先，先则有害，犀则有益。", "单爻属阳，发为老阳，而主过去之由，又云阳主迅速，故世居阳象，兵贵神速，速行大利，犀则大害。", "此系大理，故不琐耳。"],
+          "yi": ["凡是世爻为主将，要靠雄强来对垒折冲，哪里适宜落空陷落？", "如果值旬空，或者临月破的宫位，不可妄自争先，争先就有害，迟缓就有益（「犀」疑是「迟」）。", "单爻属阳，发动成为老阳，主过去的缘由；又说阳主迅速，所以世居阳象，用兵贵在神速，迅速行动大利，迟缓就大害（「犀」疑是「迟」）。", "这是大道理，所以不再琐碎细说。"],
+          "en": ["Whenever the Self is the commander, he must face the enemy by strength and stoutness; how can it be fit for it to be Void or sunk?", "If it meets decade Void or sits in a Month-break palace, one must not recklessly press ahead, for pressing ahead brings harm and delay brings benefit ('xi' is presumably 'chi').", "A single line that is yang becomes old yang when it moves and governs the reasons of the past; again it is said that yang governs speed, so when the Self sits on a yang image, in using troops swiftness is prized, and acting swiftly is greatly favourable and delay greatly harmful ('xi' is presumably 'chi').", "This is a great principle, so it is not detailed trivially."] }
+      ],
+      "note": {
+        "yi": "「犀」在第二、三句里两次出现，和「先」对着，应是「迟」（迟则有益、迟则大害）；译文按「迟缓」译并标出。「老阳」是阳爻发动的叫法（老阳变阴）。「折衡」即「折冲」，抵挡敌人。「惟伏」疑是「惟须」，译文按文意译。这一条与易隐征战占「世空，我有难；应空，彼必伤」（YY.54）取同一件事，但这里多了「不可争先」。",
+        "en": "'Xi' appears twice, in the second and third sentences, set against 'xian', ahead, and is presumably 'chi', slow (delay brings benefit, delay brings great harm); the translation reads 'delay' and marks it. 'Old yang' is the name for a yang line that moves (old yang changes into yin). 'Zhe heng' is 'zhe chong', turning back the enemy. 'Wei fu' is presumably 'wei xu', one must, and is translated by sense. This entry takes up the same matter as 'if the Self is Void I am in trouble; if the Other is Void they will surely be hurt' in the Yi Yin 'them and us' section (YY.54), but adds 'one must not press ahead'."
+      },
+      "see": ["LY.CAREER.EL.28", "LY.CAREER.EL.30", "LY.CAREER.YY.54", "LY.CAREER.HJC.100"]
+    },
+    {
+      "id": "LY.CAREER.EL.30",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：父乃旌旗舒卷凭动静，财为粮草盈虚决于兴衰；父旺相带青龙绣金华丽、加朱雀书彩鲜明、旺动高张大旗，衰墓逢白虎腐敝，空绝则少无；三军未发粮草先行，财旺兵粮丰盛，玄武兴防偷窃、兄弟兴抢夺，财衰墓粮不多，卦无财子化财必借贷邻邦，空绝则失无",
+      "rule": {
+        "yi": "父爻是旌旗，舒展卷收要凭它的动静；财爻是粮草，盈满亏缺可以由它的兴衰来判断。营中的旌旗以父爻为用爻，旺相又带青龙，就绣金华丽；加朱雀，就色彩鲜明；旺相又发动，就大旗高张、导引飘飘。如果衰、墓而逢白虎，就腐朽破旧；（父爻）空而又绝，旗帜或少或没有，即使有也必然损坏；只要得到安静，世事就都安宁了。谚语说：三军未发，粮草先行，所以卦中的妻财当作车马的粮草：财爻旺相，是兵粮丰盛、马草有余；玄武兴起，要谨防偷窃；兄弟兴起，必定抢夺；如果财爻衰、墓，粮不多、草不肥；卦内没有财，如果有子孙变出财爻，必去邻邦借贷；这一爻如果空、绝，粮草就或者丢失或者没有。",
+        "en": "The Resource line is the banners, and whether they are unfurled or furled depends on its motion or stillness; Wealth is the grain and fodder, and fullness and lack can be decided by its flourishing or decline. The banners in the camp take the Resource line as the Subject line; if it is thriving and carries the Azure Dragon, they are embroidered with gold and splendid; with the Vermilion Bird added, the colours are bright and clear; thriving and moving, great banners are raised high and wave about to lead the way. If it is weak or in tomb and meets the White Tiger, they are rotten and worn; if Void and extinct as well, the banners are few or none, and even if there are some they are sure to be damaged; if it is only still, all will be at peace. The proverb says: before the three armies set out, grain and fodder go ahead, so the Wealth in the hexagram is taken as the grain and fodder of carts and horses: if the Wealth line is thriving, the troops' grain is plentiful and the horses' fodder has surplus; if the Dark Tortoise rises, guard against theft; if Peer rises, there will surely be plunder; if Wealth is weak or in tomb, the grain is not much and the fodder not fat; if the hexagram has no Wealth and Output turns into a Wealth line, one must go to a neighbouring state to borrow; if this line is Void or extinct, the grain and fodder are either lost or lacking."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [355, 355],
+          "zh": ["父乃旌旗，舒卷当凭乎动静。", "财为粮草，盈虚可决于兴衰。"],
+          "yi": ["父爻是旌旗，舒展卷收要凭它的动静；", "财爻是粮草，盈满亏缺可以由它的兴衰来判断。"],
+          "en": ["The Resource line is the banners, and whether they are unfurled or furled depends on its motion or stillness;", "Wealth is the grain and fodder, and fullness and lack can be decided by its flourishing or decline."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [356, 356],
+          "zh": ["营中旌旗以父为用爻，旺相带表青龙，则绣金华丽。", "加朱雀则书彩鲜明，旺而又动，则高张大旗导引飘飘。", "若衰墓而逢白虎，则腐壤敝旧。", "空而又绝，或少或无纵有必然损破，但得安静，则世熊咸宁矣！", "谚云：三军未发，粮草先行。", "故卦中之妻财，作车马之粮草。", "如财爻旺相，是兵粮丰盛，马草盈余。", "玄武兴，谨防偷窃。", "兄弟兴，决然抢夺。", "若财爻衰墓，粮不多而草不肥。", "卦内无财，若得子化财爻，必去粼邦借贷。", "此象若空若绝，粮草或失或无。"],
+          "yi": ["营中的旌旗以父爻为用爻，旺相又带青龙，就绣金华丽。", "加朱雀，就色彩鲜明；旺相又发动，就大旗高张、导引飘飘。", "如果衰、墓而逢白虎，就腐朽破旧。", "（父爻）空而又绝，旗帜或少或没有，即使有也必然损坏；只要得到安静，世事就都安宁了。", "谚语说：三军未发，粮草先行。", "所以卦中的妻财当作车马的粮草。", "如果财爻旺相，是兵粮丰盛、马草有余。", "玄武兴起，要谨防偷窃。", "兄弟兴起，必定抢夺。", "如果财爻衰、墓，粮不多、草不肥。", "卦内没有财，如果有子孙变出财爻，必去邻邦借贷。", "这一爻如果空、绝，粮草就或者丢失或者没有。"],
+          "en": ["The banners in the camp take the Resource line as the Subject line; if it is thriving and carries the Azure Dragon, they are embroidered with gold and splendid.", "With the Vermilion Bird added, the colours are bright and clear; thriving and moving, great banners are raised high and wave about to lead the way.", "If it is weak or in tomb and meets the White Tiger, they are rotten and worn.", "If it is Void and extinct as well, the banners are few or none, and even if there are some they are sure to be damaged; if it is only still, all will be at peace.", "The proverb says: before the three armies set out, grain and fodder go ahead.", "So the Wealth in the hexagram is taken as the grain and fodder of carts and horses.", "If the Wealth line is thriving, the troops' grain is plentiful and the horses' fodder has surplus.", "If the Dark Tortoise rises, guard against theft.", "If Peer rises, there will surely be plunder.", "If the Wealth line is weak or in tomb, the grain is not much and the fodder not fat.", "If the hexagram has no Wealth and Output turns into a Wealth line, one must go to a neighbouring state to borrow.", "If this line is Void or extinct, the grain and fodder are either lost or lacking."] }
+      ],
+      "note": {
+        "yi": "这一条和易隐征战占「六亲」里的旌旗（YY.58）、粮草（YY.59）取法相同，只是这里更详细地写了旌旗的色彩和粮草的盈虚。第四句「世熊咸宁」疑是「世态咸宁」，译作「世事就都安宁」；「粼邦」是「邻邦」。「导引飘飘」是大旗在前引导、飘扬。",
+        "en": "This entry takes the same view as the banners (YY.58) and provisions (YY.59) in the Yi Yin war divination 'six kin' section, only describing in more detail the colours of the banners and the fullness of the provisions. In the fourth sentence 'shi xiong xian ning' is presumably 'shi tai xian ning', translated 'all will be at peace'; 'lin bang' is 'lin bang', neighbouring state. 'Dao yin piaopiao' is the great banners leading in front and fluttering."
+      },
+      "see": ["LY.CAREER.EL.29", "LY.CAREER.EL.31", "LY.CAREER.YY.58", "LY.CAREER.YY.59", "LY.CAREER.HJC.87", "LY.CAREER.HJC.88"]
+    },
+    {
+      "id": "LY.CAREER.EL.31",
+      "topic": "军旅",
+      "chapter": "出师征伐章第五",
+      "chapter_en": "Chapter 5: Sending out troops and campaigning",
+      "title": "出师征伐：子作先锋旺则强衰则弱，兄为伏寇现则有空则无；子孙旺相智勇两全、带吉神克应则冒险衡锋争先首捷，衰墓则柔懦无谋；兄弟好佞为埋伏之贼，冲动须防暗害、推生旺日时为期，绝无则不必虑",
+      "rule": {
+        "yi": "子孙当先锋，旺相就强，衰弱就弱；兄弟是埋伏的贼，出现就有，落空就没有。子孙是现有的雄兵，这是当先锋的说法；子孙旺相，必定是智勇两全的将领，如果带吉神而能克应爻，就能冒险冲锋、争先首捷，唾手成功；子孙如果遇到衰、墓，就柔弱怯懦无谋，难以胜任。兄弟是奸佞之神，就是埋伏的贼，如果逢冲动，必定有埋伏的兵，须防暗害；想知道什么时候来犯，必推它生旺的日子、时辰为期；如果绝、没有，就不必忧虑了。",
+        "en": "Output acts as the vanguard, strong if thriving and weak if declining; Peer is the hidden bandit, there if it appears and absent if Void. Output is the troops that are present, which is the argument for acting as the vanguard; if it is thriving, it is surely a general complete in both wit and courage, and if it carries an auspicious spirit and can control the Other, it can risk a charge, be first to press ahead and win the first success as easily as spitting on the palm; if Output meets weak or tomb, it is soft, timid and without plans and cannot fill the post. Peer is a crafty and flattering spirit, the bandit lying in ambush, and if it meets a clash into motion there are surely troops in ambush and one must guard against secret harm; to know when they will attack, work out the day or hour it is born or thriving as the term; if it is extinct or absent, there is no need to worry."
+      },
+      "quotes": [
+        { "by": "经", "book": "易林补遗", "range": [357, 357],
+          "zh": ["子作先锋，旺则强，而衰则弱。", "兄为伏寇，现则有，而空则无。"],
+          "yi": ["子孙当先锋，旺相就强，衰弱就弱；", "兄弟是埋伏的贼，出现就有，落空就没有。"],
+          "en": ["Output acts as the vanguard, strong if thriving and weak if declining;", "Peer is the hidden bandit, there if it appears and absent if Void."] },
+        { "by": "易林补遗解", "book": "易林补遗", "range": [358, 358],
+          "zh": ["子孙为现之雄兵，是当先锋之论。", "若逢旺相，必智勇两全之将，若带吉神而能克应者，则冒险衡锋争先首捷唾手可成功矣！", "子孙倘遇衰墓，则柔懦无谋，难充斯任。", "兄弟乃好佞之神，即为埋伏之贼，若逢冲动，必在埋伏之兵，须防暗害，欲知何时有犯，必推生旺日时为期，若绝若无，则不必虑矣！"],
+          "yi": ["子孙是现有的雄兵，这是当先锋的说法。", "如果逢旺相，必定是智勇两全的将领；如果带吉神而能克应爻，就能冒险冲锋、争先首捷，唾手成功。", "子孙如果遇到衰、墓，就柔弱怯懦无谋，难以胜任。", "兄弟是奸佞之神，就是埋伏的贼，如果逢冲动，必定有埋伏的兵，须防暗害；想知道什么时候来犯，必推它生旺的日子、时辰为期；如果绝、没有，就不必忧虑了。"],
+          "en": ["Output is the troops that are present, which is the argument for acting as the vanguard.", "If it meets thriving, it is surely a general complete in both wit and courage; if it carries an auspicious spirit and can control the Other, it can risk a charge, be first to press ahead and win the first success as easily as spitting on the palm.", "If Output meets weak or tomb, it is soft, timid and without plans and cannot fill the post.", "Peer is a crafty and flattering spirit, the bandit lying in ambush, and if it meets a clash into motion there are surely troops in ambush and one must guard against secret harm; to know when they will attack, work out the day or hour it is born or thriving as the term; if it is extinct or absent, there is no need to worry."] }
+      ],
+      "note": {
+        "yi": "这一条与易隐征战占「六亲」里的子（先锋）、兄（埋伏）（YY.60、YY.61）取法相同。「唾手」是不费力气。「衡锋」是「冲锋」。",
+        "en": "This entry takes the same view as Output (vanguard) and Peer (ambush) in the 'six kin' section of the Yi Yin war divination (YY.60, YY.61). 'Tuo shou' is without effort. 'Heng feng' is 'chong feng', charging the front."
+      },
+      "see": ["LY.CAREER.EL.30", "LY.CAREER.EL.32", "LY.CAREER.YY.60", "LY.CAREER.YY.61", "LY.CAREER.HJC.90", "LY.CAREER.HJC.92"]
+    }
+  ]
+}

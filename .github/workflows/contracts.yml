@@ -29,7 +29,15 @@ jobs:
     permissions:
       contents: read
     steps:
+      # fetch-depth: 0 — the build-tag step below needs a merge base, and the
+      # default shallow checkout has none. It spent its whole life printing
+      # "no shipped asset changed" because `git diff BASE...HEAD` died with
+      # "fatal: no merge base" and the `|| true` swallowed it. Green, and
+      # checking nothing. This repo has written the lesson down twice already:
+      # a check that cannot reach its target is worse green than red.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -48,9 +56,18 @@ jobs:
       - name: Build tag must move when a shipped asset changes
         if: github.event_name == 'pull_request'
         run: |
-          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+          git fetch --no-tags origin "${{ github.base_ref }}"
           BASE="origin/${{ github.base_ref }}"
-          CHANGED=$(git diff --name-only "$BASE"...HEAD -- '*.html' '*.css' '*.js' | grep -v '^tests/' | grep -v '^scripts/' || true)
+          # Fail loudly if the history isn't reachable. The old `|| true` covered
+          # both "git broke" and "grep matched nothing"; only the second one is
+          # benign, and merging them is what let a fatal git error read as "all
+          # clear" on every pull request.
+          git merge-base "$BASE" HEAD > /dev/null || {
+            echo "::error::no merge base between $BASE and HEAD — this step cannot tell what the branch changed, so it must not pass. Check the checkout's fetch-depth."
+            exit 1
+          }
+          ASSETS=$(git diff --name-only "$BASE"...HEAD -- '*.html' '*.css' '*.js')
+          CHANGED=$(printf '%s\n' "$ASSETS" | grep -v '^tests/' | grep -v '^scripts/' | grep -v '^$' || true)
           if [ -z "$CHANGED" ]; then
             echo "no shipped asset changed — build tag may stand still"
             exit 0
@@ -63,3 +80,13 @@ jobs:
             exit 1
           fi
           echo "build tag $OLD -> $NEW"
+
+      # The ComfyUI workflow JSON is generated from the node definitions, not
+      # written by hand — a hand-written one is a second list that goes stale
+      # the moment a socket is renamed or a widget is inserted, and it fails
+      # with "widget value mismatch", which names neither file. comfy-pack.mjs
+      # checks the JSON's internal structure; only this can tell whether
+      # nodes.py moved without the JSON being regenerated. Python 3 is already
+      # on the runner, so this still needs no install step.
+      - name: ComfyUI workflow must match the node definitions
+        run: python3 tools/comfy/build_workflow.py --check

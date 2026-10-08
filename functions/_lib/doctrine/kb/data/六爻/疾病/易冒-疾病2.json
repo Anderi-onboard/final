@@ -1,0 +1,414 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "易冒",
+  "chapter": "疾病章第五十五",
+  "chapter_en": "Chapter 55: Illness",
+  "ranges": {"易冒": [1209, 1243]},
+  "units": [
+    {
+      "id": "LY.ILL.YM.18",
+      "topic": "应期",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "问危时其法有三：官鬼当值的日月（占父母不论）、忌仇动而用神潜伏遇用神出现之时、用神月破日破失气亡援之时",
+      "rule": {
+        "yi": "问什么时候危险，有三种办法。第一，官鬼当值的日、月，大概就是完了的时候（占父母的病不这样论，因为对父母来说官鬼是原神）。第二，忌神、仇神发动，用神伏藏着躲避克制，等到用神当值的日、月它一露出来，就受仇神、忌神的伤。第三，用神月破，危险在那个月；日破，危险在那一天；用神失了气，危险在失气的时候；用神失了援助，危险在失援的那一段时期。注里举了四个例子，又总结说：冲破原神的日子、生助忌神的时候，都凶。",
+        "en": "There are three ways to ask the time of danger. First, the day or month that the Pressure line rules may be the end (in divining a parent's illness this is not counted, because for a parent the Pressure line is the Support). Second, the Adversary and enemy spirits move while the Subject lies hidden to escape being controlled, and when the day or month that the Subject rules arrives and it comes out, it is wounded by the enemy and the Adversary. Third, with the Subject in Month-break the danger is in that month, in Day-break on that day; with the Subject losing its qi, at that time; with the Subject losing its support, in that period. The note gives four cases and sums up: the day that breaks the Support and the time that helps the Adversary are both ominous."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1210, 1212], "literal": ["父母"],
+          "zh": ["如问危时，其法有三：当鬼之日月其休乎，占父母则非，一也；", "忌仇之神跃，用神之爻潜，见用神则休，二也；", "用神月破，危于是月，用神日破，危于是日，用神失气，危于是时，用神亡援，危于是期，三也。"],
+          "yi": ["如果问危险的时候，方法有三种：第一，官鬼当值的日、月，恐怕就是完了的时候，只有占父母的病不这样论；", "第二，忌神、仇神跳起来，用神伏藏着，等到用神露出来就完了；", "第三，用神月破，危险在这个月；用神日破，危险在这一天；用神失了气，危险在失气的时候；用神失了援助，危险在失援的那个时期。"],
+          "en": ["To ask the time of danger, the method has three parts: first, the day or month that falls on the ghost may be the end, except that in divining a parent's illness it is not so;", "second, the Adversary and enemy spirits leap up and the Subject lies hidden, and when the Subject appears it is finished;", "third, with the Subject in Month-break the danger is in that month, with the Subject in Day-break on that day, with the Subject losing its qi at that time, and with the Subject losing its support in that period."] },
+        { "by": "易冒注", "book": "易冒", "range": [1213, 1213], "literal": ["父母"],
+          "zh": ["凡病遇官鬼所值之日月当凶，惟占父母不论者，盖以官鬼为元神也。", "忌神仇神皆动，用神潜伏避克，遇用神值日月之时，出而受仇忌之伤，所以当凶。", "日破月破，越是月日而解，用神失气，谓用神受克绝之时，用神亡援，谓元神遭破散之际，皆所以当凶尔。", "如寅建庚子日，占子病得夬之革，酉金绝寅死子，其疾不疗，后壬寅日症变，甲寅日乃绝，谓值独发甲寅鬼也。", "巳建戊午日，占子病得小过之大壮，及癸亥日而亡，因亥月破更凶，是谓忌仇动用神潜伏，及亥日出现，则受伤矣，假或申月占此，过亥子日后，所伏用神得月长生，其病可痊。", "子建甲寅日，占父身得乾之同人，忌动当凶，次日节变小寒，丑月土旺，至下岁孟春方绝，木旺土虚，用神失气尔。", "子建己未日，占自身得未济之睽，世遇月破，其病不治，寅动生午似可救，而不知次日庚申，冲散元神，是夕遂卒。", "大抵破坏元神之日，生助忌神之期皆凶。"],
+          "yi": ["凡是病遇到官鬼当值的日、月就该凶，只有占父母的病不这样论，因为对父母来说，官鬼是原神。", "忌神、仇神都动了，用神潜伏起来躲避克制，碰到用神当值的日、月，一出来就受仇神、忌神的伤，所以该凶。", "日破、月破，过了那个月、那一天就解开了；用神失气，是说用神受克、落入绝地的时候；用神亡援，是说原神遭到冲破冲散的时候；这些都是应当凶的缘故。", "比如寅月庚子日，占儿子的病，得夬卦变革卦，作为用神的酉金在寅上绝、在子上死，这个病治不好；后来壬寅日症状变了，到甲寅日就断了气，这是碰上独自发动的甲寅鬼当值。", "又如巳月戊午日，占儿子的病，得小过卦变大壮卦，到癸亥日就死了，因为亥被月冲破，更凶。这就是所说的忌神、仇神发动，用神潜伏，到了亥日用神出现，就受了伤。假如是申月占这一卦，过了亥日、子日以后，伏着的用神得到月的长生，这病可以痊愈。", "又如子月甲寅日，占父亲的病，得乾卦变同人卦，忌神发动，该凶；第二天节气转到小寒，进了丑月，土旺，直到第二年孟春才死，那时木旺土虚，是用神失了气。", "又如子月己未日，占自己的病，得未济卦变睽卦，世爻遇月破，病治不好；寅木发动生午火，似乎可以救，却不知第二天是庚申日，冲散了原神，当晚就死了。", "大体上，冲破原神的日子，生助忌神的时候，都凶。"],
+          "en": ["Whenever an illness meets the day or month that the Pressure line rules it should be ominous; only in divining a parent's illness is this not counted, because for a parent the Pressure line is the Support.", "The Adversary and enemy spirits are both moving, and the Subject lies hidden to avoid being controlled; when the day or month that the Subject rules comes, it comes out and is wounded by the enemy and the Adversary, hence it should be ominous.", "With Day-break and Month-break, it is resolved once that month or day is past; the Subject losing its qi means the time when the Subject is controlled or falls into Extinction, and the Subject losing its support means the moment when the Support is broken and scattered; all of these are why it should be ominous.", "For example, in a Yin month on a Gengzi day, a son's illness was divined and Guai changing into Ge was obtained; the You Metal, which is the Subject here, is in Extinction at Yin and dead at Zi, and the illness could not be cured; later on the Renyin day the symptoms changed, and on the Jiayin day he expired, that is, he met the day of the Jiayin ghost that moves alone.", "Again, in a Si month on a Wuwu day, a son's illness was divined and Xiaoguo changing into Dazhuang was obtained; on the Guihai day he died, and because Hai was in Month-break it was worse still; this is what is meant by the Adversary and enemy spirits moving while the Subject lies hidden, and when the Hai day comes and the Subject appears, it is wounded. Had this been divined in a Shen month, then after the Hai and Zi days had passed, the hidden Subject would gain Birth from the Month, and the illness could be cured.", "Again, in a Zi month on a Jiayin day, a father's illness was divined and Qian changing into Tongren was obtained; the Adversary moved, so it should be ominous; the next day the solar term turned to Xiaohan and the Chou month came in with Earth thriving, and he died only in the first spring month of the next year, when Wood thrives and Earth is weak, that is, the Subject had lost its qi.", "Again, in a Zi month on a Jiwei day, one's own illness was divined and Weiji changing into Kui was obtained; the Self line met Month-break and the illness could not be treated; the moving Yin seemed to rescue by generating Wu, but it was not known that the next day, Gengshen, would clash and scatter the Support, and that evening he died.", "In general, the day that breaks the Support and the time that helps the Adversary are both ominous."] }
+      ],
+      "note": {
+        "yi": "经文头一句「当鬼之日月其休乎」里的「休」字，注文把整句解作「当凶」，这里按注的意思译成「完了的时候」，原文没有再解释。注里第一例说「值独发甲寅鬼」，是指夬变革只有二爻一爻在动，动的正是甲寅鬼。注里的四个例子，前两个和后两个说的是同一件事的两面：用神被克绝的月日、原神被冲散的日子。",
+        "en": "The character 'xiu' in the first sentence of the text, 'the day or month that falls on the ghost, may it be the end (xiu)?', is glossed by the note as 'it should be ominous', and that sense is followed here as 'the end'; the original gives no further explanation. In the note's first case, 'meeting the Jiayin ghost that moves alone' refers to Guai changing into Ge, in which only the second line moves, and the one that moves is the Jiayin ghost. Of the note's cases, the first two and the last two show two sides of the same thing: the month or day when the Subject is controlled and in Extinction, and the day when the Support is clashed apart."
+      },
+      "see": ["LY.ILL.YM.17", "LY.ILL.YM.19", "LY.ILL.YY.07", "LY.ILL.HJC.57", "LY.ILL.HJC.56", "LY.ILL.ZS.16"]
+    },
+    {
+      "id": "LY.ILL.YM.19",
+      "topic": "应期",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "问安日其法有六：用神困得生、空得实、破散逾日月、墓开、鬼制、用现；子孙值日医药效祷祈灵，官鬼司辰则灾变神困",
+      "rule": {
+        "yi": "问哪一天转安，有六种办法：用神被困了，得到生扶，病就好转；用神落空了，等到填实，病就痊愈；用神破散了，过了破散的日、月就能保住；用神入墓的，墓被冲开，病就退；鬼被制住，祸患就消；用神伏藏的，用神出现，人就起得来。这六种是病转安的时辰。注里逐种落到日子和时期上；又说子孙值日，医药见效、祷告灵验，官鬼当值的时辰，灾患生变、神志疲困；只有占丈夫、占官的病不这样论。",
+        "en": "There are six ways to ask the day of ease: the Subject beleaguered, gaining generation brings recovery; the Subject Void, becoming full heals the illness; the Subject broken and scattered, it can be preserved once the day or month of the breaking is past; the tomb opened, the illness withdraws; the ghost controlled, the trouble dissolves; the Subject appearing, the body gets up. These six are the times when the illness settles into ease. The note applies each to a day or a period, and adds that when Output is on duty medicine takes effect and prayer is answered, and when the Pressure line rules the hour the trouble changes and the spirit is worn down, except that in divining a husband or an official this is not counted."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1214, 1215],
+          "zh": ["如问安日，其法有六：用神困矣，得生而病康；", "用神空矣，得实而病愈；", "用神破散，逾日月而可保；", "墓开而疾退；", "鬼制而患消；", "用现而身起也。", "此六者，病安之辰也。"],
+          "yi": ["如果问哪天转安，方法有六种：用神被困了，得到生扶，病就好转；", "用神落空了，等到填实，病就痊愈；", "用神破散了，过了破散的日、月就能保住；", "墓被冲开，病就退；", "鬼被制住，祸患就消；", "用神现出来，人就起得来。", "这六种，是病转安的时辰。"],
+          "en": ["If the day of ease is asked, the method has six: when the Subject is beleaguered, gaining generation brings recovery;", "when the Subject is Void, becoming full heals the illness;", "when the Subject is broken and scattered, it can be preserved once the day or month of the breaking is past;", "when the tomb is opened, the illness withdraws;", "when the ghost is controlled, the trouble dissolves;", "when the Subject appears, the body gets up.", "These six are the times when the illness settles into ease."] },
+        { "by": "易冒注", "book": "易冒", "range": [1216, 1216],
+          "zh": ["凡用休囚，病退于生扶之日，用爻空陷，病退于填补之期，用爻破散，病退于逾是破散之时，用爻墓，病退于开墓，用爻潜，病退于现起，子孙值日，疾患渐安，惟占夫占官不论。", "大抵子孙值日，医药效而祷祈灵，官鬼司辰，灾患变而神思困也。"],
+          "yi": ["凡是用爻休囚的，病在生扶它的日子退；用爻落空陷的，病在被填补的时期退；用爻破散的，病在过了破散的时候退；用爻入墓的，病在墓被冲开时退；用爻伏藏的，病在它现出来时起；子孙值日，病渐渐安稳，只有占丈夫、占官的病不这样论。", "大体上，子孙值日，医药见效、祷告灵验；官鬼当值的时辰，灾患生变，神志疲困。"],
+          "en": ["Whenever the Subject line is resting or trapped, the illness withdraws on the day that generates and supports it; when the Subject line is Void and sunk, the illness withdraws in the period that fills it in; when the Subject line is broken and scattered, the illness withdraws once the time of breaking is past; when the Subject line is in a tomb, the illness withdraws when the tomb is opened; when the Subject line is hidden, the illness lifts when it appears and rises; when Output is on duty, the illness gradually settles, except that in divining a husband or an official this is not counted.", "In general, when Output is on duty, medicine takes effect and prayer is answered; when the Pressure line rules the hour, the trouble changes and the spirit is worn down."] }
+      ],
+      "note": {
+        "yi": "注里「惟占夫占官不论」没有说缘故。照这门方法本身的道理，占丈夫、占官时用神就是官鬼，而子孙克官鬼，子孙值日对它反而不利，所以不这样论；这是从道理上推的，书里没有写。「用爻潜，病退于现起」，注在这里用「退」，而经文说的是「用现而身起」，是同一件事的两种说法：用神一现出来，病人就起得来。",
+        "en": "The note does not say why 'divining a husband or an official' is excluded. By the method's own logic, in those cases the Subject is the Pressure line, and Output controls Pressure, so Output on duty works against it; this is inferred from the principle and is not written in the book. Of 'the Subject line hidden, the illness withdraws when it appears', the note says 'withdraws' where the text says 'the Subject appears and the body gets up'; the two are the same thing said two ways: once the Subject comes out, the sick person can rise."
+      },
+      "see": ["LY.ILL.YM.18", "LY.ILL.YM.20", "LY.ILL.YY.04", "LY.ILL.HJC.52", "LY.ILL.HJC.57", "LY.ILL.HJC.39", "LY.ILL.ZS.16"]
+    },
+    {
+      "id": "LY.ILL.YM.20",
+      "topic": "总则",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "筮己疾世乃用神、筮人疾应乃用神：己疾随墓、助伤、墓绝、反伏，虽旺遇一则凶；人疾随墓、反伏、墓绝，虽生一不可遇",
+      "rule": {
+        "yi": "占自己的病，世爻就是用神；随墓、助伤、入墓、入绝、反吟、伏吟，这几样里碰上一样，即使世爻旺相也凶。占别人的病，应爻就是用神；随墓、反吟、伏吟、入墓、入绝，即使应爻得了生，这几样里也一样都不能碰上。",
+        "en": "In divining one's own illness, the Self line is the Subject; following into the tomb, helping to harm, the tomb, Extinction, Reversed Chant and Hidden Chant: if any one of these is met, even a strong Self is ominous. In divining another person's illness, the Other line is the Subject; following into the tomb, Reversed Chant, Hidden Chant, the tomb and Extinction: even when the Other is generated, not one of these may be met."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1217, 1217],
+          "zh": ["夫筮己疾，世乃用神，随墓助伤，墓绝反伏，虽旺，而遇一则凶；", "筮人疾，应乃用神，随墓反伏墓绝，虽生，而一不可遇也。"],
+          "yi": ["占自己的病，世爻就是用神；随墓、助伤、入墓、入绝、反吟、伏吟，这几样里碰上一样，即使旺相也凶；", "占别人的病，应爻就是用神；随墓、反吟、伏吟、入墓、入绝，即使得了生，这几样里也一样都不能碰上。"],
+          "en": ["In divining one's own illness, the Self line is the Subject; following into the tomb, helping to harm, the tomb, Extinction, Reversed Chant and Hidden Chant: if any one is met, even when strong it is ominous;", "in divining another person's illness, the Other line is the Subject; following into the tomb, Reversed Chant, Hidden Chant, the tomb and Extinction: even when generated, not one of them may be met."] }
+      ],
+      "note": {
+        "yi": "「反伏」是反吟、伏吟（卦或爻变出与自己相冲、或与自己相同的），「墓绝」是入墓、入绝，「随墓」是本命、世爻随着官鬼等入了墓（见 LY.ILL.YM.09），都是易冒前面已经讲过的忌象（见 LY.ILL.YM.10）。这一条多出来的只是两件事：自占取世，代占取应；自占的一串里多一个「助伤」，代占的一串里没有。「助伤」在易冒助伤章里的定义是「以世爻受鬼克，而鬼长生于日」，只对世爻成立，所以只有自占才有。",
+        "en": "'Reversed and Hidden' means Reversed Chant and Hidden Chant (a hexagram or line changing into its own clash, or into the same as itself); 'tomb and Extinction' means entering the tomb or Extinction; 'following into the tomb' means the natal branch, the Self line and the like following the Pressure line into a tomb (see LY.ILL.YM.09); all are the ill omens the Yi Mao has already explained (see LY.ILL.YM.10). What this entry adds is only two things: one's own illness takes the Self and another's takes the Other, and the list for one's own illness has one more item, 'helping to harm', which the list for another's does not. In the Yi Mao's chapter on helping to harm this is defined as 'the Self line controlled by a ghost that has Birth on the day', which holds only for the Self line, so it appears only in divining for oneself."
+      },
+      "see": ["LY.ILL.YM.09", "LY.ILL.YM.10", "LY.ILL.YM.21", "LY.ILL.YY.03", "LY.ILL.HJC.33", "LY.ILL.HJC.41", "LY.ILL.ZS.04"]
+    },
+    {
+      "id": "LY.ILL.YM.21",
+      "topic": "他人病",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "用神之法：主虽少用父母、仆虽老用妻财、宗按尊卑（称叔用父称侄用子）、表姓用应（岳父母舅父母用父）、现任用官、师傅用父",
+      "rule": {
+        "yi": "取用神的办法，看的是关系，不看年纪和亲疏：主人即使年纪小，用父母爻；仆人即使年纪老，用妻财爻；同宗的人即使远到五服，称叔的用父爻，称侄的用子孙爻；异姓的表亲即使近到三党之内，也用应爻，只有岳父母、舅父母才用父爻；占现任的官，即使关系亲密，也用官爻而不用应爻；占师傅，即使关系疏远，也用父爻而不用应爻。",
+        "en": "The method of taking the Subject goes by the relation, not by age or closeness: a master, though young, takes the Resource line; a servant, though old, takes the Wealth line; a clansman, even as distant as the five mourning grades, takes the Resource line if addressed as uncle and the Output line if addressed as nephew; kin of another surname, even as near as the three clans, take the Other line, and only a father- or mother-in-law or a maternal uncle or aunt takes the Resource line; a serving official, however close, takes the Pressure line and not the Other; a teacher, however distant, takes the Resource line and not the Other."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1218, 1218],
+          "zh": ["用神之法，主虽少而用父母，仆虽老而用妻财，宗虽五服而用尊卑，表虽三党而用宾应，仕虽密而用官，师虽疏而用父。"],
+          "yi": ["取用神的办法：主人即使年纪小，也用父母爻；仆人即使年纪老，也用妻财爻；同宗的人即使到了五服，也按尊卑取；表亲即使属三党之内的近亲，也按宾客取，用应爻；做官的即使关系亲密，也用官爻；老师即使关系疏远，也用父爻。"],
+          "en": ["The method of taking the Subject: a master, though young, takes the Resource line; a servant, though old, takes the Wealth line; a clansman, even as distant as the five mourning grades, is taken by seniority and juniority; kin of another surname, even those as near as the three clans, are taken as guests, by the Other line; an official, though close, takes the Pressure line; a teacher, though distant, takes the Resource line."] },
+        { "by": "易冒注", "book": "易冒", "range": [1219, 1219],
+          "zh": ["宗姓虽五服之远，称叔用父，称侄用子也；", "表姓虽以三党之近，占必以应为用，惟岳父母、舅父母，则用父爻也；", "凡占现任虽密，不用应而用官；", "凡占师傅虽疏，不用应而用父。"],
+          "yi": ["同宗同姓的人，即使远到五服，称叔的用父爻，称侄的用子孙爻；", "异姓的表亲，即使近到三党之内，占的时候也一定用应爻当用神，只有岳父母、舅父母，才用父爻；", "凡是占现任的官员，即使关系亲密，也不用应爻而用官爻；", "凡是占师傅，即使关系疏远，也不用应爻而用父爻。"],
+          "en": ["For a clansman of the same surname, however far as the five mourning grades, one addressed as uncle takes the Resource line and one addressed as nephew takes the Output line;", "for kin of another surname, even as near as the three clans, divination always takes the Other line as the Subject; only for a father- or mother-in-law or a maternal uncle or aunt is the Resource line taken;", "in divining a serving official, however close, one does not take the Other but the Pressure line;", "in divining a teacher, however distant, one does not take the Other but the Resource line."] }
+      ],
+      "dispute": {
+        "yi": "家里的主人是用哪一爻：易冒说主人即使年纪小，也用父母爻，占仆人用妻财爻（作者自序里也说「老奴占幼主必用父母，少君占衰仆必用妻财」）；易隐说奴仆丁口占家主用五爻，占主母用二爻（LY.ILL.YY.03）。两本书说的都是仆人和主人这一对关系，取的爻却不同。易冒对君臣另有一条：臣占君用九五（LY.ILL.YM.23），所以在易冒里，九五只给君主、不给家主。",
+        "en": "Which line stands for the master of a household: the Yi Mao says a master, however young, takes the Resource line, and a servant takes the Wealth line (the author's own preface says the same: 'an old servant divining a young master must take the Resource, a young lord divining a feeble servant must take the Wealth'); the Yi Yin says servants and household hands divining the master of the house take the fifth line, and divining the mistress take the second line (LY.ILL.YY.03). Both speak of the same pair, servant and master, but take different lines. The Yi Mao has a separate rule for ruler and subject: a minister divining the sovereign takes the ninth-five line (LY.ILL.YM.23), so in the Yi Mao the ninth-five line is for the sovereign only, not for the master of a household."
+      },
+      "note": {
+        "yi": "「五服」是丧服的五个等级（斩衰、齐衰、大功、小功、缌麻），「三党」是父党、母党、妻党。注里说同宗的人「称叔用父，称侄用子」，是按对方相对于自己的辈分取，不管血缘多远；异姓的亲戚（表姓）一律取应爻，只有岳父母、舅父母算父辈，才用父爻。",
+        "en": "The 'five mourning grades' are the five degrees of mourning dress (from the coarsest sackcloth down to the finest hemp), and the 'three clans' are the father's, the mother's and the wife's. The note says that for a clansman one takes 'addressed as uncle, the Resource; addressed as nephew, the Output', that is, by his generation relative to oneself and however remote the blood; relatives of another surname are all taken by the Other line, and only a father- or mother-in-law or a maternal uncle or aunt counts as a senior generation and takes the Resource line."
+      },
+      "see": ["LY.ILL.YM.20", "LY.ILL.YM.22", "LY.ILL.YY.03", "LY.ILL.HJC.33", "LY.ILL.ZS.39", "LY.ILL.BSZZ.34"]
+    },
+    {
+      "id": "LY.ILL.YM.22",
+      "topic": "他人病",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "卜妇人者姑姨姊妹之外皆用妻财，卜同辈者宗弟兄之外皆用应爻：姑姨亦看父母，姊妹同推弟兄，称弟兄而非宗服者不同本用应",
+      "rule": {
+        "yi": "占女人的病，除了姑、姨、姐妹以外，其余都推作同类，用妻财爻：姑姨这样的亲人也看父母爻，姐妹这样的同辈同样按兄弟爻推，除此以外都用财爻。占同辈的人，除了同宗的兄弟以外，都属于不同本源，用应爻；称作兄弟、但不在宗服之内的，一律用应爻。",
+        "en": "In divining a woman's illness, apart from paternal aunts, maternal aunts and sisters, all are reckoned as the same kind and take the Wealth line: aunts are looked at through the Resource line, sisters are reckoned as brothers, and all others take the Wealth line. In divining someone of one's own generation, apart from brothers of the same clan, all are of a different root and take the Other line; those addressed as brothers who are outside the clan's mourning grades all take the Other line."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1220, 1220],
+          "zh": ["卜妇人者，姑姨姊妹之外，皆推同类，用妻财也；", "卜同辈者，宗弟兄之外，皆为异本，用应爻也。"],
+          "yi": ["占女人的病，除了姑、姨、姐妹以外，其余都推作同类，用妻财爻；", "占同辈的人，除了同宗的兄弟以外，都属于不同本源，用应爻。"],
+          "en": ["In divining a woman's illness, apart from paternal aunts, maternal aunts and sisters, all are reckoned as the same kind and take the Wealth line;", "in divining a person of one's own generation, apart from brothers of the same clan, all are of a different root and take the Other line."] },
+        { "by": "易冒注", "book": "易冒", "range": [1221, 1221],
+          "zh": ["凡妇人称类多，姑姨之亲，亦看父母，姊妹之从，同推弟兄，此外皆用财爻；", "称弟兄而非宗服者，是不同本，皆用应也。"],
+          "yi": ["凡是女人，称呼的类别多：姑、姨这样的亲人，也看父母爻；姐妹这样的同辈，同样按兄弟爻来推；除此以外，都用财爻；", "称作兄弟、但不在同宗服内的，是不同本源，都用应爻。"],
+          "en": ["For women there are many kinds of address: aunts, paternal and maternal, are also looked at through the Resource line; sisters are reckoned in the same way as brothers, that is, by the Peer line; apart from these, all take the Wealth line;", "those addressed as brothers who are not within the clan's mourning grades are of a different root, and all take the Other line."] }
+      ],
+      "note": {
+        "yi": "这一条和前一条（LY.ILL.YM.21）是连着的：前一条按关系取，这一条把女人和同辈分开说。女人里，姑姨算父母一辈、姐妹算兄弟一辈，其余（妻、女、妾、婢）一概取妻财；同辈里，只有同宗的兄弟取兄弟爻，别的人不同本源，取应爻。",
+        "en": "This entry runs on from the last (LY.ILL.YM.21): that took each relation by its own line, and this speaks of women and of one's own generation separately. Among women, aunts count as the parents' generation and sisters as the brothers' generation, and all the rest (wife, daughter, concubine, maid) take the Wealth line; among one's own generation, only brothers of the same clan take the Peer line, and others, not of the same root, take the Other line."
+      },
+      "see": ["LY.ILL.YM.21", "LY.ILL.YM.23", "LY.ILL.YY.03", "LY.ILL.HJC.33"]
+    },
+    {
+      "id": "LY.ILL.YM.23",
+      "topic": "他人病",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "君臣、阍寺、将卒、师弟取用：臣占君用九五、君占臣用应爻、阍寺用财、将占卒用子孙、师弟谊用子；宗人之臣从朝廷长幼取用（太子臣用子、皇弟兄臣用弟兄、太后臣用父母）",
+      "rule": {
+        "yi": "臣子占君主，用九五爻，不论是皇亲贵戚、异姓的臣子还是平民；宗室的官员占他自己的本主，就按本主在朝廷里的长幼辈分来取：太子的臣子占太子，用朝廷的储君当子，取子孙爻；皇帝弟兄的臣子占皇弟皇兄，用朝廷的枝叶当兄弟，取兄弟爻；太后的臣子占太后，取父母爻。君主占臣子，用应爻，因为那是辅佐我的人。对守门的宦官用财爻；将领占士卒用子孙爻，为的是制住鬼；师徒的情谊用子爻。取用神这件事，占卜的人屡屡弄错，不能不审慎；占筮的人取用神常有两种困惑，以致吉凶不灵验，所以在这里说得详细，其他的取用也照这样推。",
+        "en": "A minister divining his sovereign takes the ninth-five line, whether he is of the imperial kin, of another surname or a commoner. An official of the imperial clan divining his own lord takes by the lord's seniority at court: the Crown Prince's minister divining the Crown Prince takes the court's heir apparent as the Output line; the minister of the emperor's brothers divining an imperial brother takes the branches of the court as brothers, the Peer line; the Empress Dowager's minister divining the Empress Dowager takes the Resource line. A sovereign divining his minister takes the Other line, for he is my aide. For palace gate-keepers and eunuchs the Wealth line is taken; a general divining his soldiers takes Output, in order to control the ghost; and in the bond of teacher and pupil the Output line is taken. In taking the Subject diviners have repeatedly erred, and one cannot but be careful; diviners often fall into two kinds of confusion in taking the Subject, so that fortune and misfortune do not prove true, and therefore it is set out in detail here, and other cases may be reckoned by it."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1222, 1223],
+          "zh": ["臣占其君，用九五，宗人之臣，代君而用也；", "君占其臣，用应爻，为吾辅也。", "于阍寺则用财矣，将占其卒用子孙，以制鬼也，于师弟谊用子矣。", "用神之法，卜筮屡误，告于圣贤，不可不审也。"],
+          "yi": ["臣子占他的君主，用九五爻，掌宗室事务的臣子，是代君主来取用的；", "君主占他的臣子，用应爻，因为那是辅佐我的人。", "对守门的宦官就用财爻；将领占他的士卒用子孙爻，为的是制住鬼；师徒的情谊，用子爻。", "取用神的办法，占卜的人屡屡弄错，这里告诉圣贤，不能不审慎。"],
+          "en": ["A minister divining his sovereign takes the ninth-five line, and the ministers of the imperial clan take in the sovereign's place;", "a sovereign divining his minister takes the Other line, for he is my aide.", "for palace gate-keepers and eunuchs the Wealth line is taken; a general divining his soldiers takes Output, in order to control the ghost; and in the bond of teacher and pupil the Output line is taken.", "In the method of taking the Subject, diviners have repeatedly erred; it is reported to the sages and worthies, and one cannot but be careful."] },
+        { "by": "易冒注", "book": "易冒", "range": [1224, 1224],
+          "zh": ["凡臣占君，不分贵戚异姓黎庶，皆以九五为用；", "宗人之官，占其本主，则从朝廷长幼为用，如太子臣占太子，则以朝廷之储君用子，皇弟兄之臣占皇弟兄，以朝廷枝叶用弟兄，太后臣占太后，以朝廷占用父母也，余仿此。", "筮家用神，常有两惑，致吉凶不验，故详之，他用亦推此。"],
+          "yi": ["凡是臣子占君主，不分皇亲贵戚、异姓的臣子还是平民百姓，都用九五爻当用神；", "宗室的官员占他自己的本主，就按本主在朝廷里的长幼辈分来取：比如太子的臣子占太子，就用朝廷的储君当子，取子爻；皇帝弟兄的臣子占皇弟皇兄，用朝廷的枝叶当兄弟，取兄弟爻；太后的臣子占太后，用朝廷所占的父母，取父母爻，其余照此类推。", "占筮的人取用神，常有两种困惑，以致吉凶不灵验，所以在这里说得详细，其他的取用也照这样推。"],
+          "en": ["Whenever a subject divines his sovereign, whether he is of the imperial kin, of another surname or a commoner, the ninth-five line is taken as the Subject;", "an official of the imperial clan divining his own lord takes by the lord's seniority at court: for example, the Crown Prince's minister divining the Crown Prince takes the court's heir apparent as Output; the minister of the emperor's brothers divining an imperial brother takes the branches of the court as brothers, the Peer line; the Empress Dowager's minister divining the Empress Dowager takes it as the court's parent, the Resource line; the rest follow this.", "Diviners taking the Subject often fall into two kinds of confusion, so that fortune and misfortune do not prove true; therefore this is set out in detail, and other cases of taking the Subject may be reckoned by it."] }
+      ],
+      "note": {
+        "yi": "「阍寺」是守宫门的人和宫里的宦官。「宗人之臣，代君而用」注里解作：宗室的官员占他自己的本主，不用九五，而是照本主在朝廷里排的辈分取六亲。注里说的「两惑」没有点明是哪两种；从上下文看，一是不知道该取哪一亲，二是把年纪、亲疏当成取用的依据，前面的「主虽少而用父母」等句就是纠正后一种，这是推的，书里没有写。",
+        "en": "'Gate-keepers and eunuchs' are those who guard the palace gates and the eunuchs within. Of 'the ministers of the clan take in place of the sovereign', the note explains that an official of the imperial clan divining his own lord does not take the ninth-five line but takes the six relations by the lord's rank in the court's generations. The note does not say which two 'confusions' are meant; from the context they seem to be not knowing which relation to take and taking age or closeness as the ground of choice, the latter being what the earlier sentences such as 'a master, though young, takes the Resource line' correct, but this is inferred and not written in the book."
+      },
+      "see": ["LY.ILL.YM.21", "LY.ILL.YM.22", "LY.ILL.YM.24", "LY.ILL.YY.03", "LY.ILL.HJC.33"]
+    },
+    {
+      "id": "LY.ILL.YM.24",
+      "topic": "轻重",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "鬼者病之源、祟之状：鬼旺则重、衰则轻、动则骤而变、合则染而缠、散则疴将解、空则病未真",
+      "rule": {
+        "yi": "鬼是病的来源，是祟作怪的样子：所以鬼旺病就重，鬼衰病就轻；鬼动，病来得急而且会变；鬼被合住，灾就染上身、缠着不放；鬼被冲散，病快要解了；鬼落空，病还不是真的。",
+        "en": "The ghost is the source of illness and the shape of the haunting: so when the ghost is strong the illness is heavy, and when the ghost is weak it is light; when the ghost moves the trouble comes on suddenly and changes; when the ghost combines the calamity clings and lingers; when the ghost scatters the ailment is about to be resolved; when the ghost is Void the illness is not yet real."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1225, 1225],
+          "zh": ["夫鬼者，病之源也，祟之状也，是以鬼旺而重，鬼衰而轻，鬼动患骤而变，鬼合灾染而缠，鬼散而疴将解，鬼空而病未真。"],
+          "yi": ["鬼是病的来源，是祟作怪的样子，所以鬼旺病就重，鬼衰病就轻，鬼动病来得急而且会变，鬼被合住灾就染上身、缠着不放，鬼被冲散病快要解了，鬼落空病还不是真的。"],
+          "en": ["The ghost is the source of illness and the shape of the haunting; therefore, when the ghost is strong the illness is heavy, when the ghost is weak it is light; when the ghost moves the trouble comes on suddenly and changes; when the ghost combines the calamity clings and lingers; when the ghost scatters the ailment is about to be resolved; when the ghost is Void the illness is not yet real."] }
+      ],
+      "note": {
+        "yi": "这句和痘疹章开头「鬼空、鬼静、鬼散」那一串（LY.ILL.YM.01）是同一套读法，只是把「痘」换成了一般的「病」：痘疹章说鬼空则根芽未萌，这里说鬼空则病未真。「合」在这里是被合住的意思，不是好事：灾缠着不放。",
+        "en": "This sentence uses the same reading as the run of 'ghost Void, ghost still, ghost scattered' at the head of the chapter on pox (LY.ILL.YM.01), with the general 'illness' put in the place of 'pox': there a Void ghost means the roots and shoots have not sprouted, here a Void ghost means the illness is not yet real. 'Combines' here means the ghost is held by a combination, which is not a good thing: the calamity clings and will not let go."
+      },
+      "see": ["LY.ILL.YM.23", "LY.ILL.YM.25", "LY.ILL.YM.01", "LY.ILL.HJC.01", "LY.ILL.HJC.12", "LY.ILL.YY.11", "LY.ILL.YY.19"]
+    },
+    {
+      "id": "LY.ILL.YM.25",
+      "topic": "轻重",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "日破月破分其半成、在内在外分其表里、居变居伏分其新旧：问有病半成、问无病半解",
+      "rule": {
+        "yi": "用日破、月破来分病是成了一半；用鬼在内、在外来分病在里还是在表；用鬼在变爻上还是伏着来分病是新的还是旧的。注说：问有没有病的，病算成了一半；问是不是没有病的，病算解了一半；内是里、外是表，变出来的是新病，伏着的是旧病，就是这个意思。",
+        "en": "Day-break and Month-break are used to tell a half-formed illness; being in the inner or in the outer to tell inside from surface; sitting in a change or in hiding to tell new from old. The note says: asked whether there is illness, it is half formed; asked whether there is none, the illness is half resolved; the inner is inside and the outer is surface, the changed is new and the hidden is old: this is the meaning."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1226, 1226],
+          "zh": ["日破月破，以分其半成也，在内在外，以分其表里也，居变居伏，以分其新旧也。"],
+          "yi": ["日破、月破，用来分辨病是成了一半；在内、在外，用来分辨病在里还是在表；鬼在变爻上还是伏着，用来分辨病是新的还是旧的。"],
+          "en": ["Day-break and Month-break are how to tell a half-formed illness; being in the inner or the outer is how to tell inside from surface; sitting in a change or in hiding is how to tell new from old."] },
+        { "by": "易冒注", "book": "易冒", "range": [1227, 1227],
+          "zh": ["问有，病半成，问无，病半解，内里外表，变新伏旧之义。"],
+          "yi": ["问有没有病的，病算成了一半；问是不是没有病的，病算解了一半；内是里、外是表，变出来的是新病、伏着的是旧病，就是这个意思。"],
+          "en": ["Asked whether there is illness, it is half formed; asked whether there is none, the illness is half resolved; the inner is inside and the outer is surface, the changed is new and the hidden is old: this is the meaning."] }
+      ],
+      "note": {
+        "yi": "「在内在外」主语没有写明，注里的「内里外表」说的是内卦、外卦；这里按注译作「鬼在内、在外」。「日破月破」不是说病不成，而是说它只成一半：问有病时这是「半成」，问无病时这是「半解」。变爻与伏爻的新旧，和黄金策「官藏世下，病起如前」（LY.ILL.HJC.07）、「官化官新旧两病」（LY.ILL.HJC.09）是同一路读法。",
+        "en": "The subject of 'in the inner, in the outer' is not stated; the note's 'inside is the inner, surface is the outer' refers to the inner and outer trigrams, and it is rendered here as the ghost being in the inner or the outer. 'Day-break and Month-break' does not say the illness will not form, only that it forms by half: asked whether there is illness this is 'half formed', asked whether there is none this is 'half resolved'. The new and old of a changed and a hidden line follows the same reading as the Huangjin Ce's 'a Pressure line hidden under the Self, the illness rises as before' (LY.ILL.HJC.07) and 'Pressure turning into Pressure, two illnesses new and old' (LY.ILL.HJC.09)."
+      },
+      "see": ["LY.ILL.YM.24", "LY.ILL.YM.26", "LY.ILL.HJC.06", "LY.ILL.HJC.07", "LY.ILL.HJC.09", "LY.ILL.YY.14", "LY.ILL.YY.16"]
+    },
+    {
+      "id": "LY.ILL.YM.26",
+      "topic": "症候",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "分一身、四体、五脏、七情：流于六爻分一身、摇于八宫分四体、属于五行分五脏、现于六神分七情；注引卜筮元龟、黄金策、海底眼、解云为证",
+      "rule": {
+        "yi": "鬼落在哪一爻，分的是一身的哪一处；鬼动在哪一宫（哪一卦），分的是四肢百体的哪一部分；鬼属哪一行，分的是哪个脏；鬼上的是哪个六神，分的是哪种情绪（七情）。注引了四家为证：卜筮元龟按爻位，从初爻的脚到六爻的头；黄金策按八卦，乾头坤腹、巽腰震足、兑口艮背、坎耳离目；海底眼按五行和地支；解云按六神：白虎是兵祸丧痛、青龙是酒色风流、玄武是忧愁思虑、勾陈是夹带怀胎、朱雀是恼怒焦烦、螣蛇是惊惶恐怖。",
+        "en": "By which of the six lines the ghost flows through, the part of the whole body is told; by which of the eight palaces it stirs in, the four limbs and trunk; by which of the five phases it belongs to, which of the viscera; by which of the six spirits it appears in, which of the seven emotions. The note quotes four authorities: the Bushi Yuangui by line position, from the foot on the first line to the head on the sixth; the Huangjin Ce by trigram, Qian the head and Kun the belly, Xun the waist and Zhen the foot, Dui the mouth and Gen the back, Kan the ear and Li the eye; the Haidi Yan by the five phases and branches; and the explanation by the six spirits: the White Tiger is war, mourning and grief, the Azure Dragon wine, lust and dissipation, the Dark Tortoise worry and anxious thought, Hook Earth complication and pregnancy, the Vermilion Bird anger and vexation, the Coiling Snake fright and terror."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1228, 1228],
+          "zh": ["流于六爻，以分其一身也，摇于八宫，以分其四体也，属于五行，以分其五脏也，现于六神，以分其七情也。"],
+          "yi": ["鬼流到哪一爻，用来分是一身的哪一处；鬼在哪一宫动，用来分是四肢百体的哪一部分；鬼属哪一行，用来分是哪个脏；鬼上的是哪个六神，用来分是哪种情绪（七情）。"],
+          "en": ["By which of the six lines it flows through, the parts of the one body are distinguished; by which of the eight palaces it stirs in, the four limbs and trunk are distinguished; by which of the five phases it belongs to, the five viscera are distinguished; by which of the six spirits it appears in, the seven emotions are distinguished."] },
+        { "by": "易冒注", "book": "易冒", "range": [1229, 1229],
+          "zh": ["卜筮元龟：鬼在初爻两足伤，二爻双腿患非常，三爻腰股常轻软，四爻心腹及胸堂，五爻脏腑司喉咽，六爻头上患为算戗（？）。", "黄金策：乾为头兮坤为腹，巽为腰兮震为足，兑为口兮艮为背，坎为耳兮离为目。", "海底眼：喉病金兮木四枝，风邪疼痛起黄形，辰戌胃胸生呕逆，丑为肚腹未为脾，火动热极三焦咳，血腥眼目及疮痍，水鬼发寒因冷得，泄泻虚劳耳肾衰。", "有为火鬼病于心、小肠命三焦，水鬼病于肾膀胱，金鬼病于肺大肠，木鬼病于肝胆，土鬼病于脾胃也。", "解云：虎自兵丧哀痛由，龙贪酒色爱风流，忧愁思虑居元武，夹带怀胎谓值勾，脑（恼）怒焦烦朱雀噪，惊惶恐怖伴蛇游。）"],
+          "yi": ["《卜筮元龟》说：鬼在初爻，两只脚受伤；二爻，两条腿有非同寻常的病；三爻，腰和大腿常常发软；四爻，心、腹和胸口；五爻，脏腑，管喉咙咽部；六爻，头上的病，算作戗（？）。", "《黄金策》说：乾是头，坤是腹；巽是腰，震是脚；兑是口，艮是背；坎是耳，离是目。", "《海底眼》说：喉咙的病属金，木属四肢；风邪疼痛，起黄色的病相；辰、戌是胃和胸，生呕吐反逆；丑是肚腹，未是脾；火动热到极点，三焦咳嗽；血腥、眼睛以及疮疡；水鬼发寒，是因为受了冷；泄泻、虚劳，耳朵和肾衰弱。", "又有：火鬼的病在心、小肠、命门和三焦；水鬼的病在肾和膀胱；金鬼的病在肺和大肠；木鬼的病在肝和胆；土鬼的病在脾和胃。", "解说：白虎，是从兵祸、丧事、悲哀、痛苦而起；青龙，是贪酒好色、爱风流；忧愁思虑，归玄武；夹带、怀胎，说是遇上勾陈；恼怒焦烦，朱雀吵嚷；惊惶恐怖，有螣蛇相伴。"],
+          "en": ["The Bushi Yuangui says: the ghost on the first line, both feet are hurt; on the second line, the two legs have extraordinary trouble; on the third line, the waist and thighs are often weak and soft; on the fourth line, the heart, belly and chest; on the fifth line, the viscera and bowels, governing the throat; on the sixth line, trouble in the head, counted as 'qiang' (?).", "The Huangjin Ce says: Qian is the head and Kun the belly; Xun the waist and Zhen the foot; Dui the mouth and Gen the back; Kan the ear and Li the eye.", "The Haidi Yan says: throat trouble belongs to Metal, and Wood to the four limbs; wind-evil brings pain and a yellow look; Chen and Xu are the stomach and chest, producing vomiting and retching; Chou is the belly and Wei the spleen; Fire moving is extreme heat and coughing of the three burners; blood, the eyes and sores; a Water ghost brings chills because of cold; diarrhoea, consumption, and weakness of the ears and kidneys.", "There is also: a Fire ghost's illness is in the heart, small intestine, life gate and the three burners; a Water ghost's in the kidneys and bladder; a Metal ghost's in the lungs and large intestine; a Wood ghost's in the liver and gallbladder; an Earth ghost's in the spleen and stomach.", "The explanation says: the White Tiger's cause is war, mourning, grief and pain; the Azure Dragon is greed for wine and women and love of pleasure; worry and anxious thought dwell with the Dark Tortoise; complication and pregnancy are said to fall on Hook Earth; anger and vexation (the original writes 'brain', with 'vexation' in brackets), the Vermilion Bird is noisy; fright and terror go with the Coiling Snake."] }
+      ],
+      "note": {
+        "yi": "这一条经文只有一句总纲，分身体的实际办法全在注里，注引了四家：《卜筮元龟》按爻位，《黄金策》按八卦（与 LY.ILL.HJC.04 相同），《海底眼》按五行地支，「解云」按六神。「六爻头上患为算戗（？）」的「算戗」二字，原文自己在后面标了问号，是转录者对这两个字没有把握，这里照录，不改。「有为火鬼病于心」的「有为」疑是「又为」之误，译作「又有」。「元武」是「玄武」避讳的写法。与易隐（LY.ILL.YY.02、YY.11–YY.13）、黄金策（LY.ILL.HJC.02–HJC.05）讲的是同一件事，各家配法略有出入，以各条为准。",
+        "en": "In this entry the text gives only a single sentence of outline, and the actual ways of dividing the body are all in the note, which quotes four authorities: the Bushi Yuangui by line position, the Huangjin Ce by trigram (the same as LY.ILL.HJC.04), the Haidi Yan by the five phases and branches, and the 'explanation' by the six spirits. In 'the sixth line, trouble in the head, counted as qiang', the two characters 'suan qiang' are followed in the original by a question mark of the transcriber's own, showing doubt about them, and are copied as they stand. In the sentence about a Fire ghost's illness in the heart, the opening 'yǒu wéi' looks like an error for 'yòu wéi' (also), and is rendered 'there is also'. 'Yuan wu' is the taboo-avoiding form of 'Xuan wu' (Dark Tortoise). The same matter is treated by the Yi Yin (LY.ILL.YY.02, YY.11–YY.13) and the Huangjin Ce (LY.ILL.HJC.02–HJC.05), with slightly different assignments in each; go by each entry."
+      },
+      "see": ["LY.ILL.YM.25", "LY.ILL.YM.27", "LY.ILL.HJC.02", "LY.ILL.HJC.03", "LY.ILL.HJC.04", "LY.ILL.HJC.05", "LY.ILL.YY.02", "LY.ILL.YY.11", "LY.ILL.YY.12", "LY.ILL.YY.13", "LY.ILL.YY.17", "LY.ILL.BSZZ.25"]
+    },
+    {
+      "id": "LY.ILL.YM.27",
+      "topic": "病因",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "来于世者病由己、来于应者病由人、来于间者中内之病；鬼伏何神、何神化鬼看缘何事而病：父母劬劳、妻财饮食、子孙淫乐、兄弟气怒、官鬼邪妖",
+      "rule": {
+        "yi": "鬼从世爻来的，病由自己而起；从应爻来的，病由别人而来；从间爻来的，是体内中间的病。鬼伏在哪个六亲之下，就看因为什么事生了病；哪个六亲变出了鬼，就看因为什么事出现了病兆。因为父母爻管的是劳累辛苦，妻财爻管的是饮食，子孙爻管的是淫乐，兄弟爻管的是生气发怒，官鬼爻管的是邪祟妖异。",
+        "en": "Coming from the Self, the illness is of one's own doing; coming from the Other, it is from another person; coming from the between line, it is an illness of the interior. Under which relation the ghost hides shows from what matter the illness sprouted, and which relation turns into the ghost shows by what matter the illness was foreshadowed. For the Resource line is toil, the Wealth line is food and drink, the Output line is debauchery and pleasure, the Peer line is temper and anger, and the Pressure line is evil and monstrous things."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1230, 1230],
+          "zh": ["来于世者病由己，来于应者病由人，来于间者中内之病也。", "鬼伏何神，缘何事而萌病，何神化鬼，因何事而兆疾。", "盖父母劬劳也，妻财饮食也，子孙淫乐也，兄弟气怒也，官鬼邪妖也。"],
+          "yi": ["鬼从世来的，病由自己而起；从应来的，病由别人而来；从间爻来的，是体内中间的病。", "鬼伏在哪个六亲之下，就看因为什么事生了病；哪个六亲变出了鬼，就看因为什么事出现了病兆。", "因为父母爻管的是劳累辛苦，妻财爻管的是饮食，子孙爻管的是淫乐，兄弟爻管的是生气发怒，官鬼爻管的是邪祟妖异。"],
+          "en": ["Coming from the Self, the illness is of one's own doing; coming from the Other, it is from another person; coming from the between line, it is an illness of the interior.", "Under which relation the ghost hides shows from what matter the illness sprouted, and which relation turns into the ghost shows by what matter the illness was foreshadowed.", "For the Resource line is toil, the Wealth line is food and drink, the Output line is debauchery and pleasure, the Peer line is temper and anger, and the Pressure line is evil and monstrous things."] }
+      ],
+      "note": {
+        "yi": "「何神」在这一条里是指六亲（下一句列的正是六亲各管什么）。「中内之病」原文没有再解释，这里译成「体内中间的病」。这一条与黄金策「鬼伏六亲之下各有病因」（LY.ILL.HJC.08）、「鬼爻化出六亲各有得病之处」（LY.ILL.HJC.10）和易隐「鬼伏六亲下或六亲化鬼」（LY.ILL.YY.18）是同一件事，但易冒把六亲的所管压成了一句话，没有再分五行、六神。",
+        "en": "'He shen' (which spirit) in this entry means the relations, since the next sentence lists what each relation governs. 'An illness of the interior' is not explained further in the original and is rendered as an illness of the inside. This entry is the same matter as the Huangjin Ce's 'each relation the ghost hides under gives its own cause' (LY.ILL.HJC.08) and 'each relation the Pressure line turns into gives its own place of contracting the illness' (LY.ILL.HJC.10), and the Yi Yin's 'the ghost hidden under a relation, or a relation turning into the ghost' (LY.ILL.YY.18), but the Yi Mao compresses what each relation governs into one sentence and does not go on to divide by the phases and spirits."
+      },
+      "see": ["LY.ILL.YM.26", "LY.ILL.YM.28", "LY.ILL.HJC.08", "LY.ILL.HJC.10", "LY.ILL.HJC.25", "LY.ILL.YY.18"]
+    },
+    {
+      "id": "LY.ILL.YM.28",
+      "topic": "风险",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "初筮防疾：用坏病起、鬼发病作；时灾专用于鬼，发动则疫扰其室；何命犯鬼是天祸、何神化鬼是人作、鬼化何人是流灾；随墓助伤大凶可畏",
+      "rule": {
+        "yi": "一开始占筮来预防疾病的：用神坏了，病就起来；鬼发动，病就发作。遇到时行的灾病，专门看鬼，鬼发动，就是瘟疫来扰他的家，只能修身反省、等着它过去。哪个人的本命冲犯了鬼，是天降的祸；哪个六亲变出了鬼，是人自己招的；鬼变成哪个人，是流行的灾。随墓、助伤，大凶，可怕。",
+        "en": "In a first divination to guard against illness: when the Subject line is spoiled the illness arises, and when the ghost moves the illness breaks out. When a seasonal calamity is going about, look at the ghost alone; if it moves, an epidemic is troubling his household, and there is nothing to do but cultivate oneself, reflect and wait. Whichever natal branch offends the ghost, it is a heavenly misfortune; whichever relation turns into the ghost, it is man-made; into which person the ghost turns, that is a spreading calamity. Following into the tomb and helping to harm are greatly ominous, and to be feared."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1231, 1231],
+          "zh": ["初筮之防疾也，用坏病起，鬼发病作。", "时灾之行，专用于鬼，发动疫扰其室，惟修省以俟。", "何命犯鬼，是天祸也，何神化鬼，是人作也，鬼化何人，是流灾也。", "随墓助伤，大凶可畏。"],
+          "yi": ["一开始占筮来预防疾病的，用爻坏了，病就起来；鬼发动，病就发作。", "遇到时行的灾病，专门看鬼，鬼发动，就是瘟疫来扰他的家，只能修身反省、等着它过去。", "哪个人的本命冲犯了鬼，是天降的祸；哪个六亲变出了鬼，是人自己招的；鬼变成哪个人，是流行的灾。", "随墓、助伤，大凶，可怕。"],
+          "en": ["In a first divination to guard against illness, when the Subject line is spoiled the illness arises, and when the ghost moves the illness breaks out.", "When a seasonal calamity is going about, look at the ghost alone; if it moves, an epidemic is troubling his household, and there is nothing to do but cultivate oneself, reflect and wait.", "Whichever natal branch offends the ghost, it is a heavenly misfortune; whichever relation turns into the ghost, it is man-made; into which person the ghost turns, that is a spreading calamity.", "Following into the tomb and helping to harm are greatly ominous, and to be feared."] }
+      ],
+      "note": {
+        "yi": "「初筮」在这里是没病之前先占一卦，防着病来，不是说头一次占。「何命犯鬼」是哪个人的本命地支犯了鬼（与 LY.ILL.YM.09「命随鬼墓」里的「命」是同一个意思）。「天祸」「人作」「流灾」是三种来路：天降、自己招、传染。时行的灾病，书里叫「时灾」，与痘疹章说的「传染」「流行」（LY.ILL.YM.04）是同一路。",
+        "en": "'First divination' here means divining before any illness, to guard against its coming, not the first divination made. 'Whichever natal branch offends the ghost' means whose natal earthly branch runs into the ghost (the same 'natal branch' as in 'the natal branch follows the ghost into a tomb', LY.ILL.YM.09). 'Heavenly misfortune', 'man-made' and 'spreading calamity' are three roads by which it comes: sent from heaven, brought on by oneself, caught by contagion. What the book calls a 'seasonal calamity' is of the same kind as the 'passing calamity' and 'spreading' of the chapter on pox (LY.ILL.YM.04)."
+      },
+      "see": ["LY.ILL.YM.27", "LY.ILL.YM.29", "LY.ILL.YM.04", "LY.ILL.YM.09", "LY.ILL.ZS.17", "LY.ILL.HJC.25", "LY.ILL.YY.01"]
+    },
+    {
+      "id": "LY.ILL.YM.29",
+      "topic": "病因",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "病从何起（方位）：动爻为起病之方；鬼同动以鬼爻为方；鬼独发看它动在哪一宫；六爻俱静考外卦；卦无官鬼以伏鬼上飞爻为方",
+      "rule": {
+        "yi": "病是从哪个方向起的，吉凶都生在动上：鬼跟着别的爻一起动的，就去察看那个鬼的方位，因为鬼是祸；鬼爻自己独发的，就去考察它所在的宫；卦象安静的，就去察看外卦，因为祟孽是从外面进来的；卦里没有鬼的，就去考察伏鬼上面压着的飞爻。注举例：动爻所在的方位就是病起的方位，离卦里卯动，病从东边来；鬼和别的爻一起动，就取鬼爻的方位，离卦里亥、卯都动，病从西北来；鬼独发，就查它在哪一宫动，离卦里亥独发，病从南边开始；六爻都静，考外卦，离卦静着，病从南方的地方缠染上；卦里没有官鬼，就取伏鬼上面飞爻的方位，卦里有官鬼而动爻多的，先找忌爻的方位，没有忌爻，才考外卦。",
+        "en": "From what direction did the illness rise? Fortune and misfortune are born of movement: where the ghost moves along with the moving lines, examine the direction of that ghost, for the ghost is the calamity; where the Pressure line moves alone, examine its palace; where the hexagram is still, look at the outer trigram, for haunting and calamity enter from outside; where the hexagram has no ghost, examine the flying line above the hidden ghost. The note gives examples: the direction of the moving line is the direction from which the illness arose, so if in Li Mao moves the illness comes from the east; if the ghost moves along with others, take the direction of the Pressure line, so if in Li Hai and Mao both move the illness comes from the northwest; if the ghost moves alone, seek in which palace it moves, so if in Li Hai alone moves the illness starts from the south; if all six lines are still, examine the outer trigram, so if Li is still the illness was caught from the south; if the hexagram has no Pressure line, take the direction of the flying line above the hidden ghost, and where it has Pressure but many moving lines, first seek the direction of the Adversary line, and if there is none, examine the outer trigram."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1232, 1232],
+          "zh": ["病从何起，盖吉凶生乎动者也，鬼从爻动，乃察其鬼，盖鬼为祸也；", "鬼爻独发，乃考其官，盖独发有专也。", "卦象安静，乃察其外，盖祟孽由外入也；", "卦如无鬼，乃考伏鬼之飞爻。"],
+          "yi": ["病是从哪里起的？吉凶都产生在动上；鬼跟着动爻一起动的，就去察看那个鬼，因为鬼就是祸；", "鬼爻独发的，就去考察它所在的宫，因为独发就是专指着它；", "卦象安静的，就去察看外卦，因为祟孽是从外面进来的；", "卦里如果没有鬼，就去考察伏鬼上面压着的飞爻。"],
+          "en": ["From where did the illness rise? Fortune and misfortune are born of movement; where the ghost moves along with the moving lines, examine the ghost, for the ghost is the calamity;", "where the Pressure line moves alone, examine its palace, for a lone mover is singular in its aim;", "where the hexagram is still, look at the outer trigram, for haunting and calamity enter from outside;", "if the hexagram has no ghost, examine the flying line above the hidden ghost."] },
+        { "by": "易冒注", "book": "易冒", "range": [1233, 1233],
+          "zh": ["动爻为起病之方，如离卦卯动，病自东来；", "若鬼同爻动，则以鬼爻为起病之方，如离卦亥卯皆动，病由西北来也。", "若鬼独发，索其动于何宫，则是方招祸，如离亥独发，病自南始。", "若六爻俱静，当考外卦，如离象之静，从南地缠染。", "惟卦无官鬼，则以伏鬼上飞爻为方，如补遗言：家人西北蒙灾之由或卦有官，而动爻多者，先索忌爻之方，无忌则考外卦也。"],
+          "yi": ["动爻所在的方位，就是病起来的方位，比如离卦里卯爻动，病从东边来；", "如果鬼和别的爻一起动，就以鬼爻的方位当作病起的方位，比如离卦里亥、卯都动，病从西北来。", "如果鬼独自发动，就查它是在哪一宫动的，那个方位就是招来祸的方位，比如离卦里亥爻独发，病从南边开始。", "如果六爻都静，就该考察外卦，比如离卦静着，病是从南方的地方缠染上的。", "只有卦里没有官鬼，才以伏鬼上面飞爻所在的方位为准，就像《补遗》所说的：家人卦，西北方是遭灾的缘由；或者卦里有官鬼、可是动爻很多的，先找忌爻所在的方位，没有忌爻，才考察外卦。"],
+          "en": ["The moving line gives the direction from which the illness arose; for example, in the Li hexagram, if Mao moves, the illness comes from the east;", "if the ghost moves together with the others, the direction of the Pressure line is taken as that from which the illness rose; for example, in the Li hexagram, if Hai and Mao both move, the illness comes from the northwest.", "If the ghost moves alone, seek in which palace it moves, and that direction is where the calamity was invited; for example, in the Li hexagram, if Hai alone moves, the illness starts from the south.", "If all six lines are still, examine the outer trigram; for example, if the Li image is still, the illness was caught from the southern quarter.", "Only when the hexagram has no Pressure line is the direction taken from the flying line above the hidden ghost, as the Buyi says: in Jiaren, the northwest is the cause of the calamity; or, where the hexagram has Pressure but many moving lines, first seek the direction of the Adversary line, and if there is no Adversary, examine the outer trigram."] }
+      ],
+      "note": {
+        "yi": "经文里「乃考其官」的「官」字，注文改述成「索其动于何宫」，可知这里说的是宫（八卦的宫），原文「官」字疑是「宫」之误，这里按注译作「它所在的宫」。注里说的方位是把八卦和五行配到方位上得来的：离在南，卯在东，亥在西北。「补遗」按上下文是《易林补遗》，注里「家人西北蒙灾之由」这一句和后面「或卦有官」之间没有标点，这里断成两截译。与易隐「病起何方」（LY.ILL.YY.33）取法相近，但易隐以火南水北木东金西论，不论鬼之有无。",
+        "en": "In the text's 'examine its guan (official)', the note re-words it as 'seek in which palace it moves', which shows that a palace (gong, of the eight trigrams) is meant, and the original 'guan' looks like an error for 'gong'; it is rendered here as 'the palace it is in'. The directions in the note come from assigning the trigrams and phases to directions: Li is south, Mao is east, Hai is northwest. The 'Buyi' is by context the Yilin Buyi; in the note there is no punctuation between 'Jiaren, the northwest, is the cause of the calamity' and the following 'or if the hexagram has Pressure', and it is translated here as two parts. The method is close to the Yi Yin's 'the direction from which the illness rose' (LY.ILL.YY.33), but the Yi Yin reckons by Fire south, Water north, Wood east, Metal west, whether or not there is a ghost."
+      },
+      "see": ["LY.ILL.YM.28", "LY.ILL.YM.30", "LY.ILL.YY.33"]
+    },
+    {
+      "id": "LY.ILL.YM.30",
+      "topic": "病因",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "按八宫、五行、六神推病因：乾兑鬼兴祸因寺庙、艮坤官发患系丘陵、坎离南北、震巽园林；木鬼砍伐、金鬼刀兵、土鬼开辟、水江河、火城市；武酒色风寒、龙讴吟歌舞、雀斗争气怒、虎哭泣哀丧、蛇惊、勾跌——注举四例，戒毋执一，唯理之当",
+      "rule": {
+        "yi": "所以乾、兑两宫鬼旺，祸因出在寺庙；艮、坤两宫官鬼发动，忧患牵涉丘陵；坎、离说的是南北，震、巽说的是园林。木鬼是砍伐惹的，金鬼是刀兵的惊恐，土鬼是开挖动土的妨害，水是江河，火是城市。玄武是因为酒色风寒，青龙是唱歌吟咏歌舞，朱雀是争斗生气，白虎是哭泣丧事，螣蛇是从惊吓来的，勾陈是从跌倒起的。注举了四个例子：同一天占的几卦，乾宫发动的是被马撞伤，坎宫玄武是捕鱼得病，火鬼带螣蛇是在客馆听到失火吓出来的，巳午两鬼带青龙咸池是酒色所致——都不是按乾兑寺庙、坎为江河、火鬼城市、震巽园林去断，所以总的告诫是：不要死抠一条，只看合不合理，以及人心的灵巧善于推求。",
+        "en": "So when the ghost thrives in Qian or Dui, the misfortune comes from temples and shrines; when Pressure moves in Gen or Kun, the trouble is tied to mounds and hills; Kan and Li mean south and north, Zhen and Xun mean gardens and groves. A Wood ghost comes from felling trees, a Metal ghost from the fear of blades and soldiers, an Earth ghost from the hindrance of breaking ground; Water is rivers, and Fire is towns. The Dark Tortoise comes from wine, lust and wind-cold; the Azure Dragon is singing, chanting and dance; the Vermilion Bird is quarrels and temper; the White Tiger is weeping and mourning; the Coiling Snake comes from fright, and Hook Earth arises from a fall. The note gives four cases, all divined on the same day: a Qian-palace mover meant being trampled by a horse, a Dark Tortoise ghost in Kan meant catching fish, a Fire ghost with the Coiling Snake meant a fright at hearing of a fire at an inn, and Si and Wu ghosts with the Azure Dragon and Xianchi meant wine and lust; none was judged by temples for Qian and Dui, rivers for Kan, towns for a Fire ghost or gardens for Zhen and Xun, and so the closing warning: do not cling to one rule; go only by what reason fits, and by the mind's quick skill at working things out."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1234, 1234],
+          "zh": ["是以乾兑鬼兴，而祸因寺庙，艮坤官发，而患系丘陵；", "坎离南北，震巽园林；", "木鬼砍伐之由，金鬼刀兵之恐，土鬼开辟之妨，水为江河，而火为城市也；", "武因酒色风寒，龙为讴吟歌舞，雀为斗争气怒，虎为哭泣哀丧，蛇自惊来，而勾自跌起也。"],
+          "yi": ["所以乾、兑两宫鬼爻兴旺，祸因多出在寺庙；艮、坤两宫官鬼发动，忧患多牵涉到丘陵；", "坎、离是南北（的方位），震、巽是园林；", "木鬼，是砍伐树木惹的；金鬼，是刀兵的惊恐；土鬼，是开挖动土的妨害；水是江河，火是城市；", "玄武，是因为酒色和风寒；青龙，是唱歌吟咏歌舞；朱雀，是争斗和生气发怒；白虎，是哭泣和丧事；螣蛇，是从惊吓而来；勾陈，是从跌倒而起。"],
+          "en": ["So when the ghost thrives in Qian or Dui, the misfortune comes from temples and shrines; when Pressure moves in Gen or Kun, the trouble is tied to mounds and hills;", "Kan and Li mean south and north, Zhen and Xun mean gardens and groves;", "a Wood ghost comes from felling trees, a Metal ghost from the fear of blades and soldiers, an Earth ghost from the hindrance of breaking ground; Water is rivers, and Fire is towns and markets;", "the Dark Tortoise comes from wine, lust and wind-cold; the Azure Dragon is singing, chanting and dance; the Vermilion Bird is quarrels, temper and anger; the White Tiger is weeping and mourning; the Coiling Snake comes from fright, and Hook Earth arises from a fall."] },
+        { "by": "易冒注", "book": "易冒", "range": [1236, 1236],
+          "zh": ["如未建癸卯日，占身病得乾之小畜，世旺日克，但难愈而不死；", "鬼发乾宫，其人入市谒亲不遇，路见僧友聚语，陡值马触而践其股乃病，盖乾为僧，勾陈为跌，午官为马，若执于寺院，则未然也。", "如寅建丁卯日，占己病得节之临，世遇长生，卯月病愈；", "武鬼动于坎宫，其人捕鱼致疾，若必曰坎为江河，则未然也。", "酉建己酉日，占父病得归妹之解，鬼爻独发，是父母元神，亥日即愈；", "而火鬼螣蛇，在馆闻火大惊致疾，若必曰火鬼城市，乾兑寺庙，则未然也。", "是日有占子病，亦得归妹之师，子爻伏，得日月生，虽危不死，及冬而愈；", "巳午两鬼皆动，上鬼值青龙咸池，病由酒色而犯，若必曰震巽园林，则亦未然。", "毋执一，唯理之当，及人心之灵善推尔。"],
+          "yi": ["比如未月癸卯日，占自己的病，得乾卦变小畜卦，世爻旺，日辰克它，病难治愈但不会死；", "鬼在乾宫发动，这个人进城去拜访亲戚没有遇到，路上看见和尚朋友聚在一起说话，忽然碰上马撞过来、踩伤了他的大腿，才生了病；原因是乾主和尚，勾陈主跌倒，午官是马；如果死抠着是寺院，就不对了。", "又如寅月丁卯日，占自己的病，得节卦变临卦，世爻遇长生，到卯月病好了；", "玄武带着鬼在坎宫发动，这个人是捕鱼得的病；如果一定说坎是江河，就不对了。", "又如酉月己酉日，占父亲的病，得归妹卦变解卦，鬼爻独自发动，它正是父母爻的原神，到亥日就好了；", "而火鬼带螣蛇，是他在客馆里听说失火，大受惊吓得的病；如果一定说火鬼是城市、乾兑是寺庙，就不对了。", "这一天另有人占儿子的病，也得归妹卦变师卦，子爻伏着，得到日、月的生扶，虽然危险却不会死，到冬天痊愈；", "巳、午两个鬼都发动，上面那个鬼带青龙、咸池，病是因为酒色而得；如果一定说是震巽的园林，也不对。", "不要死抠一条，只看合不合理，以及人心的灵巧善于推求。"],
+          "en": ["For example, in a Wei month on a Guimao day, one's own illness was divined and Qian changing into Xiaoxu was obtained; the Self was strong but controlled by the Day, so the illness was hard to cure yet not fatal;", "The ghost moved in the Qian palace; the man went into the market to call on a relative without finding him, saw monk friends gathered and talking on the road, and suddenly met a horse that struck him and trampled his thigh, and only then fell ill; for Qian stands for monks, Hook Earth for a fall, and the Wu Pressure line for the horse; had one fixed on a temple, it would have been wrong.", "For example, in a Yin month on a Dingmao day, one's own illness was divined and Jie changing into Lin was obtained; the Self met Birth, and the illness healed in the Mao month;", "a ghost with the Dark Tortoise moved in the Kan palace, and the man fell ill from catching fish; if one insisted that Kan means rivers, it would be wrong.", "In a You month on a Jiyou day, a father's illness was divined and Guimei changing into Xie was obtained; the Pressure line moved alone, and it is the Support of the Resource line, so on the Hai day he recovered at once;", "the Fire ghost with the Coiling Snake meant that at an inn he heard of a fire, was greatly frightened and fell ill; if one insisted that a Fire ghost means towns, and Qian and Dui mean temples, it would be wrong.", "On that same day another person divined a son's illness, and also obtained Guimei changing into Shi; the Son line was hidden but generated by the Day and Month, so though in danger he did not die, and recovered in winter;", "both the Si and Wu ghosts moved; the upper ghost carried the Azure Dragon and the Xianchi star, and the illness came from wine and lust; if one insisted on the gardens and groves of Zhen and Xun, that too would be wrong.", "Do not cling to one rule; go only by what reason fits, and by the mind's quick skill at working things out."] }
+      ],
+      "note": {
+        "yi": "经文这几句在黄金策鬼神章里也有对应的配法（八宫见 LY.ILL.HJC.95，六神见 HJC.96，五行见 HJC.97），不同的是易冒把它们排成一串列在「病从何起」之后，只作起病之由，不作鬼神名目；而且后面的注立刻给四个例子说明「不要拘泥」。「坎离南北」的次序原文如此（坎在北、离在南，这里颠倒了），没有再解释。注里第二例说的「乾为僧」是乾配僧道，「午官为马」是午配马，都取自八卦、地支的象；这四个例子放在一起，是为了证明同一个配法在不同的卦里读出来的东西可以完全不同。",
+        "en": "The assignments in these lines have parallels in the Huangjin Ce's chapter on ghosts and spirits (the palaces at LY.ILL.HJC.95, the six spirits at HJC.96, the phases at HJC.97); the difference is that the Yi Mao sets them in a run after 'where the illness rose from', as causes of falling ill and not as names of ghosts and spirits, and that the note immediately gives four cases to show 'do not be rigid'. The order 'Kan and Li, south and north' is as in the original (Kan is in fact north and Li south, so the two lists run in opposite order) and is not explained. In the note's first case 'Qian is monks' assigns monks and Daoists to Qian, and 'the Wu Pressure line is the horse' assigns the horse to Wu, both taken from the images of the trigrams and branches; the four cases are set together to show that the same assignments read from different hexagrams can give quite different things."
+      },
+      "see": ["LY.ILL.YM.29", "LY.ILL.YM.31", "LY.ILL.HJC.95", "LY.ILL.HJC.96", "LY.ILL.HJC.97", "LY.ILL.YY.28", "LY.ILL.ZS.24", "LY.ILL.YY.17"]
+    },
+    {
+      "id": "LY.ILL.YM.31",
+      "topic": "症候",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "问症发真假、患其成疾、养病于外、避暑：鬼实则是鬼虚则非；随墓助伤已成疾；用神坏其疾难疗；养病避暑忌随墓助伤、世折鬼动",
+      "rule": {
+        "yi": "有人问病症发作是不是真的，鬼爻实就是真的，鬼爻虚就不是。有人占担心会不会成病，遇到随墓、助伤，病就已经成了；用神如果坏了，这个病怎么能治好呢？占在外面养病的，遇到随墓、助伤，世爻受损、鬼动，不行；在这里避暑的，也是这个道理。注：官鬼空、破、散、绝叫做虚，旺相、有生扶叫做实；用神空、破、绝、散就会成病，旺相有生扶就不会成病。",
+        "en": "If someone asks whether the outbreak of symptoms is real: when the ghost is full it is real, when the ghost is empty it is not. If someone divines whether a worry will become an illness, following into the tomb and helping to harm mean the illness has already formed; if the Subject is spoiled, how can the illness be cured? For one who divines convalescing away from home, following into the tomb, helping to harm, the Self broken and the ghost moving will not do; for one escaping the summer heat here, it is the same. The note says: the Pressure line Void, broken, scattered or in Extinction is called empty, and thriving and strong, generated and supported, is called full; the Subject Void, broken, in Extinction or scattered, the illness forms, and thriving and strong, generated and supported, it does not form."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1237, 1237],
+          "zh": ["有问症发是真，盖鬼实则是，鬼虚则非也。", "有筮患其成疾，随墓助伤，已成疾矣；", "用神若坏，其疾奚能疗乎？", "卜养病于外者，随墓助伤，世折鬼动不可也。", "避暑于此者，亦由是也。"],
+          "yi": ["有人问病症发作是真的吗，鬼爻实就是真的，鬼爻虚就不是。", "有人占担心会不会成病，遇到随墓、助伤，病就已经成了；", "用神如果坏了，这个病怎么能治好呢？", "占在外面养病的，遇到随墓、助伤，世爻受损、鬼动，都不行。", "在这里避暑的，也是这个道理。"],
+          "en": ["If someone asks whether the outbreak of symptoms is real: when the ghost is full it is real, when the ghost is empty it is not.", "If someone divines whether a worry will become an illness, following into the tomb and helping to harm mean the illness has already formed;", "if the Subject is spoiled, how can the illness be cured?", "For one who divines convalescing away from home, following into the tomb, helping to harm, the Self broken and the ghost moving will not do.", "for one escaping the summer heat here, it is the same."] },
+        { "by": "易冒注", "book": "易冒", "range": [1238, 1238],
+          "zh": ["官鬼空破散绝谓之虚，旺相生扶谓之实，用神空破绝散则成疾，旺相生扶则不成疾。"],
+          "yi": ["官鬼空、破、散、绝叫做虚，旺相、有生扶叫做实；用神空、破、绝、散就会成病，旺相有生扶就不会成病。"],
+          "en": ["The Pressure line Void, broken, scattered or in Extinction is called empty, and thriving and strong, generated and supported, is called full; the Subject Void, broken, in Extinction or scattered, the illness forms, and thriving and strong, generated and supported, it does not form."] }
+      ],
+      "note": {
+        "yi": "这一条问的是病有没有真的发出来、会不会成病、能不能到外面去养，注里只补了一个判据：虚实看鬼，成不成看用神。「虚」是空、破、散、绝，「实」是旺相、有生扶。前面说的是「鬼实则是」，后面注里说的是「用神旺相则不成疾」，两处一个看鬼、一个看用神，并不矛盾：问症发是不是真，问的是鬼；问会不会成病，问的是人的用神。「避暑于此」的「此」字，原文没有交代是哪里，这里照译。",
+        "en": "This entry asks whether the illness has really broken out, whether it will become an illness, and whether one may go away to convalesce, and the note adds only one criterion: emptiness or fullness is read from the ghost, and whether it forms from the Subject. 'Empty' is Void, broken, scattered or in Extinction; 'full' is thriving, strong, generated or supported. The text says 'the ghost full is real' and the note says 'the Subject thriving and strong, it does not form'; one looks at the ghost and the other at the Subject, and they do not contradict: asking whether the outbreak is real asks about the ghost, and asking whether it will become an illness asks about the person's Subject. The 'here' in 'escaping the heat here' is not identified in the original and is rendered as it stands."
+      },
+      "see": ["LY.ILL.YM.30", "LY.ILL.YM.32", "LY.ILL.YM.24", "LY.ILL.HJC.85", "LY.ILL.YY.15"]
+    },
+    {
+      "id": "LY.ILL.YM.32",
+      "topic": "风险",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "鬼动为致祸之由、福动为远灾之要，福神可趋、祸神可避：鬼发坎莫贪酒食、发兑莫迷欲色、震忌登舟、巽忌入园、乾不好僧室、艮不悦山居、坤弗食牛、离因嗜炙；子孙发于是宫则反视",
+      "rule": {
+        "yi": "所以鬼动是招来祸的缘由，福动是远离灾的要领；福神可以趋近，祸神可以躲开。于是鬼在坎宫发动，就不要贪酒食；在兑宫发动，就不要迷恋欲色；震宫忌坐船，巽宫忌进园子，乾宫不可以喜欢去僧房，艮宫不可以喜欢住山里，坤宫不吃牛，离宫是因为爱吃烤炙的东西。注说：如果是子孙在这一宫发动，这个地方反而有利有福，和前面说的正好相反；乾宫利于僧堂，坤宫利于田地，坎宫适合江海，艮宫适合山，离宫乐于文章，兑宫爱好酒，震宫喜欢舟车，巽宫喜欢园囿。",
+        "en": "So a moving ghost is the cause that brings misfortune, and a moving Output is the key to keeping calamity away: the fortune spirit can be sought and the misfortune spirit avoided. When the ghost moves in Kan, do not be greedy for wine and food; in Dui, do not be lost in desire and lust; for Zhen avoid boarding a boat, for Xun avoid entering a garden; for Qian one must not favour monks' rooms, for Gen one must not delight in mountain dwellings; for Kun do not eat beef, and for Li it is from a fondness for roasted food. The note says: if Output moves in the same palace, that place is advantageous and blessed, the reverse of what was said before; Qian favours the monks' hall and Kun the fields, Kan suits river and sea and Gen the mountain, Li delights in writing and Dui in wine, Zhen likes boats and carriages and Xun gardens and parks."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1239, 1239],
+          "zh": ["故鬼动为致祸之由，福动为远灾之要，福神可趋，祸神可避。", "是以发坎则莫贪于酒食，发兑则莫迷于欲色，震忌登舟，巽忌入园，乾不可以好僧室，艮不可以悦山居，坤弗食牛，离因嗜炙也。"],
+          "yi": ["所以鬼动是招来祸的缘由，福动是远离灾的要领；福神可以趋近，祸神可以躲避。", "所以鬼在坎宫发动，就不要贪酒食；在兑宫发动，就不要迷恋欲色；震宫忌坐船，巽宫忌进园子，乾宫不可以喜欢去僧房，艮宫不可以喜欢住山里，坤宫不吃牛，离宫是因为爱吃烤炙的东西。"],
+          "en": ["Therefore a moving ghost is the cause that brings misfortune, and a moving Output is the key to keeping calamity away; the Output (fortune) spirit can be sought and the misfortune spirit avoided.", "So when it moves in Kan, do not be greedy for wine and food; in Dui, do not be lost in desire and lust; for Zhen avoid boarding a boat, for Xun avoid entering a garden; for Qian one must not favour monks' rooms, for Gen one must not delight in mountain dwellings; for Kun do not eat beef, and for Li it is from a fondness for roasted food."] },
+        { "by": "易冒注", "book": "易冒", "range": [1240, 1240],
+          "zh": ["若子孙发动于是宫，则此处利福，与前反视。", "乾利僧堂坤利田，坎宜江海艮宜山，离乐文章兑嗜酒，震喜舟车巽囿园。"],
+          "yi": ["如果是子孙在这一宫发动，这个地方反而有利有福，和前面说的正好相反。", "乾宫利于僧堂，坤宫利于田地，坎宫适合江海，艮宫适合山，离宫乐于文章，兑宫爱好酒，震宫喜欢舟车，巽宫喜欢园囿。"],
+          "en": ["If Output moves in the same palace, then that place is advantageous and blessed, the reverse of what was said before.", "Qian favours the monks' hall and Kun the fields; Kan suits river and sea and Gen suits the mountain; Li delights in writing and Dui in wine; Zhen likes boats and carriages and Xun gardens and parks."] }
+      ],
+      "note": {
+        "yi": "这一条是上一条（LY.ILL.YM.30）的反面：上一条从病因往回推，这一条向前讲怎么躲。同一个宫，鬼动时忌的东西，子孙动时反而是宜的东西——坎宫鬼动忌酒食，子孙动时宜江海；乾宫鬼动不可好僧室，子孙动时利僧堂。「福神可趋」的「福神」在这里是子孙（Output），「祸神」是鬼。「离因嗜炙」的「嗜炙」是爱吃烤炙的东西，取火象；「坤弗食牛」取坤为牛。",
+        "en": "This entry is the reverse of the last (LY.ILL.YM.30): that reasons back from the cause of the illness, and this looks forward to how to avoid it. In the same palace, what is avoided when the ghost moves is what is favoured when Output moves: with the ghost moving in Kan wine and food are avoided, and with Output moving Kan suits river and sea; with the ghost moving in Qian one must not favour monks' rooms, and with Output moving Qian favours the monks' hall. The 'fortune spirit' in 'the fortune spirit can be sought' is Output, and the 'misfortune spirit' is the ghost. 'Fondness for roasted food' in Li takes the image of Fire, and 'do not eat beef' in Kun takes Kun as the ox."
+      },
+      "see": ["LY.ILL.YM.31", "LY.ILL.YM.33", "LY.ILL.YM.30", "LY.ILL.HJC.79", "LY.ILL.YY.20"]
+    },
+    {
+      "id": "LY.ILL.YM.33",
+      "topic": "他人病",
+      "chapter": "疾病章第五十五",
+      "chapter_en": "Chapter 55: Illness",
+      "title": "爻变之鬼亦然：占父病鬼动于坤其母随之而疾、占子病鬼化于巽其女继之而灾；何宫鬼动及鬼变何宫，言其人亦防灾病（例：辛酉日占女巽之涣、丙辰日占次女痘革之咸）；疾病之章不离用爻鬼象",
+      "rule": {
+        "yi": "还有占父亲的病而鬼在坤宫发动，他的母亲跟着也生病；占儿子的病而鬼变到巽宫，他的女儿接着遭灾：这就是说，爻变出来的鬼也是同样。所以疾病这一章离不开用爻和鬼的象。注：鬼在哪一宫发动，以及鬼变到哪一宫，就说那一宫所代表的人也要提防灾病。举了三个例子：辛酉日占女儿的病，巽变涣，子孙遇长生，这个女儿不会死，但鬼动变入坎宫，次子接着生病，后来还死了；丙辰日占二女儿出痘，革变咸，子孙值月建，二女儿无事，但内卦变到艮，官鬼落在少男宫里，后来小儿子也出了痘。总之占疾病，生死靠用爻，趋避、变通、救治的门路，都在于详细考察鬼爻。",
+        "en": "Again, where a father's illness is divined and the ghost moves in Kun, his mother falls ill after him; where a son's illness is divined and the ghost changes into Xun, his daughter suffers calamity in turn: so the ghost that appears by change is also the same. So the chapter on illness never leaves the Subject line and the image of the ghost. The note says: whichever palace the ghost moves in, and whichever palace it changes into, say that the person that palace stands for should also guard against calamity and illness. It gives cases: on a Xinyou day a woman's illness was divined, Xun changing into Huan, Output met Birth and the woman did not die, but the ghost moved into the Kan palace and the middle son fell ill in succession and later died; on a Bingchen day the pox of a second daughter was divined, Ge changing into Xian, Output stood on the Month and the second daughter came to no harm, but the inner trigram changed into Gen, the Pressure line sat in the palace of the youngest son, and afterwards the youngest son also had the pox. In short, in divining illness life and death rest on the Subject line, and the gates of seeking and avoiding, altering and remedying all depend on a careful examination of the Pressure line."
+      },
+      "quotes": [
+        { "by": "经", "book": "易冒", "range": [1241, 1241],
+          "zh": ["犹有占父病而鬼动于坤，其母随之而疾，占子病而鬼化于巽，其女继之而灾，则爻变之鬼亦然也。", "所以疾病之章，不离乎用爻鬼象。"],
+          "yi": ["还有占父亲的病而鬼在坤宫发动，他的母亲跟着也生病；占儿子的病而鬼变到巽宫，他的女儿接着遭灾，这就是说，爻变出来的鬼也是同样的道理。", "所以疾病这一章，离不开用爻和鬼的象。"],
+          "en": ["Again, where a father's illness is divined and the ghost moves in Kun, his mother falls ill after him; where a son's illness is divined and the ghost changes into Xun, his daughter suffers calamity in turn: so the ghost that appears by change is also the same.", "So the chapter on illness never leaves the Subject line and the image of the ghost."] },
+        { "by": "易冒注", "book": "易冒", "range": [1242, 1242],
+          "zh": ["何宫鬼动，及鬼变何宫，则言其人亦防灾病。", "如寅建辛酉日，占女身得巽之涣，子遇长生，其女不死；", "然鬼动化入坎宫，甲寅旬中坎空，中男相继而病，及甲申旬化午子空，中男反亡；", "卯建丙辰日，占次女痘，得革之咸，月建子孙，次女无事；", "然内化艮，丙辰官鬼居少男宫，其后少男亦痘。", "盖占疾病，生死凭于用爻，趋避变易救治之门，皆系鬼爻详察。"],
+          "yi": ["鬼在哪一宫发动，以及鬼变到哪一宫，就说那一宫所代表的人也要提防灾病。", "比如寅月辛酉日，占一个女人的病，得巽卦变涣卦，子孙遇长生，这个女人不会死；", "但是鬼动、变入坎宫，甲寅旬里坎宫落空，次子接着生病，到甲申旬变成午、子空，次子反而死了；", "卯月丙辰日，占二女儿出痘，得革卦变咸卦，子孙值月建，二女儿无事；", "但是内卦变到艮，丙辰的官鬼落在少男的宫里，后来小儿子也出了痘。", "占疾病，生死靠用爻决定，趋避、变通、救治的门路，都在于详细考察鬼爻。"],
+          "en": ["Whichever palace the ghost moves in, and whichever palace it changes into, say that the person that palace stands for should also guard against calamity and illness.", "For example, in a Yin month on a Xinyou day, a woman's illness was divined and Xun changing into Huan was obtained; the Son line met Birth, and the woman did not die;", "but the ghost moved and changed into the Kan palace; in the Jiayin decade Kan was Void and the middle son fell ill in succession, and in the Jiashen decade, changing into Wu with Zi Void, the middle son died instead;", "in a Mao month on a Bingchen day, the pox of a second daughter was divined and Ge changing into Xian was obtained; Output stood on the Month and the second daughter came to no harm;", "but the inner trigram changed into Gen, and the Bingchen Pressure line sat in the palace of the youngest son, and afterwards the youngest son also had the pox.", "In divining illness, life and death rest on the Subject line, while the gates of seeking and avoiding, altering and remedying all depend on a careful examination of the Pressure line."] }
+      ],
+      "note": {
+        "yi": "这一条讲的是牵连：病的鬼落在哪一宫，那一宫代表的家人就会跟着有事——坤是母，巽是长女，坎是中男，艮是少男。与痘疹章「考六亲化鬼及鬼化六亲」（LY.ILL.YM.06）是同一路读法，只是那里是问谁会出痘，这里是问谁会跟着有病。注里第二例「及甲申旬化午子空」一句，原文的次序和断句都不清楚（甲申旬空的是午未，而不是子），这里按字面译，不改。「及甲寅旬……及甲申旬……」两个旬，说的是同一个鬼在两个旬里应验的情形不同：头一旬是有病，后一旬是死。",
+        "en": "This entry is about knock-on effects: into whichever palace the ghost of the illness falls, the family member that palace stands for will be affected in turn — Kun is the mother, Xun the eldest daughter, Kan the middle son, Gen the youngest son. It reads in the same way as the chapter on pox's 'examine the relations that turn into ghosts and the ghosts that turn into relations' (LY.ILL.YM.06), except that there the question was who would have the pox and here it is who would fall ill in turn. In the note's second case, the sentence 'in the Jiashen decade changing into Wu with Zi Void' is unclear in both order and punctuation in the original (the Void branches of the Jiashen decade are Wu and Wei, not Zi), and is translated literally without correction. The two decades, Jiayin and Jiashen, show the same ghost coming true differently in each: illness in the first, death in the second."
+      },
+      "see": ["LY.ILL.YM.06", "LY.ILL.YM.32", "LY.ILL.HJC.10", "LY.ILL.HJC.108", "LY.ILL.YY.30"]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "shushu": "六爻",
+  "domain": "官非",
+  "work": "卜筮正宗",
+  "chapter": "散见各篇",
+  "chapter_en": "Passages on lawsuits scattered through the book",
+  "ranges": {"卜筮正宗": [198, 4392]},
+  "units": [
+    {
+      "id": "LY.LAWSUIT.BSZZ.01",
+      "topic": "总则",
+      "chapter": "赋文三篇·何知章",
+      "chapter_en": "Three rhapsodies: the \"how to know\" rhyme",
+      "title": "何知章·讼事与争竞的几句：讼事休是空亡官鬼又休囚，讼事多是朱雀白虎持世而鬼来扶，多争竞是朱雀兄弟推世应，小人生是玄武官鬼动临身，灾祸至是鬼临应爻来克世",
+      "rule": {
+        "yi": "怎么知道人家的官司了结：官鬼落空亡又休囚。怎么知道人家官司多：朱雀、白虎持世，官鬼来扶助。怎么知道人家多争执：朱雀、兄弟推动世爻应爻。怎么知道人家有小人：玄武、官鬼发动临在身爻。怎么知道人家灾祸到：官鬼临在应爻来克世爻。",
+        "en": "How do we know a household's suit is over? Pressure is Void and also resting or trapped. How do we know a household has many suits? The Vermilion Bird or the White Tiger holds the Self and Pressure comes to support it. How do we know a household has many quarrels? The Vermilion Bird and the Peer line push on the Self and the Other. How do we know a petty person has appeared? The Dark Tortoise and Pressure move and sit on the Body. How do we know calamity is coming? Pressure sits on the Other line and comes to control the Self."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3566, 3566],
+          "zh": ["何知人家讼事休？", "空亡官鬼又休囚；", "何知人家讼事多？", "雀虎持世鬼来扶；"],
+          "yi": ["怎么知道人家的官司了结？", "官鬼落空亡又休囚；", "怎么知道人家官司多？", "朱雀、白虎持世，官鬼来扶助；"],
+          "en": ["How do we know a household's suit is over?", "Pressure is Void and also resting or trapped;", "How do we know a household has many suits?", "The Vermilion Bird or the White Tiger holds the Self and Pressure comes to support it;"] },
+        { "by": "经", "book": "卜筮正宗", "range": [3568, 3568],
+          "zh": ["何知人家多争竞？", "朱雀兄弟推世应；", "何知人家小人生？", "玄武官鬼动临身；"],
+          "yi": ["怎么知道人家多争执？", "朱雀、兄弟推动世爻应爻；", "怎么知道人家有小人？", "玄武、官鬼发动临在身爻；"],
+          "en": ["How do we know a household has many quarrels?", "The Vermilion Bird and the Peer line push on the Self and the Other;", "How do we know a petty person has appeared?", "The Dark Tortoise and Pressure move and sit on the Body;"] },
+        { "by": "经", "book": "卜筮正宗", "range": [3569, 3569],
+          "zh": ["何知人家灾祸至？", "鬼临应爻来克世；"],
+          "yi": ["怎么知道人家灾祸到？", "官鬼临在应爻来克世爻；"],
+          "en": ["How do we know calamity is coming?", "Pressure sits on the Other line and comes to control the Self;"] }
+      ],
+      "see": ["LY.LAWSUIT.HJC.12", "LY.LAWSUIT.HJC.19"]
+    },
+    {
+      "id": "LY.LAWSUIT.BSZZ.02",
+      "topic": "总则",
+      "chapter": "启蒙节要·三十三、诸爻持世诀",
+      "chapter_en": "Qimeng Jieyao, no. 33: the verse on lines holding the Self",
+      "title": "诗诀·官讼和问讼的句子：子孙持世则官讼从今了便休，占官问讼宜财托而动变兄官万事凶",
+      "rule": {
+        "yi": "子孙持世，官司从今了结就罢休；财爻持世，求官问讼适宜用财去托人，发动变出兄弟、官鬼，事事皆凶。",
+        "en": "With Output holding the Self, the lawsuit ends and rests from now on; with Wealth holding the Self, in seeking office or asking about a suit it is fit to entrust the matter with money, and if Peer or Pressure moves or changes out, everything is ill."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [198, 198],
+          "zh": ["官讼从今了便休，"],
+          "yi": ["官司从今了结就罢休，"],
+          "en": ["the lawsuit ends and rests from now on,"] },
+        { "by": "经", "book": "卜筮正宗", "range": [200, 200],
+          "zh": ["求官问讼宜财托，", "动变兄官万事凶。"],
+          "yi": ["求官问讼适宜用财去托人，", "发动变出兄弟、官鬼，事事皆凶。"],
+          "en": ["in seeking office or asking about a suit it is fit to entrust the matter with money,", "and if Peer or Pressure moves or changes out, everything is ill."] }
+      ],
+      "note": {
+        "yi": "这两句出在诸爻持世诀的两联：官讼一句在「子孙持世」那一联，问讼一句在「财爻持世」那一联；每联开头的持世爻没有拆进引文里。",
+        "en": "The two lines come from two couplets of the verse on lines holding the Self: the line on lawsuits is in the couplet for Output holding the Self, and the line on asking about a suit is in the couplet for Wealth holding the Self; the line named at the start of each couplet is not split into the quotation."
+      },
+      "see": ["LY.LAWSUIT.HJC.20"]
+    },
+    {
+      "id": "LY.LAWSUIT.BSZZ.03",
+      "topic": "罪名",
+      "chapter": "十八问答·第二问·回头之克",
+      "chapter_en": "Eighteen questions, no. 2: the turning-back control",
+      "title": "十八问答·第二问·书中例，占弟被讼：酉金兄弟为用神，午月克它、未日生它似可相敌，但动出午火月建相克是大凶象；问凶在何时，说今年辰年太岁相合无妨，化退神于申，恐危在午年申月，果然午年申月被重刑",
+      "rule": {
+        "yi": "凡遇回头克的，彻底克尽。书中例：午月丁未日占弟弟被人告了吉凶如何，得困卦变恒卦：酉金兄弟爻为用神，午月克它，未日生它，似乎可以相抵；但是动出午火，和月建相克，是大凶之象；他问凶在什么时候，我说今年是辰年，太岁相合没有妨碍，化出退神于申，恐怕危险在午年申月；果然到午年申月被判重刑。",
+        "en": "Whatever meets a turning-back control is controlled through and through. Worked example: in the Wu month, on a Dingwei day, a man divined how things stood for his younger brother, who had been sued, and got Kun changing to Heng: the Peer line You-metal is the Subject, controlled by the Wu month and given life by the Wei day, which seems to set them even; but it moves out Wu-fire, which, controlled by the Month, is a sign of great ill. He asked when the ill would fall. I said: this year, a Chen year, Tai Sui combines with it and there is no harm, but it changes into a Retreating spirit at Shen, and I fear danger in the Shen month of a Wu year; indeed in the Shen month of the Wu year he was given a heavy punishment."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3651, 3651],
+          "zh": ["凡遇回头克者，彻底克尽。", "原用二神遇之则凶，忌仇二神遇之反吉也。"],
+          "yi": ["凡遇回头克的，彻底克尽。", "原用二神遇到它就凶，忌神仇神遇到它反而吉。"],
+          "en": ["Whatever meets a turning-back control is controlled through and through.", "The original two spirits (the Subject and its Support) are ill when they meet it, while the Adversary and the enemy spirit are lucky when they meet it."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [3603, 3603],
+          "zh": ["午月丁未日，占弟被讼吉凶如何，得困之恒卦："],
+          "yi": ["午月丁未日，占弟弟被人告了吉凶如何，得困卦变恒卦："],
+          "en": ["In the Wu month, on a Dingwei day, a man divined how things stood for his younger brother, who had been sued, and got Kun changing to Heng:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [3611, 3611],
+          "zh": ["断曰：酉金兄弟为用神，午月克之，未日生之，似可相敌；", "但动出午火月建相克，大凶之象。", "彼问：凶在何时？", "答曰：今岁辰年太岁相合是无妨，化退神于申，恐危于午年申月。", "果至午年申月而被重刑。"],
+          "yi": ["断曰：酉金兄弟爻为用神，午月克它，未日生它，似乎可以相抵；", "但是动出午火和月建相克，是大凶之象。", "他问：凶在什么时候？", "我说：今年是辰年，太岁相合没有妨碍，化出退神于申，恐怕危险在午年申月。", "果然到午年申月被判重刑。"],
+          "en": ["Judgement: the Peer line You-metal is the Subject, controlled by the Wu month and given life by the Wei day, which seems to set them even;", "but it moves out Wu-fire, which, controlled by the Month, is a sign of great ill.", "He asked: when will the ill fall?", "I said: this year, a Chen year, Tai Sui combines with it and there is no harm, but it changes into a Retreating spirit at Shen, and I fear danger in the Shen month of a Wu year.", "Indeed in the Shen month of the Wu year he was given a heavy punishment."] }
+      ],
+      "see": ["LY.LAWSUIT.ZS.11"]
+    },
+    {
+      "id": "LY.LAWSUIT.BSZZ.04",
+      "topic": "罪名",
+      "chapter": "十八问答·第二问·回头之克",
+      "chapter_en": "Eighteen questions, no. 2: the turning-back control",
+      "title": "十八问答·第二问·书中例，占父官事：外卦未土被卯月克，又会成亥卯未木局克它，全无救助，必至重罪，后来果然处斩（与《增删卜易》同一卦同一日，那边记为拟重罪被重刑）",
+      "rule": {
+        "yi": "凡遇回头克的，彻底克尽。书中例：卯月戊辰日有人占父亲的官事，得萃卦变同人卦：断语说，外卦未土被卯月克它，何况土在春令气败，又会成亥卯未木局克它，全无救助，必定到重罪；后来果然被斩。",
+        "en": "Whatever meets a turning-back control is controlled through and through. Worked example: in the Mao month, on a Wuchen day, a man divined about his father's official matter and got Cui changing to Tongren: the Judgement said that the Wei-earth of the outer trigram is controlled by the Mao month, and moreover Earth is spent in the spring command and Hai, Mao and Wei combine into a Wood frame that controls it, with no rescue at all, so it must come to a grave charge; afterwards he was indeed beheaded."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3651, 3651],
+          "zh": ["凡遇回头克者，彻底克尽。", "原用二神遇之则凶，忌仇二神遇之反吉也。"],
+          "yi": ["凡遇回头克的，彻底克尽。", "原用二神遇到它就凶，忌神仇神遇到它反而吉。"],
+          "en": ["Whatever meets a turning-back control is controlled through and through.", "The original two spirits (the Subject and its Support) are ill when they meet it, while the Adversary and the enemy spirit are lucky when they meet it."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [3710, 3710],
+          "zh": ["卯月戊辰日，一人占父官事，得萃之同人卦："],
+          "yi": ["卯月戊辰日，有人占父亲的官事，得萃卦变同人卦："],
+          "en": ["In the Mao month, on a Wuchen day, a man divined about his father's official matter and got Cui changing to Tongren:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [3730, 3730],
+          "zh": ["断曰：外卦未土，卯月克之，况土值春令气败，又会成亥卯未木局克之，全无救助，必至重罪。", "后果斩。"],
+          "yi": ["断语说：外卦未土，被卯月克它，何况土在春令气败，又会成亥卯未木局克它，全无救助，必定到重罪。", "后来果然被斩。"],
+          "en": ["The Judgement said: the Wei-earth of the outer trigram is controlled by the Mao month, and moreover Earth is spent in the spring command and Hai, Mao and Wei combine into a Wood frame that controls it, with no rescue at all, so it must come to a grave charge.", "Afterwards he was indeed beheaded."] }
+      ],
+      "note": {
+        "yi": "《增删卜易》五行相克章收了同一个卦（卯月戊辰日，萃之同人），判词几乎一样，结局记为「果被重刑」；这里记为「后果斩」。",
+        "en": "The chapter on the controlling cycle in the Zengshan Buyi records the same hexagram (the Mao month, a Wuchen day, Cui changing to Tongren) with almost the same judgement, but the outcome is given as \"severely punished\"; here it is \"beheaded\"."
+      },
+      "see": ["LY.LAWSUIT.ZS.11"]
+    },
+    {
+      "id": "LY.LAWSUIT.BSZZ.05",
+      "topic": "胜负",
+      "chapter": "十八问答·第八问·月破之爻",
+      "chapter_en": "Eighteen questions, no. 8: the line struck by the Month-break",
+      "title": "十八问答·第八问·书中例，占讼事：爻逢六合官事必审，但戌月冲世是月破、卯日克世必输无疑，果然被杖责——应在日克月破",
+      "rule": {
+        "yi": "月破的爻：神机显现在破；祸福的机缘根源在动，动而有生无克的破爻，有出破、填实、合破的办法；安静而有克无生的破爻，就是破了。书中例：戌月丁卯日占官司，得泰卦：卦里爻逢六合，官事必定要审；不适宜的是戌月冲世爻，这是月破，卯日又克世爻，必输无疑；果然被杖责。这是应在日克月破的缘故。",
+        "en": "On a line struck by the Month-break: the working of the spirits shows in the break; the root of luck and misfortune lies in movement, and a broken line that moves and has life without control has the ways of leaving the break, being filled, or being combined out of the break, while a still broken line with control and no life is broken. Worked example: in the Xu month, on a Dingmao day, a man divined about a lawsuit and got Tai: the lines meet six-combine, so the official matter must come to trial; what is unfit is the Xu month clashing the Self line, which is the Month-break, and the Mao day also controlling the Self, so he surely loses; indeed he was beaten with the rod. This answers because the Day controls the Month-break."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [4382, 4382],
+          "zh": ["第八问：月破之爻，欲定其破为无用，却又应于破，欲谓其不破，却又到底破与无用，何也？", "答曰：神机现于破。", "祸福之机本于动，动而有生无克之破爻，有出破、填实、合破之法；", "安静有克无生之破爻，则破矣。"],
+          "yi": ["第八问：月破的爻，想认定它破了没有用，却又应在破上；想说它没有破，却又到底是破了没有用，是为什么？", "回答说：神机显现在破。", "祸福的机缘根源在动，动而有生无克的破爻，有出破、填实、合破的办法；", "安静而有克无生的破爻，就是破了。"],
+          "en": ["Question 8: a line struck by the Month-break; to hold that the break makes it useless, yet it answers on the break; to say it is not broken, yet in the end it is broken and useless; why?", "Answer: the working of the spirits shows in the break.", "The root of luck and misfortune lies in movement, and a broken line that moves and has life without control has the ways of leaving the break, being filled, or being combined out of the break;", "a still broken line with control and no life is broken."] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4384, 4384],
+          "zh": ["戌月丁卯日占讼事，得泰卦："],
+          "yi": ["戌月丁卯日，占官司，得泰卦："],
+          "en": ["In the Xu month, on a Dingmao day, a man divined about a lawsuit and got Tai:"] },
+        { "by": "书中例", "book": "卜筮正宗", "range": [4392, 4392],
+          "zh": ["断曰：爻逢六合，官事必审，不宜戌建冲世，乃是月破，卯日克世必输无疑。", "果被杖责。", "此应日克月破故耳。"],
+          "yi": ["断语：卦里爻逢六合，官事必定要审，不适宜的是戌月冲世爻，这是月破，卯日又克世爻，必输无疑。", "果然被杖责。", "这是应在日克月破的缘故。"],
+          "en": ["Judgement: the lines meet six-combine, so the official matter must come to trial; what is unfit is the Xu month clashing the Self line, which is the Month-break, and the Mao day also controlling the Self, so he surely loses.", "Indeed he was beaten with the rod.", "This answers because the Day controls the Month-break."] }
+      ],
+      "see": ["LY.LAWSUIT.HJC.03"]
+    }
+  ]
+}

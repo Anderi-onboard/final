@@ -1,0 +1,360 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "卜筮全书",
+  "chapter": "阐幽精要(身命章、家宅说、柳神经、参玄赋、家宅秘诀、搜精六爻、疾病论)",
+  "chapter_en": "Chanyou Jingyao (on the person and life, the house, the Liushen Jing, the Canxuan Fu, secret rules on the house, the six lines, on illness)",
+  "ranges": {"卜筮大全": [9614, 9782]},
+  "units": [
+    {
+      "id": "LY.ILL.BSQS.24",
+      "topic": "总则",
+      "chapter": "阐幽精要·三、身命章",
+      "chapter_en": "Chanyou Jingyao, no. 3: on the person and life",
+      "title": "身命章·父母持世辛勤劳碌、兄弟持世疾病连绵",
+      "rule": {
+        "yi": "阐幽精要的身命章说：父母爻持世，一生辛勤劳碌；兄弟爻持世，疾病连绵。",
+        "en": "The chapter on the person and life in the Chanyou Jingyao says: with Resource holding the Self line one toils and labours; with Peer holding the Self line, illness drags on."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9614, 9614],
+          "zh": ["父母持世，", "辛勤劳碌；", "兄弟持世，", "疾病连绵。"],
+          "yi": ["父母爻持世，", "辛勤劳碌；", "兄弟爻持世，", "疾病连绵。"],
+          "en": ["With Resource holding the Self line,", "it is toil and labour;", "with Peer holding the Self line,", "illness drags on."] }
+      ],
+      "note": {
+        "yi": "这是阐幽精要里占身命（问一个人一生）一章里的一联，讲世爻上坐什么六亲，对这个人一生的影响。「疾病连绵」是病一个接一个，不是指某一场病；这一章是讲人的命，不是讲一次占病，所以放在本域的「总则」里。",
+        "en": "This couplet is in the chapter of the Chanyou Jingyao on divining a person's life, and it says what the relation on the Self line does to a person over his lifetime. 'Illness drags on' means one illness after another, not one particular illness; the chapter is about a person's fate, not a single divination about illness, which is why it sits under 'principles' in this domain."
+      },
+      "see": ["LY.ILL.DYTJ.39", "LY.ILL.HJC.121"]
+    },
+    {
+      "id": "LY.ILL.BSQS.25",
+      "topic": "他人病",
+      "chapter": "阐幽精要·四、家宅说",
+      "chapter_en": "Chanyou Jingyao, no. 4: on the house",
+      "title": "家宅说·父母子孙俱旺老者安少者康；螣蛇白虎安静灾不生祸不作",
+      "rule": {
+        "yi": "占家宅的一篇说：父母、子孙都旺，老人平安，年轻人康健；螣蛇、白虎安静，灾不生，祸不作。",
+        "en": "The essay on divining a house says: when Resource and Output are both strong, the old are at peace and the young are healthy; when the Coiling Snake and White Tiger are still, calamity does not arise and misfortune does not happen."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9632, 9632],
+          "zh": ["父母子孙俱旺，", "老者安，", "少者康；"],
+          "yi": ["父母、子孙都旺，", "老人平安，", "年轻人康健；"],
+          "en": ["When Resource and Output are both strong,", "the old are at peace,", "the young are healthy;"] },
+        { "by": "经", "book": "卜筮大全", "range": [9633, 9633],
+          "zh": ["鰧蛇白虎安静，", "灾不生，", "祸不作。"],
+          "yi": ["螣蛇、白虎安静，", "灾难不会产生，", "祸患不会发作。"],
+          "en": ["with the Coiling Snake and White Tiger still,", "calamity does not arise,", "and misfortune does not happen."] }
+      ],
+      "note": {
+        "yi": "「老者安，少者康」是按父母代表老人、子孙代表年轻人读的，书里没有另注。螣蛇、白虎是主怪异、丧病的神，它们安静，灾祸就起不来。原文「鰧蛇」是「螣蛇」的异写。",
+        "en": "'The old at peace, the young healthy' is read with Resource standing for the old and Output for the young; the book gives no separate note. The Coiling Snake and White Tiger are the spirits of oddities and of mourning and illness, and when they are still calamity cannot arise. The original writes the snake with a variant character."
+      },
+      "see": ["LY.ILL.DYTJ.38"]
+    },
+    {
+      "id": "LY.ILL.BSQS.26",
+      "topic": "症候",
+      "chapter": "阐幽精要·五、柳神经",
+      "chapter_en": "Chanyou Jingyao, no. 5: the Liushen Jing",
+      "title": "柳神经·鬼与病：心气病火鬼动、脾胃灾土鬼摇；青龙六位巽宫家有头风之疾、玄武初爻鬼动必生脚湿之人；初位杀空小儿难养、六爻木鬼老者中风、上透金爻终年眼暗、五爻火鬼痨瘵缠身",
+      "rule": {
+        "yi": "柳神经里把鬼爻的五行、所在的位置和病挂在一起：火鬼动是心气病，土鬼摇是脾胃病；青龙在六位、巽宫，家里有头风；玄武在初爻、鬼动，生脚湿的人；初爻的杀落空，小孩难养；六爻木鬼，老人中风；上面透出金爻，终年眼暗；五爻火鬼，痨瘵缠身。",
+        "en": "The Liushen Jing ties the element of a ghost line, its place and an illness together: a Fire ghost moving is illness of the heart qi, an Earth ghost stirring is trouble of the spleen and stomach; the Azure Dragon in the sixth place and the Xun palace gives the household head-wind; the Dark Tortoise on the first line with the ghost moving gives someone with damp feet; a Void killing on the first place makes a small child hard to raise; a Wood ghost on the sixth line, an old person has a stroke; a Metal line showing through above, dim eyes all the year; a Fire ghost on the fifth line, consumption clings to the body."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9664, 9664],
+          "zh": ["心气病，火鬼动；", "脾胃灾，土鬼摇。"],
+          "yi": ["心气的病，是火鬼发动；", "脾胃的灾，是土鬼摇动。"],
+          "en": ["Illness of the heart qi: a Fire ghost moves;", "trouble of the spleen and stomach: an Earth ghost stirs."] },
+        { "by": "经", "book": "卜筮大全", "range": [9657, 9657],
+          "zh": ["青龙六位巽宫，", "家有头风之疾；", "玄武初爻鬼动，", "必生脚湿之人。"],
+          "yi": ["青龙在六位、巽宫，", "家里有头风的病；", "玄武在初爻、鬼爻发动，", "一定生出脚湿的人。"],
+          "en": ["With the Azure Dragon in the sixth place and the Xun palace,", "the household has head-wind (chronic headache);", "with the Dark Tortoise on the first line and the ghost moving,", "someone with damp feet is sure to appear."] },
+        { "by": "经", "book": "卜筮大全", "range": [9665, 9665],
+          "zh": ["初位杀空，", "小儿难养；", "六爻木鬼，", "老者中风。", "上透金爻，", "终年眼暗；", "五爻火鬼，", "痨瘵缠身。"],
+          "yi": ["初位杀空，", "小孩难养；", "六爻木鬼，", "老人中风；", "上面透出金爻，", "终年眼睛昏暗；", "五爻火鬼，", "痨瘵缠身。"],
+          "en": ["With a killing spirit Void in the first place,", "a small child is hard to raise;", "a Wood ghost on the sixth line,", "an old person has a stroke;", "a Metal line showing through above,", "the eyes are dim all the year;", "a Fire ghost on the fifth line,", "consumption clings to the body."] }
+      ],
+      "note": {
+        "yi": "柳神经是阐幽精要里占家宅的一篇，前后各联讲房屋、牲畜、神鬼，这里收的几联把鬼爻和病挂上：心气病配火鬼、脾胃灾配土鬼（本篇疾病论里也是这样，见 LY.ILL.BSQS.32、LY.ILL.BSQS.43）。「头风」是长年头痛；「脚湿」是脚上湿病（脚气一类）；「痨瘵」是肺痨；「中风」「眼暗」照字面。「初位杀空」「上透金爻」两处文意不全（杀是哪一种杀、金爻透在哪里），书里没有注，译文照字面。",
+        "en": "The Liushen Jing is an essay on divining a house in the Chanyou Jingyao; its couplets run through buildings, livestock and spirits, and the ones taken here tie a ghost line to an illness: a heart-qi illness goes with a Fire ghost and trouble of the spleen and stomach with an Earth ghost (so also in this book's chapter on illness, see LY.ILL.BSQS.32 and LY.ILL.BSQS.43). 'Head-wind' is a long-standing headache; 'damp feet' is a damp disease of the feet (of the beriberi kind); 'consumption' is pulmonary consumption; 'stroke' and 'dim eyes' are literal. In 'a killing spirit Void in the first place' and 'a Metal line showing through above' the sense is incomplete (which killing spirit, and where the Metal line shows through); the book gives no note and the translation keeps to the letter."
+      },
+      "see": ["LY.ILL.BSQS.32", "LY.ILL.BSQS.43"]
+    },
+    {
+      "id": "LY.ILL.BSQS.27",
+      "topic": "他人病",
+      "chapter": "阐幽精要·五、柳神经",
+      "chapter_en": "Chanyou Jingyao, no. 5: the Liushen Jing",
+      "title": "柳神经·家宅占家中有病人：父爻值墓家多疾病之人；火爻伏鬼定生目疾之人、水位隐官必有盲聋之辈；披头动要出疯癫、五鬼兴必生暗眼",
+      "rule": {
+        "yi": "柳神经里讲家里会有什么样的病人：父爻落在墓上，家里多有生病的人；火爻下面伏着鬼，一定生出眼病的人；水位下面藏着官，一定有又瞎又聋的人；披头煞发动，要出疯癫的人；五鬼煞兴起，一定生出眼睛看不见的人。",
+        "en": "The Liushen Jing on what kind of sick person the household will have: with the Resource line on a tomb, the household has many sick people; with a ghost hidden under a Fire line, someone with an eye disease is sure to appear; with an officer hidden in the Water place, there will surely be people blind or deaf; when the Loosened Hair star moves, a mad person will appear; when the Five Ghosts rise, someone with darkened eyes is sure to be born."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9643, 9643],
+          "zh": ["父爻值墓，", "家多疾病之人；", "财位临空，", "宅住贫穷之辈。"],
+          "yi": ["父爻落在墓上，", "家里多有生病的人；", "财位落空，", "宅里住的是贫穷的人。"],
+          "en": ["With the Resource line on a tomb,", "the household has many sick people;", "with the Wealth place Void,", "the people who live in the house are poor."] },
+        { "by": "经", "book": "卜筮大全", "range": [9649, 9649],
+          "zh": ["火爻伏鬼，", "定生目疾之人；", "水位隐官，", "必有盲聋之辈。"],
+          "yi": ["火爻下面伏着鬼，", "一定生出眼病的人；", "水位下面藏着官，", "一定有又瞎又聋的人。"],
+          "en": ["With a ghost hidden under a Fire line,", "someone with an eye disease is sure to appear;", "with an officer hidden in the Water place,", "there will surely be people blind or deaf."] },
+        { "by": "经", "book": "卜筮大全", "range": [9654, 9654],
+          "zh": ["披头动，", "要出疯癫；", "五鬼兴，", "必生暗眼。"],
+          "yi": ["披头煞发动，", "要出疯癫的人；", "五鬼煞兴起，", "一定生出眼睛看不清的人。"],
+          "en": ["When the Loosened Hair star moves,", "a mad person will appear;", "when the Five Ghosts rise,", "someone with darkened eyes is sure to be born."] }
+      ],
+      "note": {
+        "yi": "「家多疾病之人」的人是家里的人；「生」是出现、生出来，不是生孩子。「水位隐官」是水爻下面伏着官鬼。「披头」「五鬼」是神煞名，位置见卜筮全书神煞歌例里的「驾后神煞」（披头五鬼，辰上起子逆行）。「暗眼」书里没有解释，可能是看不清，也可能是瞎，译文写作「眼睛看不清」。「父爻值墓，家多疾病之人」同一句在参玄赋里也有（LY.ILL.BSQS.28）。",
+        "en": "'The household has many sick people' means people of the household; 'appear' is to come into being, not to give birth. 'An officer hidden in the Water place' is a Pressure line hidden under a Water line. 'Loosened Hair' and 'Five Ghosts' are spirit-stars whose positions are given in the verses on spirit-stars in this book under 'the stars after the carriage' (the Loosened Hair and Five Ghosts start at Chen and count back from Zi). 'Darkened eyes' is not explained in the book and may mean dim sight or blindness; the translation says 'eyes that cannot see clearly'. The same sentence 'the Resource line on a tomb: the household has many sick people' also appears in the Canxuan Fu (LY.ILL.BSQS.28)."
+      },
+      "see": ["LY.ILL.BSQS.28", "LY.ILL.BSQS.26"]
+    },
+    {
+      "id": "LY.ILL.BSQS.28",
+      "topic": "症候",
+      "chapter": "阐幽精要·六、参玄赋",
+      "chapter_en": "Chanyou Jingyao, no. 6: the Canxuan Fu",
+      "title": "参玄赋·家宅占的病句：父爻入墓家多疾病之人；兄克金财妻有病；日克火爻当生眼疾、日冲坎位定主耳聋",
+      "rule": {
+        "yi": "参玄赋里讲家宅时提到病的几句：父爻入了墓，家里多有生病的人；兄爻克金财，妻子有病；日辰克火爻，要生眼病；日辰冲坎位，一定主耳聋。",
+        "en": "The lines on illness in the Canxuan Fu's discussion of a house: with the Resource line entering a tomb, the household has many sick people; with the brother line controlling a Metal Wealth line, the wife is ill; when the Day controls the Fire line, eye disease will arise; when the Day clashes the Kan place, deafness is sure."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9671, 9671],
+          "zh": ["父爻入墓，", "家多疾病之人；", "财位临空，", "宅有产亡之鬼。"],
+          "yi": ["父爻入了墓，", "家里多有生病的人；", "财位落空，", "宅里有难产而死的鬼。"],
+          "en": ["With the Resource line entering a tomb,", "the household has many sick people;", "with the Wealth place Void,", "the house has the ghost of one who died in childbirth."] },
+        { "by": "经", "book": "卜筮大全", "range": [9684, 9684],
+          "zh": ["兄克金财妻有病，"],
+          "yi": ["兄爻克金财，妻子有病，"],
+          "en": ["With the brother line controlling a Metal Wealth line, the wife is ill,"] },
+        { "by": "经", "book": "卜筮大全", "range": [9686, 9686],
+          "zh": ["日克火爻，", "当生眼疾；", "日冲坎位，", "定主耳聋。"],
+          "yi": ["日辰克火爻，", "就要生眼病；", "日辰冲坎位，", "一定主耳聋。"],
+          "en": ["When the Day controls the Fire line,", "eye disease will arise;", "when the Day clashes the Kan place,", "deafness is sure."] }
+      ],
+      "note": {
+        "yi": "参玄赋是阐幽精要里的一篇赋，占家宅。「兄克金财妻有病」的「兄」是兄爻（兄弟爻），「金财」是五行属金的妻财爻，妻子看财爻，所以是妻子有病；这一句后面接的「弟临火应友多非」讲朋友，不收。「日克火爻」「日冲坎位」的日是日辰。「宅有产亡之鬼」是宅里有难产而死的人的鬼魂，不是病，但和前半句同在一联，所以带着。",
+        "en": "The Canxuan Fu is a fu in the Chanyou Jingyao, on divining a house. In 'the brother line controls a Metal Wealth line: the wife is ill' the brother line is the Peer line and the Metal Wealth line is the Wealth line of the Metal element; a wife is read from the Wealth line, so it is the wife who is ill; the next clause, about friends, is not taken. In 'the Day controls the Fire line' and 'the Day clashes the Kan place' the Day is the Day branch. 'The ghost of one who died in childbirth' is not illness, but it is in the same couplet as the first half and is carried with it."
+      },
+      "see": ["LY.ILL.BSQS.27"]
+    },
+    {
+      "id": "LY.ILL.BSQS.29",
+      "topic": "病因",
+      "chapter": "阐幽精要·七、家宅秘诀",
+      "chapter_en": "Chanyou Jingyao, no. 7: secret rules on the house",
+      "title": "家宅秘诀·鬼墓临身常有阴人伏枕；阴鬼主阴司之病症、阳鬼为户役之官非",
+      "rule": {
+        "yi": "家宅秘诀说：鬼爻的墓临在身上，常有女人卧病在床；阴爻的鬼主阴司作祟的病症，阳爻的鬼是户役方面的官非。",
+        "en": "The secret rules on the house say: with the ghost's tomb falling on the Body, there is often a woman lying ill in bed; a yin ghost means illnesses sent by the netherworld office, a yang ghost means official trouble over household duties."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9701, 9701],
+          "zh": ["鬼墓临身，", "常有阴人伏枕；"],
+          "yi": ["鬼墓临在身上，", "常有女人卧病在床；"],
+          "en": ["With the ghost's tomb falling on the Body,", "there is often a woman lying ill in bed;"] },
+        { "by": "经", "book": "卜筮大全", "range": [9703, 9703],
+          "zh": ["阴鬼主阴司之病症，", "阳鬼为户役之官非。"],
+          "yi": ["阴鬼主阴司的病症，", "阳鬼是户役方面的官非。"],
+          "en": ["A yin ghost means illnesses sent by the netherworld office,", "a yang ghost means official trouble over household duties."] }
+      ],
+      "note": {
+        "yi": "「阴鬼」是阴爻上的官鬼，「阳鬼」是阳爻上的官鬼；「阴司」是阴间的官府，也就是鬼神，所以阴鬼主的病症是鬼神作祟一类。「户役」是户籍和差役。「鬼墓临身」的「身」是卦身还是自身，书里没有说，译文写作「身」。「阴人」通常指女人。",
+        "en": "A 'yin ghost' is a Pressure line on a yin line and a 'yang ghost' one on a yang line; the 'netherworld office' is the office of the underworld, that is, spirits, so what a yin ghost brings is illness of the kind sent by spirits. 'Household duties' are household registration and corvée. Whether 'the Body' in 'the ghost's tomb falling on the Body' is the hexagram's Body or oneself is not said, and the translation writes 'the Body'. 'A yin person' ordinarily means a woman."
+      },
+      "see": ["LY.ILL.DYTJ.41"]
+    },
+    {
+      "id": "LY.ILL.BSQS.30",
+      "topic": "他人病",
+      "chapter": "阐幽精要·九、搜精六爻",
+      "chapter_en": "Chanyou Jingyao, no. 9: searching out the essence of the six lines",
+      "title": "搜精六爻·初爻克五爻宅长病、克二爻宅母危；六爻白虎带鬼旺灾病及公婆",
+      "rule": {
+        "yi": "搜精六爻说：（初爻）克第五爻，是一家之长有病；克第二爻，是宅母有危险。第六爻，白虎带着鬼爻又旺，灾病牵连到祖父母。",
+        "en": "The essay on searching out the essence of the six lines says: [the first line] controlling the fifth line, the head of the household is ill; controlling the second line, the mistress of the house is in danger. On the sixth line, with the White Tiger carrying a strong ghost, calamity and illness reach the grandparents."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9731, 9731],
+          "zh": ["克五宅长病，", "克二宅母危；"],
+          "yi": ["（初爻）克第五爻，是一家之长有病；", "克第二爻，是宅母有危险；"],
+          "en": ["[The first line] controlling the fifth, the head of the household is ill;", "controlling the second, the mistress of the house is in danger;"] },
+        { "by": "经", "book": "卜筮大全", "range": [9747, 9747],
+          "zh": ["白虎带鬼旺，", "灾病及公婆；"],
+          "yi": ["白虎带着鬼爻，又旺相，", "灾病牵连到祖父母。"],
+          "en": ["With the White Tiger carrying a strong ghost,", "calamity and illness reach the grandparents."] }
+      ],
+      "note": {
+        "yi": "搜精六爻是阐幽精要里逐爻讲家宅的一篇：初爻是根基，二爻是宅母，三爻是门户，四爻是外户，五爻是家长，六爻是虚位、祖父母。「克五宅长病」没有写谁克，按上文（讲初爻）读是初爻克五爻；「公婆」按上一联「六爻为虚位，永为祖父婆」读作祖父母。这两处书里都没有另注。",
+        "en": "The essay on searching out the essence of the six lines goes line by line through a house: the first line is the foundation, the second the mistress of the house, the third the gate and doors, the fourth the outer door, the fifth the head of the household, and the sixth the empty place and the grandparents. 'Controls the fifth: the head of the house is ill' does not say who controls; it is read from the context (the passage on the first line) as the first line controlling the fifth. 'The old man and old woman' is read as the grandparents from the earlier couplet 'the sixth line is the empty place and is always the grandparents'. The book gives no note on either point."
+      },
+      "see": ["LY.ILL.DYTJ.01"]
+    },
+    {
+      "id": "LY.ILL.BSQS.31",
+      "topic": "总则",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·总起：凡占疾病先祷上下神祇；问生死祸福须详得病之由、次告先贤之验",
+      "rule": {
+        "yi": "疾病论一篇开头说：凡是占疾病，先向天神地祇祷告；去问生死祸福，要把得病的缘由问得详细，再告诉他前贤应验过的例子。",
+        "en": "The chapter on illness opens: in divining illness, first pray to the spirits above and below; in asking about life and death, calamity and fortune, the cause of the illness must be learned in detail, and then the confirmations of the former sages told."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9769, 9769],
+          "zh": ["凡占疾病，", "先祷上下神祗。"],
+          "yi": ["凡是占疾病，", "先向上下的神祇祷告。"],
+          "en": ["In divining illness,", "first pray to the spirits above and below."] },
+        { "by": "经", "book": "卜筮大全", "range": [9770, 9770],
+          "zh": ["谒卜卦人，", "欲问生死祸福，", "须详得病之由，", "次告先贤之验。"],
+          "yi": ["去找卜卦的人，", "想问生死祸福，", "要详细问明得病的缘由，", "然后再讲前贤应验过的例子。"],
+          "en": ["In going to the diviner,", "wishing to ask about life and death, calamity and fortune,", "the cause of the illness must be learned in detail,", "and next the confirmations of the former sages told."] }
+      ],
+      "note": {
+        "yi": "这是疾病论头两句。「先祷上下神祇」是占病之前的礼仪：向天神地祇祷告。「得病之由」是病的来由，占之前要问清，后面讲神鬼、病因的各句都要靠它。「次告先贤之验」的主语书里没有写，这里按「把前人验过的例子告诉他」读。",
+        "en": "These are the first two sentences of the chapter on illness. 'First pray to the spirits above and below' is the ritual before a divination about illness: a prayer to the spirits of heaven and earth. 'The cause of the illness' is how the illness came about, which must be asked before the divination, since the later lines on spirits and causes depend on it. The subject of 'next tell the confirmations of the former sages' is not written in the book, and it is read here as 'the examples confirmed by the ancients are told to him'."
+      },
+      "see": ["LY.ILL.DYTJ.24"]
+    },
+    {
+      "id": "LY.ILL.BSQS.32",
+      "topic": "症候",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·五行与病位：金木动骨骼疼酸、水火兴皮肤寒热；丑未伤脾、戌辰破腹；土伏土爻生肿毒、金藏金位动心胞；妻在土兴呕吐；木下木多寒燠、水伏水多冷淋",
+      "rule": {
+        "yi": "疾病论里按五行和地支配病：金、木动，骨骼疼酸；水、火兴，皮肤寒热；丑、未交重必伤脾；戌、辰发动是因为腹部的病；土伏在土爻下，生肿毒；金藏在金位，动心包；妻财在土上兴旺，呕吐；木下伏木、木多，忽冷忽热；水伏在水下、水多，冷淋。",
+        "en": "The chapter on illness matches illnesses to the five elements and branches: Metal or Wood moving, bones and joints ache; Water or Fire rising, the skin has chills and fever; Chou or Wei moving is sure to harm the spleen; Xu or Chen moving comes from trouble of the belly; Earth hidden under an Earth line gives swollen toxin; Metal hidden in a Metal place stirs the pericardium; Wealth on Earth and rising, vomiting; Wood under Wood, with much Wood, blowing hot and cold; Water hidden under Water, with much Water, cold strangury."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9771, 9771],
+          "zh": ["金木动，", "骨骼疼酸；", "水火兴，", "皮肤寒热。", "交重丑未必伤脾，", "发动戌辰因破腹。"],
+          "yi": ["金、木发动，", "骨头关节酸痛；", "水、火兴旺，", "皮肤发冷发热。", "丑、未交重，必定伤脾；", "戌、辰发动，是因为腹部的病。"],
+          "en": ["With Metal or Wood moving,", "the bones and joints ache;", "with Water or Fire rising,", "the skin has chills and fever.", "With Chou or Wei moving, the spleen is sure to be harmed;", "with Xu or Chen moving, it comes from trouble of the belly."] },
+        { "by": "经", "book": "卜筮大全", "range": [9773, 9773],
+          "zh": ["土伏土爻生肿毒，", "金藏金位动心胞。", "妻在土兴呕吐，", "官临土动迟疑；", "木下木多寒燠，", "水伏水多冷淋。"],
+          "yi": ["土伏在土爻下，生肿毒；", "金藏在金位，动心包。", "妻财在土上兴旺，呕吐；", "官鬼临在土上发动，拖延迟疑；", "木下伏木、木多，忽冷忽热；", "水伏水下、水多，冷淋。"],
+          "en": ["Earth hidden under an Earth line gives swollen toxin;", "Metal hidden in a Metal place stirs the pericardium.", "Wealth on Earth and rising, vomiting;", "a Pressure line on Earth and moving, delay and doubt;", "Wood hidden under Wood, with much Wood, blowing hot and cold;", "Water hidden under Water, with much Water, cold strangury."] }
+      ],
+      "note": {
+        "yi": "这几联把五行（金木水火土）或地支（丑未、戌辰）配上身体部位和症状。「破腹」字面是腹破，这里按腹泻、腹痛一类的肚腹病读，书里没有另注。「迟疑」讲的是官鬼临土发动的结果，字面不像症状，可能是病拖着不好，译文照字面写作「拖延迟疑」。「寒燠」是忽冷忽热，「冷淋」是小便涩痛而冷的淋病，「心胞」是心包。「土伏土爻」「木下木多」按字面是伏神五行同于飞神（或卦中某五行多）的意思。这一组和本书的五行论病歌（LY.ILL.BSQS.43）、柳神经的火鬼动心气病（LY.ILL.BSQS.26）配法大体相通。",
+        "en": "These couplets match the five elements (Metal, Wood, Water, Fire, Earth) or branches (Chou and Wei, Xu and Chen) to parts of the body and to symptoms. 'Broken belly' is literally a belly that has burst, and is read here as an upset belly or pain of the abdomen; the book gives no note. 'Hesitation' is the result of a Pressure line on Earth moving; as a symptom it reads oddly and may mean the illness drags on, so the translation keeps it as 'delay and doubt'. 'Blowing hot and cold' is alternating cold and heat; 'cold strangury' is a strangury, a painful and dribbling urination, with cold; the 'pericardium' is the heart's envelope. 'Earth hidden under an Earth line' and 'Wood under Wood' mean, literally, a hidden line of the same element as the flying line (or much of one element in the hexagram). This group is in general akin to the verse on illness by the five elements in this book (LY.ILL.BSQS.43) and to the Liushen Jing's 'heart-qi illness: a Fire ghost moves' (LY.ILL.BSQS.26)."
+      },
+      "see": ["LY.ILL.BSQS.43", "LY.ILL.BSQS.26", "LY.ILL.CA.02"]
+    },
+    {
+      "id": "LY.ILL.BSQS.33",
+      "topic": "症候",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·八卦鬼与病位：巽鬼股痛、震官足疾不瘳；离宫疮痍、火鬼心目之灾；兑官面病、坎鬼腹中灾；乾官头痛、坤鬼肚疼；坎水耳疾、艮土手灾",
+      "rule": {
+        "yi": "疾病论里按八卦配病位：巽宫鬼爻兴旺，大腿痛；震宫官鬼旺动，脚病不愈；离宫旺相、内卦发动，是疮疡一类的病；火鬼休囚、外卦交重，是心和眼睛的灾；兑宫官鬼发动，是面部的病；坎宫鬼爻交重，是腹中的灾；乾宫官鬼旺相，是头痛；坤宫鬼爻兴旺，是肚子疼；坎卦水爻兴旺，只因为耳病；艮宫土爻发动，一定是手的灾。",
+        "en": "The chapter on illness matches the trigrams to the place of illness: the ghost of Xun thriving, pain in the thigh; the Pressure line of Zhen strong and moving, a disease of the foot that does not heal; Li strong and its inner lines moving, a disease of sores and wounds; a Fire ghost resting or confined with the outer lines moving, trouble of the heart and eyes; the Pressure line of Dui moving, illness of the face; a Kan ghost moving, trouble within the belly; the Pressure line of Qian strong, headache; the Kun ghost thriving, belly pain; the Water line of Kan rising, only an ear disease; the Earth line of Gen moving, sure to be trouble of the hand."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9771, 9771],
+          "zh": ["巽鬼兴隆，", "乃为股痛；", "震官旺动，", "足疾不瘳。"],
+          "yi": ["巽宫的鬼爻兴旺，", "就是大腿痛；", "震宫的官鬼旺相发动，", "脚上的病不能痊愈。"],
+          "en": ["With the ghost of the Xun palace thriving,", "it is pain in the thigh;", "with the Pressure line of the Zhen palace strong and moving,", "a disease of the foot does not heal."] },
+        { "by": "经", "book": "卜筮大全", "range": [9772, 9772],
+          "zh": ["离宫旺相，", "内爻发动，", "疮痍之疾；", "火鬼休囚，", "外象交重，", "心目之灾。"],
+          "yi": ["离宫旺相，", "内卦发动，", "是疮疡创伤一类的病；", "火鬼休囚，", "外卦交重，", "是心和眼睛的灾。"],
+          "en": ["With the Li palace strong,", "and its inner lines moving,", "it is a disease of sores and wounds;", "with a Fire ghost resting or confined,", "and the outer lines moving,", "it is trouble of the heart and eyes."] },
+        { "by": "经", "book": "卜筮大全", "range": [9773, 9773],
+          "zh": ["发动兑官因面病，", "交重坎鬼腹中灾。"],
+          "yi": ["兑宫的官鬼发动，是因为面部的病；", "坎宫的鬼爻交重，是腹中的灾。"],
+          "en": ["With the Pressure line of the Dui palace moving, it is from illness of the face;", "with a Kan ghost moving, it is trouble within the belly."] },
+        { "by": "经", "book": "卜筮大全", "range": [9774, 9774],
+          "zh": ["乾官旺相因头痛，", "坤鬼兴隆为肚疼。", "坎卦水兴只缘耳疾，", "艮宫土发必为手灾。"],
+          "yi": ["乾宫的官鬼旺相，是因为头痛；", "坤宫的鬼爻兴旺，是肚子疼。", "坎卦水爻兴旺，只因为耳病；", "艮宫土爻发动，一定是手的灾。"],
+          "en": ["With the Pressure line of the Qian palace strong, it is from headache;", "with the Kun ghost thriving, it is belly pain.", "with the Water line of the Kan trigram rising, it is only from an ear disease;", "with the Earth line of the Gen palace moving, it is sure to be trouble of the hand."] }
+      ],
+      "dispute": {
+        "yi": "八卦各管身体哪一处，几处说法不同。疾病论这一段是「乾头、坤肚腹、坎耳（另一联又说腹中）、艮手、震足、巽股、离疮痍和心目、兑面」；卜筮元龟一段（LY.ILL.DYTJ.12）是「乾头、坤腹、坎耳、离目、兑口、艮手、震足、巽股」，和这一段在巽股、艮手上一致；孙膑断疾病歌（LY.ILL.DYTJ.03）是巽肠、艮手；阐奥歌章（LY.ILL.CA.02）是巽手、艮鼻。不同的地方有三处：兑，这里是面，别处是口；坎，这一段本身就有两说，一联说耳、一联说腹中；离，这里多了疮痍和心，别处只有目。书里没有裁决。",
+        "en": "The books differ on which part of the body each trigram governs. This passage of the chapter on illness gives 'Qian the head, Kun the belly, Kan the ear (and in another couplet the inside of the belly), Gen the hand, Zhen the foot, Xun the thigh, Li sores and heart and eyes, Dui the face'. The Bushi Yuangui passage (LY.ILL.DYTJ.12) gives 'Qian the head, Kun the belly, Kan the ear, Li the eye, Dui the mouth, Gen the hand, Zhen the foot, Xun the thigh', which agrees with this passage on Xun the thigh and Gen the hand; Sun Bin's verse (LY.ILL.DYTJ.03) has Xun the intestines and Gen the hand; the Chan'ao Gezhang (LY.ILL.CA.02) has Xun the hand and Gen the nose. There are three places of difference: Dui is the face here and the mouth elsewhere; Kan has two readings within this one passage, the ear in one couplet and the inside of the belly in another; and Li has sores and the heart added here, where elsewhere there is only the eye. The books do not decide."
+      },
+      "note": {
+        "yi": "这一段里的「官」是官鬼的简称（「兑官」「乾官」「震官」），「鬼」同指鬼爻。「乾官旺相因头痛」等句的主语是某一宫里的官鬼爻。「内爻发动」「外象交重」是内卦、外卦发动。「疮痍」是疮疡创伤。坎在这一段里出现两次，一次说腹中灾，一次说耳疾，书里没有解释哪一种对。",
+        "en": "In this passage 'official' is a short form of Pressure ('the Dui official', 'the Qian official', 'the Zhen official'), and 'ghost' likewise means the ghost line. The subject of lines such as 'the Qian official strong: from headache' is the Pressure line in that palace. 'Inner lines moving' and 'outer image moving' are the inner and outer trigrams moving. 'Sores and wounds' means ulcers and injuries. Kan appears twice in this passage, once as trouble within the belly and once as an ear disease, and the book does not say which is right."
+      },
+      "see": ["LY.ILL.DYTJ.12", "LY.ILL.DYTJ.03", "LY.ILL.CA.02", "LY.ILL.HDY.12"]
+    },
+    {
+      "id": "LY.ILL.BSQS.34",
+      "topic": "病因",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·六神与病因：财逢玄武及咸池病为贪花因恋色、妻值青龙并日建患因耽酒伤身；勾陈临土木病因争地争田、螣蛇入火土灾逢惊怪；虎动临财因丧而得、龙兴遇鬼喜处染来",
+      "rule": {
+        "yi": "疾病论里按六神看病因：财逢玄武和咸池，病是因为贪恋女色；妻财值青龙、又逢日建，病因是沉迷喝酒、伤了身体；金爻的兄发动，气喘；木鬼交重，身体疼痛；勾陈临在土爻或木爻上，病因是争地争田；螣蛇入了火爻土爻，灾是遇到惊吓怪异；白虎发动、临在财上，是因为办丧事得的病；青龙兴起、遇到鬼，是在喜庆的地方染上的。",
+        "en": "The chapter on illness reads the cause of an illness by the six spirits: Wealth meeting the Dark Tortoise and the Xianchi star, the illness comes from craving flowers and loving lust; Wealth on the Azure Dragon and also the Day branch, the illness comes from indulging in wine and harming the body; a Metal brother line moving, panting; a Wood ghost moving, bodily pain; Hook Earth on an Earth or Wood line, the illness comes from quarrelling over land and fields; the Coiling Snake entering a Fire or Earth line, the trouble comes from fright and strange things; the White Tiger moving and on Wealth, it is got from a funeral; the Azure Dragon rising and meeting a ghost, it is caught at a happy occasion."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9774, 9776],
+          "zh": ["须将五行论身肢，", "专执六神分疾病。", "财逢玄武及咸池，", "病为贪花因恋色。", "妻值青龙并日建，", "患因耽酒及伤身。", "发动金兄气喘，", "交重木鬼身疼。", "勾陈若临土木，", "病因争地争田。", "鰧蛇若入火土，", "灾乃逢惊逢怪。", "虎动临财，", "因丧而得；", "龙兴遇鬼，", "喜处染来。"],
+          "yi": ["要用五行来论身体的各部位，", "专靠六神来分辨疾病。", "财爻遇到玄武和咸池，", "病是因为贪恋女色得来的。", "妻财值着青龙，又逢日建，", "病患是因为沉迷喝酒、伤了身体。", "金爻的兄发动，气喘；", "木鬼交重，身体疼痛。", "勾陈如果临在土爻或木爻上，", "病因是争地争田。", "螣蛇如果入了火爻土爻，", "灾是遇到惊吓、遇到怪异。", "白虎发动、临在财爻上，", "是因为办丧事得的病；", "青龙兴起、遇到鬼爻，", "是在喜庆的地方染上的。"],
+          "en": ["Use the five elements to discuss the parts of the body,", "and rely on the six spirits alone to tell illnesses apart.", "With Wealth meeting the Dark Tortoise and the Xianchi star,", "the illness comes from craving flowers and loving lust.", "With Wealth on the Azure Dragon and also the Day branch,", "the illness comes from indulging in wine and harming the body.", "a Metal brother line moving: panting;", "a Wood ghost moving: bodily pain.", "If Hook Earth sits on an Earth or Wood line,", "the illness is from quarrelling over land and fields.", "If the Coiling Snake enters a Fire or Earth line,", "the trouble comes from meeting fright and meeting strange things.", "With the White Tiger moving and on the Wealth line,", "it is got from a funeral;", "with the Azure Dragon rising and meeting a ghost,", "it is caught at a happy occasion."] }
+      ],
+      "note": {
+        "yi": "这一段按「六神看病因」列了八种：玄武带财爻、咸池是色；青龙带妻财、日建是酒；金爻的兄发动是气喘；木鬼交重是身疼；勾陈临土木是争地争田；螣蛇入火土是惊怪；虎（白虎）动临财是丧事；龙（青龙）兴遇鬼是喜庆场合。各句的条件写得很省，只能照字面译。「日建」是日辰。「咸池」是一个神煞（桃花一类）。「贪花因恋色」里「花」指女色。末两联的「虎」「龙」是白虎、青龙的简称。",
+        "en": "This passage lists eight causes read by the six spirits: the Dark Tortoise with Wealth and the Xianchi star is lust; the Azure Dragon with Wealth and the Day branch is wine; a moving Metal brother line is panting; a Wood ghost moving is bodily pain; Hook Earth on Earth or Wood is quarrelling over land and fields; the Coiling Snake in Fire or Earth is fright and strange things; the Tiger moving on Wealth is a funeral; the Dragon rising and meeting a ghost is a happy occasion. The conditions of each line are written very sparely, and can only be translated to the letter. 'The Day branch' is the Day. The 'Xianchi star' is a spirit-star (of the peach-blossom kind). In 'craving flowers' the 'flowers' are women. In the last two couplets 'Tiger' and 'Dragon' are short forms of the White Tiger and the Azure Dragon."
+      },
+      "see": ["LY.ILL.DYTJ.38", "LY.ILL.DYTJ.41"]
+    },
+    {
+      "id": "LY.ILL.BSQS.35",
+      "topic": "生死",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·死生之兆(一)：财为禄命怕空亡；十死卦春忌需蒙、夏嫌观蛊、秋忧剥节、冬畏旅临；禄命随官难救、世身入墓难医；鬼入用爻当主死",
+      "rule": {
+        "yi": "疾病论里看死生的一段：财爻是禄命，怕落空亡，伏着的是命爻，要防克害；先拿十死卦当凶，最凶的是用爻不上卦、又落空亡，有救的是福位（子孙）扶持得力；春天忌需、蒙，夏天嫌观、蛊，秋天忧剥、节，冬天怕旅、临；禄命随着官鬼，难救，世爻和身入了墓，难医；官鬼遇到大杀，怕伤身；鬼爻入了用爻，就主死。",
+        "en": "A passage of the chapter on illness on reading life and death: Wealth is the salary and fate and fears falling Void, and if it lies hidden the life line must be guarded from control and harm; first take the ten fatal hexagrams as ill-omened, the worst being a Subject line that is absent or Void, while what can be saved is when the Output place supports it with force; in spring avoid Xu and Meng, in summer dislike Guan and Gu, in autumn fear Bo and Jie, in winter dread Lu and Lin; with the fate line following the Pressure line, rescue is hard, and with the Self and the Body entering the tomb, treatment is hard; Pressure meeting a great killing, beware harm to the Body; a ghost entering the Subject line means death."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9777, 9779],
+          "zh": ["财为禄命怕空亡，", "伏是命爻防克害。", "先将十死卦为凶，", "莫比一般爻是吉。", "最凶者，", "用爻不见与空亡；", "有救者，", "福位扶持生得力。", "春忌需蒙，", "夏嫌观蛊，", "秋忧剥节，", "冬畏旅临。", "禄命随官难救，", "世身入墓难医。", "官逢大杀忌伤身，", "鬼入用爻当主死。"],
+          "yi": ["财爻是禄命，怕落空亡；", "伏藏的是命爻，要防克害。", "先把十死卦当作凶，", "不要拿它们和一般爻的吉去比。", "最凶险的情形是，", "用爻不上卦，和落空亡；", "有救的情形是，", "福位扶持、生助得力。", "春天忌需、蒙，", "夏天嫌观、蛊，", "秋天忧剥、节，", "冬天怕旅、临。", "禄命跟着官鬼，难救；", "世爻和身入了墓，难医。", "官鬼遇到大杀，怕伤到身；", "鬼爻入了用爻，就主死。"],
+          "en": ["Wealth is the salary and fate, and fears falling Void;", "if it lies hidden, the life line must be guarded from control and harm.", "First take the ten fatal hexagrams as ill-omened,", "and do not weigh them against the usual auspicious lines.", "The worst is", "when the Subject line is absent, or Void;", "what can be saved is", "when the Output place supports and strengthens it.", "In spring avoid Xu and Meng,", "in summer dislike Guan and Gu,", "in autumn fear Bo and Jie,", "in winter dread Lu and Lin.", "With the fate line following the Pressure line, rescue is hard;", "with the Self and the Body entering the tomb, treatment is hard.", "Pressure meeting a great killing, beware of harm to the Body;", "a ghost entering the Subject line means death."] }
+      ],
+      "dispute": {
+        "yi": "哪几个卦占病最凶，几本书的名单不同。这一段按季节给：春需、蒙，夏观、蛊，秋剥、节，冬旅、临；阐奥歌章第三首（LY.ILL.CA.03）是丰、蛊、困、明夷、夬、同人一例，加冬旅、春需、夏观、秋剥，和这一段在旅、需、观、剥四卦的季节上一致；卜筮元龟一段（LY.ILL.DYTJ.15）是丰、观、需、剥、节、旅、贲、明夷、蛊、夬、同人「十死分明」；天玄赋（LY.ILL.TXF.06）是明夷、观、贲、需、临（世身入墓）和大畜、丰、同、蛊、夬（财鬼俱兴）。蒙只有这一段有，临只有这一段和天玄赋有；另外这一段点名的只有八个卦，却称「十死卦」，名目和数目对不上。书里没有裁决。周易尚占和文王金钱课按卦名断病，和这一段点名的几个卦有出入：蒙，周易尚占说「却宜占病」（LY.ILL.ZSZ.06）；观，周易尚占说「财聚病痊」，文王金钱课说「占病即愈」（LY.ILL.ZSZ.02、WWJQ.03）；节，文王金钱课说「疾病口舌消除安」（LY.ILL.WWJQ.03）；临，周易尚占说「病犯崇侵」，文王金钱课补录部分说「疾病即痊」（LY.ILL.ZSZ.07、WWJQ.05）；蛊，周易尚占说病凶，和这一段一致（LY.ILL.ZSZ.05）。",
+        "en": "The books differ on which hexagrams are the worst for illness. This passage gives them by season: Xu and Meng in spring, Guan and Gu in summer, Bo and Jie in autumn, Lu and Lin in winter. The Chan'ao Gezhang's third poem (LY.ILL.CA.03) gives Feng, Gu, Kun, Mingyi, Guai and Tongren together, plus Lu in winter, Xu in spring, Guan in summer and Bo in autumn, agreeing with this passage on the seasons of Lu, Xu, Guan and Bo; the Bushi Yuangui passage (LY.ILL.DYTJ.15) gives Feng, Guan, Xu, Bo, Jie, Lu, Bi, Mingyi, Gu, Guai and Tongren, 'the ten deaths are clear'; the Tianxuan Fu (LY.ILL.TXF.06) gives Mingyi, Guan, Bi, Xu and Lin (the Self and Body entering the tomb) and Daxu, Feng, Tong, Gu and Guai (Wealth and Pressure both rising). Meng is found only in this passage, and Lin only in this passage and the Tianxuan Fu; moreover this passage names only eight hexagrams yet calls them 'the ten fatal hexagrams', so the name and the number do not match. The books do not decide. The Zhouyi Shangzhan and the Wenwang Jinqian Ke judge illness by the name of the hexagram, and differ from several hexagrams named in this passage: for Meng (Youthful Folly) the Zhouyi Shangzhan says 'on the contrary fit for divining illness' (LY.ILL.ZSZ.06); for Guan the Zhouyi Shangzhan says 'wealth gathers and the illness is cured' and the Wenwang Jinqian Ke says 'divining illness, it is cured at once' (LY.ILL.ZSZ.02, WWJQ.03); for Jie the Wenwang Jinqian Ke says 'illness and quarrels are removed and all is at peace' (LY.ILL.WWJQ.03); for Lin the Zhouyi Shangzhan says 'the illness offends a curse that attacks' and the Wenwang Jinqian Ke, in its supplementary part, says 'the illness is cured at once' (LY.ILL.ZSZ.07, WWJQ.05); for Gu the Zhouyi Shangzhan says the illness is ominous, which agrees with this passage (LY.ILL.ZSZ.05)."
+      },
+      "note": {
+        "yi": "这一段连着讲了三个层次：先是用神的安危（财为禄命、用爻不见与空亡、福位扶持），然后是十死卦按季节的忌，最后是墓和大杀（世身入墓、官逢大杀、鬼入用爻）。「禄命随官」是禄命爻随着官鬼（入墓）的意思，断易天机里有「随官入墓」一节可对照（LY.ILL.DYTJ.27）。「用爻」就是用神。",
+        "en": "This passage runs through three layers: first the safety of the Subject (Wealth as salary and fate, the Subject line absent or Void, the Output place supporting it), then the seasonal taboos of the ten fatal hexagrams, and last the tomb and the great killing (the Self and Body entering the tomb, Pressure meeting a great killing, a ghost entering the Subject line). 'The salary-fate following the Pressure line' means the salary-fate line following the Pressure line (into the tomb), and the section on 'following Pressure into the tomb' in the Duanyi Tianji can be compared (LY.ILL.DYTJ.27). The 'Subject line' is the Subject."
+      },
+      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.15", "LY.ILL.CA.03", "LY.ILL.ZSZ.02", "LY.ILL.ZSZ.03", "LY.ILL.ZSZ.04", "LY.ILL.ZSZ.05", "LY.ILL.WWJQ.03", "LY.ILL.ZSZ.07", "LY.ILL.WWJQ.05", "LY.ILL.ZSZ.06"]
+    },
+    {
+      "id": "LY.ILL.BSQS.36",
+      "topic": "生死",
+      "chapter": "阐幽精要·十一、疾病论",
+      "chapter_en": "Chanyou Jingyao, no. 11: on illness",
+      "title": "疾病论·死生之兆(二)：催尸之杀怕临病者之爻、春辰夏未秋戌冬丑兴还死；天转杀地转杀遇日辰旺相便言死处；春忌卯夏嫌午秋酉冬子；不论少年老年一命见阎君",
+      "rule": {
+        "yi": "疾病论里接着讲死的征兆：要忌催尸杀，怕它落在病人的爻上；春天的辰、夏天的未最难当，秋天的戌、冬天的丑发动还是死；又嫌天转杀、地转杀，是最凶的神，再遇到日辰旺相，就可以说出死的地方；春天忌卯爻卯日，夏天嫌午位午爻，秋天的金爻、酉日最忌，冬天的子爻遇上子日；不论是白面少年，还是雪白鬓发的老人，家产再多，也总要拿一条命去见阎王。",
+        "en": "The chapter on illness goes on with the signs of death: one must avoid the Urging-the-Corpse killing and fear it falling on the sick person's line; Chen in spring and Wei in summer are the hardest to bear, and Xu in autumn and Chou in winter, rising, still mean death; also dislike the Heaven-Turning and Earth-Turning killings, the most ill-omened spirits, and if they meet a strong Day one may name the place of death; in spring avoid a Mao line and a Mao day, in summer a Wu place and Wu line, in autumn the Metal line and the You day, in winter a Zi line meeting a Zi day; whether a fair-faced youth or an old person with snow-white temples, however much wealth a family has, one must still go with one's life to see Lord Yama."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9780, 9782],
+          "zh": ["须忌催尸之杀，", "怕临病者之爻。", "春辰夏未最难当，", "秋戌冬丑兴还死。", "又嫌天地转杀，", "最是凶神；", "乃遇日辰旺相，", "便言死处。", "春忌卯爻卯日，", "夏嫌午位午爻，", "秋金酉日最忌凶，", "冬子爻中逢子日。", "不论白面少年人，", "可惜雪鬓老年容。", "纵有家资过百斗，", "也须一命见阎君。"],
+          "yi": ["要忌讳催尸杀，", "怕它落在病人的爻上。", "春天的辰、夏天的未最难当，", "秋天的戌、冬天的丑，发动还是死。", "又嫌天转杀、地转杀，", "它们是最凶的神；", "如果遇到日辰旺相，", "就可以说出死的地方。", "春天忌卯爻、卯日，", "夏天嫌午位、午爻，", "秋天的金爻、酉日最忌凶，", "冬天子爻遇上子日。", "不论是白面的少年人，", "还是可惜的雪白鬓发的老人；", "纵然家产超过百斗，", "也总得拿一条命去见阎王。"],
+          "en": ["One must avoid the Urging-the-Corpse killing,", "and fear it falling on the sick person's line.", "Chen in spring and Wei in summer are the hardest to bear,", "and Xu in autumn and Chou in winter, rising, still mean death.", "Also dislike the Heaven-Turning and Earth-Turning killings,", "the most ill-omened spirits;", "if they meet a strong Day,", "one may then name the place of death.", "In spring avoid a Mao line and a Mao day,", "in summer dislike a Wu place and Wu line,", "in autumn the Metal line and the You day are the most to be feared,", "in winter a Zi line meeting a Zi day.", "Never mind a fair-faced youth,", "nor, sadly, an old person with snow-white temples;", "even if the family's wealth exceeds a hundred measures of grain,", "one must still go with one's life to see Lord Yama."] }
+      ],
+      "note": {
+        "yi": "「催尸杀」「天转杀」「地转杀」是神煞名：催尸杀按春辰夏未秋戌冬丑取（和下面的句子对得上），天转杀、地转杀的位置这里没有给。「便言死处」的「死处」按字面是死的地方，也可能是死的时间，书里没有说。「秋金酉日」是秋天的金爻和酉日，两者都算。卜筮全书神煞歌例里另有「丧车杀」（LY.ILL.BSQS.53）和「沐浴杀」，位置也是春辰夏未秋戌冬丑一类的取法，可对照。",
+        "en": "The 'Urging-the-Corpse', 'Heaven-Turning' and 'Earth-Turning' killings are spirit-stars: the Urging-the-Corpse killing is taken as Chen in spring, Wei in summer, Xu in autumn and Chou in winter (which matches the lines that follow), and the positions of the Heaven-Turning and Earth-Turning killings are not given here. 'The place of death' is literally where death happens, and may mean when; the book does not say. 'Autumn Metal You day' means the Metal line in autumn and the You day, and both count. The spirit-star verses of the Bushi Quanshu also have a 'Funeral Carriage killing' (LY.ILL.BSQS.53) and a 'Bathing killing', placed in the same way (Chen in spring, Wei in summer, Xu in autumn, Chou in winter), and can be compared."
+      },
+      "see": ["LY.ILL.DYTJ.27", "LY.ILL.DYTJ.31", "LY.ILL.DYTJ.32", "LY.ILL.ZSZ.01"]
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "火珠林",
+  "chapter": "占鬼神、占祟、占卦例(疾病相关各条)",
+  "chapter_en": "Divining ghosts and spirits, divining curses, worked applications (the entries on illness)",
+  "ranges": {"火珠林": [1, 810]},
+  "units": [
+    {
+      "id": "LY.ILL.HZL.11",
+      "topic": "神祟",
+      "chapter": "占鬼神",
+      "chapter_en": "Divining ghosts and spirits",
+      "title": "占鬼神·休囚为鬼旺相为神、本象家亲他宫外人；六爻定体：六爻公婆家亲佛道、五爻父母口愿土神、四爻叔伯土神半天、三爻兄弟门户境神、二爻夫妻土地家神、初爻小口灶君司命",
+      "rule": {
+        "yi": "休囚的是鬼，旺相的是神；在本象里的是家亲，在他宫里的是外人。六爻各有所主：六爻是公婆、家亲、佛道；五爻是父母、口愿、土神；四爻是叔伯、土神、半天；三爻是兄弟、门户、境神；二爻是夫妻、土地、家神；初爻是小口、灶君、司命。",
+        "en": "Resting or trapped it is a ghost, strong it is a spirit; in the own image it is the family ancestors, in another palace an outsider. The six lines each govern something: the sixth line the in-laws, the family ancestors and Buddhist and Daoist spirits; the fifth the parents, vows and the Earth spirit; the fourth uncles, the Earth spirit and the half-sky spirit; the third brothers, the doors and the district spirit; the second husband and wife, the Earth God and the household spirit; the first the children, the Hearth Lord and the Life-Governing Spirit."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [388, 389], "literal": ["父母", "兄弟"],
+          "zh": ["休囚为鬼，旺相为神；", "本象家亲，他宫外人。", "(1)六爻定体：", "六爻公婆家亲佛道", "五爻父母口愿土神", "四爻叔伯土神半天", "三爻兄弟门户境神", "二爻夫妻土地家神", "初爻小口灶君司命", "(2)五行鬼："],
+          "yi": ["休囚的是鬼，旺相的是神；", "在本象里的是家亲，在他宫里的是外人。", "（1）六爻各自所定的所主之体：", "六爻：公婆、家亲、佛道", "五爻：父母、口愿、土神", "四爻：叔伯、土神、半天", "三爻：兄弟、门户、境神", "二爻：夫妻、土地、家神", "初爻：小口、灶君、司命", "（2）五行的鬼："],
+          "en": ["Resting or trapped it is a ghost, strong it is a spirit;", "in the own image it is the family ancestors, in another palace an outsider.", "(1) What each of the six lines fixes as its body:", "the sixth line: the in-laws, the family ancestors, Buddhist and Daoist spirits", "the fifth line: the parents, vows, the Earth spirit", "the fourth line: uncles, the Earth spirit, the half-sky spirit", "the third line: brothers, the doors, the district spirit", "the second line: husband and wife, the Earth God, the household spirit", "the first line: the children, the Hearth Lord, the Life-Governing Spirit", "(2) The ghosts of the five phases:"] }
+      ],
+      "dispute": {
+        "yi": "爻位配鬼神，几本书的配法不同。火珠林这里：初爻小口、灶君、司命；二爻夫妻、土地、家神；三爻兄弟、门户、境神；四爻叔伯、土神、半天；五爻父母、口愿、土神；六爻公婆、家亲、佛道。卜筮全书的六位表（LY.ILL.BSQS.02）：初爻井神、二爻司命、三爻家先、四爻土地、五爻社司、六爻天神。易林补遗（LY.ILL.EL.37）是「六爻上仓至圣坟墓之神、五爻中界东岳、四爻右仪门将军、三爻家堂郡王府城隍、二爻县城隍灶神」这一路。同一位置配的神不同：二爻火珠林是土地、家神，卜筮全书是司命，易林补遗是灶神；初爻火珠林是灶君、司命，卜筮全书是井神；六爻火珠林是佛道，卜筮全书是天神，易林补遗是坟墓之神。各家按各地的习俗立说，书里没有裁决。",
+        "en": "Books match line positions to ghosts and spirits differently. The Huozhu Lin here: first line the children, the Hearth Lord, the Life-Governing Spirit; second husband and wife, the Earth God, the household spirit; third brothers, the doors, the district spirit; fourth uncles, the Earth spirit, the half-sky spirit; fifth parents, vows, the Earth spirit; sixth in-laws, family ancestors, Buddhist and Daoist spirits. The table of the six positions in the Bushi Quanshu (LY.ILL.BSQS.02): first line the well spirit, second the Life-Governing Spirit, third the family ancestors, fourth the Earth God, fifth the village altar spirit, sixth the heavenly spirit. The Yilin Buyi (LY.ILL.EL.37) runs along the lines of 'the sixth line the spirit of the high granary and the sage's tomb, the fifth the Eastern Peak of the middle realm, the fourth the general of the right gate, the third the household shrine, the prince and the city god of the prefecture, the second the county city god and the Kitchen God'. The spirit matched to the same position differs: for the second line the Huozhu Lin has the Earth God and the household spirit, the Bushi Quanshu the Life-Governing Spirit and the Yilin Buyi the Kitchen God; for the first line the Huozhu Lin has the Hearth Lord and the Life-Governing Spirit and the Bushi Quanshu the well spirit; for the sixth line the Huozhu Lin has Buddhist and Daoist spirits, the Bushi Quanshu the heavenly spirit and the Yilin Buyi the spirits of the tombs. Each sets it up by the customs of its own place, and the books do not settle it."
+      },
+      "note": {
+        "yi": "这一节头两句是总纲：休囚的是鬼（作祟的死者），旺相的是神（正神）；鬼落在本象里是家里的先人（家亲），落在别的宫里是外人。「六爻定体」是一张按爻位配对象的表，原书是一格一格排的：每一爻三样，第一样像是六亲的位置（六爻公婆、五爻父母、四爻叔伯、三爻兄弟、二爻夫妻、初爻小口），后两样是鬼神（家亲、佛道；口愿、土神；土神、半天；门户、境神；土地、家神；灶君、司命），但书里没有说三样各是什么，这里只照原样列出，不分栏。「公婆」是丈夫的父母（或祖父母），「境神」是一方境内的神，「半天」是半天之神（取象于四爻在半空），原文没有解释，只是字面译。表末的「（2）五行鬼：」是下一节的小标题，连在同一行里，所以放在这一条的末尾。这一张表（初灶君司命、二土地家神、三门户境神……）和卜筮全书的六爻诸占定位里的鬼神一行（初井神、二司命、三家先、四土地、五社司、六天神，LY.ILL.BSQS.02）、易林补遗的按爻位断神鬼（LY.ILL.EL.37）是同一类，配法各家不同，见「打架」。",
+        "en": "The first two sentences of this section are the general outline: resting or trapped it is a ghost (a dead person who brings a curse), strong it is a spirit (a proper god); a ghost falling in the own image is the family's ancestors (family ancestors), and falling in another palace it is an outsider. 'The six lines fix the body' is a table matching line positions to objects, laid out cell by cell in the original: three items to each line, the first seeming to be the position of a relation (the sixth line in-laws, the fifth parents, the fourth uncles, the third brothers, the second husband and wife, the first children), and the latter two being ghosts and spirits (family ancestors, Buddhist and Daoist; vows, the Earth spirit; the Earth spirit, the half-sky spirit; the doors, the district spirit; the Earth God, the household spirit; the Hearth Lord, the Life-Governing Spirit), but the book does not say what each of the three is, and here they are only listed as they stand without separating columns. 'Gong po' are the husband's parents (or grandparents), 'the district spirit' is the spirit of a territory, and 'the half-sky spirit' is the spirit of half-heaven (taking the image of the fourth line as being in mid-air), which the original does not explain, and they are rendered literally. The '(2) the ghosts of the five phases' at the end of the table is the small heading of the next section, run into the same line, and so it is placed at the end of this entry. This table (first Hearth Lord and Life-Governing Spirit, second Earth God and household spirit, third the doors and district spirit ...) is of the same kind as the row for spirits in the table of the positions of the lines in the Bushi Quanshu (first the well spirit, second the Life-Governing Spirit, third the family ancestors, fourth the Earth God, fifth the village altar spirit, sixth the heavenly spirit, LY.ILL.BSQS.02) and the Yilin Buyi's judging spirits by line position (LY.ILL.EL.37), and each puts the matching differently, see the dispute."
+      },
+      "see": ["LY.ILL.BSQS.02", "LY.ILL.EL.37", "LY.ILL.HZL.12", "LY.ILL.HZL.13", "LY.ILL.EL.29"]
+    },
+    {
+      "id": "LY.ILL.HZL.12",
+      "topic": "神祟",
+      "chapter": "占鬼神",
+      "chapter_en": "Divining ghosts and spirits",
+      "title": "占鬼神·五行鬼：金木横死、土时疫、火劳血、水落水；八纯卦：艮五圣、震天神、巽木神、离火神、乾功德、坤家将、坎落水、兑口愿",
+      "rule": {
+        "yi": "五行的鬼：金、木是横死，土是时疫，火是劳血，水是落水。八个纯卦：艮是五圣，震是天神，巽是木神，离是火神，乾是功德，坤是家将，坎是落水，兑是口愿。",
+        "en": "The ghosts of the five phases: Metal and Wood are violent death, Earth an epidemic, Fire consumption with spitting blood, Water drowning. The eight pure hexagrams: Gen is the Five Sages, Zhen the heavenly spirit, Xun the tree spirit, Li the fire spirit, Qian merit, Kun the household generals, Kan drowning, Dui vows."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [390, 392],
+          "zh": ["金木，横死；", "土，时疫；", "火，劳血；", "水，落水。", "八纯卦：", "艮，五圣；", "震，天神；", "巽，木神；", "离，火神；", "乾，功德；", "坤，家将；", "坎，落水；", "兑，口愿。"],
+          "yi": ["金、木，是横死的鬼；", "土，是时疫；", "火，是劳伤吐血；", "水，是落水。", "八个纯卦：", "艮，是五圣；", "震，是天神；", "巽，是木神；", "离，是火神；", "乾，是功德；", "坤，是家将；", "坎，是落水；", "兑，是口愿。"],
+          "en": ["Metal and Wood: a violent death;", "Earth: an epidemic of the season;", "Fire: consumption with spitting blood;", "Water: drowning.", "The eight pure hexagrams:", "Gen: the Five Sages;", "Zhen: the heavenly spirit;", "Xun: the tree spirit;", "Li: the fire spirit;", "Qian: merit and virtue;", "Kun: the household generals;", "Kan: drowning;", "Dui: vows."] }
+      ],
+      "note": {
+        "yi": "「五行鬼」是鬼爻属哪一行，就是哪一种死者：金木是横死（意外而死）、土是时疫（死于瘟疫）、火是劳血（劳伤吐血）、水是落水（淹死）。「八纯卦」是鬼落在八个纯卦里对应的神：艮五圣、震天神、巽木神、离火神、乾功德、坤家将、坎落水、兑口愿。「功德」是为功德而许的斋供，「家将」是家里供的将军神，「口愿」是口头许下的愿，这三处原文没有解释，是字面加常识的译法。五行鬼的分法和易林补遗的「金鬼配六兽」等（LY.ILL.EL.30 到 EL.34）、易冒的五行值鬼是同一类，各家说法大同小异：金鬼易林补遗说是「刀下之魂、喘咳横亡之鬼」，这里说是横死；火鬼易林补遗是「毒疮痨之魂、带血焚烧之鬼」，这里说是劳血；水鬼两处都是落水一类。",
+        "en": "'The ghosts of the five phases' says that whichever phase the ghost line belongs to is the kind of dead person: Metal and Wood a violent death (dying by accident), Earth an epidemic (dying of a plague), Fire consumption (wasting and spitting blood), Water drowning. 'The eight pure hexagrams' gives the spirit matched to a ghost falling in each of the eight pure hexagrams: Gen the Five Sages, Zhen the heavenly spirit, Xun the tree spirit, Li the fire spirit, Qian merit, Kun the household generals, Kan drowning, Dui vows. 'Merit' is a fast offering vowed for merit, the 'household generals' are the general spirits worshipped in the house, and 'vows' are vows spoken aloud; the original does not explain these three, and they are rendered literally with common sense. This way of dividing the ghosts by five phases is of the same kind as the Yilin Buyi's 'a Metal ghost matched to the six beasts' and so on (LY.ILL.EL.30 to EL.34) and the Yi Mao's ghost by five phases, and the books are much alike: for the Metal ghost the Yilin Buyi says 'the soul of one killed by a blade, the ghost of one who died of coughing and panting', where this says violent death; for the Fire ghost the Yilin Buyi says 'the soul of a poisonous sore or consumption, the ghost of burning with blood', where this says consumption with blood; for the Water ghost both say drowning."
+      },
+      "see": ["LY.ILL.HZL.11", "LY.ILL.HZL.13", "LY.ILL.EL.30", "LY.ILL.EL.34", "LY.ILL.EL.46"]
+    },
+    {
+      "id": "LY.ILL.HZL.13",
+      "topic": "神祟",
+      "chapter": "占鬼神",
+      "chapter_en": "Divining ghosts and spirits",
+      "title": "占鬼神·五乡独发克日克世取之：父母家先、子孙小儿、妻财妇婢、兄弟阳人、官鬼横恶；本象鬼动是家亲、旁爻鬼动是外人；土鬼是当处灵验之鬼、旺相为神休囚为鬼；《易林》察祸推其鬼处",
+      "rule": {
+        "yi": "五种六亲独发，克日、克世的取它，各有两层意思：父母是家先，子孙是小儿，妻财是妇人婢女，兄弟是阳人（男人），官鬼是横恶，以上随爻取。本象里的鬼动是家亲，旁爻的鬼动是外人；比如乾卦壬午鬼动是家亲，大有卦己巳鬼动是外人。土鬼是当地灵验的鬼，俗称神：旺相是神，休囚是鬼；动爻克世克日，也可以取来断祟。《易林》说：察祸要推它的鬼在什么地方，再拿身去配六亲，相克招生，就看见祸的端的。",
+        "en": "When one of the five quarters moves alone, take the one that controls the Day or the Self; each has two senses: Resource is the ancestors of the house, Output the small children, Wealth women and maids, Peer men (yang people), the Pressure line violent evil; the above follow the line. A ghost moving in the own image is the family ancestors, a ghost moving on a side line is an outsider; for example, in Qian a ghost moving on Ren Wu is the family ancestors, and in Dayou a ghost moving on Ji Si is an outsider. An Earth ghost is a ghost efficacious in the place, commonly called a spirit: strong it is a spirit, resting or trapped it is a ghost; a moving line controlling the Self or the Day can also be taken to judge a curse. The Yilin says: to examine a calamity, work out where its ghost is, and then match the Body to the six relations; control brings generation, and the true beginning of the calamity is seen."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [393, 397],
+          "zh": ["五乡独发，克日克世取之，各有两义：", "父母家先，子孙小儿，妻财妇婢，兄弟阳人，官鬼横恶，以上随爻。", "或问：本象家先，他官外人，何也？", "答曰：本象鬼动是家亲，旁爻鬼动是外人。假如乾卦壬午鬼动是家亲；大有卦己巳鬼动，是外人也。", "问：土鬼何也？曰：", "此乃当处灵验之鬼，俗谓之神者也，旺相为神，休囚为鬼，动爻克世克日，亦可取祟。", "《易林》云：察祸推其鬼处，还将身配六亲，相克招生，便见祸之端的。"],
+          "yi": ["五种六亲独发，克日、克世的取它，各有两层意思：", "父母是家先，子孙是小儿，妻财是妇人婢女，兄弟是阳人，官鬼是横恶，以上随爻取。", "有人问：本象是家先、他宫是外人，是什么道理？", "答：本象里的鬼动是家亲，旁爻的鬼动是外人；比如乾卦壬午鬼动是家亲，大有卦己巳鬼动是外人。", "问：土鬼是什么？答：", "这是当地灵验的鬼，俗称为神；旺相是神，休囚是鬼，动爻克世克日，也可以取来断祟。", "《易林》说：察祸要推它的鬼在什么地方，再拿身去配六亲，相克招生，就看见祸的端的。"],
+          "en": ["When one of the five quarters moves alone, take the one that controls the Day or the Self; each has two senses:", "Resource is the ancestors of the house, Output the small children, Wealth women and maids, Peer men (yang people), the Pressure line violent evil; the above follow the line.", "Someone asks: in the own image it is the ancestors of the house and in another palace an outsider, what is the principle?", "The answer: a ghost moving in the own image is the family ancestors, a ghost moving on a side line is an outsider; for example, in Qian a ghost moving on Ren Wu is the family ancestors, and in Dayou a ghost moving on Ji Si is an outsider.", "Asked: what is an Earth ghost? The answer:", "this is a ghost efficacious in the place, commonly called a spirit: strong it is a spirit, resting or trapped it is a ghost; a moving line controlling the Self or the Day can also be taken to judge a curse.", "The Yilin says: to examine a calamity, work out where its ghost is, and then match the Body to the six relations; control brings generation, and the true beginning of the calamity is seen."] }
+      ],
+      "note": {
+        "yi": "「五乡」指五种六亲（父母、子孙、妻财、兄弟、官鬼）这几个位置，「独发」是只有一爻动，「各有两义」是每一种六亲各有两层意思：一层是它本来的人物，一层是它作为鬼的样子（父母是家先，子孙是小儿，妻财是妇婢，兄弟是阳人，官鬼是横恶）。原文「他官外人」的「官」是「宫」之误，问答里同样，这里按「宫」译。「本象」是本卦本身，「他宫」是别的宫；乾卦的官鬼是午火，「壬午」是乾卦第四爻，鬼在本象里动，所以是家亲；大有卦（离宫）的鬼是亥水，「己巳」是巳火，和大有所属的宫（乾宫）相比是别宫的爻，所以是外人——原文没有把这层推理写出来，这一句我只按字面译。「《易林》」是书名，译作 Yilin。「身」是卦身。「相克招生」是被克的一方带来生机，原文没有解释。这一节和易林补遗的「六亲内外动断是谁的鬼」（LY.ILL.EL.40）是同一类。",
+        "en": "The 'five quarters' are the five relations (Resource, Output, Wealth, Peer, the Pressure line), 'moving alone' is only one line moving, and 'each has two senses' is that each relation has two layers: the person it originally is, and how it looks as a ghost (Resource the ancestors of the house, Output small children, Wealth women and maids, Peer yang people, the Pressure line violent evil). The 'guan' of 'ta guan wai ren' in the original is a miswriting of 'gong' (palace), and so in the questions, and it is rendered palace here. The 'own image' is the hexagram itself and 'another palace' is a different palace; in the sentence about Qian and Dayou, the original does not spell out the reasoning behind 'Ren Wu' and 'Ji Si' and only the words are rendered here. The 'Yilin' is the title of a book. The 'Body' is the hexagram Body. 'Control brings generation' says that the one controlled brings a chance of life, and the original does not explain it. This section is of the same kind as the Yilin Buyi's 'which of the six relations moving inside or outside tells whose ghost it is' (LY.ILL.EL.40)."
+      },
+      "see": ["LY.ILL.EL.40", "LY.ILL.HZL.11", "LY.ILL.HZL.12", "LY.ILL.HZL.14"]
+    },
+    {
+      "id": "LY.ILL.HZL.14",
+      "topic": "神祟",
+      "chapter": "占鬼神",
+      "chapter_en": "Divining ghosts and spirits",
+      "title": "占鬼神·附六神：青龙善恶经文蘸祀庙香、无气带刑自缢死；朱雀花幡口愿符命灶神、劳死鬼；勾陈天曹勅士、黄病路死鬼；螣蛇夜梦惊恐上许下保福、夜梦见鬼；白虎金刘神作犯白虎刀伤鬼；玄武上真北阴神、落水阴鬼",
+      "rule": {
+        "yi": "附六神。青龙：善恶、经文、蘸祀、庙香；无气带刑，是自缢死的鬼。朱雀：花幡、口愿、符命、灶神；无气带刑，是劳死的鬼。勾陈：天曹、勅士；无气带刑，是黄病、路死的鬼。螣蛇：夜梦、惊恐、上许下保福；无气带刑，是夜梦见鬼。白虎：金刘神、作犯白虎、刀伤鬼；无气带刑，是刀伤鬼。玄武：上真、北阴神；无气带刑，是落水的阴鬼。",
+        "en": "Appended, the six spirits. The Azure Dragon: good and evil, scriptures, sacrificial rites, temple incense; without qi and bearing a punishment, a ghost of hanging. The Vermilion Bird: flower banners, spoken vows, talismans, the Kitchen God; without qi and bearing a punishment, a ghost who died of toil. Hook Earth: the Heavenly Bureau, the commissioned officers; without qi and bearing a punishment, a ghost of jaundice, or of dying on the road. The Coiling Snake: dreams at night, fright, vows made above and thanks given below; without qi and bearing a punishment, seeing ghosts in dreams at night. The White Tiger: the Jin Liu spirit, the offence-making White Tiger, the ghost of a blade wound; without qi and bearing a punishment, a ghost of a blade wound. The Dark Tortoise: the high true one, the North Yin spirit; without qi and bearing a punishment, a yin ghost of drowning."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [398, 401],
+          "zh": ["附：", "六神", "青龙：善恶、经文、蘸祀、庙香。无气带刑，自缢死。", "朱雀：花幡、口愿、符命、灶神。无气带刑，劳死鬼。", "勾陈：天曹、勅士。无气带刑，黄病路死鬼。", "螣蛇：夜梦、惊恐、上许下保福。无气带刑，夜梦见鬼。", "白虎：金刘神、作犯白虎、刀伤鬼。无气带刑，刀伤鬼。", "玄武：上真、北阴神。无气带刑，落水阴鬼。"],
+          "yi": ["附带说明：", "六神：", "青龙：善恶、经文、蘸祀、庙香。无气带刑，是自缢死的鬼。", "朱雀：花幡、口愿、符命、灶神。无气带刑，是劳死的鬼。", "勾陈：天曹、勅士。无气带刑，是黄病、路死的鬼。", "螣蛇：夜梦、惊恐、上许下保福。无气带刑，是夜梦见鬼。", "白虎：金刘神、作犯白虎、刀伤鬼。无气带刑，是刀伤鬼。", "玄武：上真、北阴神。无气带刑，是落水的阴鬼。"],
+          "en": ["Appended:", "the six spirits:", "The Azure Dragon: good and evil, scriptures, sacrificial rites, temple incense; without qi and bearing a punishment, a ghost of hanging.", "The Vermilion Bird: flower banners, spoken vows, talismans, the Kitchen God; without qi and bearing a punishment, a ghost who died of toil.", "Hook Earth: the Heavenly Bureau, the commissioned officers; without qi and bearing a punishment, a ghost of jaundice, or of dying on the road.", "The Coiling Snake: dreams at night, fright, vows made above and thanks given below; without qi and bearing a punishment, seeing ghosts in dreams at night.", "The White Tiger: the Jin Liu spirit, the offence-making White Tiger, the ghost of a blade wound; without qi and bearing a punishment, a ghost of a blade wound.", "The Dark Tortoise: the high true one, the North Yin spirit; without qi and bearing a punishment, a yin ghost of drowning."] }
+      ],
+      "note": {
+        "yi": "这一节把六神各自的神和死鬼列出来：每一神前半是它管的神（青龙善恶、经文、蘸祀、庙香；朱雀花幡、口愿、符命、灶神……），后半「无气带刑」是这一神所临的爻无气又带刑时的鬼（青龙自缢死、朱雀劳死、勾陈黄病路死、螣蛇夜梦见鬼、白虎刀伤、玄武落水阴鬼）。「蘸祀」是醮祀，「上许下保福」是上面许愿、下面还愿保福，「金刘神」「作犯白虎」的意思原文没有解释，字面译。「上真」是高一级的真人，「北阴」是北方阴神。原文「六神」二字连在上一行「附：」的后面，又接在「青龙：」前面，所以「附」「六神」分成两个小句。这一节和易林补遗的「总论六神值诀」（LY.ILL.EL.47）是同一类，神名和鬼名各有出入。",
+        "en": "This section lists for each of the six spirits its gods and its dead ghost: the first half of each is the gods it governs (the Azure Dragon good and evil, scriptures, sacrificial rites, temple incense; the Vermilion Bird flower banners, spoken vows, talismans, the Kitchen God ...), and the second half 'without qi and bearing a punishment' is the ghost when the line the spirit sits on is without qi and bears a punishment (the Azure Dragon a ghost of hanging, the Vermilion Bird died of toil, Hook Earth jaundice or dying on the road, the Coiling Snake seeing ghosts in dreams, the White Tiger a blade wound, the Dark Tortoise a yin ghost of drowning). 'Sacrificial rites' is a jiao offering, 'vows made above and thanks given below' is a vow made above and redeemed below to keep fortune, and what the 'Jin Liu spirit' and the 'offence-making White Tiger' mean the original does not explain, and they are rendered literally. The 'high true one' is a true one of a higher rank and the 'North Yin' is the yin spirit of the north. In the original the two characters for 'the six spirits' run on from 'appended' on the line before and run into 'the Azure Dragon:' after, so 'appended' and 'the six spirits' are made two small pieces. This section is of the same kind as the Yilin Buyi's 'general discussion of the six spirits on the ghost' (LY.ILL.EL.47), with differences in the names of gods and ghosts."
+      },
+      "see": ["LY.ILL.EL.47", "LY.ILL.HZL.13", "LY.ILL.HZL.15", "LY.ILL.TXF.04"]
+    },
+    {
+      "id": "LY.ILL.HZL.15",
+      "topic": "神祟",
+      "chapter": "占鬼神",
+      "chapter_en": "Divining ghosts and spirits",
+      "title": "占鬼神·凡祭赛有三：祀上帝取藏爻中鬼神祗用月建、神堂家庙用日辰；皆要生合卦身不宜刑冲、不要动爻克害刑冲；合生福利而吉、带刑冲反招祸；卦爻中鬼自化入墓必有不了再牵之患",
+      "rule": {
+        "yi": "祭赛（祭神还愿）有三种：祭上帝，就取伏藏的爻里的鬼神，要用月建；神堂家庙，要用日辰。都要生合卦身，不宜刑冲，也不要动爻来克害刑冲。若合而生，福利而吉；若带刑冲，反而招祸。卦爻中的鬼自己化入墓，必有了不完、再牵连的祸患。",
+        "en": "Offerings and thanksgiving are of three kinds: for sacrificing to the High God take the ghost or spirit in the hidden line and use the Month; for a shrine hall or a family temple use the Day. All must generate and combine with the Body of the hexagram, must not clash or punish, and a moving line must not attack, harm, punish or clash with it. If they combine and generate it is fortunate and lucky; if it bears punishment or clash it invites calamity instead. If the ghost in the hexagram lines itself changes into a tomb, there will surely be an unfinished matter that drags on again."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [402, 402],
+          "zh": ["凡祭赛有三，如祀上帝，即取藏爻中鬼神祗，当用月建；神堂家庙，当用日辰。", "皆要生合卦身，不宜刑冲，亦不要动爻克害刑冲。", "如合生，福利而吉；若带刑冲，反招祸。", "卦爻中鬼自化入墓，必有不了再牵之患。"],
+          "yi": ["祭赛有三种：祭上帝，就取伏藏的爻里的鬼神，要用月建；神堂家庙，要用日辰。", "都要生合卦身，不宜刑冲，也不要动爻来克害刑冲。", "若合而生，福利而吉；若带刑冲，反而招祸。", "卦爻中的鬼自己化入墓，必有了不完、再牵连的祸患。"],
+          "en": ["Offerings and thanksgiving are of three kinds: for sacrificing to the High God take the ghost or spirit in the hidden line and use the Month; for a shrine hall or a family temple use the Day.", "All must generate and combine with the Body of the hexagram, must not clash or punish, and a moving line must not attack, harm, punish or clash with it.", "If they combine and generate it is fortunate and lucky; if it bears punishment or clash it invites calamity instead.", "If the ghost in the hexagram lines itself changes into a tomb, there will surely be an unfinished matter that drags on again."] }
+      ],
+      "note": {
+        "yi": "原文「凡祭赛有三」只列出两种（祀上帝、神堂家庙），第三种没有写出来，这里按原文译，不补。「藏爻中鬼神祗」是伏藏的爻里的鬼神，「祗」是地神；「当用月建」「当用日辰」是说祭上帝取月建为主、神堂家庙取日辰为主（月建管大，日辰管近）。「皆要生合卦身」的「卦身」译作 the Body of the hexagram。这一节讲还愿酬神时怎么看祭，和易林补遗的「还赛解厄」（LY.ILL.EL.57）、「解禳通用法」（LY.ILL.EL.54）是同一类；这里的判据是生合卦身则吉、刑冲则祸。",
+        "en": "The original 'offerings and thanksgiving are of three kinds' lists only two (sacrificing to the High God, and the shrine hall and family temple), and the third is not written, and here it is rendered as the original and not filled in. 'The ghost or spirit in the hidden line' is the ghost or spirit in the concealed line, and 'zhi' is an earth deity; 'use the Month' and 'use the Day' says that sacrifice to the High God takes the Month as the main and the shrine hall and family temple take the Day (the Month rules the great, the Day the near). The 'Body' of 'must generate and combine with the Body of the hexagram' is rendered the Body of the hexagram. This section tells how to look at a sacrifice when paying a vow to the gods, and is of the same kind as the Yilin Buyi's 'giving thanks and resolving misfortune' (LY.ILL.EL.57) and 'the general method of ward-offs' (LY.ILL.EL.54); the criterion here is that generating and combining with the Body is lucky and punishment or clash is calamity."
+      },
+      "see": ["LY.ILL.EL.57", "LY.ILL.EL.54", "LY.ILL.HZL.14"]
+    },
+    {
+      "id": "LY.ILL.HZL.16",
+      "topic": "神祟",
+      "chapter": "占失物鬼祟(占祟一段)",
+      "chapter_en": "Divining lost things and ghostly curses (the part on curses)",
+      "title": "占失物鬼祟(占祟)：阳鬼为男阴鬼为女、伏藏返对而取；占贼占祟以鬼阴阳为用；占祟鬼无正形但以支干取之、鬼动单为少阳拆为少阴重为太阳交为太阴、分老少何人看应爻最切",
+      "rule": {
+        "yi": "阳鬼是男，阴鬼是女；若是伏藏，就反过来取。占贼、占祟，以鬼的阴阳为用，占定是男是女，要看得的是哪一个官（鬼）。占祟，鬼没有正形，只用地支天干来取：鬼动，单（阳）是少阳，拆（阴）是少阴，重是太阳，交是太阴；要分老少是什么人，只看应爻最切。书中举了一个占祟的例子：遁之姤卦，是子孙鬼，一男一女，和首饰之类的东西有牵连，坟墓在西北。",
+        "en": "A yang ghost is male, a yin ghost is female; if it is hidden, take it the other way round. In divining a thief or a curse take the yin or yang of the ghost as the Subject, and fix male or female by which official (ghost) is obtained. In divining a curse the ghost has no true form, and it is taken only by the branch and stem: a moving ghost, single (yang) is lesser yang, split (yin) lesser yin, double is greater yang and crossed is greater yin; to tell what person is old or young look only at the Other line, which is the closest fit. The book gives an example of divining a curse: the hexagram Dun changing to Gou is an Output ghost, one man and one woman, bound up with things such as hairpins and bracelets, and the grave in the northwest."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [364, 365],
+          "zh": ["阳鬼为男，阴鬼为女；", "若是伏藏，返对而取。", "占贼占祟，以鬼阴阳为用，占主女男看得何官。"],
+          "yi": ["阳鬼是男，阴鬼是女；", "若是伏藏，就反过来取。", "占贼、占祟，以鬼的阴阳为用，占定是男是女，要看得的是哪一个官。"],
+          "en": ["A yang ghost is male, a yin ghost is female;", "if it is hidden, take it the other way round.", "In divining a thief or a curse take the yin or yang of the ghost as the Subject, and fix male or female by which official (ghost) is obtained."] },
+        { "by": "经", "book": "火珠林", "range": [365, 365],
+          "zh": ["占祟，", "鬼无正形，", "但以支干取之。", "鬼动以单为少阳，", "拆为少阴，", "重为太阳，", "交为太阴。", "如分老少何人，", "但看应爻最切。"],
+          "yi": ["占祟的时候，", "鬼没有正形，", "只用地支天干来取。", "鬼动，单（阳）是少阳，", "拆（阴）是少阴，", "重是太阳，", "交是太阴。", "要分老少是什么人，", "只看应爻最切。"],
+          "en": ["In divining a curse", "the ghost has no true form,", "and it is taken only by the branch and stem.", "A moving ghost, single (yang) is lesser yang,", "split (yin) is lesser yin,", "double is greater yang", "and crossed is greater yin.", "To tell what person is old or young", "look only at the Other line, which is the closest fit."] },
+        { "by": "书中例", "book": "火珠林", "range": [32, 34],
+          "zh": ["又请占祟例为式，答曰：", "如遁之姤卦，此卦是子孙鬼，一男一女为钗钏等事物来沉滞，男儿赤，性燥，女儿洁白，性刚；其坟墓现在西北，恐有动犯，告之则吉。", "问曰：何以知之？", "曰：二爻丙午火是鬼，化辛亥水是子孙，丙午纳音属水，化辛亥又属水，如二乾宫子孙，故曰子孙鬼也；", "一男丙午，一女辛亥也；", "火主赤，金主白，火燥金刚，皆以五行之性言之也；", "为钗钏者，辛亥乃钗钏金也；", "言坟墓在西北者，水墓在戌，又火绝在亥，亥，西北也；", "墓有犯者，艮属土，化巽为木，木去克土山。"],
+          "yi": ["又请求占祟的例子来做样子，答：", "比如遁之姤卦，这一卦是子孙鬼，一男一女，因为钗钏一类的东西来沉滞，男孩子赤色、性子燥，女孩子洁白、性子刚；他们的坟墓现在西北，恐怕有人动犯，告诉他们就吉。", "问：凭什么知道？", "答：二爻丙午火是鬼，化出辛亥水是子孙，丙午的纳音属水，化出的辛亥又属水，好像二个乾宫的子孙，所以叫子孙鬼；", "一男是丙午，一女是辛亥；", "火主赤，金主白，火燥金刚，都是按五行的性子来说的；", "是钗钏，是因为辛亥是钗钏金；", "说坟墓在西北，是因为水的墓在戌，又火绝在亥，亥是西北；", "墓有人动犯，是因为艮属土，化出巽是木，木去克土山。"],
+          "en": ["Asked again for an example of divining a curse to serve as a pattern, the answer:", "Take the hexagram Dun changing to Gou: this hexagram is an Output ghost, one man and one woman, stalled because of things such as hairpins and bracelets, the boy red and of a dry temper, the girl white and of a firm temper; their grave is now in the northwest, and it is feared that someone has disturbed it, and if told of it there is luck.", "Asked: how is it known?", "The answer: the second line Bing Wu Fire is the ghost, changing out Xin Hai Water which is Output, the nayin of Bing Wu is Water and the Xin Hai it changes to is also Water, like two Output lines of the Qian palace, so it is called an Output ghost;", "the one man is Bing Wu and the one woman is Xin Hai;", "Fire governs red and Metal white, Fire is dry and Metal firm, all said by the nature of the five phases;", "the hairpins and bracelets, because Xin Hai is hairpin-and-bracelet Metal;", "the grave being in the northwest, because the tomb of Water is at Xu, and Fire is in extinction at Hai, and Hai is the northwest;", "the grave being disturbed, because Gen belongs to Earth and Xun that it changes into is Wood, and Wood goes to control the mountain of Earth."] }
+      ],
+      "note": {
+        "yi": "这一条前两段（L364—L365）是火珠林「占失物鬼祟」里占祟的那一半；前面「占贼」的那几句（阳宫鬼出现主男鬼、伏藏主女……）是占失物的，归失物那个问题域，这里不收。「以鬼阴阳为用，占主女男看得何官」的后半句意思读不确定，「得何官」是得到的是哪个官（鬼），字面译。「单」「拆」「重」「交」是四种爻的写法：单是阳爻不动（少阳）、拆是阴爻不动（少阴）、重是阳爻动（太阳）、交是阴爻动（太阴）。第三段是书里举的占祟的例子，出在全书前面「易中明义」一节里，按书中例收，原文里两行之间隔了一个空行，连着读。例里「一男丙午，一女辛亥」、「钗钏金」、「火绝在亥」等按原文译。「如二乾宫子孙」读不确定，字面译。",
+        "en": "The first two passages of this entry (L364-L365) are the half of the Huozhu Lin's 'divining lost things and ghostly curses' that is about divining a curse; the earlier sentences about divining a thief ('a yang-palace ghost appearing means a male ghost, hidden means female ...') are about lost things and belong to that question domain, and are not taken here. The second half of 'take the yin or yang of the ghost as the Subject, fix male or female by which official is obtained' is not certain in sense, and 'which official is obtained' is rendered literally. 'Single', 'split', 'double' and 'crossed' are four ways of writing a line: single is a yang line still (lesser yang), split is a yin line still (lesser yin), double is a yang line moving (greater yang) and crossed is a yin line moving (greater yin). The third passage is an example of divining a curse given in the book, in the section 'What is made plain in the Changes' near the front of the whole book, and it is taken as a case from the book; in the original a blank line falls between two of its lines, and it is read as continuous. In the example 'the one man is Bing Wu and the one woman is Xin Hai', 'hairpin-and-bracelet Metal' and 'Fire is in extinction at Hai' are rendered as in the original. 'Like two Output lines of the Qian palace' is not certain and is rendered literally."
+      },
+      "see": ["LY.ILL.HZL.13", "LY.ILL.EL.41", "LY.ILL.HZL.11"]
+    },
+    {
+      "id": "LY.ILL.HZL.17",
+      "topic": "他人病",
+      "chapter": "官伏子孙",
+      "chapter_en": "The official hidden under Output",
+      "title": "官伏子孙：鬼伏子孙只宜散忧；若子孙旺相占看夫病即死",
+      "rule": {
+        "yi": "鬼伏在子孙下，只宜散忧；若要取用官，须官鬼旺相、透出到值日的日辰才行。若子孙旺相，占看丈夫的病，就死。",
+        "en": "The ghost hidden under Output is only fit for dispelling worries; if the official is to be used, the Pressure line must be strong and come out on the ruling day. If Output is strong, divining a husband's illness, he dies."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [139, 139],
+          "zh": ["鬼伏子孙，", "只宜散忧，", "若用宫，", "须是官鬼旺相，", "透出直日辰方可。", "若子孙旺相，", "占看夫病即死。"],
+          "yi": ["鬼伏在子孙下，", "只宜散忧；", "若要用官，", "须是官鬼旺相，", "透出到值日的日辰才行。", "若子孙旺相，", "占看丈夫的病，就死。"],
+          "en": ["The ghost hidden under Output", "is only fit for dispelling worries;", "if the official is to be used,", "the Pressure line must be strong", "and come out on the ruling day.", "If Output is strong,", "divining a husband's illness, he dies."] }
+      ],
+      "note": {
+        "yi": "这一节的标题是「官伏子孙」，头一句对句（鬼伏子孙，去路无门；官乘旺相，透出可分）不在这里收。占的是妻子问丈夫：官鬼代表丈夫，鬼伏在子孙下、子孙又旺相（子孙克官鬼），所以占丈夫的病是死。「若用宫」的「宫」是「官」之误，这里按「官」译。「直日辰」是值日的日辰，「透出」是伏藏的鬼在日辰上现出来。和阐奥歌章、断易天机的「妻占夫病」诗（LY.ILL.CA.07、LY.ILL.DYTJ.08）不是同一条，那两首讲的是鬼、财、兄、父的动静。",
+        "en": "The heading of this section is 'the official hidden under Output', and its opening couplet ('the ghost hidden under Output, the road out has no door; the official riding strength, once it comes out it can be told apart') is not taken here. The case is a wife asking about her husband: the Pressure line stands for the husband, the ghost is hidden under Output and Output is also strong (Output controls the Pressure line), and so divining the husband's illness he dies. The 'gong' of 'ruo yong gong' is a miswriting of 'guan' (official), and is rendered official here. The 'ruling day' is the day that is on duty, and 'come out' is the hidden ghost appearing on the day branch. It is not the same entry as the poems 'a wife divining her husband's illness' in the Chan'ao Gezhang and the Duanyi Tianji (LY.ILL.CA.07, LY.ILL.DYTJ.08), which speak of the movement and stillness of the ghost, Wealth, Peer and Resource."
+      },
+      "see": ["LY.ILL.CA.07", "LY.ILL.DYTJ.08", "LY.ILL.HZL.18"]
+    },
+    {
+      "id": "LY.ILL.HZL.18",
+      "topic": "生死",
+      "chapter": "妻财独发",
+      "chapter_en": "Wealth moving alone",
+      "title": "妻财独发：生鬼伤父，问病难瘳、占亲无路；财动克父亦能生鬼，然财爻宜旺不宜空、宜静不宜动",
+      "rule": {
+        "yi": "妻财独发，生鬼、伤父；问病，难以痊愈，占亲人，没有出路。大抵财动克父，也能生鬼；但财爻要旺、不要空，要静、不要动。",
+        "en": "Wealth moving alone generates the ghost and injures the father; asking about illness, it is hard to be cured, and divining a relative, there is no way out. Broadly, Wealth moving controls the father and can also generate the ghost; but the Wealth line should be strong and not Void, still and not moving."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [196, 197],
+          "zh": ["妻财独发，生鬼伤父；问病难瘳，占亲无路。", "大抵财动克父，亦能生鬼；", "然财爻宜旺，不宜空；宜静、不宜动。"],
+          "yi": ["妻财独发，生鬼、伤父；问病，难以痊愈，占亲人，没有出路。", "大抵财动克父，也能生鬼；", "但财爻要旺、不要空，要静、不要动。"],
+          "en": ["Wealth moving alone generates the ghost and injures the father; asking about illness, it is hard to be cured, and divining a relative, there is no way out.", "Broadly, Wealth moving controls the father and can also generate the ghost;", "but the Wealth line should be strong and not Void, still and not moving."] }
+      ],
+      "note": {
+        "yi": "这一节的标题是「妻财独发」，头两句「妻财独发，生鬼伤父」说的是财爻一个人动：动了就克父母（伤父）、又生官鬼（鬼），所以问病难愈、占亲人无路。「大抵财动克父，亦能生鬼」是给这个道理的解释；「然财爻宜旺，不宜空；宜静、不宜动」一句是说财爻本身宜旺相、宜静，不是专门讲病的，这里连着收下来。下文讲占脱货、占婚姻、占讼的几句（惟占脱货要财爻发动……）不在病的范围，不收。「父」在这里是父母爻（Resource），「占亲」是占亲人。这和天玄赋「妻财独发」的说法，以及易冒等处的「财动克父」（LY.ILL.YM.42 一带）是同一类。",
+        "en": "The heading of this section is 'Wealth moving alone', and its first two lines 'Wealth moving alone generates the ghost and injures the father' say that when the Wealth line alone moves it controls Resource (injuring the father) and also generates the Pressure line (the ghost), and so asking about illness it is hard to cure and divining a relative there is no way out. 'Broadly, Wealth moving controls the father and can also generate the ghost' is the explanation given for this; 'but the Wealth line should be strong and not Void, still and not moving' says the Wealth line itself should be strong and still, and is not about illness in particular, and is taken along here as it runs on. The following lines about divining the disposal of goods, marriage and lawsuits ('only in divining the disposal of goods must the Wealth line move ...') are outside illness and are not taken. The 'father' here is the Resource line, and 'divining a relative' is divining a relative. This is of the same kind as the Tianxuan Fu's saying on Wealth moving alone, and the 'Wealth moving controls the father' in the Yi Mao and elsewhere (around LY.ILL.YM.42)."
+      },
+      "see": ["LY.ILL.HZL.17", "LY.ILL.HZL.07"]
+    },
+    {
+      "id": "LY.ILL.HZL.19",
+      "topic": "病因",
+      "chapter": "占人口",
+      "chapter_en": "Divining household members",
+      "title": "占人口·有鬼无子多怪梦而绝嗣、有鬼无财主疾病以多端",
+      "rule": {
+        "yi": "卦里有鬼没有子孙，多怪梦、并且绝嗣；有鬼没有财，主疾病多端。",
+        "en": "With a ghost and no Output, many strange dreams and no heir; with a ghost and no Wealth, illness in many forms."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [491, 491],
+          "zh": ["有鬼无子，多怪梦而绝嗣，", "有鬼无财，主疾病以多端。"],
+          "yi": ["有鬼没有子孙，多怪梦、并且绝嗣；", "有鬼没有财，主疾病多端。"],
+          "en": ["With a ghost and no Output, many strange dreams and no heir;", "with a ghost and no Wealth, illness in many forms."] }
+      ],
+      "note": {
+        "yi": "这一句在火珠林「占人口」一节里，那一节讲的是家里几口人的命运（卦无父母占人寿命不延、爻无妻财兄伯贫穷……），这里只收有关疾病的一对句子。「有鬼无财」是卦里有官鬼、没有财爻（禄命）：财是禄命，没有财则鬼无制、病多。这和本文「以财为禄，以鬼为祟」（LY.ILL.HZL.04）是同一个道理。「以多端」按「多端」译。",
+        "en": "This sentence is in the Huozhu Lin's section on 'divining household members', which is about the fortunes of the several people in a house (with no Resource in the hexagram, the person's lifespan does not extend, with no Wealth line the elder brother is poor ...), and here only the pair of lines about illness is taken. 'A ghost and no Wealth' is a Pressure line in the hexagram and no Wealth line (salary and life): Wealth is the salary and life, and without it the ghost is unchecked and the illness is many. This is the same principle as the text 'take Wealth as the salary and the ghost as the curse' (LY.ILL.HZL.04). 'Yi duo duan' is rendered 'in many forms'."
+      },
+      "see": ["LY.ILL.HZL.04", "LY.ILL.HZL.18"]
+    },
+    {
+      "id": "LY.ILL.HZL.20",
+      "topic": "症候",
+      "chapter": "占卦例·(十八)占疾病",
+      "chapter_en": "Worked applications: (18) divining illness",
+      "title": "(十八)占疾病：壬午火鬼正值九四爻、火鬼主热；若占父母九二木财发动必伤、幸九五金一制其病可痊但牵连未脱",
+      "rule": {
+        "yi": "（十八）占疾病：壬午火鬼，正好在九四爻，火鬼主热。若占父母，九二的木财发动必然伤（克父母），幸好九五的金一制，他的病可以痊愈，只是牵连着还没有脱身。其余照这个类推。",
+        "en": "(18) Divining illness: the Ren Wu Fire ghost falls exactly on the ninth in the fourth place, and a Fire ghost means heat. If a parent is divined for, the Wood Wealth on the ninth in the second place moving will surely injure (control Resource), but luckily the Metal on the ninth in the fifth place checks it, and his illness can be cured, only it is still tangled and has not yet shaken free. The rest follow by analogy."
+      },
+      "quotes": [
+        { "by": "经", "book": "火珠林", "range": [777, 778],
+          "zh": ["（十八）占疾病", "壬午火鬼，正值九四爻，火鬼主热。", "若占父母，其九二木财发动必伤，幸九五金一制，其病可痊，但牵连末脱。", "余类推。"],
+          "yi": ["（十八）占疾病", "壬午火鬼，正好在九四爻，火鬼主热。", "若占父母，九二的木财发动必然伤，幸好九五的金一制，他的病可以痊愈，只是牵连着还没有脱身。", "其余照这个类推。"],
+          "en": ["(18) Divining illness", "the Ren Wu Fire ghost falls exactly on the ninth in the fourth place, and a Fire ghost means heat.", "If a parent (the Resource line) is divined for, the Wood Wealth on the ninth in the second place moving will surely injure, but luckily the Metal on the ninth in the fifth place checks it, and his illness can be cured, only it is still tangled and has not yet shaken free.", "The rest follow by analogy."] }
+      ],
+      "note": {
+        "yi": "这一节是火珠林后面「占卦例」一部分里的一条：那一部分用同一个卦逐项演示（十七占蚕、十八占疾病、十九占姓字……），所以「壬午火鬼」「九四爻」「九二木财」「九五金」指的是那一个卦上的爻（卦的排盘在这一节前面，原书用表格排，文件里排乱了，这里不收）。这一条本身能读出来的规矩是：火鬼主热；占父母病时，财爻发动克父母必伤，若有金爻制住木财，病就可以痊愈，但牵连着还没有脱身。「木财」是属木的财爻，「金一制」是金制木。「（十八）」是原文的编号。和「妻财独发，生鬼伤父；问病难瘳」（LY.ILL.HZL.18）是同一个道理，只是这里多了「有金制财」这一救。",
+        "en": "This section is one entry in the part of the Huozhu Lin near the end on 'worked applications': that part works through item after item on one and the same hexagram (17 divining silkworms, 18 divining illness, 19 divining a name ...), and so 'Ren Wu Fire ghost', 'the ninth in the fourth place', 'the Wood Wealth on the ninth in the second place' and 'the Metal on the ninth in the fifth place' refer to the lines of that one hexagram (its layout is set out before this section, arranged as a table in the original and scrambled in the file, and is not taken here). What can be read out of this entry as a rule is: a Fire ghost means heat; divining a parent's illness, the Wealth line moving controls Resource and will surely injure, but if a Metal line checks the Wood Wealth the illness can be cured, only it is still tangled and has not shaken free. 'Wood Wealth' is a Wealth line belonging to Wood, and 'Metal checks it' is Metal controlling Wood. The '(18)' is the numbering of the original. It is the same principle as 'Wealth moving alone generates the ghost and injures the father; asking about illness it is hard to cure' (LY.ILL.HZL.18), only with the rescue of 'Metal checking Wealth' added here."
+      },
+      "see": ["LY.ILL.HZL.18", "LY.ILL.HZL.07"]
+    }
+  ]
+}

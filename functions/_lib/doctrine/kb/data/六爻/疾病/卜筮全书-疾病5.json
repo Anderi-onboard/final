@@ -1,0 +1,186 @@
+{
+  "shushu": "六爻",
+  "domain": "疾病",
+  "work": "卜筮全书",
+  "chapter": "阐幽精要·神煞歌例(占病相关各煞)",
+  "chapter_en": "Chanyou Jingyao: verses on spirit-stars (the stars that bear on illness)",
+  "ranges": {"卜筮大全": [9946, 10144]},
+  "units": [
+    {
+      "id": "LY.ILL.BSQS.48",
+      "topic": "医药",
+      "chapter": "阐幽精要·十九、神煞歌例·吉神",
+      "chapter_en": "Chanyou Jingyao, no. 19: verses on spirit-stars, the lucky stars",
+      "title": "神煞歌例·天医：占病遇此爻动虽凶有救；天医正卯二亥三丑四未五巳六卯七亥八丑九未十巳十一卯十二亥",
+      "rule": {
+        "yi": "神煞歌例说：占病遇到天医这一爻，发动虽然凶，也有救。天医的位置按月取：正月卯、二月亥、三月丑、四月未、五月巳、六月卯、七月亥、八月丑、九月未、十月巳、十一月卯、十二月亥。",
+        "en": "The verses on spirit-stars say: in divining illness, meeting the Heavenly Physician line, even if it moves and is ominous there is rescue. The Heavenly Physician is placed by month: Mao in the first, Hai in the second, Chou in the third, Wei in the fourth, Si in the fifth, Mao in the sixth, Hai in the seventh, Chou in the eighth, Wei in the ninth, Si in the tenth, Mao in the eleventh and Hai in the twelfth."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9946, 9947],
+          "zh": ["占病遇此爻，", "动虽凶有救。", "天医正卯二猪临，", "三月随丑四未寻，", "五蛇六兔七居亥，", "八丑九羊十巳存，", "十一再来寻卯上，", "十二亥上作医人。"],
+          "yi": ["占病，遇到这一爻（天医），", "发动虽然凶，也有救。", "天医：正月在卯，二月在亥（猪），", "三月随到丑，四月在未，", "五月是巳（蛇），六月是卯（兔），七月居亥，", "八月丑，九月未（羊），十月巳，", "十一月再回到卯上，", "十二月亥上作医人。"],
+          "en": ["In divining illness, meeting this line (the Heavenly Physician),", "even if it moves and is ominous there is rescue.", "The Heavenly Physician: in the first month at Mao, in the second at Hai (the pig),", "in the third month it follows to Chou, in the fourth it is found at Wei,", "the fifth Si (the snake), the sixth Mao (the rabbit), the seventh it stays at Hai,", "the eighth Chou, the ninth Wei (the sheep), the tenth it stays at Si,", "the eleventh it comes again to Mao,", "and in the twelfth month Hai acts as the physician."] }
+      ],
+      "note": {
+        "yi": "这一首的十二个月位置和断易天机的天医月表一字不差（LY.ILL.DYTJ.30、LY.ILL.DYTJ.34）。结论的说法两本不同：断易天机说「病人有此爻上卦，必主名医下药有效」，卜筮全书说「占病遇此爻，动虽凶有救」，两处都是吉，只是卜筮全书连「动而为凶」时也说有救。「动虽凶有救」按字面读是这一爻发动虽然凶（或：遇到它发动虽有凶象），仍然有救，歌里没有细讲。",
+        "en": "The positions for the twelve months are word for word those of the monthly table of the Heavenly Physician in the Duanyi Tianji (LY.ILL.DYTJ.30, LY.ILL.DYTJ.34). The conclusion is worded differently in the two books: the Duanyi Tianji says 'a sick person who has this line in the hexagram will surely have a famous doctor whose medicine is effective', the Bushi Quanshu says 'in divining illness, meeting this line, even if it moves and is ominous there is rescue'; both are favourable, only the Bushi Quanshu says there is rescue even when it moves and is ominous. 'Even if it moves and is ominous there is rescue' is read to the letter as: even though this line moves ominously (or: even though meeting it moving has an ominous look), there is still rescue; the verse goes no further."
+      },
+      "see": ["LY.ILL.DYTJ.30", "LY.ILL.DYTJ.34", "LY.ILL.BSQS.10"]
+    },
+    {
+      "id": "LY.ILL.BSQS.49",
+      "topic": "医药",
+      "chapter": "阐幽精要·十九、神煞歌例·吉神",
+      "chapter_en": "Chanyou Jingyao, no. 19: verses on spirit-stars, the lucky stars",
+      "title": "神煞歌例·解神：月解若值此辰官事散纵然重病也离身；日解戊癸鸡啼官事散病人无药不须忧；解脱神戊癸辰逢官讼消病人不必生忧虑",
+      "rule": {
+        "yi": "神煞歌例里三个解神讲到病：月解神，遇到这个月的解神位，官事消散，纵然重病也会离开身体；日解神，戊、癸日逢酉，官事散，病人没有药也不用忧；解脱神，戊、癸日逢辰，官司消，病人不必忧虑。",
+        "en": "Three resolving spirits in the verses on spirit-stars bear on illness: the Month Resolution, on meeting the place of the month's Resolution, official business scatters and even a grave illness leaves the body; the Day Resolution, on Wu and Gui days meeting You, official business scatters and a sick person without medicine need not worry; the Release spirit, on Wu and Gui days meeting Chen, lawsuits dissolve and the sick person need not worry."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [9997, 9997],
+          "zh": ["月解正二起于申，", "三四还从酉上轮，", "五六之月从戌上，", "七八能行亥上存，", "九十之月临午位，", "子丑两月未宫尊，", "若值此辰官事散，", "纵然重病也离身。"],
+          "yi": ["月解：正月、二月起在申，", "三月、四月仍然轮到酉上；", "五月、六月从戌上走；", "七月、八月能行到亥上停留；", "九月、十月到午位；", "子、丑两个月（十一月、十二月），未宫居尊；", "如果遇到这个支，官事就散，", "纵然是重病，也会离开身体。"],
+          "en": ["The Month Resolution: in the first and second months it starts at Shen,", "in the third and fourth it turns again to You;", "in the fifth and sixth months it goes by Xu;", "in the seventh and eighth it can go on to stay at Hai;", "in the ninth and tenth months it comes to the Wu place;", "in the two months of Zi and Chou (the eleventh and twelfth) the Wei palace holds the honoured place;", "if one meets this branch, official business scatters,", "and even a grave illness leaves the body."] },
+        { "by": "经", "book": "卜筮大全", "range": [10001, 10001],
+          "zh": ["甲己逢蛇乙庚猴，", "丙辛逢虎丁壬牛，", "戊癸鸡啼官事散，", "病人无药不须忧。"],
+          "yi": ["日解：甲、己日逢巳（蛇），乙、庚日逢申（猴），", "丙、辛日逢寅（虎），丁、壬日逢丑（牛），", "戊、癸日逢酉（鸡），官事就散；", "病人没有药也不用忧。"],
+          "en": ["The Day Resolution: on Jia and Ji days it is Si (the snake), on Yi and Geng days Shen (the monkey),", "on Bing and Xin days Yin (the tiger), on Ding and Ren days Chou (the ox),", "on Wu and Gui days You (the rooster), and official business scatters;", "a sick person without medicine need not worry."] },
+        { "by": "经", "book": "卜筮大全", "range": [10013, 10013],
+          "zh": ["甲己日亥乙庚申，", "丙辛日丑丁壬未，", "戊癸辰逢官讼消，", "病人不必生忧虑。"],
+          "yi": ["解脱神：甲、己日在亥，乙、庚日在申，", "丙、辛日在丑，丁、壬日在未，", "戊、癸日逢辰，官司就消散，", "病人不必生出忧虑。"],
+          "en": ["The Release spirit: on Jia and Ji days at Hai, on Yi and Geng days at Shen,", "on Bing and Xin days at Chou, on Ding and Ren days at Wei,", "on Wu and Gui days meeting Chen, lawsuits dissolve,", "and the sick person need not worry."] }
+      ],
+      "note": {
+        "yi": "月解、日解、解脱神是「解神」一类，本义是解官事（官非、官讼），歌里顺带说到病人。月解神的位置和断易天机的月解表一样（申酉戌亥午未，LY.ILL.DYTJ.30），说法的结尾不同：断易天机是「病人有此解神，天医上卦即病愈」，卜筮全书是「若值此辰官事散，纵然重病也离身」。日解神的歌和断易天机一字不差（LY.ILL.DYTJ.30）。解脱神这一首断易天机里没有。「逢某支」「若值此辰」怎样才算遇上，歌里没有讲。",
+        "en": "The Month Resolution, the Day Resolution and the Release spirit are 'resolving spirits', whose original use is to resolve official business (official trouble, lawsuits), and the verses mention the sick person in passing. The positions of the Month Resolution are those of the table in the Duanyi Tianji (Shen, You, Xu, Hai, Wu, Wei, LY.ILL.DYTJ.30), and the wording of the ending differs: the Duanyi Tianji has 'a sick person with this resolving spirit, with the Heavenly Physician in the hexagram, is cured at once', the Bushi Quanshu has 'if one meets this branch official business scatters, and even a grave illness leaves the body'. The verse of the Day Resolution is word for word that of the Duanyi Tianji (LY.ILL.DYTJ.30). The verse of the Release spirit is not in the Duanyi Tianji. The verses do not say what counts as 'meeting a certain branch' or 'falling on this branch'."
+      },
+      "see": ["LY.ILL.DYTJ.30"]
+    },
+    {
+      "id": "LY.ILL.BSQS.50",
+      "topic": "医药",
+      "chapter": "阐幽精要·十九、神煞歌例·吉神",
+      "chapter_en": "Chanyou Jingyao, no. 19: verses on spirit-stars, the lucky stars",
+      "title": "神煞歌例·活曜星：六甲遇动则产、疾病遇动则痊；正卯二辰三巳四午五未六申七酉八戌九亥十子十一丑十二寅",
+      "rule": {
+        "yi": "活曜星：怀孕遇它发动就生产，疾病遇它发动就痊愈；位置按月顺行：正月卯、二月辰、三月巳、四月午、五月未、六月申、七月酉、八月戌、九月亥、十月子、十一月丑、十二月寅。",
+        "en": "The Living Star: a pregnancy, when it moves, gives birth; an illness, when it moves, is cured; its place goes forward month by month: Mao in the first month, Chen in the second, Si in the third, Wu in the fourth, Wei in the fifth, Shen in the sixth, You in the seventh, Xu in the eighth, Hai in the ninth, Zi in the tenth, Chou in the eleventh and Yin in the twelfth."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10034, 10035],
+          "zh": ["六甲遇动则产，", "疾病遇动则痊。", "正卯二辰三月巳，", "四午五未六居申，", "七酉八戌九亥上，", "十子一丑十二寅。"],
+          "yi": ["怀孕遇到它发动，就生产；", "疾病遇到它发动，就痊愈。", "正月在卯，二月在辰，三月在巳；", "四月在午，五月在未，六月在申；", "七月在酉，八月在戌，九月在亥；", "十月在子，十一月在丑，十二月在寅。"],
+          "en": ["A pregnancy, when it moves, gives birth;", "an illness, when it moves, is cured.", "First month Mao, second Chen, third month Si;", "fourth Wu, fifth Wei, sixth at Shen;", "seventh You, eighth Xu, on Hai in the ninth;", "tenth Zi, eleventh Chou, twelfth Yin."] }
+      ],
+      "note": {
+        "yi": "活曜星是一颗吉星，位置从正月的卯起，每月顺行一位。「六甲」是怀孕（「身怀六甲」），「遇动」是这颗星所在的爻发动。这一颗星断易天机里没有。「则痊」的痊愈只是结论，歌里没有说病轻病重。",
+        "en": "The Living Star is an auspicious star, placed from Mao in the first month and going forward one place each month. 'The Six Jia' is pregnancy ('carrying the six jia'), and 'when it moves' is the line where this star stands moving. This star is not in the Duanyi Tianji. 'Is cured' is only the conclusion, and the verse does not say whether the illness is light or grave."
+      },
+      "see": ["LY.ILL.DYTJ.34", "LY.ILL.BSQS.48"]
+    },
+    {
+      "id": "LY.ILL.BSQS.51",
+      "topic": "风险",
+      "chapter": "阐幽精要·十九、神煞歌例·凶神",
+      "chapter_en": "Chanyou Jingyao, no. 19: verses on spirit-stars, the ominous stars",
+      "title": "神煞歌例·岁前神煞：从太岁起顺轮十二位，三丧门主孝服、六死符、十一天狗吊客、十二病符切莫逢",
+      "rule": {
+        "yi": "岁前神煞：十二个神煞都从太岁起，顺着一位一位轮下去：太岁、剑锋、伏尸同位，第二位太阳、天空，第三位丧门主孝服，第四位勾绞、贯索，第五位官符、五鬼，第六位死符、小耗，第七位栏干、大耗，第八位暴败、天厄，第九位飞廉、白虎，第十位福德、卷舌，第十一位天狗、吊客，第十二位病符，千万不要遇上。",
+        "en": "The stars before the Year: all twelve start from Tai Sui and go round forward place by place: Tai Sui, Sword Edge and Hidden Corpse in one place; second Great Yang and Heavenly Emptiness; third the Mourning Gate, meaning mourning dress; fourth Hook-Strangle and Cord-Through; fifth Official Tally and the Five Ghosts; sixth Death Tally and Small Loss; seventh Railing and Great Loss; eighth Sudden Ruin and Heavenly Distress; ninth Feilian and the White Tiger; tenth Fortune Virtue and the Curled Tongue; eleventh the Heavenly Dog and the Guest of Condolence; twelfth the Sickness Tally, which one must not meet."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10041, 10041],
+          "zh": ["其法皆从太岁上起。", "假如子年，", "就子上是太岁，", "剑锋伏尸。", "丑是太阳天空，", "寅是丧门主孝服。", "逐一顺轮，", "周而复始。"],
+          "yi": ["它们的取法都是从太岁上起。", "比如子年，", "就是子上为太岁，", "同位的是剑锋、伏尸。", "丑上是太阳、天空，", "寅上是丧门，主孝服。", "依次顺着轮下去，", "转完一周又重新开始。"],
+          "en": ["All are found by starting from Tai Sui.", "For example in a Zi year,", "Tai Sui is on Zi,", "with the Sword Edge and Hidden Corpse.", "Chou is Great Yang and Heavenly Emptiness,", "Yin is the Mourning Gate, which means mourning dress.", "It goes round one by one in order,", "and starts again when the round is done."] },
+        { "by": "经", "book": "卜筮大全", "range": [10042, 10042],
+          "zh": ["太岁剑锋伏尸同，", "二曰太阳并天空，", "三是丧门主孝服，", "四为勾绞贯索凶，", "五位官符兼五鬼，", "六曰死符小耗攻，", "七是栏干并大耗，", "八为暴败天厄中，", "九是飞廉同白虎，", "十为褔德卷舌从，", "十一天狗并吊客，", "十二病符切莫逢。"],
+          "yi": ["太岁、剑锋、伏尸同在一位；", "第二位是太阳和天空；", "第三位是丧门，主孝服；", "第四位是勾绞、贯索，凶；", "第五位是官符和五鬼；", "第六位是死符、小耗来攻；", "第七位是栏干和大耗；", "第八位是暴败、天厄；", "第九位是飞廉和白虎；", "第十位是福德，卷舌相随；", "第十一位是天狗和吊客；", "第十二位是病符，千万不要遇上。"],
+          "en": ["Tai Sui, Sword Edge and Hidden Corpse are together;", "the second is Great Yang and Heavenly Emptiness;", "the third is the Mourning Gate, meaning mourning dress;", "the fourth is Hook-Strangle and Cord-Through, ominous;", "the fifth is the Official Tally and the Five Ghosts;", "the sixth is the Death Tally and Small Loss attacking;", "the seventh is the Railing and Great Loss;", "the eighth is Sudden Ruin and Heavenly Distress;", "the ninth is Feilian and the White Tiger;", "the tenth is Fortune Virtue, with the Curled Tongue following;", "the eleventh is the Heavenly Dog and the Guest of Condolence;", "the twelfth is the Sickness Tally, which one must not meet."] }
+      ],
+      "dispute": {
+        "yi": "十二位岁煞各家的名单不一样。卜筮全书的岁前神煞是：一太岁剑锋伏尸、二太阳天空、三丧门、四勾绞贯索、五官符五鬼、六死符小耗、七栏干大耗、八暴败天厄、九飞廉白虎、十福德卷舌、十一天狗吊客、十二病符；断易天机的「四利三元」（LY.ILL.DYTJ.50）是：一太岁、二太阳、三丧门、四太阴、五官符、六死符、七岁破、八龙德、九白虎、十福德、十一吊客、十二病符。第一、二、三、五、六、九、十、十一、十二位的主名两本一致；第四位（勾绞贯索对太阴）、第七位（栏干大耗对岁破）、第八位（暴败天厄对龙德）不同，而且卜筮全书每一位后面还并带了一两颗别的星。书里没有裁决。",
+        "en": "The books' lists of the twelve year-stars differ. The stars before the Year in the Bushi Quanshu are: first Tai Sui with Sword Edge and Hidden Corpse, second Great Yang with Heavenly Emptiness, third Mourning Gate, fourth Hook-Strangle and Cord-Through, fifth Official Tally with the Five Ghosts, sixth Death Tally with Small Loss, seventh Railing with Great Loss, eighth Sudden Ruin and Heavenly Distress, ninth Feilian with the White Tiger, tenth Fortune Virtue with the Curled Tongue, eleventh the Heavenly Dog with the Guest of Condolence, twelfth Sickness Tally; the Duanyi Tianji's 'Four Gains and Three Origins' (LY.ILL.DYTJ.50) runs: first Tai Sui, second Great Yang, third Mourning Gate, fourth Great Yin, fifth Official Tally, sixth Death Tally, seventh Year-break, eighth Dragon Virtue, ninth White Tiger, tenth Fortune Virtue, eleventh Guest of Condolence, twelfth Sickness Tally. The principal names agree in the first, second, third, fifth, sixth, ninth, tenth, eleventh and twelfth places; the fourth (Hook-Strangle and Cord-Through against Great Yin), the seventh (Railing and Great Loss against Year-break) and the eighth (Sudden Ruin and Heavenly Distress against Dragon Virtue) differ, and the Bushi Quanshu joins one or two further stars to each place. The books do not decide."
+      },
+      "note": {
+        "yi": "这十二位是流年神煞：子年时太岁、剑锋、伏尸在子，太阳、天空在丑，丧门在寅，依次往下，病符在亥。占病要看的是名字里带丧和病的几位：丧门（主孝服）、死符、吊客、病符（「切莫逢」），歌里只对这几位给了明白的话，其余几位只点名。原文「褔德」的褔是福的异写，这里的福德是一颗神煞，不是子孙爻。这一组里其余的神煞（天哭、四季小杀等）和本条的区别是：它们按月取，这一条按年取。",
+        "en": "These twelve are year-stars: in a Zi year Tai Sui, Sword Edge and Hidden Corpse are at Zi, Great Yang and Heavenly Emptiness at Chou, the Mourning Gate at Yin, and so on, with the Sickness Tally at Hai. In divining illness the ones to look at are those with mourning and illness in their names: the Mourning Gate (mourning dress), the Death Tally, the Guest of Condolence and the Sickness Tally ('not to be met'); the verse speaks plainly only of these, and the rest are merely named. The 'Fortune' of 'Fortune Virtue' is written in a variant character in the original, and the Fortune Virtue here is a spirit-star, not the Output line. This entry differs from the other spirit-stars in this group (the Weeping, the small killing of the four seasons and so on) in being placed by the year, while those are placed by the month."
+      },
+      "see": ["LY.ILL.DYTJ.50", "LY.ILL.DYTJ.35", "LY.ILL.DYTJ.36", "LY.ILL.HJC.127"]
+    },
+    {
+      "id": "LY.ILL.BSQS.52",
+      "topic": "风险",
+      "chapter": "阐幽精要·十九、神煞歌例·凶神",
+      "chapter_en": "Chanyou Jingyao, no. 19: verses on spirit-stars, the ominous stars",
+      "title": "神煞歌例·占病大忌的煞：天哭杀、四季小杀、三丘五墓、勾陈杀(占病及讼)、白虎杀",
+      "rule": {
+        "yi": "神煞歌例点明占病大忌的五个煞：天哭杀（正五九月羊、二六十月猴、三七十一月鸡、四八十二月犬）；四季小杀（春羊夏龙秋牛冬犬，临身命，轻灾也凶）；三丘五墓（春丑夏辰秋未冬戌为三丘，五墓取对宫，病人作福也难留）；勾陈杀（从辰逆行，占病及讼大忌）；白虎杀（从申顺行，占病大忌）。",
+        "en": "The verses on spirit-stars name five killings that are great taboos in divining illness: the Weeping killing (the sheep in the first, fifth and ninth months, the monkey in the second, sixth and tenth, the rooster in the third, seventh and eleventh, the dog in the fourth, eighth and twelfth); the small killing of the four seasons (the sheep in spring, the dragon in summer, the ox in autumn, the dog in winter; on the Body or the natal line even a light misfortune is ominous); the Three Mounds and Five Tombs (Chou in spring, Chen in summer, Wei in autumn, Xu in winter are the Three Mounds, the Five Tombs are taken from the opposite palace, and a sick person can hardly be kept even by making offerings); the Hook Earth killing (backward from Chen, a great taboo for illness and lawsuits); the White Tiger killing (forward from Shen, a great taboo for illness)."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10050, 10051],
+          "zh": ["占病大忌。", "哭声正五九居羊，", "二六十月在猴乡，", "三七十一鸡啼叫，", "四八十二犬猖狂。"],
+          "yi": ["占病，大忌。", "哭声：正月、五月、九月在羊（未），", "二月、六月、十月在猴（申）的地方，", "三月、七月、十一月是鸡（酉）在啼叫，", "四月、八月、十二月是犬（戌）猖狂。"],
+          "en": ["In divining illness, a great taboo.", "The Weeping killing: in the first, fifth and ninth months it stays at the sheep (Wei),", "in the second, sixth and tenth months in the land of the monkey (Shen),", "in the third, seventh and eleventh months the rooster (You) crows,", "in the fourth, eighth and twelfth months the dog (Xu) runs wild."] },
+        { "by": "经", "book": "卜筮大全", "range": [10070, 10071],
+          "zh": ["占病忌之。", "春忌羊兮夏忌龙，", "秋牛冬犬哭重重，", "卦中值此临身命，", "任是轻灾也见凶。"],
+          "yi": ["占病，忌它。", "春天忌羊（未）、夏天忌龙（辰），", "秋天牛（丑）、冬天犬（戌），哭了又哭；", "卦里遇到这个，临在身和命上，", "就是小灾也见凶。"],
+          "en": ["In divining illness, avoid it.", "In spring avoid the sheep (Wei), in summer the dragon (Chen),", "in autumn the ox (Chou), in winter the dog (Xu), weeping upon weeping;", "if the hexagram meets this, sitting on the Body and the natal line,", "even a light misfortune turns ominous."] },
+        { "by": "经", "book": "卜筮大全", "range": [10085, 10086],
+          "zh": ["占病大忌。", "春丑夏辰秋即未，", "三冬逢戌是三丘；", "却与五墓对宫取，", "病人作福也难留。"],
+          "yi": ["占病，大忌。", "春天是丑、夏天是辰、秋天就是未，", "冬天逢戌，这是三丘；", "五墓却要取三丘的对宫，", "病人就是作福也难留住。"],
+          "en": ["In divining illness, a great taboo.", "In spring Chou, in summer Chen, in autumn Wei,", "in winter meeting Xu: these are the Three Mounds;", "the Five Tombs are taken from the opposite palace;", "the sick person, though he makes offerings for fortune, can hardly be kept."] },
+        { "by": "经", "book": "卜筮大全", "range": [10138, 10139],
+          "zh": ["从辰上起，", "正月逆轮。", "占病及讼大忌。", "正辰二卯三月寅，", "四丑五子六亥程，", "七戌八酉九申位，", "十羊子马丑蛇行。"],
+          "yi": ["从辰上起，", "从正月起逆着轮。", "占病和官司，大忌。", "正月辰、二月卯、三月寅，", "四月丑、五月子、六月亥一路走，", "七月戌、八月酉、九月申位，", "十月羊（未）、十一月马（午）、十二月蛇（巳）走。"],
+          "en": ["It starts from Chen,", "going backward from the first month.", "A great taboo for illness and lawsuits.", "First month Chen, second Mao, third month Yin,", "fourth Chou, fifth Zi, sixth on the road to Hai,", "seventh Xu, eighth You, ninth the Shen place,", "tenth the sheep (Wei), eleventh the horse (Wu), twelfth the snake (Si) moves."] },
+        { "by": "经", "book": "卜筮大全", "range": [10143, 10144],
+          "zh": ["从申顺轮。", "占病大忌。", "正申二酉三戌乡，", "四亥五子六丑伤，", "七寅八卯九辰上，", "十巳一马十二羊。"],
+          "yi": ["从申起，顺着轮。", "占病，大忌。", "正月申、二月酉、三月戌乡，", "四月亥、五月子、六月丑伤，", "七月寅、八月卯、九月辰上，", "十月巳、十一月马（午）、十二月羊（未）。"],
+          "en": ["It starts from Shen and goes forward.", "In divining illness, a great taboo.", "First month Shen, second You, third month the Xu land,", "fourth Hai, fifth Zi, sixth Chou harms,", "seventh Yin, eighth Mao, ninth on Chen,", "tenth Si, eleventh the horse (Wu), twelfth the sheep (Wei)."] }
+      ],
+      "note": {
+        "yi": "这五个煞各自的月位，和断易天机的一致：天哭杀和四季小杀（LY.ILL.DYTJ.33）、三丘五墓（LY.ILL.DYTJ.31）的位置一字不差（只差几个字的写法），勾陈杀从辰逆行同 LY.ILL.DYTJ.33 的一条，白虎杀从申顺行同占家宅一段的白虎杀例（正月起申、二月酉，见本书第 3577 行的旧注，火珠林第 1129 行也有）。卜筮全书对这五个煞都标了「占病大忌」或「占病忌之」（勾陈杀是「占病及讼大忌」），没有限定发动；断易天机则在勾陈杀、天哭杀、四季小杀下写「占病发动凶」或「占病忌发动」，三丘五墓下写「此占病忌」，勾陈杀、天哭杀、四季小杀这几条限定了要发动才凶。各煞的月位写成十二支是按歌里的生肖（羊=未、猴=申、鸡=酉、犬=戌、牛=丑、龙=辰、马=午、蛇=巳）换的。",
+        "en": "The monthly positions of these five killings agree with the Duanyi Tianji: the Weeping and the small killing of the four seasons (LY.ILL.DYTJ.33) and the Three Mounds and Five Tombs (LY.ILL.DYTJ.31) are in the same positions (with a few characters written differently), the Hook Earth killing going backward from Chen is the same as the one in LY.ILL.DYTJ.33, and the White Tiger killing going forward from Shen is the same as the White Tiger killing in the passage on divining a house (Shen in the first month, You in the second, see the old note at line 3577 of this book; the Huozhu Lin, line 1129, has it too). The Bushi Quanshu marks all five killings 'a great taboo for illness' or 'to be avoided in illness' (the Hook Earth killing 'a great taboo for illness and lawsuits'), without limiting it to moving; the Duanyi Tianji writes 'in divining illness it is ominous if it moves' or 'in divining illness it must not move' under the Hook Earth killing, the Weeping and the small killing of the four seasons, and 'this is a taboo in divining illness' under the Three Mounds and Five Tombs, so in those three it limits the ill omen to the killing moving. The monthly positions are written as the twelve branches by turning the animals of the verses into branches (sheep Wei, monkey Shen, rooster You, dog Xu, ox Chou, dragon Chen, horse Wu, snake Si)."
+      },
+      "see": ["LY.ILL.DYTJ.33", "LY.ILL.DYTJ.31", "LY.ILL.BSQS.11", "LY.ILL.ZSZ.01"]
+    },
+    {
+      "id": "LY.ILL.BSQS.53",
+      "topic": "生死",
+      "chapter": "阐幽精要·十九、神煞歌例·凶神",
+      "chapter_en": "Chanyou Jingyao, no. 19: verses on spirit-stars, the ominous stars",
+      "title": "神煞歌例·占病见死的煞：墓门杀病人不死也伤财；丧车杀人来占病无他断、教君作急买棺材；沐浴杀发动病人亡",
+      "rule": {
+        "yi": "神煞歌例里三个主病人死亡的煞：墓门杀，甲乙见金、丙丁见水、戊己见木、庚辛见火、壬癸见土，病人不死也伤财；丧车杀，春鸡夏鼠秋兔冬马，有人来占病，没有别的可断，劝你赶紧去买棺材；沐浴杀，春辰夏未秋戌冬丑，发动，病人死亡。",
+        "en": "Three killings in the verses on spirit-stars that mean a sick person's death: the Tomb Gate killing, Jia and Yi meeting Metal, Bing and Ding Water, Wu and Ji Wood, Geng and Xin Fire, Ren and Gui Earth: the sick person, if he does not die, at least loses money; the Mourning Cart killing, the rooster in spring, the rat in summer, the rabbit in autumn and the horse in winter: a person who comes to divine illness has nothing else to be judged, and I advise you to buy a coffin at once; the Bathing killing, Chen in spring, Wei in summer, Xu in autumn and Chou in winter: if it moves, the sick person dies."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [10090, 10092],
+          "zh": ["甲乙见金墓门开，", "丙丁见水哭哀哀，", "戊己见木须防厄，", "庚辛见火孝服来，", "壬癸见土难回避，", "病人不死也伤财。"],
+          "yi": ["甲、乙见金，墓门打开；", "丙、丁见水，哭得哀哀；", "戊、己见木，要防灾厄；", "庚、辛见火，丧服要来；", "壬、癸见土，难以回避，", "病人就是不死，也要伤财。"],
+          "en": ["Jia and Yi meeting Metal, the gate of the tomb opens;", "Bing and Ding meeting Water, there is mournful weeping;", "Wu and Ji meeting Wood, beware of calamity;", "Geng and Xin meeting Fire, mourning dress is coming;", "Ren and Gui meeting Earth, it is hard to avoid,", "and the sick person, if he does not die, at least loses money."] },
+        { "by": "经", "book": "卜筮大全", "range": [10096, 10096],
+          "zh": ["丧车春鸡夏鼠来，", "秋兔冬马好安排；", "人来占病无他断，", "教君作急买棺材。"],
+          "yi": ["丧车：春天是鸡、夏天来的是鼠，", "秋天是兔、冬天是马，好安排；", "有人来占病，没有别的可断，", "劝你赶紧去买棺材。"],
+          "en": ["The Mourning Cart: in spring the rooster, in summer the rat comes,", "in autumn the rabbit, in winter the horse, which is well arranged;", "a person who comes to divine illness, there is nothing else to be judged,", "I advise you to hurry and buy a coffin."] },
+        { "by": "经", "book": "卜筮大全", "range": [10100, 10100],
+          "zh": ["沐浴杀难当，", "春辰夏未殃，", "秋戌冬丑是，", "发动病人亡。"],
+          "yi": ["沐浴杀难当，", "春天辰、夏天未是祸殃，", "秋天戌、冬天丑就是它；", "发动，病人就死亡。"],
+          "en": ["The Bathing killing is hard to bear;", "Chen in spring and Wei in summer bring harm,", "Xu in autumn and Chou in winter are it;", "if it moves, the sick person dies."] }
+      ],
+      "dispute": {
+        "yi": "丧车杀的四季位置，两本不一样。卜筮全书这一首是「春鸡夏鼠秋兔冬马」；断易天机（LY.ILL.DYTJ.32）是「春鸡夏鼠秋马冬羊」；春、夏两季一致，秋、冬不同。另外断易天机的旌旗杀（LY.ILL.DYTJ.33）是「春兔夏鼠秋鸡冬马」，和卜筮全书这一首的丧车只差春、秋两季的鸡兔互换。书里没有裁决。",
+        "en": "The seasonal positions of the Mourning Cart differ between the two books. This verse in the Bushi Quanshu has 'the rooster in spring, the rat in summer, the rabbit in autumn, the horse in winter'; the Duanyi Tianji (LY.ILL.DYTJ.32) has 'the rooster in spring, the rat in summer, the horse in autumn, the sheep in winter'; spring and summer agree, autumn and winter do not. Moreover the Banner killing of the Duanyi Tianji (LY.ILL.DYTJ.33) has 'the rabbit in spring, the rat in summer, the rooster in autumn, the horse in winter', which differs from the Mourning Cart of this verse only in the rooster and rabbit swapped between spring and autumn. The books do not decide."
+      },
+      "note": {
+        "yi": "墓门杀的五句，每句的前一个字组是日干（甲乙、丙丁、戊己、庚辛、壬癸），后一个字是五行，对着的正好是克那一组日干的五行（木逢金、火逢水、土逢木、金逢火、水逢土），也就是各日干的官鬼；歌里没有这样说明，这是从字面排出来的。「哭哀哀」「孝服」是丧事的征兆。丧车杀的位置，按地支对冲推：春（卯）冲酉（鸡）、夏（午）冲子（鼠）、秋（酉）冲卯（兔）、冬（子）冲午（马），卜筮全书这一首正好是各季旺支的对冲，断易天机的秋冬两处不是；这是按地支推出来的，书里没有这样讲。「教君作急买棺材」是语气很重的一句，原文如此。沐浴杀的位置（春辰夏未秋戌冬丑）和本篇疾病论里催尸杀的位置一样（LY.ILL.BSQS.36），歌里没有说它们是不是同一个煞。",
+        "en": "In each of the five lines on the Tomb Gate killing, the first group of characters is a pair of day stems (Jia and Yi, Bing and Ding, Wu and Ji, Geng and Xin, Ren and Gui) and the second is an element, and the element is exactly the one that controls that pair of stems (Wood meeting Metal, Fire meeting Water, Earth meeting Wood, Metal meeting Fire, Water meeting Earth), that is, the Pressure of each day stem; the verse does not say so and this is laid out from the letter. 'Mournful weeping' and 'mourning dress' are signs of a funeral. The positions of the Mourning Cart, reckoned by the clashes of the branches: spring (Mao) clashes You (the rooster), summer (Wu) clashes Zi (the rat), autumn (You) clashes Mao (the rabbit), winter (Zi) clashes Wu (the horse); this verse in the Bushi Quanshu is exactly the clash of each season's ruling branch, and the Duanyi Tianji's autumn and winter are not; this is reckoned from the branches and the book does not say it. 'I advise you to buy a coffin at once' is a very heavy sentence, as the original has it. The positions of the Bathing killing (Chen in spring, Wei in summer, Xu in autumn, Chou in winter) are the same as those of the Urging-the-Corpse killing in the chapter on illness in this book (LY.ILL.BSQS.36), and the verses do not say whether they are the same killing."
+      },
+      "see": ["LY.ILL.DYTJ.32", "LY.ILL.DYTJ.33", "LY.ILL.BSQS.36", "LY.ILL.ZSZ.01"]
+    }
+  ]
+}

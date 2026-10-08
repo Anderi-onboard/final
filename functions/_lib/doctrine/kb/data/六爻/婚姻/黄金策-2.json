@@ -1,0 +1,451 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "黄金策",
+  "chapter": "婚姻",
+  "chapter_en": "Marriage",
+  "ranges": {"卜筮大全": [6301, 6458], "卜筮正宗": [1984, 2079], "增删卜易": [11570, 11810]},
+  "units": [
+    {
+      "id": "LY.MARRY.HJC.16",
+      "topic": "子嗣",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "文书若动当权，子嗣必然萧索：父母旺动克子孙；子孙旬空反可得子，不空受伤则无子息",
+      "rule": {
+        "yi": "父母爻当权发动，子孙躲在空亡里，是事情还没定；如果子孙不空，而是死绝无气，就被父母克，日后一定克子，没有子息。",
+        "en": "If the Resource line holds power and moves while Output hides in the Void, the matter is not yet settled; if Output is not Void but dead, cut off and without qi, it is controlled by Resource, and later the children will surely be harmed, leaving no offspring."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6361, 6361],
+          "zh": ["文书若动当权，子嗣必然萧索。"],
+          "yi": ["文书爻如果发动当权，子嗣一定稀少冷落。"],
+          "en": ["If the document line moves and holds power, offspring will surely be few and lonely."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6362, 6362],
+          "zh": ["父母当权发动，子孙在空避之地，乃是事体未定。", "若不空，而死绝无气，则被其克，异日必然克子。"],
+          "yi": ["父母爻当权发动，子孙在空亡躲避之处，那是事情还没有定。", "如果不空，而是死绝无气，就被它克，日后一定克子。"],
+          "en": ["If the Resource line holds power and moves while Output hides in a Void place, the matter is not yet settled.", "If it is not Void but dead, cut off and without qi, it is controlled by Resource, and later the children will surely be harmed."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2016, 2016],
+          "zh": ["父母旺动，子孙旬空反可得子，至子孙出空之年亦难免克；", "若不空现受其伤，主无子息。"],
+          "yi": ["父母爻旺相发动，子孙旬空反而可以得子，到子孙出空的那一年也难免被克；", "如果不空、现身而受伤，主没有子息。"],
+          "en": ["With Resource thriving and moving, Output in the ten-day Void can on the contrary have a child, though in the year Output leaves the Void it will still inevitably be controlled;", "if it is not Void but shows and is harmed, there will be no offspring."] }
+      ],
+      "see": ["LY.MARRY.HJC.10"]
+    },
+    {
+      "id": "LY.MARRY.HJC.17",
+      "topic": "对方",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "若在一宫，当有通家之好；若加三合，曾叨会面之亲：世应生合比和、财鬼同宫是亲上亲；带三合则曾见过面",
+      "rule": {
+        "yi": "世应相生相合或比和，财、鬼又在同一宫，是亲上加亲；不带三合，虽是亲戚也不相识；带三合，一定是见过面的。",
+        "en": "The Self and Other generating, combining or in harmony, with Wealth and Pressure also in one palace, is kin upon kin; without a three-harmony frame they are relatives who do not know each other, and with one they have surely met."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6364, 6364],
+          "zh": ["若在一宫，当有通家之好；", "若加三合，曾叨会面之亲。"],
+          "yi": ["如果在同一宫，该有世交的情谊；", "如果再加三合，是曾经见过面的亲戚。"],
+          "en": ["If they are in one palace, there should be a friendship between families;", "if a three-harmony frame is added, they are relatives who have met."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6365, 6365],
+          "zh": ["世应生合比和，财鬼又同宫，是亲上亲也。", "不带三合，虽亲不识认；", "若带三合，必曾会面者。"],
+          "yi": ["世应相生、相合、比和，财、鬼又在同一宫，是亲上加亲。", "不带三合，虽然是亲戚也不相识；", "带三合，一定是见过面的。"],
+          "en": ["The Self and Other generating, combining or in harmony, with Wealth and Pressure also in one palace, is kin upon kin.", "Without a three-harmony frame, though relatives they do not know each other;", "with a three-harmony frame they have surely met."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2018, 2018],
+          "zh": ["世应生合比和，财鬼又同一宫，是亲上亲也。", "不带三合，虽亲未认，若带三合，必曾会过矣。"],
+          "yi": ["世应生合比和，财、鬼又在同一宫，是亲上加亲。", "不带三合，虽是亲戚也没有认识；带三合，一定曾经见过面。"],
+          "en": ["The Self and Other generating, combining or in harmony, with Wealth and Pressure also in one palace, is kin upon kin.", "Without a three-harmony frame, though kin they have not made acquaintance; with one, they have surely met."] }
+      ],
+      "note": {
+        "yi": "「本宫至亲，他宫外亲」等分法见 HJC.34。",
+        "en": "The division into 'nearest kin of the home palace' and 'outside kin of another palace' is in HJC.34."
+      },
+      "see": ["LY.MARRY.HJC.34"]
+    },
+    {
+      "id": "LY.MARRY.HJC.18",
+      "topic": "总则",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "如逢财鬼空亡，乃婚姻之大忌；苟遇阴阳得位，实天命之所关：男占女用财、女占男用鬼，用神无损害为要，空亡不可执法推",
+      "rule": {
+        "yi": "财、鬼两爻是占婚姻的用神，逢空亡本不吉，但不可死守：男占女以财为主，鬼空不妨；女占男以鬼为主，财空不妨；要紧的是用神没有损害。财鬼空亡而干支相合、世应相生、阴阳得位，是真姻缘，只是半辈子同床、不能白头到老，那是天命，不是刑克；逢冲遇克叫避空，反而不用担心。长辈占子侄、兄占弟，就看子孙爻、兄弟爻，不能一律用财官。",
+        "en": "The Wealth and Pressure lines are the Subject in a marriage divination and Void on them is by nature unlucky, but it must not be followed rigidly: when a man divines about a woman Wealth is the main thing and Pressure Void does no harm; when a woman divines about a man Pressure is the main thing and Wealth Void does no harm; what matters is that the Subject is undamaged. If Wealth and Pressure are Void but the stems and branches combine, the Self and Other generate each other and yin and yang are in their places, it is a real marriage bond, only that they share a pillow for half a lifetime and do not grow old together, which is decreed by Heaven and not the work of punishment or control; meeting a clash or control is called escaping the Void and there is on the contrary nothing to fear. When elders divine for a son or nephew, or an elder brother for a younger, look at the Output line or the Peer line, and do not always use Wealth and Pressure."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6367, 6367],
+          "zh": ["如逢财鬼空亡，乃婚姻之大忌；", "苟遇阴阳得位，实天命之所关。"],
+          "yi": ["如果遇到财、鬼空亡，是婚姻的大忌；", "如果遇到阴阳得位，实在是天命所关。"],
+          "en": ["Meeting Void on Wealth and Pressure is a great taboo for marriage;", "meeting yin and yang in their places is truly a matter of the decree of Heaven."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6368, 6369],
+          "zh": ["财鬼二爻，占婚姻之用神。", "若值空亡，必不吉利。", "《天玄赋》曰：财空妻失，鬼空夫亡。", "然不可执法推。", "盖男占女，以财为主，鬼空不妨；", "女占男，以鬼为主，财空不妨。", "要在用神无损害耳。", "若财鬼空亡，而干支相合，世应相生，阴阳得位者，此实姻缘；", "不过半世衾枕，不能偕老；", "非夫妻刑克，故也。", "乃天命所在耳。", "逢冲遇克谓避空，反不虑。", "但主其一生该虚设衾枕，或半生在外仕宦工商之类。"],
+          "yi": ["财、鬼两爻，是占婚姻的用神。", "如果遇到空亡，必定不吉利。", "《天玄赋》说：财空妻失，鬼空夫亡。", "然而不可死守这个办法去推。", "因为男占女，以财为主，鬼空不妨；", "女子占男子，以鬼为主，财空也无妨。", "要紧的是用神没有损害罢了。", "如果财、鬼空亡，而干支相合，世应相生，阴阳得位，这是实实在在的姻缘；", "只不过半辈子同床共枕，不能白头到老；", "并不是夫妻刑克的缘故，", "是天命所在罢了。", "逢冲遇克叫避空，反而不用忧虑。", "只是主他一生该有虚设的衾枕，或者半辈子在外做官、经商之类。"],
+          "en": ["The Wealth and Pressure lines are the Subject in divining marriage.", "If they meet Void, it is surely unlucky.", "The Tianxuan Fu says: Wealth Void, the wife is lost; Pressure Void, the husband dies.", "But one must not judge by this rule rigidly.", "For a man divining about a woman takes Wealth as the main thing, and Pressure being Void does no harm;", "a woman divining about a man takes Pressure as the main thing, and Wealth being Void does no harm.", "What matters is only that the Subject is not damaged.", "If Wealth and Pressure are Void but the stems and branches combine, the Self and Other generate each other and yin and yang are in their places, this is a real marriage bond;", "only that they share a pillow for half a lifetime and cannot grow old together;", "and not because husband and wife punish or harm each other,", "but simply where Heaven's decree lies.", "Meeting a clash or control is called escaping the Void, and on the contrary there is nothing to worry about.", "It only means his life is fated to have an empty bed, or that for half his life he is away from home in office or trade."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2020, 2020],
+          "zh": ["夫卜女以财爻，女卜夫以鬼爻，为卜婚姻之用神也，若值空亡，必不吉利，然不可执法推。", "财空妻失，鬼空夫亡，盖男占女以财为主，鬼空不妨，女占男以鬼为主，财空不妨。", "如父母伯叔卜子侄女婚姻，必看子孙爻何如；", "若兄占弟婚，必看兄弟，爻遇吉则吉，逢凶则凶。", "当从用神断，不可一概而言之也。"],
+          "yi": ["男子占女子用财爻，女子占男子用鬼爻，是占婚姻的用神，如果遇到空亡，必定不吉利，然而不可死守这个办法去推。", "财空妻失，鬼空夫亡，是说男占女以财为主，鬼空不妨，女占男以鬼为主，财空不妨。", "如果父母、伯叔占子侄的婚姻，必须看子孙爻怎么样；", "如果哥哥占弟弟的婚姻，必须看兄弟爻，爻遇吉就吉，遇凶就凶。", "应当按用神来断，不可一概而论。"],
+          "en": ["A man divining about a woman uses the Wealth line and a woman divining about a man uses the Pressure line as the Subject of a marriage divination; if it meets Void it is surely unlucky, but one must not judge by this rule rigidly.", "'Wealth Void, the wife is lost; Pressure Void, the husband dies' means that a man divining about a woman takes Wealth as the main thing and Pressure Void does no harm, and a woman divining about a man takes Pressure as the main thing and Wealth Void does no harm.", "If parents (the Resource) or uncles divine the marriage of a son, daughter or nephew, they must look at how the Output line stands;", "if an elder brother divines a younger brother's marriage he must look at the Peer line: meeting good it is good, meeting ill it is ill.", "Judge by the Subject and do not speak of all cases alike."] }
+      ],
+      "note": {
+        "yi": "「衾枕虚设」是名义夫妻、聚少离多的意思；「避空」的说法见 HJC.03（求财）。「财空妻失，鬼空夫亡」是《天玄赋》的话，旧注和王洪绪都说不可死守。",
+        "en": "'An empty bed' means a couple in name only who are often apart. 'Escaping the Void' is discussed at the wealth entry HJC.03. 'Wealth Void, the wife is lost; Pressure Void, the husband dies' is from the Tianxuan Fu, and both the old commentary and Wang Hongxu say it must not be followed rigidly."
+      },
+      "see": ["LY.MARRY.HJC.45", "LY.WEALTH.HJC.03"]
+    },
+    {
+      "id": "LY.MARRY.HJC.19",
+      "topic": "夫妻",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "应财世鬼，终须夫唱妇随；应鬼世财，不免夫权妻夺：世持鬼应持财是阴阳得位，反之夫权被夺，惟赘婿反吉",
+      "rule": {
+        "yi": "世持鬼、应持财，是阴阳得位，丈夫掌男权、妻子守妇道，夫唱妇随；应持鬼、世持财，是阴阳失位，丈夫的权被妻子夺去，只有入赘的女婿反而吉。",
+        "en": "The Self holding Pressure and the Other holding Wealth is yin and yang in their places, with the husband holding the man's authority and the wife keeping to her place, he leading and she following; the Other holding Pressure and the Self holding Wealth is yin and yang out of place, with the husband's authority seized by the wife, and only a son-in-law who marries into the wife's family finds it favourable."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6371, 6371],
+          "zh": ["应财世鬼，终须夫唱妇随；", "应鬼世财，不免夫权妻夺。"],
+          "yi": ["应持财、世持鬼，终究会夫唱妇随；", "应持鬼、世持财，免不了丈夫的权被妻子夺去。"],
+          "en": ["With the Other holding Wealth and the Self holding Pressure, in the end the husband leads and the wife follows;", "with the Other holding Pressure and the Self holding Wealth, the husband's authority will inevitably be seized by the wife."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6372, 6374],
+          "zh": ["世持鬼，应持财，此乃阴阳得位之象。", "必然夫秉男权，妻操妇道；", "定能夫唱于前，妇随于后。", "若应持鬼，世持财，此同阴阳失位之象。", "必然夫权妻夺，牝鸡晨鸣；", "惟赘婿反吉。"],
+          "yi": ["世持鬼，应持财，这是阴阳得位的象。", "必然丈夫掌男人的权，妻子守妇道；", "一定能丈夫在前倡导，妻子在后跟随。", "如果应持鬼，世持财，这同是阴阳失位的象。", "必然丈夫的权被妻子夺去，如同母鸡打鸣；", "只有入赘的女婿反而吉。"],
+          "en": ["The Self holding Pressure and the Other holding Wealth is the image of yin and yang in their places.", "The husband will surely hold the man's authority and the wife keep to a wife's way;", "he will surely lead in front and she follow behind.", "If the Other holds Pressure and the Self holds Wealth, this is likewise the image of yin and yang out of place.", "The husband's authority will surely be seized by the wife, like a hen crowing at dawn;", "only a son-in-law who marries into the wife's family finds it on the contrary favourable."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2022, 2022],
+          "zh": ["世持鬼应持财，如男自占是阴阳得位之象，必然夫秉男权，妻操妇道，能夫唱于前，妇随于后。", "若应持鬼世持财，是阴阳失位也，必然夫权妻夺，唯赘婿反吉。"],
+          "yi": ["世持鬼、应持财，如果是男子自己占，是阴阳得位的象，必然丈夫掌男权，妻子守妇道，能够夫唱于前，妇随于后。", "如果应持鬼、世持财，是阴阳失位，必然丈夫的权被妻子夺去，只有入赘的女婿反而吉。"],
+          "en": ["The Self holding Pressure and the Other holding Wealth, when a man divines for himself, is the image of yin and yang in their places: the husband will hold the man's authority and the wife keep to a wife's way, he leading in front and she following behind.", "If the Other holds Pressure and the Self holds Wealth, yin and yang are out of place, and the husband's authority will surely be seized by the wife; only a son-in-law who marries into her family finds it favourable."] }
+      ],
+      "see": ["LY.MARRY.HJC.05", "LY.MARRY.HJC.24"]
+    },
+    {
+      "id": "LY.MARRY.HJC.20",
+      "topic": "夫妻",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "妯娌不和，只为官爻发动；翁姑不睦，定因妻位交重：官动克兄弟则妯娌不和，财动克父母则公婆不睦",
+      "rule": {
+        "yi": "占婚以兄弟为妯娌、父母为公婆；官动克兄弟，妯娌之间不利；财动克父母，公婆不和睦；如果旺相而没有制约，或父爻衰弱抵挡不住，双亲就有刑克。觉子反驳：财旺时同样克父母，不必等到动才说。",
+        "en": "In divining marriage Peer stands for the brothers' wives and Resource for the parents-in-law; Pressure moving controls Peer and is unfavourable among the brothers' wives; Wealth moving controls Resource and the parents-in-law are at odds; if it is thriving with no restraint, or Resource is weak and cannot resist, the parents suffer punishment and control. Juezi objects that a thriving Wealth harms Resource just the same, and one need not wait for it to move."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6376, 6376],
+          "zh": ["妯娌不和，只为官爻发动；", "翁姑不睦，定因妻位交重。"],
+          "yi": ["妯娌不和，只是因为官爻发动；", "公婆不睦，一定是因为妻位（财爻）交重。"],
+          "en": ["The brothers' wives are at odds only because the Pressure line moves;", "the parents-in-law are at odds surely because the wife's place, the Wealth line, is doubled."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6377, 6377],
+          "zh": ["占婚，以兄为妯娌，父为翁姑。", "卦有官动，则克兄弟；", "妯娌间必不利。", "卦有财动，则克父母；", "定主翁姑不睦。", "若旺不受伤克，则是事有反覆；", "父衰弱不能敌，双亲有刑克也。"],
+          "yi": ["占婚姻，以兄弟为妯娌，以父母为公婆。", "卦里有官爻发动，就克兄弟；", "妯娌之间一定不利。", "卦里有财爻发动，就克父母；", "一定主公婆不和睦。", "如果旺相不受伤克，那么事情有反复；", "父爻衰弱抵挡不住，双亲就有刑克。"],
+          "en": ["In divining marriage, Peer stands for the brothers' wives and Resource for the parents-in-law.", "If a Pressure line moves in the hexagram it controls Peer;", "among the brothers' wives it is surely unfavourable.", "If a Wealth line moves it controls Resource;", "it surely means the parents-in-law are at odds.", "If it is thriving and not harmed or controlled, the matter will go back and forth;", "if the Resource line is weak and cannot resist, the parents suffer punishment and control."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2024, 2026],
+          "zh": ["夫占婚以兄为妯娌，父为翁姑。", "卦有官动则克兄弟，主妯娌不和，有财动则克父母，主公姑不睦。", "若旺而无制，父爻衰弱不能敌，与亲有刑克也矣。"],
+          "yi": ["丈夫占婚，以兄弟为妯娌，以父母为公婆。", "卦里有官爻发动就克兄弟，主妯娌不和；有财爻发动就克父母，主公婆不睦。", "如果旺相而没有制约，父爻衰弱抵挡不住，双亲就有刑克。"],
+          "en": ["In a husband's divination of marriage, Peer stands for the brothers' wives and Resource for the parents-in-law.", "A moving Pressure line controls Peer and means the brothers' wives are at odds; a moving Wealth line controls Resource and means the parents-in-law are at odds.", "If it is thriving without restraint, and the Resource line is weak and cannot resist, the parents suffer punishment and control."] },
+        { "by": "觉子", "book": "增删卜易", "range": [11573, 11574],
+          "zh": ["或曰：《黄金策》云：翁姑不睦，皆因妻位交重；", "《海底眼》云：财动丧双亲；", "《易冒》亦云：妻财动，父母参商。", "俱以财动则伤克父母，未说旺也。", "余曰：动则能伤父母，旺则不能伤乎？", "假令春天占卦，财爻属木，谓之女命旺而可取，但父母爻定然属土，如此当权得令之财爻，有不克休囚之父母爻者乎？", "何必曰动？", "殊不知昔人言动而不言旺者，正虑后人驳议，故讳言其旺，不得已而言动也，岂知亦被看破耶？"],
+          "yi": ["有人说：《黄金策》讲：公婆不睦，都是因为妻位交重；", "《海底眼》讲：财动，丧双亲；", "《易冒》也讲：妻财动，父母不和。", "都是说财动就伤克父母，没有说旺。", "我说：动就能伤父母，旺就不能伤吗？", "假如春天占卦，财爻属木，叫作女命旺而可取，但父母爻一定属土，这样当权得令的财爻，有不克衰弱的父母爻的吗？", "何必说动？", "殊不知前人说动而不说旺，正是担心后人驳议，所以不肯说它旺，不得已才说动，哪知也被看破了呢？"],
+          "en": ["Someone says: the Huangjin Ce says the parents-in-law are at odds always because the wife's place is doubled;", "the Haidi Yan says that Wealth moving means the loss of both parents;", "the Yi Mao also says that Wealth moving means Resource, the parents, disagree.", "all say that Wealth moving harms and controls Resource, the parents, and none says thriving.", "I say: if moving can harm Resource, the parents, can thriving not harm them?", "Suppose the divination is in spring and the Wealth line is Wood, called a woman whose fate is strong and worth taking; but the Resource line is surely Earth, and can a Wealth line thus holding power and in season fail to control a weak Resource line?", "Why say only moving?", "Little do people know that the ancients said moving and not thriving precisely for fear of later objections, and avoided saying thriving and said moving because they had to; who would have thought this too would be seen through?"] }
+      ],
+      "dispute": {
+        "yi": "《黄金策》旧注和王洪绪都说「财动克父母」；觉子（《增删卜易》）认为伤父母的是财旺，不必等到动，前人只说动是为了避免被驳；他的办法是先占财官旺不旺，得吉卦后再单占妨不妨克父母。",
+        "en": "The old commentary and Wang Hongxu both say 'Wealth moving controls Resource'; Juezi (Zengshan Buyi) holds that what harms the parents is Wealth being thriving, with no need to wait for it to move, and that the ancients spoke of moving only to avoid being challenged; his method is to divine first whether Wealth and Pressure are thriving and, having got a good hexagram, to divine separately whether the parents will be harmed."
+      },
+      "see": ["LY.MARRY.HJC.03", "LY.MARRY.HJC.21"]
+    },
+    {
+      "id": "LY.MARRY.HJC.21",
+      "topic": "外遇",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "父合财爻，异日有新台之行；世临妻位，他时无就养之心：财父二爻带玄武动合，有翁淫子媳之事；财临世身，妇不善事公婆",
+      "rule": {
+        "yi": "占婚遇到财、父两爻，世带玄武，动而相合的，日后有公公与儿媳私通的事；如果财临世身，那个妇人一定不善于侍奉公婆。",
+        "en": "In divining marriage, when the Wealth and Resource lines with the Self carrying the Dark Tortoise move and combine, there will later be an affair between the father-in-law and his son's wife; if Wealth sits on the Self or the Body, the woman will surely not serve her parents-in-law well."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6379, 6379],
+          "zh": ["父合财爻，异日有新台之行；", "世临妻位，他时无就养之心。"],
+          "yi": ["父爻合财爻，日后有像「新台」那样的丑行；", "世临妻位，将来没有就养（奉养公婆）的心。"],
+          "en": ["The Resource line combining with the Wealth line: later there will be conduct like that of the New Terrace;", "the Self sitting on the wife's place: in time she will have no heart to support her parents-in-law."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6380, 6380],
+          "zh": ["占婚遇财父二爻，世带玄武，动来相合者，异日有翁淫子媳之事。", "若财临世身，其妇必不善事翁姑。"],
+          "yi": ["占婚遇到财、父两爻，世带玄武，动而相合的，日后有公公与儿媳私通的事。", "如果财临世身，那个妇人一定不善于侍奉公婆。"],
+          "en": ["In divining marriage, when the Wealth and Resource lines with the Self carrying the Dark Tortoise move and combine, there will later be an affair between the father-in-law and his son's wife.", "If Wealth sits on the Self or the Body, the woman will surely not serve her parents-in-law well."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2028, 2028],
+          "zh": ["占婚遇财父二爻带玄武动合者，有翁淫子媳之事；", "若财临世身，玄武不动合者，其妇必不善事公姑。"],
+          "yi": ["占婚遇到财、父两爻带玄武动而相合的，有公公与儿媳私通的事；", "如果财临世身，玄武不动而相合的，那个妇人一定不善于侍奉公婆。"],
+          "en": ["In divining marriage, Wealth and Resource carrying the Dark Tortoise, moving and combining, mean an affair between the father-in-law and his son's wife;", "if Wealth sits on the Self or the Body and the Dark Tortoise combines without moving, the woman will surely not serve her parents-in-law well."] }
+      ],
+      "note": {
+        "yi": "「新台」出自《诗经·邶风·新台》，讲卫宣公在河上筑新台，夺了儿子的新娘；旧注把它直接解作「翁淫子媳」。",
+        "en": "'The New Terrace' is from the Book of Odes (Bei Feng, 'Xin Tai'), about Duke Xuan of Wei building a new terrace on the river and seizing his son's bride; the old commentary reads it directly as a father-in-law's affair with his son's wife."
+      },
+      "see": ["LY.MARRY.HJC.11"]
+    },
+    {
+      "id": "LY.MARRY.HJC.22",
+      "topic": "对方",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "空鬼伏财，必是望门之寡妇；动财值虎，定然带服之婆娘：财伏空鬼之下，其女先曾受聘、未婚夫死；加白虎动，是已嫁夫亡带孝",
+      "rule": {
+        "yi": "卦里有官、财两爻，而财爻伏在空亡的鬼爻下，那个女子先前受过聘，未婚夫死了，俗称望门寡；再加白虎发动来克，就是嫁了以后丈夫死、带着孝服的；如果伏在不空的鬼下，是有丈夫的妇人，被日辰、动爻提起而刑克世爻，日后要防争讼。",
+        "en": "If the hexagram has both Pressure and Wealth lines and the Wealth line is hidden under a Void Pressure line, the woman was once betrothed and her fiancé died, commonly called a widow at the door; with the White Tiger moving and controlling as well, she married and her husband died and she wears mourning; if she is hidden under a Pressure line that is not Void, she is a woman with a husband, and if the Day or a moving line raises her and it punishes or controls the Self line, guard later against a lawsuit."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6382, 6382],
+          "zh": ["空鬼伏财，必是望门之寡妇；", "动财值虎，定然带服之婆娘。"],
+          "yi": ["空鬼伏着财，一定是「望门寡」；", "财动而值白虎，一定是带着孝服的妇人。"],
+          "en": ["Void Pressure with Wealth hidden under it: surely a widow before the wedding;", "Wealth moving and on the White Tiger: surely a woman wearing mourning."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6383, 6383],
+          "zh": ["卦中既有官爻财爻，而财爻又伏空鬼下；", "其女先曾受聘，未婚夫死，俗谓望门寡；", "若加白虎动克，则是已嫁而死，必带孝服者。", "若伏鬼不空，必是有夫妇女，如被日辰动爻提起，刑克世爻者，后防争讼。"],
+          "yi": ["卦里既有官爻、财爻，而财爻又伏在空亡的鬼爻下；", "那个女子先前受过聘，未婚夫死了，俗称望门寡；", "如果再加白虎发动来克，就是已经嫁了、丈夫死了，一定带着孝服；", "如果伏鬼而鬼不空，一定是有丈夫的妇女，如果被日辰、动爻提起，刑克世爻，日后要防争讼。"],
+          "en": ["If the hexagram has both a Pressure line and a Wealth line and the Wealth line is hidden under a Void Pressure line;", "the woman was once betrothed and her fiancé died, commonly called a widow at the door;", "if the White Tiger is added, moving to control, she married and her husband died and she surely wears mourning;", "if she is hidden under a Pressure line that is not Void, she is surely a woman with a husband, and if the Day or a moving line raises her and it punishes or controls the Self line, guard later against a lawsuit."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2030, 2030],
+          "zh": ["卦中财爻伏于空鬼之下，其女先曾受聘，未婚夫死，俗谓之望门寡。", "若加白虎发动，则已嫁而夫死带孝。", "若鬼伏财下不空者，必是有夫妇女。", "如被日辰动爻提起刑克世爻者，后防争讼。"],
+          "yi": ["卦中财爻伏在空亡的鬼下，那个女子先前受过聘，未婚夫死了，俗称望门寡。", "如果再加白虎发动，就是已经嫁了、丈夫死了，带着孝服。", "如果鬼伏在财下而鬼不空，一定是有丈夫的妇女。", "如果被日辰、动爻提起，刑克世爻，日后要防争讼。"],
+          "en": ["If the Wealth line is hidden under a Void Pressure line, the woman was once betrothed and her fiancé died, commonly called a widow at the door.", "If the White Tiger is added and moves, she married and her husband died and she wears mourning.", "If Pressure is hidden under Wealth and is not Void, she is surely a woman with a husband.", "If the Day or a moving line raises her and it punishes or controls the Self line, guard later against a lawsuit."] }
+      ],
+      "note": {
+        "yi": "第三个「伏」的方向，旧注写「若伏鬼不空」（财伏在鬼下，鬼不空），王洪绪写「鬼伏财下不空」（鬼伏在财下），字面相反；两处都是说有夫之妇，本库照原文。",
+        "en": "On the third case, the old commentary writes 'if hidden under Pressure that is not Void' (Wealth under Pressure) and Wang Hongxu 'Pressure hidden under Wealth, not Void' (Pressure under Wealth); the wording is opposite, though both mean a married woman, and the original is kept."
+      },
+      "see": ["LY.MARRY.HJC.24"]
+    },
+    {
+      "id": "LY.MARRY.HJC.23",
+      "topic": "成否",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "世应俱空，难遂百年之连理：世空自己不想成，应空对方不想成",
+      "rule": {
+        "yi": "世空，是自己不想成；强行成了，终究不如意；应空，是对方不想成；成了以后两家一定不来往。",
+        "en": "The Self Void means one does not wish it oneself, and if forced through it never turns out as wished; the Other Void means the other side does not wish it, and if it comes about the two families will surely not visit each other afterwards."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6385, 6385],
+          "zh": ["世应俱空，难遂百年之连理；"],
+          "yi": ["世应都空，难以如愿成就百年的姻缘。"],
+          "en": ["With the Self and Other both Void, it is hard to achieve a lifelong union as wished."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6386, 6386],
+          "zh": ["世空，自不欲成；", "强成，终不遂意。", "应空，彼不欲成；", "得成，日后两家，必不往来。"],
+          "yi": ["世空，自己就不想成；", "勉强成了，终究不如意。", "应空，对方就不想成；", "即使成了，日后两家一定不来往。"],
+          "en": ["The Self Void: one does not wish it oneself;", "if forced through it never turns out as wished.", "The Other Void: the other side does not wish it;", "even if it comes about, afterwards the two families will surely not visit each other."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2032, 2032],
+          "zh": ["世空自不欲成，应空彼不欲成，勉强欲成，终不遂意。"],
+          "yi": ["世空是自己不想成，应空是对方不想成，勉强想成，终究不如意。"],
+          "en": ["The Self Void is not wishing it oneself and the Other Void is the other side not wishing it; if one forces it, it never turns out as wished."] }
+      ],
+      "see": ["LY.MARRY.HJC.12"]
+    },
+    {
+      "id": "LY.MARRY.HJC.24",
+      "topic": "入赘再嫁",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "财官叠见，重为一度之新人：男占女卦有两财、女占男卦有两鬼，是再娶再嫁",
+      "rule": {
+        "yi": "男占女，卦里有两个财；女占男，卦里有两个鬼；一定是再娶再嫁。两个财都没有损伤，一正一偏；一个旺一个空，前妻已死；两鬼发动，有两家争娶；一旺一空，前夫已死；鬼伏财下，男方家里有妻；财伏鬼下，女方有夫；鬼不空而被动爻日辰冲克妻财，是生离改嫁；世克鬼而动爻日辰生合妻财，是逐婿嫁女。",
+        "en": "A man divining about a woman with two Wealth lines in the hexagram, or a woman divining about a man with two Pressure lines, means a remarriage; two Wealth lines both unharmed are one principal and one secondary; one thriving and one Void means the former wife has died; two Pressure lines moving means two families contending to marry her; one thriving and one Void, the former husband has died; Pressure hidden under Wealth means the man has a wife at home; Wealth hidden under Pressure means the woman has a husband; Pressure not Void while a moving line or the Day clashes with or controls Wealth means a living separation and remarriage; the Self controlling Pressure while a moving line or the Day generates or combines with Wealth means driving out the son-in-law and marrying off the daughter."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6388, 6388],
+          "zh": ["财官叠见，重为一度之新人。"],
+          "yi": ["财、官两爻重叠出现，是再做一次新人。"],
+          "en": ["Wealth and Pressure appearing twice over: to be a new bride or groom a second time."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6389, 6389],
+          "zh": ["男占女，卦有两财；", "女占男，卦有两鬼；", "必是断弦再续，重为一度新人。", "两财皆无损，必一正一偏；", "若一旺一空，则前妻已丧。", "两鬼发动，必有两家争娶。", "如一旺一空，则前夫已亡。", "若鬼伏财下，男必有妻在家；", "财伏鬼下，女必有夫在身。", "鬼不空，而动爻日辰冲克妻财，必是生离改嫁；", "世克鬼，而动爻日辰生合妻财，必是逐婿嫁女。"],
+          "yi": ["男占女，卦里有两个财；", "女占男，卦里有两个鬼；", "一定是断弦再续，再做一次新人。", "两个财都没有损伤，一定一正一偏；", "如果一个旺一个空，就是前妻已经死了。", "两个鬼发动，一定有两家争着娶。", "如果一个旺一个空，就是前夫已经死了。", "如果鬼伏在财下，男方一定有妻子在家；", "财伏在鬼下，女方一定有丈夫在身。", "鬼不空，而动爻、日辰冲克妻财，一定是生离后改嫁；", "世克鬼，而动爻、日辰生合妻财，一定是赶走女婿、把女儿另嫁。"],
+          "en": ["A man divining about a woman, with two Wealth lines in the hexagram;", "a woman divining about a man, with two Pressure lines;", "it is surely a remarriage after the first was broken, to be a new bride or groom a second time.", "Two Wealth lines both unharmed are surely one principal and one secondary;", "if one thrives and one is Void, the former wife has died.", "Two Pressure lines moving mean two families contending to marry her.", "If one thrives and one is Void, the former husband has died.", "If Pressure is hidden under Wealth, the man surely has a wife at home;", "if Wealth is hidden under Pressure, the woman surely has a husband.", "If Pressure is not Void and a moving line or the Day clashes with or controls Wealth, it is surely a living separation and remarriage;", "if the Self controls Pressure while a moving line or the Day generates or combines with Wealth, it is surely driving out the son-in-law and marrying the daughter to another."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2034, 2034],
+          "zh": ["男占女卦有两财，女占男卦有两鬼，必是再娶再嫁，重为一度新人。", "两鬼发动，必有两家争娶；", "财伏鬼下，男必有妻在家；", "鬼伏财下，女必有夫在身。", "鬼不空而动爻日辰冲克妻财，必是生离改嫁矣。"],
+          "yi": ["男占女，卦里有两个财；女占男，卦里有两个鬼；一定是再娶再嫁，再做一次新人。", "两鬼发动，一定有两家争娶；", "财伏在鬼下，男方一定有妻在家；", "鬼伏在财下，女方一定有丈夫在身。", "鬼不空而动爻、日辰冲克妻财，一定是生离改嫁了。"],
+          "en": ["A man divining about a woman with two Wealth lines, or a woman divining about a man with two Pressure lines, surely means a remarriage, to be a new bride or groom a second time.", "Two Pressure lines moving mean two families contending to marry her;", "Wealth hidden under Pressure means the man surely has a wife at home;", "Pressure hidden under Wealth means the woman surely has a husband.", "Pressure not Void while a moving line or the Day clashes with or controls Wealth surely means a living separation and remarriage."] }
+      ],
+      "note": {
+        "yi": "这一条的前提是「男占女看财、女占男看鬼」；另一方向的伏（鬼伏财下、财伏鬼下），旧注和王洪绪的说法正好相反：旧注是鬼伏财下男有妻、财伏鬼下女有夫，王洪绪是财伏鬼下男有妻、鬼伏财下女有夫。",
+        "en": "The premise is 'a man divining about a woman looks to Wealth, a woman divining about a man looks to Pressure'. On the direction of hiding, the old commentary and Wang Hongxu are opposite: the old commentary says Pressure hidden under Wealth means the man has a wife and Wealth hidden under Pressure means the woman has a husband, while Wang Hongxu says Wealth hidden under Pressure means the man has a wife and Pressure hidden under Wealth means the woman has a husband."
+      },
+      "see": ["LY.MARRY.HJC.22", "LY.MARRY.HJC.45"]
+    },
+    {
+      "id": "LY.MARRY.HJC.25",
+      "topic": "对方",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "夫若才能，官位占长生之地；妻如丑拙，财爻落墓库之乡：男女性情容貌看财鬼二爻，月令旺身肥、日时旺貌美",
+      "rule": {
+        "yi": "想知男女的性情容貌，看财、鬼两爻：月令旺身体胖，日时旺相貌美；月令衰身体瘦，日时衰相貌丑；月令旺而日时衰，身胖貌不扬；月令衰而日时旺，身瘦貌美；衰而有扶，丑却有才能；旺而入墓，虽美而愚拙；只看性情，男看鬼，女看财。",
+        "en": "To know the temperament and looks of the man or woman, look at the Wealth and Pressure lines: thriving in the month means a stout body, thriving on the day and hour means good looks; weak in the month means a thin body, weak on the day and hour means plain looks; thriving in the month but weak on the day and hour, a stout body and unremarkable looks; weak in the month but thriving on the day and hour, a thin body and handsome looks; weak but supported, plain but capable; thriving but entering the tomb, handsome but dull; for temperament alone, look at Pressure for a man and Wealth for a woman."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6391, 6391],
+          "zh": ["夫若才能，官位占长生之地；", "妻如丑拙，财爻落墓库之乡。"],
+          "yi": ["丈夫如果有才能，是官位在长生之地；", "妻子如果丑拙，是财爻落在墓库那一带。"],
+          "en": ["A husband who is capable has his official place in the ground of Long Life;", "a wife who is plain and clumsy has her Wealth line fallen in the region of the tomb."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6392, 6392],
+          "zh": ["要知男女情性容貌，财鬼二爻取之。", "凡遇月令旺，身必肥；", "日时旺，貌必美。", "月令衰，身必瘦；", "日时衰，貌必丑。", "月令旺，日时衰者，身肥而貌不扬；", "月令衰，日时旺，身瘦而貌必美。", "衰而有扶，丑而才能；", "旺而入墓，虽美而愚拙。", "惟观性情，男以鬼断，女以财推。"],
+          "yi": ["想知道男女的性情容貌，用财、鬼两爻来取。", "凡是遇到月令旺，身体必胖；", "日时旺，相貌必美。", "月令衰，身体必瘦；", "日时衰，相貌必丑。", "月令旺而日时衰的，身体胖而相貌不出众；", "月令衰而日时旺的，身体瘦而相貌必美。", "衰而有扶，貌丑却有才能；", "旺而入墓，虽然貌美却愚拙。", "只看性情，男的用鬼来断，女的用财来推。"],
+          "en": ["To know the temperament and looks of the man or woman, take the Wealth and Pressure lines.", "Whenever it is thriving in the month, the body is stout;", "thriving on the day and hour, the looks are handsome.", "Weak in the month, the body is thin;", "weak on the day and hour, the looks are plain.", "Thriving in the month but weak on the day and hour: a stout body and unremarkable looks;", "weak in the month but thriving on the day and hour: a thin body and handsome looks.", "Weak but supported: plain but capable;", "thriving but entering the tomb: handsome but dull.", "For temperament alone, judge a man by Pressure and a woman by Wealth."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2036, 2036],
+          "zh": ["要知男妇情性容貌，财鬼二爻取之，旺者身肥，衰者瘦弱。", "如虎蛇勾陈玄武属土火，貌丑；", "如青龙属木金，貌美。", "衰而有扶，丑有才能；", "旺而入墓，美偏愚拙。"],
+          "yi": ["想知道男女的性情容貌，取财、鬼两爻，旺的身体胖，衰的身体瘦弱。", "如果是虎、蛇、勾陈、玄武属土火的，相貌丑；", "如果是青龙属木金的，相貌美。", "衰而有扶，丑却有才能；", "旺而入墓，美却愚拙。"],
+          "en": ["To know the temperament and looks of the man or woman, take the Wealth and Pressure lines: a thriving line means a stout body, a weak one a thin and frail body.", "If it is the Tiger, the Snake, Hook Earth or the Dark Tortoise and belongs to Earth or Fire, the looks are plain;", "if it is the Azure Dragon and belongs to Wood or Metal, the looks are handsome.", "Weak but supported: plain but capable;", "thriving but entering the tomb: handsome but dull."] }
+      ],
+      "note": {
+        "yi": "王洪绪在下一条（HJC.26）里说旺衰不能按四季论。本条「月令旺、日时旺」是旧注的说法；王洪绪另加了六神与五行的取象。",
+        "en": "Wang Hongxu says in the next entry (HJC.26) that thriving and weakness must not be judged by the four seasons. The 'month and day-hour' scheme here is the old commentary's; Wang Hongxu adds his own images from the six spirits and five phases."
+      },
+      "see": ["LY.MARRY.HJC.26"]
+    },
+    {
+      "id": "LY.MARRY.HJC.26",
+      "topic": "对方",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "命旺则荣华可拟，时衰则发达难期：本命爻生旺有气则荣华，休囚死绝则无发达；本命爻所临六亲六神各主一种性好",
+      "rule": {
+        "yi": "本命爻生旺有气，日后有荣华；休囚死绝，没有发达的日子。财旺命衰，妻子相貌虽美命却平常；鬼衰命旺，丈夫虽愚蠢衣食丰足。命临父母好技艺，加青龙好诗书，临兄好赌博、爱花钱、不好学，临官喜迎官府，临财福善于持家。王洪绪反对拿四季论旺衰，主张看本命爻是否临财福、青龙、贵人，或得日辰动爻生扶。",
+        "en": "When the natal line is born or thriving and has qi, glory lies ahead; when it is weak, dead or cut off, there is no rise. With Wealth thriving and the natal line weak, the wife is handsome but her fate is ordinary; with Pressure weak and the natal line thriving, the husband is dull but well fed and clothed. The natal line on Resource means a liking for skills, with the Azure Dragon added for poetry and books, on Peer for gambling, spending and no love of study, on Pressure a welcome to officials, on Wealth or Output a good housekeeper. Wang Hongxu objects to judging thriving and weakness by the four seasons and looks instead at whether the natal line sits on Wealth, Output, the Azure Dragon or a noble, or is generated and supported by the Day or a moving line."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6394, 6394],
+          "zh": ["命旺则荣华可拟，时衰则发达难期。"],
+          "yi": ["本命旺，就可以期望荣华；时令衰，就难以期望发达。"],
+          "en": ["With a thriving natal line one may look for glory; with a weak season it is hard to look for a rise."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6395, 6395],
+          "zh": ["命即男女生命。", "生旺有气，必有荣华之日；", "休囚死绝，必无发达之期。", "若财旺命衰，其妻貌虽美，而命则平常；", "鬼衰命旺，其夫虽愚蠢，而衣食丰足。", "命临父母，必好技艺；", "加青龙，则是好诗书也。", "临兄，则好赌博，好使钱，不好学。", "临官，喜迎官府。", "临财福，必善作家。", "看其现与不现，及五行生克，六神动静推之。"],
+          "yi": ["命，就是男女各自的本命。", "生旺有气，必定有荣华的日子；", "休囚死绝，必定没有发达的日子。", "如果财旺命衰，妻子相貌虽美，命却平常；", "鬼衰命旺，丈夫虽然愚蠢，衣食却丰足。", "命临父母，必定喜好技艺；", "加青龙，就是喜好诗书。", "临兄，就喜好赌博、爱花钱、不好学。", "临官，喜欢迎合官府。", "临财福，必定善于持家。", "要看它现与不现，以及五行生克、六神动静来推断。"],
+          "en": ["Life-fate is each one's natal line.", "Born or thriving and with qi, there will surely be days of glory;", "weak, dead or cut off, there will surely be no days of rising.", "If Wealth thrives and the natal line is weak, the wife is handsome but her fate is ordinary;", "if Pressure is weak and the natal line thriving, the husband is dull but well fed and clothed.", "The natal line on Resource means surely a liking for skills;", "with the Azure Dragon added, a liking for poetry and books.", "On Peer, a liking for gambling, spending and no love of study.", "On Pressure, a liking for welcoming officials.", "On Wealth or Output, surely a good housekeeper.", "Judge by whether it shows or not, and by generation and control among the five phases and by the movement of the six spirits."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2038, 2038],
+          "zh": ["命者，即求卜人之本命爻是也。", "旺衰二字，古法以四季论之，谬也。", "倘木命人择于春秋占，必发达乎？", "岂富贵贫贱由人自取耶？", "予之屡验者，为本命爻临财福、青龙、贵人等吉宿，或遇日辰动爻生扶拱合者，固荣华有日；", "如命临兄、鬼、白虎等凶神，或遇日辰动爻刑冲克害者，固发达无期。", "如命临父母主好技艺，若加青龙主好诗礼，临兄弟则爱赌好贱，临财福必善作家，临官鬼带凶神，主疾病官刑，不加凶神乃公门人役，带贵人则贵。", "学者宜以类推。"],
+          "yi": ["命，就是求卜人的本命爻。", "旺衰两个字，古法按四季来论，是错的。", "如果木命的人挑春秋占卜，就一定发达吗？", "难道富贵贫贱是由人自己挑的吗？", "我屡次验过的，是本命爻临财福、青龙、贵人等吉星，或者遇到日辰、动爻生扶拱合的，荣华就有日子；", "如果命临兄、鬼、白虎等凶神，或者遇到日辰、动爻刑冲克害的，发达就没有指望。", "命临父母主好技艺，如果加青龙主好诗书，临兄弟则爱赌好贱，临财福必善持家，临官鬼带凶神主疾病官刑，不加凶神则是公门人役，带贵人则贵。", "学的人应当类推。"],
+          "en": ["Life-fate is the natal line of the person seeking the divination.", "The old method judged thriving and weakness by the four seasons, which is wrong.", "If a person of Wood fate chose spring or autumn to divine, would he surely rise?", "Could wealth, rank, poverty and lowliness be chosen by oneself?", "What I have often verified is that when the natal line sits on Wealth, Output, the Azure Dragon, a noble or other auspicious stars, or meets the Day or a moving line generating, supporting or embracing it, glory has its day;", "if the natal line sits on Peer, Pressure, the White Tiger or other ominous spirits, or meets the Day or a moving line punishing, clashing, controlling or harming it, there is no hope of rising.", "The natal line on Resource means a liking for skills, with the Azure Dragon a liking for poetry and rites, on Peer a love of gambling and cheapness, on Wealth or Output surely a good housekeeper, on Pressure with ominous spirits illness and official punishment, without ominous spirits a runner in a government office, and with a noble, high rank.", "Learners should reason by analogy."] }
+      ],
+      "dispute": {
+        "yi": "旺衰怎么论：旧注按月令、日时（四季）；王洪绪明说古法按四季论旺衰是错的，改看本命爻临什么六亲六神、有没有日辰动爻生扶；两家在这一条上直接不同。",
+        "en": "How to judge thriving and weakness: the old commentary goes by the month and by the day and hour (the seasons); Wang Hongxu says outright that the old method of judging by the four seasons is wrong, and looks instead at what relation and spirit the natal line sits on and whether the Day or a moving line supports it; the two differ directly here."
+      },
+      "see": ["LY.MARRY.HJC.25"]
+    },
+    {
+      "id": "LY.MARRY.HJC.27",
+      "topic": "动变",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "财化财，一举两得；鬼化鬼，四复三番：财化财有赠嫁，财化子有带来的幼子；鬼化鬼凡事反复",
+      "rule": {
+        "yi": "占婚遇财化财，一定有仆人陪嫁（赠嫁）；财化子，有小孩带来（带幼聘）；化子逢空虽来不长寿；化财遇冲以后会走失；退神逢冲，以后背夫改嫁或回娘家。鬼化鬼，不论进退神，凡事反复不定，占婚一定不容易，即使可成也迟滞，女家多有变化，缓急全听对方。",
+        "en": "In a marriage divination, Wealth changing into Wealth surely means servants come with the bride as a gift; Wealth changing into Output means a small child is brought along, called a betrothal with a child; changing into Output and meeting Void, the child comes but will not live long; changing into Wealth and meeting a clash, she will later run away; changing into a retreating spirit and meeting a clash, she will later leave her husband and remarry, or go back to her family. Pressure changing into Pressure, whether advancing or retreating, means everything is reversed and unsettled, and the marriage surely will not be easy, and even if it can succeed it is delayed; the woman's family will change its mind often, and easy or hard, slow or quick, all is at its pleasure."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6397, 6397],
+          "zh": ["财化财，一举两得；"],
+          "yi": ["财爻化出财爻，一举得到两份；"],
+          "en": ["Wealth changing into Wealth: two gains in one stroke;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6398, 6398],
+          "zh": ["占婚遇财化财，必有僮仆同来，谓赠嫁。", "财化子，则有小儿带来，谓之带幼聘。", "若化子逢空，虽来不寿；", "化财遇冲，后亦走失。"],
+          "yi": ["占婚遇到财化财，一定有僮仆一同来，叫作赠嫁。", "财化子，就有小孩带来，叫作带幼聘。", "如果化子逢空，虽然来了也不长寿；", "化财遇冲，以后也会走失。"],
+          "en": ["In a marriage divination, Wealth changing into Wealth surely means servants come along, called a gift with the bride.", "Wealth changing into Output means a small child is brought along, called a betrothal with a child.", "If it changes into Output and meets Void, the child comes but will not live long;", "if it changes into Wealth and meets a clash, later too they will run away."] },
+        { "by": "经", "book": "卜筮大全", "range": [6400, 6400],
+          "zh": ["鬼化鬼，四复三番。"],
+          "yi": ["鬼化鬼，四番三复。"],
+          "en": ["Pressure changing into Pressure: four reversals, three repeats."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6401, 6401],
+          "zh": ["大抵鬼化鬼，凡事反复不定。", "占婚遇之，决不容易。", "若大象可成，亦见迟滞。", "然此象主女家多有更变，难易缓急，皆听从于彼。"],
+          "yi": ["大体上鬼爻化出鬼爻，事事反复、定不下来。", "占婚遇到它，一定不容易。", "如果大象可以成，也见迟滞。", "然而这个象主女家多有变化，难易缓急，都听从对方。"],
+          "en": ["In general Pressure changing into Pressure means everything is reversed and unsettled.", "Meeting it in a marriage divination, it surely will not be easy.", "If the overall image can succeed, it is still delayed.", "But this image means the woman's family will change its mind often, and easy or hard, slow or quick, all follows the other side's pleasure."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2040, 2040],
+          "zh": ["占婚遇财化进神，有婢卜同来，谓之赠嫁，遇冲终必走失。", "财化子有儿女带来，谓之他有名，逢空虽来不寿。", "如化退神逢冲，日后背夫改嫁，或退母家。"],
+          "yi": ["占婚遇到财化进神，有婢女一同来，叫作赠嫁，遇冲最终必定走失；", "财化子，有儿女带来，叫作有他名，逢空虽来也不长寿；", "如果化退神逢冲，日后背弃丈夫改嫁，或者退回娘家。"],
+          "en": ["In a marriage divination, Wealth changing into an Advancing spirit brings a maid along, called a gift with the bride, and meeting a clash she will surely run away in the end;", "Wealth changing into Output brings children along, called having another's name, and meeting Void they come but will not live long;", "if it changes into a Retreating spirit and meets a clash, she will later abandon her husband and remarry, or return to her mother's family."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2042, 2042],
+          "zh": ["大抵鬼化鬼不论进退神，凡事反复不定。"],
+          "yi": ["大抵鬼化鬼，不论进神退神，凡事反复不定。"],
+          "en": ["In general Pressure changing into Pressure, whether an Advancing or Retreating spirit, means everything is reversed and unsettled."] }
+      ],
+      "note": {
+        "yi": "经文「鬼化鬼，四复三番」在旧注本写作「四复三番」，这里译作「四次反复三次重来」。「带幼聘」「有他名」都是旧时的说法，指新娘带着幼子改嫁。",
+        "en": "The verse's 'four repeats, three reversals' is translated as repeated reversals. 'A betrothal with a child' and 'having another's name' are old expressions for a bride who brings a young child from a previous marriage."
+      },
+      "see": ["LY.MARRY.HJC.24"]
+    },
+    {
+      "id": "LY.MARRY.HJC.28",
+      "topic": "风险",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "兄动而爻临玄武，须防劫骗之谋：鬼爻不动而兄弟临玄武、螣蛇刑冲世身，防奸诈骗财；世应生合、阴阳得位则大费财而可成",
+      "rule": {
+        "yi": "鬼爻不动，而兄弟又临玄武、螣蛇，来刑冲世身的，要防其中奸诈，设计骗财；如果世应生合、阴阳得位、财鬼无伤，也一定要大费钱财才能成。",
+        "en": "With the Pressure line quiet and Peer sitting on the Dark Tortoise or the Coiling Snake and punishing or clashing with the Self or the Body, guard against deceit and a scheme to swindle money; if the Self and Other generate and combine, yin and yang are in their places and Wealth and Pressure are undamaged, it too must cost a great deal of money to bring about."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6403, 6403],
+          "zh": ["兄动而爻临玄武，须防劫骗之谋；"],
+          "yi": ["兄弟发动而爻上临着玄武，须要防备劫骗的图谋；"],
+          "en": ["With Peer moving and sitting on the Dark Tortoise, guard against a plot of robbery and swindle;"] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6404, 6404],
+          "zh": ["鬼爻不动，而兄弟又临玄武、螣蛇，来刑冲身世者，须防其中奸诈，设计骗财。", "若世应生合，阴阳得位，财鬼无伤，亦必大费财而可成。"],
+          "yi": ["鬼爻不动，而兄弟又临玄武、螣蛇，来刑冲世身的，须防其中奸诈，设计骗财。", "如果世应生合，阴阳得位，财鬼没有伤，也一定要大费钱财才能成。"],
+          "en": ["With the Pressure line quiet and Peer sitting on the Dark Tortoise or the Coiling Snake and punishing or clashing with the Self or the Body, guard against deceit and a scheme to swindle money.", "If the Self and Other generate and combine, yin and yang are in their places and Wealth and Pressure are undamaged, it too must cost a great deal of money to bring about."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2044, 2044],
+          "zh": ["兄弟临玄武螣蛇来刑冲世身者，须防其中奸诈，设计骗财。", "若世应生合，阴阳得位，亦必大费而可成。"],
+          "yi": ["兄弟临玄武、螣蛇，来刑冲世身的，须防其中奸诈，设计骗财。", "如果世应生合，阴阳得位，也一定大费钱财而可成。"],
+          "en": ["Peer on the Dark Tortoise or the Coiling Snake, punishing or clashing with the Self or the Body: guard against deceit and a scheme to swindle money.", "If the Self and Other generate and combine and yin and yang are in their places, it too can be brought about only at great cost."] }
+      ]
+    },
+    {
+      "id": "LY.MARRY.HJC.29",
+      "topic": "成否",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "应空而卦伏文书，未有执盟之主：父母是主婚人，不上卦或空亡则无主婚，恐妇自作主张，否则事难成",
+      "rule": {
+        "yi": "父母爻是主婚人；不上卦、或落空亡，必定没有主婚的人，恐怕是那个女子自己作主，不然这件事难以成就。",
+        "en": "The Resource line is the officiant of the marriage; if it is absent from the hexagram or falls Void there is surely no one to preside, and the woman may be deciding for herself, or else the matter is hard to bring about."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6406, 6406],
+          "zh": ["应空而卦伏文书，未有执盟之主。"],
+          "yi": ["应爻空亡，卦里文书爻又伏藏，没有主持盟约的人。"],
+          "en": ["The Other Void and the document line hidden in the hexagram: there is no one to preside over the pledge."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6407, 6407],
+          "zh": ["父母为主婚人。", "若不上卦，或落空亡；", "必无主婚，恐其妇自作主张，不然，主其事必难成就和合也。"],
+          "yi": ["父母爻是主婚人。", "如果不上卦，或者落空亡，一定没有主婚的人，", "恐怕是那个妇人自己作主张，不然，这件事一定难以成就和合。"],
+          "en": ["The Resource line is the officiant of the marriage.", "If it is absent from the hexagram or falls Void, there is surely no one to preside,", "and the woman may be deciding for herself; otherwise the matter is hard to bring to a union."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2046, 2046],
+          "zh": ["父母为主婚人，若不上卦或落空亡，必无主婚。", "如卦身临财，乃其妇自作主张。"],
+          "yi": ["父母爻是主婚人，如果不上卦或落空亡，必定没有主婚的人。", "如果卦身临着财，就是那个妇人自己作主张。"],
+          "en": ["The Resource line is the officiant of the marriage, and if it is absent from the hexagram or falls Void there is surely no one to preside.", "If the Body sits on Wealth, the woman is deciding for herself."] }
+      ],
+      "see": ["LY.MARRY.HJC.30"]
+    },
+    {
+      "id": "LY.MARRY.HJC.30",
+      "topic": "风险",
+      "chapter": "婚姻",
+      "chapter_en": "Marriage",
+      "title": "两父齐兴，必有争盟之象；双官俱动，斯为竞娶之端：两个父爻动主有两人主婚或两家庚帖，两个官爻动主两家争娶；官化父、父化官恐有争讼",
+      "rule": {
+        "yi": "卦里两个父爻动，或父化父，有两个人主婚，不然就是两家的庚帖；两个鬼都动，有两家争着求婚，不然事体多变；一动一静、一旺一空则无此说；官化父、父化官，或官父都动，恐怕有争讼；文书、兄弟动，一定有口舌。",
+        "en": "Two Resource lines moving in the hexagram, or Resource changing into Resource, means two people presiding or two families' horoscope cards; two Pressure lines both moving means two families contending for the match, or else the affair changes often; one moving and one still, or one thriving and one Void, does not carry this reading; Pressure changing into Resource, Resource into Pressure, or both moving, may bring a lawsuit; Resource or Peer moving surely brings quarrels."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [6409, 6409],
+          "zh": ["两父齐兴，必有争盟之象；", "双官俱动，斯为竞娶之端。"],
+          "yi": ["两个父爻一起兴动，一定有争主婚的象；", "两个官爻都动，就是争着娶的开端。"],
+          "en": ["Two Resource lines moving together surely show contention over who presides;", "two Pressure lines both moving are the beginning of contention to marry her."] },
+        { "by": "旧注", "book": "卜筮大全", "range": [6410, 6411],
+          "zh": ["卦中两爻父动，或父化父，主有两人主婚。", "不然，必两家庚帖。", "若两鬼俱动，则有两家争求其婚。", "不然，主事体多有变。", "以上若一动一静，一旺一空，则无言。", "若卦有官化父，父化官，或官父皆动，恐有争讼之患。", "文书兄动，必有口舌。"],
+          "yi": ["卦里有两个父爻发动，或者父化父，主有两个人主婚，", "不然，就是两家的庚帖。", "如果两个鬼都动，就有两家争着求这门婚事；", "不然，主事体多有变化。", "以上情形，如果一动一静、一旺一空，就没有这种说法。", "如果卦里有官化父、父化官，或者官、父都动，恐怕有争讼的祸患。", "文书、兄弟发动，一定有口舌。"],
+          "en": ["Two Resource lines moving in the hexagram, or Resource changing into Resource, means two people presiding;", "otherwise, two families' horoscope cards.", "If two Pressure lines both move, two families contend for the match;", "otherwise, the affair changes often.", "If in these cases one moves and one is still, or one thrives and one is Void, this reading does not hold.", "If the hexagram has Pressure changing into Resource, Resource into Pressure, or both moving, there may be the trouble of a lawsuit.", "Resource or Peer moving surely brings quarrels."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2048, 2048],
+          "zh": ["卦中动变见有两重父母，主有两人主婚，不然主两家庚帖。", "若两鬼俱动，则有两家争婚多变。", "若卦中见有父化官，官化父，父官皆动，恐有争讼之患；", "兄临朱雀必有口舌。"],
+          "yi": ["卦中动变见有两重父母，主有两个人主婚，不然主有两家的庚帖。", "如果两个鬼都动，必有两家争着结婚，多有变化。", "如果卦中见到父化官、官化父，父、官都动，恐怕有争讼的祸患；", "兄弟临朱雀，一定有口舌。"],
+          "en": ["Two Resource lines appearing in the moving and changing lines mean two people presiding, or else two families' horoscope cards.", "If two Pressure lines both move, two families will contend to marry and there will be many changes.", "If the hexagram shows Resource changing into Pressure, Pressure changing into Resource, or both moving, there may be the trouble of a lawsuit;", "Peer on the Vermilion Bird surely brings quarrels."] }
+      ],
+      "see": ["LY.MARRY.HJC.29"]
+    }
+  ]
+}

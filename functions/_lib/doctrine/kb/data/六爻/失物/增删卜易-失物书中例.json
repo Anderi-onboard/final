@@ -1,0 +1,74 @@
+{
+  "shushu": "六爻",
+  "domain": "失物",
+  "work": "增删卜易",
+  "chapter": "飞伏神章、随鬼入墓章",
+  "chapter_en": "The chapters on flying and hidden spirits and on entering the tomb with Pressure",
+  "ranges": {"增删卜易": [3050, 4190]},
+  "units": [
+    {
+      "id": "LY.LOST.ZS.07",
+      "topic": "逃亡",
+      "chapter": "飞伏神章",
+      "chapter_en": "The chapter on flying and hidden spirits",
+      "title": "飞伏神章·书中例，占逃仆：卯木财爻伏在二爻午火之下，申金持世克制卯木终不能逃，伏去生飞是泄气，盗去财物都废在炉火人家，断甲子日拿获，果然子日在铁匠家窝赌处擒获，连铁匠一起送官；子水冲克午火飞神、生起卯木伏神",
+      "rule": {
+        "yi": "伏神得不到提挈终究是徒劳，飞神不被推开也是枉然。书中例：辰月丁巳日占逃走的仆人，得蹇卦：占仆人以财爻为用神，卯木财爻伏在二爻午火之下，午火是飞神，卯木是伏神；申金持世克制卯木，终究不能逃走；但因为伏在午火之下，伏神去生飞神，叫做泄气，偷去的财物都耗费在炉火人家，许他甲子日拿获；果然子日得到消息，窝赌在铁匠家，申时擒获，连铁匠一起送官。应在子日，是因为子水冲克午火飞神、生起卯木伏神。作者怀疑飞神午火就如铁匠，伏神卯木就是逃仆，到子日冲午、刑卯，所以两个人都被杖责。",
+        "en": "A hidden spirit not lifted up is in the end in vain, and a flying spirit not pushed aside is futile all the same. Worked example: in the Chen month, on a Dingsi day, a man divined about a runaway servant and got Jian: in divining for a servant the Wealth line is the Subject; Mao-wood Wealth is hidden under Wu-fire in the second line, Wu-fire being the flying spirit and Mao-wood the hidden spirit; Shen-metal holds the Self and controls Mao-wood, so he cannot in the end get away; but because it is hidden under Wu-fire, the hidden spirit gives life to the flying one, which is called draining, and the stolen goods are all spent in a household with a furnace fire, and it was promised that he would be caught on the Jiazi day; indeed on the Zi day word came that he was harboured and gambling at a blacksmith's, and he was seized in the Shen hour and sent to the officials together with the blacksmith. It answered on the Zi day because Zi-water clashes and controls Wu-fire, the flying spirit, and raises up Mao-wood, the hidden spirit. The author suspects that the flying spirit Wu-fire is the blacksmith and the hidden spirit Mao-wood the runaway servant, and that on the Zi day Zi clashes Wu and punishes Mao, so both men were beaten with the rod."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [3060, 3060],
+          "zh": ["《黄金策》曰：“伏无提掣终徒尔，飞不推天亦枉然。”", "此之谓也。"],
+          "yi": ["《黄金策》说：「伏无提掣终徒尔，飞不推天亦枉然。」", "说的就是这个。"],
+          "en": ["The Huangjin Ce says: \"a hidden spirit not lifted up is in the end in vain, and a flying spirit not pushed aside is futile all the same.\"", "This is what it means."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3050, 3050],
+          "zh": ["又如：辰月丁巳日(旬空：子丑)，占逃仆，得“水山蹇”"],
+          "yi": ["又如：辰月丁巳日（旬空子、丑），占逃走的仆人，得蹇卦。"],
+          "en": ["Another example: in the Chen month, on a Dingsi day (Void: Zi and Chou), divining about a runaway servant and getting the hexagram Jian."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3057, 3059],
+          "zh": ["占仆，以财爻为用神。", "而卯木财爻伏于二爻午火之下，午火为飞神，卯木为伏神。", "断曰：蹇卦申金持世，克制卯木，终不能逃。", "但因伏在午火之下，伏去生飞，名泄气，盗去财物，尽废于炉火之家，许甲子日拿获。", "果于子日得信，窝赌于铁匠之家，申时擒获，连铁匠送官。", "夫应子日者，子水冲克午火之飞神，生起卯木之伏神故也。"],
+          "yi": ["占仆人，以财爻为用神。", "卯木财爻伏在二爻午火之下，午火是飞神，卯木是伏神。", "断说：蹇卦申金持世，克制卯木，终究不能逃走。", "但因为伏在午火之下，伏神去生飞神，叫做泄气，偷去的财物都耗费在炉火人家，许他甲子日拿获。", "果然子日得到消息，窝赌在铁匠家，申时擒获，连铁匠一起送官。", "应在子日，是因为子水冲克午火飞神、生起卯木伏神。"],
+          "en": ["In divining for a servant the Wealth line is the Subject.", "Mao-wood Wealth is hidden under Wu-fire in the second line, Wu-fire being the flying spirit and Mao-wood the hidden spirit.", "Judgement: in Jian Shen-metal holds the Self and controls Mao-wood, so he cannot in the end get away.", "But because it is hidden under Wu-fire, the hidden spirit gives life to the flying one, which is called draining, and the stolen goods are all spent in a household with a furnace fire, and it was promised that he would be caught on the Jiazi day.", "Indeed on the Zi day word came that he was harboured and gambling at a blacksmith's, and he was seized in the Shen hour and sent to the officials together with the blacksmith.", "It answered on the Zi day because Zi-water clashes and controls Wu-fire, the flying spirit, and raises up Mao-wood, the hidden spirit."] },
+        { "by": "书中例", "book": "增删卜易", "range": [3061, 3061],
+          "zh": ["余疑飞神午火即如铁匠，伏神卯木即是逃仆，至子日冲午而刑卯，所以二人皆被杖责。"],
+          "yi": ["作者怀疑飞神午火就如铁匠，伏神卯木就是逃仆，到子日冲午、刑卯，所以两个人都被杖责。"],
+          "en": ["The author suspects that the flying spirit Wu-fire is the blacksmith and the hidden spirit Mao-wood the runaway servant, and that on the Zi day Zi clashes Wu and punishes Mao, so both men were beaten with the rod."] }
+      ],
+      "note": {
+        "yi": "同一个卦、同一个日子、同样的判词，《卜筮正宗》十八问答第九问也收了（那边说「窝于炉火之家」，这里说「窝赌于铁匠之家」，多一句铁匠与仆人一起被杖责的议论）。",
+        "en": "The same hexagram, the same date and the same judgement are also in the ninth of the Eighteen Questions of the Bu Shi Zheng Zong (there \"harboured in a household with a furnace fire\", here \"harboured and gambling at a blacksmith's\", with an extra remark that the blacksmith and the servant were beaten together)."
+      },
+      "see": ["LY.LOST.BSZZ.03"]
+    },
+    {
+      "id": "LY.LOST.ZS.08",
+      "topic": "风险",
+      "chapter": "随鬼入墓章",
+      "chapter_en": "The chapter on entering the tomb with Pressure",
+      "title": "随鬼入墓章·书中例，占贼来否：古法说世临月破的鬼、占防患则祸必潜消，作者不以为然——月破的鬼就是大白虎鬼，眼下虽无妨，等到填实之年月就不吉；当时土贼横行，这人带着妻子去避，因小女没跟上回头去抱，一起被贼害死：自己死是世临破鬼入日墓，女儿死是上爻鬼变子孙",
+      "rule": {
+        "yi": "古人说世爻临着月破的鬼，如果占防患，祸必定悄悄消去；我认为不对，月破的鬼就是大白虎鬼，眼下虽然没有妨碍，到填实月破的年月就不吉。书中例：申月己未日占贼会不会来，得大畜卦变泰卦：当时土匪横行，常去常来，乡里人没有安宁的日子；一天忽然传来贼到了，这个人带着妻子避开，因为小女儿没有跟着，又回去抱女儿，一同被贼害死。自己的死，是世爻临着月破的鬼又入日墓；女儿的死，是上爻鬼变子孙的缘故。怎能说世临破鬼就祸患潜消呢？鬼临月破而不动的就不灵验。",
+        "en": "The ancients said that when the Self sits on a Pressure line struck by the Month-break, in divining for guarding against harm the calamity surely melts away in secret; I think this is wrong: a Month-break Pressure is a Great White Tiger Pressure, and though it does no harm for now, the year or month that fills the break is not lucky. Worked example: in the Shen month, on a Jiwei day, a man divined whether bandits would come and got Daxu changing to Tai: at that time local bandits were rampant, coming and going, and the villagers had no peace; one day word came suddenly that the bandits had arrived, and this man took his wife and fled, but since his little daughter had not come along he went back to carry her, and they were killed together by the bandits. His own death was because the Self sat on a Month-break Pressure and entered the tomb of the Day; the daughter's death was because the Pressure of the top line changed into Output. How can it be said that the Self on a broken Pressure melts the calamity away? A Pressure struck by the Month-break and not moving is not borne out."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [4183, 4183],
+          "zh": ["古以世临破鬼，如占防患，祸必潜消；", "余以为非，月破既为大白虎鬼，目下虽则无妨，实破之年月非吉。"],
+          "yi": ["古人认为世爻临着月破的鬼，如果占防患，祸必定悄悄消去；", "我认为不对，月破的鬼就是大白虎鬼，眼下虽然没有妨碍，到填实月破的年月就不吉。"],
+          "en": ["The ancients held that when the Self sits on a Pressure line struck by the Month-break, in divining for guarding against harm the calamity surely melts away in secret;", "I think this is wrong: a Month-break Pressure is a Great White Tiger Pressure, and though it does no harm for now, the year or month that fills the break is not lucky."] },
+        { "by": "书中例", "book": "增删卜易", "range": [4184, 4184],
+          "zh": ["如：申月己未日(旬空：子丑)，占贼来否？", "得“大畜之泰”"],
+          "yi": ["如：申月己未日（旬空子、丑），占贼会不会来？", "得大畜卦变泰卦。"],
+          "en": ["For example: in the Shen month, on a Jiwei day (Void: Zi and Chou), divining whether bandits would come:", "the hexagram Daxu changing to Tai."] },
+        { "by": "书中例", "book": "增删卜易", "range": [4190, 4190],
+          "zh": ["彼时土贼兴发，常去常来，乡人了无宁日。", "一日忽报贼至，此人携妻而避，因小女未随，复去抱女，同遭贼害。", "夫应自身之死者，世临破鬼而入日墓；", "女之死者，上爻鬼变子孙之故耳。", "岂可谓之世临破鬼，祸患潜消耶？", "鬼临月破而不动者不验。"],
+          "yi": ["当时土匪横行，常去常来，乡里人没有安宁的日子。", "一天忽然传来贼到了，这个人带着妻子避开，因为小女儿没有跟着，又回去抱女儿，一同被贼害死。", "自己的死，是世爻临着月破的鬼又入日墓；", "女儿的死，是上爻鬼变子孙的缘故。", "怎能说世临破鬼就祸患潜消呢？", "鬼临月破而不动的就不灵验。"],
+          "en": ["At that time local bandits were rampant, coming and going, and the villagers had no peace.", "One day word came suddenly that the bandits had arrived, and this man took his wife and fled, but since his little daughter had not come along he went back to carry her, and they were killed together by the bandits.", "His own death was because the Self sat on a Month-break Pressure and entered the tomb of the Day;", "the daughter's death was because the Pressure of the top line changed into Output.", "How can it be said that the Self on a broken Pressure melts the calamity away?", "A Pressure struck by the Month-break and not moving is not borne out."] }
+      ],
+      "note": {
+        "yi": "这一例本是讲「世随鬼入墓」不一定吉，借来说防贼：占贼来不来，世爻临月破的鬼并不能保平安。题目是「贼来否」，所以放在失物域「风险」下。",
+        "en": "The example was given to show that the Self following Pressure into the tomb is not always lucky; here it serves for guarding against bandits: when divining whether bandits will come, the Self on a Month-break Pressure does not guarantee safety. The question was whether the bandits would come, so it is filed under risk in the domain of lost goods."
+      },
+      "see": ["LY.LOST.ZS.01"]
+    }
+  ]
+}

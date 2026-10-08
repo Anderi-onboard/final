@@ -1,0 +1,178 @@
+{
+  "shushu": "六爻",
+  "domain": "婚姻",
+  "work": "天玄赋",
+  "chapter": "身命章",
+  "chapter_en": "The chapter on person and fate",
+  "ranges": {"卜筮大全": [4104, 4700]},
+  "units": [
+    {
+      "id": "LY.MARRY.TXF.20",
+      "topic": "对方",
+      "chapter": "身命章",
+      "chapter_en": "The chapter on person and fate",
+      "title": "世是平生之本，应为百岁之妻：应与青龙吉神并立则妻必贤，与咸池玄武并立则妻必淫；世爻无气受应克则妻夺夫权；应落空亡则妻宫有损",
+      "rule": {
+        "yi": "凡占，世爻是自己，应爻是妻子。应爻和青龙这样的吉神并立，妻子一定贤惠；和咸池、玄武并立，妻子一定淫乱。世爻没有气又被应爻克，一定是妻子夺了丈夫的权；应爻如果落在空亡，妻子这一宫有损失。",
+        "en": "In every divination the Self line is oneself and the Other line is the wife. If the Other line stands together with the Azure Dragon or another lucky spirit, the wife is surely virtuous; if with the Xianchi star or the Dark Tortoise, the wife is surely lewd. If the Self line has no qi and is controlled by the Other line, the wife surely seizes the husband's authority; if the Other line falls into Void, the wife's place is damaged."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4132, 4132],
+          "zh": ["世是平生之本，", "应为百岁之妻。"],
+          "yi": ["世是一生的根本，", "应是相伴百年的妻子。"],
+          "en": ["The Self line is the root of a whole life,", "and the Other line is the wife of a hundred years."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4135, 4135],
+          "zh": ["世应二爻，乃一卦之主。", "凡占，以世为已，应为妻。", "若与青龙吉神并立，其妻必贤；", "咸池玄武并立，其妻必淫。", "世爻无气受应克，必然妻夺夫权。", "应爻若落空亡，妻宫有损。"],
+          "yi": ["世爻和应爻两爻，是一个卦的主宰。", "凡是占卜，世爻是自己，应爻是妻子。", "如果（应爻）和青龙这样的吉神并立，他的妻子一定贤惠；", "和咸池、玄武并立，他的妻子一定淫乱。", "世爻没有气又被应爻克，一定是妻子夺了丈夫的权。", "应爻如果落在空亡，妻子这一宫有损失。"],
+          "en": ["The Self and Other lines are the masters of a hexagram.", "In every divination the Self line is oneself and the Other line is the wife.", "If it stands together with the Azure Dragon or another lucky spirit, the wife is surely virtuous;", "if with the Xianchi star or the Dark Tortoise, the wife is surely lewd.", "If the Self line has no qi and is controlled by the Other line, the wife surely seizes the husband's authority.", "If the Other line falls into Void, the wife's place is damaged."] }
+      ],
+      "note": {
+        "yi": "这一段紧挨着的两段注（4133、4134）讲的是世爻本身的贵贱和世空，不涉及婚姻，没有收。同样一句「应为百岁之妻」，《黄金策》身命章里的注（LY.MARRY.HJC.69）和《增删卜易》夫妇章（LY.MARRY.ZS.24）另有说法。",
+        "en": "The two notes directly between the verse and this one (lines 4133 and 4134) are about the rank of the Self line itself and a Void Self line, not about marriage, and are not included. The same phrase 'the Other line is the wife of a hundred years' is glossed differently in the Huangjin Ce chapter on person and fate (LY.MARRY.HJC.69) and in the Zengshan Buyi chapter on husband and wife (LY.MARRY.ZS.24)."
+      },
+      "see": ["LY.MARRY.HJC.69", "LY.MARRY.ZS.04", "LY.MARRY.ZS.24", "LY.MARRY.TXF.01", "LY.MARRY.TXF.06"]
+    },
+    {
+      "id": "LY.MARRY.TXF.21",
+      "topic": "夫妻",
+      "chapter": "身命章",
+      "chapter_en": "The chapter on person and fate",
+      "title": "相生相合偕老齐眉、相克相冲终朝反目：世应相生一生如鱼得水，相克相冲百岁似冰投炭；生合逢冲始谐后被搬弄；应克世而动爻克应或日辰冲破，先不和后得人劝而好合",
+      "rule": {
+        "yi": "世爻应爻相生相合，一定白头偕老、相敬如宾，一辈子如鱼得水；相克相冲，注定整天反目，一百年都像冰和炭放在一起。生合的地方碰上冲，起初和谐，后来被人挑拨。应爻来克世爻本来不好，但如果有动爻去克应爻，或者应爻被日辰冲破，起初虽然不和，以后有人劝解，终究和好。世应比和，双方不分高下。",
+        "en": "The Self and Other lines generating and combining means they surely grow old together in mutual respect, like a fish in water all their lives; controlling and clashing means they are sure to quarrel all day long, like ice thrown on coals for a hundred years. Where generation and combination meet a clash, it is harmonious at first and later someone stirs up trouble. The Other line coming to control the Self line is not good in itself, but if a moving line controls the Other line, or the Other line is clashed and broken by the Day, then although they are at odds at first, someone later mediates and they end up reconciled. With Self and Other in harmony as equals, neither side is above the other."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4137, 4137],
+          "zh": ["相生相合，", "必然偕老齐眉；", "相克相冲，", "决定终朝反目。"],
+          "yi": ["相生相合，", "必然偕老齐眉；", "相克相冲，", "决定终朝反目。"],
+          "en": ["Generating and combining,", "they surely grow old together, raising the tray level with the brows;", "controlling and clashing,", "they are sure to quarrel from morning to night."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4138, 4138],
+          "zh": ["世应二爻，若得相生相合，一生如鱼得水。", "如逢相克相冲，百岁似冰投炭。", "生合之处逢冲，始谐和，其后被人搬弄。", "若应来克世，本不为佳，却得动爻克应，或被日辰冲破，则始虽不和，以后得人解劝，终归好合。", "若世应比和，自然两无高下。"],
+          "yi": ["世爻应爻，如果相生相合，一辈子如鱼得水。", "如果碰上相克相冲，一百年都像冰和炭放在一起。", "生合的地方碰上冲，起初和谐，后来被人挑拨。", "如果应爻来克世爻，本来不好，但如果有动爻去克应爻，或者应爻被日辰冲破，那么起初虽然不和，以后有人来劝解，终究和好。", "如果世爻应爻比和，自然双方不分高下。"],
+          "en": ["If the Self and Other lines generate and combine, for a lifetime it is like a fish in water.", "If they control and clash, for a hundred years it is like ice thrown on coals.", "Where generation and combination meet a clash, it is harmonious at first, and afterwards someone stirs up trouble.", "If the Other line comes to control the Self line, it is not good in itself; but if a moving line controls the Other line, or the Other line is clashed and broken by the Day, then although they are at odds at first, someone later comes to mediate and they end up reconciled.", "If the Self and Other lines are in harmony as equals, naturally neither side is above the other."] }
+      ],
+      "note": {
+        "yi": "「齐眉」出自梁鸿、孟光夫妻「举案齐眉」的故事，指夫妻相敬如宾。这一段和伉俪章里的同类句（LY.MARRY.TXF.01、TXF.03）一起读：那里讲男求女、女求男的成与不成，这里讲成了以后的日子。",
+        "en": "'Level with the brows' is from the story of Liang Hong and Meng Guang raising the tray to the level of the brows, meaning a couple in mutual respect. Read it with the like passages of the chapter on husband and wife (LY.MARRY.TXF.01, TXF.03): those speak of whether a match is made from either side, this speaks of the life after it is made."
+      },
+      "see": ["LY.MARRY.TXF.20", "LY.MARRY.TXF.01", "LY.MARRY.HJC.69", "LY.MARRY.ZS.13", "LY.MARRY.YY.06"]
+    },
+    {
+      "id": "LY.MARRY.TXF.22",
+      "topic": "入赘再嫁",
+      "chapter": "身命章",
+      "chapter_en": "The chapter on person and fate",
+      "title": "财爻动则父母刑伤、兄弟兴则妻宫重迭：兄弟爻交重或临世位则妻宫受伤，断弦再续、晚岁重婚；临旁位灾殃稍减",
+      "rule": {
+        "yi": "财爻动，父母（父母爻）就被刑伤；兄弟爻兴旺，妻子这一宫就重叠。兄弟爻交重，或者临在世爻的位置上，这个人的妻宫受伤，一定是断了弦再续，晚年重新结婚。如果不临世位而临在别的爻上，灾殃就稍轻一些。",
+        "en": "If the Wealth line moves, the parents (the Resource line) are punished and injured; if the Peer line flourishes, the wife's place is doubled. If the Peer line is doubled by moving, or sits on the Self position, the man's wife place is injured, and it surely means the string is snapped and mended: a second marriage in later years. If it sits on another position, the calamity is somewhat lighter."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4140, 4140],
+          "zh": ["财爻动，", "则父母刑伤；", "兄弟兴，", "则妻宫重迭。"],
+          "yi": ["如果财爻发动，", "则父母刑伤；", "如果兄弟爻兴旺，", "则妻宫重叠。"],
+          "en": ["If the Wealth line moves,", "the parents (the Resource line) are punished and injured;", "if the Peer line flourishes,", "the wife's place is doubled."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4141, 4141],
+          "zh": ["财爻持世或动，则父母受克。", "其人必早失怙恃，或过房离祖，重拜爹娘。", "若兄弟交重，或临世位，其人妻宫受伤，必主断弦再续，晚岁重婚。"],
+          "yi": ["财爻持世，或者发动，父母就受克。", "这个人一定早年就失去父母，或者过继给别人、离开祖宗，重新拜别人做爹娘。", "如果兄弟爻交重，或者临在世的位置上，这个人的妻宫受伤，一定是断了弦再续，晚年重新结婚。"],
+          "en": ["If the Wealth line holds the Self line or moves, the parents (the Resource line) are controlled.", "The man surely loses his parents early, or is adopted out and leaves his ancestors, bowing anew to other people as father and mother.", "If the Peer line is doubled by moving, or sits on the Self position, the man's wife place is injured, and it surely means the string is snapped and mended: a second marriage in later years."] },
+        { "by": "经", "book": "卜筮大全", "range": [4143, 4143],
+          "zh": ["若临旁位，", "稍减灾殃。"],
+          "yi": ["若临旁位，", "稍减灾殃。"],
+          "en": ["If it sits on a side position,", "the calamity is somewhat lessened."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4144, 4144],
+          "zh": ["言前妻财兄弟之类，不临世上，在他爻发动，其灾殃稍可。", "以是推之，学者自当通变。"],
+          "yi": ["这是说前面说的妻财、兄弟这一类，如果不临在世爻上，而在别的爻上发动，灾殃就稍微好一点。", "照这个道理推下去，学的人自然应当灵活变通。"],
+          "en": ["This says that if the Wealth and Peer lines and the like mentioned above do not sit on the Self line but move on other lines, the calamity is a little more bearable.", "Reasoning from this, the student should adapt flexibly."] }
+      ],
+      "note": {
+        "yi": "「断弦再续」是妻子去世后再娶；这里的「妻宫重叠」指妻子这一宫出现两次，即前后两位妻子。同一段注里后面几句（父母动难为子息、官鬼兴损害弟兄、子孙持世财爻有气一生衣禄）讲的是子嗣、兄弟和衣禄，没有收。",
+        "en": "'The string snapped and mended' means marrying again after a wife's death; 'the wife's place doubled' means the wife's place appears twice, that is, two wives one after the other. The later sentences of the same note (a moving Resource line hinders children, a rising Pressure line harms brothers, Output on the Self line with a Wealth line that has qi brings a lifetime of clothing and salary) are about children, brothers and livelihood and are not included."
+      },
+      "see": ["LY.MARRY.HJC.73", "LY.MARRY.TXF.07", "LY.MARRY.YY.08", "LY.MARRY.TXF.09"]
+    },
+    {
+      "id": "LY.MARRY.TXF.23",
+      "topic": "风险",
+      "chapter": "身命章",
+      "chapter_en": "The chapter on person and fate",
+      "title": "刑克害冲断一生之得失：日辰刑、动爻刑，刑财爻则妻妾伤；六害见之骨肉情疏、六亲分薄、夫妻不协、子息难招",
+      "rule": {
+        "yi": "有日辰的刑、动爻的刑：刑到父母爻，双亲受损；刑到财爻，妻妾受伤；骨肉逢刑，没有不受伤残的。六害（子未、寅巳、卯辰这几对）见到了，骨肉之间感情疏远，六亲缘分淡薄，夫妻不和，子女难得。",
+        "en": "There are punishments by the Day and punishments by moving lines: punishing the Resource line harms the parents; punishing the Wealth line injures the wife and concubine; flesh and blood meeting punishment are never without injury. Where the six harms (Zi-Wei, Yin-Si, Mao-Chen and the like) are seen, feeling among kin is cool, the bonds of the six relations are thin, husband and wife are not in accord, and children are hard to have."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4113, 4113],
+          "zh": ["刑克害冲，", "断一生之得失；"],
+          "yi": ["刑、克、害、冲，", "断一生的得失；"],
+          "en": ["Punishment, control, harm and clash", "judge the gains and losses of a whole life;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4116, 4116],
+          "zh": ["凡占有日辰刑，动爻刑。", "若刑父母，则双亲损。", "刑财爻，则妻妾伤。", "骨肉逢刑，无不伤残。"],
+          "yi": ["凡是占卜，有日辰的刑，有动爻的刑。", "如果刑到父母爻，双亲受损。", "刑到财爻，妻妾受伤。", "骨肉逢刑，没有不受伤残的。"],
+          "en": ["In every divination there are punishments by the Day and punishments by moving lines.", "If the Resource line is punished, the parents are harmed.", "If the Wealth line is punished, the wife and concubine are injured.", "Flesh and blood meeting punishment are never without injury."] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4118, 4118],
+          "zh": ["六害见之，骨肉情疏，六亲分薄，夫妻不协，子息难招。"],
+          "yi": ["六害见到了，骨肉之间感情疏远，六亲缘分淡薄，夫妻不和，子女难得。"],
+          "en": ["Where the six harms are seen, feeling among kin is cool, the bonds of the six relations are thin, husband and wife are not in accord, and children are hard to have."] }
+      ],
+      "note": {
+        "yi": "六害是子未、丑午、寅巳、卯辰、申亥、酉戌六对；注里举的是前三对（子未、寅巳、卯辰），「余皆仿此」。刑的三种（三刑、自刑等）在这一章前面的注里，这里只收刑到父母、财爻的后果。",
+        "en": "The six harms are the six pairs Zi-Wei, Chou-Wu, Yin-Si, Mao-Chen, Shen-Hai and You-Xu; the note gives the first three and says 'the rest follow this'. The kinds of punishment (three punishments, self-punishment and so on) are set out in the earlier notes of this chapter, and only the consequences of punishing the Resource and Wealth lines are included here."
+      },
+      "see": ["LY.MARRY.TXF.22", "LY.MARRY.YM.24"]
+    },
+    {
+      "id": "LY.MARRY.TXF.24",
+      "topic": "成否",
+      "chapter": "总论提纲",
+      "chapter_en": "The opening summary",
+      "title": "官鬼不宜持世，求名婚娶两相宜：官鬼持世一般不吉，独有求名和婚娶两件合宜",
+      "rule": {
+        "yi": "官鬼一般不宜持世，只有求功名和婚娶这两件事，官鬼持世反而合宜。",
+        "en": "Pressure should not generally hold the Self line, but for seeking office and for marrying alike it is fitting."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4104, 4104],
+          "zh": ["官鬼不宜持世，", "求名婚娶两相宜；"],
+          "yi": ["官鬼不宜持世，", "求名婚娶两相宜；"],
+          "en": ["Pressure should not hold the Self line,", "but for seeking office and for marrying both are fitting;"] }
+      ],
+      "dispute": {
+        "yi": "同样是官鬼持世，《卜筮全书》的六亲持世歌说「占婚问病俱凶兆」（LY.MARRY.BSQS.09），这里说婚娶「两相宜」。两处都是口诀，没有注，书里没有裁断。《增删卜易》分男女：女占男，官星持世、合世、生世且旺相是良缘（LY.MARRY.ZS.11）；男占女，官鬼是克我的，不是妻，不看它。",
+        "en": "For the same Pressure line holding Self, the rhyme on the six relations holding the Self in the Bushi Quanshu says 'for marriage or illness both are ill omens' (LY.MARRY.BSQS.09), while this verse says marrying is 'fitting'. Both are bare rhymes with no note, and the books do not decide between them. The Zengshan Buyi divides by sex: when a woman divines about a man, a Pressure line that holds, combines with or generates the Self line and is strong makes a good match (LY.MARRY.ZS.11); when a man divines about a woman, Pressure is what controls him and is not the wife, and is not looked at."
+      },
+      "note": {
+        "yi": "这一句夹在总论提纲的一长串六亲、六神口诀里（白虎动、子孙兴、官鬼持世、妻财扶身、父母文书、玄武、螣蛇、朱雀、勾陈），前后各句与婚姻无关，没有收。",
+        "en": "The line sits in a long run of rhymes on the six relations and six spirits in the opening summary (White Tiger moving, Output rising, Pressure holding Self, Wealth supporting the Body, Resource and documents, the Dark Tortoise, the Coiling Snake, the Vermilion Bird, Hook Earth); the neighbouring lines have nothing to do with marriage and are not included."
+      },
+      "see": ["LY.MARRY.BSQS.09", "LY.MARRY.ZS.11", "LY.MARRY.HJC.87"]
+    },
+    {
+      "id": "LY.MARRY.TXF.25",
+      "topic": "取象",
+      "chapter": "家宅章",
+      "chapter_en": "The chapter on the household",
+      "title": "月建会青龙，当主婚姻妊喜：月建与青龙会合一处发动，主重重喜庆；士夫加官进禄，庶民增进钱财，成婚姻产育无不吉",
+      "rule": {
+        "yi": "月建和青龙会合在一处发动，主一重又一重的喜庆：读书做官的人加官进禄，平民增加钱财，成就婚姻、生育，没有不吉的。",
+        "en": "The Month meeting the Azure Dragon in one place and moving means joy upon joy: a gentleman gains office and salary, a commoner gains money, and marriages and births are made, all auspicious."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮大全", "range": [4697, 4697],
+          "zh": ["月建会青龙，", "当主婚姻妊喜；"],
+          "yi": ["月建会青龙，", "当主婚姻妊喜；"],
+          "en": ["The Month meeting the Azure Dragon,", "means the joy of a marriage or of a pregnancy;"] },
+        { "by": "天玄赋注", "book": "卜筮大全", "range": [4699, 4700],
+          "zh": ["月建：即正月建寅之类。", "与青龙会合一处发动，主重重喜庆。", "士夫当加官进禄，庶民则增进钱财，成婚姻产育，无不吉也。"],
+          "yi": ["月建，就是正月建寅这一类。", "和青龙会合在一处发动，主一重又一重的喜庆。", "士大夫会加官进禄，平民则增加钱财，成就婚姻、生育，没有不吉的。"],
+          "en": ["The Month: it is the likes of the Yin of the first month.", "Meeting the Azure Dragon in one place and moving, it means joy upon joy.", "A gentleman will gain office and salary, a commoner will gain money, and marriages and births are made; all is auspicious."] }
+      ],
+      "note": {
+        "yi": "这一句在《火珠林》附的天玄赋里也有（第 1730 行），注文相同。它接在家宅章一长串六爻定位的注文后面，是那一章的收束语，前半「搜索六爻，总是家庭小事」不是判断。",
+        "en": "The line is also in the Tianxuan Fu appended to the Huozhulin (line 1730), with the same note. It follows a long run of notes on the positions of the six lines in the household chapter and closes that chapter; its first half, 'searching the six lines is always about small household matters', is not a judgment."
+      },
+      "see": ["LY.MARRY.BSYG.02", "LY.MARRY.BSYG.03", "LY.MARRY.DYTJ.22", "LY.MARRY.DYTJ.25"]
+    }
+  ]
+}

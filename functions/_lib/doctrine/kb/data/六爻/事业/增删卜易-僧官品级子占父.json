@@ -1,0 +1,154 @@
+{
+  "shushu": "六爻",
+  "domain": "事业",
+  "work": "增删卜易",
+  "chapter": "僧官杂职章、功名到何品级章、子占父功名章",
+  "chapter_en": "Chapters on minor officials, on the grade one will reach, and on a son divining for his father",
+  "ranges": {"增删卜易": [10916, 11079]},
+  "units": [
+    {
+      "id": "LY.CAREER.ZS.53",
+      "topic": "取象",
+      "chapter": "僧官、道纪、医官、杂职、阴阳等官章",
+      "chapter_en": "Chapter on monastic, Daoist, medical, minor and yin-yang officials",
+      "title": "僧官医官·亦喜官文发动（旧文谓僧道医官占功名以子孙为用神、不宜父动，作者以为非：他人占僧道医以子孙为用神，自占功名仍看官爻；官星持世或父母持世得旺官生，名必成；阴阳杂职嫌子动；书中例：屯之既济，子孙持世官临应，果退职）",
+      "rule": {
+        "yi": "僧官、道纪、医官、杂职、阴阳等官：别人占僧人、道士、医生，以子孙为用神，子孙旺相则道业高强，父母兴旺则平庸愚笨、懦弱；他们自己占自己的道术，也以子孙为用神，子孙旺相能降伏鬼神。但他们自己占功名时，子孙发动就克官星了，不能再当用神，应当仍然看官爻：官星持世，或日月动爻来生，或父母持世、有旺相的官星来生，功名必定成；子孙发动或子孙持世，一定不成名；阴阳官和各种杂职官尤其嫌子孙发动；其余的和普通人求名同样断。",
+        "en": "Monastic, Daoist, medical, minor and yin-yang officials: when another person divines about a monk, Daoist or doctor, Output is the Subject, and if Output is thriving his practice is high and strong, if Resource flourishes he is mediocre, dull and timid; when they divine about their own art, Output is again the Subject, and a thriving Output can subdue ghosts and spirits. But when they divine about their own rank, a moving Output controls the star of office and can no longer be the Subject, so one must still look at the Pressure line: if the star of office holds the Self, or the Day, Month or a moving line generates it, or Resource holds the Self and a thriving star of office generates it, the rank will surely be made; if Output moves or holds the Self, the name will surely not be made; yin-yang officials and all minor posts especially dislike a moving Output; otherwise judge as for an ordinary man seeking a name."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10918, 10921],
+          "zh": ["僧官医官，亦喜官文发动。", "旧文：岂可文书发动。", "谓僧道医官之占功名，以子孙为用神，不宜父动而克子也？", "余以为非也。", "若他人占僧道医人，则以子孙为用神；", "子孙旺相，道业高强；", "父母兴隆，庸愚懦弱。", "若僧道医家自占道术，亦以子孙为用神，子孙旺相，鬼服龙降。", "今自占功名，子动则克官矣，如何反为用耶？", "当仍看官爻。", "官星持世，或日月动爻以相生；", "父母持世，或得旺官而相生，其名必成。", "阴阳杂职，俱以子动为嫌。", "子孙动、子孙持世，皆许必不成名，余则以俗家求名同断。"],
+          "yi": ["僧官、医官，也喜欢官星和文书（父母）发动。", "旧文说：怎么可以文书发动。", "是说僧道医官占功名，以子孙为用神，不宜父母发动而克子孙吗？", "我认为不对。", "如果是别人占僧人、道士、医生，就以子孙为用神；", "子孙旺相，道业高深强盛；", "父母兴旺，平庸愚笨、懦弱。", "如果是僧道医家自己占自己的道术，也以子孙为用神，子孙旺相，能降伏鬼、降服龙。", "现在是自己占功名，子孙发动就克官星了，怎么反而当用神呢？", "应当仍然看官爻。", "官星持世，或者日月、动爻来相生；", "父母持世，或者有旺相的官星来相生，他的名位必定能成。", "阴阳官和各种杂职官，都嫌子孙发动。", "子孙发动、子孙持世，都可以断定一定不成名；其余的就和俗家（普通人）求名一样断。"],
+          "en": ["Monastic officials and medical officials also welcome the star of office and the document moving.", "The old text says: how can the document move?", "It means that for monks, Daoists and medical officials asking about rank, Output is the Subject and it is not good for Resource to move and control Output?", "I think this is wrong.", "If another person divines about a monk, Daoist or doctor, then Output is the Subject;", "if Output is thriving, his practice is high and strong;", "if Resource flourishes, he is mediocre, dull and timid.", "If a monk, Daoist or physician divines about his own art, Output is again the Subject, and if Output is thriving he can subdue ghosts and tame dragons.", "But now when he divines about his own rank, a moving Output controls the star of office, so how can it be taken as the Subject instead?", "One should still look at the Pressure line.", "The star of office holds the Self, or the Day, Month or a moving line generates it;", "or Resource holds the Self, or a thriving star of office generates it: then his rank will surely be achieved.", "For yin-yang officials and other minor posts, a moving Output is always disliked.", "If Output moves or Output holds the Self, one may judge that the name will surely not be made; otherwise judge as for a layman seeking a name."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10922, 10922],
+          "zh": ["如：丑月丙辰日(旬空：子丑)，僧官因官事，恐革退僧官而卜之，得“屯之既济”"],
+          "yi": ["例如：丑月丙辰日（旬空：子、丑），一位僧官因为官府的事，担心被革去僧官的职位而占卜，得到屯卦变既济卦。"],
+          "en": ["For example: in the Chou month on a Bingchen day (void: Zi and Chou), a monastic official, fearing to be stripped of his office because of a legal affair, divined and got Zhun changing into Jiji."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10970, 10970],
+          "zh": ["子孙持世，克官之神，官又临于应爻，此官已属他人矣。", "后果退职。"],
+          "yi": ["子孙持世，是克官星的神，官星又临在应爻上，这个官职已经属于别人了。", "后来果然被革去了职位。"],
+          "en": ["Output holds the Self and is the spirit that controls the star of office, and the star of office sits on the Other, so this office already belongs to another.", "He was indeed removed from his post."] }
+      ],
+      "dispute": {
+        "yi": "黄金策仕宦章讲僧道医官「岂可文书发动」，旧注解作僧道医官的功名以子孙为用神、父母发动克子孙必有灾悔（LY.CAREER.HJC.27）；增删卜易引了这句旧文，说「余以为非也」，并且主张自占功名时看官爻、不看子孙。",
+        "en": "The Huangjin Ce's chapter on holding office says of monastic, Daoist and medical officials 'how can the document move', and the old commentary explains it as: their rank takes Output as the Subject, and a moving Resource that controls Output surely brings misfortune and regret (LY.CAREER.HJC.27); the Zeng Shan Bu Yi quotes this old text and says 'I think this is wrong', holding that when they divine about their own rank one looks at the Pressure line and not at Output."
+      },
+      "note": {
+        "yi": "「僧官、道纪、医官、阴阳」是明清官署里管僧道、医、阴阳的官职；书里没有解释。「鬼服龙降」是说道术高强、能降伏鬼神。",
+        "en": "Monastic officials, Daoist registrars, medical officials and yin-yang officials were the officers who administered monks, Daoists, medicine and divination in the Ming and Qing offices; the book does not explain them. 'Ghosts submit and dragons are tamed' says that the art is high and can subdue ghosts and spirits."
+      },
+      "see": ["LY.CAREER.HJC.27", "LY.CAREER.ZS.26"]
+    },
+    {
+      "id": "LY.CAREER.ZS.54",
+      "topic": "升迁",
+      "chapter": "功名到何品级章",
+      "chapter_en": "Chapter on the grade of rank one will reach",
+      "title": "功名到何品级·水一、火二、木三、金四、土五，官临火者二品，官星属水一品之尊（野鹤：古法不够用，改用指占：我能公侯将相否、一品否、鼎甲否；旺官临日月指日可期，官破刑冲终身失望，子孙持世止渴望梅，官动生身探囊取物；书中例：小过官至佥事，节之蹇世变辰官应辰年鼎甲）",
+      "rule": {
+        "yi": "断官能做到几品：古法按五行的成数，水一、火二、木三、金四、土五，官星临在火上官位二品，官星属水是一品的尊位。野鹤说这个古法不够用：水只有一个数，官位到公侯的怎么确定？官分九品，数只到五，六品、七品的怎么确定？他的办法是指明了去占：我能做公侯将相吗？我能做一品大员吗？我能中鼎甲吗？旺相的官星临日月，指日可待；官星被破或被刑冲，终身失望；子孙持世，就像望梅止渴；官星发动生身，恰似探囊取物。问鼎甲这类具体的事，要另占一卦指明了问：古人以蹇卦为不吉，他只看用神，世临巳火、卯月生申日合、青龙持世，中鼎甲无疑；世爻变出辰土之官，应在辰年，后来果然在甲辰科殿试得传胪第一。",
+        "en": "To judge to what grade an official will rise: the old method uses the numbers of the five elements, Water one, Fire two, Wood three, Metal four, Earth five, so that a star of office on Fire gives the second grade and a Water star of office the honoured first grade. The Old Man of Yehe says this old method is not enough: Water has only the number one, so how is the rank of dukes and marquises to be fixed? There are nine grades of office and the numbers stop at five, so how are the sixth and seventh to be fixed? His method is to name the matter and divine: can I become a duke, marquis, general or chancellor? Can I become a first-grade minister? Can I take a place among the top three? A thriving star of office on the Day or Month can be expected any day; if the star of office is broken, punished or clashed, one is disappointed for life; if Output holds the Self, it is like quenching thirst by gazing at plums; if the star of office moves to generate the Body, it is as easy as taking something from a bag. For a concrete matter such as the top three, another hexagram is cast with the matter named: the ancients took Jian as ominous, and he looked only at the Subject, where the Self on Si Fire generated by the Mao month and combined by the Shen day with the Azure Dragon holding the Self left no doubt of a top place; the Self turned into the Chen Earth star of office, so it fell in a Chen year, and at the palace examination of the Jiachen session he did come first at the announcement."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [10976, 10976],
+          "zh": ["水一、火二、木三、金四、土五，官临火者，官居二品，官星属水，一品之尊。"],
+          "yi": ["水是一、火是二、木是三、金是四、土是五，官星临在火上的，官位在二品；官星属水的，是一品的尊位。"],
+          "en": ["Water is one, Fire two, Wood three, Metal four, Earth five; if the star of office sits on Fire, the rank is second grade; if the star of office is Water, it is the honoured first grade."] },
+        { "by": "野鹤", "book": "增删卜易", "range": [10978, 10978],
+          "zh": ["野鹤曰：右古法也。", "但水止一数，位至公侯者，何以定之？", "官设九品，数止于五、六、七品者，何以定之？", "余有指占之法在，我能公侯将相否？", "我能一品八座否？", "旺官临日月，指日可期；", "官破及刑冲，终身失望；", "子孙持世，犹如止渴望梅；", "官动生身，恰似探囊取物。"],
+          "yi": ["野鹤说：上面是古法。", "但是水只有一个数，官位到公侯的，怎么确定？", "官分九品，而数只到五，那么六品、七品的，怎么确定？", "我有指明了去占的办法在：我能做公侯将相吗？", "我能做一品大员吗？", "旺相的官星临在日月上，指日可待；", "官星被破以及被刑冲，终身失望；", "子孙持世，就像望梅止渴；", "官星发动生身，恰似探囊取物。"],
+          "en": ["The Old Man of Yehe says: the above is the old method.", "But Water has only the number one, so how is one to fix the rank of those who reach duke or marquis?", "There are nine grades of office, yet the numbers stop at five, so how is one to fix the sixth and seventh grades?", "I have the method of divining by naming the matter: can I become a duke, marquis, general or chancellor?", "Can I become a minister of the first grade?", "If a thriving star of office sits on the Day or Month, it can be expected any day now;", "if the star of office is broken, punished or clashed, one is disappointed for life;", "if Output holds the Self, it is like quenching thirst by gazing at plums;", "if the star of office moves to generate the Body, it is as easy as taking something from a bag."] },
+        { "by": "书中例", "book": "增删卜易", "range": [10979, 10979],
+          "zh": ["如：巳月乙卯日（旬空：子丑）曾有邑宰，问将来官至方面否？", "占得雷山小过卦："],
+          "yi": ["例如：巳月乙卯日（旬空：子、丑），曾有一位县令来问，将来官能做到方面大员吗？", "占得雷山小过卦："],
+          "en": ["For example: in the Si month on a Yimao day (void: Zi and Chou), a former district magistrate asked whether he would one day rise to a regional post;", "he got the hexagram Xiaoguo:"] },
+        { "by": "书中例", "book": "增删卜易", "range": [11009, 11009],
+          "zh": ["午火官星持世，后果官至佥事。"],
+          "yi": ["午火官星持世，后来果然官做到佥事。"],
+          "en": ["The Wu Fire star of office holds the Self, and he did indeed rise to the post of assistant commissioner."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11010, 11010],
+          "zh": ["又有子月乙亥日，官至方伯，问将来能于开府否？", "连占三卦，子孙持世，后果降调而归。"],
+          "yi": ["又有一位在子月乙亥日来占的，官做到方伯，问将来能不能开府？", "连续占了三个卦，都是子孙持世，后来果然降职调离回了家。"],
+          "en": ["Another, in the Zi month on a Yihai day, had risen to provincial commissioner and asked whether he would ever head a provincial government;", "he divined three hexagrams in a row, all with Output holding the Self, and in the end he was indeed demoted, transferred and went home."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11010, 11010],
+          "zh": ["又因占会试，许之必中，又问：能鼎甲否？", "余曰：须再占一卦："],
+          "yi": ["又因为占会试，答应他一定考中，他又问：能中鼎甲吗？", "我说：必须再占一卦："],
+          "en": ["Then, having divined about the metropolitan examination and been granted that he would pass, he asked: can I take a place among the top three?", "I said: another hexagram must be cast:"] },
+        { "by": "书中例", "book": "增删卜易", "range": [11011, 11011],
+          "zh": ["于：卯月甲申日(旬空：午未)，得“节之蹇”"],
+          "yi": ["于是在卯月甲申日（旬空：午、未），得到节卦变蹇卦。"],
+          "en": ["So in the Mao month on a Jiashen day (void: Wu and Wei) he got Jie changing into Jian."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11048, 11048],
+          "zh": ["断曰：古以蹇为不吉，余惟重用神。", "此卦世临巳火，卯月生之，申日合之。", "青龙持世，中鼎甲而无疑。", "但非今科之鼎甲也。", "公曰：何也？", "余曰：世爻变出辰土之官，乃辰年之鼎甲也。", "公曰：此数暗含我机。", "我少年得一预兆，亦应辰年。", "场毕即回，至甲辰科殿试，果得首唱传胪。", "所以此教人指其事而占者，无不验也。", "何必谆谆执古法而猜之。"],
+          "yi": ["断语说：古人认为蹇卦不吉，我只看重用神。", "这个卦世爻临巳火，卯月生它，申日合它。", "青龙持世，中鼎甲是没有疑问的。", "但不是这一科的鼎甲。", "他说：为什么？", "我说：世爻变出辰土的官星，是辰年的鼎甲。", "他说：这个数暗合我的机缘。", "我少年时得到一个预兆，也应在辰年。", "考完就回去了，到甲辰科殿试，果然得了第一个唱名的传胪。", "所以我教人指明那件事来占，没有不应验的。", "何必再三再四地死守古法去猜测。"],
+          "en": ["The judgment said: the ancients took Jian as ominous; I look only at the Subject.", "In this hexagram the Self sits on Si Fire, which the Mao month generates and the Shen day combines with.", "The Azure Dragon holds the Self, so there is no doubt that he will take a place among the top three.", "But it is not this session's top three.", "The gentleman asked: why?", "I said: the Self turns into the Chen Earth star of office, so it will be the top three of a Chen year.", "He said: this reckoning quietly matches my own secret.", "In my youth I received an omen that also pointed to a Chen year.", "When the examination was over he went home, and at the palace examination of the Jiachen session he did indeed come first at the 'chuanlu' announcement.", "That is why I teach people to name the matter when they divine, for it never fails.", "Why insist again and again on the old methods and guess?"] }
+      ],
+      "note": {
+        "yi": "「方面」「佥事」「方伯」「开府」都是明清官职或提法，书里没有解释：方面是一省或一方的大员，佥事是按察司的属官，方伯是布政使，开府是出任总督巡抚、自立官署。「鼎甲」是殿试一甲三名（状元、榜眼、探花），「传胪」是殿试后二甲头名的唱名传呼。这里都是按通行的意思注。最后这个例子也讲科举，放在考试域里会再引到。",
+        "en": "'Fangmian', 'qianshi', 'fangbo' and 'kaifu' are Ming and Qing offices and terms that the book does not explain: a regional post is a senior office for a province or region, a qianshi is a subordinate of the provincial judicial commission, a fangbo is a provincial administration commissioner, and kaifu is to take up a governor-generalship or governorship with one's own office; 'dingjia' is the top three places of the palace examination (the first, second and third of the first class), and 'chuanlu' is the announcement of the head of the second class after it. They are all glossed here in the usual sense. The last example is also about the examinations and will be cited again in the examinations domain."
+      },
+      "see": ["LY.CAREER.ZS.08", "LY.CAREER.ZS.09"]
+    },
+    {
+      "id": "LY.CAREER.ZS.55",
+      "topic": "成否",
+      "chapter": "子占父功名章",
+      "chapter_en": "Chapter on a son divining about his father's career",
+      "title": "子占父功名·父旺官动相生皆许成名，财克父、子动伤官、父官变凶、日月克官克父、父官衰墓破绝皆主无益（书中例：涣之夬，寅年起用、终于未年；观之涣，父在京候补，未土父持世巳官生之，补四川）",
+      "rule": {
+        "yi": "儿子占父亲的功名：父母旺相、官星发动相生，或日月作官星来生父母，或父母旺相变出官星，或父母、官星发动变吉，都可以答应成名；财克父母、子孙发动伤官星、父母和官星发动变凶、日月克官星克父母，或者父爻、官爻衰弱入墓被破入绝，都主没有益处。",
+        "en": "A son divining about his father's career: if Resource is thriving and the star of office moves to generate it, or the Day or Month acts as the star of office and generates Resource, or a thriving Resource turns into the star of office, or Resource and the star of office move and turn auspicious, he may be granted a name; if Wealth controls Resource, Output moves to injure the star of office, Resource and the star of office move and turn bad, the Day or Month controls the star of office and Resource, or the Resource line or the Pressure line is weak, in tomb, broken or extinct, all mean no gain."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [11055, 11056],
+          "zh": ["父旺官动相生，日月作官星而生父母，父旺化官，父官动而化吉，皆许成名。", "财克父、子动伤官、父官动而变凶、日月克官克父，或父爻、官爻衰墓破绝，皆主无益。"],
+          "yi": ["父母旺相、官星发动相生，日月作官星来生父母，父母旺相变出官星，父母和官星发动变吉，都可以答应成名。", "财克父母、子孙发动伤官星、父母和官星发动变凶、日月克官星克父母，或者父爻、官爻衰弱入墓被破入绝，都主没有益处。"],
+          "en": ["If Resource is thriving and the star of office moves to generate it, or the Day or Month acts as the star of office and generates Resource, or a thriving Resource turns into the star of office, or Resource and the star of office move and turn auspicious, all mean he may be granted a name.", "If Wealth controls Resource, Output moves to injure the star of office, Resource and the star of office move and turn bad, the Day or Month controls the star of office and Resource, or the Resource line or the Pressure line is weak, in tomb, broken or extinct, all mean no gain."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11057, 11057],
+          "zh": ["如：卯月壬辰日(旬空：午未)，占父何时起用，得“涣之夬”"],
+          "yi": ["例如：卯月壬辰日（旬空：午、未），占父亲什么时候被起用，得到涣卦变夬卦。"],
+          "en": ["For example: in the Mao month on a Renchen day (void: Wu and Wei), a divination on when his father would be reinstated gave Huan changing into Guai."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11064, 11064],
+          "zh": ["内卦寅木父母旺而化出子水之官，许寅年起用。", "果应于寅年，仍以原品起用，后终于未年。", "又以此卦悟出初爻寅木父母，寅年而起用，上爻卯木父母动化未墓，墓于未年。", "占时未墓爻空，谓之“空墓以待”，所以终于实墓之年。", "又因用神重叠，逢墓库以收藏也。"],
+          "yi": ["内卦的寅木父母爻旺相，并且变出子水的官星，答应他寅年被起用。", "果然应在寅年，仍然按原来的品级起用，后来在未年去世。", "又从这个卦悟出：初爻寅木父母爻，在寅年起用；上爻卯木父母爻发动变入未土墓，墓在未年。", "占的时候未土墓爻落空，这叫「空墓以待」，所以终于填实墓的那一年。", "又因为用神重叠，遇到墓库就被收藏了。"],
+          "en": ["The Yin Wood Resource line in the inner trigram is thriving and turns into the Zi Water star of office, so I granted that he would be reinstated in a Yin year.", "It came true in the Yin year, and he was reinstated at his former grade, and later died in a Wei year.", "From this hexagram I also understood: the Yin Wood Resource line in the first place is reinstated in a Yin year, while the Mao Wood Resource line in the top place moves and turns into the tomb of Wei Earth, so the tomb falls in a Wei year.", "At the time of the cast the Wei Earth tomb line was Void, which is called 'the Void tomb waiting', so it ended in the year the tomb was filled.", "Also, because the Subject was doubled, meeting the tomb it was stored away."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11066, 11066],
+          "zh": ["又如：辰月戊申日(旬空：寅卯)，占父在京候补，得“观之涣”"],
+          "yi": ["又例：辰月戊申日（旬空：寅、卯），占父亲在京城候补的事，得到观卦变涣卦。"],
+          "en": ["Another: in the Chen month on a Wushen day (void: Yin and Mao), a divination on his father waiting in the capital for a post gave Guan changing into Huan."] },
+        { "by": "书中例", "book": "增删卜易", "range": [11072, 11072],
+          "zh": ["未土父母持世，巳火官动生之，许即得缺。", "果补于四川。", "巳月归里赴任，巳火生世之故耳。"],
+          "yi": ["未土父母持世，巳火官星发动去生它，答应他立刻得缺。", "果然补在四川。", "巳月回乡赴任，是巳火生世的缘故。"],
+          "en": ["Wei Earth Resource holds the Self and the Si Fire star of office moves to generate it, so I granted that he would get a post at once.", "He was indeed given a post in Sichuan.", "He returned to his home district and took up his post in the Si month, because Si Fire generates the Self."] }
+      ],
+      "note": {
+        "yi": "「起用」是被重新任用；「候补」是等候补缺。原文这一章在两个例子之间有一段今人的评语（「居士评」），不收。",
+        "en": "'Qiyong' is being given a post again and 'houbu' is waiting for a vacancy. Between the two examples this chapter has a modern comment ('the lay scholar's comment'), which is not quoted."
+      },
+      "see": ["LY.CAREER.ZS.56", "LY.CAREER.ZS.06"]
+    },
+    {
+      "id": "LY.CAREER.ZS.56",
+      "topic": "升迁",
+      "chapter": "子占父功名章",
+      "chapter_en": "Chapter on a son divining about his father's career",
+      "title": "子占父功名·李我平：问何时问何地须分占，据一卦兼断时地之谬；八宫、二十八宿、禄定方、游魂远归魂近，《易冒》以五行六神八宫为经诸星为纬，可说不可行",
+      "rule": {
+        "yi": "占升迁，问什么时候和问什么地方，必须分开占；凭一个卦兼着断，假如官星是申金，必定七月升迁，按分野申是西方晋地，难道七月升迁的缺就一定在西方？这是古法的荒谬。又有按八宫来定的（如离南坎北），有用二十八宿定分野的，有用禄来定方位的，有说游魂卦远、归魂卦近的，都靠不住。《易冒》以五行、六神、八宫为经，众星为纬，可以讲但不能行：五行、八宫、二十八宿还算近理，如果用六神再加星煞，丁日占得恒卦，酉金官星持世，必掌兵权；六神得螣蛇，螣蛇是奔走差遣的吏；丁日以酉为文昌，文昌是翰林院；按这个方法断，就成了又掌兵权、又在翰林、又听差遣的人了，岂不是胡说。",
+        "en": "In divining about promotion, when it comes and where it is must be divined separately; judging both from one hexagram, suppose the star of office is Shen Metal, one would be promoted in the seventh month, and by the division of regions Shen is the land of Jin in the west, but does a promotion in the seventh month have to be a post in the west? This is the absurdity of the old method. Then there is fixing it by the eight palaces (such as Li south and Kan north), or by the twenty-eight lunar mansions, or by the Emolument, or saying a Wandering Soul hexagram is far and a Returning Soul hexagram near, none of which can be relied on. The Yi Mao takes the five elements, the six spirits and the eight palaces as the warp and the stars as the weft, which can be talked about but cannot be practised: the five elements, the eight palaces and the twenty-eight mansions are rather more reasonable, but if the six spirits are joined with the stars and baleful spirits, then on a Ding day with Heng and the You Metal star of office holding the Self he must hold military power; the spirit is the Coiling Snake, an official who runs on commissions; on a Ding day You is the Wenchang star, which is the Hanlin Academy; by this method he would be a man who holds military power, sits in the Hanlin and awaits commissions all at once, and is that not idle talk?"
+      },
+      "quotes": [
+        { "by": "李我平", "book": "增删卜易", "range": [11074, 11077],
+          "zh": ["李我平曰：问何时，问何地，须要分占。", "若据一卦而兼断，假令官值申金，必升于七月。", "论分野，则申乃西晋之地，岂七月之升迁必西方之缺耶？", "此古法之谬也。", "又以八宫，如离南坎北之类；", "又以二十八宿，以定分野。", "又云食禄于此土，以禄定方；", "又曰游魂远而归魂近。", "《易冒》以五行六神八宫为经，诸星为纬以参之，此可说而不可行也。", "夫五行八宫及二十八宿，优为近理。", "若以六神而兼星煞，使丁日占得“雷风恒”卦，酉官持世，必掌兵权；", "神得螣蛇，蛇乃驰驱差遣之吏；", "丁以酉为文昌，文昌为翰苑。", "以彼法而断，酉官为经，螣蛇、文昌为纬，定是掌兵权之翰苑、听差遣之词林矣！", "宁非妄谈乎。"],
+          "yi": ["李我平说：问什么时候，问什么地方，必须分开占。", "如果凭一个卦兼着断，假如官星是申金，必定在七月升迁。", "论分野，申是西方晋地，难道七月升迁的缺就一定是西方的缺吗？", "这是古法的荒谬。", "又有按八宫来定的，比如离南坎北这类；", "又有用二十八宿来确定分野的。", "又说在这块土地上食俸禄，用禄来定方位；", "又说游魂卦远而归魂卦近。", "《易冒》以五行、六神、八宫为经，众星为纬来参照，这种说法可以讲但不能行。", "五行、八宫以及二十八宿，还算比较合理。", "如果用六神再加上星煞，假使丁日占得雷风恒卦，酉金官星持世，必定掌握兵权；", "六神得螣蛇，螣蛇是奔走差遣的吏员；", "丁日以酉为文昌，文昌就是翰林院。", "按他们的方法断，酉金官星是经，螣蛇、文昌是纬，必定是掌握兵权的翰林、听候差遣的词林了！", "难道不是胡说吗。"],
+          "en": ["Li Woping says: asking when and asking where must be divined separately.", "If one judges both from one hexagram, suppose the star of office is Shen Metal, one would be promoted in the seventh month.", "By the division of the sky into regions, Shen is the land of Jin in the west, but does a promotion in the seventh month have to be a post in the west?", "This is the absurdity of the old method.", "Then there is judging by the eight palaces, such as Li south and Kan north;", "or fixing the regions by the twenty-eight lunar mansions.", "or saying that one eats a salary in a certain land, and fixing the direction by the Emolument;", "or saying a Wandering Soul hexagram is far and a Returning Soul hexagram near.", "The Yi Mao takes the five elements, the six spirits and the eight palaces as the warp and the stars as the weft to compare, which can be talked about but cannot be practised.", "The five elements, the eight palaces and the twenty-eight mansions are rather more reasonable.", "But if the six spirits are joined with the stars and baleful spirits, then if on a Ding day one gets Heng, Thunder over Wind, with the You Metal star of office holding the Self, he must hold military power;", "the spirit is the Coiling Snake, and the Snake is an official who runs on commissions;", "On a Ding day You is the Wenchang star, and Wenchang is the Hanlin Academy.", "Judging by their method, with the You Metal star of office as the warp and the Coiling Snake and Wenchang as the weft, he must be a Hanlin man holding military power and a Cilin man awaiting commissions!", "Is that not idle talk?"] }
+      ],
+      "note": {
+        "yi": "「分野」是把天上的星宿对应地上的区域；「文昌」是一颗神煞星，主文才。这里的「禄」指神煞里的禄。书里没有解释，这里按通行的意思注。",
+        "en": "'Fenye' is matching the lunar mansions in the sky to regions of the earth, and 'Wenchang' is a spirit-star of literary talent; the 'Emolument' here is the Emolument spirit-star. The book does not explain them, and they are glossed here in the usual sense."
+      },
+      "see": ["LY.CAREER.ZS.08", "LY.CAREER.ZS.09", "LY.CAREER.ZS.10"]
+    }
+  ]
+}
