@@ -1,0 +1,148 @@
+{
+  "shushu": "六爻",
+  "domain": "官非",
+  "work": "增删卜易",
+  "chapter": "防非避讼章等",
+  "chapter_en": "The chapters on avoiding suits, brawls, filing a plaint and a grave charge",
+  "ranges": {"增删卜易": [12602, 12625]},
+  "units": [
+    {
+      "id": "LY.LAWSUIT.ZS.01",
+      "topic": "避讼",
+      "chapter": "防非避讼章",
+      "chapter_en": "The chapter on guarding against trouble and avoiding suits",
+      "title": "防非避讼章·忧虑官司：喜官鬼空破，最宜子孙发动或持世则无非；鬼雀同动口舌难免，蛇鬼克世灾患相侵，玄武鬼必因盗贼阴人，白虎鬼必有伤痕见血；世动克应是我兴词，应克世爻是他有讼",
+      "rule": {
+        "yi": "担心官司的，喜欢官鬼落在空亡或月破，最适宜子孙发动、子孙持世，就没有是非；官鬼和朱雀一起发动，口舌免不了；螣蛇官鬼克世，灾祸忧患相侵；玄武官鬼，必定因盗贼和阴人；白虎官鬼，必定有伤痕见血；世爻动而克应爻，是我兴词告人；应爻克世爻，是他有讼要告我。",
+        "en": "In worrying about a lawsuit, one is glad that Pressure is Void or broken, and most fit is Output moving or holding the Self, which means no trouble; Pressure and the Vermilion Bird moving together mean quarrels cannot be avoided; the Coiling Snake and Pressure controlling the Self mean calamity and distress press in; the Dark Tortoise and Pressure surely come from thieves and women; the White Tiger and Pressure surely mean wounds and blood; the Self moving to control the Other means I file a plaint; the Other controlling the Self means he has a suit against me."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12604, 12604],
+          "zh": ["忧虑官司，却喜官居空破，最宜子动、子孙持世，无非；", "鬼雀同兴，口舌不免；", "蛇鬼克世，灾患相侵；", "玄武鬼，必因盗贼阴人；", "白虎鬼，定有伤痕见血；", "世动克应，我兴词；", "应克世爻，他有讼。"],
+          "yi": ["担心官司的，却喜欢官鬼落在空亡或月破，最适宜子孙发动、子孙持世，就没有是非；", "官鬼和朱雀一起发动，口舌免不了；", "螣蛇官鬼克世，灾祸忧患相侵；", "玄武官鬼，必定因盗贼和阴人；", "白虎官鬼，必定有伤痕见血；", "世爻动而克应爻，是我兴词告人；", "应爻克世爻，是他有讼要告我。"],
+          "en": ["In worrying about a lawsuit, one is glad that Pressure is Void or broken, and most fit is Output moving or holding the Self, which means no trouble;", "Pressure and the Vermilion Bird moving together mean quarrels cannot be avoided;", "the Coiling Snake and Pressure controlling the Self mean calamity and distress press in;", "the Dark Tortoise and Pressure surely come from thieves and women;", "the White Tiger and Pressure surely mean wounds and blood;", "the Self moving to control the Other means I file a plaint;", "the Other controlling the Self means he has a suit against me."] }
+      ],
+      "see": ["LY.LAWSUIT.HJC.06", "LY.LAWSUIT.HJC.12"]
+    },
+    {
+      "id": "LY.LAWSUIT.ZS.02",
+      "topic": "避讼",
+      "chapter": "防非避讼章",
+      "chapter_en": "The chapter on guarding against trouble and avoiding suits",
+      "title": "防非避讼章·子孙动或持世必不成非，鬼持世、鬼克世、应动克世定然成讼",
+      "rule": {
+        "yi": "子孙发动、子孙持世，必定不成是非；官鬼持世、官鬼克世、应爻发动克世，一定成讼。",
+        "en": "Output moving or holding the Self surely means no trouble arises; Pressure holding the Self, Pressure controlling the Self, or the Other moving to control the Self surely means a suit arises."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12605, 12605],
+          "zh": ["子孙动、子孙持世，必不成非；", "鬼持世、鬼克世、应动克世，定然成讼。"],
+          "yi": ["子孙发动、子孙持世，必定不成是非；", "官鬼持世、官鬼克世、应爻发动克世，一定成讼。"],
+          "en": ["Output moving or holding the Self surely means no trouble arises;", "Pressure holding the Self, Pressure controlling the Self, or the Other moving to control the Self surely means a suit arises."] }
+      ],
+      "see": ["LY.LAWSUIT.ZS.01"]
+    },
+    {
+      "id": "LY.LAWSUIT.ZS.03",
+      "topic": "胜负",
+      "chapter": "斗殴争竞章",
+      "chapter_en": "The chapter on brawls and contests",
+      "title": "斗殴争竞章·彼此相争看世应：不宜冲克，喜相生；日月克身我必受辱，动爻克应他必遭刑；应克世他胜，世克应我赢；世空世破世动化退我胆怯，应动应旺应化进神他得势；六冲必散，六合必成",
+      "rule": {
+        "yi": "彼此相争，要看世爻应爻：不适宜冲克，喜欢相生；日月克身，我必定受辱；动爻克应爻，他必定遭刑；应爻克世爻他胜，世爻克应爻我赢。世爻空、世爻破、世爻动而化退，我心里胆怯；应爻动、应爻旺、应爻化进神，他得势了。卦遇六冲一定散，卦逢六合一定成。",
+        "en": "When the two sides contest, look to the Self and the Other: clash and control are not fit and giving life is welcome; if the Month or the Day controls the Body, I surely suffer insult; if a moving line controls the Other, he surely suffers punishment; the Other controlling the Self means he wins, the Self controlling the Other means I win. The Self Void, the Self broken, or the Self moving and changing into a Retreating spirit means I am timid at heart; the Other moving, the Other strong, or the Other changing into an Advancing spirit means he has the upper hand. A hexagram meeting six-clash surely breaks up; a hexagram meeting six-combine surely comes to terms."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12610, 12612],
+          "zh": ["彼此相争寻世应，不宜冲克喜相生，日月克身，我必受辱；", "动爻克应，他必遭刑；", "应克世他胜，世克应我赢。", "世空世破、世动化退，我心怯焉；", "应动应旺、应化进神，他得势矣。", "卦遇六冲必散，卦逢六合必成。"],
+          "yi": ["彼此相争，要看世爻应爻：不适宜冲克，喜欢相生；日月克身，我必定受辱；", "动爻克应爻，他必定遭刑；", "应爻克世爻他胜，世爻克应爻我赢。", "世爻空、世爻破、世爻动而化退，我心里胆怯；", "应爻动、应爻旺、应爻化进神，他得势了。", "卦遇六冲一定散，卦逢六合一定成。"],
+          "en": ["When the two sides contest, look to the Self and the Other: clash and control are not fit and giving life is welcome; if the Month or the Day controls the Body, I surely suffer insult;", "if a moving line controls the Other, he surely suffers punishment;", "the Other controlling the Self means he wins, the Self controlling the Other means I win.", "The Self Void, the Self broken, or the Self moving and changing into a Retreating spirit means I am timid at heart;", "the Other moving, the Other strong, or the Other changing into an Advancing spirit means he has the upper hand.", "A hexagram meeting six-clash surely breaks up; a hexagram meeting six-combine surely comes to terms."] }
+      ],
+      "see": ["LY.LAWSUIT.HJC.02"]
+    },
+    {
+      "id": "LY.LAWSUIT.ZS.04",
+      "topic": "胜负",
+      "chapter": "斗殴争竞章",
+      "chapter_en": "The chapter on brawls and contests",
+      "title": "斗殴争竞章·总不离乎子孙爻：子孙发动、子孙持世，争斗不成；日月动爻宜克应不宜克世；世爻宜旺动克应及动而化吉，官事必赢",
+      "rule": {
+        "yi": "总不离子孙爻：子孙发动、子孙持世，争斗打不起来；日月和动爻适宜克应爻，不适宜克世爻；世爻适宜旺相发动去克应爻，以及动而化出吉的，官事一定赢。",
+        "en": "It never leaves the Output line: Output moving or holding the Self means the fight does not come off; the Month, the Day and moving lines are fit to control the Other and unfit to control the Self; the Self is fit to be strong and moving to control the Other, or to move and change into something lucky, and then the official matter is surely won."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12613, 12613],
+          "zh": ["总不离乎子孙爻，子发动、子持世，争斗不成；", "日月动爻宜于克应，不宜克世；", "世宜旺动克应及动而化吉，官事必赢。"],
+          "yi": ["总不离子孙爻：子孙发动、子孙持世，争斗打不起来；", "日月和动爻适宜克应爻，不适宜克世爻；", "世爻适宜旺相发动去克应爻，以及动而化出吉的，官事一定赢。"],
+          "en": ["It never leaves the Output line: Output moving or holding the Self means the fight does not come off;", "the Month, the Day and moving lines are fit to control the Other and unfit to control the Self;", "the Self is fit to be strong and moving to control the Other, or to move and change into something lucky, and then the official matter is surely won."] }
+      ],
+      "see": ["LY.LAWSUIT.ZS.03"]
+    },
+    {
+      "id": "LY.LAWSUIT.ZS.05",
+      "topic": "起讼",
+      "chapter": "兴词举讼章",
+      "chapter_en": "The chapter on filing a plaint and bringing a suit",
+      "title": "兴词举讼章·官父同兴公庭有理、父官克世受屈含冤：世化退神、世空世破、卦变六冲、世被刑冲，终不成讼；财与子孙同动克破文书官鬼，也不成",
+      "rule": {
+        "yi": "官鬼和父母同时发动，在公堂上有理；父母、官鬼克世爻，受屈含冤。世爻化退神、世爻空或破、卦变成六冲、世爻被刑冲，终究不成讼；财爻和子孙同时发动，克破文书和官鬼，也主不成。",
+        "en": "Pressure and Resource moving together, one is in the right in the public hall; Resource and Pressure controlling the Self, one suffers wrong and swallows the grievance. The Self changing into a Retreating spirit, the Self Void or broken, the hexagram changing into six-clash, or the Self punished or clashed, in the end no suit is brought; Wealth and Output moving together to control and break the papers and Pressure also means it is not brought."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12618, 12618], "literal": ["父母"],
+          "zh": ["官父同兴，公庭有理，父官克世，受屈含冤。", "世化退神、世空世破、卦变六冲、世被刑冲，终不成讼；", "财与子孙同动，克破文书官鬼，亦主不成。"],
+          "yi": ["官鬼和父母同时发动，在公堂上有理，父母、官鬼克世爻，受屈含冤。", "世爻化退神、世爻空或破、卦变成六冲、世爻被刑冲，终究不成讼；", "财爻和子孙同时发动，克破文书和官鬼，也主不成。"],
+          "en": ["Pressure and Resource moving together, one is in the right in the public hall; Resource and Pressure controlling the Self, one suffers wrong and swallows the grievance.", "The Self changing into a Retreating spirit, the Self Void or broken, the hexagram changing into six-clash, or the Self punished or clashed, in the end no suit is brought;", "Wealth and Output moving together to control and break the papers and Pressure also means it is not brought."] }
+      ],
+      "see": ["LY.LAWSUIT.HJC.20"]
+    },
+    {
+      "id": "LY.LAWSUIT.ZS.06",
+      "topic": "罪名",
+      "chapter": "已定重罪章",
+      "chapter_en": "The chapter on a grave charge already fixed",
+      "title": "已定重罪章·福宜旺相最忌官兴：子孙持世、子孙发动，已赴法场终必赦免；官鬼克世或持世又被日月动爻冲克，或世动化凶，虽定轻罪也拘改重",
+      "rule": {
+        "yi": "子孙适宜旺相，最忌官鬼兴盛。子孙持世、子孙发动，已经送到法场，终究会赦免；官鬼克世爻、或官鬼持世，又被日月动爻冲克，或者世爻发动化出凶的，虽然判的是轻罪也会拘押改判为重罪。",
+        "en": "Output should be strong, and Pressure flourishing is most feared. Output holding the Self or moving, even one already taken to the execution ground is in the end pardoned; Pressure controlling the Self or holding the Self and also clashed or controlled by the Month, the Day or a moving line, or the Self moving and changing into something ill, means that though a light sentence is fixed he is held and it is changed to a heavy one."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [12623, 12623],
+          "zh": ["福宜旺相，最忌官兴。", "子孙持世，子孙发动，已赴法场，终必赦免。", "官鬼克世、或官鬼持世，又被日月动爻冲克，或世动化凶，虽定轻罪拘改重。"],
+          "yi": ["子孙适宜旺相，最忌官鬼兴盛。", "子孙持世、子孙发动，已经送到法场，终究会赦免；", "官鬼克世爻、或官鬼持世，又被日月动爻冲克，或者世爻发动化出凶的，虽然判的是轻罪也会拘押改判为重罪。"],
+          "en": ["Output should be strong, and Pressure flourishing is most feared.", "Output holding the Self or moving, even one already taken to the execution ground is in the end pardoned;", "Pressure controlling the Self or holding the Self and also clashed or controlled by the Month, the Day or a moving line, or the Self moving and changing into something ill, means that though a light sentence is fixed he is held and it is changed to a heavy one."] }
+      ],
+      "see": ["LY.LAWSUIT.HJC.32"]
+    },
+    {
+      "id": "LY.LAWSUIT.ZS.07",
+      "topic": "罪名",
+      "chapter": "趋避章",
+      "chapter_en": "The chapter on seeking luck and avoiding harm",
+      "title": "趋避章·书中例，占定何罪：木鬼临白虎绞罪已定，但世临月建、木鬼虽动又被酉金回头之克、外卦反吟，事必反复，虽定绞罪终有改移；后来议绞罪，蒙驳审减轻",
+      "rule": {
+        "yi": "蛇雀木鬼犯官刑，临火须防焚害；蛇木又言缢绞，勾陈土鬼牢狱。书中例：未月癸亥日占判定什么罪，得中孚卦变临卦：木鬼临白虎，绞罪是定了；但幸好世爻临月建，木鬼虽然发动，又被酉金回头之克，外卦反吟，事情一定反复，虽然定了绞罪，终究会有改动；果然议的是绞罪，后来蒙驳回重审减轻。",
+        "en": "The Coiling Snake or Vermilion Bird with Wood Pressure offends against the official penalty, and with Fire beware of burning; the Coiling Snake and Wood also speak of hanging or strangling, and the Hook Earth with Earth Pressure of jail. Worked example: in the Wei month, on a Guihai day, a man divined what charge would be fixed and got Zhongfu changing to Lin: Wood Pressure on the White Tiger means a sentence of strangulation is fixed; but fortunately the Self sits on the Month, and though the Wood Pressure moves it is controlled by a turning-back control from You-metal, and the outer trigram is Reversed Chant, so the matter will surely go back and forth; though strangulation is fixed there will in the end be a change; indeed strangulation was recommended, and later the case was sent back for retrial and the sentence reduced."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [9139, 9139],
+          "zh": ["蛇雀木鬼犯官刑，临火须防焚害；", "蛇木又言缢绞，勾陈土鬼牢狱，"],
+          "yi": ["螣蛇、朱雀带着木鬼，会犯官府的刑罚；临到火，要提防被火烧。", "蛇木又言缢绞，勾陈土鬼牢狱。"],
+          "en": ["The Coiling Snake or Vermilion Bird with Wood Pressure offends against the official penalty, and with Fire beware of burning;", "the Coiling Snake and Wood also speak of hanging or strangling, and the Hook Earth with Earth Pressure of jail."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9140, 9140],
+          "zh": ["如：未月癸亥日(旬空：子丑)，占定何罪，得“中孚之临”"],
+          "yi": ["如：未月癸亥日（旬空子、丑），占判定什么罪，得中孚卦变临卦。"],
+          "en": ["For example: in the Wei month, on a Guihai day (Void: Zi and Chou), divining what charge would be fixed and getting Zhongfu changing to Lin."] },
+        { "by": "书中例", "book": "增删卜易", "range": [9146, 9146],
+          "zh": ["木鬼临白虎，绞罪定矣！", "但幸世临月建，木鬼虽动，又被酉金回头之克，外卦反吟，事必反复，虽定绞罪，终有改移。", "果议绞罪，后蒙驳审从减（驳番拨活罪）。"],
+          "yi": ["木鬼临白虎，绞罪是定了！", "但幸好世爻临月建，木鬼虽然发动，又被酉金回头之克，外卦反吟，事情一定反复，虽然定了绞罪，终究会有改动。", "果然议的是绞罪，后来蒙驳回重审减轻。"],
+          "en": ["Wood Pressure on the White Tiger means a sentence of strangulation is fixed!", "But fortunately the Self sits on the Month, and though the Wood Pressure moves it is controlled by a turning-back control from You-metal, and the outer trigram is Reversed Chant, so the matter will surely go back and forth; though strangulation is fixed there will in the end be a change.", "Indeed strangulation was recommended, and later the case was sent back for retrial and the sentence reduced."] }
+      ],
+      "note": {
+        "yi": "原文的小注「驳番拨活罪」是说驳回重审后拨作可以活命的罪名；这里译作驳回重审后减轻。",
+        "en": "The original's small note says the case was sent back and reassigned to a charge that lets the man live; it is rendered as sent back for retrial and reduced."
+      },
+      "see": ["LY.LAWSUIT.HJC.32"]
+    }
+  ]
+}

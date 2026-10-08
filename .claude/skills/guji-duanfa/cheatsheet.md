@@ -41,19 +41,19 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: what the six spirits and palaces show on the road | 1 |
 | 风险 | Risks: robbery, storm, lawsuit, illness on the way | 11 |
 
-## 六爻 · 失物(73 条)→ `chapters/六爻/失物/索引.md`
+## 六爻 · 失物(76 条)→ `chapters/六爻/失物/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
 | 总则 | Principles: what stands for the lost thing | 4 |
-| 寻得 | Whether it can be found | 12 |
+| 寻得 | Whether it can be found | 13 |
 | 处所 | Where it is: place and distance | 16 |
-| 逃亡 | Runaways | 5 |
+| 逃亡 | Runaways | 6 |
 | 盗贼 | Theft: whether stolen, and by whom | 7 |
 | 人物 | The thief: build, kind and company | 11 |
 | 捕获 | Catching the thief | 14 |
 | 取象 | Images: elements, branches and objects | 3 |
-| 风险 | Guarding against loss and theft | 1 |
+| 风险 | Guarding against loss and theft | 2 |
 
 ## 六爻 · 婚姻(366 条)→ `chapters/六爻/婚姻/索引.md`
 
@@ -73,6 +73,22 @@ What is in the library and where; entries where the classics disagree are listed
 | 子嗣 | Children in the marriage | 14 |
 | 家人 | Parents and in-laws: whether the match harms them | 8 |
 | 取象 | Reading the images: what a spirit, star or asking-purpose says about the match | 12 |
+
+## 六爻 · 官非(50 条)→ `chapters/六爻/官非/索引.md`
+
+| 主题 | Topic | 条数 |
+| --- | --- | --- |
+| 总则 | Principles: who is who in a lawsuit | 3 |
+| 起讼 | Whether a suit is lodged and accepted | 6 |
+| 胜负 | Who wins and who loses | 11 |
+| 和解 | Settlement and reconciliation | 4 |
+| 人物 | The parties, witnesses and the magistrate | 6 |
+| 文书 | Papers and records | 1 |
+| 钱财 | Money, bribes and costs | 2 |
+| 罪名 | The charge and the sentence | 9 |
+| 狱囚 | Prison and release | 4 |
+| 消散 | When the matter fades away | 2 |
+| 避讼 | Avoiding a suit | 2 |
 
 ## 六爻 · 求财(330 条)→ `chapters/六爻/求财/索引.md`
 

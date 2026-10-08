@@ -93,6 +93,20 @@ views:
       - rule_en
       - work
   - type: table
+    name: "官非"
+    filters:
+      and:
+        - 'domain == "官非"'
+    groupBy:
+      property: topic
+      direction: ASC
+    order:
+      - id
+      - shushu
+      - rule
+      - rule_en
+      - work
+  - type: table
     name: "求财"
     filters:
       and:
