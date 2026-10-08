@@ -1,0 +1,64 @@
+{
+  "shushu": "六爻",
+  "domain": "求财",
+  "work": "增删卜易",
+  "chapter": "八宫章·简易占法",
+  "chapter_en": "The chapter on the eight palaces: the easy method",
+  "ranges": {"增删卜易": [358, 368]},
+  "units": [
+    {
+      "id": "LY.WEALTH.ZS.33",
+      "topic": "总则",
+      "chapter": "八宫章·简易占法",
+      "chapter_en": "The chapter on the eight palaces: the easy method",
+      "title": "八宫章·占财秘法：占钱粮、买卖经营、开张店面、远处求财、见贵求财，妻财持世宜行、兄弟持世速止；已经营久的妻财持世愈久愈丰、兄弟持世渐渐衰败；囤货妻财持世可买；放债妻财持世始终两好、兄弟持世有借无还；取债妻财持世终归偿还、屡占仍兄弟持世终成画饼、得官鬼持世必要经官；开矿买山伐木园林盐池鱼沼妻财持世物阜财丰、兄弟持世破财折本",
+      "rule": {
+        "yi": "占财的，问钱粮能不能征收足额？领钱粮能不能全额？妻财持世就丰足，兄弟持世要包赔。问买卖经营、开张店面，以及远处求财、见贵人求财，妻财持世适宜去，兄弟持世赶快停止。占经商贸易、开张店面，如果已经做了很久，问将来兴废？妻财持世，愈久愈丰；兄弟持世，慢慢衰败。占囤货的，妻财持世可以买，兄弟持世不要收。占放债的，妻财持世，始终两好；兄弟持世，有借无还。占讨债的，妻财持世，即使目下得不到，最终会偿还；兄弟持世，另日再占；如果屡占仍是兄弟持世，终成画饼；屡占得官鬼持世，必要告官。占开矿以及煤窑祇山，以及买山、伐木、园林、盐池、鱼沼，凡是靠山岗江海取利的，妻财持世，物阜财丰；兄弟持世，破财折本。",
+        "en": "In divining for wealth: asked whether the grain and money levies can be collected in full, or whether the stipend can be drawn in full, Wealth holding the Self means full and abundant, and Peer holding the Self means making up the loss oneself. Asked about trade and management, opening a shop, seeking wealth far away or seeking wealth by seeing a noble, Wealth holding the Self is fit to go, and Peer holding the Self means stop quickly. In divining for trade and commerce or a shop already long in business, asking whether it will prosper or fail in the future: Wealth holding the Self, the longer the richer; Peer holding the Self, it gradually decays. In divining for hoarding goods, Wealth holding the Self means one may buy, Peer holding the Self means do not take in. In divining for lending money, Wealth holding the Self is good for both throughout, and Peer holding the Self means loans without repayment. In divining for calling in a debt, Wealth holding the Self means that even if not got now it is repaid in the end, and Peer holding the Self means divine again another day; if on repeated divinations it is still Peer holding the Self, it ends as a painted cake, and if repeated divinations give Pressure holding the Self, one must go to law. In divining for mining, coal pits and mountain tenures, buying hills, felling timber, orchards, salt pans and fish ponds, anything that profits from hills, rivers or seas, Wealth holding the Self means goods in plenty and wealth abundant, and Peer holding the Self means loss of money and ruin."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [358, 362],
+          "zh": ["占财者，问钱粮可能征收足额否？", "领钱粮可能全额否？", "妻财持世丰足，兄弟持世包赔。", "问买卖经营、开张店面，及远处求财，或见贵求财，妻财持世宜行，兄弟持世速止。", "占经商贸易、开张店面，若已行久矣，问将来兴废否？", "妻财持世，愈久愈丰；", "兄弟持世，由期衰败。"],
+          "yi": ["占财的，问钱粮能不能征收足额？", "领钱粮能不能全额？", "妻财持世就丰足，兄弟持世要包赔。", "问买卖经营、开张店面，以及远处求财、见贵人求财，妻财持世适宜去，兄弟持世赶快停止。", "占经商贸易、开张店面，如果已经做了很久，问将来兴废？", "妻财持世，时间越久越丰足；", "兄弟持世，慢慢衰败。"],
+          "en": ["In divining for wealth: asked whether the grain and money levies can be collected in full,", "or whether the stipend can be drawn in full,", "Wealth holding the Self means full and abundant, and Peer holding the Self means making up the loss oneself.", "Asked about trade and management, opening a shop, seeking wealth far away or seeking wealth by seeing a noble, Wealth holding the Self is fit to go, and Peer holding the Self means stop quickly.", "In divining for trade and commerce or a shop already long in business, asking whether it will prosper or fail in the future:", "Wealth holding the Self, the longer the richer;", "Peer holding the Self, it gradually decays."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [363, 363],
+          "zh": ["占囤货者，妻财持世可买，兄弟持世休收。"],
+          "yi": ["占囤货的，妻财持世可以买，兄弟持世不要收。"],
+          "en": ["In divining for hoarding goods, Wealth holding the Self means one may buy, Peer holding the Self means do not take in."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [364, 364],
+          "zh": ["占放债者，妻财持世，始终两好；", "兄弟持世，有借无还。"],
+          "yi": ["占放债的，妻财持世，始终两好；", "兄弟持世，借出去的钱有借无还。"],
+          "en": ["In divining for lending money, Wealth holding the Self is good for both throughout,", "and Peer holding the Self means loans without repayment."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [365, 365],
+          "zh": ["占取债者，妻财持世，即目下不得，至底偿还；", "兄弟持世，另日再占。", "若屡占而仍兄弟持世者，终成画饼；", "屡占而得官鬼持世者，必要经官。"],
+          "yi": ["占讨债的，妻财持世，即使目下得不到，最终会偿还；", "兄弟持世，改天再占一卦。", "如果屡占仍是兄弟持世，终成画饼；", "屡占得官鬼持世，必要告官。"],
+          "en": ["In divining for calling in a debt, Wealth holding the Self means that even if not got now it is repaid in the end,", "and Peer holding the Self means divine again another day;", "if on repeated divinations it is still Peer holding the Self, it ends as a painted cake,", "and if repeated divinations give Pressure holding the Self, one must go to law."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [366, 366],
+          "zh": ["占开矿及煤窖祇山，及买山、伐木、园林、盐池、鱼沼，凡系山岗、江海以取利者，妻财持世，物阜财丰，兄弟持世破财折本。"],
+          "yi": ["占开矿以及煤窑祇山，以及买山、伐木、园林、盐池、鱼沼，凡是靠山岗江海取利的，妻财持世，物阜财丰，兄弟持世，破财折本。"],
+          "en": ["In divining for mining, coal pits and mountain tenures, buying hills, felling timber, orchards, salt pans and fish ponds, anything that profits from hills, rivers or seas, Wealth holding the Self means goods in plenty and wealth abundant, and Peer holding the Self means loss of money and ruin."] }
+      ]
+    },
+    {
+      "id": "LY.WEALTH.ZS.34",
+      "topic": "心术",
+      "chapter": "八宫章·简易占法",
+      "chapter_en": "The chapter on the eight palaces: the easy method",
+      "title": "八宫章·占财秘法·非理之求神不报此而应彼：占炼汞烧丹世无此理，即使妻财持世也应在别处的财；书中例占烧丹得戌土财爻持世午火子孙动，只说戌月成丹，却是九月妻妾子女从数千里外来团聚；占地下忽见异物，妻财持世必有金银，兄弟持世不独无财且有破财，官鬼持世必是妖邪",
+      "rule": {
+        "yi": "占炼汞烧丹，世上没有这个道理，卦不必占，念头也不要起，即使卦得妻财持世，也应在另外地方的财。曾经有人占烧丹，得戌土财爻持世，午火子孙发动相生，只以为戌月一定成丹，哪知道九月妻子、妾、子女从几千里外来，异乡团聚。戌土妻财，应妻妾；午火子孙，应子女。这是占这件应那件，《易》是为君子谋的，难道不可信吗？所以不合道理的求取，神灵不报这一件而应到那一件上。占地下忽然见到有光彩的异物，或者现出黄白奇形，怀疑有财的，如果妻财持世，必有金银；兄弟持世，不但没有财，而且有破财的事；如果官鬼持世，必是妖邪。",
+        "en": "Divining for refining mercury and burning cinnabar: there is no such principle in the world, so the hexagram need not be divined and the thought should not even be raised; even if the hexagram gives Wealth holding the Self, it answers on wealth elsewhere. Someone once divined about burning cinnabar and got Wealth Xu-earth holding the Self with Output Wu-fire moving to give life to it, and thought it meant that the cinnabar would surely be done in the Xu month; he did not know that in the ninth month his wife, his concubine and his children would come from thousands of li away and be reunited with him in a strange land. Xu-earth Wealth answers to wife and concubine; Wu-fire Output answers to children. This is divining one matter and having another answer; the Changes are for the benefit of the noble man, and can it be disbelieved? So for a seeking that is against reason the spirits do not report that matter but answer on another. In divining when one suddenly sees a strange shining object in the ground, or a yellow or white form, and suspects there is treasure, if Wealth holds the Self there is surely gold or silver; if Peer holds the Self, there is not only no wealth but a matter of losing money; if Pressure holds the Self, it is surely an evil spirit."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [367, 367],
+          "zh": ["占炼汞烧丹，世无此理，卦不必占，念亦莫起，即使卦得妻财持世，亦应另处之财也。", "曾有人占烧丹，卦得戌土财爻持世，午火子孙发动相生，只谓戌月一定成丹。", "岂知九月妻妾子女由数千里而来，异乡团聚。", "戌土妻财者，应妻妾；", "午火子孙者，应子女。", "此乃占此应彼也，易为君子谋，岂不信哉？", "故非理之求，神不报此而应彼也。"],
+          "yi": ["占炼汞烧丹，世上没有这个道理，卦不必占，念头也不要起，即使卦得妻财持世，也应在另外地方的财。", "曾经有人占烧丹，得戌土财爻持世，午火子孙发动相生，只以为戌月一定成丹。", "哪知道九月妻子、妾、子女从几千里外来，异乡团聚。", "戌土妻财，应妻妾；", "午火子孙，应子女。", "这是占这件应那件，《易》是为君子谋的，难道不可信吗？", "所以不合道理的求取，神灵不报这一件而应到那一件上。"],
+          "en": ["Divining for refining mercury and burning cinnabar: there is no such principle in the world, so the hexagram need not be divined and the thought should not even be raised; even if the hexagram gives Wealth holding the Self, it answers on wealth elsewhere.", "Someone once divined about burning cinnabar and got Wealth Xu-earth holding the Self with Output Wu-fire moving to give life to it, and thought it meant that the cinnabar would surely be done in the Xu month.", "He did not know that in the ninth month his wife, his concubine and his children would come from thousands of li away and be reunited with him in a strange land.", "Xu-earth Wealth answers to wife and concubine;", "Wu-fire Output answers to children.", "This is divining one matter and having another answer; the Changes are for the benefit of the noble man, and can it be disbelieved?", "So for a seeking that is against reason the spirits do not report that matter but answer on another."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [368, 368],
+          "zh": ["占地下忽见光彩异物，或现黄白奇形，疑其有财者，若妻财持世，必有金银；", "兄弟持世，不独无财，且有破财之事；", "倘官鬼持世者，必是妖邪。"],
+          "yi": ["占地下忽然见到有光彩的异物，或者现出黄白奇形，怀疑有财的，如果妻财持世，必有金银；", "兄弟持世，不但没有财，而且有破财的事；", "如果官鬼持世，必是妖邪。"],
+          "en": ["In divining when one suddenly sees a strange shining object in the ground, or a yellow or white form, and suspects there is treasure, if Wealth holds the Self there is surely gold or silver;", "if Peer holds the Self, there is not only no wealth but a matter of losing money;", "if Pressure holds the Self, it is surely an evil spirit."] }
+      ]
+    }
+  ]
+}

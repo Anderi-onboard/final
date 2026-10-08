@@ -4,16 +4,16 @@
 
 What is in the library and where; entries where the classics disagree are listed at the end. Check them before judging.
 
-## 六爻 · 事业(677 条)→ `chapters/六爻/事业/索引.md`
+## 六爻 · 事业(682 条)→ `chapters/六爻/事业/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
 | 总则 | Principles: which line is the post, the document, the patron; strong and weak | 35 |
-| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 86 |
+| 成否 | Will it come: seeking a post, a commission, a recommendation; easy or hard | 89 |
 | 动变 | Moving lines and what they turn into | 5 |
-| 升迁 | Promotion, transfer, posting and rank: which way, how far | 38 |
+| 升迁 | Promotion, transfer, posting and rank: which way, how far | 39 |
 | 任所 | In office: how the post goes, the term, dismissal, impeachment, leaving office | 51 |
-| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 54 |
+| 贵人 | Patrons and superiors: calling on the great, recommendations, who helps or blocks | 55 |
 | 差役 | Clerks, runners and stewards: enlisting, serving, leaving service | 39 |
 | 军旅 | Soldiers, campaigns and military posts | 140 |
 | 国朝 | The court and the state: ruler, ministers, the realm | 81 |
@@ -22,7 +22,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: what kind of post, which office, which place | 51 |
 | 风险 | Risks: obstruction, demotion, impeachment, plots, a bad year | 51 |
 
-## 六爻 · 出行(171 条)→ `chapters/六爻/出行/索引.md`
+## 六爻 · 出行(172 条)→ `chapters/六爻/出行/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
@@ -39,7 +39,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 避难 | Fleeing disorder: bandits, soldiers, escape and hiding | 34 |
 | 应期 | Timing: the day or month of setting out or of arrival | 3 |
 | 取象 | Reading the images: what the six spirits and palaces show on the road | 1 |
-| 风险 | Risks: robbery, storm, lawsuit, illness on the way | 11 |
+| 风险 | Risks: robbery, storm, lawsuit, illness on the way | 12 |
 
 ## 六爻 · 失物(76 条)→ `chapters/六爻/失物/索引.md`
 
@@ -108,11 +108,11 @@ What is in the library and where; entries where the classics disagree are listed
 | 病程 | The course of an illness | 5 |
 | 求取 | Gains, visitors and news | 4 |
 
-## 六爻 · 求财(330 条)→ `chapters/六爻/求财/索引.md`
+## 六爻 · 求财(332 条)→ `chapters/六爻/求财/索引.md`
 
 | 主题 | Topic | 条数 |
 | --- | --- | --- |
-| 总则 | Principles: what stands for money | 27 |
+| 总则 | Principles: what stands for money | 28 |
 | 有无 | Is there money, and how much | 24 |
 | 难易 | Easy or hard to get; who holds it | 23 |
 | 动变 | Moving lines and what they turn into | 15 |
@@ -125,7 +125,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 博戏 | Gambling and contests | 14 |
 | 畜养渔猎 | Livestock, fishing, hunting, mining | 35 |
 | 风险 | Risks: theft, disputes, losses, a bad year | 38 |
-| 心术 | The asker's intent | 3 |
+| 心术 | The asker's intent | 4 |
 
 ## 六爻 · 疾病(596 条)→ `chapters/六爻/疾病/索引.md`
 
