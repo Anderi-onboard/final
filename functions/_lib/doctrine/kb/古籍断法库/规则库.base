@@ -65,6 +65,20 @@ views:
       - rule_en
       - work
   - type: table
+    name: "失物"
+    filters:
+      and:
+        - 'domain == "失物"'
+    groupBy:
+      property: topic
+      direction: ASC
+    order:
+      - id
+      - shushu
+      - rule
+      - rule_en
+      - work
+  - type: table
     name: "婚姻"
     filters:
       and:

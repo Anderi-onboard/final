@@ -1,0 +1,144 @@
+{
+  "shushu": "六爻",
+  "domain": "失物",
+  "work": "增删卜易",
+  "chapter": "散见各章",
+  "chapter_en": "Passages on lost goods and theft scattered through the chapters",
+  "ranges": {"增删卜易": [433, 5509]},
+  "units": [
+    {
+      "id": "LY.LOST.ZS.01",
+      "topic": "总则",
+      "chapter": "用神章",
+      "chapter_en": "The chapter on the Subject",
+      "title": "用神章·占乱臣、贼盗、邪崇也以官鬼爻为用神：凡是拘束我身的都是官鬼",
+      "rule": {
+        "yi": "占乱臣、贼盗、邪祟，也以官鬼爻为用神；官鬼这一类事物很多，一切拘束我身的都是。",
+        "en": "In divining for rebellious ministers, thieves and robbers, and evil spirits, the Pressure line is also the Subject; Pressure covers many kinds of things, and everything that constrains my person is of it."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [433, 433],
+          "zh": ["占乱臣、贼盗、邪崇，亦以官鬼爻为用神。", "物类亦多，一切拘束我身者是也。"],
+          "yi": ["占乱臣、贼盗、邪祟，也以官鬼爻为用神。", "官鬼这一类事物很多，一切拘束我身的都是。"],
+          "en": ["In divining for rebellious ministers, thieves and robbers, and evil spirits, the Pressure line is also the Subject.", "Pressure covers many kinds of things, and everything that constrains my person is of it."] }
+      ],
+      "note": {
+        "yi": "这是从「谁是贼」的一头取用神：官鬼代表贼。被偷的东西则取财爻（失脱章里分别说），所以占失物要分清问的是人还是物。",
+        "en": "This takes the Subject from the side of who the thief is: Pressure stands for the thief. The thing stolen is read from the Wealth line (given separately in the chapter on lost goods), so in divining for lost goods one must distinguish whether one asks about the person or the thing."
+      },
+      "see": ["LY.LOST.HJC.28", "LY.LOST.HJC.61"]
+    },
+    {
+      "id": "LY.LOST.ZS.02",
+      "topic": "人物",
+      "chapter": "六神章",
+      "chapter_en": "The chapter on the six spirits",
+      "title": "六神章·玄武主盗贼，朱雀主是非：吉凶之外，六神是附和之神，向吉的遇青龙更吉，卦凶的遇蛇虎更凶，玄武主盗贼没有不验的",
+      "rule": {
+        "yi": "六神不是不灵，是附和的神：原来吉的遇到青龙更吉，卦凶的遇到螣蛇白虎更凶。玄武主盗贼，朱雀主是非，没有不灵验的。",
+        "en": "The six spirits are not unreliable but are spirits that chime in: what was lucky is more so when it meets the Azure Dragon, and an ill hexagram is more so when it meets the Coiling Snake or the White Tiger. The Dark Tortoise governs thieves and the Vermilion Bird governs quarrels, and neither fails to be borne out."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [1211, 1211],
+          "zh": ["然则六神竟而不验耶？", "非也，乃附和之神耳。", "向之吉者，逢青龙而更吉；", "卦之凶者，逢蛇虎而更凶。", "且玄武主盗贼，朱雀主是非，无有不验。", "至于家宅坟茔，尤不可少。"],
+          "yi": ["六神难道真的不灵验吗？", "不是的，它们只是附和的神。", "原来吉的，遇到青龙更吉；", "卦凶的，遇到螣蛇白虎更凶。", "而且玄武主盗贼，朱雀主是非，没有不灵验的。", "至于家宅坟茔，尤其不可少。"],
+          "en": ["Are the six spirits really not borne out?", "No, they are only spirits that chime in.", "What was lucky is more so when it meets the Azure Dragon;", "an ill hexagram is more so when it meets the Coiling Snake or the White Tiger.", "Moreover the Dark Tortoise governs thieves and the Vermilion Bird governs quarrels, and neither fails to be borne out.", "As for the house and the tomb, they are especially indispensable."] }
+      ],
+      "see": ["LY.LOST.BSZZ.01"]
+    },
+    {
+      "id": "LY.LOST.ZS.03",
+      "topic": "盗贼",
+      "chapter": "千金赋",
+      "chapter_en": "The Qianjin Fu, as edited in this book",
+      "title": "千金赋·玄武为盗贼之事亦必官爻、朱雀为口舌之神必须兄弟，作者说此论欠当：玄武、朱雀、勾陈、螣蛇动而不克世的没有妨碍，动而克世的都是凶，不必再分兄弟官鬼",
+      "rule": {
+        "yi": "千金赋说：玄武主盗贼的事，也一定要有官鬼爻；朱雀是口舌之神，一定要有兄弟爻。作者说：这个说法不妥当。玄武、朱雀、勾陈、螣蛇发动而不克世爻的，没有妨碍；发动而克世爻的，都算凶，何必再分什么兄弟、官鬼呢？",
+        "en": "The Qianjin Fu says: the Dark Tortoise governs matters of thieves, but it too must have the Pressure line; the Vermilion Bird is the spirit of quarrels but it must have the Peer line. The author says: this view is not proper. When the Dark Tortoise, Vermilion Bird, Hook Earth or Coiling Snake move without controlling the Self, there is no harm; when they move and control the Self, all are taken as ill; why distinguish Peer from Pressure at all?"
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [5509, 5509], "literal": ["兄弟"],
+          "zh": ["玄武为盗贼之事，亦必官爻；", "朱雀为口舌之神，必须兄弟。"],
+          "yi": ["玄武主盗贼的事，也一定要有官鬼爻；", "朱雀是口舌之神，一定要有兄弟爻。"],
+          "en": ["The Dark Tortoise governs matters of thieves, but it too must have the Pressure line;", "the Vermilion Bird is the spirit of quarrels but it must have the Peer line."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [5509, 5509], "literal": ["兄弟"],
+          "zh": ["此论欠当。", "玄武、朱雀、勾陈、螣蛇，动而不克世者，无碍；", "动而克世者，皆以为凶，何事分兄弟官鬼耶？"],
+          "yi": ["这个说法不妥当。", "玄武、朱雀、勾陈、螣蛇发动而不克世爻的，没有妨碍；", "发动而克世爻的，都算凶，何必再分什么兄弟、官鬼呢？"],
+          "en": ["This view is not proper.", "When the Dark Tortoise, Vermilion Bird, Hook Earth or Coiling Snake move without controlling the Self, there is no harm;", "when they move and control the Self, all are taken as ill; why distinguish Peer from Pressure at all?"] }
+      ],
+      "dispute": {
+        "yi": "千金赋（黄金策的总断）说玄武主盗贼要有官鬼爻同临才成，朱雀主口舌要兄弟爻同临；增删卜易的作者认为这个说法不当，只要六神发动克世就凶，不分兄弟官鬼。",
+        "en": "The Qianjin Fu (the general judgement of the Huangjin Ce) says that the Dark Tortoise governs thieves only with Pressure sitting together, and the Vermilion Bird governs quarrels only with Peer; the author of the Zengshan Buyi holds this improper: a six-spirit that moves and controls the Self is ill whether or not Peer or Pressure is present."
+      },
+      "see": ["LY.LOST.BSZZ.01", "LY.LOST.ZS.02"]
+    },
+    {
+      "id": "LY.LOST.ZS.04",
+      "topic": "总则",
+      "chapter": "六冲章",
+      "chapter_en": "The chapter on six-clash",
+      "title": "六冲章·合变六冲：凡是六合卦变六冲，诸占先合后离、先亲后疏、得而复失、成而复败，只有占官非、盗贼、结绝之事最宜",
+      "rule": {
+        "yi": "凡是六合卦变成六冲卦，各种占都是先合后离，先亲后疏，先浓后淡，先荣后悴，先好后迟，先通后塞，得到又失去，成功又败坏，事情做成又变。只有占官非、盗贼、了结断绝的事最适宜。",
+        "en": "Whenever a six-combine hexagram changes into a six-clash hexagram, every divination first combines and then parts, first close and then distant, first warm and then cool, first flourishing and then withered, first good and then slow, first open and then blocked, gained and then lost, achieved and then ruined, the matter done and then changed again. Only in divining for lawsuits, thieves, and matters of settling or breaking off is it best."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [1842, 1842],
+          "zh": ["凡得六合变六冲者，诸占先合后离，先亲后疏，先浓后淡，先荣后悴，初好后迟，先亨后否，得而复失，成而复败，事就而又变也。", "惟占官非、盗贼、结绝事者最宜。"],
+          "yi": ["凡是六合卦变成六冲卦的，各种占都是先合后离，先亲后疏，先浓后淡，先荣后悴，开头好后来迟，先通后塞，得到又失去，成功又败坏，事情做成又变。", "只有占官非、盗贼、了结断绝的事最适宜。"],
+          "en": ["Whenever a six-combine hexagram changes into a six-clash hexagram, every divination first combines and then parts, first close and then distant, first warm and then cool, first flourishing and then withered, good at first and slow later, first open and then blocked, gained and then lost, achieved and then ruined, the matter done and then changed again.", "Only in divining for lawsuits, thieves, and matters of settling or breaking off is it best."] }
+      ],
+      "see": ["LY.LOST.ZS.05"]
+    },
+    {
+      "id": "LY.LOST.ZS.05",
+      "topic": "寻得",
+      "chapter": "反伏章",
+      "chapter_en": "Chapter on Reversed and Hidden Chant",
+      "title": "反伏章·占盗贼、官非，见而又见：反吟卦聚散不常，占盗贼官非的是见了还会再见",
+      "rule": {
+        "yi": "反吟卦聚散没有常规。占盗贼、官非，是见了又见。",
+        "en": "A Reversed Chant hexagram gathers and scatters without constancy. In divining for thieves and lawsuits, it is seen and seen again."
+      },
+      "quotes": [
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [2403, 2403],
+          "zh": ["占盗贼、官非，见而又见。"],
+          "yi": ["占盗贼、官非，是见了又见。"],
+          "en": ["In divining for thieves and lawsuits, it is seen and seen again."] }
+      ],
+      "note": {
+        "yi": "这一句是反吟卦各种占断的一连串里的一句，前面是占天时、婚姻、疾病，后面是占出行、行人；「见而又见」指盗贼、官非这类事，了了又起。",
+        "en": "This line is one of a run of readings for a Reversed Chant hexagram, preceded by the weather, marriage and illness and followed by setting out and travellers; \"seen and seen again\" says that matters like thieves and lawsuits end and then arise again."
+      }
+    },
+    {
+      "id": "LY.LOST.ZS.06",
+      "topic": "寻得",
+      "chapter": "千金赋",
+      "chapter_en": "The Qianjin Fu, as edited in this book",
+      "title": "千金赋·空逢捕获深藏难觅、失脱暗藏不见：墓与空是暧昧不明之象，捕获遇到它贼躲得深难找，失脱遇到它东西暗藏看不见",
+      "rule": {
+        "yi": "捕获遇到它，贼深藏难找；失脱遇到它，东西暗藏看不见。",
+        "en": "In catching a thief, meeting it means the thief is deeply hidden and hard to find; in lost goods, meeting it means the thing is hidden away and not seen."
+      },
+      "quotes": [
+        { "by": "经", "book": "增删卜易", "range": [5118, 5118],
+          "zh": ["养主狐疑，墓多暧昧。", "此亦长生沐浴十二位之星是也，余得验者，只用生、旺、墓、绝，其余不验，今之化出者，亦验生、旺、墓、绝。"],
+          "yi": ["长养之位叫人犹豫猜疑，墓位多半暧昧不明。", "这也是长生、沐浴十二位里的星，我验证过的，只用生、旺、墓、绝，其余的不灵验，现在变出来的，也只验证生、旺、墓、绝。"],
+          "en": ["Nurture brings doubt, and the tomb brings obscurity.", "These too are stars of the twelve positions beginning with Life and Bathing; what I have found borne out uses only Life, Strength, Tomb and Extinction, the others not being borne out, and what is changed into is likewise borne out only for Life, Strength, Tomb and Extinction."] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [5118, 5118],
+          "zh": ["捕获遇之，深藏难觅；"],
+          "yi": ["捕获遇到它，贼深藏难找；"],
+          "en": ["In catching a thief, meeting it means the thief is deeply hidden and hard to find;"] },
+        { "by": "增删卜易正文", "book": "增删卜易", "range": [5118, 5118],
+          "zh": ["失脱遇之，暗藏不见；"],
+          "yi": ["失脱遇到它，东西暗藏看不见；"],
+          "en": ["in lost goods, meeting it means the thing is hidden away and not seen;"] }
+      ],
+      "note": {
+        "yi": "这一段先说墓（滞），再按用神动化墓、旺、休囚、空分别讲病，再按各占事说墓或空的后果；这里只取捕获和失脱两句。",
+        "en": "The passage first calls the tomb stagnation, then runs through illness by whether the Subject moves into the tomb, is strong, resting or Void, then gives the result for each kind of matter; only the lines on catching and on lost goods are taken here."
+      }
+    }
+  ]
+}

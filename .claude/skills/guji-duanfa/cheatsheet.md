@@ -41,6 +41,20 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: what the six spirits and palaces show on the road | 1 |
 | 风险 | Risks: robbery, storm, lawsuit, illness on the way | 11 |
 
+## 六爻 · 失物(73 条)→ `chapters/六爻/失物/索引.md`
+
+| 主题 | Topic | 条数 |
+| --- | --- | --- |
+| 总则 | Principles: what stands for the lost thing | 4 |
+| 寻得 | Whether it can be found | 12 |
+| 处所 | Where it is: place and distance | 16 |
+| 逃亡 | Runaways | 5 |
+| 盗贼 | Theft: whether stolen, and by whom | 7 |
+| 人物 | The thief: build, kind and company | 11 |
+| 捕获 | Catching the thief | 14 |
+| 取象 | Images: elements, branches and objects | 3 |
+| 风险 | Guarding against loss and theft | 1 |
+
 ## 六爻 · 婚姻(366 条)→ `chapters/六爻/婚姻/索引.md`
 
 | 主题 | Topic | 条数 |
@@ -114,7 +128,7 @@ What is in the library and where; entries where the classics disagree are listed
 | 取象 | Reading the images: the classic, the examiner, the hall, the paper | 12 |
 | 风险 | Risks: illness at the hall, mourning, intrigue, failure | 12 |
 
-## 打架 · Where the classics disagree(188 条)
+## 打架 · Where the classics disagree(189 条)
 
 - **LY.CAREER.CA.21 天乙贵人再来相合：不止自己享禄，子孙代代为官受封赠（旧注的天乙贵人按月份取巳申亥寅轮转）**(`chapters/六爻/事业/贵人.md`):旧注里的天乙贵人按月份取（巳申亥寅轮转），而卜筮大全另一处、卜筮正宗、增删卜易、易林补遗等讲的天乙贵人都是按日干取：甲戊（庚）牛羊、乙己鼠猴、丙丁猪鸡、壬癸兔蛇、庚辛（六辛）马虎。两种起法不同，本库各照原书录，不裁定。
   The note here finds the Tianyi Noble by the month (turning through Si, Shen, Hai, Yin), while elsewhere in the Bushi Daquan itself, and in the Bushi Zhengzong, the Zengshan Buyi and the Yilin Buyi, the Tianyi Noble is found by the day stem: Jia and Wu (and Geng) ox and sheep, Yi and Ji rat and monkey, Bing and Ding pig and rooster, Ren and Gui hare and snake, Geng and Xin (or the six Xin) horse and tiger. The two methods differ; each is recorded as its book gives it and neither is adjudicated.
@@ -394,6 +408,8 @@ What is in the library and where; entries where the classics disagree are listed
   Among the other books' lists of ominous hexagrams for illness are Tongren, Xu, Bo, Jie and Meng, yet the lines of the Zhouyi Shangzhan for these hexagrams do not speak of illness: Tongren is 'marriage and pregnancy both succeed, all that is sought arrives', Xu is 'rash moves do not suit, what is planned does not succeed', Bo is 'to withdraw is to gain safety, to advance is unfavourable', Jie is 'the person and fate are unsettled', and Meng is 'but it suits divining illness' (LY.ILL.ZSZ.06). Tongren is in the third (LY.ILL.CA.03) and fifth (LY.ILL.CA.06) poems of the Chan'ao Gezhang, in the passage of the Bushi Yuangui (LY.ILL.DYTJ.15) and in the ten hexagrams reported in the Zengshan Buyi (LY.ILL.ZS.01); Xu, Bo and Jie are in the Bushi Yuangui passage and the Chan'ao Gezhang; Meng is only in the Bushi Quanshu's essay on illness (LY.ILL.BSQS.35). Not saying is not saying good: for the verdict on illness of these hexagrams the line of the Zhouyi Shangzhan takes no position. Conversely, of the hexagrams here, Kan, Shihe, Li, Kui and Xiaoguo are for the most part absent from the other lists of ominous hexagrams (only Gu and Kun (Confinement) are in them), so these verdicts are peculiar to the Zhouyi Shangzhan. The books do not decide.
 - **LY.ILL.ZSZ.06 八卦断例·占病宜不宜：履「弗占疾病」、大壮「休占讼病」、蒙「却宜占病」；恒「病须疾治」**(`chapters/六爻/疾病/总则.md`):蒙卦这里说「却宜占病」，卜筮全书疾病论（LY.ILL.BSQS.35）却把蒙列进春天的十死卦。「宜占病」说的是适合拿这一卦来问病，没有说病会好，所以两处不一定正面冲突，合起来看蒙卦占病到底吉凶，书里没有定论。
   Of Meng the line here says 'but it suits divining illness', whereas the Bushi Quanshu's essay on illness (LY.ILL.BSQS.35) puts Meng among the ten fatal hexagrams of spring. 'Suits divining illness' says that this hexagram is a fit one with which to ask about illness, and does not say the illness will mend, so the two places need not clash head on; taken together, the books do not settle whether Meng is auspicious or ominous for illness.
+- **LY.LOST.ZS.03 千金赋·玄武为盗贼之事亦必官爻、朱雀为口舌之神必须兄弟，作者说此论欠当：玄武、朱雀、勾陈、螣蛇动而不克世的没有妨碍，动而克世的都是凶，不必再分兄弟官鬼**(`chapters/六爻/失物/盗贼.md`):千金赋（黄金策的总断）说玄武主盗贼要有官鬼爻同临才成，朱雀主口舌要兄弟爻同临；增删卜易的作者认为这个说法不当，只要六神发动克世就凶，不分兄弟官鬼。
+  The Qianjin Fu (the general judgement of the Huangjin Ce) says that the Dark Tortoise governs thieves only with Pressure sitting together, and the Vermilion Bird governs quarrels only with Peer; the author of the Zengshan Buyi holds this improper: a six-spirit that moves and controls the Self is ill whether or not Peer or Pressure is present.
 - **LY.MARRY.BSQS.09 六亲持世歌：官鬼持世得官，占婚问病俱凶兆；财爻持世，阴爻为妻妾、阳爻为财**(`chapters/六爻/婚姻/风险.md`):同样是官鬼持世，这首歌说「占婚问病俱凶兆」，《天玄赋》总论提纲说「官鬼不宜持世，求名婚娶两相宜」（LY.MARRY.TXF.24）。两处都是口诀，没有注，书里不裁断。《增删卜易》按男女分：女占男，官星持世、合世、生世且旺相是良缘（LY.MARRY.ZS.11）。
   For the same Pressure line holding Self, this rhyme says 'a divination on marriage or illness is an ill omen', while the opening summary of the Tianxuan Fu says 'Pressure should not hold the Self line, but for seeking office and for marrying both are fitting' (LY.MARRY.TXF.24). Both are bare rhymes and the books do not decide between them. The Zengshan Buyi divides by sex: when a woman divines about a man, a Pressure line that holds, combines with or generates the Self line and is strong makes a good match (LY.MARRY.ZS.11).
 - **LY.MARRY.BSYG.05 推占来情：旺相则婚姻官职、休囚则争财退位；内外卦俱旺相者大则求官、次则嫁娶；卦与世爻同克日则必是六畜及婚姻**(`chapters/六爻/婚姻/取象.md`):同一首歌诀，《断易天机》作「卦与世爻同与日」（LY.MARRY.DYTJ.30），这里作「卦与世爻同克日」，一字之差：「同与日」是和日辰相同，「同克日」是一起克日辰。

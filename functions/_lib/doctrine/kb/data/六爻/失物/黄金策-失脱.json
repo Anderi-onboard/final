@@ -1,0 +1,787 @@
+{
+  "shushu": "六爻",
+  "domain": "失物",
+  "work": "黄金策",
+  "chapter": "失脱",
+  "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+  "ranges": {"卜筮正宗": [2962, 3037]},
+  "units": [
+    {
+      "id": "LY.LOST.HJC.28",
+      "topic": "总则",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·要知失物得失须详妻财：财爻是所失之物的主象，冲中逢合所失必可得，合处逢冲既失不能复得",
+      "rule": {
+        "yi": "百姓饥寒，常有翻墙钻洞的人，不要忘了检点约束，也多有遗失的忧虑。要知道其中的得失，必须详察卦上的妻财。财爻是所失之物的主象：如果得到冲中逢合，所失一定可以得回；如果是合处逢冲，既然失去就不能再得回了。",
+        "en": "Common people suffer hunger and cold, and there are often those who climb walls and dig through them; never forget to check and restrain, for there is also a worry of loss. To know the gain or loss in it, one must examine the Wealth line on the hexagram. The Wealth line is the principal image of the thing lost: if a combination is met within a clash, what is lost can surely be got back; if a clash is met at a combination, once lost it cannot be got back."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2964, 2965],
+          "zh": ["居民饥寒，", "每有穿逾之辈，", "勿忘检束，", "亦多遗失之虞。", "要知其中之得失，", "须详卦上之妻财"],
+          "yi": ["居民饥寒，", "常有翻墙钻洞的人，", "不要忘了检点约束，", "也多有遗失的忧虑。", "要知道其中的得失，", "必须详察卦上的妻财"],
+          "en": ["Common people suffer hunger and cold,", "there are often those who climb walls and dig through them,", "never forget to check and restrain,", "for there is also a worry of loss.", "To know the gain or loss in it,", "one must examine the Wealth line on the hexagram"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2964, 2965],
+          "zh": ["财爻为所失物之主，如得冲中逢合，失必可得，如合处逢冲，既失不能复得矣。"],
+          "yi": ["财爻是所失之物的主象：如果得到冲中逢合，所失一定可以得回；如果是合处逢冲，既然失去就不能再得回了。"],
+          "en": ["The Wealth line is the principal image of the thing lost: if a combination is met within a clash, what is lost can surely be got back; if a clash is met at a combination, once lost it cannot be got back."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.29",
+      "topic": "寻得",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·自空化空皆当置而不问、日旺月旺总未散而可得：用爻自己落空或动而化空都难寻见；财爻值月令或在日辰生旺之地，物未散可寻",
+      "rule": {
+        "yi": "用爻自己空、或变成空，都应当搁下不问；财爻日旺月旺，东西总是没有散失，可以得回。用爻自己落空，或发动而化空，都难找到；如果财爻值月令，或在日辰生旺之地，这件东西没有散失，可以找。",
+        "en": "A Subject that is Void itself or changes into the Void should be set aside and not pursued; a Wealth line strong on the Day and the Month means the thing has not been scattered and can be got back. A Subject that is Void itself, or moves and changes into the Void, is hard to find; if the Wealth line is on the Month command, or on a place of life and strength on the Day, the thing has not been scattered and can be sought."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2967, 2967],
+          "zh": ["自空化空，", "皆当置而不问；", "日旺月旺，", "总未散而可得"],
+          "yi": ["用爻自己空、", "或变成空，都应当搁下不问；", "日旺月旺，", "东西总是没有散失，可以得回。"],
+          "en": ["A Subject that is Void itself,", "or that changes into the Void, should be set aside and not pursued;", "strong on the Day and strong on the Month,", "the thing has not been scattered and can be got back."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2967, 2967],
+          "zh": ["用爻自空或动化空，皆难寻见；", "若财值月令，或在日辰生旺之地，此物未散可寻也。"],
+          "yi": ["用爻自己落空，或发动而化空，都难找到；", "如果财爻值月令，或在日辰生旺之地，这件东西没有散失，可以找。"],
+          "en": ["A Subject that is Void itself, or moves and changes into the Void, is hard to find;", "if the Wealth line is on the Month command, or on a place of life and strength on the Day, the thing has not been scattered and can be sought."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.30",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·内卦本宫搜索家庭可见、他宫外卦追来邻里能知：财在本宫内卦物未出家门，在他宫外卦物已出外难得，在间爻可到邻居家寻",
+      "rule": {
+        "yi": "财在本宫内卦，在家里搜索可以找到；财在他宫外卦，到邻居那里追问能知道下落。财在本宫内卦，东西没有出家门，可以找到；财在他宫外卦，东西已经出外，难得回；财在间爻，邻居人家可以去找。",
+        "en": "With Wealth in the inner trigram of its own palace, a search of the household can find it; with Wealth in the outer trigram of another palace, inquiring among the neighbours can learn where it went. Wealth in the inner trigram of its own palace means the thing has not left the house and can be found; Wealth in the outer trigram of another palace means the thing has gone out and is hard to get back; Wealth on a between line means the neighbours' houses can be searched."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2969, 2969],
+          "zh": ["内卦本宫，", "搜索家庭可见；", "他宫外卦，", "追来邻里能知"],
+          "yi": ["财在本宫内卦，", "在家里搜索可以找到；", "财在他宫外卦，", "到邻居那里追问能知道下落。"],
+          "en": ["With Wealth in the inner trigram of its own palace,", "a search of the household can find it;", "with Wealth in the outer trigram of another palace,", "inquiring among the neighbours can learn where it went."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2969, 2969],
+          "zh": ["财在本宫内卦，其物未出家庭，可见；", "财在他宫外卦，物已出外，难得；", "在间爻，邻里人家可寻。"],
+          "yi": ["财在本宫内卦，东西没有出家门，可以找到；", "财在他宫外卦，东西已经出外，难得回；", "财在间爻，邻居人家可以去找。"],
+          "en": ["Wealth in the inner trigram of its own palace means the thing has not left the house and can be found;", "Wealth in the outer trigram of another palace means the thing has gone out and is hard to get back;", "Wealth on a between line means the neighbours' houses can be searched."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.31",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·五路四门、六乃栋梁阁上：这是大略的说法，用神在五爻到道路上找，在四爻到门户找，在上爻到梁上阁上找，不可拘泥",
+      "rule": {
+        "yi": "五爻是道路，四爻是门，上爻是栋梁和阁楼上。这是就六爻说个大概：用神在五爻，要到道路上找；在四爻，到门户那里找；在上爻，到梁上、阁上找。学的人不可拘泥，应当灵活。",
+        "en": "The fifth line is the road and the fourth the door, and the top line is the beams and the loft. This speaks of the six lines in rough outline: with the Subject on the fifth line, search the road; on the fourth, the doors; on the top line, the beams and the loft. The student must not be rigid but should be flexible."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2971, 2971],
+          "zh": ["五路四门，", "六乃栋梁阁上"],
+          "yi": ["五爻是道路，四爻是门，", "上爻是栋梁和阁楼上。"],
+          "en": ["The fifth line is the road and the fourth the door,", "and the top line is the beams and the loft."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2971, 2971],
+          "zh": ["此指六爻言其大略。", "用神在五爻，道路要寻；", "在四爻，门户可寻；", "在第六爻，梁阁上可寻。", "学者不可执泥，宜当活泼。"],
+          "yi": ["这是就六爻说个大概。", "用神在五爻，要到道路上找；", "在四爻，到门户那里找；", "在上爻，到梁上、阁上找。", "学的人不可拘泥，应当灵活。"],
+          "en": ["This speaks of the six lines in rough outline.", "With the Subject on the fifth line, search the road;", "on the fourth, the doors;", "on the top line, the beams and the loft.", "The student must not be rigid but should be flexible."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.32",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·初井二灶三为闺阃房中：用神临初爻子亥在水井中找，二爻在灶前找，三爻在房内找，伏在三爻鬼爻下在神堂内找",
+      "rule": {
+        "yi": "初爻是水井，二爻是灶，三爻是内室房中。比如用神临初爻子、亥，可以在水井中找；在二爻，可以在灶前找；在三爻，可以在房内找；如果伏在三爻官鬼之下，可以在神堂内找。",
+        "en": "The first line is the well, the second the hearth, and the third the inner chamber. For example, a Subject on the first line at Zi or Hai can be sought in the well; on the second line, before the hearth; on the third, in the room; if hidden under the Pressure of the third line, in the shrine hall."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2973, 2973],
+          "zh": ["初井二灶，", "三为闺阃房中"],
+          "yi": ["初爻是水井，二爻是灶，", "三爻是内室房中。"],
+          "en": ["The first line is the well, the second the hearth,", "and the third the inner chamber."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2973, 2973],
+          "zh": ["如用临初爻子亥，水井中可寻；", "在二爻，灶前可寻；", "在三爻，房内可寻；", "如伏三爻官鬼下，神堂内可寻。"],
+          "yi": ["比如用神临初爻子、亥，可以在水井中找；", "在二爻，可以在灶前找；", "在三爻，可以在房内找；", "如果伏在三爻官鬼之下，可以在神堂内找。"],
+          "en": ["For example, a Subject on the first line at Zi or Hai can be sought in the well;", "on the second line, before the hearth;", "on the third, in the room;", "if hidden under the Pressure of the third line, in the shrine hall."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.33",
+      "topic": "取象",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·水失于池、木乃柴薪之内、土埋在地、金为砖石之间：财临水在池沼，临木在竹木柴薪内，临金旺相在铜锡铁器中、休囚在缸缺罐瓶内，外卦旺相在砖石内、休囚在瓦砾中",
+      "rule": {
+        "yi": "属水的失在水池，属木的在柴薪之内，属土的埋在地里，属金的在砖石之间。财爻临水，东西在池沼；临木，在竹木树林柴薪内；临金旺相，在铜锡铁器中，休囚，在缸口破损的罐瓶内；外卦旺相，在砖石内，休囚，在瓦砾中，诸如此类。",
+        "en": "What is of Water is lost in a pool, what is of Wood is among firewood, what is of Earth is buried in the ground, and what is of Metal is between bricks and stones. Wealth on Water means the thing is in a pond or marsh; on Wood, among bamboo, timber, trees and firewood; on Metal, strong, among copper, tin and iron vessels, resting or trapped, in a chipped jar or bottle; in the outer trigram, strong, in bricks and stones, resting or trapped, in rubble and the like."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2975, 2975],
+          "zh": ["水失于池，", "木乃柴薪之内；", "土埋在地，", "金为砖石之间"],
+          "yi": ["属水的失在水池，", "属木的在柴薪之内，", "属土的埋在地里，", "属金的在砖石之间。"],
+          "en": ["What is of Water is lost in a pool,", "what is of Wood is among firewood,", "what is of Earth is buried in the ground,", "and what is of Metal is between bricks and stones."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2975, 2975],
+          "zh": ["财临水爻，物在池沼；", "财临木爻，竹木树林柴薪内；", "财临金爻旺相，在铜锡铁器中，休囚，缸缺罐瓶内。", "外卦旺相，砖石内，休囚，瓦砾中之类。"],
+          "yi": ["财爻临水，东西在池沼；", "临木，在竹木树林柴薪内；", "临金旺相，在铜锡铁器中，休囚，在缸口破损的罐瓶内。", "外卦旺相，在砖石内，休囚，在瓦砾中，诸如此类。"],
+          "en": ["Wealth on Water means the thing is in a pond or marsh;", "on Wood, among bamboo, timber, trees and firewood;", "on Metal, strong, among copper, tin and iron vessels, resting or trapped, in a chipped jar or bottle.", "In the outer trigram, strong, in bricks and stones, resting or trapped, in rubble and the like."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.34",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·动入墓中财深藏而不见：用爻入墓、化墓或伏在墓下，东西必在器物中，要等冲开墓的日子才见",
+      "rule": {
+        "yi": "用爻发动入墓中，财物深藏而看不见。如果用爻入墓、化墓，或伏在墓爻之下，东西必定在器物之中，想知道哪天找到，要等到冲开墓的日子。",
+        "en": "If the Subject moves into the tomb, the goods are deeply hidden and not seen. If the Subject enters the tomb, changes into the tomb, or is hidden under the tomb line, the thing is surely inside some container, and to know the day it turns up, wait for the day that clashes the tomb open."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2977, 2977],
+          "zh": ["动入墓中，", "财深藏而不见"],
+          "yi": ["发动入墓中，", "财物深藏而看不见。"],
+          "en": ["Moving into the tomb,", "the goods are deeply hidden and not seen."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2977, 2977],
+          "zh": ["倘用爻入墓化墓，或伏墓下，必在器物中，要知何日见，待到冲墓之日。"],
+          "yi": ["如果用爻入墓、化墓，或伏在墓爻之下，东西必定在器物之中，想知道哪天找到，要等到冲开墓的日子。"],
+          "en": ["If the Subject enters the tomb, changes into the tomb, or is hidden under the tomb line, the thing is surely inside some container, and to know the day it turns up, wait for the day that clashes the tomb open."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.35",
+      "topic": "寻得",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·静临世上物尚在而何妨：占失脱用爻不宜动，动就有变更；静而持世、生世、合世，东西都没有散，必容易找到，生旺不空更好",
+      "rule": {
+        "yi": "安静而临在世爻上，东西还在，有什么妨碍。占失脱，用爻不适宜发动，发动就有更变；如果得到安静持世，生世合世，东西都主没有散失，必定容易找到，生旺不空尤其好。",
+        "en": "Still and sitting on the Self, the thing is still there, so what harm? In divining for lost goods the Subject should not move, for moving brings change; if it is still and holds the Self, or gives life to or combines with the Self, the thing is not scattered and is surely easy to find, and best of all if it is strong and not Void."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2979, 2979],
+          "zh": ["静临世上，", "物尚在而何妨"],
+          "yi": ["安静而临在世爻上，", "东西还在，有什么妨碍。"],
+          "en": ["Still and sitting on the Self,", "the thing is still there, so what harm?"] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2979, 2979],
+          "zh": ["凡占失脱，用爻不宜动，动有更变。", "若得安静持世，生世合世，其物皆主未散，必易寻得，生旺不空尤妙。"],
+          "yi": ["占失脱，用爻不适宜发动，发动就有更变。", "如果得到安静持世，生世合世，东西都主没有散失，必定容易找到，生旺不空尤其好。"],
+          "en": ["In divining for lost goods the Subject should not move, for moving brings change.", "If it is still and holds the Self, or gives life to or combines with the Self, the thing is not scattered and is surely easy to find, and best of all if it is strong and not Void."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.36",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·鬼墓爻临必在坟边墓侧：用神临鬼墓，东西必在寺庙中，无气则在坟墓内，本宫内卦的在柩旁或座席上，加螣蛇恐在神图佛像之前，在三爻在香火堂中",
+      "rule": {
+        "yi": "鬼爻的墓爻临上，东西必定在坟边墓侧。用神临鬼墓，东西必定在寺庙中，无气则在坟墓内，如果是本宫内卦，就在棺旁，或在座席上；再加螣蛇，恐怕在神像佛像之前；在三爻，在香火堂中之类。",
+        "en": "If the tomb line of Pressure appears, the thing is surely beside a grave or tomb. A Subject on the tomb of Pressure means the thing is in a temple, or if without breath, in a tomb; if it is in the inner trigram of its own palace, beside a coffin or on a seat; with the Coiling Snake added, perhaps before a picture of a god or a Buddha image; on the third line, in an incense hall and the like."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2981, 2981],
+          "zh": ["鬼墓爻临，", "必在坟边墓侧"],
+          "yi": ["鬼爻的墓爻临上，", "东西必定在坟边墓侧。"],
+          "en": ["If the tomb line of Pressure appears,", "the thing is surely beside a grave or tomb."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2981, 2981],
+          "zh": ["用临鬼墓，其物必在寺庙中，无气则在坟墓内，如系本宫内卦，则在柩旁，或在座席上。", "更加螣蛇，恐在神图佛像之前。", "在三爻，香火堂中类。"],
+          "yi": ["用神临鬼墓，东西必定在寺庙中，无气则在坟墓内，如果是本宫内卦，就在棺旁，或在座席上。", "再加螣蛇，恐怕在神像佛像之前。", "在三爻，在香火堂中之类。"],
+          "en": ["A Subject on the tomb of Pressure means the thing is in a temple, or if without breath, in a tomb; if it is in the inner trigram of its own palace, beside a coffin or on a seat.", "With the Coiling Snake added, perhaps before a picture of a god or a Buddha image.", "On the third line, in an incense hall and the like."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.37",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·日辰合住定然器掩遮藏：用爻发动遇日辰合住，必有东西遮盖藏着；冲中逢合必得，合处逢冲难寻",
+      "rule": {
+        "yi": "日辰合住，东西一定被器物掩盖遮藏。用爻发动遇到日辰合住，必定有东西遮藏着；冲中逢合一定得到，合处逢冲难找。",
+        "en": "If the Day combines it shut, the thing is surely covered and hidden by some vessel. A Subject that moves and meets the Day combining it shut is surely covered and hidden by something; a combination met within a clash is surely got, a clash met at a combination is hard to find."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2983, 2983],
+          "zh": ["日辰合住，", "定然器掩遮藏"],
+          "yi": ["日辰合住，", "东西一定被器物掩盖遮藏。"],
+          "en": ["If the Day combines it shut,", "the thing is surely covered and hidden by some vessel."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2983, 2983],
+          "zh": ["用爻发动遇日辰合住，必然有物遮藏，冲中逢合必得，合处逢冲难寻。"],
+          "yi": ["用爻发动遇到日辰合住，必定有东西遮藏着，冲中逢合一定得到，合处逢冲难找。"],
+          "en": ["A Subject that moves and meets the Day combining it shut is surely covered and hidden by something; a combination met within a clash is surely got, a clash met at a combination is hard to find."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.38",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·子福变妻财须探鼠穴、酉地逢福德当检鸡栖：财化福、福化财，东西必在禽兽的窝巢里，子是老鼠衔去，寅是猫、丑是牛栏、午是马厩、未是羊圈、酉是鸡栖、亥是猪圈；有合在里面，没有合在旁边",
+      "rule": {
+        "yi": "子孙变成妻财，要去探老鼠洞；酉地遇到福德，应当查看鸡窝。财化福、福化财，东西必定在禽兽的窝巢里：值子爻，是老鼠衔去，更在初爻，在地洞里；寅是猫衔走，丑在牛栏，午在马厩，未在羊圈，酉在鸡窝，亥在猪圈。有合，在里面；没有合，在旁边。",
+        "en": "Output changing into Wealth, one must probe the rat holes; Output meeting You ground, one should check the chicken roost. Wealth changing into Output, or Output changing into Wealth, means the thing is surely in the den or nest of some bird or beast: on Zi, a rat has carried it off, and still more on the first line, in a hole in the ground; Yin is a cat carrying it off, Chou the cattle pen, Wu the horse stall, Wei the sheep pen, You the chicken roost, Hai the pigsty. With a combination it is inside; without a combination it is nearby."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2985, 2985],
+          "zh": ["子福变妻财，", "须探鼠穴；", "酉地逢福德，", "当检鸡栖"],
+          "yi": ["子孙变成妻财，", "要去探老鼠洞；", "酉地遇到福德，", "应当查看鸡窝。"],
+          "en": ["Output changing into Wealth,", "one must probe the rat holes;", "Output meeting You ground,", "one should check the chicken roost."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2985, 2985],
+          "zh": ["财化福、福化财，其物必在禽兽巢窟中，如值子爻，是鼠衔去，更在初爻，在地穴。", "寅是猫衔，丑在牛栏，午在马厩，未在羊牢，酉在鸡栖，亥在猪圈是也。", "有合则在内，无合则在旁。"],
+          "yi": ["财化福、福化财，东西必定在禽兽的窝巢里：值子爻，是老鼠衔去，更在初爻，在地洞里。", "寅是猫衔走，丑在牛栏，午在马厩，未在羊圈，酉在鸡窝，亥在猪圈。", "有合，在里面；没有合，在旁边。"],
+          "en": ["Wealth changing into Output, or Output changing into Wealth, means the thing is surely in the den or nest of some bird or beast: on Zi, a rat has carried it off, and still more on the first line, in a hole in the ground.", "Yin is a cat carrying it off, Chou the cattle pen, Wu the horse stall, Wei the sheep pen, You the chicken roost, Hai the pigsty.", "With a combination it is inside; without a combination it is nearby."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.39",
+      "topic": "盗贼",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·鬼在空中世动则自家所失：卦里没有官鬼或官鬼落空，而世爻发动，是自己遗失的，不是被人偷去",
+      "rule": {
+        "yi": "官鬼落空、世爻发动，就是自己家里丢失的。卦里没有官鬼或官鬼落空而世爻发动，是自己遗失，不是被人偷去。",
+        "en": "If Pressure falls into the Void and the Self moves, it is lost by oneself. When the hexagram has no Pressure or Pressure falls into the Void and the Self moves, one lost it oneself and it was not stolen by anyone."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2987, 2987],
+          "zh": ["鬼在空中世动，", "则自家所失"],
+          "yi": ["官鬼落空、世爻发动，", "就是自己家里丢失的。"],
+          "en": ["With Pressure in the Void and the Self moving,", "it is lost by oneself."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2987, 2987],
+          "zh": ["卦无官或落空而世爻动者，乃自遗失，非被人偷去也。"],
+          "yi": ["卦里没有官鬼或官鬼落空而世爻发动，是自己遗失，不是被人偷去。"],
+          "en": ["When the hexagram has no Pressure or Pressure falls into the Void and the Self moves, one lost it oneself and it was not stolen by anyone."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.40",
+      "topic": "盗贼",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·财伏应下世合则假贷于人：官鬼或空或伏或死绝不动，而财临应上或伏应下，是自己借给了别人；借给谁用应爻所临的六亲定",
+      "rule": {
+        "yi": "财爻伏在应爻下、又与世爻合，是借给别人了。官鬼落空、或伏藏、或死绝不动，而财爻临在应爻上或伏在应爻下，就是自己借给别人的。要知道借给了谁，用应爻所临的六亲来定，比如临子孙，是年幼晚辈一类。",
+        "en": "If Wealth is hidden under the Other and combines with the Self, it has been lent to someone. If Pressure is Void, hidden, or dead or extinct and still, while Wealth sits on the Other or is hidden under it, one lent it to someone oneself. To know whom, fix it by the relation the Other sits on; on Output, for example, it is a younger person."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2989, 2989],
+          "zh": ["财伏应下世合，", "则假贷于人"],
+          "yi": ["财爻伏在应爻下、", "又与世爻合，是借给别人了。"],
+          "en": ["With Wealth hidden under the Other,", "and combining with the Self, it has been lent to someone."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2989, 2989],
+          "zh": ["官鬼或空或伏，或死绝不动，而财临应上或伏应下，乃自借于人也。", "要知何人假借，以应临六亲定之，如临子为卑幼类。"],
+          "yi": ["官鬼落空、或伏藏、或死绝不动，而财爻临在应爻上或伏在应爻下，就是自己借给别人的。", "要知道借给了谁，用应爻所临的六亲来定，比如临子孙，是年幼晚辈一类。"],
+          "en": ["If Pressure is Void, hidden, or dead or extinct and still, while Wealth sits on the Other or is hidden under it, one lent it to someone oneself.", "To know whom, fix it by the relation the Other sits on; on Output, for example, it is a younger person."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.41",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·若伏子孙当在僧房道院、如伏父母必遗衣笈书箱：用神不上卦就看它伏在哪里；伏子孙下在寺院或年幼者处，伏父母下在正屋或尊长处，没有合在衣服书卷中、有合在衣箱书箱内，伏兄弟下在兄弟姊妹或朋友处",
+      "rule": {
+        "yi": "若伏在子孙之下，应当在僧房道院；如果伏在父母之下，必定遗落在衣箱书箱里。用神不上卦，就要找它伏在什么地方。伏在子孙爻下，东西在寺院或年幼者那里；伏在父母下，东西在正屋中，或在尊长那里，没有合在衣服书卷中，有合在衣箱书箱内；伏在兄弟下，在本宫是兄弟姊妹处，在他宫是熟识朋友处。",
+        "en": "If it is hidden under Output, it should be in a monk's cell or a Daoist temple; if it is hidden under Resource, it was surely left in a clothes trunk or a book box. When the Subject is not on the hexagram, find where it is hidden. Hidden under Output, the thing is at a temple or with the young; hidden under Resource, in the main house or with an elder, among clothes and books if without a combination, in a clothes trunk or a book box if with a combination; hidden under Peer, with brothers and sisters if in its own palace, with acquaintances and friends if in another palace."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2991, 2991],
+          "zh": ["若伏子孙，", "当在僧房道院；", "如伏父母，", "必遗衣笈书箱"],
+          "yi": ["若伏在子孙之下，", "应当在僧房道院；", "如果伏在父母之下，", "必定遗落在衣箱书箱里。"],
+          "en": ["If it is hidden under Output,", "it should be in a monk's cell or a Daoist temple;", "if it is hidden under Resource,", "it was surely left in a clothes trunk or a book box."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2991, 2991], "literal": ["父母", "兄弟"],
+          "zh": ["用神不上卦，须寻伏于何处。", "若伏子孙爻下，物在寺院或卑幼处。", "如伏父母下，物在正屋中，或在尊长处。", "无合衣服书卷中，有合衣箱书箱内。", "若伏兄下，本宫兄弟姊妹处，他宫相识朋友处。"],
+          "yi": ["用神不上卦，就要找它伏在什么地方。", "伏在子孙爻下，东西在寺院或年幼者那里；", "伏在父母下，东西在正屋中，或在尊长那里。", "没有合在衣服书卷中，有合在衣箱书箱内。", "伏在兄弟下，在本宫是兄弟姊妹处，在他宫是熟识朋友处。"],
+          "en": ["When the Subject is not on the hexagram, find where it is hidden.", "Hidden under Output, the thing is at a temple or with the young;", "hidden under Resource, in the main house or with an elder.", "Among clothes and books if without a combination, in a clothes trunk or a book box if with a combination.", "Hidden under Peer, with brothers and sisters if in its own palace, with acquaintances and friends if in another palace."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.42",
+      "topic": "处所",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·在内则家中失脱、在外则他处遗亡：用爻在内卦，东西失在家中；在外卦，失在别处",
+      "rule": {
+        "yi": "用神在内卦，是家中丢失；在外卦，是在别处遗失。",
+        "en": "A Subject in the inner trigram means it was lost at home; in the outer trigram, it was lost elsewhere."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2993, 2993],
+          "zh": ["在内则家中失脱，", "在外则他处遗亡"],
+          "yi": ["在内卦，就是家中丢失，", "在外卦，就是在别处遗失。"],
+          "en": ["In the inner trigram, it was lost at home,", "in the outer trigram, it was lost elsewhere."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2993, 2993],
+          "zh": ["用爻在卦内，失于家中；", "外卦，失于他处。"],
+          "yi": ["用爻在卦内，失在家中；", "在外卦，失在别处。"],
+          "en": ["A Subject in the inner trigram means it was lost at home;", "in the outer trigram, it was lost elsewhere."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.43",
+      "topic": "盗贼",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·财伏逢冲必是移物动：财爻伏在卦中，遇动爻日辰暗冲，若鬼爻衰弱安静，是东西被人挪动了，不是被偷",
+      "rule": {
+        "yi": "财伏遇冲，一定是东西被人挪动。财爻伏在卦中，遇到动爻或日辰暗中冲它，如果鬼爻衰弱安静，东西是被人移动了，不是人偷的。",
+        "en": "Wealth hidden and meeting a clash means the thing was surely moved by someone. If the Wealth line is hidden in the hexagram and is secretly clashed by a moving line or the Day, and the Pressure line is weak and still, the thing was moved by someone and not stolen."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2995, 2995],
+          "zh": ["财伏逢冲，", "必是移物动"],
+          "yi": ["财伏遇冲，", "一定是东西被人挪动。"],
+          "en": ["Wealth hidden and meeting a clash,", "the thing was surely moved by someone."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2995, 2995],
+          "zh": ["财伏卦中，遇动爻日辰暗冲者，若鬼爻衰静，其物被人移动，非人偷也。"],
+          "yi": ["财爻伏在卦中，遇到动爻或日辰暗中冲它，如果鬼爻衰弱安静，东西是被人移动了，不是人偷的。"],
+          "en": ["If the Wealth line is hidden in the hexagram and is secretly clashed by a moving line or the Day, and the Pressure line is weak and still, the thing was moved by someone and not stolen."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.44",
+      "topic": "盗贼",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·鬼兴出现定为贼窃人偷：鬼不上卦或落空、衰绝不动都不是人偷，游魂卦多是忘记，鬼爻变动才是人偷",
+      "rule": {
+        "yi": "官鬼发动出现，一定是贼偷人窃。官鬼不上卦或落了空亡，或衰绝不动，都不是人偷的；游魂卦，多半是忘记了；如果鬼爻变动，才是被人偷了。",
+        "en": "Pressure appearing and moving means it was surely stolen by a thief. If Pressure is not on the hexagram, falls into the Void, or is weak, extinct and still, it was not stolen; in a Wandering Soul hexagram it is mostly forgotten; only if the Pressure line changes and moves was it stolen by someone."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2997, 2997],
+          "zh": ["鬼兴出现，", "定为贼窃人偷"],
+          "yi": ["官鬼发动出现，", "一定是贼偷人窃。"],
+          "en": ["Pressure appearing and moving,", "it was surely stolen by a thief."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2997, 2997],
+          "zh": ["鬼不上卦或落空亡，或衰绝不动，皆不是人偷；", "游魂卦，多是忘记；", "若鬼爻变动，方是人偷。"],
+          "yi": ["官鬼不上卦或落了空亡，或衰绝不动，都不是人偷的；", "游魂卦，多半是忘记了；", "如果鬼爻变动，才是被人偷了。"],
+          "en": ["If Pressure is not on the hexagram, falls into the Void, or is weak, extinct and still, it was not stolen;", "in a Wandering Soul hexagram it is mostly forgotten;", "only if the Pressure line changes and moves was it stolen by someone."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.45",
+      "topic": "人物",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·阴女阳男内卦则家人可决、生壮墓老他宫则外贼无疑：鬼爻属阳男偷属阴女偷，生旺是壮年、墓绝是老人、胎养是小儿、带害是病人；本宫内卦是家人，他宫内卦是借住的人或异姓人，他宫是外贼",
+      "rule": {
+        "yi": "阴是女、阳是男，在内卦，家里的人可以断定；生壮、墓老，在他宫，外贼无疑。鬼爻属阳，是男子偷；属阴，是女人偷；阴化阳，是女的偷给男的；阳化阴，是男的偷了寄给女的。生旺是壮年人，墓绝是老年人，胎养是小孩偷，带害是有病的人偷。本宫内卦是家中人偷，他宫内卦是住在宅上的借居人偷，或是家中异姓的人偷。",
+        "en": "Yin is female and Yang is male; in the inner trigram the person of the household can be decided; Life and strength, Tomb and age, in another palace, there is no doubt it is an outside thief. A Pressure line of Yang means a man stole it; of Yin, a woman; Yin changing to Yang, a woman stole it for a man; Yang changing to Yin, a man stole it and sent it to a woman. In life and strength it is a man in his prime, in tomb or extinction an old person, in the womb or nurture a child, and with harm a sick person. In the inner trigram of its own palace it is a person of the household; in the inner trigram of another palace, a lodger on the premises or a person of another surname in the household."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [2999, 2999],
+          "zh": ["阴女阳男内卦，", "则家人可决；", "生壮墓老他宫，", "则外贼无疑"],
+          "yi": ["阴是女、阳是男，在内卦，", "家里的人可以断定；", "生壮、墓老，", "在他宫，外贼无疑。"],
+          "en": ["Yin is female and Yang is male, in the inner trigram,", "the person of the household can be decided;", "in life and strength, in tomb and age,", "in another palace, there is no doubt it is an outside thief."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [2999, 2999],
+          "zh": ["鬼爻属阳，男子偷；", "属阴，女人偷；", "阴化阳，女偷与男；", "阳化阴，男偷寄女。", "生旺壮年人，墓绝老年人，胎养小儿偷，带害有病人偷。", "本宫内卦家中人偷，他宫内卦宅上之借居人偷，或家中异姓人偷。"],
+          "yi": ["鬼爻属阳，是男子偷；", "属阴，是女人偷；", "阴化阳，是女的偷给男的；", "阳化阴，是男的偷了寄给女的。", "生旺是壮年人，墓绝是老年人，胎养是小孩偷，带害是有病的人偷。", "本宫内卦是家中人偷，他宫内卦是住在宅上的借居人偷，或是家中异姓的人偷。"],
+          "en": ["A Pressure line of Yang means a man stole it;", "of Yin, a woman;", "Yin changing to Yang, a woman stole it for a man;", "Yang changing to Yin, a man stole it and sent it to a woman.", "In life and strength it is a man in his prime, in tomb or extinction an old person, in the womb or nurture a child, and with harm a sick person.", "In the inner trigram of its own palace it is a person of the household; in the inner trigram of another palace, a lodger on the premises or a person of another surname in the household."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.46",
+      "topic": "人物",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·乾宫鬼带螣蛇西北方瘦长男子、巽象官加白虎东南上肥胖阴人：八卦定方向，六神定贼的形貌；鬼在乾宫是西北方人，在巽宫是东南方人，带螣蛇身长而瘦，加白虎旺相贼必肥大、休囚瘦小",
+      "rule": {
+        "yi": "乾宫的鬼爻带螣蛇，是西北方瘦长的男子；巽象的官鬼加白虎，是东南方肥胖的女人。这是用八卦定方向，用六神定贼的形貌。鬼爻在乾宫，是西北方的人；在巽宫，是东南方的人；带螣蛇身长而瘦，加白虎旺相贼必定肥大，休囚就瘦小；其余照这个类推。",
+        "en": "Pressure in the Qian palace with the Coiling Snake means a thin, tall man from the northwest; Pressure in the Xun image with the White Tiger means a fat woman from the southeast. This uses the eight trigrams to fix the direction and the six spirits to fix the thief's build. Pressure in the Qian palace is a person from the northwest; in the Xun palace, from the southeast; with the Coiling Snake he is long of body and thin, with the White Tiger, strong, the thief is surely big and fat, resting or trapped, small and thin; the rest follow this."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3001, 3001],
+          "zh": ["乾宫鬼带螣蛇，", "西北方瘦长男子；", "巽象官加白虎，", "东南上肥胖阴人"],
+          "yi": ["乾宫的鬼爻带螣蛇，", "是西北方瘦长的男子；", "巽象的官鬼加白虎，", "是东南方肥胖的女人。"],
+          "en": ["Pressure in the Qian palace with the Coiling Snake,", "a thin, tall man from the northwest;", "Pressure in the Xun image with the White Tiger,", "a fat woman from the southeast."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3001, 3001],
+          "zh": ["此指八卦以定方向，六神以定贼形。", "如鬼在乾宫，西北方人；", "在巽宫，东南方人；", "带螣蛇身长而瘦，加白虎旺相贼必肥大，休囚瘦小。", "余皆仿此。"],
+          "yi": ["这是用八卦定方向，用六神定贼的形貌。", "鬼爻在乾宫，是西北方的人；", "在巽宫，是东南方的人；", "带螣蛇身长而瘦，加白虎旺相贼必定肥大，休囚就瘦小。", "其余照这个类推。"],
+          "en": ["This uses the eight trigrams to fix the direction and the six spirits to fix the thief's build.", "Pressure in the Qian palace is a person from the northwest;", "in the Xun palace, from the southeast;", "with the Coiling Snake he is long of body and thin, with the White Tiger, strong, the thief is surely big and fat, resting or trapped, small and thin.", "The rest follow this."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.47",
+      "topic": "人物",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·与世刑冲必是冤仇相聚、与福交变必然僧道同谋：鬼爻与世爻刑冲，贼是有仇怨的人；与世生合，是沾亲带故的人；鬼化子孙、子孙化鬼，必有僧道夹在其中",
+      "rule": {
+        "yi": "鬼爻和世爻刑冲，必定是有冤仇的人聚在一起；和子孙互相交变，必定有僧人道士同谋。鬼爻和世爻刑冲，贼是有仇怨的人；和世爻生合，是有亲戚关系的人；鬼化子孙、子孙化鬼，必有僧人道士夹杂在里面。",
+        "en": "If the Pressure line punishes or clashes with the Self, it is surely people with a grudge gathered together; if it changes with Output and back, monks and Daoists have surely plotted together. Pressure punishing or clashing with the Self means the thief is someone with a grudge; giving life to or combining with the Self, someone related or acquainted; Pressure changing into Output or Output into Pressure, a monk or Daoist is surely mixed in."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3003, 3003],
+          "zh": ["与世刑冲，", "必是冤仇相聚；", "与福交变，", "必然僧道同谋"],
+          "yi": ["鬼爻和世爻刑冲，", "必定是有冤仇的人聚在一起；", "和子孙互相交变，", "必定有僧人道士同谋。"],
+          "en": ["If the Pressure line punishes or clashes with the Self,", "it is surely people with a grudge gathered together;", "if it changes with Output and back,", "monks and Daoists have surely plotted together."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3003, 3003],
+          "zh": ["鬼爻与世刑冲，其贼卦有仇隙者；", "与世生合，乃是兼亲带故之人；", "鬼化子、子化鬼，必有僧道杂在其中。"],
+          "yi": ["鬼爻和世爻刑冲，贼是有仇怨的人；", "和世爻生合，是有亲戚关系的人；", "鬼化子孙、子孙化鬼，必有僧人道士夹杂在里面。"],
+          "en": ["Pressure punishing or clashing with the Self means the thief is someone with a grudge;", "giving life to or combining with the Self, someone related or acquainted;", "Pressure changing into Output or Output into Pressure, a monk or Daoist is surely mixed in."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.48",
+      "topic": "人物",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·鬼遇生扶惯得中间滋味：鬼爻无气又临死绝，若遇动爻日辰扶起，这个贼是惯偷；带月建是强盗，加太岁是官贼",
+      "rule": {
+        "yi": "鬼爻遇到生扶，这个贼惯于得到其中的好处。鬼爻无气又临死绝，如果遇到动爻日辰把它扶起来，这个贼是惯偷尝过甜头的；带月建是强盗，加太岁是官贼。",
+        "en": "If Pressure meets life and support, this thief is used to enjoying the taste of it. A Pressure line without breath and on death or extinction, if raised by a moving line or the Day, belongs to a thief long used to the taste of it; with the Month it is a robber, with Tai Sui an official thief."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3005, 3005],
+          "zh": ["鬼遇生扶，", "惯得中间滋味"],
+          "yi": ["鬼爻遇到生扶，", "这个贼惯于得到其中的好处。"],
+          "en": ["If Pressure meets life and support,", "this thief is used to enjoying the taste of it."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3005, 3005],
+          "zh": ["鬼爻无气又临死绝，若遇动爻日辰扶起者，此贼惯得其中滋味；", "带月建强盗，加太岁是官贼。"],
+          "yi": ["鬼爻无气又临死绝，如果遇到动爻日辰把它扶起来，这个贼是惯偷尝过甜头的；", "带月建是强盗，加太岁是官贼。"],
+          "en": ["A Pressure line without breath and on death or extinction, if raised by a moving line or the Day, belongs to a thief long used to the taste of it;", "with the Month it is a robber, with Tai Sui an official thief."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.49",
+      "topic": "人物",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·官兴上下须防内外勾连：卦有两个鬼爻，偷的不止一个人；都动是外勾里连，内动外静是家人偷了给外人，外动内静是家里有人知情",
+      "rule": {
+        "yi": "官鬼在上下卦都发动，要提防内外勾结。卦里有两个鬼爻，偷东西的不止一个人；都发动，是外边勾结里面；内卦动外卦静，是家里人偷给外人；外卦动内卦静，是家里有人知情。",
+        "en": "With Pressure moving in both the upper and the lower trigram, beware of collusion between inside and outside. A hexagram with two Pressure lines means more than one person stole; both moving means the outside is in league with the inside; the inner moving and the outer still means a person of the household stole it for an outsider; the outer moving and the inner still means someone in the household knows of it."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3007, 3007],
+          "zh": ["官兴上下，", "须防内外勾连"],
+          "yi": ["官鬼在上下卦都发动，", "要提防内外勾结。"],
+          "en": ["With Pressure moving in both the upper and the lower trigram,", "beware of collusion between inside and outside."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3007, 3007],
+          "zh": ["卦有二鬼，偷非一人；", "俱动，是外勾里连。", "内动外静，是家人偷与外人；", "外动内静，家中有人知情。"],
+          "yi": ["卦里有两个鬼爻，偷东西的不止一个人；", "都发动，是外边勾结里面；", "内卦动外卦静，是家里人偷给外人；", "外卦动内卦静，是家里有人知情。"],
+          "en": ["A hexagram with two Pressure lines means more than one person stole;", "both moving means the outside is in league with the inside;", "the inner moving and the outer still means a person of the household stole it for an outsider;", "the outer moving and the inner still means someone in the household knows of it."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.50",
+      "topic": "盗贼",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·木克六爻逾墙而入、金伤三位穿壁而来：看鬼爻五行克哪一处就知从哪里进来——木鬼克土逾墙掘洞、金鬼克木割壁穿篱、火鬼克金劈环开锁、水鬼克火灌水灭灯、土鬼克水涉渎跳涧、木火交化明火执仗；木鬼克上爻翻墙而入，克初爻后门掘洞",
+      "rule": {
+        "yi": "木克上爻，是翻墙而入；金伤三爻，是穿壁而来。木鬼克土，翻墙挖洞；金鬼克木，割开板壁穿过篱笆；火鬼克金，劈开环扣、撬开锁；水鬼克火，泼水灭灯；土鬼克水，涉过水渠跳过山涧；木火交相变化，是明火执仗。要知道从哪里能进来，用鬼爻克到的地方来定：木鬼克上爻，翻墙而入；克初爻，从后门挖洞而进。",
+        "en": "Wood controlling the top line means he came in over the wall; Metal injuring the third place means he came through the partition. Wood Pressure controlling Earth: over the wall or through a dug hole; Metal Pressure controlling Wood: cutting through the planking or the hedge; Fire Pressure controlling Metal: splitting the ring and opening the lock; Water Pressure controlling Fire: dousing the lamp with water; Earth Pressure controlling Water: wading the channel or leaping the gully; Wood and Fire changing into each other: robbers with open torches. To know where he came in, fix it by where the Pressure controls: Wood Pressure controlling the top line, over the wall; controlling the first line, through a hole dug at the back door."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3009, 3009],
+          "zh": ["木克六爻，", "逾墙而入；", "金伤三位，", "穿壁而来"],
+          "yi": ["木克上爻，", "是翻墙而入；", "金伤三爻，", "是穿壁而来。"],
+          "en": ["Wood controlling the top line,", "he came in over the wall;", "Metal injuring the third place,", "he came through the partition."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3009, 3009],
+          "zh": ["木爻克土，逾墙掘洞；", "金鬼克木，割壁穿篱；", "火鬼克金，劈环开锁；", "水鬼克火，灌水灭灯；", "土鬼克水，涉渎跳涧；", "木火交化，明火执仗。", "要知何处可进，以鬼克处定之，如木鬼克六爻，逾垣而入；", "克初爻，后门掘洞而进也。"],
+          "yi": ["木鬼克土，翻墙挖洞；", "金鬼克木，割开板壁穿过篱笆；", "火鬼克金，劈开环扣、撬开锁；", "水鬼克火，泼水灭灯；", "土鬼克水，涉过水渠跳过山涧；", "木火交相变化，是明火执仗。", "要知道从哪里能进来，用鬼爻克到的地方来定，比如木鬼克上爻，翻墙而入；", "克初爻，从后门挖洞而进。"],
+          "en": ["Wood Pressure controlling Earth: over the wall or through a dug hole;", "Metal Pressure controlling Wood: cutting through the planking or the hedge;", "Fire Pressure controlling Metal: splitting the ring and opening the lock;", "Water Pressure controlling Fire: dousing the lamp with water;", "Earth Pressure controlling Water: wading the channel or leaping the gully;", "Wood and Fire changing into each other: robbers with open torches.", "To know where he came in, fix it by where the Pressure controls: Wood Pressure controlling the top line, over the wall;", "controlling the first line, through a hole dug at the back door."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.51",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·世去冲官失主必会警觉：世爻冲鬼爻失主察觉，其他人冲鬼爻是别人察觉，旁边的爻冲鬼是旁人察觉",
+      "rule": {
+        "yi": "世爻去冲官鬼，失主一定会警觉。世爻冲鬼爻，失主知觉；自己这边的爻去冲鬼爻，别人知觉；旁边的爻冲鬼爻，旁人知觉。",
+        "en": "If the Self goes to clash Pressure, the owner of the loss will surely be alerted. The Self clashing the Pressure line means the owner notices; a line of one's own side clashing Pressure means others notice; a line beside it clashing Pressure means bystanders notice."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3011, 3011],
+          "zh": ["世去冲官，", "失主必会警觉"],
+          "yi": ["世爻去冲官鬼，", "失主一定会警觉。"],
+          "en": ["If the Self goes to clash Pressure,", "the owner of the loss will surely be alerted."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3011, 3011],
+          "zh": ["世冲鬼爻，失主知觉；", "就冲鬼爻，他人知觉；", "旁爻冲鬼，旁人知觉。"],
+          "yi": ["世爻冲鬼爻，失主知觉；", "自己这边的爻去冲鬼爻，别人知觉；", "旁边的爻冲鬼爻，旁人知觉。"],
+          "en": ["The Self clashing the Pressure line means the owner notices;", "a line of one's own side clashing Pressure means others notice;", "a line beside it clashing Pressure means bystanders notice."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.52",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·日来克鬼贼心亦自惊疑：鬼爻被日辰或动爻刑克，这时贼心惊疑，贼必能捕获",
+      "rule": {
+        "yi": "日辰来克鬼爻，贼的心里也自己惊疑。鬼爻被日辰、动爻刑克，这时贼心惊疑，贼一定能捕获。",
+        "en": "If the Day comes to control Pressure, the thief's own heart is startled and uneasy. A Pressure line punished or controlled by the Day or a moving line means the thief's heart is then startled and uneasy, and he can surely be caught."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3013, 3013],
+          "zh": ["日来克鬼，", "贼心亦自惊疑"],
+          "yi": ["日辰来克鬼爻，", "贼的心里也自己惊疑。"],
+          "en": ["If the Day comes to control Pressure,", "the thief's own heart is startled and uneasy."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3013, 3013],
+          "zh": ["鬼被日辰动爻刑克，彼时贼心惊疑，贼必捕获得。"],
+          "yi": ["鬼爻被日辰、动爻刑克，这时贼心惊疑，贼一定能捕获。"],
+          "en": ["A Pressure line punished or controlled by the Day or a moving line means the thief's heart is then startled and uneasy, and he can surely be caught."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.53",
+      "topic": "取象",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·子动丑宫问牧童定知消息、福兴酉地是酒客可探情由：子孙发动，必有人撞见，问那人可知消息，看子孙所临的地支，分别问哪一种人",
+      "rule": {
+        "yi": "子孙发动在丑宫，问牧童一定知道消息；子孙兴旺在酉地，是酒客可以打探到情由。子孙发动，必定有人撞见，问他可知消息。如果在子爻，可以问不戴帽子的男子或捕鱼人；在丑爻，问牧童、筑墙等人；在寅爻是木客、木匠、挑竹木器的人；在卯爻，问织席卖鞋的、挑柴砍草的人；在辰爻，问凿井的、傍河的、锄地的人；在巳爻，问穿红衣的女子，或耍蛇的乞丐；在午爻，问烧窑的、骑马的、讨火的、提灯的人；在未爻，问挑灰的、耕种的、放羊的人；在申爻，问铜铁匠或耍猴的人；在酉爻，问针线工、酒客、捉鸡的人；在戌爻，问挑泥的、锄地的、牵狗的人；在亥爻，问挑水的、踏水车的、洗衣的、洗澡的人。",
+        "en": "Output moving in the Chou palace: ask the herd boy and you will surely learn the news; Output flourishing on You ground: a drinker can be sounded out for the facts. When Output moves, someone surely saw it, and asking him will give news. On Zi, one can ask a bareheaded man or a fisherman; on Chou, herd boys, wall builders and the like; on Yin, woodsmen, carpenters, and people carrying bamboo and wooden things; on Mao, mat weavers, shoe sellers, those carrying firewood or cutting grass; on Chen, well diggers, people by the river, and those hoeing the ground; on Si, a woman in red or a snake-charming beggar; on Wu, kiln burners, riders, those begging a light or carrying a lamp; on Wei, those carrying ash, ploughing or herding sheep; on Shen, copper and iron smiths or monkey handlers; on You, needleworkers, drinkers and chicken catchers; on Xu, those carrying mud, hoeing, or leading a dog; on Hai, water carriers, those treading a water wheel, washing clothes or bathing."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3015, 3015],
+          "zh": ["子动丑宫，", "问牧童定知消息；", "福兴酉地，", "是酒客可探情由"],
+          "yi": ["子孙发动在丑宫，", "问牧童一定知道消息；", "子孙兴旺在酉地，", "是酒客可以打探到情由。"],
+          "en": ["Output moving in the Chou palace,", "ask the herd boy and you will surely learn the news;", "Output flourishing on You ground,", "a drinker can be sounded out for the facts."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3015, 3015],
+          "zh": ["子动，必有人撞见，询之可知消息。", "如在子爻，可问科头男子或捕鱼人；", "在丑爻，可问牧童筑墙等人；", "在寅爻是木客木匠、担竹木器等人；", "在卯爻，问织席卖履、挑柴、砍草等人；", "在辰爻问凿井、傍河、锄地等人；", "在巳爻问穿红衣女子，或弄蛇乞丐人；", "在午爻问烧窑、乘马、讨火、提灯等人；", "在未爻问挑灰、耕种、牧羊者等人；", "在申爻，问铜铁匠或弄猴人；", "在酉爻，问针工、酒客、捉鸡等人；", "在戌爻，问挑泥、锄地、牵狗等人；", "在亥爻，问担水、踏车、洗衣、沐浴等人。"],
+          "yi": ["子孙发动，必定有人撞见，问他可知消息。", "如果在子爻，可以问不戴帽子的男子或捕鱼人；", "在丑爻，问牧童、筑墙等人；", "在寅爻是木客、木匠、挑竹木器的人；", "在卯爻，问织席卖鞋的、挑柴砍草的人；", "在辰爻，问凿井的、傍河的、锄地的人；", "在巳爻，问穿红衣的女子，或耍蛇的乞丐；", "在午爻，问烧窑的、骑马的、讨火的、提灯的人；", "在未爻，问挑灰的、耕种的、放羊的人；", "在申爻，问铜铁匠或耍猴的人；", "在酉爻，问针线工、酒客、捉鸡的人；", "在戌爻，问挑泥的、锄地的、牵狗的人；", "在亥爻，问挑水的、踏水车的、洗衣的、洗澡的人。"],
+          "en": ["When Output moves, someone surely saw it, and asking him will give news.", "On Zi, one can ask a bareheaded man or a fisherman;", "on Chou, herd boys, wall builders and the like;", "on Yin, woodsmen, carpenters, and people carrying bamboo and wooden things;", "on Mao, mat weavers, shoe sellers, those carrying firewood or cutting grass;", "on Chen, well diggers, people by the river, and those hoeing the ground;", "on Si, a woman in red or a snake-charming beggar;", "on Wu, kiln burners, riders, those begging a light or carrying a lamp;", "on Wei, those carrying ash, ploughing or herding sheep;", "on Shen, copper and iron smiths or monkey handlers;", "on You, needleworkers, drinkers and chicken catchers;", "on Xu, those carrying mud, hoeing, or leading a dog;", "on Hai, water carriers, those treading a water wheel, washing clothes or bathing."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.54",
+      "topic": "寻得",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·兄动劫财若卜起赃无须觅：卜起赃和寻物，只要见到兄弟发动，财物都会失散，终究找不回来",
+      "rule": {
+        "yi": "兄弟发动劫财，如果占起获赃物就不必去找了。占起赃和寻物，只要见兄弟发动，都主财物失散，终究难找。",
+        "en": "A Peer line moving robs Wealth; if one divines for recovering the stolen goods, there is no need to look. In divining for recovering stolen goods or searching for things, if a Peer line is seen moving, the goods are scattered and in the end hard to find."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3017, 3017],
+          "zh": ["兄动劫财，", "若卜起赃无须觅"],
+          "yi": ["兄弟发动劫财，", "如果占起获赃物就不必去找了。"],
+          "en": ["A Peer line moving robs Wealth;", "if one divines for recovering the stolen goods, there is no need to look."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3017, 3017],
+          "zh": ["卜起赃及寻物，若见兄动，皆主财物失散，终难寻觅。"],
+          "yi": ["占起赃和寻物，只要见兄弟发动，都主财物失散，终究难找。"],
+          "en": ["In divining for recovering stolen goods or searching for things, if a Peer line is seen moving, the goods are scattered and in the end hard to find."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.55",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·官兴克世如占捕盗必伤身：占捕盗要世旺鬼衰、世动鬼静，才容易捕获；鬼爻乘旺动来刑克世爻，要防反被他害",
+      "rule": {
+        "yi": "官鬼发动克世，如果是占捕盗，一定会伤身。凡是占捕盗，要世爻旺、鬼爻衰，世爻动、鬼爻静，就容易捕获；如果鬼爻乘旺，动来刑克世爻，要防反被他所害。",
+        "en": "If Pressure moves and controls the Self, in divining for catching a thief you will surely be hurt. In divining for catching a thief, the Self should be strong and Pressure weak, the Self moving and Pressure still, and then he is easily caught; if Pressure is strong and moves to punish or control the Self, beware of being harmed by him instead."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3019, 3019],
+          "zh": ["官兴克世，", "如占捕盗必伤身"],
+          "yi": ["官鬼发动克世，", "如果是占捕盗，一定会伤身。"],
+          "en": ["If Pressure moves and controls the Self,", "in divining for catching a thief you will surely be hurt."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3019, 3019],
+          "zh": ["凡占捕盗，要世旺鬼衰、世动鬼静，则易于捕获；", "若鬼爻乘旺，动来刑克世爻，须防反被其害。"],
+          "yi": ["凡是占捕盗，要世爻旺、鬼爻衰，世爻动、鬼爻静，就容易捕获；", "如果鬼爻乘旺，动来刑克世爻，要防反被他所害。"],
+          "en": ["In divining for catching a thief, the Self should be strong and Pressure weak, the Self moving and Pressure still, and then he is easily caught;", "if Pressure is strong and moves to punish or control the Self, beware of being harmed by him instead."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.56",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·世值子孙任彼强梁何处虑：子孙是捕盗的人，旺而发动或临世，或日月临它，鬼就受到制约，贼一定可以捕获，即使凶恶的强盗也不足畏",
+      "rule": {
+        "yi": "世爻值子孙，任凭他凶暴强横，也不必担心。子孙是捕盗的人，如果旺而发动、或临在世爻，或者日月临它，鬼爻有了制约，贼一定可以捕获，即使是凶恶的强盗也不足畏惧。",
+        "en": "If the Self sits on Output, however violent and overbearing he is, there is nothing to fear. Output is the man who catches the thief; if it is strong and moving, or sits on the Self, or the Month or the Day sits on it, Pressure is held in check and the thief can surely be caught, and even a fierce robber is not to be feared."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3021, 3021],
+          "zh": ["世值子孙，", "任彼强梁何处虑"],
+          "yi": ["世爻值子孙，", "任凭他凶暴强横，也不必担心。"],
+          "en": ["If the Self sits on Output,", "however violent and overbearing he is, there is nothing to fear."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3021, 3021],
+          "zh": ["子为捕盗之人，若旺动或临世，或日月临之，则鬼有制，贼必可获，纵凶恶强盗，不足畏也。"],
+          "yi": ["子孙是捕盗的人，如果旺而发动、或临在世爻，或者日月临它，鬼爻有了制约，贼一定可以捕获，即使是凶恶的强盗也不足畏惧。"],
+          "en": ["Output is the man who catches the thief; if it is strong and moving, or sits on the Self, or the Month or the Day sits on it, Pressure is held in check and the thief can surely be caught, and even a fierce robber is not to be feared."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.57",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·鬼临墓库纵能巡捕亦难擒：鬼爻入墓或化入墓或伏在墓下，贼深藏难捕；得动爻日辰冲开墓才可捕",
+      "rule": {
+        "yi": "鬼爻临在墓库，即使去巡查缉捕也难擒获。鬼爻入墓以及化入墓，或伏在墓爻之下，都主贼深藏难捕；得到动爻、日辰冲开了墓，才可以捕。",
+        "en": "If Pressure sits in the tomb store, even a patrol and a hunt will hardly catch him. A Pressure line entering the tomb or changing into the tomb, or hidden under the tomb line, means the thief is deeply hidden and hard to catch; he can be caught only when a moving line or the Day clashes the tomb open."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3023, 3023],
+          "zh": ["鬼临墓库，", "纵能巡捕亦难擒"],
+          "yi": ["鬼爻临在墓库，", "即使去巡查缉捕也难擒获。"],
+          "en": ["If Pressure sits in the tomb store,", "even a patrol and a hunt will hardly catch him."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3023, 3023],
+          "zh": ["鬼爻入墓及化入墓，或伏墓下，皆主其贼深藏难捕；", "得动爻日辰入墓可捕。"],
+          "yi": ["鬼爻入墓以及化入墓，或伏在墓爻之下，都主贼深藏难捕；", "得到动爻、日辰冲开了墓，才可以捕。"],
+          "en": ["A Pressure line entering the tomb or changing into the tomb, or hidden under the tomb line, means the thief is deeply hidden and hard to catch;", "he can be caught only when a moving line or the Day clashes the tomb open."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.58",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·日合贼爻必有窝藏之主：鬼是贼爻，捕盗遇到合贼的日子，必有人窝藏，见不到他，要等冲开合的日子才可捕",
+      "rule": {
+        "yi": "日辰合贼爻，一定有窝藏他的主人。鬼是贼爻，占捕盗遇到合住贼，必定有人窝藏，见不到他，要等冲开这个合的日子才可以捕。",
+        "en": "If the Day combines the thief line, there is surely a master who harbours him. Pressure is the thief line; in divining for catching a thief, if it is combined shut, someone must be harbouring him and he cannot be seen, and he can be caught only on the day that clashes the combination open."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3025, 3025],
+          "zh": ["日合贼爻，", "必有窝藏之主"],
+          "yi": ["日辰合贼爻，", "一定有窝藏他的主人。"],
+          "en": ["If the Day combines the thief line,", "there is surely a master who harbours him."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3025, 3025],
+          "zh": ["鬼为贼爻，捕盗遇合贼；", "必有人窝藏不能见，待冲合之日可捕。"],
+          "yi": ["鬼是贼爻，占捕盗遇到合住贼，", "必定有人窝藏，见不到他，要等冲开这个合的日子才可以捕。"],
+          "en": ["Pressure is the thief line; in divining for catching a thief, if it is combined shut,", "someone must be harbouring him and he cannot be seen, and he can be caught only on the day that clashes the combination open."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.59",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·动冲鬼煞还逢指示之人：鬼爻被动爻冲动或受克，必有人指点贼躲在哪里",
+      "rule": {
+        "yi": "动爻冲鬼煞，还会遇到指点的人。鬼爻遇到冲动以及受克，必定有人指点贼藏身的地方。",
+        "en": "A moving line clashing the baleful Pressure means one will meet someone who points the way. A Pressure line meeting a clash into motion or control means someone surely points out where the thief hides."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3025, 3025],
+          "zh": ["动冲鬼煞，", "还逢指示之人"],
+          "yi": ["动爻冲鬼煞，", "还会遇到指点的人。"],
+          "en": ["A moving line clashing the baleful Pressure,", "one will meet someone who points the way."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3025, 3025],
+          "zh": ["鬼爻逢冲动及受克，必有人指示贼隐之处。"],
+          "yi": ["鬼爻遇到冲动以及受克，必定有人指点贼藏身的地方。"],
+          "en": ["A Pressure line meeting a clash into motion or control means someone surely points out where the thief hides."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.60",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·卦若无官理当论伏、财如发动墓处推详：捕盗卦里没有官鬼，贼藏起了，要看官鬼伏在哪一爻之下；动爻变出官鬼就按变爻论；占起赃见财爻发动，要看它的墓在哪里，就知道赃物藏在哪个方向",
+      "rule": {
+        "yi": "卦里如果没有官鬼，应当论伏；财爻如果发动，从墓的地方推详。捕盗没有官鬼，贼必定隐藏了踪迹，要看官鬼伏在哪一爻之下，就知道贼在哪里，比如伏在财爻下，在妻子奴仆家一类；如果动爻有变出官鬼的，就按变爻来论，不必看伏；如果占起赃，见财爻发动，看它的墓在哪里，就知道赃物藏向哪个方向。",
+        "en": "If the hexagram has no Pressure, one should judge by what is hidden; if Wealth moves, work it out from where its tomb is. In catching a thief with no Pressure, the thief has surely hidden his tracks; look at which line the Pressure is hidden under to know where the thief is, for example hidden under Wealth, at a wife's or servant's house and the like; if a moving line changes into Pressure, judge by the changed line and there is no need to look at what is hidden; in divining for recovering the loot, if the Wealth line is seen moving, look at where its tomb is to know in which direction the loot is hidden."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3026, 3026],
+          "zh": ["卦若无官，", "理当论伏；", "财如发动，", "墓处推详"],
+          "yi": ["卦里如果没有官鬼，", "应当论伏；", "财爻如果发动，", "从墓的地方推详。"],
+          "en": ["If the hexagram has no Pressure,", "one should judge by what is hidden;", "if Wealth moves,", "work it out from where its tomb is."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3026, 3026],
+          "zh": ["捕盗无官，贼必隐迹，须看伏在何爻之下，便知贼在何处，如伏财下，在妻奴家类。", "若动爻有化出者，即以变爻论之，不须看伏。", "若卜起赃，见财爻发动，看其墓在何处，便知藏向何方。"],
+          "yi": ["捕盗没有官鬼，贼必定隐藏了踪迹，要看官鬼伏在哪一爻之下，就知道贼在哪里，比如伏在财爻下，在妻子奴仆家一类；", "如果动爻有变出官鬼的，就按变爻来论，不必看伏；", "如果占起赃，见财爻发动，看它的墓在哪里，就知道赃物藏向哪个方向。"],
+          "en": ["In catching a thief with no Pressure, the thief has surely hidden his tracks; look at which line the Pressure is hidden under to know where the thief is, for example hidden under Wealth, at a wife's or servant's house and the like;", "if a moving line changes into Pressure, judge by the changed line and there is no need to look at what is hidden;", "in divining for recovering the loot, if the Wealth line is seen moving, look at where its tomb is to know in which direction the loot is hidden."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.61",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·伏若克飞终被他人隐匿、飞如克伏还为我辈擒拿：这里伏只论鬼爻、飞只论世爻；鬼伏在世爻下克世爻，终难擒获；世爻克伏神，必可擒获",
+      "rule": {
+        "yi": "伏神如果克飞神，最终会被别人隐藏起来；飞神如果克伏神，还是被我们这边擒拿。这里的伏只论鬼爻，这里的飞只论世爻。如果鬼伏在世爻下去克飞神，终究难以擒获；如果世爻克伏神，必定可以擒拿。",
+        "en": "If the hidden spirit controls the flying spirit, he is in the end hidden by others; if the flying spirit controls the hidden spirit, he is still seized by our side. Here the hidden spirit refers only to the Pressure line and the flying spirit only to the Self. If Pressure is hidden under the Self and controls the flying spirit, he is in the end hard to catch; if the Self controls the hidden spirit, he can surely be seized."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3028, 3028],
+          "zh": ["伏若克飞，", "终被他人隐匿；", "飞如克伏，", "还为我辈擒拿"],
+          "yi": ["伏神如果克飞神，", "最终会被别人隐藏起来；", "飞神如果克伏神，", "还是被我们这边擒拿。"],
+          "en": ["If the hidden spirit controls the flying spirit,", "he is in the end hidden by others;", "if the flying spirit controls the hidden spirit,", "he is still seized by our side."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3028, 3028],
+          "zh": ["此伏只论鬼爻，此飞只论世爻。", "如鬼伏世下克飞，终难擒获；", "如世克伏，必可擒拿。"],
+          "yi": ["这里的伏只论鬼爻，这里的飞只论世爻。", "如果鬼伏在世爻下去克飞神，终究难以擒获；", "如果世爻克伏神，必定可以擒拿。"],
+          "en": ["Here the hidden spirit refers only to the Pressure line and the flying spirit only to the Self.", "If Pressure is hidden under the Self and controls the flying spirit, he is in the end hard to catch;", "if the Self controls the hidden spirit, he can surely be seized."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.62",
+      "topic": "捕获",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·若伏空爻借赁屋居非护贼：鬼爻伏在空爻之下，是租房居住，不是窝藏，或躲在别人家，也不算容留，后来终究败露",
+      "rule": {
+        "yi": "如果伏在空爻下，是租房子住，不是袒护贼。鬼爻伏在空爻之下，是租屋居住，不是窝藏，或潜住在别人家，也不是容留包庇，后来终究会败露。",
+        "en": "If it is hidden under a Void line, he is renting a house to live in and is not being shielded. Pressure hidden under a Void line means he rents lodging and is not harboured, or he lies low in another's home without being sheltered, and in the end he is exposed."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3030, 3030],
+          "zh": ["若伏空爻，", "借赁屋居非护贼"],
+          "yi": ["如果伏在空爻下，", "是租房子住，不是袒护贼。"],
+          "en": ["If it is hidden under a Void line,", "he is renting a house to live in and is not being shielded."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3030, 3030],
+          "zh": ["鬼伏空爻下，赁屋居住，非是窝藏，或潜住他家，亦非容隐，后终败露。"],
+          "yi": ["鬼爻伏在空爻之下，是租屋居住，不是窝藏，或潜住在别人家，也不是容留包庇，后来终究会败露。"],
+          "en": ["Pressure hidden under a Void line means he rents lodging and is not harboured, or he lies low in another's home without being sheltered, and in the end he is exposed."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.63",
+      "topic": "风险",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·如藏世下提防窃盗要留心：占防盗最要鬼爻衰静或空，或被日辰冲散、子孙克制，都是吉兆；官鬼无制而动克世，世爻要受其害；鬼伏在世爻下，目下无事，到透出的时候要提防牵累",
+      "rule": {
+        "yi": "如果鬼藏在世爻之下，提防窃盗要留心。凡是占防盗，最要紧的是鬼爻衰弱、安静或落空，或被日辰冲散，或被子孙克制，这些都是吉兆；如果官鬼没有被制，动来克世，世爻要受它的害；如果鬼伏在世爻下，目前虽然没事，等到它透出的时候，要提防受累。",
+        "en": "If Pressure is hidden under the Self, be careful in guarding against thieves. In divining for guarding against theft, what matters most is Pressure weak, still or Void, or scattered by the Day clash, or held in check by Output, all of which are lucky signs; if Pressure is not checked and moves to control the Self, the Self will suffer harm from it; if Pressure is hidden under the Self, though nothing happens now, when it comes out beware of being implicated."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3032, 3032],
+          "zh": ["如藏世下，", "提防窃盗要留心"],
+          "yi": ["如果鬼藏在世爻之下，", "提防窃盗要留心。"],
+          "en": ["If Pressure is hidden under the Self,", "be careful in guarding against thieves."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3032, 3032],
+          "zh": ["凡占防盗，最要鬼爻衰静及空，或日辰冲散，或子孙克制，皆为吉兆。", "若官鬼爻无制动克，世爻当受其害；", "若鬼伏世下，目下虽无事，至其时透出，宜提防累及。"],
+          "yi": ["凡是占防盗，最要紧的是鬼爻衰弱、安静或落空，或被日辰冲散，或被子孙克制，这些都是吉兆；", "如果官鬼没有被制，动来克世，世爻要受它的害；", "如果鬼伏在世爻下，目前虽然没事，等到它透出的时候，要提防受累。"],
+          "en": ["In divining for guarding against theft, what matters most is Pressure weak, still or Void, or scattered by the Day clash, or held in check by Output, all of which are lucky signs;", "if Pressure is not checked and moves to control the Self, the Self will suffer harm from it;", "if Pressure is hidden under the Self, though nothing happens now, when it comes out beware of being implicated."] }
+      ]
+    },
+    {
+      "id": "LY.LOST.HJC.64",
+      "topic": "取象",
+      "chapter": "失脱",
+      "chapter_en": "Lost goods, with theft, catching and arresting thieves",
+      "title": "失脱·倘失舟车衣服不宜妻位交重、或亡走兽飞禽切忌父爻发动：失舟车、衣帽、文书、奏章以父母爻为用神所以怕财爻动；失飞禽走兽以子孙为用神所以怕父爻发动，被克就难找",
+      "rule": {
+        "yi": "如果丢了船、车、衣服，不适宜妻财爻位交重发动；或者丢了走兽飞禽，切忌父母爻发动。失脱不能专门拿财当用神：如果丢的是船、车、衣帽、文书、奏章，就以父母爻为用神，所以忌讳财爻动；如果丢的是飞禽走兽，就以子孙爻为用神，所以忌讳父母爻发动，被克就难找。学习要通达变化。",
+        "en": "If a boat, cart or clothes are lost, it is unfit for the Wealth position to be crowded with movement; or if a beast or bird has run off, the Resource line moving is to be strictly avoided. In lost goods one cannot take Wealth alone as the Subject: if what is lost is a boat, cart, clothes, a cap, documents or memorials, the Resource line is the Subject, so a moving Wealth line is feared; if what is lost is a bird or beast, Output is the Subject, so a moving Resource line is feared, and if it is controlled the animal is hard to find. One should learn to be adaptable."
+      },
+      "quotes": [
+        { "by": "经", "book": "卜筮正宗", "range": [3034, 3034],
+          "zh": ["倘失舟车衣服，", "不宜妻位交重；", "或亡走兽飞禽，", "切忌父爻发动"],
+          "yi": ["如果丢了船、车、衣服，", "不适宜妻财爻位交重发动；", "或者丢了走兽飞禽，", "切忌父母爻发动。"],
+          "en": ["If a boat, cart or clothes are lost,", "it is unfit for the Wealth position to be crowded with movement;", "or if a beast or bird has run off,", "the Resource line moving is to be strictly avoided."] },
+        { "by": "王洪绪", "book": "卜筮正宗", "range": [3034, 3034],
+          "zh": ["失脱不可专以财为用神，若失舟车、衣帽、文书、奏章则以父母爻为用神，故忌财动；", "若失飞禽走兽，则以子孙为用爻，故忌父爻发动，克则难寻觅。", "学宜通变。"],
+          "yi": ["失脱不能专门拿财当用神：如果丢的是船、车、衣帽、文书、奏章，就以父母爻为用神，所以忌讳财爻动；", "如果丢的是飞禽走兽，就以子孙爻为用神，所以忌讳父母爻发动，被克就难找。", "学习要通达变化。"],
+          "en": ["In lost goods one cannot take Wealth alone as the Subject: if what is lost is a boat, cart, clothes, a cap, documents or memorials, the Resource line is the Subject, so a moving Wealth line is feared;", "if what is lost is a bird or beast, Output is the Subject, so a moving Resource line is feared, and if it is controlled the animal is hard to find.", "One should learn to be adaptable."] }
+      ]
+    }
+  ]
+}
