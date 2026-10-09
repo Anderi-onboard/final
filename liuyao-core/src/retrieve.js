@@ -53,3 +53,28 @@ export function retrieve(features, entries, { limit = 12 } = {}) {
     (a.entry.id < b.entry.id ? -1 : a.entry.id > b.entry.id ? 1 : 0));
   return hits.slice(0, limit);
 }
+
+/* Coverage ledger: where every feature token went.
+   retrieve() answers "which entries fire". The ledger answers the opposite
+   question, which is the one that stops facts being dropped silently: for each
+   token the board emitted, either some entry cites it, or it is listed as
+   unplaced. Nothing is limited here (retrieve's `limit` is for prompt size, not
+   for coverage), and nothing is scored.
+
+   Invariant (tested): placed + unplaced === the feature tokens, exactly. */
+export function ledger(features, entries) {
+  const byToken = new Map();
+  for (const t of features) byToken.set(t, []);
+  for (const e of entries) {
+    if (!e.when.every((t) => byToken.has(t))) continue;
+    if ((e.unless || []).some((t) => byToken.has(t))) continue;
+    for (const t of e.when) byToken.get(t).push(e.id);
+  }
+  const placed = {};
+  const unplaced = [];
+  for (const [t, ids] of byToken) {
+    if (ids.length) placed[t] = ids.sort();
+    else unplaced.push(t);
+  }
+  return { placed, unplaced: unplaced.sort(), total: byToken.size };
+}

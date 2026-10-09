@@ -19,7 +19,7 @@
 */
 import { buildPacket } from '../packet.js';
 import { renderPacket } from '../render.js';
-import { retrieve, validateEntry } from '../retrieve.js';
+import { ledger, retrieve, validateEntry } from '../retrieve.js';
 import { ENTRIES as DEFAULT_CORPUS } from '../corpus.js';
 import { checkSpec } from '../validate.js';
 import { yongFor } from './subjects.js';
@@ -98,6 +98,7 @@ export async function runReading({
   const rendered = renderPacket(packet);
   const tokens = [...packet.tokens, `subject:${understanding.subject}`];
   const matched = retrieve(tokens, corpus, { limit: maxEntries });
+  const coverage = ledger(tokens, corpus);
   if (matched.length === 0) notices.push(NOTICE.NO_MATCH);
 
   // 3 · claim, one model call per matched entry
@@ -133,7 +134,7 @@ export async function runReading({
     llm, role: 'synth', spec: SYNTH_SPEC, trace,
     prompt: synthPrompt({
       question, understanding, claims, packetText: rendered.text,
-      notices, retrieved: matched, rejected
+      notices, retrieved: matched, coverage, rejected
     })
   });
 
@@ -146,6 +147,7 @@ export async function runReading({
     packet,
     packetText: rendered.text,
     retrieved: matched.map((m) => ({ id: m.entry.id, matched: m.matched })),
+    coverage,
     claims,
     rejected,
     synthesis,

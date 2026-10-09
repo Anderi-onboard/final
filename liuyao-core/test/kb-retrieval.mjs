@@ -96,7 +96,8 @@ for (let bits = 0; bits < 64; bits++) {
 // cannot drift apart.
 const GRAMMAR = new RegExp('^(ben:[01]{6}|bian:[01]{6}|mov:[0-6]|mov@[1-6]|world:[1-6]'
   + '|palace:(wood|fire|earth|metal|water)|hex:(clash|combine|fuyin|fanyin)'
-  + '|L[1-6]:([a-z]+|' + FEATURE_FLAGS.join('|') + ')|yong:[a-z]+|yongLine@[1-6])$');
+  + '|L[1-6]:([a-z]+|' + FEATURE_FLAGS.join('|') + ')|L[1-6]:spirit:(青龙|朱雀|勾陈|螣蛇|白虎|玄武)'
+  + '|yong:[a-z]+|yongLine@[1-6])$');
 const badShape = [...EMITTED].filter((t) => !GRAMMAR.test(t));
 assert.deepEqual(badShape, [], 'tokens outside the documented grammar:\n  ' + badShape.join('\n  '));
 

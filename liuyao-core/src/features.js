@@ -22,6 +22,7 @@
      hex:clash | hex:combine    本卦六冲/六合  hex:fuyin | hex:fanyin 伏吟/反吟
      L<pos>:<relative>          六亲 (parent|peer|output|wealth|officer)
      L<pos>:<wangshuai>         旺衰 (prosperous|…|dead, lowercase English)
+     L<pos>:spirit:<cn>         六神 (青龙|朱雀|勾陈|螣蛇|白虎|玄武), one per line
      L<pos>:<flag>              void / dayClash / monthClash / dayCombine /
                                 monthCombine / dayGenerates / dayControls /
                                 monthGenerates / monthControls / dayTomb / monthTomb
@@ -85,6 +86,9 @@ export function boardFeatures(board, opts = {}) {
     const el = BR_EL[line.branch.bi];
     add(`L${pos}:${lower(line.relative.key)}`);
     add(`L${pos}:${lower(line.wangShuai.en)}`);
+    // 六神 (青龙 …) is started by the day stem, so it is a fact of the board
+    // the book uses (青龙 gets its own entries). It is not a 神煞 and not optional.
+    add(`L${pos}:spirit:${line.spirit.cn}`);
     for (const flag of LINE_FLAGS) {
       if (line[flag]) add(`L${pos}:${flag}`);
     }
