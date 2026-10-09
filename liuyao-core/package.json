@@ -1,0 +1,12 @@
+{
+  "name": "liuyao-core",
+  "version": "0.1.0",
+  "description": "增删卜易 六爻: casting, board packet, knowledge-base matching and the multi-model reading pipeline (backend only).",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "demo": "node src/cli.js --mock --question \"这个月的求财能不能成\""
+  },
+  "engines": { "node": ">=18" }
+}

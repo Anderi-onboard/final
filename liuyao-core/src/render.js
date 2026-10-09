@@ -69,6 +69,17 @@ function lineText(l) {
   }
   if (l.heKinds.length) parts.push(l.heKinds.join('、'));
   if (l.chongKinds.length) parts.push(l.chongKinds.join('、'));
+  const marks = [];
+  if (l.world) marks.push('世');
+  if (l.ying) marks.push('应');
+  if (l.yongRole) marks.push(`${l.yongRole}（用神章）`);
+  if (marks.length) parts.push(marks.join('、'));
+  if (l.xingWith.length) parts.push(`刑第${l.xingWith.join('、')}爻`);
+  if (l.heWith.length) parts.push(`与第${l.heWith.join('、')}爻相合`);
+  if (l.chongWith.length) parts.push(`与第${l.chongWith.join('、')}爻相冲`);
+  if (l.sanheGroups.length) parts.push(`入${l.sanheGroups.join('、')}`);
+  if (l.dayEffects.length) parts.push(l.dayEffects.join('、'));
+  if (l.shensha.length) parts.push(`见${l.shensha.join('、')}`);
   if (l.transform) {
     const t = l.transform;
     const tp = [`变${t.stem}${t.branch}${t.element}（${relCn(t.relative)}，按本卦宫推）`];

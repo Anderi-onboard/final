@@ -19,7 +19,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import vm from 'node:vm';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const KB = resolve(ROOT, 'functions/_lib/kb');
+const KB = resolve(ROOT, 'src');
 
 // The book's chapter headings, in the order they appear in 增删卜易.
 const BOOK_CHAPTERS = [
@@ -194,7 +194,7 @@ const DATE = new Date(2026, 9, 8, 10, 0);
 const vmSandbox = { window: {}, console, Date };
 vmSandbox.window.window = vmSandbox.window;
 vm.createContext(vmSandbox);
-vm.runInContext(readFileSync(resolve(ROOT, 'liuyao-engine.js'), 'utf8'), vmSandbox, { filename: 'liuyao-engine.js' });
+vm.runInContext(readFileSync(resolve(ROOT, 'vendor/liuyao-engine.js'), 'utf8'), vmSandbox, { filename: 'vendor/liuyao-engine.js' });
 for (let bits = 0; bits < 64; bits++) {
   for (const mv of [[], [bits % 6], [(bits + 1) % 6, (bits + 3) % 6]]) {
     for (const yk of [undefined, 'wealth', 'self']) {

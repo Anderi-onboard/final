@@ -341,13 +341,18 @@ export function buildPacket(board, opts = {}) {
   let yong = null;
   if (opts.yongKey) {
     const key = opts.yongKey;
+    // 自占 → 世爻; 占朋友、外人 → 应爻 (用神章); otherwise the six-relative.
     const yongLines = key === 'self'
       ? [pos1(board.ben.worldLi)]
-      : lines.filter((l) => l.relative === key).map((l) => l.pos);
+      : key === 'ying'
+        ? [pos1(board.ben.respLi)]
+        : lines.filter((l) => l.relative === key).map((l) => l.pos);
     // The 用神's element is fixed by the palace, present or not (用神章: 六亲 by 本宫).
     const yongEl = key === 'self'
       ? lines[board.ben.worldLi].elementGi
-      : [0, 1, 2, 3, 4].find((e) => relOf(palaceEl, e) === key);
+      : key === 'ying'
+        ? lines[board.ben.respLi].elementGi
+        : [0, 1, 2, 3, 4].find((e) => relOf(palaceEl, e) === key);
     const absent = yongLines.length === 0;
     const yuanEl = yongEl === undefined ? undefined : (yongEl + 4) % 5;   // generates 用神
     const jiEl = yongEl === undefined ? undefined : (yongEl + 3) % 5;     // controls 用神
@@ -385,6 +390,38 @@ export function buildPacket(board, opts = {}) {
       ji: { lines: jiLines },
       chou: { lines: chouLines }
     };
+  }
+
+  // ── per-line marks: what each 爻位 is, in every rule that names it ──────────
+  // 世应 (世应章), 用神 role (用神章, 用神、元神、忌神、仇神章), 刑 · 合 · 冲 partners,
+  // 三合 membership (三合章), 神煞 hits (星煞章), 暗动 · 日破 · 冲空 · 冲合 · 动散 (暗动章, 动散章).
+  const roleOf = (pos) => {
+    if (!yong) return null;
+    if (yong.lines.includes(pos)) return '用神';
+    if (yong.yuan.lines.includes(pos)) return '元神';
+    if (yong.ji.lines.includes(pos)) return '忌神';
+    if (yong.chou.lines.includes(pos)) return '仇神';
+    return null;
+  };
+  const shenshaNames = [
+    ['太乙贵人', shensha.taiyi.lines], ['禄神', shensha.lu.lines],
+    ['驿马', shensha.yima.lines], ['天喜', shensha.tianxi.lines]
+  ];
+  for (const l of lines) {
+    const pos = l.pos;
+    l.world = pos === board.ben.worldLi + 1;
+    l.ying = pos === board.ben.respLi + 1;
+    l.yongRole = roleOf(pos);
+    l.shensha = shenshaNames.filter(([, ps]) => ps.includes(pos)).map(([n]) => n);
+    // A pair can be listed in both directions (子刑卯 and 卯刑子); each partner once.
+    const unique = (xs) => Array.from(new Set(xs)).sort((a, b) => a - b);
+    l.xingWith = unique(xing.filter((x) => x.self ? x.self.includes(pos) : (x.from === pos || x.to === pos))
+      .map((x) => (x.self ? x.self.find((q) => q !== pos) : x.from === pos ? x.to : x.from)));
+    l.heWith = unique(he.filter((h) => h.a === pos || h.b === pos).map((h) => (h.a === pos ? h.b : h.a)));
+    l.chongWith = unique(chong.filter((c) => c.a === pos || c.b === pos).map((c) => (c.a === pos ? c.b : c.a)));
+    l.sanheGroups = sanhe.filter((g) => g.parts.some((part) => part.some((m) => m.pos === pos))).map((g) => g.cn);
+    const eff = dayEffects.find((d) => d.pos === pos);
+    l.dayEffects = eff ? eff.effects : [];
   }
 
   const bianBlock = board.bian ? {

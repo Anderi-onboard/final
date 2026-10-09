@@ -9,6 +9,8 @@
    this shape fails here before any model sees it.
 */
 
+import { checkSpec } from './validate.js';
+
 const S = 'string', N = 'number', B = 'boolean';
 const nullable = (spec) => ({ nullable: spec });
 
@@ -65,6 +67,8 @@ export const PACKET_SPEC = {
     }],
     heKinds: [S],
     chongKinds: [S],
+    world: B, ying: B, yongRole: nullable(S),
+    shensha: [S], xingWith: [N], heWith: [N], chongWith: [N], sanheGroups: [S], dayEffects: [S],
     transform: nullable({
       stem: S, branch: S, branchBi: N, element: S, relative: S, jinTui: nullable(S),
       backToTomb: B, backToVoid: B, backToSheng: B, backToKe: B, clashBen: B, combineBen: B
@@ -86,38 +90,7 @@ export const PACKET_SPEC = {
   tokens: [S]
 };
 
-function check(value, spec, path, errors) {
-  if (spec === S || spec === N || spec === B) {
-    const want = spec === S ? 'string' : spec === N ? 'number' : 'boolean';
-    if (typeof value !== want) errors.push(`${path}: expected ${want}, got ${value === null ? 'null' : typeof value}`);
-    return;
-  }
-  if (spec && spec.nullable !== undefined) {
-    if (value === null) return;
-    return check(value, spec.nullable, path, errors);
-  }
-  if (Array.isArray(spec)) {
-    if (!Array.isArray(value)) { errors.push(`${path}: expected array`); return; }
-    value.forEach((item, i) => check(item, spec[0], `${path}[${i}]`, errors));
-    return;
-  }
-  if (value === null || typeof value !== 'object' || Array.isArray(value)) {
-    errors.push(`${path}: expected object`);
-    return;
-  }
-  const keys = Object.keys(spec);
-  for (const k of Object.keys(value)) {
-    if (!keys.includes(k)) errors.push(`${path}.${k}: unexpected key`);
-  }
-  for (const k of keys) {
-    if (!(k in value)) { errors.push(`${path}.${k}: missing`); continue; }
-    check(value[k], spec[k], `${path}.${k}`, errors);
-  }
-}
-
 /* Returns a list of problems. An empty list means the packet has the shape. */
 export function validatePacket(packet) {
-  const errors = [];
-  check(packet, PACKET_SPEC, 'packet', errors);
-  return errors;
+  return checkSpec(packet, PACKET_SPEC, 'packet');
 }

@@ -24,12 +24,12 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import vm from 'node:vm';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const KB = resolve(ROOT, 'functions/_lib/kb');
+const KB = resolve(ROOT, 'src');
 
 const sandbox = { window: {}, console, Date };
 sandbox.window.window = sandbox.window;
 vm.createContext(sandbox);
-vm.runInContext(readFileSync(resolve(ROOT, 'liuyao-engine.js'), 'utf8'), sandbox, { filename: 'liuyao-engine.js' });
+vm.runInContext(readFileSync(resolve(ROOT, 'vendor/liuyao-engine.js'), 'utf8'), sandbox, { filename: 'vendor/liuyao-engine.js' });
 const BWLiuYao = sandbox.window.BWLiuYao;
 
 const { buildPacket } = await import(pathToFileURL(resolve(KB, 'packet.js')).href);
