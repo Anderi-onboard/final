@@ -34,6 +34,17 @@ for (const file of files) {
 
 // The copy deck is a generated artefact; a stale block means the deck and the
 // site disagree about what the product says.
+// liuyao-core is its own package with its own runner. Its contracts guard the
+// casting, packet and reading pipeline, so CI runs them here too.
+const core = spawnSync(process.execPath, ['liuyao-core/scripts/run-tests.mjs'], { cwd: ROOT, encoding: 'utf8' });
+if (core.status !== 0) {
+  failed.push('liuyao-core');
+  console.log('  FAIL liuyao-core');
+  console.log((core.stdout || '') + (core.stderr || ''));
+} else {
+  console.log('  ok   liuyao-core (10 contracts)');
+}
+
 const audit = spawnSync(process.execPath, ['copywriting/audit-copy-deck.mjs'], { cwd: ROOT, encoding: 'utf8' });
 const stale = /STALE:\s*(\d+)/.exec(audit.stdout || '');
 if (audit.status !== 0 || !stale) {
