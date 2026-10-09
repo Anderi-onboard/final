@@ -44,7 +44,12 @@ for (const e of ENTRIES) {
 }
 
 // 3. firing, against the board's own fields.
-const DATES = Array.from({ length: 12 }, (_, k) => new Date(2026, 9, 1 + k, 10, 0));
+// Twelve October days (day branch varies) plus one day in each month (月建 varies):
+// 月破 depends on the month, so an October-only sweep would never test it.
+const DATES = [
+  ...Array.from({ length: 12 }, (_, k) => new Date(2026, 9, 1 + k, 10, 0)),
+  ...Array.from({ length: 12 }, (_, m) => new Date(2026, m, 15, 10, 0))
+];
 const patterns = [[], [0], [2], [4], [1, 3], [0, 2, 5]];
 let boards = 0, fires = 0;
 for (const date of DATES) {
@@ -64,6 +69,17 @@ for (const date of DATES) {
         if (st === 'resting' || st === 'trapped') want.add(`zb-l1988-ripo-${st}-p${p}`);
         if (st === 'thriving' || st === 'strong') want.add(`zb-l1988-andong-${st}-p${p}`);
       }
+      // 六冲章 (batch 2). 爻遇月冲 → 月破, whether or not the line moves (the book
+      // gives no such condition). Clash pairs written out here, not imported.
+      const CLASH = [['子', '午'], ['丑', '未'], ['寅', '申'], ['卯', '酉'], ['辰', '戌'], ['巳', '亥']];
+      const clashes = (a, b) => CLASH.some(([x, y]) => (a === x && b === y) || (a === y && b === x));
+      const monthCn = board.meta.monthBranch.cn;
+      for (const l of Array.from(board.lines)) {
+        if (clashes(monthCn, l.branch.cn)) want.add(`zb-l1609-yuepo-p${l.idx + 1}`);
+      }
+      // 卦逢六冲: the packet's 六冲卦 flag (tested separately in kb-packet.mjs).
+      if (board.ben.clash) want.add('zb-l1605-liuchong');
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));

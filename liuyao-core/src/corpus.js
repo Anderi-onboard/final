@@ -33,6 +33,7 @@
 */
 
 import { ZENGBU_BATCH1 } from './entries/zengbu-batch1.js';
+import { ZENGBU_BATCH2 } from './entries/zengbu-batch2.js';
 
-// First batch: 增删卜易 独发章, 暗动章 (see src/entries/zengbu-batch1.js).
-export const ENTRIES = [...ZENGBU_BATCH1];
+// Batch 1: 独发章, 暗动章. Batch 2: 六冲章 (see src/entries/).
+export const ENTRIES = [...ZENGBU_BATCH1, ...ZENGBU_BATCH2];

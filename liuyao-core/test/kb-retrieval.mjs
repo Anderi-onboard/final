@@ -72,6 +72,18 @@ const EMITTED = new Set();
 // measured the same way, over the same boards.
 const { buildPacket } = await import(pathToFileURL(resolve(KB, 'packet.js')).href);
 const { factTokens } = await import(pathToFileURL(resolve(KB, 'facts.js')).href);
+// Month-dependent flags (月破 = line clashes the 月建) need the month to vary, and
+// twelve October days carry only two 月建. So the feature vocabulary is also
+// measured on one date in each month. Without this, L4:monthClash is never seen
+// and a corpus entry on 月破 would be rejected as a typo.
+const MONTH_DATES = Array.from({ length: 12 }, (_, m) => new Date(2026, m, 15, 10, 0));
+for (const date of MONTH_DATES) {
+  for (let bits = 0; bits < 64; bits++) {
+    for (const moving of [[], [bits % 6]]) {
+      for (const t of boardFeatures(boardFor(bits, moving, date), { yongKey: 'wealth' })) EMITTED.add(t);
+    }
+  }
+}
 for (const b of BOARDS) {
   for (const t of boardFeatures(b, { yongKey: 'wealth' })) EMITTED.add(t);
   // Relations depend on which 六亲 is the 用神, so every 用神 is measured.
