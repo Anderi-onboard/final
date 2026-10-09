@@ -71,11 +71,11 @@ for (const date of DATES) {
         if (st === 'resting' || st === 'trapped') want.add(`zb-l1988-ripo-${st}-p${p}`);
         if (st === 'thriving' || st === 'strong') want.add(`zb-l1988-andong-${st}-p${p}`);
       }
-      // 六冲章 (batch 2). 爻遇月冲 → 月破, whether or not the line moves (the book
-      // gives no such condition). Clash pairs written out here, not imported.
       const CLASH = [['子', '午'], ['丑', '未'], ['寅', '申'], ['卯', '酉'], ['辰', '戌'], ['巳', '亥']];
       const clashes = (a, b) => CLASH.some(([x, y]) => (a === x && b === y) || (a === y && b === x));
       const monthCn = board.meta.monthBranch.cn;
+      // 六冲章 (batch 2). 爻遇月冲 → 月破, whether or not the line moves (the book
+      // gives no such condition). Clash pairs written out here, not imported.
       for (const l of Array.from(board.lines)) {
         if (clashes(monthCn, l.branch.cn)) want.add(`zb-l1609-yuepo-p${l.idx + 1}`);
       }
@@ -99,6 +99,16 @@ for (const date of DATES) {
         if (l.moving && (withMD || others.length)) want.add(`zb-l1330-hebiang-p${p}`);
         if (l.moving && others.some((o) => o.moving)) want.add(`zb-l1330-hehao-p${p}`);
         if (l.moving && combines(bc, pk.lines[l.idx].transform.branch)) want.add(`zb-l1330-huafu-p${p}`);
+      }
+
+      // 旬空章 L2546 (batch 4). 空 is the engine's void flag (旬空 table tested in
+      // kb-packet.mjs). 旺 = wangShuai Thriving. 月破 = branch clashes the 月建.
+      for (const l of all) {
+        const p = l.idx + 1;
+        if (!l.void) continue;
+        if (l.wangShuai.en === 'Thriving') want.add(`zb-l2546-wang-p${p}`);
+        if (l.moving) want.add(`zb-l2546-dong-p${p}`);
+        if (clashes(monthCn, l.branch.cn)) want.add(`zb-l2546-yuepo-p${p}`);
       }
 
       // Every entry the board should fire, and nothing else from this batch.
