@@ -15,6 +15,7 @@ import { boardFeatures } from './features.js';
 import {
   BRANCH_CN, ELEMENT_CN, BR_EL, HUNTIAN, SANHE, XING_PAIRS,
   XING_SELF, YIMA, LUSHEN, TAIYI, TIANXI_BY_MONTH, TRUE_VOID_ELEMENT_BY_MONTH,
+  STEM_CN, TRIAD_OF_BI, CANDIDATE_RULES,
   ADVANCE, RETREAT, SIX_CLASH_NAMES, brClash, brCombine, wangRank, relOf, stageOf
 } from './rules.js';
 
@@ -333,6 +334,30 @@ export function buildPacket(board, opts = {}) {
     tianxi: { branch: BRANCH_CN[TIANXI_BY_MONTH[monthBi]], lines: onLines(TIANXI_BY_MONTH[monthBi]) }
   };
 
+  // ── 候选神煞: not from the book's own tests; flagged 待判断, never tokens. ─
+  const candidates = CANDIDATE_RULES.map((rule) => {
+    const key = rule.keyFrom === 'day-stem' ? STEM_CN[dayStem]
+      : TRIAD_OF_BI[rule.keyFrom === 'month-branch' ? monthBi : dayBi];
+    const target = rule.table[key] ?? null;
+    let hit = [];
+    if (target && rule.targetKind === 'branch') {
+      hit = onLines(BRANCH_CN.indexOf(target));
+    } else if (target && rule.targetKind === 'stem') {
+      const si = STEM_CN.indexOf(target);
+      hit = lines.filter((l) => l.stemIdx === si).map((l) => l.pos);
+    }
+    return {
+      key: rule.key,
+      basis: { 'day-branch': '日支', 'month-branch': '月支', 'day-stem': '日干' }[rule.keyFrom],
+      target,
+      targetKind: rule.targetKind,
+      lines: hit,
+      partial: !!rule.partial,
+      source: rule.source,
+      status: '待判断'
+    };
+  });
+
   // ── 独发 / 独静 (独发章) ─────────────────────────────────────────────────
   const movingCount = movingPos.length;
   const solo = movingCount === 1 ? '独发' : movingCount === 5 ? '独静' : null;
@@ -473,6 +498,7 @@ export function buildPacket(board, opts = {}) {
     },
     relations: { chong, he, xing, sanhe, dayEffects, elements },
     shensha,
+    candidates,
     lines,
     yong,
     // The same tokens the knowledge base matches on, from the same board.

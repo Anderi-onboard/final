@@ -85,7 +85,7 @@ for (const [bits, mv, yk] of cases) {
 
   // 3. partition: the fixed sections are always there, in order, each cited
   const ids = sections.map((s) => s.id);
-  const fixed = ['time', 'ben', 'lines', 'bian', 'rel', 'shensha', 'excluded'];
+  const fixed = ['time', 'ben', 'lines', 'bian', 'rel', 'shensha', 'candidates', 'excluded'];
   assert.deepEqual(ids.filter((id) => id !== 'yong'), fixed, 'the fixed sections are always present, in order');
   assert.equal(ids.includes('yong'), !!yk, 'the 用神 section appears exactly when a 用神 was given');
   for (const s of sections) {

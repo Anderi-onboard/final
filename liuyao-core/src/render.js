@@ -190,6 +190,12 @@ export function renderPacket(packet) {
     `天喜（${sh.tianxi.branch}）：${listPos(sh.tianxi.lines)}。`
   ]);
 
+  // ── 候选神煞: 待用户判断。不入断语，不作检索 token。 ─────────────────────
+  sec('candidates', '候选神煞（待判断，原书未给完整取法，非本书断语）', ['网络通行取法（非增删卜易）', '增删卜易 L11077'],
+    p.candidates.map((c) => c.target
+      ? `${c.key}（${c.basis}取${c.target}，${c.targetKind === 'stem' ? '天干' : '地支'}）${c.partial ? '〔原书仅一例〕' : ''}：${listPos(c.lines)}。来源：${c.source}。${c.status}`
+      : `${c.key}（${c.basis}）：原书未给此取法。来源：${c.source}。${c.status}`));
+
   // ── 用神 (only when the question has been classified) ───────────────────
   if (p.yong) {
     const y = p.yong;
