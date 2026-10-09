@@ -249,7 +249,8 @@ export function buildPacket(board, opts = {}) {
         chong.push({ a: a.pos, b: b.pos, moving: [a.moving, b.moving] });
       }
       if (brCombine(a.branchBi, b.branchBi)) {
-        const type = a.moving || b.moving ? '合绊' : '合好';
+        // 六合章 L1330: 动与动爻相合 = 合好 (both moving); one moving = 合绊.
+        const type = a.moving && b.moving ? '合好' : '合绊';
         he.push({ a: a.pos, b: b.pos, type });
       }
     }
@@ -280,9 +281,11 @@ export function buildPacket(board, opts = {}) {
     const kinds = [];
     const paired = he.filter((h) => h.a === l.pos || h.b === l.pos);
     const withMoonDay = l.monthCombine || l.dayCombine;
-    if (!l.moving && (withMoonDay || paired.some((h) => lines[(h.a === l.pos ? h.b : h.a) - 1].moving))) kinds.push('合起');
+    // 六合章 L1330: 静而逢合 (日月) → 合起; 动而逢合 → 合绊; 动与动爻相合 → 合好.
+    // L1324: 爻与爻合 needs both lines moving ("但有一爻不动，亦不为合").
+    if (!l.moving && withMoonDay) kinds.push('合起');
     if (l.moving && (withMoonDay || paired.length)) kinds.push('合绊');
-    if (paired.some((h) => h.type === '合好')) kinds.push('合好');
+    if (l.moving && paired.some((h) => lines[(h.a === l.pos ? h.b : h.a) - 1].moving)) kinds.push('合好');
     if (l.moving && l.transform && l.transform.combineBen) kinds.push('化扶');
     l.heKinds = kinds;
     // 六冲章: 日月冲爻, 动爻变冲, 冲 between lines.

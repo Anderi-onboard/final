@@ -20,7 +20,7 @@ import { readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { loadEngine } from '../src/engine.js';
-import { boardFeatures } from '../src/features.js';
+import { buildPacket } from '../src/packet.js';
 import { retrieve, validateEntry } from '../src/retrieve.js';
 import { ENTRIES } from '../src/corpus.js';
 
@@ -57,7 +57,9 @@ for (const date of DATES) {
     for (const moving of patterns) {
       const lines = [0, 1, 2, 3, 4, 5].map((i) => ({ yang: !!((bits >> i) & 1), changing: false }));
       const board = L.computeBoard({ lines, changeIdx: moving, date });
-      const got = new Set(retrieve(boardFeatures(board, {}), ENTRIES, { limit: 1000 }).map((h) => h.entry.id));
+      // The matcher's tokens: the packet's list (board features ∪ 关系/状态).
+      const pk = buildPacket(board, {});
+      const got = new Set(retrieve(pk.tokens, ENTRIES, { limit: 1000 }).map((h) => h.entry.id));
       const want = new Set();
       const movingPos = Array.from(board.lines).filter((l) => l.moving).map((l) => l.idx + 1);
       // 独发: exactly one moving line, and it is p.
@@ -79,6 +81,25 @@ for (const date of DATES) {
       }
       // 卦逢六冲: the packet's 六冲卦 flag (tested separately in kb-packet.mjs).
       if (board.ben.clash) want.add('zb-l1605-liuchong');
+
+      // 六合章 L1330 (batch 3). Combine pairs written out here, not imported.
+      // 合起: static, and combines with 日 or 月.  合绊: moving, and combines with
+      // 日/月 or any line.  合好: moving, and combines with another MOVING line
+      // (L1330 “爻动与动爻相合”; L1324 “但有一爻不动，亦不为合”).  化扶: moving, and
+      // the changed branch combines with its own original branch (L1330 “化出之爻回头相合”).
+      const COMBINE = [['子', '丑'], ['寅', '亥'], ['卯', '戌'], ['辰', '酉'], ['巳', '申'], ['午', '未']];
+      const combines = (a, b) => COMBINE.some(([x, y]) => (a === x && b === y) || (a === y && b === x));
+      const all = Array.from(board.lines);
+      for (const l of all) {
+        const p = l.idx + 1;
+        const bc = l.branch.cn;
+        const withMD = combines(bc, board.meta.dayPillar.branch.cn) || combines(bc, board.meta.monthBranch.cn);
+        const others = all.filter((o) => o.idx !== l.idx && combines(bc, o.branch.cn));
+        if (!l.moving && withMD) want.add(`zb-l1330-heqi-p${p}`);
+        if (l.moving && (withMD || others.length)) want.add(`zb-l1330-hebiang-p${p}`);
+        if (l.moving && others.some((o) => o.moving)) want.add(`zb-l1330-hehao-p${p}`);
+        if (l.moving && combines(bc, pk.lines[l.idx].transform.branch)) want.add(`zb-l1330-huafu-p${p}`);
+      }
 
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);

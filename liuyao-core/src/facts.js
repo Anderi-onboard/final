@@ -19,7 +19,7 @@
      rel:生:L<a>>L<b>     a generates b      rel:克:L<a>>L<b>   a controls b
      rel:合:L<a>-L<b>     six-combine        rel:冲:L<a>-L<b>   six-clash
      rel:刑:L<a>>L<b>     directed penalty   rel:刑:L<a>-L<b>   self-penalty
-     state:L<pos>:<name>  e.g. state:L3:空, state:L3:有力
+     state:L<pos>:<name>  e.g. state:L3:空, state:L3:有力, state:L2:合起
 */
 
 const ON_CHAIN = (packet) => {
@@ -73,6 +73,8 @@ export function classifyFacts(packet) {
     // ⚠ PROVISIONAL — 旺相 or 日月帮扶 and neither 空 nor 月破. Owner to decide.
     const strong = (l.wangShuai.rank >= 3 || l.toDay === 'parent') && !l.void && !l.monthBreak;
     if (strong) add('有力', { provisional: true });
+    // 六合章 L1330: 合起 / 合绊 / 合好 / 化扶 are per-line facts, cited as states.
+    for (const k of l.heKinds || []) add(k);
   }
 
   return {

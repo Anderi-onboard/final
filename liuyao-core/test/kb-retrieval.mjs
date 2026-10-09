@@ -164,6 +164,16 @@ assert.ok([...EMITTED].some((t) => t.startsWith('bian:')), 'bian: never reached'
 }
 
 // 4. The corpus. Empty is allowed; invalid is not.
+// Tokens an entry may cite although the engine never emits them. Each one is a
+// named open question, not a typo: 化扶 at 2, 3, 5, 6 needs a changed branch that
+// combines with the original branch, and the engine's transform never produces
+// one (measured in docs/workflow.md). The list must stay exact: if the engine
+// starts emitting one, it is removed here, and if an entry stops needing one,
+// it is removed too. Checked below.
+const ENGINE_NEVER_EMITS = new Set(['state:L2:化扶', 'state:L3:化扶', 'state:L5:化扶', 'state:L6:化扶']);
+for (const t of ENGINE_NEVER_EMITS) {
+  assert.ok(!EMITTED.has(t), `${t} is listed as never emitted but the engine now emits it — remove it from the list`);
+}
 assert.ok(Array.isArray(ENTRIES), 'ENTRIES must be an array');
 const idSeen = new Set();
 for (const e of ENTRIES) {
@@ -171,7 +181,7 @@ for (const e of ENTRIES) {
   assert.deepEqual(errs, [], `corpus entry ${e && e.id} is invalid: ${errs.join('; ')}`);
   assert.ok(!idSeen.has(e.id), `duplicate corpus id ${e.id}`);
   idSeen.add(e.id);
-  const unknown = [...e.when, ...(e.unless || [])].filter((t) => !EMITTED.has(t));
+  const unknown = [...e.when, ...(e.unless || [])].filter((t) => !EMITTED.has(t) && !ENGINE_NEVER_EMITS.has(t));
   assert.deepEqual(unknown, [],
     `corpus entry ${e.id} uses tokens the extractor never emits (typo?): ${unknown.join(', ')}`);
 }
