@@ -32,10 +32,11 @@
    decides what 用神 is; this module only reports where it sits on the board.
 */
 
+import { BR_EL, stageOf } from './rules.js';
+
 const LINE_FLAGS = [
   'void', 'dayClash', 'monthClash', 'dayCombine', 'monthCombine',
-  'dayGenerates', 'dayControls', 'monthGenerates', 'monthControls',
-  'dayTomb', 'monthTomb'
+  'dayGenerates', 'dayControls', 'monthGenerates', 'monthControls'
 ];
 
 function lower(s) {
@@ -75,13 +76,20 @@ export function boardFeatures(board, opts = {}) {
   if (board.lines.some((l) => l.fuyin)) add('hex:fuyin');
   if (board.lines.some((l) => l.fanyin)) add('hex:fanyin');
 
+  // 墓 comes from the book's 生旺墓绝 table, not the engine's flag: the engine
+  // puts 土's tomb on 戌 and the book puts it on 辰.
+  const dayBi = board.meta.dayPillar.branch.bi;
+  const monthBi = board.meta.monthBranch.bi;
   for (const line of board.lines) {
     const pos = line.idx + 1;
+    const el = BR_EL[line.branch.bi];
     add(`L${pos}:${lower(line.relative.key)}`);
     add(`L${pos}:${lower(line.wangShuai.en)}`);
     for (const flag of LINE_FLAGS) {
       if (line[flag]) add(`L${pos}:${flag}`);
     }
+    if (stageOf(el, dayBi) === '墓') add(`L${pos}:dayTomb`);
+    if (stageOf(el, monthBi) === '墓') add(`L${pos}:monthTomb`);
   }
 
   if (opts.yongKey) {
@@ -95,4 +103,4 @@ export function boardFeatures(board, opts = {}) {
   return [...out].sort();
 }
 
-export const FEATURE_FLAGS = LINE_FLAGS;
+export const FEATURE_FLAGS = [...LINE_FLAGS, 'dayTomb', 'monthTomb'];
