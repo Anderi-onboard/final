@@ -36,6 +36,7 @@ const { buildPacket } = await import(pathToFileURL(resolve(KB, 'packet.js')).hre
 const { renderPacket, propertyPaths } = await import(pathToFileURL(resolve(KB, 'render.js')).href);
 const { validatePacket } = await import(pathToFileURL(resolve(KB, 'schema.js')).href);
 const { boardFeatures } = await import(pathToFileURL(resolve(KB, 'features.js')).href);
+const { factTokens } = await import(pathToFileURL(resolve(KB, 'facts.js')).href);
 
 /* Fields that are deliberately not written into the text. Each is either a
    machine index (the text uses the Chinese name next to it) or is checked by
@@ -81,7 +82,8 @@ for (const [bits, mv, yk] of cases) {
     `${p.ben.name} ${JSON.stringify(mv)} ${yk ?? '-'}: packet fields never written into the text:\n  ${unread.join('\n  ')}`);
 
   // 2b. the tokens the packet carries are the matcher's tokens
-  assert.deepEqual(p.tokens, boardFeatures(board, yk ? { yongKey: yk } : {}), 'tokens must match the matcher');
+  const wantTokens = [...new Set([...boardFeatures(board, yk ? { yongKey: yk } : {}), ...factTokens(p.facts)])].sort();
+  assert.deepEqual(p.tokens, wantTokens, 'tokens must match the matcher (features ∪ facts)');
 
   // 3. partition: the fixed sections are always there, in order, each cited
   const ids = sections.map((s) => s.id);

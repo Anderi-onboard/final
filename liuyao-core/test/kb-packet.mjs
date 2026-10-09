@@ -37,6 +37,7 @@ vm.runInContext(readFileSync(resolve(ROOT, 'vendor/liuyao-engine.js'), 'utf8'), 
 const BWLiuYao = sandbox.window.BWLiuYao;
 
 const { buildPacket, jinTuiOf, nameOfBits } = await import(pathToFileURL(resolve(KB, 'packet.js')).href);
+const { factTokens } = await import(pathToFileURL(resolve(KB, 'facts.js')).href);
 const { boardFeatures } = await import(pathToFileURL(resolve(KB, 'features.js')).href);
 
 const DATE = new Date(2026, 9, 8, 10, 0);
@@ -147,9 +148,10 @@ let NAME_OF = null; // bits → name, filled by section 1, reused by section 3
       `line ${l.pos}: 进退 must come from the book's table`);
   }
 
-  // Tokens: the packet's list is exactly the matcher's list.
+  // Tokens: the packet's list is exactly the matcher's list = board features ∪ 关系/状态 tokens.
   const direct = boardFeatures(board, { yongKey: 'wealth' });
-  assert.deepEqual(p.tokens, direct, 'packet.tokens must equal boardFeatures for the same board');
+  const withFacts = [...new Set([...direct, ...factTokens(p.facts)])].sort();
+  assert.deepEqual(p.tokens, withFacts, 'packet.tokens must equal boardFeatures ∪ factTokens');
 }
 
 // 4. The packet is data only: JSON-serialisable, no board objects leak through.

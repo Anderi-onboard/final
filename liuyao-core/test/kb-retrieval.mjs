@@ -68,8 +68,16 @@ assert.equal(BOARDS.length, 64 * 3 * 12, 'expected 64 hexagrams × 3 moving patt
 
 // The emitted vocabulary, measured over real boards.
 const EMITTED = new Set();
+// 关系/状态 tokens come from the packet (they need the 用神 chain), so they are
+// measured the same way, over the same boards.
+const { buildPacket } = await import(pathToFileURL(resolve(KB, 'packet.js')).href);
+const { factTokens } = await import(pathToFileURL(resolve(KB, 'facts.js')).href);
 for (const b of BOARDS) {
   for (const t of boardFeatures(b, { yongKey: 'wealth' })) EMITTED.add(t);
+  // Relations depend on which 六亲 is the 用神, so every 用神 is measured.
+  for (const key of ['self', 'parent', 'peer', 'output', 'wealth', 'officer', 'ying']) {
+    for (const t of factTokens(buildPacket(b, { yongKey: key }).facts)) EMITTED.add(t);
+  }
 }
 // Not a size guess: there are exactly 64 hexagrams, so exactly 64 ben: tokens.
 const benKeys = [...EMITTED].filter((t) => t.startsWith('ben:'));
@@ -97,7 +105,9 @@ for (let bits = 0; bits < 64; bits++) {
 const GRAMMAR = new RegExp('^(ben:[01]{6}|bian:[01]{6}|mov:[0-6]|mov@[1-6]|world:[1-6]'
   + '|palace:(wood|fire|earth|metal|water)|hex:(clash|combine|fuyin|fanyin)'
   + '|L[1-6]:([a-z]+|' + FEATURE_FLAGS.join('|') + ')|L[1-6]:spirit:(青龙|朱雀|勾陈|螣蛇|白虎|玄武)'
-  + '|yong:[a-z]+|yongLine@[1-6])$');
+  + '|yong:[a-z]+|yongLine@[1-6]'
+  + '|rel:(生|克):L[1-6]>L[1-6]|rel:(合|冲):L[1-6]-L[1-6]|rel:刑:(L[1-6]>L[1-6]|L[1-6]-L[1-6])'
+  + '|state:L[1-6]:[^:]+)$');
 const badShape = [...EMITTED].filter((t) => !GRAMMAR.test(t));
 assert.deepEqual(badShape, [], 'tokens outside the documented grammar:\n  ' + badShape.join('\n  '));
 

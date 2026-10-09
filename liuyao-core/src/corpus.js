@@ -28,9 +28,11 @@
    are public domain as texts. Modern annotated editions, translations and
    teaching books are NOT — their wording must not be copied in.
 
-   ⚠️ Empty on purpose. No entries exist yet because the source texts have not
-   been supplied; inventing 断语 and attributing them to a book is the failure
-   this file exists to prevent. Add entries from the book, verbatim.
+   Entries are added from the book, verbatim, in batches. Each batch is checked
+   by tests/kb-entries.mjs against the excerpt file it cites.
 */
 
-export const ENTRIES = [];
+import { ZENGBU_BATCH1 } from './entries/zengbu-batch1.js';
+
+// First batch: 增删卜易 独发章, 暗动章 (see src/entries/zengbu-batch1.js).
+export const ENTRIES = [...ZENGBU_BATCH1];
