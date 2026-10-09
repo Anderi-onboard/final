@@ -11,6 +11,7 @@
    the authority; the engine has three known gaps (进退 table, 土's 墓/绝, and
    the 变卦 tomb flags), and this packet computes those from rules.js instead.
 */
+import { classifyFacts } from './facts.js';
 import { boardFeatures } from './features.js';
 import {
   BRANCH_CN, ELEMENT_CN, BR_EL, HUNTIAN, SANHE, XING_PAIRS,
@@ -462,7 +463,7 @@ export function buildPacket(board, opts = {}) {
     })()
   } : null;
 
-  return {
+  const out = {
     schema: PACKET_SCHEMA,
     time: {
       date: meta.date,
@@ -504,5 +505,8 @@ export function buildPacket(board, opts = {}) {
     // The same tokens the knowledge base matches on, from the same board.
     tokens: boardFeatures(board, opts)
   };
+  // 关系 / 状态 split (facts.js). Computed from the packet itself, so it cannot disagree with it.
+  out.facts = classifyFacts(out);
+  return out;
 }
 

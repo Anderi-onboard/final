@@ -190,6 +190,18 @@ export function renderPacket(packet) {
     `天喜（${sh.tianxi.branch}）：${listPos(sh.tianxi.lines)}。`
   ]);
 
+  // ── 关系与状态 (facts.js): 关系 = 触及用神链的逻辑联系；状态 = 不需论证的事实。
+  const f = p.facts;
+  const factLines = [];
+  factLines.push(`用神链：${f.chain ? listPos(f.chain) : '无（未给用神）'}。`);
+  if (f.noYong) factLines.push('无用神，用神链不成立：下列关系不计，只列状态。');
+  if (f.relations.length) factLines.push(...f.relations.map((r) => `关系：${r.text}。（${r.kind}，第${r.a}、${r.b}爻；${r.token}）`));
+  else factLines.push('关系：用神链上无逻辑联系。');
+  for (const st of f.states) {
+    factLines.push(`状态：第${st.pos}爻${st.name}${st.provisional ? '〔有力为暂定判据，待用户确认〕' : ''}。（${st.token}）`);
+  }
+  sec('facts', '关系与状态（关系需论证，状态只引用）', ['用神章', '五行相生章', '五行相克章', '六冲章', '六合章'], factLines);
+
   // ── 候选神煞: 待用户判断。不入断语，不作检索 token。 ─────────────────────
   sec('candidates', '候选神煞（待判断，原书未给完整取法，非本书断语）', ['网络通行取法（非增删卜易）', '增删卜易 L11077'],
     p.candidates.map((c) => c.target

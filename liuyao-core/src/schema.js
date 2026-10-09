@@ -49,6 +49,12 @@ export const PACKET_SPEC = {
     yima: { branch: S, lines: [N] },
     tianxi: { branch: S, lines: [N] }
   },
+  facts: {
+    chain: nullable([N]),
+    relations: [{ token: S, kind: S, a: N, b: N, text: S }],
+    states: [{ token: S, pos: N, name: S, provisional: B }],
+    noYong: B
+  },
   candidates: [{
     key: S, basis: S, target: nullable(S), targetKind: S, lines: [N],
     partial: B, source: S, status: S
