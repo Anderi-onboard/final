@@ -80,7 +80,13 @@ const MONTH_DATES = Array.from({ length: 12 }, (_, m) => new Date(2026, m, 15, 1
 for (const date of MONTH_DATES) {
   for (let bits = 0; bits < 64; bits++) {
     for (const moving of [[], [bits % 6]]) {
-      for (const t of boardFeatures(boardFor(bits, moving, date), { yongKey: 'wealth' })) EMITTED.add(t);
+      const b = boardFor(bits, moving, date);
+      for (const t of boardFeatures(b, { yongKey: 'wealth' })) EMITTED.add(t);
+      // 空 reasons (旬空章) depend on the 月建 as well as the day, so the state
+      // vocabulary is measured on the month dates too.
+      for (const key of ['self', 'parent', 'peer', 'output', 'wealth', 'officer', 'ying']) {
+        for (const t of factTokens(buildPacket(b, { yongKey: key }).facts)) EMITTED.add(t);
+      }
     }
   }
 }

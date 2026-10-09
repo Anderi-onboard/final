@@ -78,34 +78,58 @@ function bitsOf(lines) { return lines.map((l) => (l.yang ? '1' : '0')).join('');
 function intOf(lines) { return lines.reduce((n, l, i) => n | ((l.yang ? 1 : 0) << i), 0); }
 const pos1 = (i) => i + 1;
 
-/* 空 verdict (旬空章, 野鹤曰). The book lists what makes a 旬空 line void and what
-   makes it not void, without an order between them. The order used here, which
-   the owner should confirm:
-     1. 月破 or 真空 → void (the book states both outright).
-     2. otherwise, any "不为空" condition → not void.
-     3. otherwise → void. */
-function voidVerdict(xunSet, line, monthBi, monthEl, dayEl, hidden) {
-  if (!xunSet.has(line.bi)) return { inXunkong: false, verdict: null, notVoid: [], voidBy: [] };
-  const notVoid = [];
-  const voidBy = [];
-  if (line.wang === 4) notVoid.push('旺不为空');
-  if (line.moving) notVoid.push('动不为空');
-  if (line.moving && line.transform && xunSet.has(line.transform.bi)) notVoid.push('动而化空，不为空');
+/* 空 verdict (旬空章 L2546, 野鹤曰). Every reason the book gives is a row here,
+   with the MECHANISM it works through and the DIRECTION it pushes:
+     自身  the line's own strength (气)            旺, 有气不动
+     动    the line itself moves (脱空)            动, 动而化空
+     外力  support from outside the line           日建生扶, 动爻生扶, 值月建
+     隐    the hidden (伏) line, not the visible  伏而旺相, 伏而被克
+     破    月建 clash (月破)                        月破
+     真空  the seasonal element is empty           真空
+   A row marked `source: 'not in L2546'` is not in that clause; it is kept because
+   the earlier code used it, and it is flagged for the owner to confirm.
+
+   Judgement rule (the order the owner must confirm; the book gives none):
+     1. any `decisive` row fires  → void   (月破, 真空: the book states them outright)
+     2. else any row that pushes "不为空" fires → not void
+     3. else → void. */
+const VOID_RULES = {
+  '旺不为空': { cls: '自身', verdict: 'notVoid', source: 'L2546' },
+  '有气不动，为空': { cls: '自身', verdict: 'void', source: 'L2546' },
+  '动不为空': { cls: '动', verdict: 'notVoid', source: 'L2546' },
+  '动而化空，不为空': { cls: '动', verdict: 'notVoid', source: 'L2546' },
+  '日建生扶，不为空': { cls: '外力', verdict: 'notVoid', source: 'L2546' },
+  '动爻生扶，不为空': { cls: '外力', verdict: 'notVoid', source: 'L2546' },
+  '伏而旺相，不为空': { cls: '隐', verdict: 'notVoid', source: 'L2546' },
+  '伏而被克，为空': { cls: '隐', verdict: 'void', source: 'L2546' },
+  '月破，为空': { cls: '破', verdict: 'void', decisive: true, source: 'L2546' },
+  '真空，为空': { cls: '真空', verdict: 'void', decisive: true, source: 'L2546' },
+  '值月建，逢空不空': { cls: '外力', verdict: 'notVoid', source: 'not in L2546' }
+};
+
+function voidVerdict(xunSet, line, monthBi, monthEl, dayEl, hidden, movers) {
+  if (!xunSet.has(line.bi)) return { inXunkong: false, verdict: null, rules: [] };
+  const fired = [];
+  const fire = (text) => fired.push({ text, decisive: false, ...VOID_RULES[text] });
+  if (line.wang === 4) fire('旺不为空');
+  if (!line.moving && line.wang >= 2) fire('有气不动，为空');
+  if (line.moving) fire('动不为空');
+  if (line.moving && line.transform && xunSet.has(line.transform.bi)) fire('动而化空，不为空');
+  // 外力: the day, or a moving line other than this one, generates the line's element.
+  if (relOf(line.el, dayEl) === 'parent') fire('日建生扶，不为空');
+  if (movers.some((m) => m.pos !== line.pos && relOf(line.el, m.el) === 'parent')) fire('动爻生扶，不为空');
+  if (line.bi === monthBi) fire('值月建，逢空不空');
   for (const h of hidden) {
-    if (wangRank(h.el, monthEl) >= 3) notVoid.push('伏而旺相，不为空');
-    if (h.flyControlsHidden) voidBy.push('伏而被克，为空');
+    if (wangRank(h.el, monthEl) >= 3) fire('伏而旺相，不为空');
+    if (h.flyControlsHidden) fire('伏而被克，为空');
   }
-  if (relOf(line.el, dayEl) === 'parent') notVoid.push('日建生扶，不为空');
-  if (line.bi === monthBi) notVoid.push('值月建，逢空不空');
-  if (brClash(line.bi, monthBi)) voidBy.push('月破，为空');
-  if (!line.moving && line.wang >= 2) voidBy.push('有气不动，为空');
-  const trueVoidNow = line.el === TRUE_VOID_ELEMENT_BY_MONTH[monthBi];
-  if (trueVoidNow) voidBy.push('真空，为空');
+  if (brClash(line.bi, monthBi)) fire('月破，为空');
+  if (line.el === TRUE_VOID_ELEMENT_BY_MONTH[monthBi]) fire('真空，为空');
   let verdict;
-  if (voidBy.some((t) => t.startsWith('月破') || t.startsWith('真空'))) verdict = 'void';
-  else if (notVoid.length) verdict = 'notVoid';
+  if (fired.some((r) => r.decisive)) verdict = 'void';
+  else if (fired.some((r) => r.verdict === 'notVoid')) verdict = 'notVoid';
   else verdict = 'void';
-  return { inXunkong: true, verdict, notVoid, voidBy };
+  return { inXunkong: true, verdict, rules: fired };
 }
 
 export function buildPacket(board, opts = {}) {
@@ -130,6 +154,8 @@ export function buildPacket(board, opts = {}) {
   const monthEl = BR_EL[monthBi];
   const xunSet = new Set(Array.from(meta.xunkong || [], (b) => b.bi));
   const movingPos = Array.from(board.lines).filter((l) => l.moving).map((l) => pos1(l.idx));
+  // Moving lines and their elements, for 动爻生扶 (旬空章 L2546).
+  const movingEls = Array.from(board.lines).filter((l) => l.moving).map((l) => ({ pos: pos1(l.idx), el: BR_EL[l.branch.bi] }));
   const palaceEl = board.ben.palace.element.gi;
 
   // ── lines ───────────────────────────────────────────────────────────────
@@ -156,7 +182,7 @@ export function buildPacket(board, opts = {}) {
     const line = { bi, el, moving, wang };
     const dayStage = stageOf(el, dayBi);
     const changeStage = moving ? stageOf(el, tBi) : null;
-    const v = voidVerdict(xunSet, { ...line, transform: t ? { bi: tBi } : null }, monthBi, monthEl, dayEl, hidden);
+    const v = voidVerdict(xunSet, { ...line, pos, transform: t ? { bi: tBi } : null }, monthBi, monthEl, dayEl, hidden, movingEls);
     return {
       pos,
       yang: !!l.yang,
@@ -182,8 +208,7 @@ export function buildPacket(board, opts = {}) {
       fanYin: moving && t ? brClash(tBi, bi) : false, // 爻反吟: 变爻 clashes the branch
       void: xunSet.has(bi),
       voidVerdict: v.verdict,
-      voidNotVoidBy: v.notVoid,
-      voidBy: v.voidBy,
+      voidRules: v.rules,
       dayStage,                          // 长生 / 旺 / 墓 / 绝 by the 日辰 (生旺墓绝章)
       changeStage,                       // the same, for the 变爻's branch on this line's element
       tombs: {                           // 三墓 (随鬼入墓章: 日墓、动墓、化墓)

@@ -75,6 +75,9 @@ export function classifyFacts(packet) {
     if (strong) add('有力', { provisional: true });
     // 六合章 L1330: 合起 / 合绊 / 合好 / 化扶 are per-line facts, cited as states.
     for (const k of l.heKinds || []) add(k);
+    // 旬空章 L2546: each 空 verdict reason is a state too, named by its clause, so an
+    // entry can cite exactly the reason that held (e.g. 动爻生扶，不为空).
+    for (const r of l.voidRules || []) add(r.text);
   }
 
   return {

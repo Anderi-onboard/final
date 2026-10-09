@@ -46,11 +46,18 @@ function lineText(l) {
   if (l.dayCombine) parts.push('日合');
   if (l.trueVoid) parts.push('真空');
   if (l.void) parts.push('旬空');
-  const nv = l.voidNotVoidBy;
-  const vb = l.voidBy;
+  const voidRules = l.voidRules;   // read every time, so the field is always accounted for
   if (l.voidVerdict) {
+    // Each reason is shown with its mechanism (自身/动/外力/隐/破/真空) and its source.
+    const why = (verdict) => voidRules.filter((r) => r.verdict === verdict || (verdict === 'void' && r.decisive))
+      .map((r) => `${r.cls}：${r.text}（${r.source}）`);
+    const nv = why('notVoid');
+    const vb = voidRules.filter((r) => r.verdict === 'void' && !r.decisive).map((r) => `${r.cls}：${r.text}（${r.source}）`);
+    const decisive = voidRules.filter((r) => r.decisive).map((r) => `${r.cls}：${r.text}（${r.source}）`);
     parts.push(`旬空判定：${l.voidVerdict === 'void' ? '为空' : '不为空'}` +
-      (nv.length ? `（不空之据：${nv.join('、')}）` : '') + (vb.length ? `（空之据：${vb.join('、')}）` : ''));
+      (nv.length ? `（不空之据：${nv.join('、')}）` : '') +
+      (vb.length ? `（空之据：${vb.join('、')}）` : '') +
+      (decisive.length ? `（定空之据：${decisive.join('、')}）` : ''));
   }
   const changeStage = l.changeStage;
   if (l.dayStage) parts.push(`日辰上为${l.dayStage}`);

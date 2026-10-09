@@ -111,6 +111,18 @@ for (const date of DATES) {
         if (clashes(monthCn, l.branch.cn)) want.add(`zb-l2546-yuepo-p${p}`);
       }
 
+      // 旬空章 L2546 batch 5: 日建 or 动爻 generates the line's element (五行 generating cycle written out).
+      const GEN = { 木: '火', 火: '土', 土: '金', 金: '水', 水: '木' };
+      const EL_OF = { 子: '水', 丑: '土', 寅: '木', 卯: '木', 辰: '土', 巳: '火', 午: '火', 未: '土', 申: '金', 酉: '金', 戌: '土', 亥: '水' };
+      const dayEl = EL_OF[board.meta.dayPillar.branch.cn];
+      for (const l of all) {
+        const p = l.idx + 1;
+        if (!l.void) continue;
+        const el = EL_OF[l.branch.cn];
+        if (GEN[dayEl] === el) want.add(`zb-l2546-rijian-p${p}`);
+        if (all.some((o) => o.moving && o.idx !== l.idx && GEN[EL_OF[o.branch.cn]] === el)) want.add(`zb-l2546-dongyao-p${p}`);
+      }
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));
