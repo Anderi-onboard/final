@@ -205,12 +205,18 @@ export function buildPacket(board, opts = {}) {
       flyRelative: h.flyingRelative.key,
       flyGeneratesHidden: !!h.flyGeneratesHidden,
       flyControlsHidden: !!h.flyControlsHidden,
-      hiddenControlsFly: !!h.hiddenControlsFly
+      hiddenControlsFly: !!h.hiddenControlsFly,
+      // 日月如天 (L878): the day and the month act on a hidden line too.
+      toDay: relOf(h.hiddenBranch.el.gi, dayEl),
+      toMonth: relOf(h.hiddenBranch.el.gi, monthEl)
     }));
     const wang = wangRank(el, monthEl);
     const line = { bi, el, moving, wang };
     const dayStage = stageOf(el, dayBi);
     const changeStage = moving ? stageOf(el, tBi) : null;
+    // 日月如天 (L878): the day and the month act on the changed line as well.
+    const changeToDay = moving && t ? relOf(tEl, dayEl) : null;
+    const changeToMonth = moving && t ? relOf(tEl, monthEl) : null;
     const changeVerdict = moving && t ? changeVerdictOf(el, tEl) : null;
     const v = voidVerdict(xunSet, { ...line, pos, transform: t ? { bi: tBi } : null }, monthBi, monthEl, dayEl, hidden, movingEls);
     return {
@@ -242,6 +248,12 @@ export function buildPacket(board, opts = {}) {
       changeVerdict,
       dayStage,                          // 长生 / 旺 / 墓 / 绝 by the 日辰 (生旺墓绝章)
       changeStage,                       // the same, for the 变爻's branch on this line's element
+      changeToDay,                       // 变爻 vs 日辰 and 月建, in 六亲 terms (L878)
+      changeToMonth,
+      // 诸爻皆不能伤日月 (L878, 黄金策 “爻伤日，徒受其名”): a line that controls the day
+      // or the month has no effect on it. Kept as a flag, so the reading can say so.
+      dayHarmed: relOf(dayEl, el) === 'officer',
+      monthHarmed: relOf(monthEl, el) === 'officer',
       tombs: {                           // 三墓 (随鬼入墓章: 日墓、动墓、化墓)
         day: dayStage === '墓',
         moving: moving && stageOf(el, bi) === '墓',

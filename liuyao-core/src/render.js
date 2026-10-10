@@ -80,8 +80,14 @@ function lineText(l) {
   for (const h of l.hidden) {
     const flags = [h.flyControlsHidden && '飞克伏', h.flyGeneratesHidden && '飞生伏', h.hiddenControlsFly && '伏克飞']
       .filter(Boolean).join('、');
-    parts.push(`伏${relCn(h.relative)}${h.branch}（飞${h.flyBranch}·${relCn(h.flyRelative)}${flags ? '·' + flags : ''}）`);
+    parts.push(`伏${relCn(h.relative)}${h.branch}（飞${h.flyBranch}·${relCn(h.flyRelative)}${flags ? '·' + flags : ''}）` +
+      `，日辰${relCn(h.toDay)}、月建${relCn(h.toMonth)}`);
   }
+  // 日月如天 (L878): the day and month relations of a changed line and of the line itself.
+  const cd = l.changeToDay, cm = l.changeToMonth;   // read together, so both are always accounted for
+  if (cd) parts.push(`变爻与日辰：${relCn(cd)}，与月建：${relCn(cm)}`);
+  if (l.dayHarmed) parts.push('爻伤日：徒受其名（L878）');
+  if (l.monthHarmed) parts.push('爻伤月：徒受其名（L878）');
   if (l.heKinds.length) parts.push(l.heKinds.join('、'));
   if (l.chongKinds.length) parts.push(l.chongKinds.join('、'));
   const marks = [];

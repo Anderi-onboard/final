@@ -38,6 +38,7 @@ import { ZENGBU_BATCH3 } from './entries/zengbu-batch3.js';
 import { ZENGBU_BATCH4 } from './entries/zengbu-batch4.js';
 import { ZENGBU_BATCH5 } from './entries/zengbu-batch5.js';
 import { ZENGBU_BATCH6 } from './entries/zengbu-batch6.js';
+import { ZENGBU_BATCH7 } from './entries/zengbu-batch7.js';
 
 // Batch 1: 独发章, 暗动章. Batch 2: 六冲章 (see src/entries/).
-export const ENTRIES = [...ZENGBU_BATCH1, ...ZENGBU_BATCH2, ...ZENGBU_BATCH3, ...ZENGBU_BATCH4, ...ZENGBU_BATCH5, ...ZENGBU_BATCH6];
+export const ENTRIES = [...ZENGBU_BATCH1, ...ZENGBU_BATCH2, ...ZENGBU_BATCH3, ...ZENGBU_BATCH4, ...ZENGBU_BATCH5, ...ZENGBU_BATCH6, ...ZENGBU_BATCH7];

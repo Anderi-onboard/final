@@ -136,6 +136,22 @@ for (const date of DATES) {
         else if (CTRL_K[mine] === changed) want.add(`zb-l2084-huaqu-p${p}`);
       }
 
+      // 用神章 L878 (batch 7): 日月如天 — the day and the month generate, control, or are
+      // harmed by each line (五行 cycles written out; 爻伤日 = the line controls the day).
+      const CTRL_D = { 木: '土', 土: '水', 水: '火', 火: '金', 金: '木' };
+      const dayEl7 = EL_OF[board.meta.dayPillar.branch.cn];
+      const monEl7 = EL_OF[board.meta.monthBranch.cn];
+      for (const l of all) {
+        const p = l.idx + 1;
+        const el = EL_OF[l.branch.cn];
+        if (GEN[dayEl7] === el) want.add(`zb-l878-riri-p${p}`);
+        if (GEN[monEl7] === el) want.add(`zb-l878-yueshen-p${p}`);
+        if (CTRL_D[dayEl7] === el) want.add(`zb-l878-rike-p${p}`);
+        if (CTRL_D[monEl7] === el) want.add(`zb-l878-yueke-p${p}`);
+        if (CTRL_D[el] === dayEl7) want.add(`zb-l878-shangri-p${p}`);
+        if (CTRL_D[el] === monEl7) want.add(`zb-l878-shangyue-p${p}`);
+      }
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));

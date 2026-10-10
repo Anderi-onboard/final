@@ -71,11 +71,13 @@ export const PACKET_SPEC = {
     voidRules: [{ text: S, cls: S, verdict: S, decisive: B, source: S }],
     changeVerdict: nullable({ relation: S, verdict: nullable(S), regardlessOfYong: B, source: nullable(S), open: nullable(S) }),
     dayStage: nullable(S), changeStage: nullable(S),
+    changeToDay: nullable(S), changeToMonth: nullable(S), dayHarmed: B, monthHarmed: B,
     tombs: { day: B, moving: B, change: B },
     fuYin: B, fanYin: B,
     hidden: [{
       relative: S, branch: S, el: N, flyBranch: S, flyRelative: S,
-      flyGeneratesHidden: B, flyControlsHidden: B, hiddenControlsFly: B
+      flyGeneratesHidden: B, flyControlsHidden: B, hiddenControlsFly: B,
+      toDay: S, toMonth: S
     }],
     heKinds: [S],
     chongKinds: [S],

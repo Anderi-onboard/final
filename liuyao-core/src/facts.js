@@ -78,6 +78,14 @@ export function classifyFacts(packet) {
     // 旬空章 L2546: each 空 verdict reason is a state too, named by its clause, so an
     // entry can cite exactly the reason that held (e.g. 动爻生扶，不为空).
     for (const r of l.voidRules || []) add(r.text);
+    // 日月如天 (L878): the day and the month acting on the line, and the line
+    // harming the day or the month (徒受其名). Stated as facts, not argued.
+    if (l.toDay === 'parent') add('日生');
+    if (l.toDay === 'officer') add('日克');
+    if (l.toMonth === 'parent') add('月生');
+    if (l.toMonth === 'officer') add('月克');
+    if (l.dayHarmed) add('爻伤日');
+    if (l.monthHarmed) add('爻伤月');
     // 卦变 (卦变生克墓绝章): only a relation with a stated verdict is a state.
     if (l.changeVerdict && l.changeVerdict.verdict) add(`卦变·${l.changeVerdict.relation}`);
   }
