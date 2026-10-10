@@ -44,6 +44,9 @@ import { createDemoLLM } from '../src/pipeline/llm.js';
   const u = await runStage('understand', out.state, { mode: 'mock', llm: createDemoLLM() });
   assert.equal(u.state.scope.ladder, true);
   assert.ok(u.state.notices.includes(NOTICE_LADDER), 'the rule is in the notices the synthesis sees');
+  // 用神章 L433: 占功名 takes 官鬼. The model's pick (here self) is replaced by the program's.
+  assert.equal(u.state.understanding.subject, 'official');
+  assert.equal(u.state.understanding.subjectFrom, 'self');
 }
 
 // 4. The final result carries the scope and the next steps, and the display says they came from the program.

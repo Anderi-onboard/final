@@ -23,7 +23,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { castRandom, castWithBacks } from '../src/casting.js';
 import { nameOfBits } from '../src/packet.js';
-import { NOTICE_LADDER, buildNextStep, detectLadder } from '../src/pipeline/scope.js';
+import { NOTICE_LADDER, SUBJECT_NOTE, buildNextStep, detectLadder } from '../src/pipeline/scope.js';
 import { ENTRIES as CORPUS } from '../src/corpus.js';
 import { createAnthropicLLM, createDemoLLM, createOpenRouterLLM } from '../src/pipeline/llm.js';
 import {
@@ -136,7 +136,14 @@ export async function understand(state, config) {
   // Scope: a ladder question is one casting per level. The program says so; the model is told.
   if (state.previousAnswer) next.notices = [...(next.notices || []), NOTICE.FOLLOW_UP];
   next.scope = detectLadder(state.question);
-  if (next.scope.ladder) next.notices = [...(next.notices || []), NOTICE_LADDER];
+  if (next.scope.ladder) {
+    next.notices = [...(next.notices || []), NOTICE_LADDER];
+    // Graded outcomes are 功名, and 功名 takes 官鬼 as 用神 (用神章 L433). The program sets it.
+    if (v.subject !== 'official') {
+      next.understanding = { ...v, subject: 'official', subjectFrom: v.subject };
+      next.notices = [...next.notices, SUBJECT_NOTE];
+    }
+  }
   if (v.risk === 'crisis') {
     return { state: stop(next, 'understand', 'crisis'), display: `${head}\n\n停止：判为危机，只给资源，不给解读。` };
   }

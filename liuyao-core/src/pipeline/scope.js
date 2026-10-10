@@ -9,7 +9,8 @@
    program writes the next steps, so they are not left to the model's wording.
 */
 
-export const LADDER_RE = /(哪个地步|哪一级|哪一步|哪个层次|哪一层|能到哪|能走到哪|走多远|打到哪|考到哪|能到几|几品|品级|能否晋级|能晋级|晋级|最后能|最终能|名次|能(?:否)?进(?:决赛|复赛|前)|鼎甲)/;
+// Anything graded: exams, ranks, contests, awards. 用神章 L433: 占功名 uses 官鬼.
+export const LADDER_RE = /(哪个地步|哪一级|哪一步|哪个层次|哪一层|能到哪|能走到哪|走多远|打到哪|考到哪|能到几|几品|品级|能否晋级|能晋级|晋级|最后能|最终能|名次|几等|等级|级别|获奖|拿奖|入围|能(?:否)?进(?:决赛|复赛|前)|决赛|复赛|初赛|鼎甲)/;
 
 export const LADDER_SOURCES = [
   { where: '卷三·求名章', line: 'L9916', text: '小考须先占县考，再占府考，再占道考，俱吉方许' },
@@ -36,10 +37,13 @@ export function detectLadder(question) {
   return { ladder: true, words, levelNow, levelNext, sources: LADDER_SOURCES };
 }
 
+export const SUBJECT_NOTE =
+  '功名、等级、名次一类，用神是官鬼（用神章 L433：占功名，皆以官鬼爻为用神）。程序已把对象定为官鬼，不再以世为用神。';
+
 export const NOTICE_LADDER =
   '问的是一连串的级别。增删卜易的做法是：每一级各起一卦（求名章 L9916；功名到何品级章 L11010）。' +
   '一卦只就它所见的当前这一级说话，不得推断下一级、最终名次或能否走到某一级。' +
-  '书中的例子是科举（小考、会试）；用到比赛上是类推，回答里须说明。' +
+  '同样的道理适用于一切有梯度的事（考试、比赛、评选）：每一个梯度都是一次独立的功名，要各起一卦。' +
   '盘上与本级有关的信号（世、应、日月、动变、元神、忌神等）照常解读。';
 
 /* The next steps are written by the program. They say what this casting answers and
