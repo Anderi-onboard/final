@@ -18,7 +18,7 @@
 | 10 | 三合动判（四形；局生世、局克世） | 三合章 L1456–1463 | `packet.js` sanhe.form / worldRel；`facts.js` 三合·形N / 三合·局克世；条目 `zb-l1460-*`、`zb-l1461-*`、`zb-l1463-*` | `test/sanhe-forms.mjs`（16410 局） | [x] |
 | 11 | 进退判定（进四、退四；进神与退神分开） | 动变章 L4057–4060 | `packet.js` jinTuiVerdictOf；`facts.js` 进1–4、退2–4；条目 `zb-l4057-*`、`zb-l4058-*`、`zb-l4059-*`、`zb-l4060-*` | `test/jintui-verdict.mjs`（12288 动爻） | [x] |
 | 12 | “有气”的通用定义（工作定义：旺衰 rank ≥ 2） | 旬空章 L2546；L2049 与旺相并列；觉子 L7864 无气=失陷 | `packet.js` line.qi；`facts.js` 有气 | `test/qi-definition.mjs` | [x] ⚠ 相与休的界线待定 |
-| 13 | 独静 知识库条目 | 独发章 L4197 | 已计算，未录 | — | [ ] |
+| 13 | 独发、独静 状态与条目 | 独发章 L4197 | `facts.js` 独发 / 独静（落到动爻、静爻上）；条目 `zb-l4197-*` | `test/kb-entries.mjs`（独发、独静按动爻数判） | [x] |
 | 14 | 化进、化退、化回头 判定归并 | 散见多章 | 字段在，判定分散 | — | [ ] |
 
 ## 本次进度
