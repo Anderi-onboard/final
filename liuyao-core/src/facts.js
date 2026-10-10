@@ -86,6 +86,11 @@ export function classifyFacts(packet) {
     if (l.toMonth === 'officer') add('月克');
     if (l.dayHarmed) add('爻伤日');
     if (l.monthHarmed) add('爻伤月');
+    // 有力之元神 (用神章 L543–547): each factor the packet gives a 元神 line, as a state.
+    const yf = packet.yong ? packet.yong.yuan.factors.find((f) => f.pos === l.pos) : null;
+    for (const f of yf ? yf.factors : []) add(`元·${f}`);
+    const yu = packet.yong ? packet.yong.yuan.useless.find((u) => u.pos === l.pos) : null;
+    if (yu && yu.verdict === '无用') add('元·无用');
     // 忌神吉凶 (用神章 L595, L602): the verdict of a 忌神 line, when a 用神 is given.
     const jj = packet.yong ? packet.yong.ji.judgement.find((j) => j.pos === l.pos) : null;
     if (jj && jj.verdict === '有力') add('忌·有力');

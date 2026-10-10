@@ -251,6 +251,11 @@ export function renderPacket(packet) {
       yl.push(`第${entry.pos}爻元神有力之条：${entry.factors.length ? entry.factors.join('、') : '无'}。`);
     }
     yl.push(y.ji.lines.length ? `忌神（克用神）：${listPos(y.ji.lines)}。` : '忌神：无。');
+    // 无用之元神 (用神章 L585): a 元神 that shows but gives no life.
+    for (const u of y.yuan.useless) {
+      const why = u.rules.map((r) => `${r.cls}：${r.text}（${r.source}·${r.verdict === 'never' ? '无用' : '有用'}${r.decisive ? '·定' : ''}）`).join('、');
+      yl.push(`第${u.pos}爻元神${u.verdict}${why ? '：' + why : ''}`);
+    }
     // 忌神吉凶 (用神章 L593, L598): 有力 = 动而克用神 (大凶); 无力 = 动不克用神 (化凶为吉).
     for (const j of y.ji.judgement) {
       const why = j.rules.map((r) => `${r.cls}：${r.text}（${r.source}·${r.verdict === 'strong' ? '有力' : '无力'}${r.decisive ? '·定' : ''}）`).join('、');

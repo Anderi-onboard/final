@@ -98,7 +98,7 @@ export const PACKET_SPEC = {
       day: S, month: S,
       palaceFirst: { palace: S, lines: [{ pos: N, branch: S, relative: S }], yongPos: [N] }
     }),
-    yuan: { lines: [N], factors: [{ pos: N, factors: [S] }] },
+    yuan: { lines: [N], factors: [{ pos: N, factors: [S] }], useless: [{ pos: N, verdict: S, rules: [{ text: S, cls: S, verdict: S, decisive: B, source: S }] }] },
     ji: { lines: [N], judgement: [{ pos: N, controlsYong: B, moving: B, verdict: S, note: nullable(S), rules: [{ text: S, cls: S, verdict: S, decisive: B, source: S }] }] },
     chou: { lines: [N] }
   }),

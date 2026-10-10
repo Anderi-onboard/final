@@ -160,6 +160,19 @@ for (const date of DATES) {
         }
       }
 
+      // 用神章 L543 (batch 10): 日月 (as 动爻) generates the 元神 — only with a 用神 given.
+      if (pk.yong) {
+        for (const pos of pk.yong.yuan.lines) {
+          const f = pk.yong.yuan.factors.find((x) => x.pos === pos).factors;
+          if (f.includes('日月动爻生扶')) want.add(`zb-l543-yuan-riyue-p${pos}`);
+        }
+      }
+
+      // 用神章 L589 (batch 11): 无用之元神 — only with a 用神 given.
+      if (pk.yong) {
+        for (const u of pk.yong.yuan.useless) if (u.verdict === '无用') want.add(`zb-l589-yuan-wuyong-p${u.pos}`);
+      }
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));

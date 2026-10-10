@@ -168,6 +168,20 @@ function jiVerdictOf(l, c) {
   return { pos: l.pos, controlsYong, moving: l.moving, verdict: rules.length ? side : '未论', rules, note: null };
 }
 
+/* 无用之元神 (用神章 L585–589): six reasons a 元神 cannot give life to the 用神
+   even though it shows (见生不生). The book's wording: "元神休囚不动，或动而休囚，又被伤克" etc.
+   Where a reason is about the 变 (化退, 化绝, 化克, 化破, 化散) or the 墓, it is checked
+   for structure only (transform and stage fields). OPEN ⚠: the 无用 and 有力 lists can
+   both hold for one 元神 (e.g. 休囚 but 得日月生); the book gives no order between them. */
+const YUAN_USELESS = {
+  '元神休囚不动，或动而休囚又被伤克': { cls: '自身/克', test: (l, c) => l.wangShuai.rank <= 2 && (!l.moving || c.controlled) },
+  '元神休囚又逢旬空月破': { cls: '空破', test: (l) => l.wangShuai.rank <= 2 && (l.void || l.monthBreak) },
+  '元神休囚动化退神': { cls: '变', test: (l) => l.wangShuai.rank <= 2 && l.moving && !!l.transform && l.transform.jinTui === '退神' },
+  '元神衰而又绝': { cls: '生旺墓绝', test: (l) => l.wangShuai.rank <= 2 && l.dayStage === '绝' },
+  '元神入三墓': { cls: '墓', test: (l) => l.tombs.day || l.tombs.moving || l.tombs.change },
+  '元神休囚动而化绝、化克、化破、化散': { cls: '变', test: (l) => l.wangShuai.rank <= 2 && l.moving && (l.changeStage === '绝' || (!!l.transform && (l.transform.backToKe || l.transform.clashBen))) }
+};
+
 /* 空 verdict (旬空章 L2546, 野鹤曰). Every reason the book gives is a row here,
    with the MECHANISM it works through and the DIRECTION it pushes:
      自身  the line's own strength (气)            旺, 有气不动
@@ -586,7 +600,9 @@ export function buildPacket(board, opts = {}) {
     const factorsFor = (pos) => {
       const l = lines[pos - 1];
       const f = [];
-      if (l.wangShuai.rank >= 3 || l.branchBi === monthBi || l.branchBi === dayBi || l.toDay === 'parent') f.push('旺相或临日月或日辰生扶');
+      // 用神章 L543: 元神旺相，或临日月，或得日月动爻生扶 (日 and 月 both act, L878).
+      if (l.wangShuai.rank >= 3 || l.branchBi === monthBi || l.branchBi === dayBi) f.push('旺相或临日月');
+      if (l.toDay === 'parent' || l.toMonth === 'parent') f.push('日月动爻生扶');
       if (l.moving && l.transform && (l.transform.backToSheng || l.transform.jinTui === '进神')) f.push('化回头生或化进神');
       if (l.dayStage === '长生' || l.dayStage === '旺') f.push('日辰长生帝旺');
       if (l.moving && jiLines.some((p) => lines[p - 1].moving)) f.push('与忌神同动');
@@ -608,7 +624,19 @@ export function buildPacket(board, opts = {}) {
       absent,
       liangXian: yongLines.length >= 2,
       fallback: absent ? { day: BRANCH_CN[dayBi], month: BRANCH_CN[monthBi], palaceFirst } : null,
-      yuan: { lines: yuanLines, factors: yuanLines.map((pos) => ({ pos, factors: factorsFor(pos) })) },
+      yuan: {
+        lines: yuanLines,
+        factors: yuanLines.map((pos) => ({ pos, factors: factorsFor(pos) })),
+        // 无用之元神 (用神章 L585): reasons it cannot give life, though it shows.
+        useless: yuanLines.map((pos) => {
+          const l = lines[pos - 1];
+          const el = l.elementGi;
+          const controlled = movingEls.some((m) => (m.el + 2) % 5 === el) || (dayEl + 2) % 5 === el || (monthEl + 2) % 5 === el;
+          const rules = Object.entries(YUAN_USELESS).filter(([, r]) => r.test(l, { controlled }))
+            .map(([text, r]) => ({ text, cls: r.cls, verdict: 'never', decisive: false, source: 'L585' }));
+          return { pos, verdict: rules.length ? '无用' : '未论', rules };
+        })
+      },
       ji: {
         lines: jiLines,
         // 用神章 L593 (有力之忌神：动而克害用神) and L598 (无力之忌神：动不克用神).
