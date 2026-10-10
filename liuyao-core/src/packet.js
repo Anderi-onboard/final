@@ -136,6 +136,59 @@ const VOID_RULES = {
   '值月建，逢空不空': { cls: '外力', verdict: 'notVoid', source: 'not in L2546' }
 };
 
+/* 伏神出伏 (飞伏神章 L3010–3025). The book gives six reasons a hidden line is
+   USEFUL (有用，虽曰不现，亦如现矣) and five reasons it NEVER comes out (终不能出).
+   Each reason is a row, with its mechanism and its source:
+     有用  L3010:  日月生伏 (日月) · 伏旺相 (自身) · 飞神生伏 (飞) · 动爻生伏 (动)
+                   日月动爻冲克飞神 (日月) · 飞神空破休囚墓绝 (飞)
+     无用  L3018:  伏休囚无气 (自身) · 伏被日月冲克 (日月) · 伏被旺相飞神克 (飞)
+                   伏墓绝于日月飞爻 (日月/飞) · 伏休囚值旬空月破 (空破)
+   Judgement rule (OPEN ⚠: the book gives no order between the two lists): a 无用
+   reason is decisive, since the book says 终不能出 outright; else any 有用 reason
+   gives 可出; else the book says nothing and the verdict is 未论.
+   Undecided thresholds, flagged: 休囚无气 is taken as rank <= 1 (囚 or 死); 墓绝 is
+   taken from stageOf (墓 or 绝). */
+const EMERGE_RULES = {
+  '伏得日月生': { cls: '日月', verdict: 'emerges', source: 'L3010' },
+  '伏旺相': { cls: '自身', verdict: 'emerges', source: 'L3010' },
+  '伏得飞神生': { cls: '飞', verdict: 'emerges', source: 'L3010' },
+  '伏得动爻生': { cls: '动', verdict: 'emerges', source: 'L3010' },
+  '伏得日月动爻冲克飞神': { cls: '日月', verdict: 'emerges', source: 'L3010' },
+  '伏得飞神空破休囚墓绝': { cls: '飞', verdict: 'emerges', source: 'L3010' },
+  '伏休囚无气': { cls: '自身', verdict: 'never', decisive: true, source: 'L3018' },
+  '伏被日月冲克': { cls: '日月', verdict: 'never', decisive: true, source: 'L3018' },
+  '伏被旺相飞神克': { cls: '飞', verdict: 'never', decisive: true, source: 'L3018' },
+  '伏墓绝于日月飞爻': { cls: '日月/飞', verdict: 'never', decisive: true, source: 'L3018' },
+  '伏休囚值旬空月破': { cls: '空破', verdict: 'never', decisive: true, source: 'L3018' }
+};
+
+function emergenceOf(ctx) {
+  const { hEl, hRank, hBi, fEl, fRank, fBi, dayBi, monthBi, dayEl, monthEl, flyVoid, moving } = ctx;
+  const CTRL_E = { 木: '土', 土: '水', 水: '火', 火: '金', 金: '木' };
+  const GEN_E = { 木: '火', 火: '土', 土: '金', 金: '水', 水: '木' };
+  const NAME = ['木', '火', '土', '金', '水'];
+  const h = NAME[hEl], f = NAME[fEl], d = NAME[dayEl], m = NAME[monthEl];
+  const fired = [];
+  const fire = (text) => fired.push({ text, decisive: false, ...EMERGE_RULES[text] });
+  const dayMonthGen = GEN_E[d] === h || GEN_E[m] === h;
+  if (dayMonthGen) fire('伏得日月生');
+  if (hRank >= 3) fire('伏旺相');
+  if (GEN_E[f] === h) fire('伏得飞神生');
+  if (moving.some((x) => GEN_E[NAME[x.el]] === h)) fire('伏得动爻生');   // movers carry element indices
+  if (brClash(dayBi, fBi) || brClash(monthBi, fBi) || CTRL_E[d] === f || CTRL_E[m] === f) fire('伏得日月动爻冲克飞神');
+  if (flyVoid || brClash(fBi, monthBi) || brClash(fBi, dayBi) || fRank <= 2 || [stageOf(fEl, dayBi), stageOf(fEl, monthBi)].some((st) => st === '墓' || st === '绝')) fire('伏得飞神空破休囚墓绝');
+  if (hRank <= 1) fire('伏休囚无气');
+  if (brClash(hBi, dayBi) || brClash(hBi, monthBi) || CTRL_E[d] === h || CTRL_E[m] === h) fire('伏被日月冲克');
+  if (CTRL_E[f] === h && fRank >= 3) fire('伏被旺相飞神克');
+  if ([stageOf(hEl, dayBi), stageOf(hEl, monthBi), stageOf(hEl, fBi)].some((st) => st === '墓' || st === '绝')) fire('伏墓绝于日月飞爻');
+  if (hRank <= 2 && ctx.xunSet.has(hBi) && brClash(hBi, monthBi)) fire('伏休囚值旬空月破');
+  let verdict;
+  if (fired.some((r) => r.decisive)) verdict = '终不出';
+  else if (fired.some((r) => r.verdict === 'emerges')) verdict = '可出';
+  else verdict = '未论';
+  return { verdict, rules: fired };
+}
+
 function voidVerdict(xunSet, line, monthBi, monthEl, dayEl, hidden, movers) {
   if (!xunSet.has(line.bi)) return { inXunkong: false, verdict: null, rules: [] };
   const fired = [];
@@ -188,7 +241,8 @@ export function buildPacket(board, opts = {}) {
   const palaceEl = board.ben.palace.element.gi;
 
   // ── lines ───────────────────────────────────────────────────────────────
-  const hiddenAt = (p) => Array.from(board.hidden || []).filter((h) => h.position === p);
+  // The engine numbers hidden positions from 0 (L[pi]); packet lines are numbered from 1.
+  const hiddenAt = (p) => Array.from(board.hidden || []).filter((h) => h.position === p - 1);
   const lines = Array.from(board.lines, (l) => {
     const pos = pos1(l.idx);
     const bi = l.branch.bi;
@@ -208,7 +262,17 @@ export function buildPacket(board, opts = {}) {
       hiddenControlsFly: !!h.hiddenControlsFly,
       // 日月如天 (L878): the day and the month act on a hidden line too.
       toDay: relOf(h.hiddenBranch.el.gi, dayEl),
-      toMonth: relOf(h.hiddenBranch.el.gi, monthEl)
+      toMonth: relOf(h.hiddenBranch.el.gi, monthEl),
+      // 伏神出伏 (飞伏神章 L3010, L3018)
+      emergence: emergenceOf({
+        hEl: h.hiddenBranch.el.gi, hBi: BRANCH_CN.indexOf(h.hiddenBranch.cn),
+        hRank: wangRank(h.hiddenBranch.el.gi, monthEl),
+        fBi: BRANCH_CN.indexOf(h.flyingBranch.cn),
+        fEl: BR_EL[BRANCH_CN.indexOf(h.flyingBranch.cn)],
+        fRank: wangRank(BR_EL[BRANCH_CN.indexOf(h.flyingBranch.cn)], monthEl),
+        dayBi, monthBi, dayEl, monthEl, xunSet, moving: movingEls,
+        flyVoid: xunSet.has(BRANCH_CN.indexOf(h.flyingBranch.cn))
+      })
     }));
     const wang = wangRank(el, monthEl);
     const line = { bi, el, moving, wang };

@@ -77,7 +77,8 @@ export const PACKET_SPEC = {
     hidden: [{
       relative: S, branch: S, el: N, flyBranch: S, flyRelative: S,
       flyGeneratesHidden: B, flyControlsHidden: B, hiddenControlsFly: B,
-      toDay: S, toMonth: S
+      toDay: S, toMonth: S,
+      emergence: { verdict: S, rules: [{ text: S, cls: S, verdict: S, decisive: B, source: S }] }
     }],
     heKinds: [S],
     chongKinds: [S],

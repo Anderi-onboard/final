@@ -86,6 +86,11 @@ export function classifyFacts(packet) {
     if (l.toMonth === 'officer') add('月克');
     if (l.dayHarmed) add('爻伤日');
     if (l.monthHarmed) add('爻伤月');
+    // 伏神出伏 (飞伏神章 L3013, L3020): the verdict of each hidden line, as a state.
+    for (const h of l.hidden || []) {
+      if (h.emergence.verdict === '可出') add('伏·可出');
+      if (h.emergence.verdict === '终不出') add('伏·终不出');
+    }
     // 卦变 (卦变生克墓绝章): only a relation with a stated verdict is a state.
     if (l.changeVerdict && l.changeVerdict.verdict) add(`卦变·${l.changeVerdict.relation}`);
   }

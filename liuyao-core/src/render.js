@@ -82,6 +82,10 @@ function lineText(l) {
       .filter(Boolean).join('、');
     parts.push(`伏${relCn(h.relative)}${h.branch}（飞${h.flyBranch}·${relCn(h.flyRelative)}${flags ? '·' + flags : ''}）` +
       `，日辰${relCn(h.toDay)}、月建${relCn(h.toMonth)}`);
+    // 伏神出伏 (飞伏神章): the verdict, and each reason that held, with its source.
+    const em = h.emergence;
+    const why = em.rules.map((r) => `${r.cls}：${r.text}（${r.source}·${r.verdict === 'never' ? '无用' : '有用'}${r.decisive ? '·定' : ''}）`).join('、');
+    parts.push(`伏神${em.verdict}${why ? '（' + why + '）' : ''}${em.verdict === '未论' ? '〔原文未论此伏神〕' : ''}`);
   }
   // 日月如天 (L878): the day and month relations of a changed line and of the line itself.
   const cd = l.changeToDay, cm = l.changeToMonth;   // read together, so both are always accounted for

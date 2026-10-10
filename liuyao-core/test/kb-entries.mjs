@@ -152,6 +152,14 @@ for (const date of DATES) {
         if (CTRL_D[el] === monEl7) want.add(`zb-l878-shangyue-p${p}`);
       }
 
+      // 飞伏神章 L3013/L3020 (batch 8): the packet's verdict for each hidden line.
+      for (const line of pk.lines) {
+        for (const h of line.hidden) {
+          if (h.emergence.verdict === '可出') want.add(`zb-l3013-youyong-p${line.pos}`);
+          if (h.emergence.verdict === '终不出') want.add(`zb-l3020-wuyong-p${line.pos}`);
+        }
+      }
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));

@@ -188,7 +188,14 @@ assert.ok([...EMITTED].some((t) => t.startsWith('bian:')), 'bian: never reached'
 // one (measured in docs/workflow.md). The list must stay exact: if the engine
 // starts emitting one, it is removed here, and if an entry stops needing one,
 // it is removed too. Checked below.
-const ENGINE_NEVER_EMITS = new Set(['state:L2:化扶', 'state:L3:化扶', 'state:L5:化扶', 'state:L6:化扶']);
+// 伏神 at 爻 6 is never produced by the engine's pure-hexagram lookup, in a full sample
+// (64 hexagrams × 3 dates × 7 moving patterns). So the 伏神出伏 entries for 爻 6 cite a
+// state the engine cannot give. Open ⚠, like 化扶: if the engine starts giving a 伏 at 爻 6,
+// this list must shrink, and the test below fails until it does.
+const ENGINE_NEVER_EMITS = new Set([
+  'state:L2:化扶', 'state:L3:化扶', 'state:L5:化扶', 'state:L6:化扶',
+  'state:L6:伏·可出', 'state:L6:伏·终不出'
+]);
 for (const t of ENGINE_NEVER_EMITS) {
   assert.ok(!EMITTED.has(t), `${t} is listed as never emitted but the engine now emits it — remove it from the list`);
 }
