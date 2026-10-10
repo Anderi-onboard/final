@@ -16,7 +16,7 @@
 | 7 | 显示格式：提示词、输入、输出分段 | 每个 LLM 站显示 `=== 系统提示 ===`、`=== 用户输入 ===`、`=== 模型输出 ===`、`=== 程序判定 ===` | 桥接测试与 `test_nodes.py` 检查四段都在 | [x] |
 | 8 | 一键换真模型 | 配置节点 `mode=openrouter`，读环境变量 `OPENROUTER_API_KEY`；未设 key 时报错而不是静默演示 | `test/comfy-bridge.mjs` 第 5 段；`test_nodes.py` 缺 key 用例 | [x] |
 | 9 | 节点不被缓存 | 所有节点 `IS_CHANGED` 返回 NaN，每次重跑 | `comfy/test_nodes.py` | [x] |
-| 10 | 打包发给用户 | `comfy/` 整个目录（含 README、工作流 JSON）打 zip | 文件列表 | [ ] |
+| 10 | 打包发给用户 | `comfy/` 整个目录（含 README、工作流 JSON）打 zip | 文件列表（9 个文件，不含字节码） | [x] |
 | 11 | ⚠ 未在真实 ComfyUI 里加载运行 | 本机没有 ComfyUI；节点的 UI 显示（`ui.text`）和 UI 格式连线只能按文档和结构测试 | — | [ ] ⚠ |
 | 12 | ⚠ 演示模式的输出是占位，不是解读 | 只为验证连线和显示；要看真解读须配 key | — | [ ] ⚠ |
 | 13 | ⚠ 依赖 Node 22 与本仓库路径 | 节点通过环境变量 `LIUYAO_CORE` 找到 `liuyao-core`，需先设置 | — | [ ] ⚠ |
