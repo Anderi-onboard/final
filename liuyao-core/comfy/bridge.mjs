@@ -24,7 +24,7 @@ import { fileURLToPath } from 'node:url';
 import { castRandom, castWithBacks } from '../src/casting.js';
 import { nameOfBits } from '../src/packet.js';
 import { ENTRIES as CORPUS } from '../src/corpus.js';
-import { createDemoLLM, createOpenRouterLLM } from '../src/pipeline/llm.js';
+import { createAnthropicLLM, createDemoLLM, createOpenRouterLLM } from '../src/pipeline/llm.js';
 import {
   NOTICE, startNotices, understandStage, yongStage, packetStage,
   retrieveStage, claimsStage, synthStage
@@ -38,6 +38,12 @@ function makeLLM(config) {
   // Tests inject a scripted model here. Not reachable from ComfyUI, which only sends JSON.
   if (config.llm) return config.llm;
   if (config.mode === 'mock' || !config.mode) return createDemoLLM();
+  if (config.mode === 'anthropic') {
+    return createAnthropicLLM({
+      apiKey: process.env.ANTHROPIC_API_KEY,
+      models: { understand: config.model_understand, claim: config.model_claim, synth: config.model_synth }
+    });
+  }
   if (config.mode !== 'openrouter') throw new Error(`未知的模式：${config.mode}`);
   const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) {

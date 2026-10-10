@@ -7,7 +7,8 @@ and the program's verdict; for every program stage, what it decided.
 
 Requires: Node.js 18+ on PATH, and the environment variable LIUYAO_CORE set to
 the liuyao-core directory (the one that contains comfy/bridge.mjs).
-Real models also need OPENROUTER_API_KEY in ComfyUI's environment.
+Real models also need OPENROUTER_API_KEY (mode openrouter) or ANTHROPIC_API_KEY
+(mode anthropic) in ComfyUI's environment.
 """
 import json
 import os
@@ -70,8 +71,8 @@ class LiuyaoConfig:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {
-            "mode": (["mock", "openrouter"], {"default": "mock"}),
-            "model_understand": ("STRING", {"default": "", "tooltip": "OpenRouter 模型名，如 provider/model（mode=openrouter 时必填）"}),
+            "mode": (["mock", "openrouter", "anthropic"], {"default": "mock"}),
+            "model_understand": ("STRING", {"default": "", "tooltip": "模型名：openrouter 用 provider/model；anthropic 用你账号可用的模型名。非演示模式必填"}),
             "model_claim": ("STRING", {"default": ""}),
             "model_synth": ("STRING", {"default": ""}),
         }}
@@ -86,8 +87,9 @@ class LiuyaoConfig:
         if mode == "mock":
             note = "mock：演示模式，不调用模型，输出是占位文字，不是解读。"
         else:
-            note = (f"openrouter：理解={model_understand}　断法={model_claim}　综合={model_synth}"
-                    "（需要环境变量 OPENROUTER_API_KEY）")
+            key = {"openrouter": "OPENROUTER_API_KEY", "anthropic": "ANTHROPIC_API_KEY"}[mode]
+            note = (f"{mode}：理解={model_understand}　断法={model_claim}　综合={model_synth}"
+                    f"（需要环境变量 {key}）")
         display = f"━━ 配置 ━━\n{note}"
         return {"ui": {"text": [display]},
                 "result": (json.dumps(config, ensure_ascii=False), display)}

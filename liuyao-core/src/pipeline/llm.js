@@ -86,6 +86,54 @@ export function createOpenRouterLLM({
   };
 }
 
+/* Anthropic Messages API, called directly with the account's own key.
+   Model names are configuration: the adapter sends whatever string it is given.
+   The key goes only into the x-api-key header; it is never part of a message,
+   an error, or a display. */
+export function createAnthropicLLM({
+  apiKey, models, baseUrl = 'https://api.anthropic.com', fetchImpl = globalThis.fetch,
+  temperature = 0.3, maxTokens = 2000, version = '2023-06-01'
+}) {
+  if (!apiKey) throw new Error('ANTHROPIC_API_KEY 未设置');
+  for (const role of ROLES) {
+    if (!models || !models[role]) throw new Error(`no model configured for role "${role}"`);
+  }
+  return {
+    async complete({ role, system, user }) {
+      const model = models[role];
+      const res = await fetchImpl(`${baseUrl}/v1/messages`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': version
+        },
+        body: JSON.stringify({
+          model,
+          max_tokens: maxTokens,
+          temperature,
+          system,
+          messages: [{ role: 'user', content: user }]
+        })
+      });
+      if (!res.ok) {
+        let detail = '';
+        try {
+          const body = await res.json();
+          detail = body && body.error && body.error.message ? `：${body.error.message}` : '';
+        } catch (e) { detail = ''; }
+        throw new Error(`model call failed for role "${role}": HTTP ${res.status}${detail}`);
+      }
+      const data = await res.json();
+      const text = Array.isArray(data && data.content)
+        ? data.content.filter((b) => b && b.type === 'text').map((b) => b.text).join('')
+        : '';
+      if (!text) throw new Error(`model returned no text for role "${role}"`);
+      return text;
+    }
+  };
+}
+
 /* The model is asked for JSON. Accept it with or without a code fence, and
    nothing else: a stray sentence before the object is an error, not a guess. */
 export function parseJSONText(text) {
