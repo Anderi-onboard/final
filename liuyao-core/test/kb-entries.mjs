@@ -184,6 +184,16 @@ for (const date of DATES) {
       }
       // the same 爻 may sit in two groups; the expected set is per (form, pos)
 
+      // 动变章 L4057/L4059 (batch 13): 进神/退神 reasons, as the packet numbers them.
+      for (const line of pk.lines) {
+        if (!line.jinTuiVerdict) continue;
+        for (const r of line.jinTuiVerdict.rules) {
+          if (r.code === '退1') continue;   // open ⚠: not entered
+          const src = { 进1: 'l4057', 进2: 'l4057', 进3: 'l4058', 进4: 'l4058', 退2: 'l4059', 退3: 'l4060', 退4: 'l4060' }[r.code];
+          want.add(`zb-${src}-${r.code.startsWith('进') ? 'jin' : 'tui'}${r.code[1]}-p${line.pos}`);
+        }
+      }
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));

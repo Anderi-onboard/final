@@ -44,6 +44,7 @@ import { ZENGBU_BATCH9 } from './entries/zengbu-batch9.js';
 import { ZENGBU_BATCH10 } from './entries/zengbu-batch10.js';
 import { ZENGBU_BATCH11 } from './entries/zengbu-batch11.js';
 import { ZENGBU_BATCH12 } from './entries/zengbu-batch12.js';
+import { ZENGBU_BATCH13 } from './entries/zengbu-batch13.js';
 
 // Batch 1: 独发章, 暗动章. Batch 2: 六冲章 (see src/entries/).
-export const ENTRIES = [...ZENGBU_BATCH1, ...ZENGBU_BATCH2, ...ZENGBU_BATCH3, ...ZENGBU_BATCH4, ...ZENGBU_BATCH5, ...ZENGBU_BATCH6, ...ZENGBU_BATCH7, ...ZENGBU_BATCH8, ...ZENGBU_BATCH9, ...ZENGBU_BATCH10, ...ZENGBU_BATCH11, ...ZENGBU_BATCH12];
+export const ENTRIES = [...ZENGBU_BATCH1, ...ZENGBU_BATCH2, ...ZENGBU_BATCH3, ...ZENGBU_BATCH4, ...ZENGBU_BATCH5, ...ZENGBU_BATCH6, ...ZENGBU_BATCH7, ...ZENGBU_BATCH8, ...ZENGBU_BATCH9, ...ZENGBU_BATCH10, ...ZENGBU_BATCH11, ...ZENGBU_BATCH12, ...ZENGBU_BATCH13];

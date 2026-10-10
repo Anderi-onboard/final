@@ -93,10 +93,15 @@ for (const date of [new Date(2026, 9, 12, 10, 0)]) {
     combos.push([a, b]);
     for (let c = b + 1; c < 6; c++) combos.push([a, b, c]);
   }
-  for (let bits = 0; bits < 64; bits++) {
-    for (const mv of combos) {
-      const b = boardFor(bits, mv, date);
-      for (const t of factTokens(buildPacket(b, { yongKey: 'wealth' }).facts)) EMITTED.add(t);
+  // 进神/退神 reasons depend on the 月建 (旺相 is in the month), so the combinations are
+  // also measured on one date in each month.
+  const dates = [date, ...Array.from({ length: 12 }, (_, m) => new Date(2026, m, 15, 10, 0))];
+  for (const d of dates) {
+    for (let bits = 0; bits < 64; bits++) {
+      for (const mv of combos) {
+        const b = boardFor(bits, mv, d);
+        for (const t of factTokens(buildPacket(b, { yongKey: 'wealth' }).facts)) EMITTED.add(t);
+      }
     }
   }
 }

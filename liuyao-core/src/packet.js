@@ -182,6 +182,39 @@ const YUAN_USELESS = {
   '元神休囚动而化绝、化克、化破、化散': { cls: '变', test: (l) => l.wangShuai.rank <= 2 && l.moving && (l.changeStage === '绝' || (!!l.transform && (l.transform.backToKe || l.transform.clashBen))) }
 };
 
+/* 进神 / 退神 judgement (动变章 L4057–4060, 野鹤曰). A moving line's change is either a
+   进神 or a 退神 (fixed by the branch pair, jinTuiOf). The book gives four ways for each,
+   and they are kept apart, because the same condition (旺相化旺相) means 进 under 进神
+   and 退 under 退神.
+     进: 动旺相化旺相 → 乘势而进; 动休囚化休囚 → 待时而进;
+         动爻变爻有一值休囚 → 亦得旺相之日而进; 有一值空破 → 待填实之日而进.
+     退: 动旺相化旺相 → 退 (但有日月动爻生扶、占近事则得时而不退 — OPEN ⚠ exception, flagged);
+         动休囚化休囚 → 及时而退; 动爻变爻有一旺相 → 待休囚之时而退;
+         有一逢空破 → 待填实之日而退.
+   “旺相” = wangRank >= 3 for the line and for the change, in the month; “空破” = 旬空 or
+   月破 (the branch clashes the 月建). */
+function jinTuiVerdictOf(l, c) {
+  if (!l.transform || !l.moving) return null;
+  const tj = l.transform.jinTui;
+  if (tj !== '进神' && tj !== '退神') return { side: null, verdict: '未论', rules: [] };
+  const lStrong = l.wangShuai.rank >= 3, tStrong = c.tRank >= 3;
+  const lBroken = l.void || l.monthBreak, tBroken = c.tVoid || c.tBreak;
+  const rules = [];
+  const fire = (text, source, code) => rules.push({ code, text, cls: text.startsWith('动爻变爻') ? '变' : '自身', decisive: false, source });
+  if (tj === '进神') {
+    if (lStrong && tStrong) fire('动旺相化旺相：乘势而进', 'L4057', '进1');
+    if (!lStrong && !tStrong) fire('动休囚化休囚：待时而进', 'L4057', '进2');
+    if (!lStrong || !tStrong) fire('动爻变爻有一值休囚：亦得旺相之日而进', 'L4057', '进3');
+    if (lBroken || tBroken) fire('动爻变爻有一值空破：待填实之日而进', 'L4057', '进4');
+    return { side: '进', verdict: rules.length ? '进' : '未论', rules };
+  }
+  if (lStrong && tStrong) fire('动旺相化旺相：退（有日月动爻生扶、占近事则不退，⚠未入判定）', 'L4059', '退1');
+  if (!lStrong && !tStrong) fire('动休囚化休囚：及时而退', 'L4059', '退2');
+  if (lStrong || tStrong) fire('动爻变爻有一旺相：待休囚之时而退', 'L4059', '退3');
+  if (lBroken || tBroken) fire('动爻变爻有一逢空破：待填实之日而退', 'L4059', '退4');
+  return { side: '退', verdict: rules.length ? '退' : '未论', rules };
+}
+
 /* 空 verdict (旬空章 L2546, 野鹤曰). Every reason the book gives is a row here,
    with the MECHANISM it works through and the DIRECTION it pushes:
      自身  the line's own strength (气)            旺, 有气不动
@@ -385,6 +418,11 @@ export function buildPacket(board, opts = {}) {
       voidVerdict: v.verdict,
       voidRules: v.rules,
       changeVerdict,
+      // 进神/退神 (动变章 L4057–4060)
+      jinTuiVerdict: jinTuiVerdictOf(
+        { moving, transform: t && moving ? { jinTui: jinTuiOf(l.branch.cn, t.branch.cn) } : null, wangShuai: { rank: wang }, void: xunSet.has(bi), monthBreak: brClash(bi, monthBi) },
+        t && moving ? { tRank: wangRank(tEl, monthEl), tVoid: xunSet.has(tBi), tBreak: brClash(tBi, monthBi) } : {}
+      ),
       dayStage,                          // 长生 / 旺 / 墓 / 绝 by the 日辰 (生旺墓绝章)
       changeStage,                       // the same, for the 变爻's branch on this line's element
       changeToDay,                       // 变爻 vs 日辰 and 月建, in 六亲 terms (L878)

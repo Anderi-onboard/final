@@ -88,6 +88,12 @@ function lineText(l) {
     parts.push(`伏神${em.verdict}${why ? '（' + why + '）' : ''}${em.verdict === '未论' ? '〔原文未论此伏神〕' : ''}`);
   }
   // 日月如天 (L878): the day and month relations of a changed line and of the line itself.
+  // 进神/退神 (动变章 L4057–4060): the side and each reason that held.
+  const jv = l.jinTuiVerdict;
+  if (jv) {
+    const why = jv.rules.map((r) => `${r.code} ${r.text}（${r.source}·${r.cls}${r.decisive ? '·定' : ''}）`).join('、');
+    parts.push(`${jv.side ?? '非进退'}：${jv.verdict}${why ? '（' + why + '）' : ''}`);
+  }
   const cd = l.changeToDay, cm = l.changeToMonth;   // read together, so both are always accounted for
   if (cd) parts.push(`变爻与日辰：${relCn(cd)}，与月建：${relCn(cm)}`);
   if (l.dayHarmed) parts.push('爻伤日：徒受其名（L878）');
