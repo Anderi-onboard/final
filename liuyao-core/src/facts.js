@@ -94,6 +94,9 @@ export function classifyFacts(packet) {
     // 进神 / 退神 (动变章 L4057–4060): each reason that holds, by the book's number.
     if (l.jinTuiVerdict) for (const r of l.jinTuiVerdict.rules) add(r.code);
     if (l.qi) add('有气');
+    // 独发 / 独静 (独发章 L4197): the one moving line of 独发, the one static line of 独静.
+    if (packet.solo === '独发' && l.moving) add('独发');
+    if (packet.solo === '独静' && !l.moving) add('独静');
     // 三合成局 (三合章 L1460–1463): the form of each 局 this line belongs to, and the 世's relation.
     for (const g of packet.relations.sanhe) {
       if (!g.parts.some((part) => part.some((m) => m.pos === l.pos))) continue;

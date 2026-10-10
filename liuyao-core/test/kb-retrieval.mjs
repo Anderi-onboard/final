@@ -93,6 +93,8 @@ for (const date of [new Date(2026, 9, 12, 10, 0)]) {
     combos.push([a, b]);
     for (let c = b + 1; c < 6; c++) combos.push([a, b, c]);
   }
+  // 独静 is five moving lines (独发章 L4197): every five-line combination too.
+  for (let skip = 0; skip < 6; skip++) combos.push([0, 1, 2, 3, 4, 5].filter((q) => q !== skip));
   // 进神/退神 reasons depend on the 月建 (旺相 is in the month), so the combinations are
   // also measured on one date in each month.
   const dates = [date, ...Array.from({ length: 12 }, (_, m) => new Date(2026, m, 15, 10, 0))];

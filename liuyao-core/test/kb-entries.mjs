@@ -194,6 +194,16 @@ for (const date of DATES) {
         }
       }
 
+      // 独发章 L4197 (batch 14): exactly one moving line (独发) or exactly one static line (独静).
+      {
+        const movingNow = all.filter((l) => l.moving).map((l) => l.idx + 1);
+        if (movingNow.length === 1) want.add(`zb-l4197-duface-p${movingNow[0]}`);
+        if (movingNow.length === 5) {
+          const staticPos = [1, 2, 3, 4, 5, 6].find((q) => !movingNow.includes(q));
+          want.add(`zb-l4197-dujing-p${staticPos}`);
+        }
+      }
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));
