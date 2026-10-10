@@ -20,6 +20,36 @@ export function createMockLLM(handlers) {
   };
 }
 
+/* Stand-in for demonstration only: answers keep the shape the contracts ask for,
+   every text is marked （演示）, and nothing here is a reading. The subject is
+   labelled by keyword, and each claim answers the entry id it was given. */
+export function createDemoLLM() {
+  return createMockLLM({
+    understand: ({ user }) => {
+      const q = (/提问：(.*)/.exec(user) || [])[1] || '';
+      return {
+        restated: `（演示）${q}`, category: '演示',
+        subject: /财|钱|求财/.test(q) ? 'wealth' : 'self',
+        askerGender: 'unknown', askingForSelf: true, premises: [], factorsToCheck: [],
+        wantsTiming: false, tone: '（演示）', psychology: '（演示）', risk: 'none',
+        needs: { recastNotice: false, clarify: [] }
+      };
+    },
+    claim: ({ user }) => {
+      const id = (/entryId 必须填：(\S+)/.exec(user) || [])[1] || 'demo';
+      return {
+        entryId: id, claim: '（演示）这一条原句在本卦上的断法，占位文字。', linkToUser: '（演示）',
+        realWorld: '（演示）', lines: [], confidence: 'low'
+      };
+    },
+    synth: () => ({
+      answered: true,
+      answer: '（演示模式：没有接入模型，这里是占位文字，不是解读。）',
+      checks: [], confidence: 'low', unansweredParts: []
+    })
+  });
+}
+
 export function createOpenRouterLLM({
   apiKey, models, baseUrl = 'https://openrouter.ai/api/v1', fetchImpl = globalThis.fetch,
   referer = 'https://bournewise.com', title = 'BourneWise liuyao-core', temperature = 0.3, maxTokens = 2000

@@ -1,0 +1,414 @@
+{
+  "last_node_id": 7,
+  "last_link_id": 8,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LiuyaoConfig",
+      "pos": [
+        40,
+        420
+      ],
+      "size": [
+        480,
+        320
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "config",
+          "type": "STRING",
+          "links": [
+            2,
+            6,
+            8
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "display",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LiuyaoConfig"
+      },
+      "widgets_values": [
+        "mock",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LiuyaoCast",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        480,
+        320
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "display",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LiuyaoCast"
+      },
+      "widgets_values": [
+        "这个月的求财能不能成",
+        "1,2,3,0,3,2",
+        "2026-10-08"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LiuyaoUnderstand",
+      "pos": [
+        580,
+        40
+      ],
+      "size": [
+        480,
+        320
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "link": 1,
+          "widget": {
+            "name": "state"
+          }
+        },
+        {
+          "name": "config",
+          "type": "STRING",
+          "link": 2,
+          "widget": {
+            "name": "config"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "links": [
+            3
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "display",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LiuyaoUnderstand"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 4,
+      "type": "LiuyaoPacket",
+      "pos": [
+        1120,
+        40
+      ],
+      "size": [
+        480,
+        320
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "link": 3,
+          "widget": {
+            "name": "state"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "display",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LiuyaoPacket"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "LiuyaoRetrieve",
+      "pos": [
+        1660,
+        40
+      ],
+      "size": [
+        480,
+        320
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "link": 4,
+          "widget": {
+            "name": "state"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "links": [
+            5
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "display",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LiuyaoRetrieve"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 6,
+      "type": "LiuyaoClaims",
+      "pos": [
+        2200,
+        40
+      ],
+      "size": [
+        480,
+        320
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "link": 5,
+          "widget": {
+            "name": "state"
+          }
+        },
+        {
+          "name": "config",
+          "type": "STRING",
+          "link": 6,
+          "widget": {
+            "name": "config"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "display",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LiuyaoClaims"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 7,
+      "type": "LiuyaoSynth",
+      "pos": [
+        2740,
+        40
+      ],
+      "size": [
+        480,
+        320
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "link": 7,
+          "widget": {
+            "name": "state"
+          }
+        },
+        {
+          "name": "config",
+          "type": "STRING",
+          "link": 8,
+          "widget": {
+            "name": "config"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "display",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LiuyaoSynth"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      1,
+      0,
+      3,
+      1,
+      "STRING"
+    ],
+    [
+      3,
+      3,
+      0,
+      4,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      4,
+      0,
+      5,
+      0,
+      "STRING"
+    ],
+    [
+      5,
+      5,
+      0,
+      6,
+      0,
+      "STRING"
+    ],
+    [
+      6,
+      1,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      7,
+      6,
+      0,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      8,
+      1,
+      0,
+      7,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  },
+  "version": 0.4
+}

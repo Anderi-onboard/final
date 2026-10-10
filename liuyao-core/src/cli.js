@@ -10,7 +10,7 @@
 */
 import { castRandom, castWithBacks } from './casting.js';
 import { runReading, PipelineError } from './pipeline/run.js';
-import { createMockLLM, createOpenRouterLLM } from './pipeline/llm.js';
+import { createDemoLLM, createOpenRouterLLM } from './pipeline/llm.js';
 
 function args(argv) {
   const out = {};
@@ -23,24 +23,6 @@ function args(argv) {
     else { out[key] = next; i++; }
   }
   return out;
-}
-
-// Stand-in for demonstration only. It labels the subject by keyword and says so.
-function demoLLM() {
-  return createMockLLM({
-    understand: () => ({
-      restated: '（演示）问题的需求', category: '演示', subject: /财|钱|求财/.test(process.argv.join(' ')) ? 'wealth' : 'self',
-      askerGender: 'unknown', askingForSelf: true, premises: [], factorsToCheck: [],
-      wantsTiming: false, tone: '（演示）', psychology: '（演示）', risk: 'none',
-      needs: { recastNotice: false, clarify: [] }
-    }),
-    claim: () => ({ entryId: 'demo', claim: '（演示）', linkToUser: '', realWorld: '', lines: [], confidence: 'low' }),
-    synth: () => ({
-      answered: true,
-      answer: '（演示模式：没有接入模型，这里是占位文字，不是解读。）',
-      checks: [], confidence: 'low', unansweredParts: []
-    })
-  });
 }
 
 function realLLM() {
@@ -64,7 +46,7 @@ async function main() {
   const casting = a.throws
     ? castWithBacks(String(a.throws).split(',').map(Number), date)
     : castRandom(date);
-  const llm = a.mock ? demoLLM() : realLLM();
+  const llm = a.mock ? createDemoLLM() : realLLM();
   const result = await runReading({ question: a.question, casting, llm, options: {} });
 
   console.log(`起卦：${casting.lines.map((l) => `${l.name}${l.yang ? '阳' : '阴'}${l.changing ? '动' : ''}`).join(' ')}`);
