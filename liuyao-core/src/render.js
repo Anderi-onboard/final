@@ -251,6 +251,12 @@ export function renderPacket(packet) {
       yl.push(`第${entry.pos}爻元神有力之条：${entry.factors.length ? entry.factors.join('、') : '无'}。`);
     }
     yl.push(y.ji.lines.length ? `忌神（克用神）：${listPos(y.ji.lines)}。` : '忌神：无。');
+    // 忌神吉凶 (用神章 L593, L598): 有力 = 动而克用神 (大凶); 无力 = 动不克用神 (化凶为吉).
+    for (const j of y.ji.judgement) {
+      const why = j.rules.map((r) => `${r.cls}：${r.text}（${r.source}·${r.verdict === 'strong' ? '有力' : '无力'}${r.decisive ? '·定' : ''}）`).join('、');
+      yl.push(`第${j.pos}爻忌神${j.verdict}${j.controlsYong ? '（克用神' : '（不克用神'}${j.moving ? '，动' : '，静'}）` +
+        `${why ? '：' + why : ''}${j.note ? '〔' + j.note + '〕' : ''}`);
+    }
     yl.push(y.chou.lines.length ? `仇神（克元神，又生忌神）：${listPos(y.chou.lines)}。` : '仇神：无。');
     sec('yong', '用神视角（由问题决定）', ['用神章', '用神、元神、忌神、仇神章', '元神、忌神、衰旺章', '两现章', '飞伏神章'], yl);
   }

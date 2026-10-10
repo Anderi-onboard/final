@@ -86,6 +86,10 @@ export function classifyFacts(packet) {
     if (l.toMonth === 'officer') add('月克');
     if (l.dayHarmed) add('爻伤日');
     if (l.monthHarmed) add('爻伤月');
+    // 忌神吉凶 (用神章 L595, L602): the verdict of a 忌神 line, when a 用神 is given.
+    const jj = packet.yong ? packet.yong.ji.judgement.find((j) => j.pos === l.pos) : null;
+    if (jj && jj.verdict === '有力') add('忌·有力');
+    if (jj && jj.verdict === '无力') add('忌·无力');
     // 伏神出伏 (飞伏神章 L3013, L3020): the verdict of each hidden line, as a state.
     for (const h of l.hidden || []) {
       if (h.emergence.verdict === '可出') add('伏·可出');

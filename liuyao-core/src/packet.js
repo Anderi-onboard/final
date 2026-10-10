@@ -107,6 +107,67 @@ function changeVerdictOf(el, tEl) {
   return { relation: rel === 'peer' ? '比和' : '我生变', verdict: null, regardlessOfYong: false, source: null, open: reason };
 }
 
+/* 忌神 verdict (用神章 L593, L598). Two lists, split by whether the 忌神 overcomes
+   the 用神 (克害用神):
+     有力 (动而克害用神): five reasons, 诸占大凶 — L593.
+     无力 (动不克用神):   seven reasons, 诸占化凶为吉 — L598.
+   Because the split is on whether it controls the 用神, the two lists cannot both
+   hold for one line, and the order question does not arise. Open ⚠:
+     · L598 says "忌神虽动" but its first reason lists 休囚不动; both are kept.
+     · 化散 (L598 #6) has no field in the packet; not judged.
+     · 用神要有气 (L598 按) is a precondition the book states; not applied here. */
+const JI_RULES = {
+  // 有力 (L593)
+  '忌神旺相，或遇日月动爻生扶，或临日月': { cls: '自身/日月', side: '有力', source: 'L593',
+    test: (l, c) => l.wangShuai.rank >= 3 || l.toDay === 'parent' || l.toMonth === 'parent' || c.movingGen || l.branchBi === c.dayBi || l.branchBi === c.monthBi },
+  '忌神动，化回头生、化进神': { cls: '变', side: '有力', source: 'L593',
+    test: (l) => l.moving && !!l.transform && (l.transform.backToSheng || l.transform.jinTui === '进神') },
+  '忌神旺动，临空、化空': { cls: '空', side: '有力', source: 'L593',
+    test: (l) => l.moving && l.wangShuai.rank === 4 && (l.void || (!!l.transform && l.transform.backToVoid)) },
+  '忌神长生帝旺于日辰': { cls: '日辰', side: '有力', source: 'L593',
+    test: (l) => l.dayStage === '长生' || l.dayStage === '旺' },
+  '忌神与仇神同动': { cls: '动', side: '有力', source: 'L593',
+    test: (l, c) => l.moving && c.chouMoving },
+  // 无力 (L598)
+  '忌神休囚不动，动而休囚被日月动爻克': { cls: '自身/日月', side: '无力', source: 'L598',
+    test: (l) => l.wangShuai.rank <= 2 && (!l.moving || l.toDay === 'officer' || l.toMonth === 'officer') },
+  '忌神静，临空破': { cls: '空破', side: '无力', source: 'L598',
+    test: (l) => !l.moving && (l.void || l.monthBreak) },
+  '忌神入三墓': { cls: '墓', side: '无力', source: 'L598',
+    test: (l) => l.tombs.day || l.tombs.moving || l.tombs.change },
+  '忌神衰，动化退神': { cls: '变', side: '无力', source: 'L598',
+    test: (l) => l.wangShuai.rank <= 2 && l.moving && !!l.transform && l.transform.jinTui === '退神' },
+  '忌神衰而又绝': { cls: '生旺墓绝', side: '无力', source: 'L598',
+    test: (l) => l.wangShuai.rank <= 2 && l.dayStage === '绝' },
+  '忌神动，化绝、化克、化破': { cls: '变', side: '无力', source: 'L598',
+    test: (l) => l.moving && (l.changeStage === '绝' || (!!l.transform && (l.transform.backToKe || l.transform.clashBen))) },
+  '忌神与元神同动': { cls: '动', side: '无力', source: 'L598',
+    test: (l, c) => l.moving && c.yuanMoving }
+};
+
+/* A 忌神 line: its verdict and the reasons that hold. `c` carries what the rules need
+   from outside the line: the 用神 elements, the 元神 and 仇神 movement, the day/month. */
+function jiVerdictOf(l, c) {
+  // Five-element cycles (木0 火1 土2 金3 水4): a generates b when (a+1)%5 === b; controls when (a+2)%5 === b.
+  const controlsYong = c.yongEls.some((ye) => (l.elementGi + 2) % 5 === ye);
+  // 有力 is the moving 忌神 that overcomes the 用神 (L593). 无力 is the 忌神 that does not (L598).
+  const side = controlsYong ? '有力' : '无力';
+  const ctx = {
+    ...c,
+    movingGen: c.movers.some((m) => (m.el + 1) % 5 === l.elementGi),   // a moving line generates this line
+    dayBi: c.dayBi, monthBi: c.monthBi
+  };
+  const rules = [];
+  if (side === '有力' && !l.moving) {
+    return { pos: l.pos, controlsYong, moving: l.moving, verdict: '未论', rules, note: '静忌神克用神，原文未列为有力' };
+  }
+  for (const [text, r] of Object.entries(JI_RULES)) {
+    if (r.side !== side) continue;
+    if (r.test(l, ctx)) rules.push({ text, cls: r.cls, verdict: side === '有力' ? 'strong' : 'weak', decisive: false, source: r.source });
+  }
+  return { pos: l.pos, controlsYong, moving: l.moving, verdict: rules.length ? side : '未论', rules, note: null };
+}
+
 /* 空 verdict (旬空章 L2546, 野鹤曰). Every reason the book gives is a row here,
    with the MECHANISM it works through and the DIRECTION it pushes:
      自身  the line's own strength (气)            旺, 有气不动
@@ -548,7 +609,17 @@ export function buildPacket(board, opts = {}) {
       liangXian: yongLines.length >= 2,
       fallback: absent ? { day: BRANCH_CN[dayBi], month: BRANCH_CN[monthBi], palaceFirst } : null,
       yuan: { lines: yuanLines, factors: yuanLines.map((pos) => ({ pos, factors: factorsFor(pos) })) },
-      ji: { lines: jiLines },
+      ji: {
+        lines: jiLines,
+        // 用神章 L593 (有力之忌神：动而克害用神) and L598 (无力之忌神：动不克用神).
+        judgement: jiLines.map((pos) => jiVerdictOf(lines[pos - 1], {
+          yongEls: yongLines.map((p) => lines[p - 1].elementGi),
+          yuanMoving: yuanLines.some((p) => lines[p - 1].moving),
+          chouMoving: chouLines.some((p) => lines[p - 1].moving),
+          movers: movingEls,
+          dayBi, monthBi
+        }))
+      },
       chou: { lines: chouLines }
     };
   }
