@@ -7,7 +7,8 @@
   "scripts": {
     "test": "node scripts/run-tests.mjs",
     "demo": "node scripts/ask.mjs --mock --question \"这个月的求财能不能成\" --throws 1,2,3,0,3,2",
-    "ask": "node scripts/ask.mjs"
+    "ask": "node scripts/ask.mjs",
+    "session": "node scripts/session.mjs"
   },
   "engines": {
     "node": ">=18"

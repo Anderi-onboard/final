@@ -200,9 +200,12 @@ export async function claims(state, config) {
   let r;
   try {
     r = await claimsStage({
-      llm, matched, packetText: state.packetText, understanding: state.understanding, concurrency: 4
+      llm, matched, packetText: state.packetText, understanding: state.understanding,
+      concurrency: config.concurrency ?? 4
     });
   } catch (e) {
+    // A reply that is not written yet is not a failure of the stage: pass it up.
+    if (e.awaiting) throw e;
     return { state: stop(state, 'claim', e.message), display: `━━ 5 · 依书断法（模型）━━\n停止：${e.message}` };
   }
   const verdicts = [
