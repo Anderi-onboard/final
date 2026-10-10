@@ -107,6 +107,25 @@ function changeVerdictOf(el, tEl) {
   return { relation: rel === 'peer' ? '比和' : '我生变', verdict: null, regardlessOfYong: false, source: null, open: reason };
 }
 
+/* 变 kinds of a moving line: one list, read by every rule that asks about the change
+   (化回头生/克, 化进神/退神, 化空, 化墓, 化绝, 化冲, 化合). One place, so the rules agree.
+   OPEN ⚠: the rules call clashBen “化破”; it is the change clashing the ORIGINAL branch
+   (化冲), not the change breaking by the 月建. Kept as it was, and named as 化冲 here. */
+function kindsOfChange(tr, changeStage) {
+  if (!tr) return [];
+  const k = [];
+  if (tr.backToSheng) k.push('化回头生');
+  if (tr.backToKe) k.push('化回头克');
+  if (tr.jinTui === '进神') k.push('化进神');
+  if (tr.jinTui === '退神') k.push('化退神');
+  if (tr.backToVoid) k.push('化空');
+  if (tr.backToTomb) k.push('化墓');
+  if (changeStage === '绝') k.push('化绝');
+  if (tr.clashBen) k.push('化冲');
+  if (tr.combineBen) k.push('化合');
+  return k;
+}
+
 /* 忌神 verdict (用神章 L593, L598). Two lists, split by whether the 忌神 overcomes
    the 用神 (克害用神):
      有力 (动而克害用神): five reasons, 诸占大凶 — L593.
@@ -121,9 +140,9 @@ const JI_RULES = {
   '忌神旺相，或遇日月动爻生扶，或临日月': { cls: '自身/日月', side: '有力', source: 'L593',
     test: (l, c) => l.wangShuai.rank >= 3 || l.toDay === 'parent' || l.toMonth === 'parent' || c.movingGen || l.branchBi === c.dayBi || l.branchBi === c.monthBi },
   '忌神动，化回头生、化进神': { cls: '变', side: '有力', source: 'L593',
-    test: (l) => l.moving && !!l.transform && (l.transform.backToSheng || l.transform.jinTui === '进神') },
+    test: (l) => l.moving && l.changeKinds.some((k) => k === '化回头生' || k === '化进神') },
   '忌神旺动，临空、化空': { cls: '空', side: '有力', source: 'L593',
-    test: (l) => l.moving && l.wangShuai.rank === 4 && (l.void || (!!l.transform && l.transform.backToVoid)) },
+    test: (l) => l.moving && l.wangShuai.rank === 4 && (l.void || l.changeKinds.includes('化空')) },
   '忌神长生帝旺于日辰': { cls: '日辰', side: '有力', source: 'L593',
     test: (l) => l.dayStage === '长生' || l.dayStage === '旺' },
   '忌神与仇神同动': { cls: '动', side: '有力', source: 'L593',
@@ -136,11 +155,11 @@ const JI_RULES = {
   '忌神入三墓': { cls: '墓', side: '无力', source: 'L598',
     test: (l) => l.tombs.day || l.tombs.moving || l.tombs.change },
   '忌神衰，动化退神': { cls: '变', side: '无力', source: 'L598',
-    test: (l) => l.wangShuai.rank <= 2 && l.moving && !!l.transform && l.transform.jinTui === '退神' },
+    test: (l) => l.wangShuai.rank <= 2 && l.moving && l.changeKinds.includes('化退神') },
   '忌神衰而又绝': { cls: '生旺墓绝', side: '无力', source: 'L598',
     test: (l) => l.wangShuai.rank <= 2 && l.dayStage === '绝' },
   '忌神动，化绝、化克、化破': { cls: '变', side: '无力', source: 'L598',
-    test: (l) => l.moving && (l.changeStage === '绝' || (!!l.transform && (l.transform.backToKe || l.transform.clashBen))) },
+    test: (l) => l.moving && (l.changeKinds.includes('化绝') || l.changeKinds.includes('化克') || l.changeKinds.includes('化冲')) },
   '忌神与元神同动': { cls: '动', side: '无力', source: 'L598',
     test: (l, c) => l.moving && c.yuanMoving }
 };
@@ -176,10 +195,10 @@ function jiVerdictOf(l, c) {
 const YUAN_USELESS = {
   '元神休囚不动，或动而休囚又被伤克': { cls: '自身/克', test: (l, c) => l.wangShuai.rank <= 2 && (!l.moving || c.controlled) },
   '元神休囚又逢旬空月破': { cls: '空破', test: (l) => l.wangShuai.rank <= 2 && (l.void || l.monthBreak) },
-  '元神休囚动化退神': { cls: '变', test: (l) => l.wangShuai.rank <= 2 && l.moving && !!l.transform && l.transform.jinTui === '退神' },
+  '元神休囚动化退神': { cls: '变', test: (l) => l.wangShuai.rank <= 2 && l.moving && l.changeKinds.includes('化退神') },
   '元神衰而又绝': { cls: '生旺墓绝', test: (l) => l.wangShuai.rank <= 2 && l.dayStage === '绝' },
   '元神入三墓': { cls: '墓', test: (l) => l.tombs.day || l.tombs.moving || l.tombs.change },
-  '元神休囚动而化绝、化克、化破、化散': { cls: '变', test: (l) => l.wangShuai.rank <= 2 && l.moving && (l.changeStage === '绝' || (!!l.transform && (l.transform.backToKe || l.transform.clashBen))) }
+  '元神休囚动而化绝、化克、化破、化散': { cls: '变', test: (l) => l.wangShuai.rank <= 2 && l.moving && (l.changeKinds.includes('化绝') || l.changeKinds.includes('化克') || l.changeKinds.includes('化冲')) }
 };
 
 /* 进神 / 退神 judgement (动变章 L4057–4060, 野鹤曰). A moving line's change is either a
@@ -391,6 +410,20 @@ export function buildPacket(board, opts = {}) {
     const changeToMonth = moving && t ? relOf(tEl, monthEl) : null;
     const changeVerdict = moving && t ? changeVerdictOf(el, tEl) : null;
     const v = voidVerdict(xunSet, { ...line, pos, transform: t ? { bi: tBi } : null }, monthBi, monthEl, dayEl, hidden, movingEls);
+    const tr = t && moving ? {
+      stem: t.stem.cn,
+      branch: t.branch.cn,
+      branchBi: tBi,
+      element: ELEMENT_CN[tEl],
+      relative: relOf(palaceEl, tEl),  // 变爻 six-relative is read from the 本卦 palace (动变章)
+      jinTui: jinTuiOf(l.branch.cn, t.branch.cn),
+      backToTomb: changeStage === '墓',
+      backToVoid: xunSet.has(tBi),
+      backToSheng: relOf(el, tEl) === 'parent',   // 回头生: change generates original
+      backToKe: relOf(el, tEl) === 'officer',     // 回头克: change controls original
+      clashBen: brClash(bi, tBi),
+      combineBen: brCombine(bi, tBi)
+    } : null;
     return {
       pos,
       yang: !!l.yang,
@@ -441,20 +474,8 @@ export function buildPacket(board, opts = {}) {
         change: changeStage === '墓'
       },
       hidden,
-      transform: t && moving ? {
-        stem: t.stem.cn,
-        branch: t.branch.cn,
-        branchBi: tBi,
-        element: ELEMENT_CN[tEl],
-        relative: relOf(palaceEl, tEl),  // 变爻 six-relative is read from the 本卦 palace (动变章)
-        jinTui: jinTuiOf(l.branch.cn, t.branch.cn),
-        backToTomb: changeStage === '墓',
-        backToVoid: xunSet.has(tBi),
-        backToSheng: relOf(el, tEl) === 'parent',   // 回头生: change generates original
-        backToKe: relOf(el, tEl) === 'officer',     // 回头克: change controls original
-        clashBen: brClash(bi, tBi),
-        combineBen: brCombine(bi, tBi)
-      } : null
+      transform: tr,
+      changeKinds: kindsOfChange(tr, changeStage),
     };
   });
 
@@ -666,10 +687,10 @@ export function buildPacket(board, opts = {}) {
       // 用神章 L543: 元神旺相，或临日月，或得日月动爻生扶 (日 and 月 both act, L878).
       if (l.wangShuai.rank >= 3 || l.branchBi === monthBi || l.branchBi === dayBi) f.push('旺相或临日月');
       if (l.toDay === 'parent' || l.toMonth === 'parent') f.push('日月动爻生扶');
-      if (l.moving && l.transform && (l.transform.backToSheng || l.transform.jinTui === '进神')) f.push('化回头生或化进神');
+      if (l.moving && l.changeKinds.some((k) => k === '化回头生' || k === '化进神')) f.push('化回头生或化进神');
       if (l.dayStage === '长生' || l.dayStage === '旺') f.push('日辰长生帝旺');
       if (l.moving && jiLines.some((p) => lines[p - 1].moving)) f.push('与忌神同动');
-      if (l.moving && l.wangShuai.rank === 4 && (l.void || (l.transform && l.transform.backToVoid))) f.push('旺动临空化空');
+      if (l.moving && l.wangShuai.rank === 4 && (l.void || l.changeKinds.includes('化空'))) f.push('旺动临空化空');
       return f;
     };
     // 本宫首卦 = the palace's pure hexagram (飞伏神章: 用神不现 → 本宫首卦寻之).

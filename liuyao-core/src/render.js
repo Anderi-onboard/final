@@ -88,6 +88,8 @@ function lineText(l) {
     parts.push(`伏神${em.verdict}${why ? '（' + why + '）' : ''}${em.verdict === '未论' ? '〔原文未论此伏神〕' : ''}`);
   }
   // 日月如天 (L878): the day and month relations of a changed line and of the line itself.
+  // 变 kinds (one list, read by every rule about the change; 化冲 is the rules' 化破, ⚠).
+  parts.push(l.changeKinds.length ? `变：${l.changeKinds.join('、')}` : '变：无');
   // 有气 (general definition, ⚠ open): shown with the line's 旺衰 so a reader can see it.
   if (l.qi) parts.push('有气');
   else parts.push('无气');

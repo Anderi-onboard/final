@@ -73,6 +73,7 @@ export const PACKET_SPEC = {
     dayStage: nullable(S), changeStage: nullable(S),
     changeToDay: nullable(S), changeToMonth: nullable(S), dayHarmed: B, monthHarmed: B,
     qi: B,
+    changeKinds: [S],
     jinTuiVerdict: nullable({ side: nullable(S), verdict: S, rules: [{ code: S, text: S, cls: S, decisive: B, source: S }] }),
     tombs: { day: B, moving: B, change: B },
     fuYin: B, fanYin: B,
