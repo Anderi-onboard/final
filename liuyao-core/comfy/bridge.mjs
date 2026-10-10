@@ -22,6 +22,7 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { castRandom, castWithBacks } from '../src/casting.js';
+import { nameOfBits } from '../src/packet.js';
 import { ENTRIES as CORPUS } from '../src/corpus.js';
 import { createDemoLLM, createOpenRouterLLM } from '../src/pipeline/llm.js';
 import {
@@ -54,11 +55,14 @@ function makeLLM(config) {
 
 /* One model call, shown whole: the prompt the model got, what it returned,
    and whether the program accepted it. */
-function callBlock(calls) {
+function callBlock(calls, packetText = '') {
+  // The packet is printed once, at station 3. Later prompts carry it too, so it is
+  // named there instead of repeated on every claim.
+  const elide = (t) => (packetText ? t.split(packetText).join('〔盘面文字，见第 3 站〕') : t);
   return calls.map((c) => [
     `── ${c.stage} 第 ${c.attempt} 次调用 ──`,
     '=== 系统提示 ===', c.system,
-    '=== 用户输入 ===', c.user,
+    '=== 用户输入 ===', elide(c.user),
     '=== 模型输出 ===', c.raw,
     '=== 程序判定 ===',
     c.errors.length ? `不合格：${c.errors.join('；')}` : '合格'
@@ -91,7 +95,8 @@ export function cast(state) {
   const casting = backs
     ? castWithBacks(backs.split(',').map((n) => Number(n.trim())), date)
     : castRandom(date);
-  const lines = casting.lines.map((l) => `  ${l.name}${l.yang ? '阳' : '阴'}${l.changing ? '（动）' : ''}`).join('\n');
+  const POS = ['初', '二', '三', '四', '五', '上'];
+  const lines = casting.lines.map((l) => `  ${POS[l.pos - 1]}爻　${l.yang ? '阳' : '阴'}（${l.name}）${l.changing ? '　动' : ''}`).join('\n');
   const out = {
     ...state,
     question,
@@ -103,7 +108,7 @@ export function cast(state) {
     `问题：${question}`,
     `时间：${date.toISOString().slice(0, 10)}`,
     `三钱六爻（由初至上）：\n${lines}`,
-    `本卦：${casting.board.ben.name}　${casting.board.bian ? `之变卦：${casting.board.bian.name}` : '（无动爻）'}`
+    `本卦：${nameOfBits(casting.board.ben.pattern)}　${casting.board.bian ? `之变卦：${nameOfBits(casting.board.bian.pattern)}` : '（无动爻）'}`
   ].join('\n');
   return { state: out, display };
 }
@@ -200,7 +205,7 @@ export async function claims(state, config) {
   ].join('\n');
   const display = [
     `━━ 5 · 依书断法（模型，每条命中条目一次）━━`,
-    callBlock(r.calls),
+    callBlock(r.calls, state.packetText),
     '━━ 5 · 断法判定（程序）━━',
     `采用 ${r.claims.length} 条，丢弃 ${r.rejected.length} 条：`,
     verdicts || '  （无）'
@@ -218,7 +223,7 @@ export async function synth(state, config) {
     claims: state.claims, packetText: state.packetText, notices: state.notices || [],
     matched, coverage: state.coverage, rejected: state.rejected, calls
   });
-  const head = `━━ 6 · 综合（模型）━━\n${callBlock(calls)}`;
+  const head = `━━ 6 · 综合（模型）━━\n${callBlock(calls, state.packetText)}`;
   if (!s.ok) {
     return { state: stop(state, 'synth', s.errors.join('；')), display: `${head}\n\n停止：模型两次输出都不合格。` };
   }

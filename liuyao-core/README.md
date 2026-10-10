@@ -32,6 +32,14 @@ repo as a whole.
 
 ## Run
 
+Ask a question locally and read every stage (knowledge base, packet, prompts, outputs):
+
+    npm run ask                                              # type questions, empty line to quit
+    npm run ask -- --question "求财能不能成" --throws 1,2,3,0,3,2
+    npm run ask -- --question "…" --mock                     # demonstration model, no network
+
+Real models: copy `.env.example` to `.env`, fill in the key and model names. Each run is saved in `out/`.
+
     node scripts/run-tests.mjs          # all contracts
     node src/cli.js --question "求财" --throws 1,2,3,0,3,2 --mock
 

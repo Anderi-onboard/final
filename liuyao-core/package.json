@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "test": "node scripts/run-tests.mjs",
-    "demo": "node src/cli.js --mock --question \"这个月的求财能不能成\""
+    "demo": "node scripts/ask.mjs --mock --question \"这个月的求财能不能成\" --throws 1,2,3,0,3,2",
+    "ask": "node scripts/ask.mjs"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }
