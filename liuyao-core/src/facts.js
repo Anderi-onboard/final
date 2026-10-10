@@ -91,6 +91,13 @@ export function classifyFacts(packet) {
     for (const f of yf ? yf.factors : []) add(`元·${f}`);
     const yu = packet.yong ? packet.yong.yuan.useless.find((u) => u.pos === l.pos) : null;
     if (yu && yu.verdict === '无用') add('元·无用');
+    // 三合成局 (三合章 L1460–1463): the form of each 局 this line belongs to, and the 世's relation.
+    for (const g of packet.relations.sanhe) {
+      if (!g.parts.some((part) => part.some((m) => m.pos === l.pos))) continue;
+      if (g.form) add(`三合·形${g.form}`);
+      if (g.worldRel === '局克世') add('三合·局克世');
+      if (g.worldRel === '局生世') add('三合·局生世');
+    }
     // 忌神吉凶 (用神章 L595, L602): the verdict of a 忌神 line, when a 用神 is given.
     const jj = packet.yong ? packet.yong.ji.judgement.find((j) => j.pos === l.pos) : null;
     if (jj && jj.verdict === '有力') add('忌·有力');

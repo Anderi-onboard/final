@@ -196,7 +196,8 @@ export function renderPacket(packet) {
     return m.moving ? base + '（动）' : base;
   };
   gLines.push(rel.sanhe.length
-    ? `三合：${rel.sanhe.map((g) => `${g.cn}（${g.parts.map((pt) => pt.map(partName).join('/')).join('、')}）`).join('；')}。`
+    ? `三合：${rel.sanhe.map((g) => `${g.cn}（${g.parts.map((pt) => pt.map(partName).join('/')).join('、')}；` +
+      `${g.form ? '形' + g.form : '四形之外'}，${g.worldRel ?? '世不在局、不生不克'}，三合章 L1460）`).join('；')}。`
     : '三合：无。');
   const eff = rel.dayEffects
     .map((d) => ({ pos: d.pos, effects: d.effects }))

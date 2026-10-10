@@ -519,7 +519,28 @@ export function buildPacket(board, opts = {}) {
   for (const g of SANHE) {
     const parts = g.branches.map(members);
     if (parts.every((p) => p.length > 0)) {
-      sanhe.push({ cn: g.cn, parts });   // cn already names the 五行 (水局 …)
+      // 三合章 (L1460): which of the four forms, from which lines move. Written out below.
+      const all = parts.flat();
+      const benMoving = all.filter((m) => m.from === 'ben' && m.moving);
+      const benStatic = all.filter((m) => m.from === 'ben' && !m.moving);
+      const bian = all.filter((m) => m.from === 'bian');
+      const movingPos = (pp) => benMoving.some((m) => m.pos === pp);
+      let form = null;
+      // Order as the book lists them: 形一 and 形二 are about the moving 本爻; 形三 and 形四
+      // need the 变爻 that completes the 局 to come from the named moving lines.
+      if (benMoving.length === 3) form = 1;                                   // 一卦之内，三爻动而合局
+      else if (benMoving.length === 2 && benStatic.length === 1) form = 2;    // 两爻动，一爻不动，亦成合局
+      else if (bian.length >= 1 && movingPos(1) && movingPos(3) && bian.every((m) => m.pos === 1 || m.pos === 3)) form = 3;   // 内卦初、三爻动，变出成局
+      else if (bian.length >= 1 && movingPos(4) && movingPos(6) && bian.every((m) => m.pos === 4 || m.pos === 6)) form = 4;   // 外卦四、六爻动，变出成局
+      // 局 and the 世: 局生世 吉 (利于我), 局克世 凶推, 世在局内 (L1460 “尤要世爻在局为美”).
+      const worldLine = lines[board.ben.worldLi];   // the 世 line (0-indexed)
+      let worldRel = null;
+      if (worldLine) {
+        if (g.branches.includes(worldLine.branchBi)) worldRel = '世在局内';
+        else if (relOf(worldLine.elementGi, g.element) === 'parent') worldRel = '局生世';
+        else if (relOf(worldLine.elementGi, g.element) === 'officer') worldRel = '局克世';
+      }
+      sanhe.push({ cn: g.cn, parts, form, worldRel });   // cn already names the 五行 (水局 …)
     }
   }
 

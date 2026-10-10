@@ -84,6 +84,22 @@ for (const date of [new Date(2026, 9, 12, 10, 0)]) {
     }
   }
 }
+// 三合 forms depend on WHICH lines move together (三合章: 三爻动, 两爻动, 变出成局): every
+// pair and every triple of moving lines is measured on one date, for every hexagram.
+{
+  const date = new Date(2026, 9, 12, 10, 0);
+  const combos = [];
+  for (let a = 0; a < 6; a++) for (let b = a + 1; b < 6; b++) {
+    combos.push([a, b]);
+    for (let c = b + 1; c < 6; c++) combos.push([a, b, c]);
+  }
+  for (let bits = 0; bits < 64; bits++) {
+    for (const mv of combos) {
+      const b = boardFor(bits, mv, date);
+      for (const t of factTokens(buildPacket(b, { yongKey: 'wealth' }).facts)) EMITTED.add(t);
+    }
+  }
+}
 // Month-dependent flags (月破 = line clashes the 月建) need the month to vary, and
 // twelve October days carry only two 月建. So the feature vocabulary is also
 // measured on one date in each month. Without this, L4:monthClash is never seen
@@ -182,20 +198,12 @@ assert.ok([...EMITTED].some((t) => t.startsWith('bian:')), 'bian: never reached'
 }
 
 // 4. The corpus. Empty is allowed; invalid is not.
-// Tokens an entry may cite although the engine never emits them. Each one is a
-// named open question, not a typo: 化扶 at 2, 3, 5, 6 needs a changed branch that
-// combines with the original branch, and the engine's transform never produces
-// one (measured in docs/workflow.md). The list must stay exact: if the engine
-// starts emitting one, it is removed here, and if an entry stops needing one,
-// it is removed too. Checked below.
-// 伏神 at 爻 6 is never produced by the engine's pure-hexagram lookup, in a full sample
-// (64 hexagrams × 3 dates × 7 moving patterns). So the 伏神出伏 entries for 爻 6 cite a
-// state the engine cannot give. Open ⚠, like 化扶: if the engine starts giving a 伏 at 爻 6,
-// this list must shrink, and the test below fails until it does.
-const ENGINE_NEVER_EMITS = new Set([
-  'state:L2:化扶', 'state:L3:化扶', 'state:L5:化扶', 'state:L6:化扶',
-  'state:L6:伏·可出', 'state:L6:伏·终不出'
-]);
+// Tokens an entry may cite although the engine never emits them. Only 伏神 at 爻 6: it
+// is absent in a full sample (64 hexagrams, every single, pair and triple of moving lines,
+// and every 3 dates). Open ⚠: if the engine starts giving a 伏 at 爻 6, remove it here
+// (the check below fails until you do). 化扶 used to be listed here; a full sample of
+// moving pairs and triples shows it at all six 爻, so the list was wrong and is corrected.
+const ENGINE_NEVER_EMITS = new Set(['state:L6:伏·可出', 'state:L6:伏·终不出']);
 for (const t of ENGINE_NEVER_EMITS) {
   assert.ok(!EMITTED.has(t), `${t} is listed as never emitted but the engine now emits it — remove it from the list`);
 }

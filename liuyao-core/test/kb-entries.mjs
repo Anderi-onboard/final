@@ -173,6 +173,17 @@ for (const date of DATES) {
         for (const u of pk.yong.yuan.useless) if (u.verdict === '无用') want.add(`zb-l589-yuan-wuyong-p${u.pos}`);
       }
 
+      // 三合章 L1460–1463 (batch 12): the 局 forms and the 世's 克 (from the packet, which the
+      // sanhe-forms test checks independently).
+      for (const g of pk.relations.sanhe) {
+        for (const part of g.parts) for (const m of part) {
+          if (m.pos == null) continue;
+          if (g.form) want.add(`${g.form <= 2 ? 'zb-l1460' : 'zb-l1461'}-sanhe-f${g.form}-p${m.pos}`);   // 形一/二 at L1460, 形三/四 at L1461
+          if (g.worldRel === '局克世') want.add(`zb-l1463-sanhe-kesh-p${m.pos}`);
+        }
+      }
+      // the same 爻 may sit in two groups; the expected set is per (form, pos)
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));

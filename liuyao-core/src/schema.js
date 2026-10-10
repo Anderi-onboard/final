@@ -39,7 +39,7 @@ export const PACKET_SPEC = {
     chong: [{ a: N, b: N, moving: [B] }],
     he: [{ a: N, b: N, type: S }],
     xing: [{ from: nullable(N), to: nullable(N), self: nullable([N]) }],
-    sanhe: [{ cn: S, parts: [[{ pos: nullable(N), from: S, moving: B }]] }],
+    sanhe: [{ cn: S, parts: [[{ pos: nullable(N), from: S, moving: B }]], form: nullable(N), worldRel: nullable(S) }],
     dayEffects: [{ pos: N, effects: [S] }],
     elements: [{ from: N, to: N, rel: S, moving: [B] }]
   },
