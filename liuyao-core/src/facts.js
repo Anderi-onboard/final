@@ -93,6 +93,7 @@ export function classifyFacts(packet) {
     if (yu && yu.verdict === '无用') add('元·无用');
     // 进神 / 退神 (动变章 L4057–4060): each reason that holds, by the book's number.
     if (l.jinTuiVerdict) for (const r of l.jinTuiVerdict.rules) add(r.code);
+    if (l.qi) add('有气');
     // 三合成局 (三合章 L1460–1463): the form of each 局 this line belongs to, and the 世's relation.
     for (const g of packet.relations.sanhe) {
       if (!g.parts.some((part) => part.some((m) => m.pos === l.pos))) continue;

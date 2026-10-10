@@ -88,6 +88,9 @@ function lineText(l) {
     parts.push(`伏神${em.verdict}${why ? '（' + why + '）' : ''}${em.verdict === '未论' ? '〔原文未论此伏神〕' : ''}`);
   }
   // 日月如天 (L878): the day and month relations of a changed line and of the line itself.
+  // 有气 (general definition, ⚠ open): shown with the line's 旺衰 so a reader can see it.
+  if (l.qi) parts.push('有气');
+  else parts.push('无气');
   // 进神/退神 (动变章 L4057–4060): the side and each reason that held.
   const jv = l.jinTuiVerdict;
   if (jv) {

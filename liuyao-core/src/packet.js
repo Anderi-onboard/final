@@ -418,6 +418,10 @@ export function buildPacket(board, opts = {}) {
       voidVerdict: v.verdict,
       voidRules: v.rules,
       changeVerdict,
+      // 有气 (general): rank >= 2 (休 or above). 无气 is 囚 or 死 (失陷, 觉子 L7864). OPEN ⚠:
+      // the book lists 旺相 and 有气 side by side (L2049), so 有气 may be meant as 相 or as
+      // 休 and above; this is the existing 旬空 rule's line, stated once here.
+      qi: wang >= 2,
       // 进神/退神 (动变章 L4057–4060)
       jinTuiVerdict: jinTuiVerdictOf(
         { moving, transform: t && moving ? { jinTui: jinTuiOf(l.branch.cn, t.branch.cn) } : null, wangShuai: { rank: wang }, void: xunSet.has(bi), monthBreak: brClash(bi, monthBi) },
