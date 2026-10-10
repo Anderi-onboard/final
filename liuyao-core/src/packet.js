@@ -78,6 +78,35 @@ function bitsOf(lines) { return lines.map((l) => (l.yang ? '1' : '0')).join('');
 function intOf(lines) { return lines.reduce((n, l, i) => n | ((l.yang ? 1 : 0) << i), 0); }
 const pos1 = (i) => i + 1;
 
+/* 卦变 verdict (卦变生克墓绝章 L2060–2091). The book classifies a moving line by
+   the relation between its own element (我) and its changed element (变):
+     变生 (变生我)   化生 → 吉        L2070 “巽木变坎水，谓之化生…即以吉断”
+     变克 (变克我)   化克 → 凶推      L2077 “震木变乾金，谓之化克…即以凶推”
+                                      L2062 “凡遇卦化克者，不论用神之衰旺，皆以凶推”
+     我克变         化去 → 不凶      L2084 “兑金变震木，谓之化去…不为凶也”
+   Not judged, because the book names them but gives no verdict: 比和, 变墓, 变绝,
+   and 我生变 (not in the list at all). Kept as `verdict: null` with a reason.
+   OPEN ⚠: L2091 names 震木变兑金 “化来，他来克我，回头之克…诸占大凶”. It is the
+   same relation as 化克 (变克我), so the book's 凶 vs 大凶 needs a stated test,
+   which the book does not give. The 化克 verdict is kept as 凶 and flagged.
+   L2189 (李我平): “此书只以回头克者为凶” — corroborates that 变克我 is the 凶 case. */
+const CHANGE_RULES = {
+  化生: { verdict: '吉', regardlessOfYong: false, source: 'L2070' },
+  化克: { verdict: '凶', regardlessOfYong: true, source: 'L2062, L2077',
+    open: '化来（L2091，诸占大凶）与化克同为变克我，原文未给区分标准' },
+  化去: { verdict: '不凶', regardlessOfYong: false, source: 'L2084' }
+};
+
+function changeVerdictOf(el, tEl) {
+  const rel = relOf(el, tEl);
+  if (rel === 'parent') return { relation: '化生', ...CHANGE_RULES.化生, open: null };
+  if (rel === 'officer') return { relation: '化克', ...CHANGE_RULES.化克 };
+  if (rel === 'wealth') return { relation: '化去', ...CHANGE_RULES.化去, open: null };
+  const reason = rel === 'peer' ? '比和：原文名目列出，未给判定'
+    : '我生变：原文未列此种卦变';
+  return { relation: rel === 'peer' ? '比和' : '我生变', verdict: null, regardlessOfYong: false, source: null, open: reason };
+}
+
 /* 空 verdict (旬空章 L2546, 野鹤曰). Every reason the book gives is a row here,
    with the MECHANISM it works through and the DIRECTION it pushes:
      自身  the line's own strength (气)            旺, 有气不动
@@ -182,6 +211,7 @@ export function buildPacket(board, opts = {}) {
     const line = { bi, el, moving, wang };
     const dayStage = stageOf(el, dayBi);
     const changeStage = moving ? stageOf(el, tBi) : null;
+    const changeVerdict = moving && t ? changeVerdictOf(el, tEl) : null;
     const v = voidVerdict(xunSet, { ...line, pos, transform: t ? { bi: tBi } : null }, monthBi, monthEl, dayEl, hidden, movingEls);
     return {
       pos,
@@ -209,6 +239,7 @@ export function buildPacket(board, opts = {}) {
       void: xunSet.has(bi),
       voidVerdict: v.verdict,
       voidRules: v.rules,
+      changeVerdict,
       dayStage,                          // 长生 / 旺 / 墓 / 绝 by the 日辰 (生旺墓绝章)
       changeStage,                       // the same, for the 变爻's branch on this line's element
       tombs: {                           // 三墓 (随鬼入墓章: 日墓、动墓、化墓)

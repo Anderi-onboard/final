@@ -69,6 +69,7 @@ export const PACKET_SPEC = {
     trueVoid: B, void: B,
     voidVerdict: nullable(S),
     voidRules: [{ text: S, cls: S, verdict: S, decisive: B, source: S }],
+    changeVerdict: nullable({ relation: S, verdict: nullable(S), regardlessOfYong: B, source: nullable(S), open: nullable(S) }),
     dayStage: nullable(S), changeStage: nullable(S),
     tombs: { day: B, moving: B, change: B },
     fuYin: B, fanYin: B,

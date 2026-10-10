@@ -47,6 +47,14 @@ function lineText(l) {
   if (l.trueVoid) parts.push('真空');
   if (l.void) parts.push('旬空');
   const voidRules = l.voidRules;   // read every time, so the field is always accounted for
+  // 卦变 (卦变生克墓绝章): the verdict of a moving line by its change. Shown with its source;
+  // an open point is shown as ⚠, not hidden.
+  const cv = l.changeVerdict;
+  if (cv) {
+    const rg = cv.regardlessOfYong ? '，不论用神衰旺' : '';
+    const v = `${cv.verdict ?? '未判定'}${rg}`;
+    parts.push(`变爻${cv.relation}：${v}（${cv.source ?? cv.open ?? '原文'}）${cv.open && cv.verdict ? `〔⚠ ${cv.open}〕` : ''}`);
+  }
   if (l.voidVerdict) {
     // Each reason is shown with its mechanism (自身/动/外力/隐/破/真空) and its source.
     const why = (verdict) => voidRules.filter((r) => r.verdict === verdict || (verdict === 'void' && r.decisive))

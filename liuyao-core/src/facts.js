@@ -78,6 +78,8 @@ export function classifyFacts(packet) {
     // 旬空章 L2546: each 空 verdict reason is a state too, named by its clause, so an
     // entry can cite exactly the reason that held (e.g. 动爻生扶，不为空).
     for (const r of l.voidRules || []) add(r.text);
+    // 卦变 (卦变生克墓绝章): only a relation with a stated verdict is a state.
+    if (l.changeVerdict && l.changeVerdict.verdict) add(`卦变·${l.changeVerdict.relation}`);
   }
 
   return {

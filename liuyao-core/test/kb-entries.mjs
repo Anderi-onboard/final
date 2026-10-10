@@ -123,6 +123,19 @@ for (const date of DATES) {
         if (all.some((o) => o.moving && o.idx !== l.idx && GEN[EL_OF[o.branch.cn]] === el)) want.add(`zb-l2546-dongyao-p${p}`);
       }
 
+      // 卦变生克墓绝章 (batch 6): 化生 → 吉, 化克 → 凶 (whatever 用神), 化去 → 不凶.
+      // Relations from the five-element cycles, written out; 比和 and 我生变 get no entry.
+      const CTRL_K = { 木: '土', 土: '水', 水: '火', 火: '金', 金: '木' };
+      for (const l of all) {
+        if (!l.moving) continue;
+        const p = l.idx + 1;
+        const mine = EL_OF[l.branch.cn];
+        const changed = EL_OF[pk.lines[l.idx].transform.branch];
+        if (GEN[changed] === mine) want.add(`zb-l2070-huasheng-p${p}`);
+        else if (CTRL_K[changed] === mine) { want.add(`zb-l2077-huake-p${p}`); want.add(`zb-l2062-huake-regardless-p${p}`); }
+        else if (CTRL_K[mine] === changed) want.add(`zb-l2084-huaqu-p${p}`);
+      }
+
       // Every entry the board should fire, and nothing else from this batch.
       const batch = new Set(ids);
       const gotBatch = new Set([...got].filter((id) => batch.has(id)));

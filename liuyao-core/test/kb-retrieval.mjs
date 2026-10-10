@@ -72,6 +72,18 @@ const EMITTED = new Set();
 // measured the same way, over the same boards.
 const { buildPacket } = await import(pathToFileURL(resolve(KB, 'packet.js')).href);
 const { factTokens } = await import(pathToFileURL(resolve(KB, 'facts.js')).href);
+// Moving-line flags depend on WHICH line moves and on the hexagram, and the patterns
+// above move line (bits % 6), which ties the two together: 化生 at 爻 2 never appeared.
+// So every hexagram is also measured with each single line moving in turn.
+for (const date of [new Date(2026, 9, 12, 10, 0)]) {
+  for (let bits = 0; bits < 64; bits++) {
+    for (let pos = 0; pos < 6; pos++) {
+      const b = boardFor(bits, [pos], date);
+      for (const t of boardFeatures(b, { yongKey: 'wealth' })) EMITTED.add(t);
+      for (const t of factTokens(buildPacket(b, { yongKey: 'wealth' }).facts)) EMITTED.add(t);
+    }
+  }
+}
 // Month-dependent flags (月破 = line clashes the 月建) need the month to vary, and
 // twelve October days carry only two 月建. So the feature vocabulary is also
 // measured on one date in each month. Without this, L4:monthClash is never seen
