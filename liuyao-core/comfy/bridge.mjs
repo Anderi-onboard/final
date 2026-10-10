@@ -23,6 +23,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { castRandom, castWithBacks } from '../src/casting.js';
 import { nameOfBits } from '../src/packet.js';
+import { NOTICE_LADDER, buildNextStep, detectLadder } from '../src/pipeline/scope.js';
 import { ENTRIES as CORPUS } from '../src/corpus.js';
 import { createAnthropicLLM, createDemoLLM, createOpenRouterLLM } from '../src/pipeline/llm.js';
 import {
@@ -123,7 +124,7 @@ export async function understand(state, config) {
   if (state.stop) return passthrough(state);
   const llm = makeLLM(config);
   const calls = [];
-  const u = await understandStage({ llm, question: state.question, calls });
+  const u = await understandStage({ llm, question: state.question, previousAnswer: state.previousAnswer || null, calls });
   const head = `━━ 2 · 理解问题（模型）━━\n${callBlock(calls)}`;
   if (!u.ok) {
     const s = stop(state, 'understand', u.errors.join('；'));
@@ -132,6 +133,10 @@ export async function understand(state, config) {
   const v = u.value;
   const next = { ...state, understanding: v };
   if (v.needs.recastNotice) next.notices = [...(state.notices || []), NOTICE.RECAST];
+  // Scope: a ladder question is one casting per level. The program says so; the model is told.
+  if (state.previousAnswer) next.notices = [...(next.notices || []), NOTICE.FOLLOW_UP];
+  next.scope = detectLadder(state.question);
+  if (next.scope.ladder) next.notices = [...(next.notices || []), NOTICE_LADDER];
   if (v.risk === 'crisis') {
     return { state: stop(next, 'understand', 'crisis'), display: `${head}\n\n停止：判为危机，只给资源，不给解读。` };
   }
@@ -244,13 +249,17 @@ export async function synth(state, config) {
     checks: v.checks,
     unansweredParts: v.unansweredParts
   };
+  const nextStep = buildNextStep(state.scope);
+  if (nextStep) result.nextStep = nextStep;
+  if (state.scope && state.scope.ladder) result.scope = state.scope;
   const display = [
     head,
     '━━ 6 · 回答（程序整理）━━',
     `状态：${result.status}　置信：${result.confidence}`,
     `逐项核对：\n${v.checks.map((c) => `  ${c.pass ? '✓' : '✗'} ${c.name}：${c.note}`).join('\n') || '  （无）'}`,
     `未回答的部分：\n${bullets(v.unansweredParts)}`,
-    `回答：\n${v.answer}`
+    `回答：\n${v.answer}`,
+    ...(nextStep ? ['━━ 下一步（程序写的，不由模型生成）━━', nextStep.lines.map((l) => `  · ${l}`).join('\n')] : [])
   ].join('\n\n');
   return { state: { ...state, result }, display };
 }

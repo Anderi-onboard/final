@@ -11,6 +11,9 @@
          → creates out/session/<time>/, casts once, prints the directory, runs to the first pause
      node scripts/session.mjs step <dir>
          → runs again with the replies on file; prints what is still pending, or the reading
+     node scripts/session.mjs follow <dir> --question "…"
+         → a follow-up on the same casting (same lines, same board); needs a finished reading in <dir>.
+           It answers the same level in more detail. A new level needs a new casting (start).
 
    Replies are keyed by the id shown in pending.json. A reply is used exactly as written,
    and the contracts (src/pipeline/contracts.js) still check it: a bad reply is asked again
@@ -83,6 +86,18 @@ export async function start({ question, throws, date, dir }) {
   return out.display;
 }
 
+export async function follow({ dir, question, newDir }) {
+  const prev = read(resolve(dir, 'init.json'), null);
+  const prevResult = read(resolve(dir, 'result.json'), null);
+  if (!prev) throw new Error(`${dir} has no init.json`);
+  if (!prevResult) throw new Error(`${dir} has no finished reading yet (result.json): finish it before following up`);
+  // Same casting, same lines. Only the question and the earlier answer change.
+  const state = { ...prev.state, question, previousAnswer: prevResult.answer, notices: [], scope: undefined };
+  mkdirSync(newDir, { recursive: true });
+  writeFileSync(resolve(newDir, 'init.json'), JSON.stringify({ state, followOf: dir }, null, 2) + '\n');
+  return newDir;
+}
+
 function report(dir, result) {
   if (result.status === 'awaiting') {
     console.log(`待回答：${result.pending.length} 条（提示词已写入 ${resolve(dir, 'pending.json')}）`);
@@ -91,8 +106,9 @@ function report(dir, result) {
     console.log(`  前面已完成的站：\n${result.displays.map((d) => d.split('\n')[0]).join('\n')}`);
     return;
   }
-  const text = result.displays.join('\n\n');
+  const text = result.displays.join('\n\n').split('<本次目录>').join(dir);
   writeFileSync(resolve(dir, 'reading.txt'), text + '\n');
+  writeFileSync(resolve(dir, 'result.json'), JSON.stringify(result.state.result, null, 2) + '\n');
   console.log(text);
   console.log(`\n已保存：${resolve(dir, 'reading.txt')}`);
 }
@@ -116,6 +132,14 @@ async function main() {
     const castText = await start({ question: values.question, throws: values.throws, date: values.date, dir });
     console.log(`目录：${dir}\n\n${castText}\n`);
     report(dir, await step(dir));
+  } else if (cmd === 'follow') {
+    if (!values.question) throw new Error('follow 需要 --question');
+    const from = resolve(positionals[1] || '');
+    const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const newDir = resolve(ROOT, 'out', 'session', `${stamp}-follow`);
+    await follow({ dir: from, question: values.question, newDir });
+    console.log(`追问目录：${newDir}（同一卦，同一组爻）\n`);
+    report(newDir, await step(newDir));
   } else if (cmd === 'step') {
     const dir = resolve(positionals[1] || '');
     report(dir, await step(dir));
