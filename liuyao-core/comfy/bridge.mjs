@@ -45,6 +45,8 @@ function makeLLM(config) {
     return createOpenRouterLLM({
       apiKey: process.env.LOCAL_API_KEY || 'local',
       baseUrl: process.env.LOCAL_LLM_BASE_URL || 'http://127.0.0.1:8000/v1',
+      // A synthesis is a long reading; 2000 tokens cuts it off mid-JSON.
+      maxTokens: Number(process.env.LOCAL_MAX_TOKENS) || 6000,
       models: {
         understand: config.model_understand || all,
         claim: config.model_claim || all,

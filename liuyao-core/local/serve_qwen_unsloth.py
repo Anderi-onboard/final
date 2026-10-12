@@ -70,7 +70,7 @@ def make_handler(generate, model_name, lock):
     return Handler
 
 
-def load_unsloth_model(model_path, max_seq_length=4096):
+def load_unsloth_model(model_path, max_seq_length=int(os.environ.get("LOCAL_MAX_SEQ", "16384"))):
     """Loads the Qwen model with unsloth in 4-bit, ready for inference."""
     from unsloth import FastLanguageModel
 
@@ -107,6 +107,7 @@ def main():
     model_path = os.environ.get("QWEN_MODEL")
     if not model_path:
         raise SystemExit("set QWEN_MODEL to the Qwen model path or Hugging Face id")
+    # The prompts (packet, claims, and the synthesis that carries them) need a long window.
     generate = load_unsloth_model(model_path)
     handler = make_handler(generate, model_path, threading.Lock())
     server = ThreadingHTTPServer((args.host, args.port), handler)
