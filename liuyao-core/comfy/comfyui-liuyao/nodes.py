@@ -71,7 +71,7 @@ class LiuyaoConfig:
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {
-            "mode": (["mock", "openrouter", "anthropic"], {"default": "mock"}),
+            "mode": (["mock", "openrouter", "anthropic", "local"], {"default": "mock"}),
             "model_understand": ("STRING", {"default": "", "tooltip": "模型名：openrouter 用 provider/model；anthropic 用你账号可用的模型名。非演示模式必填"}),
             "model_claim": ("STRING", {"default": ""}),
             "model_synth": ("STRING", {"default": ""}),
@@ -87,7 +87,7 @@ class LiuyaoConfig:
         if mode == "mock":
             note = "mock：演示模式，不调用模型，输出是占位文字，不是解读。"
         else:
-            key = {"openrouter": "OPENROUTER_API_KEY", "anthropic": "ANTHROPIC_API_KEY"}[mode]
+            key = {"openrouter": "OPENROUTER_API_KEY", "anthropic": "ANTHROPIC_API_KEY", "local": "LOCAL_LLM_BASE_URL（默认 127.0.0.1:8000）"}[mode]
             note = (f"{mode}：理解={model_understand}　断法={model_claim}　综合={model_synth}"
                     f"（需要环境变量 {key}）")
         display = f"━━ 配置 ━━\n{note}"

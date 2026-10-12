@@ -33,6 +33,7 @@
 ## 演示模式与真模型
 
 - `mock`（默认）：不联网，模型是**占位**，输出标有“（演示）”。只用来看连线和每站显示什么，不是解读。
+- `local`：本机的 Qwen（经 `local/serve_qwen_unsloth.py`），需要先启动服务，见 `local/README.md`。
 - `openrouter`：真调用。三个模型名填 OpenRouter 上的 `provider/model`；没有 key 或模型名为空时，节点直接报错，不会悄悄退回演示。
 
 ## 出错时

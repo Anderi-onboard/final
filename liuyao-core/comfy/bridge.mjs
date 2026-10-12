@@ -39,6 +39,19 @@ function makeLLM(config) {
   // Tests inject a scripted model here. Not reachable from ComfyUI, which only sends JSON.
   if (config.llm) return config.llm;
   if (config.mode === 'mock' || !config.mode) return createDemoLLM();
+  if (config.mode === 'local') {
+    // A Qwen model served on this machine (local/serve_qwen_unsloth.py). No key is needed.
+    const all = process.env.LOCAL_MODEL || '';
+    return createOpenRouterLLM({
+      apiKey: process.env.LOCAL_API_KEY || 'local',
+      baseUrl: process.env.LOCAL_LLM_BASE_URL || 'http://127.0.0.1:8000/v1',
+      models: {
+        understand: config.model_understand || all,
+        claim: config.model_claim || all,
+        synth: config.model_synth || all
+      }
+    });
+  }
   if (config.mode === 'anthropic') {
     return createAnthropicLLM({
       apiKey: process.env.ANTHROPIC_API_KEY,

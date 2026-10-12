@@ -9,6 +9,8 @@
      --mock             stand-in model; placeholder answers, labelled （演示）
      --real             OpenRouter; needs OPENROUTER_API_KEY and LIUYAO_MODEL_UNDERSTAND,
                         LIUYAO_MODEL_CLAIM, LIUYAO_MODEL_SYNTH
+     --local            the Qwen model served on this machine (local/serve_qwen_unsloth.py);
+                        needs LOCAL_LLM_BASE_URL (default http://127.0.0.1:8000/v1) and LOCAL_MODEL
      --anthropic        Anthropic API, called directly with your own key; needs
                         ANTHROPIC_API_KEY and ANTHROPIC_MODEL (or ANTHROPIC_MODEL_UNDERSTAND /
                         _CLAIM / _SYNTH to set each stage)
@@ -44,18 +46,19 @@ const { values: args } = parseArgs({
     mock: { type: 'boolean' },
     real: { type: 'boolean' },
     anthropic: { type: 'boolean' },
+    local: { type: 'boolean' },
     help: { type: 'boolean', short: 'h' }
   },
   strict: true
 });
 
 if (args.help) {
-  console.log('usage: node scripts/ask.mjs [--question "…"] [--throws 1,2,3,0,3,2] [--date YYYY-MM-DD] [--mock | --real | --anthropic]');
+  console.log('usage: node scripts/ask.mjs [--question "…"] [--throws 1,2,3,0,3,2] [--date YYYY-MM-DD] [--mock | --real | --anthropic | --local]');
   process.exit(0);
 }
-const modeFlags = [args.mock && 'mock', args.real && 'real', args.anthropic && 'anthropic'].filter(Boolean);
+const modeFlags = [args.mock && 'mock', args.real && 'real', args.anthropic && 'anthropic', args.local && 'local'].filter(Boolean);
 if (modeFlags.length > 1) {
-  console.error('--mock, --real and --anthropic cannot be combined');
+  console.error('--mock, --real, --anthropic and --local cannot be combined');
   process.exit(2);
 }
 
@@ -64,9 +67,19 @@ function configFromEnv() {
   if (args.mock) mode = 'mock';
   else if (args.real) mode = 'openrouter';
   else if (args.anthropic) mode = 'anthropic';
+  else if (args.local) mode = 'local';
   else if (process.env.OPENROUTER_API_KEY) mode = 'openrouter';
   else if (process.env.ANTHROPIC_API_KEY) mode = 'anthropic';
   else mode = 'mock';
+  if (mode === 'local') {
+    const all = process.env.LOCAL_MODEL || '';
+    return {
+      mode,
+      model_understand: process.env.LOCAL_MODEL_UNDERSTAND || all,
+      model_claim: process.env.LOCAL_MODEL_CLAIM || all,
+      model_synth: process.env.LOCAL_MODEL_SYNTH || all
+    };
+  }
   if (mode === 'anthropic') {
     const all = process.env.ANTHROPIC_MODEL || '';
     return {
@@ -94,7 +107,7 @@ if (config.mode !== 'mock') {
   }
 }
 
-const LABEL = { mock: '演示（mock）。模型输出是占位文字，不是解读。', openrouter: '真模型（openrouter）', anthropic: '真模型（Anthropic API，你的 key）' };
+const LABEL = { mock: '演示（mock）。模型输出是占位文字，不是解读。', openrouter: '真模型（openrouter）', anthropic: '真模型（Anthropic API，你的 key）', local: '本地模型（Qwen，经 unsloth 服务）' };
 const banner = config.mode === 'mock'
   ? `模式：${LABEL.mock}`
   : `模式：${LABEL[config.mode]}。理解=${config.model_understand}　断法=${config.model_claim}　综合=${config.model_synth}`;
