@@ -37,6 +37,8 @@ functions/_middleware.js   拦住内部文件(_redirects 做不到,见 ARCHITECT
 functions/_lib/     prompt-engine.js(解读语气,服务端)db.js session.js password.js
 functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
 schema.sql  wrangler.toml  _headers  _redirects  version.json
+tools/pdf2word/    独立的 Python 桌面工具(PDF/图片 → Word,用 Windows 自带 OCR),与站点无关;
+                   随仓库存放,但 /tools/* 被 _redirects + _middleware 挡成 404,不会上线
 ```
 
 ⚠️ 这张图 08-21 前是过期的,列了两个已经不在那儿的文件:

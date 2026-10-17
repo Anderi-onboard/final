@@ -1,0 +1,426 @@
+"""python -m unittest discover -s tests -v      (from tools/pdf2word)
+
+No Windows needed: the layout is exercised with synthetic OCR lines, the
+Windows engine with a stand-in for the WinRT projection, and the full path with
+Tesseract if it happens to be installed."""
+import asyncio
+import os
+import shutil
+import sys
+import tempfile
+import threading
+import time
+import types
+import unittest
+from unittest import mock
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(HERE))
+sys.path.insert(0, HERE)
+
+from p2w import layout_ocr, ocr, writers                      # noqa: E402
+from p2w.engine import (CANCELLED, DONE, FAILED, SKIPPED, JobQueue, Options,   # noqa: E402
+                        convert_file, parse_range)
+from p2w.model import Image, Para, Table                      # noqa: E402
+from p2w.ocr import OLine, OWord                               # noqa: E402
+
+try:
+    import make_fixtures
+    FONT = make_fixtures.cjk_font()
+except BaseException:                                          # no CJK font on this box
+    make_fixtures, FONT = None, None
+
+HAVE_TESS = shutil.which("tesseract") is not None
+
+
+def line(text, x, y, h, cw=None):
+    """A synthetic OCR line: words laid out left to right, `cw` px per character."""
+    cw = cw or h * 0.5
+    words, cx = [], x
+    for w in text.split(" "):
+        wd = len(w) * cw
+        words.append(OWord(w, cx, y, cx + wd, y + h))
+        cx += wd + cw * 0.6
+    return OLine(words)
+
+
+def page_lines():
+    L = []
+    L.append(line("Annual Report", 280, 100, 60, 34))                        # title, centred
+    y = 220
+    for n, t in enumerate(["The company grew steadily during the year and opened",
+                           "three new offices in the region while keeping costs",
+                           "under control through a careful hiring plan."]):
+        L.append(line(t, 148 if n == 0 else 100, y, 24, 12))                  # first-line indent
+        y += 38
+    y += 30                                                                  # paragraph gap
+    for t in ["A second paragraph follows after a visible gap and",
+              "wraps onto one more line of ordinary body text."]:
+        L.append(line(t, 100, y, 24, 12))
+        y += 38
+    y += 30
+    for r, row in enumerate([["Item", "Q1", "Q2"], ["Revenue", "120", "135"],
+                             ["Cost", "80", "82"], ["Profit", "40", "53"]]):
+        for c, cell in enumerate(row):
+            L.append(line(cell, 100 + c * 300, y, 24, 12))
+        y += 40
+    return L
+
+
+class OcrLayout(unittest.TestCase):
+    def setUp(self):
+        self.page = layout_ocr.build_page(page_lines(), 1000, 1400, 0.5)
+
+    def test_blocks(self):
+        kinds = [type(b).__name__ for b in self.page.blocks]
+        self.assertEqual(kinds, ["Para", "Para", "Para", "Table"], kinds)
+
+    def test_title_is_a_centred_heading(self):
+        t = self.page.blocks[0]
+        self.assertEqual(t.text, "Annual Report")
+        self.assertEqual(t.heading, 1)
+        self.assertEqual(t.align, "center")
+        self.assertGreater(t.runs[0].size, 18)
+
+    def test_paragraphs_merge_lines_and_keep_indent(self):
+        p = self.page.blocks[1]
+        self.assertTrue(p.text.startswith("The company grew") and p.text.endswith("hiring plan."))
+        self.assertEqual(p.text.count("\n"), 0)
+        self.assertGreater(p.first_indent, 10)
+        self.assertEqual(p.heading, 0)
+        self.assertAlmostEqual(p.runs[0].size, self.page.blocks[2].runs[0].size)
+        self.assertGreater(self.page.blocks[2].space_before, 0)
+
+    def test_table(self):
+        t = self.page.blocks[3]
+        self.assertEqual(t.rows[0], ["Item", "Q1", "Q2"])
+        self.assertEqual(t.rows[3], ["Profit", "40", "53"])
+        self.assertEqual(len(t.col_widths), 3)
+
+    def test_two_columns_read_left_then_right(self):
+        L = []
+        for i in range(8):
+            L.append(line(f"left column text number {i} of the page", 100, 200 + i * 38, 24, 12))
+            L.append(line(f"right column text number {i} of the page", 560, 200 + i * 38, 24, 12))
+        L.append(line("A Full Width Title", 300, 100, 48, 28))
+        pg = layout_ocr.build_page(L, 1000, 1400, 0.5)
+        texts = [b.text for b in pg.blocks if isinstance(b, Para)]
+        self.assertEqual(texts[0], "A Full Width Title")
+        self.assertIn("left column text number 0", texts[1])
+        self.assertIn("number 7 of the page", texts[1])
+        self.assertIn("right column text number 0", texts[2])
+
+    def test_prose_columns_are_not_a_table(self):
+        L = []
+        for i in range(8):
+            L.append(line("this is a long line of ordinary prose in the left column " + str(i), 100, 200 + i * 38, 24, 7.5))
+            L.append(line("this is a long line of ordinary prose in the right col " + str(i), 520, 200 + i * 38, 24, 7.5))
+        pg = layout_ocr.build_page(L, 1000, 1400, 0.5)
+        self.assertFalse(any(isinstance(b, Table) for b in pg.blocks))
+
+    def test_cjk_and_latin_spacing(self):
+        l = OLine([OWord("Report", 0, 0, 60, 20), OWord("季度", 70, 0, 110, 20),
+                   OWord("报告", 110, 0, 150, 20), OWord("2024", 151, 0, 190, 20)])
+        self.assertEqual(l.text, "Report 季度报告2024")
+
+    def test_empty_page(self):
+        pg = layout_ocr.build_page([], 800, 1000, 0.5)
+        self.assertEqual(pg.blocks, [])
+        self.assertTrue(pg.note)
+
+
+class Writers(unittest.TestCase):
+    def test_all_formats(self):
+        page = layout_ocr.build_page(page_lines(), 1000, 1400, 0.5)
+        from p2w.model import Doc
+        doc = Doc("t", [page, layout_ocr.build_page(page_lines(), 1000, 1400, 0.5)])
+        with tempfile.TemporaryDirectory() as d:
+            for fmt, fn in writers.WRITERS.items():
+                path = os.path.join(d, "o." + fmt)
+                fn(doc, path, True)
+                self.assertGreater(os.path.getsize(path), 100, fmt)
+            import docx
+            dd = docx.Document(os.path.join(d, "o.docx"))
+            self.assertEqual(len(dd.tables), 2)
+            self.assertTrue(dd.paragraphs[0].style.name.startswith("Heading"))
+            md = open(os.path.join(d, "o.md"), encoding="utf-8").read()
+            self.assertIn("| Item | Q1 | Q2 |", md)
+            self.assertIn("\n---\n", md)
+            self.assertIn("# Annual Report", md)
+
+    def test_control_characters_do_not_break_docx(self):
+        from p2w.model import Doc, Page, Run
+        pg = Page(595, 842, [Para([Run("bad\x00char\x0b and ok")])])
+        with tempfile.TemporaryDirectory() as d:
+            writers.write_docx(Doc("t", [pg]), os.path.join(d, "x.docx"))
+
+
+class Range(unittest.TestCase):
+    def test_parse(self):
+        self.assertEqual(parse_range("", 4), [0, 1, 2, 3])
+        self.assertEqual(parse_range("2-3, 1", 5), [1, 2, 0])
+        self.assertEqual(parse_range("3-", 5), [2, 3, 4])
+        self.assertEqual(parse_range("1-99", 3), [0, 1, 2])
+        with self.assertRaises(ValueError):
+            parse_range("x", 3)
+        with self.assertRaises(ValueError):
+            parse_range("5", 3)
+
+
+@unittest.skipUnless(FONT, "needs a CJK font to build fixtures")
+class Native(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp()
+        make_fixtures.make(cls.tmp)
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(cls.tmp, ignore_errors=True)
+
+    def convert(self, name, **kw):
+        out = tempfile.mkdtemp(dir=self.tmp)
+        o = Options(out_dir=out, formats=("docx", "md"), collision="overwrite", **kw)
+        res = convert_file(os.path.join(self.tmp, name), o, lambda: ocr.make_backend("auto", "auto"))
+        return res, out
+
+    def test_text_layer_keeps_formatting(self):
+        import docx
+        res, out = self.convert("native.pdf")
+        self.assertEqual(res["ocr_pages"], 0)
+        d = docx.Document(res["outputs"][0])
+        styles = [p.style.name for p in d.paragraphs]
+        self.assertEqual(styles[0], "Heading 1")
+        self.assertIn("Heading 2", styles)
+        self.assertIn("季度报告", d.paragraphs[0].text)
+        self.assertEqual(len(d.tables), 1)
+        self.assertEqual([c.text for c in d.tables[0].rows[1].cells], ["Revenue 收入", "120", "135", "150"])
+        self.assertEqual(len(d.inline_shapes), 1)
+        self.assertEqual(len(d.sections), 1)
+        self.assertTrue(any(p.paragraph_format.page_break_before for p in d.paragraphs))
+        sizes = {r.font.size.pt for p in d.paragraphs for r in p.runs if r.font.size}
+        self.assertTrue({24.0, 15.0, 11.0} <= sizes, sizes)
+
+    def test_two_columns_stay_in_order_and_narrow(self):
+        import docx
+        res, _ = self.convert("native.pdf")
+        d = docx.Document(res["outputs"][0])
+        body = [p for p in d.paragraphs if p.text.startswith(("The committee", "The board"))]
+        self.assertEqual([p.text[:9] for p in body][-2:], ["The commi", "The board"])
+        left, right = body[-2].paragraph_format, body[-1].paragraph_format
+        self.assertIsNotNone(left.right_indent)          # left column must not run under the right one
+        self.assertGreater(right.left_indent, left.left_indent or 0)
+
+    def test_no_images_option(self):
+        import docx
+        res, _ = self.convert("native.pdf", keep_images=False)
+        self.assertEqual(len(docx.Document(res["outputs"][0]).inline_shapes), 0)
+
+    def test_page_range_and_no_breaks(self):
+        import docx
+        res, _ = self.convert("native.pdf", page_range="2", page_breaks=False)
+        self.assertEqual(res["pages"], 1)
+
+    def test_native_mode_on_scan_is_empty_not_a_crash(self):
+        res, _ = self.convert("scan.pdf", mode="native")
+        self.assertEqual(res["ocr_pages"], 0)
+
+    @unittest.skipUnless(HAVE_TESS, "tesseract not installed")
+    def test_scan_goes_through_ocr(self):
+        import docx
+        res, _ = self.convert("scan.pdf")
+        self.assertEqual(res["ocr_pages"], 2)
+        d = docx.Document(res["outputs"][0])
+        text = "\n".join(p.text for p in d.paragraphs)
+        self.assertIn("Quarterly Report", text)
+        self.assertIn("committee reviewed the proposal", text)
+
+    @unittest.skipUnless(HAVE_TESS, "tesseract not installed")
+    def test_images_and_tiff(self):
+        for name, pages in (("photo.jpg", 1), ("multi.tiff", 2)):
+            res, _ = self.convert(name)
+            self.assertEqual(res["pages"], pages, name)
+            self.assertEqual(res["ocr_pages"], pages, name)
+
+
+@unittest.skipUnless(FONT, "needs a CJK font to build fixtures")
+class Queue(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp()
+        make_fixtures.make(cls.tmp)
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(cls.tmp, ignore_errors=True)
+
+    def make(self, **kw):
+        out = tempfile.mkdtemp(dir=self.tmp)
+        kw.setdefault("mode", "native")
+        self.opts = Options(out_dir=out, **kw)
+        self.idle = threading.Event()
+        self.events = []
+        q = JobQueue(lambda: self.opts, lambda k, o: (self.idle.set() if k == "idle" else self.events.append((k, o))))
+        return q, out
+
+    def wait(self, cond, t=30):
+        end = time.time() + t
+        while time.time() < end and not cond():
+            time.sleep(0.02)
+        self.assertTrue(cond(), "timed out")
+
+    def test_batch_runs_in_order_and_goes_idle(self):
+        q, out = self.make(workers=2)
+        src = os.path.join(self.tmp, "native.pdf")
+        copies = []
+        for i in range(4):
+            c = os.path.join(self.tmp, f"c{i}.pdf"); shutil.copy(src, c); copies.append(c)
+        q.add(copies + ["/nonexistent.txt"])           # unsupported types are ignored
+        self.assertEqual(len(q.jobs), 4)
+        q.start()
+        self.assertTrue(self.idle.wait(60))
+        self.assertTrue(all(j.status == DONE for j in q.jobs), [(j.status, j.message) for j in q.jobs])
+        self.assertEqual(sorted(os.listdir(out)), [f"c{i}.docx" for i in range(4)])
+
+    def test_collision_policies(self):
+        q, out = self.make()
+        src = os.path.join(self.tmp, "native.pdf")
+        for policy, expect in (("rename", ["native (1).docx", "native.docx"]),
+                               ("overwrite", ["native.docx"]), ("skip", ["native.docx"])):
+            q, out = self.make(collision=policy)
+            for _ in range(2):
+                self.idle.clear()
+                q.add([src]); q.start()
+                self.assertTrue(self.idle.wait(30))
+            self.assertEqual(sorted(os.listdir(out)), expect, policy)
+            if policy == "skip":
+                self.assertEqual(q.jobs[-1].status, SKIPPED)
+
+    def test_pause_stop_retry(self):
+        import pymupdf
+        big = os.path.join(self.tmp, "big.pdf")
+        doc = pymupdf.open()
+        for i in range(300):
+            doc.new_page().insert_text((72, 100), f"page {i} " + "word " * 40)
+        doc.save(big)
+        q, out = self.make()
+        q.add([big])
+        q.start(); q.pause()
+        time.sleep(0.6)
+        held = q.jobs[0].done
+        time.sleep(0.6)
+        self.assertEqual(q.jobs[0].done, held)          # held at a page boundary
+        self.assertLess(held, 300)
+        q.stop()
+        self.wait(lambda: q.jobs[0].status == CANCELLED)
+        self.assertEqual(os.listdir(out), [])
+        q.retry()
+        self.idle.clear()
+        q.start()
+        self.assertTrue(self.idle.wait(30))
+        self.assertEqual(q.jobs[0].status, DONE)
+
+    def test_bad_files_fail_cleanly_and_do_not_block_the_rest(self):
+        q, out = self.make()
+        bad = os.path.join(self.tmp, "broken.pdf"); open(bad, "wb").write(b"%PDF-1.4 nope")
+        q.add([bad, os.path.join(self.tmp, "native.pdf")])
+        q.start()
+        self.assertTrue(self.idle.wait(30))
+        self.assertEqual([j.status for j in q.jobs], [FAILED, DONE])
+        self.assertTrue(q.jobs[0].message)
+
+    def test_ocr_unavailable_fails_only_that_job(self):
+        q, out = self.make(mode="auto", backend="windows")        # not Windows here
+        q.add([os.path.join(self.tmp, "scan.pdf"), os.path.join(self.tmp, "native.pdf")])
+        q.start()
+        self.assertTrue(self.idle.wait(30))
+        self.assertEqual([j.status for j in q.jobs], [FAILED, DONE])
+        self.assertIn("Windows", q.jobs[0].message)
+
+
+class WindowsEngineWithStand_in(unittest.TestCase):
+    """Runs WindowsOcr against a fake of the WinRT projection with the same
+    names and shapes, so the call sequence and coordinate handling are covered
+    even though the real engine only exists on Windows."""
+
+    def setUp(self):
+        seen = self.seen = {}
+
+        class Rect:
+            def __init__(s, x, y, w, h): s.x, s.y, s.width, s.height = x, y, w, h
+
+        class Word:
+            def __init__(s, t, r): s.text, s.bounding_rect = t, r
+
+        class Line:
+            def __init__(s, ws): s.words = ws
+
+        class Result:
+            lines = [Line([Word("你好", Rect(10, 20, 40, 30)), Word("world", Rect(60, 20, 80, 30))])]
+
+        class Engine:
+            recognizer_language = types.SimpleNamespace(language_tag="zh-Hans-CN")
+            async def recognize_async(s, bmp):
+                seen["bitmap"] = bmp
+                return Result()
+
+        class Lang:
+            def __init__(s, tag): s.language_tag, s.display_name = tag, tag + " name"
+
+        class OcrEngine:
+            available_recognizer_languages = [Lang("en-US"), Lang("zh-Hans-CN")]
+            max_image_dimension = 1000
+            @staticmethod
+            def try_create_from_language(l): seen["lang"] = l.language_tag; return Engine()
+            @staticmethod
+            def try_create_from_user_profile_languages(): return Engine()
+
+        class Decoder:
+            async def get_software_bitmap_async(s): return "BITMAP"
+        class BitmapDecoder:
+            @staticmethod
+            async def create_async(stream): seen["png"] = bytes(stream.data); return Decoder()
+
+        class Stream:
+            def __init__(s): s.data = b""
+            def seek(s, n): pass
+        class Writer:
+            def __init__(s, st): s.st = st
+            def write_bytes(s, b): s.st.data = bytes(b)
+            async def store_async(s): pass
+            async def flush_async(s): pass
+            def detach_stream(s): pass
+
+        self.w = dict(OcrEngine=OcrEngine, Language=Lang, BitmapDecoder=BitmapDecoder, Stream=Stream, Writer=Writer)
+
+    def test_flow(self):
+        from PIL import Image as PI
+        with mock.patch.object(ocr, "_WIN", self.w):
+            be = ocr.WindowsOcr("auto")
+            self.assertEqual(be.language, "zh-Hans-CN")
+            self.assertEqual(self.seen["lang"], "zh-Hans-CN")        # Chinese first for mixed text
+            lines = be.recognize(PI.new("RGB", (2000, 1000), "white"))     # > max dimension: scaled down
+            self.assertEqual(self.seen["png"][:4], b"\x89PNG")
+            im = PI.open(__import__("io").BytesIO(self.seen["png"]))
+            self.assertLessEqual(max(im.size), 1000)
+            # coordinates come back in the pixels of the image we were given (x2)
+            self.assertAlmostEqual(lines[0].words[0].x0, 20)
+            self.assertAlmostEqual(lines[0].words[1].x1, 280)
+            self.assertEqual(lines[0].text, "你好 world")
+            self.assertEqual([t for t, _ in be.languages()], ["en-US", "zh-Hans-CN"])
+
+    def test_missing_language_pack_is_explained(self):
+        self.w["OcrEngine"].try_create_from_language = staticmethod(lambda l: None)
+        with mock.patch.object(ocr, "_WIN", self.w):
+            with self.assertRaises(ocr.OcrUnavailable) as cm:
+                ocr.WindowsOcr("ja")
+            self.assertIn("语言包", str(cm.exception))
+
+    def test_not_windows(self):
+        if sys.platform != "win32":
+            with self.assertRaises(ocr.OcrUnavailable):
+                ocr.make_backend("windows")
+
+
+if __name__ == "__main__":
+    unittest.main()
