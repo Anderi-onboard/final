@@ -27,6 +27,14 @@ BACKENDS = {"自动 (RapidOCR > Windows OCR)": "auto", "RapidOCR": "rapidocr", "
             "Tesseract": "tesseract"}
 SPLITS = {"不拆分": "none", "左页在前 (左半=前一页)": "lr", "右页在前 (右半=前一页)": "rl",
           "自动 (横向的页面/照片按左页在前拆)": "auto"}
+LLM_SCOPES = {"只整理 OCR 识别出来的页": "ocr", "所有页 (含文字层 PDF)": "all"}
+# Common examples only; the provider's own docs are the authority on address and model names.
+LLM_PRESETS = [("本机 Ollama (免费, 推荐 7B 以上)", "http://localhost:11434/v1", "qwen2.5:7b"),
+               ("本机 LM Studio", "http://localhost:1234/v1", "qwen2.5-7b-instruct"),
+               ("DeepSeek", "https://api.deepseek.com/v1", "deepseek-chat"),
+               ("通义千问 (DashScope)", "https://dashscope.aliyuncs.com/compatible-mode/v1", "qwen-turbo"),
+               ("智谱 GLM-4-Flash", "https://open.bigmodel.cn/api/paas/v4", "glm-4-flash"),
+               ("OpenAI", "https://api.openai.com/v1", "gpt-4o-mini")]
 COLLISIONS = {"自动改名": "rename", "覆盖": "overwrite", "跳过": "skip"}
 AUTO_LANG = "自动 (中文优先,中英混排)"
 
@@ -61,8 +69,8 @@ class App:
     def __init__(self, root: tk.Tk, initial_files=()):
         self.root = root
         root.title(f"PDF / 图片 转 Word  {__version__}")
-        root.geometry("1040x740")
-        root.minsize(900, 700)
+        root.geometry("1040x770")
+        root.minsize(900, 730)
         self.events: "queue.Queue" = queue.Queue()
         # Worker threads must never touch Tk variables: they read this snapshot,
         # which the main thread refreshes (see _pump), so changes apply to the
@@ -176,6 +184,9 @@ class App:
             "pages": tk.StringVar(), "images": tk.BooleanVar(value=True),
             "pbreak": tk.BooleanVar(value=True), "exists": tk.StringVar(value=list(COLLISIONS)[0]),
             "workers": tk.IntVar(value=1), "split": tk.StringVar(value=list(SPLITS)[0]),
+            "llm": tk.BooleanVar(value=False), "llm_url": tk.StringVar(value=LLM_PRESETS[0][1]),
+            "llm_model": tk.StringVar(value=LLM_PRESETS[0][2]), "llm_key": tk.StringVar(),
+            "llm_scope": tk.StringVar(value=list(LLM_SCOPES)[0]), "llm_log": tk.BooleanVar(value=True),
         }
         f = ttk.LabelFrame(parent, text="输出格式", padding=6)
         f.pack(fill="x")
@@ -217,6 +228,10 @@ class App:
                      width=10).pack(side="left", padx=6)
         row = ttk.Frame(f)
         row.pack(fill="x", pady=(4, 0))
+        ttk.Checkbutton(row, text="识别后用 AI 整理文字 (可选)", variable=v["llm"]).pack(side="left")
+        ttk.Button(row, text="设置…", width=6, command=self.llm_dialog).pack(side="left", padx=6)
+        row = ttk.Frame(f)
+        row.pack(fill="x", pady=(4, 0))
         ttk.Label(row, text="同时处理").pack(side="left")
         ttk.Spinbox(row, from_=1, to=4, textvariable=v["workers"], width=4).pack(side="left", padx=6)
         ttk.Label(row, text="个文件", foreground="#777777").pack(side="left")
@@ -245,7 +260,10 @@ class App:
             mode=MODES.get(v["mode"].get(), "auto"), dpi=dpi, keep_images=v["images"].get(),
             page_breaks=v["pbreak"].get(), collision=COLLISIONS.get(v["exists"].get(), "rename"),
             workers=workers, page_range=v["pages"].get().strip(),
-            split=SPLITS.get(v["split"].get(), "none"))
+            split=SPLITS.get(v["split"].get(), "none"),
+            llm=v["llm"].get(), llm_url=v["llm_url"].get().strip(), llm_model=v["llm_model"].get().strip(),
+            llm_key=v["llm_key"].get().strip(), llm_scope=LLM_SCOPES.get(v["llm_scope"].get(), "ocr"),
+            llm_log=v["llm_log"].get())
 
     def _load_settings(self):
         try:
@@ -269,6 +287,14 @@ class App:
         v["images"].set(d.get("keep_images", True))
         v["pbreak"].set(d.get("page_breaks", True))
         v["workers"].set(d.get("workers", 1))
+        v["llm"].set(bool(d.get("llm", False)))
+        for k in ("llm_url", "llm_model", "llm_key"):
+            if d.get(k):
+                v[k].set(d[k])
+        k = rev(LLM_SCOPES, d.get("llm_scope"))
+        if k:
+            v["llm_scope"].set(k)
+        v["llm_log"].set(d.get("llm_log", True))
         self._saved_lang = d.get("ocr_lang", "auto")
         geo = d.get("geometry")
         if geo:
@@ -285,6 +311,63 @@ class App:
                 json.dump(d, f, ensure_ascii=False, indent=1)
         except Exception:
             pass
+
+    def llm_dialog(self):
+        v = self.v
+        win = tk.Toplevel(self.root)
+        win.title("AI 整理设置")
+        win.transient(self.root)
+        win.resizable(False, False)
+        f = ttk.Frame(win, padding=12)
+        f.pack(fill="both", expand=True)
+        f.columnconfigure(1, weight=1)
+        ttk.Label(f, wraplength=420, justify="left", foreground="#555555", text=(
+            "识别完成后,把每页的段落交给你选的模型,只做:改明显的识别错字、补上能确定的缺字、"
+            "把被错误断开的段落并起来、标出标题和页码。模型的回答会逐段和原文核对,改得太多"
+            "(算改写)的整段作废,保持 OCR 原文。")).grid(row=0, column=0, columnspan=2, sticky="w")
+        names = [p[0] for p in LLM_PRESETS]
+        preset = tk.StringVar(value="常用示例…")
+        box = ttk.Combobox(f, textvariable=preset, values=names, state="readonly")
+
+        def pick(_=None):
+            for n, url, model in LLM_PRESETS:
+                if n == preset.get():
+                    v["llm_url"].set(url)
+                    v["llm_model"].set(model)
+        box.bind("<<ComboboxSelected>>", pick)
+        rows = (("填入示例", box), ("接口地址", ttk.Entry(f, textvariable=v["llm_url"], width=46)),
+                ("模型名", ttk.Entry(f, textvariable=v["llm_model"])),
+                ("API Key", ttk.Entry(f, textvariable=v["llm_key"], show="•")),
+                ("整理哪些页", ttk.Combobox(f, textvariable=v["llm_scope"], values=list(LLM_SCOPES), state="readonly")))
+        for r, (label, w) in enumerate(rows, start=1):
+            ttk.Label(f, text=label).grid(row=r, column=0, sticky="w", pady=3)
+            w.grid(row=r, column=1, sticky="ew", pady=3, padx=(8, 0))
+        ttk.Checkbutton(f, text="另存一份「整理记录」(每处改动的 前 → 后)", variable=v["llm_log"]).grid(
+            row=6, column=0, columnspan=2, sticky="w", pady=(6, 0))
+        ttk.Label(f, wraplength=420, justify="left", foreground="#777777", text=(
+            "本机运行(Ollama / LM Studio)不联网、不花钱,文字不出这台电脑。用云端接口时,页面文字会发给对方。"
+            "API Key 明文存在本机设置文件里。")).grid(row=7, column=0, columnspan=2, sticky="w", pady=(6, 0))
+        status = ttk.Label(f, text="", wraplength=420, justify="left")
+        status.grid(row=9, column=0, columnspan=2, sticky="w", pady=(6, 0))
+
+        def test():
+            status.config(text="连接中…", foreground="#555555")
+            url, model, key = v["llm_url"].get(), v["llm_model"].get(), v["llm_key"].get()
+
+            def work():
+                from .llm import LlmClient, LlmError
+                try:
+                    reply = LlmClient(url, model, key, timeout=60).ping()
+                    res = ("ok", f"连通了。模型回答: {reply or '(空)'}")
+                except LlmError as e:
+                    res = ("err", f"连不上: {e}")
+                self.events.put(("llmtest", (status, res)))
+            threading.Thread(target=work, daemon=True).start()
+        bar = ttk.Frame(f)
+        bar.grid(row=8, column=0, columnspan=2, sticky="e", pady=(10, 0))
+        ttk.Button(bar, text="测试连接", command=test).pack(side="left")
+        ttk.Button(bar, text="完成", command=lambda: (v["llm"].set(True), win.destroy())).pack(side="left", padx=(6, 0))
+        win.grab_set()
 
     def _backend_changed(self):
         self._saved_lang = "auto"
@@ -475,6 +558,12 @@ class App:
                     self._on_idle()
                 elif kind == "langs":
                     self._set_langs(*obj)
+                elif kind == "llmtest":
+                    label, (state, msg) = obj
+                    try:
+                        label.config(text=msg, foreground="#1b7f3b" if state == "ok" else "#b3261e")
+                    except tk.TclError:
+                        pass                       # dialog already closed
         except queue.Empty:
             pass
         for j in dirty.values():

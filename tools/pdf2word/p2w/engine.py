@@ -38,6 +38,12 @@ class Options:
     workers: int = 1
     page_range: str = ""             # "1-3,7,9-"
     split: str = "none"              # none | lr | rl | auto -- a sheet carries two pages side by side
+    llm: bool = False                # optional model pass: fix OCR slips, rejoin split paragraphs
+    llm_url: str = "http://localhost:11434/v1"
+    llm_model: str = "qwen2.5:7b"
+    llm_key: str = ""
+    llm_scope: str = "ocr"           # ocr | all
+    llm_log: bool = True             # write a "what changed" file next to the output
 
     def to_dict(self):
         d = asdict(self)
@@ -214,8 +220,29 @@ def convert_file(path: str, opts: Options, backend_for: Callable[[], object],
         warnings.append("「自动」只拆横向的页面或照片,这个文件里没有找到,所以一页都没拆;要强制拆请选「左页在前」或「右页在前」")
     elif opts.split in ("lr", "rl"):
         warnings.append(f"拆分: {sheets} 张纸 → {len(doc.pages)} 页")
+    tidy_log: List[str] = []
+    if opts.llm and any(p.blocks for p in doc.pages):
+        progress(total, total, "AI 整理中")
+        try:
+            from .llm import LlmClient, LlmError, cleanup_doc
+            res = cleanup_doc(doc, LlmClient(opts.llm_url, opts.llm_model, opts.llm_key), opts.llm_scope, checkpoint,
+                              lambda a, b: progress(total, total, f"AI 整理 {a}/{b}"))
+            tidy_log = res["log"]
+            warnings.append(f"AI 整理: {res['pages']} 页里改了 {res['changed']} 处")
+            if res["error"]:
+                warnings.append(f"AI 整理中途停了,剩下的页保持 OCR 原文: {res['error']}")
+        except LlmError as e:
+            warnings.append(f"AI 整理没有执行: {e}")
     _unify_margins(doc)
     outputs = _write_outputs(path, doc, opts, warnings)
+    if tidy_log and opts.llm_log and outputs:
+        try:
+            log_path = os.path.splitext(outputs[0])[0] + ".整理记录.txt"
+            with open(log_path, "w", encoding="utf-8-sig") as f:
+                f.write("AI 整理改动记录 (上一行是 OCR 原文,下一行是整理后)\n\n" + "\n\n".join(tidy_log) + "\n")
+            outputs.append(log_path)
+        except OSError:
+            pass
     return dict(outputs=outputs, pages=len(doc.pages), ocr_pages=ocr_pages, warnings=warnings)
 
 

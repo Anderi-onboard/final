@@ -36,6 +36,12 @@ def main(argv=None):
     ap.add_argument("--pages", default="", help="页码范围,如 1-3,7,9-")
     ap.add_argument("--split", default="none", choices=["none", "lr", "rl", "auto"],
                     help="一页塞两页: lr 左半是前一页, rl 右半是前一页, auto 横向页面按 lr 拆")
+    ap.add_argument("--llm", action="store_true", help="识别后用语言模型整理(改错字、补缺字、并回断开的段落)")
+    ap.add_argument("--llm-url", default="http://localhost:11434/v1", help="OpenAI 兼容接口地址 (默认本机 Ollama)")
+    ap.add_argument("--llm-model", default="qwen2.5:7b")
+    ap.add_argument("--llm-key", default=os.environ.get("P2W_LLM_KEY", ""), help="也可用环境变量 P2W_LLM_KEY")
+    ap.add_argument("--llm-scope", default="ocr", choices=["ocr", "all"], help="ocr: 只整理 OCR 出来的页; all: 连文字层页也整理")
+    ap.add_argument("--no-tidy-log", action="store_true", help="不写「整理记录」文件")
     ap.add_argument("--no-images", action="store_true", help="不保留文字层 PDF 里的图片")
     ap.add_argument("--no-page-breaks", action="store_true")
     ap.add_argument("--exists", default="rename", choices=["rename", "overwrite", "skip"])
@@ -57,7 +63,9 @@ def main(argv=None):
     opts = Options(formats=tuple(a.format), out_dir=os.path.abspath(a.out) if a.out else "",
                    ocr_lang=a.lang, backend=a.backend, mode=a.mode, dpi=a.dpi,
                    keep_images=not a.no_images, page_breaks=not a.no_page_breaks,
-                   collision=a.exists, workers=a.workers, page_range=a.pages, split=a.split)
+                   collision=a.exists, workers=a.workers, page_range=a.pages, split=a.split,
+                   llm=a.llm, llm_url=a.llm_url, llm_model=a.llm_model, llm_key=a.llm_key,
+                   llm_scope=a.llm_scope, llm_log=not a.no_tidy_log)
     idle = threading.Event()
     last = {}
 

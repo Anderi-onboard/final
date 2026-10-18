@@ -75,6 +75,27 @@ convert.bat a.pdf --mode ocr --pages 1-5 # 强制 OCR,只转前 5 页
 不算字),各自 OCR,所以不会有一行字横跨折缝被识别成一行,折缝偏离正中也行。拆出来的每一半是独立的一页(页面宽度也是半张),
 版式、表格、标题都按各自这一页单独还原。页码范围(`--pages`)数的是原来的整张纸。
 
+## AI 整理(可选,默认关)
+
+勾上窗口里的「识别后用 AI 整理文字」,点「设置…」填一个模型。识别完成后,每页的段落会交给它,**只做四件事**:
+改明显的识别错字、补上能确定的缺字、把被错误断开的段落并起来、标出标题和页码。不改写、不润色、不翻译。
+
+怎么保证它不乱改:模型的回答会**逐段和 OCR 原文核对**。段落数对不上、顺序乱了、某段改得太多(算改写)、
+回答不是合格的 JSON,这一段(或这一批)的回答整个作废,保持 OCR 原文。网络断了、模型没开,也只是跳过整理,
+转换照常完成。每处改动会另存一份 `xxx.整理记录.txt`(上一行 OCR 原文,下一行整理后),想抽查随时能看。
+
+接口是通用的 OpenAI 格式(`/chat/completions`),下面这些都能接,在设置里有「填入示例」:
+
+| 怎么跑 | 地址 | 模型(例) | 备注 |
+|---|---|---|---|
+| 本机 Ollama | `http://localhost:11434/v1` | `qwen2.5:7b` | 免费、离线、文字不出电脑。先 `ollama pull qwen2.5:7b` |
+| 本机 LM Studio | `http://localhost:1234/v1` | 你加载的那个 | 同上 |
+| DeepSeek / 通义 / 智谱 / OpenAI | 各家文档里的 base url | `deepseek-chat` / `qwen-turbo` / `glm-4-flash` / `gpt-4o-mini` | 要 API Key,页面文字会发给对方 |
+
+「够用的小模型」:中文建议 **7B 起步**(qwen2.5:7b 这一档)。3B 以下经常漏改或者乱改,乱改会被核对拦下,
+但等于白跑。默认只整理 OCR 识别出来的页;文字层 PDF 本来就是准的,要整理选「所有页」。
+命令行:`--llm --llm-url ... --llm-model ... --llm-key ...`(Key 也可放环境变量 `P2W_LLM_KEY`)。
+
 ## 要知道的局限
 
 - Windows OCR **不给粗体 / 斜体 / 字体 / 颜色**,所以扫描件里只有标题会加粗,字体统一用宋体 + Times New Roman。
@@ -122,6 +143,7 @@ p2w/layout_native.py      文字层 -> 版式
 p2w/layout_ocr.py         OCR 行 -> 版式(段落、标题、栏、表格)
 p2w/layout_common.py      两条路共用:栏沟检测、阅读顺序
 p2w/writers.py            版式 -> docx / txt / md / html
+p2w/llm.py                可选的 AI 整理(OpenAI 兼容接口 + 逐段核对)
 p2w/engine.py             转换流程 + 任务队列
 p2w/gui.py                窗口
 tests/                    python -m unittest discover -s tests -v
