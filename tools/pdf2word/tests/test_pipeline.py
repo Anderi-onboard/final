@@ -131,6 +131,30 @@ class OcrLayout(unittest.TestCase):
         pg = layout_ocr.build_page(L, 1000, 1400, 0.5)
         self.assertFalse(any(isinstance(b, Table) for b in pg.blocks))
 
+    def test_narrow_book_columns_are_prose_not_a_table(self):
+        """Two (and four) columns of Chinese sentences, each only ~30% of the sheet wide:
+        the geometry looks like a table, the cell text says otherwise."""
+        zh = ["检测既省力又快。这不能说我们的传统文化没用了。", "经过几十年研究,我将奇门遁甲的精髓及经验整理",
+              "如下,研究是困难的,但本人不想将已经掌握,经过实", "践得出的一些经验带进坟墓,只想留给后人去研究、去"]
+        L = []
+        for i in range(8):
+            L.append(line(zh[i % 4], 100, 200 + i * 40, 24, 12.5))        # 24 chars * 12.5px = 300px wide
+            L.append(line(zh[(i + 1) % 4], 600, 200 + i * 40, 24, 12.5))
+        pg = layout_ocr.build_page(L, 1100, 1400, 0.5)
+        self.assertFalse(any(isinstance(b, Table) for b in pg.blocks), [type(b).__name__ for b in pg.blocks])
+        texts = [b.text for b in pg.blocks if isinstance(b, Para)]
+        self.assertEqual(len(texts), 2)                                    # left column, then right column
+        self.assertTrue(texts[0].startswith("检测既省力又快"))
+
+    def test_short_label_tables_still_are_tables(self):
+        L = []
+        for r, row in enumerate([["项目", "一月", "二月", "三月"], ["收入", "120", "135", "150"],
+                                 ["成本", "80", "82", "90"], ["利润", "40", "53", "60"]]):
+            for c, cell in enumerate(row):
+                L.append(line(cell, 100 + c * 220, 300 + r * 40, 24, 12))
+        pg = layout_ocr.build_page(L, 1100, 1400, 0.5)
+        self.assertTrue(any(isinstance(b, Table) for b in pg.blocks))
+
     def test_cjk_and_latin_spacing(self):
         l = OLine([OWord("Report", 0, 0, 60, 20), OWord("季度", 70, 0, 110, 20),
                    OWord("报告", 110, 0, 150, 20), OWord("2024", 151, 0, 190, 20)])

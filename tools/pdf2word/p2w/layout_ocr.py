@@ -97,6 +97,14 @@ def _cells(row: List[OLine], hb: float) -> List[OLine]:
     return out
 
 
+_SENTENCE = re.compile("[，。、；：！？,.;:!?]")
+
+
+def _prose_like(t: str) -> bool:
+    t = t.strip()
+    return len(t) >= 20 or (len(t) >= 12 and bool(_SENTENCE.search(t)))
+
+
 def _find_tables(lines: List[OLine], hb: float, page_w: float, k: float):
     rows = _rows(lines, hb)
     cells = [_cells(r, hb) for r in rows]
@@ -136,6 +144,12 @@ def _find_tables(lines: List[OLine], hb: float, page_w: float, k: float):
         if ncol == 2 and (median(widths) > 0.33 * page_w or median(chars) > 40):
             continue                               # two columns of prose
         if median(chars) > 70:
+            continue
+        # Sentences in the cells = two columns of running text, not a table. Check this for
+        # any column count: a book page whose columns happen to be narrow looks exactly
+        # like a 2-4 column table to the geometry alone.
+        texts = [c.text for r in run for c in cells[r]]
+        if sum(1 for t in texts if _prose_like(t)) >= 0.5 * len(texts):
             continue
         grid = []
         for r in run:

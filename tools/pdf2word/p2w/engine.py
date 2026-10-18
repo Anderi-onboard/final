@@ -161,6 +161,7 @@ def convert_file(path: str, opts: Options, backend_for: Callable[[], object],
             raise JobError(str(e))
         doc = Doc(src.title())
         total = len(idx)
+        sheets = total
         progress(0, total, "")
         for n, i in enumerate(idx):
             checkpoint()
@@ -184,6 +185,10 @@ def convert_file(path: str, opts: Options, backend_for: Callable[[], object],
     finally:
         src.close()
 
+    if opts.split == "auto" and len(doc.pages) == sheets:
+        warnings.append("「自动」只拆横向页面,这个文件的页面都是竖版,所以一页都没拆;要强制拆请选「左页在前」或「右页在前」")
+    elif opts.split in ("lr", "rl"):
+        warnings.append(f"拆分: {sheets} 张纸 → {len(doc.pages)} 页")
     _unify_margins(doc)
     outputs = _write_outputs(path, doc, opts, warnings)
     return dict(outputs=outputs, pages=len(doc.pages), ocr_pages=ocr_pages, warnings=warnings)
