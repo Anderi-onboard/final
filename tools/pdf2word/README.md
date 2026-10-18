@@ -4,6 +4,10 @@
 (就是「截图工具」预览里那个「文本操作」按钮背后的引擎 `Windows.Media.Ocr`),
 再把它给出的文字和位置还原成带格式的 .docx。离线运行,不用联网,不用 API key。
 
+识别引擎有三个,「自动」按这个顺序挑第一个能用的:
+**RapidOCR**(PaddleOCR 模型,模型随安装包自带,中英文识别明显最好)→ **Windows OCR** → Tesseract。
+窗口里「引擎」可以手动指定,右下角会写当前用的是哪个。
+
 ## 用法
 
 1. 双击 `start.bat`。第一次会自己建环境、装依赖(需要 Python 3.9+),之后秒开。
@@ -59,7 +63,18 @@ convert.bat a.pdf --mode ocr --pages 1-5 # 强制 OCR,只转前 5 页
   繁体、日文等请在「语言」里手动选。
 - 手写体、很糊的照片、倾斜的页面,Windows OCR 本身就不行,这里没有预处理。
 
-## OCR 语言包
+## 引擎对比
+
+| | RapidOCR | Windows OCR |
+|---|---|---|
+| 中文 / 中英混排 | 很好 | 一般 |
+| 安装 | `pip install` 约 90MB,含模型 | 要在系统里装语言包 |
+| 输出粒度 | 每行一个框 | 每个词一个框 |
+| 速度 | A4 一页约 3–5 秒(CPU) | 更快 |
+
+装 RapidOCR 请用 3.x(`rapidocr`),老的 `rapidocr-onnxruntime` 会把英文单词之间的空格吃掉。
+
+## OCR 语言包 (只有用 Windows OCR 才需要)
 
 Windows OCR 要对应语言的「OCR」功能才能识别那种文字。
 
@@ -80,7 +95,7 @@ Add-WindowsCapability -Online -Name "Language.OCR~~~en-US~0.0.1.0"
 start.bat / convert.bat   启动窗口 / 命令行
 app.py  cli.py            入口
 p2w/loader.py             打开 PDF、图片,渲染页面,判断有没有真文字层
-p2w/ocr.py                OCR 引擎:Windows.Media.Ocr、Tesseract
+p2w/ocr.py                OCR 引擎:RapidOCR、Windows.Media.Ocr、Tesseract
 p2w/layout_native.py      文字层 -> 版式
 p2w/layout_ocr.py         OCR 行 -> 版式(段落、标题、栏、表格)
 p2w/layout_common.py      两条路共用:栏沟检测、阅读顺序

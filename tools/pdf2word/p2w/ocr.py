@@ -1,6 +1,7 @@
 """OCR backends. All of them return the same thing: a list of OLine, in the pixel
 coordinates of the image they were given.
 
+rapidocr   PaddleOCR models on ONNX Runtime; best for Chinese + English, offline.
 windows    The engine behind the Snipping Tool "Text actions" button
            (Windows.Media.Ocr). Offline, no install of its own, but each
            language needs its Windows OCR language pack.
@@ -200,6 +201,55 @@ class WindowsOcr(Backend):
         return await self._engine.recognize_async(bitmap)
 
 
+# -------------------------------------------------------------------- RapidOCR
+
+class RapidOcr(Backend):
+    """PaddleOCR models run through ONNX Runtime (pip install rapidocr onnxruntime).
+    The models ship inside the wheel, so it is offline after install, and its
+    Chinese/English recognition is clearly better than the Windows engine's.
+    One box per text line, no per-word boxes."""
+    name = "rapidocr"
+
+    def __init__(self, lang: str = "auto"):
+        self._new = True
+        try:
+            from rapidocr import RapidOCR                       # 3.x
+            kw = dict(params={"Global.log_level": "error"})
+        except ImportError:
+            try:
+                from rapidocr_onnxruntime import RapidOCR        # 1.x
+                self._new, kw = False, {}
+            except ImportError as e:
+                raise OcrUnavailable("RapidOCR 没装: pip install rapidocr onnxruntime") from e
+        try:
+            self._engine = RapidOCR(**kw)
+        except Exception:
+            self._engine = RapidOCR()
+        self.language = "ch+en"
+
+    def languages(self):
+        return [("ch+en", "中文 + 英文 (内置模型)")]
+
+    def recognize(self, img) -> List[OLine]:
+        import numpy as np
+        arr = np.array(img.convert("RGB"))[:, :, ::-1]            # RGB -> BGR (OpenCV order)
+        if self._new:
+            out = self._engine(arr)
+            items = [] if out.boxes is None else list(zip(out.boxes, out.txts, out.scores))
+        else:
+            res, _ = self._engine(arr)
+            items = res or []
+        lines = []
+        for box, txt, score in items:
+            txt = (txt or "").strip()
+            if not txt or float(score) < 0.5:          # specks in pictures read as 1-char "text"
+                continue
+            xs = [float(p[0]) for p in box]
+            ys = [float(p[1]) for p in box]
+            lines.append(OLine([OWord(txt, min(xs), min(ys), max(xs), max(ys))]))
+        return lines
+
+
 # ------------------------------------------------------------------- Tesseract
 
 class TesseractOcr(Backend):
@@ -243,11 +293,12 @@ class TesseractOcr(Backend):
 def make_backend(kind: str = "auto", lang: str = "auto") -> Backend:
     kind = (kind or "auto").lower()
     errors = []
-    order = {"auto": ["windows", "tesseract"], "windows": ["windows"],
-             "tesseract": ["tesseract"]}.get(kind, ["windows", "tesseract"])
+    order = {"auto": ["rapidocr", "windows", "tesseract"], "rapidocr": ["rapidocr"],
+             "windows": ["windows"], "tesseract": ["tesseract"]}.get(kind, ["rapidocr", "windows", "tesseract"])
+    makers = {"rapidocr": RapidOcr, "windows": WindowsOcr, "tesseract": TesseractOcr}
     for k in order:
         try:
-            return WindowsOcr(lang) if k == "windows" else TesseractOcr(lang)
+            return makers[k](lang)
         except OcrUnavailable as e:
             errors.append(f"{k}: {e}")
     raise OcrUnavailable("没有可用的 OCR 引擎\n" + "\n".join(errors))

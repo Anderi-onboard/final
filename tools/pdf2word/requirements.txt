@@ -4,6 +4,10 @@ pymupdf>=1.24
 python-docx>=1.1
 # images (also multi-page TIFF / GIF)
 Pillow>=10
+# RapidOCR: PaddleOCR models on ONNX Runtime, models bundled in the wheel (offline after install).
+# Best Chinese/English recognition of the engines here, so "auto" picks it first.
+rapidocr>=3.0
+onnxruntime>=1.16
 # Windows built-in OCR (the engine behind the Snipping Tool "Text actions" button)
 winrt-runtime>=2.0; sys_platform == "win32"
 winrt-Windows.Foundation>=2.0; sys_platform == "win32"

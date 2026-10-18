@@ -30,7 +30,20 @@ try:
 except BaseException:                                          # no CJK font on this box
     make_fixtures, FONT = None, None
 
-HAVE_TESS = shutil.which("tesseract") is not None
+try:
+    import pytesseract  # noqa: F401
+    HAVE_TESS = shutil.which("tesseract") is not None
+except ImportError:
+    HAVE_TESS = False
+try:
+    import rapidocr  # noqa: F401
+    HAVE_RAPID = True
+except ImportError:
+    try:
+        import rapidocr_onnxruntime  # noqa: F401
+        HAVE_RAPID = True
+    except ImportError:
+        HAVE_RAPID = False
 
 
 def line(text, x, y, h, cw=None):
@@ -181,7 +194,7 @@ class Native(unittest.TestCase):
     def convert(self, name, **kw):
         out = tempfile.mkdtemp(dir=self.tmp)
         o = Options(out_dir=out, formats=("docx", "md"), collision="overwrite", **kw)
-        res = convert_file(os.path.join(self.tmp, name), o, lambda: ocr.make_backend("auto", "auto"))
+        res = convert_file(os.path.join(self.tmp, name), o, lambda: ocr.make_backend(o.backend, o.ocr_lang))
         return res, out
 
     def test_text_layer_keeps_formatting(self):
@@ -225,10 +238,21 @@ class Native(unittest.TestCase):
         res, _ = self.convert("scan.pdf", mode="native")
         self.assertEqual(res["ocr_pages"], 0)
 
+    @unittest.skipUnless(HAVE_RAPID, "rapidocr not installed")
+    def test_scan_with_rapidocr_gets_text_and_table(self):
+        import docx
+        res, _ = self.convert("scan.pdf", backend="rapidocr")
+        d = docx.Document(res["outputs"][0])
+        text = "\n".join(p.text for p in d.paragraphs)
+        self.assertIn("Quarterly Report", text)
+        self.assertIn("委员会详细审阅了方案", text)
+        self.assertGreaterEqual(len(d.tables), 1)
+        self.assertEqual(d.tables[0].rows[1].cells[0].text, "Revenue 收入")
+
     @unittest.skipUnless(HAVE_TESS, "tesseract not installed")
     def test_scan_goes_through_ocr(self):
         import docx
-        res, _ = self.convert("scan.pdf")
+        res, _ = self.convert("scan.pdf", backend="tesseract")
         self.assertEqual(res["ocr_pages"], 2)
         d = docx.Document(res["outputs"][0])
         text = "\n".join(p.text for p in d.paragraphs)
@@ -238,7 +262,7 @@ class Native(unittest.TestCase):
     @unittest.skipUnless(HAVE_TESS, "tesseract not installed")
     def test_images_and_tiff(self):
         for name, pages in (("photo.jpg", 1), ("multi.tiff", 2)):
-            res, _ = self.convert(name)
+            res, _ = self.convert(name, backend="tesseract")
             self.assertEqual(res["pages"], pages, name)
             self.assertEqual(res["ocr_pages"], pages, name)
 
@@ -336,6 +360,46 @@ class Queue(unittest.TestCase):
         self.assertTrue(self.idle.wait(30))
         self.assertEqual([j.status for j in q.jobs], [FAILED, DONE])
         self.assertIn("Windows", q.jobs[0].message)
+
+
+class RapidOcrBackend(unittest.TestCase):
+    def test_boxes_become_lines_and_low_confidence_is_dropped(self):
+        import numpy as np
+
+        class Out:
+            boxes = [[(10, 20), (210, 22), (209, 50), (11, 48)], [(5, 5), (9, 5), (9, 9), (5, 9)]]
+            txts = ["Quarterly Report 季度报告", "O"]
+            scores = [0.98, 0.3]
+
+        class Engine:
+            def __call__(self, arr):
+                assert arr.ndim == 3 and arr.shape[2] == 3
+                return Out()
+
+        be = ocr.RapidOcr.__new__(ocr.RapidOcr)
+        be._new, be._engine, be.language = True, Engine(), "ch+en"
+        from PIL import Image as PI
+        lines = be.recognize(PI.new("RGB", (300, 100), "white"))
+        self.assertEqual([l.text for l in lines], ["Quarterly Report 季度报告"])
+        self.assertEqual((lines[0].x0, lines[0].y0, lines[0].x1, lines[0].y1), (10, 20, 210, 50))
+
+    def test_nothing_found(self):
+        class Out:
+            boxes = txts = scores = None
+        be = ocr.RapidOcr.__new__(ocr.RapidOcr)
+        be._new, be._engine = True, lambda arr: Out()
+        from PIL import Image as PI
+        self.assertEqual(be.recognize(PI.new("RGB", (50, 50))), [])
+
+    def test_auto_prefers_rapidocr_when_installed(self):
+        try:
+            import rapidocr  # noqa: F401
+        except ImportError:
+            try:
+                import rapidocr_onnxruntime  # noqa: F401
+            except ImportError:
+                self.skipTest("rapidocr not installed")
+        self.assertEqual(ocr.make_backend("auto", "auto").name, "rapidocr")
 
 
 class WindowsEngineWithStand_in(unittest.TestCase):

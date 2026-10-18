@@ -23,7 +23,8 @@ except Exception:                       # pragma: no cover
 STATUS_TEXT = {QUEUED: "等待", RUNNING: "处理中", DONE: "完成", FAILED: "失败",
                CANCELLED: "已取消", SKIPPED: "已跳过"}
 MODES = {"自动 (有文字层直接取,没有才 OCR)": "auto", "全部 OCR": "ocr", "只取文字层 (不 OCR)": "native"}
-BACKENDS = {"自动 (优先 Windows OCR)": "auto", "Windows OCR": "windows", "Tesseract": "tesseract"}
+BACKENDS = {"自动 (RapidOCR > Windows OCR)": "auto", "RapidOCR": "rapidocr", "Windows OCR": "windows",
+            "Tesseract": "tesseract"}
 COLLISIONS = {"自动改名": "rename", "覆盖": "overwrite", "跳过": "skip"}
 AUTO_LANG = "自动 (中文优先,中英混排)"
 
@@ -69,6 +70,7 @@ class App:
         self.langs = {}
         self._build()
         self._load_settings()
+        self.v["backend"].trace_add("write", lambda *a: self._backend_changed())
         self._snapshot = self.options()
         self._detect_langs()
         root.protocol("WM_DELETE_WINDOW", self._close)
@@ -279,6 +281,11 @@ class App:
                 json.dump(d, f, ensure_ascii=False, indent=1)
         except Exception:
             pass
+
+    def _backend_changed(self):
+        self._saved_lang = "auto"
+        self.v["lang"].set(AUTO_LANG)
+        self._detect_langs()
 
     def _detect_langs(self):
         backend = self.options().backend

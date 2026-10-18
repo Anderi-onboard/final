@@ -25,7 +25,7 @@ def _font(name: str) -> Optional[str]:
     if not name:
         return None
     name = name.split("+", 1)[-1]                  # ABCDEF+Subset prefix
-    name = re.split(r"[-,]", name, 1)[0]
+    name = re.split(r"[-,]", name, maxsplit=1)[0]
     return re.sub(r"(MT|PS)$", "", name) or None
 
 
