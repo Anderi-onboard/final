@@ -34,6 +34,8 @@ def main(argv=None):
                     help="auto: 有文字层就直接取,没有才 OCR; ocr: 一律 OCR; native: 只取文字层")
     ap.add_argument("--dpi", type=int, default=300)
     ap.add_argument("--pages", default="", help="页码范围,如 1-3,7,9-")
+    ap.add_argument("--split", default="none", choices=["none", "lr", "rl", "auto"],
+                    help="一页塞两页: lr 左半是前一页, rl 右半是前一页, auto 横向页面按 lr 拆")
     ap.add_argument("--no-images", action="store_true", help="不保留文字层 PDF 里的图片")
     ap.add_argument("--no-page-breaks", action="store_true")
     ap.add_argument("--exists", default="rename", choices=["rename", "overwrite", "skip"])
@@ -55,7 +57,7 @@ def main(argv=None):
     opts = Options(formats=tuple(a.format), out_dir=os.path.abspath(a.out) if a.out else "",
                    ocr_lang=a.lang, backend=a.backend, mode=a.mode, dpi=a.dpi,
                    keep_images=not a.no_images, page_breaks=not a.no_page_breaks,
-                   collision=a.exists, workers=a.workers, page_range=a.pages)
+                   collision=a.exists, workers=a.workers, page_range=a.pages, split=a.split)
     idle = threading.Event()
     last = {}
 

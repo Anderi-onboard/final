@@ -89,15 +89,46 @@ def _split_paragraphs(block: dict) -> List[List[dict]]:
     return out
 
 
-def build_page(page, keep_images: bool = True) -> Page:
-    W, H = page.rect.width, page.rect.height
-    d = page.get_text("dict")
+def _sb(b, dx, dy):
+    return (b[0] + dx, b[1] + dy, b[2] + dx, b[3] + dy)
+
+
+def _shift(d: dict, dx: float, dy: float):
+    for b in d.get("blocks", []):
+        b["bbox"] = _sb(b["bbox"], dx, dy)
+        for l in b.get("lines", []):
+            l["bbox"] = _sb(l["bbox"], dx, dy)
+            for sp in l["spans"]:
+                sp["bbox"] = _sb(sp["bbox"], dx, dy)
+                sp["origin"] = (sp["origin"][0] + dx, sp["origin"][1] + dy)
+
+
+def find_spine(page) -> float:
+    """x of the fold on a sheet that carries two pages side by side: the empty
+    vertical gap between the two text areas if there is one near the middle,
+    else exactly the middle."""
+    W = page.rect.width
+    spans = [(b[0], b[2]) for b in page.get_text("blocks") if b[6] == 0 and b[4].strip()]
+    gx = lc.find_gutter(spans, 0.02)
+    return gx if gx is not None and 0.4 * W <= gx <= 0.6 * W else W / 2
+
+
+def build_page(page, keep_images: bool = True, clip=None) -> Page:
+    """`clip` (a pymupdf.Rect) builds just that part of the sheet, as its own page."""
+    if clip is not None:
+        W, H = clip.width, clip.height
+        d = page.get_text("dict", clip=clip)
+        _shift(d, -clip.x0, -clip.y0)
+    else:
+        W, H = page.rect.width, page.rect.height
+        d = page.get_text("dict")
     blocks = d.get("blocks", [])
 
     # ---- tables
     tables = []
     try:
-        tf = page.find_tables()
+        tf = page.find_tables(clip=clip) if clip is not None else page.find_tables()
+        dx, dy = (-clip.x0, -clip.y0) if clip is not None else (0, 0)
         for t in tf.tables:
             rows = [[_clean((c or "").replace("\n", " ")).strip() for c in r] for r in t.extract()]
             if t.row_count >= 2 and t.col_count >= 2 and sum(1 for r in rows for c in r if c) >= 3:
@@ -109,7 +140,7 @@ def build_page(page, keep_images: bool = True) -> Page:
                         widths = None
                 except Exception:
                     pass
-                tables.append((t.bbox, rows, widths))
+                tables.append((_sb(t.bbox, dx, dy), rows, widths))
     except Exception:
         pass
 

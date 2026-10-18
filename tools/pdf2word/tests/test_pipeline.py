@@ -238,6 +238,62 @@ class Native(unittest.TestCase):
         res, _ = self.convert("scan.pdf", mode="native")
         self.assertEqual(res["ocr_pages"], 0)
 
+    def heads(self, res):
+        import docx
+        d = docx.Document(res["outputs"][0])
+        return [p.text for p in d.paragraphs if p.style.name.startswith("Heading")], d
+
+    def test_split_spread_left_first(self):
+        res, _ = self.convert("spread.pdf", split="lr")
+        self.assertEqual(res["pages"], 2)
+        heads, d = self.heads(res)
+        self.assertEqual(heads, ["First Page 第一页", "Second Page 第二页"])
+        self.assertEqual(len(d.sections), 1)
+        self.assertTrue(any(p.paragraph_format.page_break_before for p in d.paragraphs))
+        text = "\n".join(p.text for p in d.paragraphs)
+        self.assertLess(text.index("first page of the book"), text.index("second page of the book"))
+        self.assertNotIn("second page", text.split("Second Page")[0].lower())   # nothing leaked across the fold
+
+    def test_split_spread_right_first(self):
+        heads, _ = self.heads(self.convert("spread.pdf", split="rl")[0])
+        self.assertEqual(heads, ["Second Page 第二页", "First Page 第一页"])
+
+    def test_split_auto_only_touches_landscape_sheets(self):
+        self.assertEqual(self.convert("spread.pdf", split="auto")[0]["pages"], 2)
+        self.assertEqual(self.convert("native.pdf", split="auto")[0]["pages"], 2)    # portrait: untouched
+        self.assertEqual(self.convert("spread.pdf", split="none")[0]["pages"], 1)
+
+    def test_split_pages_are_half_width(self):
+        import docx
+        res, _ = self.convert("spread.pdf", split="lr")
+        sec = docx.Document(res["outputs"][0]).sections[0]
+        self.assertAlmostEqual(sec.page_width.pt, 421, delta=15)
+
+    @unittest.skipUnless(HAVE_RAPID, "rapidocr not installed")
+    def test_split_scanned_spread(self):
+        import docx
+        res, _ = self.convert("spread_scan.pdf", split="lr", backend="rapidocr")
+        self.assertEqual((res["pages"], res["ocr_pages"]), (2, 2))
+        d = docx.Document(res["outputs"][0])
+        text = "\n".join(p.text for p in d.paragraphs)
+        self.assertLess(text.index("First Page"), text.index("Second Page"))
+        self.assertLess(text.index("第一页的正文"), text.index("第二页的正文"))
+
+    def test_spine_is_found_off_centre(self):
+        from PIL import Image as PI, ImageDraw
+        im = PI.new("L", (1000, 600), 255)
+        d = ImageDraw.Draw(im)
+        for x0, x1 in ((40, 440), (560, 960)):          # blank strip 440..560 -> fold at 500; text dense elsewhere
+            for y in range(40, 560, 12):
+                d.rectangle([x0, y, x1, y + 6], fill=0)
+        self.assertTrue(440 < ocr.find_spine_px(im) < 560)          # anywhere in the blank strip is a clean cut
+        off = PI.new("L", (1000, 600), 255)
+        d = ImageDraw.Draw(off)
+        for x0, x1 in ((40, 410), (530, 960)):          # gap 410..530 -> fold at 470
+            for y in range(40, 560, 12):
+                d.rectangle([x0, y, x1, y + 6], fill=0)
+        self.assertTrue(410 < ocr.find_spine_px(off) < 530)
+
     @unittest.skipUnless(HAVE_RAPID, "rapidocr not installed")
     def test_scan_with_rapidocr_gets_text_and_table(self):
         import docx

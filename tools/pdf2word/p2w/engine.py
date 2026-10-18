@@ -13,7 +13,7 @@ from typing import Callable, Dict, List, Optional
 from . import layout_native, layout_ocr, writers
 from .loader import LoadError, Source, kind_of
 from .model import Doc, Page, Para, Run
-from .ocr import OcrUnavailable, make_backend
+from .ocr import OcrUnavailable, find_spine_px, make_backend
 
 
 class Cancelled(Exception):
@@ -37,6 +37,7 @@ class Options:
     collision: str = "rename"        # rename | overwrite | skip
     workers: int = 1
     page_range: str = ""             # "1-3,7,9-"
+    split: str = "none"              # none | lr | rl | auto -- a sheet carries two pages side by side
 
     def to_dict(self):
         d = asdict(self)
@@ -79,10 +80,16 @@ def _unify_margins(doc: Doc):
     """Per-page margins measured from the content differ by a few points; one
     Word section per page would be silly. Use the median per page size and move
     the indents so the text stays where it was."""
-    groups: Dict[tuple, List[Page]] = {}
-    for p in doc.pages:
-        groups.setdefault((round(p.width / 4), round(p.height / 4)), []).append(p)
-    for pages in groups.values():
+    groups: List[List[Page]] = []
+    for p in doc.pages:                       # same size = within 4% (two halves of a sheet differ by a few pt)
+        for g in groups:
+            r = g[0]
+            if abs(p.width - r.width) <= 0.04 * r.width and abs(p.height - r.height) <= 0.04 * r.height:
+                g.append(p)
+                break
+        else:
+            groups.append([p])
+    for pages in groups:
         med = tuple(median(p.margins[i] for p in pages) for i in range(4))
         for p in pages:
             shift = p.margins[0] - med[0]
@@ -95,6 +102,46 @@ def _unify_margins(doc: Doc):
             p.margins = med
             ref = pages[0]
             p.width, p.height = ref.width, ref.height
+
+
+def _split_order(ps, opts: Options):
+    """None for a normal page, else which halves to produce and in what order."""
+    mode = opts.split
+    if mode == "auto":
+        mode = "lr" if ps.width_pt >= 1.3 * ps.height_pt else "none"
+    return {"lr": ("L", "R"), "rl": ("R", "L")}.get(mode)
+
+
+def _convert_sheet(ps, opts: Options, backend_for):
+    """One source page -> one or two Pages. Returns (pages, "native" | "ocr")."""
+    halves = _split_order(ps, opts)
+    has_layer = hasattr(ps, "page")
+    if opts.mode == "native" or (opts.mode == "auto" and has_layer and ps.native_ok()):
+        if not has_layer:
+            raise JobError("图片没有文字层,请把「识别方式」改成自动或强制 OCR")
+        if halves:
+            import pymupdf
+            r = ps.page.rect
+            x = layout_native.find_spine(ps.page)
+            clips = {"L": pymupdf.Rect(r.x0, r.y0, x, r.y1), "R": pymupdf.Rect(x, r.y0, r.x1, r.y1)}
+            pages = [layout_native.build_page(ps.page, opts.keep_images, clips[h]) for h in halves]
+        else:
+            pages = [layout_native.build_page(ps.page, opts.keep_images)]
+        for pg in pages:
+            if not pg.blocks and opts.mode == "native":
+                pg.note = "此页没有文字层 (未做 OCR)"
+        return pages, "native"
+
+    be = backend_for()
+    img = ps.render(opts.dpi)
+    if halves:
+        x = find_spine_px(img)
+        crops = {"L": img.crop((0, 0, x, img.height)), "R": img.crop((x, 0, img.width, img.height))}
+        parts = [crops[h] for h in halves]
+    else:
+        parts = [img]
+    pages = [layout_ocr.build_page(be.recognize(c), c.width, c.height, ps.px_to_pt) for c in parts]
+    return pages, "ocr"
 
 
 def convert_file(path: str, opts: Options, backend_for: Callable[[], object],
@@ -120,24 +167,12 @@ def convert_file(path: str, opts: Options, backend_for: Callable[[], object],
             label = f"第 {i + 1} 页"
             try:
                 ps = src.page(i)
-                has_layer = hasattr(ps, "page")
-                if opts.mode == "native":
-                    page = layout_native.build_page(ps.page, opts.keep_images) if has_layer else None
-                    if page is None:
-                        raise JobError("图片没有文字层,请把「识别方式」改成自动或强制 OCR")
-                    if not page.blocks:
-                        page.note = "此页没有文字层 (未做 OCR)"
-                elif opts.mode == "auto" and has_layer and ps.native_ok():
-                    page = layout_native.build_page(ps.page, opts.keep_images)
-                    label += " · 文字层"
-                else:
-                    be = backend_for()
-                    img = ps.render(opts.dpi)
-                    lines = be.recognize(img)
-                    page = layout_ocr.build_page(lines, img.width, img.height, ps.px_to_pt)
-                    ocr_pages += 1
-                    label += " · OCR"
-                doc.pages.append(page)
+                pages, how = _convert_sheet(ps, opts, backend_for)
+                if how == "ocr":
+                    ocr_pages += len(pages)
+                label += {"ocr": " · OCR", "native": " · 文字层"}.get(how, "") + \
+                    (f" · 拆成 {len(pages)} 页" if len(pages) > 1 else "")
+                doc.pages.extend(pages)
             except (OcrUnavailable, JobError, Cancelled):
                 raise
             except Exception as e:                      # one bad page must not sink the file

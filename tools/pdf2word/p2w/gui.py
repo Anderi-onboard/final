@@ -25,6 +25,8 @@ STATUS_TEXT = {QUEUED: "等待", RUNNING: "处理中", DONE: "完成", FAILED: "
 MODES = {"自动 (有文字层直接取,没有才 OCR)": "auto", "全部 OCR": "ocr", "只取文字层 (不 OCR)": "native"}
 BACKENDS = {"自动 (RapidOCR > Windows OCR)": "auto", "RapidOCR": "rapidocr", "Windows OCR": "windows",
             "Tesseract": "tesseract"}
+SPLITS = {"不拆分": "none", "左页在前 (左半=前一页)": "lr", "右页在前 (右半=前一页)": "rl",
+          "自动 (横向页面按左页在前拆)": "auto"}
 COLLISIONS = {"自动改名": "rename", "覆盖": "overwrite", "跳过": "skip"}
 AUTO_LANG = "自动 (中文优先,中英混排)"
 
@@ -59,8 +61,8 @@ class App:
     def __init__(self, root: tk.Tk, initial_files=()):
         self.root = root
         root.title(f"PDF / 图片 转 Word  {__version__}")
-        root.geometry("1040x700")
-        root.minsize(900, 640)
+        root.geometry("1040x740")
+        root.minsize(900, 700)
         self.events: "queue.Queue" = queue.Queue()
         # Worker threads must never touch Tk variables: they read this snapshot,
         # which the main thread refreshes (see _pump), so changes apply to the
@@ -173,7 +175,7 @@ class App:
             "lang": tk.StringVar(value=AUTO_LANG), "dpi": tk.IntVar(value=300),
             "pages": tk.StringVar(), "images": tk.BooleanVar(value=True),
             "pbreak": tk.BooleanVar(value=True), "exists": tk.StringVar(value=list(COLLISIONS)[0]),
-            "workers": tk.IntVar(value=1),
+            "workers": tk.IntVar(value=1), "split": tk.StringVar(value=list(SPLITS)[0]),
         }
         f = ttk.LabelFrame(parent, text="输出格式", padding=6)
         f.pack(fill="x")
@@ -202,6 +204,7 @@ class App:
         line(2, "语言", self.lang_box)
         line(3, "清晰度 DPI", ttk.Spinbox(f, from_=150, to=600, increment=50, textvariable=v["dpi"], width=6))
         line(4, "页码 (如 1-3,7)", ttk.Entry(f, textvariable=v["pages"]))
+        line(5, "一页塞两页", ttk.Combobox(f, textvariable=v["split"], values=list(SPLITS), state="readonly"))
 
         f = ttk.LabelFrame(parent, text="其他", padding=6)
         f.pack(fill="x", pady=(4, 0))
@@ -241,7 +244,8 @@ class App:
             ocr_lang=tag, backend=BACKENDS.get(v["backend"].get(), "auto"),
             mode=MODES.get(v["mode"].get(), "auto"), dpi=dpi, keep_images=v["images"].get(),
             page_breaks=v["pbreak"].get(), collision=COLLISIONS.get(v["exists"].get(), "rename"),
-            workers=workers, page_range=v["pages"].get().strip())
+            workers=workers, page_range=v["pages"].get().strip(),
+            split=SPLITS.get(v["split"].get(), "none"))
 
     def _load_settings(self):
         try:
@@ -256,7 +260,7 @@ class App:
         v["out_dir"].set(d.get("out_dir", ""))
         rev = lambda m, val: next((k for k, x in m.items() if x == val), None)
         for key, m, field in (("mode", MODES, "mode"), ("backend", BACKENDS, "backend"),
-                              ("exists", COLLISIONS, "collision")):
+                              ("exists", COLLISIONS, "collision"), ("split", SPLITS, "split")):
             k = rev(m, d.get(field))
             if k:
                 v[key].set(k)

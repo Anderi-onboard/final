@@ -98,6 +98,20 @@ def _fit(img, max_dim: int):
     return img.resize((max(1, round(w * scale)), max(1, round(h * scale))), Image.LANCZOS), 1.0 / scale
 
 
+def find_spine_px(img) -> int:
+    """x (pixels) of the fold in a scan of two facing pages: the brightest
+    column band within 10% of the middle (the pages' inner margins add up to a
+    blank strip), nudged toward the exact middle when two bands are close."""
+    from PIL import Image
+    w, h = img.size
+    bins = 400
+    prof = list(img.convert("L").resize((bins, 1), Image.BOX).getdata())
+    sm = [sum(prof[max(0, i - 2):i + 3]) / len(prof[max(0, i - 2):i + 3]) for i in range(bins)]
+    lo, hi = int(bins * 0.40), int(bins * 0.60)
+    best = max(range(lo, hi + 1), key=lambda i: sm[i] - 0.25 * abs(i - bins / 2))
+    return int(round((best + 0.5) / bins * w))
+
+
 # --------------------------------------------------------------------- Windows
 
 _WIN = None

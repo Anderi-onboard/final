@@ -61,6 +61,21 @@ def page_two_columns(doc, font):
     page.insert_textbox(pymupdf.Rect(310, 120, 523, 700), right, fontsize=11, fontname="helv")
 
 
+def spread(font):
+    """A landscape sheet carrying two A5 pages side by side: page 1 on the left,
+    page 2 on the right, each with its own heading and a few paragraphs."""
+    doc = pymupdf.open()
+    page = doc.new_page(width=842, height=595)
+    page.insert_font(fontname="zh", fontfile=font)
+    for k, (x0, name, zh) in enumerate(((40, "First Page", "第一页"), (452, "Second Page", "第二页"))):
+        page.insert_text((x0, 70), f"{name} {zh}", fontsize=20, fontname="zh")
+        page.insert_textbox(pymupdf.Rect(x0, 90, x0 + 350, 300),
+                            f"This text sits on {name.lower()} of the book. " * 4, fontsize=11, fontname="helv")
+        page.insert_textbox(pymupdf.Rect(x0, 320, x0 + 350, 420), f"{zh}的正文在这里,方便确认拆分后左右顺序没有错。" * 3,
+                            fontsize=11, fontname="zh")
+    return doc
+
+
 def make(outdir):
     os.makedirs(outdir, exist_ok=True)
     font = cjk_font()
@@ -69,6 +84,15 @@ def make(outdir):
     page_two_columns(doc, font)
     native = os.path.join(outdir, "native.pdf")
     doc.save(native)
+
+    sp = spread(font)
+    sp.save(os.path.join(outdir, "spread.pdf"))
+    pix = sp[0].get_pixmap(dpi=200)
+    pix.save(os.path.join(outdir, "spread.png"))
+    sc = pymupdf.open()
+    spg = sc.new_page(width=842, height=595)
+    spg.insert_image(spg.rect, filename=os.path.join(outdir, "spread.png"))
+    sc.save(os.path.join(outdir, "spread_scan.pdf"))
 
     # the same pages as a scan: pictures only, no text layer
     scan = pymupdf.open()
