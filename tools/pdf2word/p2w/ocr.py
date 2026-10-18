@@ -99,17 +99,58 @@ def _fit(img, max_dim: int):
 
 
 def find_spine_px(img) -> int:
-    """x (pixels) of the fold in a scan of two facing pages: the brightest
-    column band within 10% of the middle (the pages' inner margins add up to a
-    blank strip), nudged toward the exact middle when two bands are close."""
-    from PIL import Image
+    """x (pixels) of the fold in a picture of two facing pages.
+
+    Looks for where the left page's text ends and the right page's begins and cuts in
+    the middle of that gap. "Text" is counted as many short dark runs going down a
+    column (lines of print); the fold's own shadow or a page edge is one long run, so it
+    does not count. Falls back to the plainest blank strip near the middle when numpy is
+    not installed, and to the exact middle when there is no gap."""
+    from PIL import Image, ImageFilter
     w, h = img.size
+    g = img.convert("L")
+    k = max(1, min(w, h) // 500)
+    small = g.resize((max(8, w // (2 * k)), max(8, h // (2 * k)))) if k > 1 or max(w, h) > 1200 else g
+    sw, sh = small.size
     bins = 400
-    prof = list(img.convert("L").resize((bins, 1), Image.BOX).getdata())
-    sm = [sum(prof[max(0, i - 2):i + 3]) / len(prof[max(0, i - 2):i + 3]) for i in range(bins)]
-    lo, hi = int(bins * 0.40), int(bins * 0.60)
-    best = max(range(lo, hi + 1), key=lambda i: sm[i] - 0.25 * abs(i - bins / 2))
-    return int(round((best + 0.5) / bins * w))
+    try:
+        import numpy as np
+    except ImportError:
+        prof = list(g.resize((bins, 1), Image.BOX).getdata())
+        sm = [sum(prof[max(0, i - 2):i + 3]) / len(prof[max(0, i - 2):i + 3]) for i in range(bins)]
+        lo, hi = int(bins * 0.40), int(bins * 0.60)
+        best = max(range(lo, hi + 1), key=lambda i: sm[i] - 0.25 * abs(i - bins / 2))
+        return int(round((best + 0.5) / bins * w))
+
+    bg = small.filter(ImageFilter.GaussianBlur(max(4, sw // 40)))
+    ink = (np.asarray(bg, dtype=np.int16) - np.asarray(small, dtype=np.int16)) > 30     # darker than its surroundings
+    trans = (ink[1:] != ink[:-1]).sum(axis=0).astype(float)                              # dark/light switches per column
+    bins = min(bins, len(trans))
+    edges = np.linspace(0, len(trans), bins + 1).astype(int)            # equal-width bins (array_split is not)
+    cs = np.concatenate([[0.0], np.cumsum(trans)])
+    prof = (cs[edges[1:]] - cs[edges[:-1]]) / np.maximum(1, edges[1:] - edges[:-1])
+    sm = np.convolve(prof, np.ones(7) / 7, mode="same")
+    ref = float(np.percentile(sm, 90))
+    if ref <= 0:
+        return w // 2
+    dense = sm >= 0.25 * ref
+    lo, hi = int(bins * 0.25), int(bins * 0.75)
+    runs, i = [], lo
+    while i < hi:                           # blank stretches (no print) between lo and hi
+        if not dense[i]:
+            j = i
+            while j < hi and not dense[j]:
+                j += 1
+            runs.append((i, j))
+            i = j
+        else:
+            i += 1
+    runs = [r for r in runs if r[1] - r[0] >= bins * 0.02]
+    if not runs:
+        return w // 2                       # print runs through the middle: no gap to cut in
+    mid = bins / 2
+    a_, b_ = max(runs, key=lambda r: (r[1] - r[0]) - 0.3 * abs((r[0] + r[1]) / 2 - mid))   # widest, near the middle
+    return int(round((a_ + b_) / 2 / bins * w))
 
 
 # --------------------------------------------------------------------- Windows

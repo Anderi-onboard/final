@@ -76,6 +76,32 @@ def spread(font):
     return doc
 
 
+def photo_spread(font, marks, size=(1200, 800), spine=550):
+    """A fake photo of an open book: dark surround, paper, a fold shadow at `spine` (not at
+    the middle), a block of print on each side. marks = (left, right) one character each."""
+    from PIL import ImageFont
+    im = Image.new("RGB", size, (58, 58, 62))
+    d = ImageDraw.Draw(im)
+    d.rectangle([40, 30, size[0] - 40, size[1] - 30], fill=(232, 226, 204))
+    d.rectangle([spine - 3, 30, spine + 3, size[1] - 30], fill=(60, 50, 40))
+    f = ImageFont.truetype(font, 22, index=0) if font.endswith(".ttc") else ImageFont.truetype(font, 22)
+    for x0, x1, ch in ((90, spine - 50, marks[0]), (spine + 50, size[0] - 90, marks[1])):
+        for n in range(14):
+            d.text((x0, 90 + n * 34), f"{ch}页第{n + 1}行的内容写在这里,需要凑满", font=f, fill=(25, 25, 25))
+    return im
+
+
+def book_photos(font):
+    """Portrait page with two stacked photos of spreads, white all round, as in a phone-scanned book."""
+    doc = pymupdf.open()
+    page = doc.new_page(width=595, height=842)
+    for k, (marks, y) in enumerate((("甲乙", 90), ("丙丁", 440))):
+        buf = io.BytesIO()
+        photo_spread(font, marks).save(buf, "PNG")
+        page.insert_image(pymupdf.Rect(100, y, 495, y + 263), stream=buf.getvalue())
+    return doc
+
+
 def make(outdir):
     os.makedirs(outdir, exist_ok=True)
     font = cjk_font()
@@ -85,6 +111,7 @@ def make(outdir):
     native = os.path.join(outdir, "native.pdf")
     doc.save(native)
 
+    book_photos(font).save(os.path.join(outdir, "book.pdf"))
     sp = spread(font)
     sp.save(os.path.join(outdir, "spread.pdf"))
     pix = sp[0].get_pixmap(dpi=200)

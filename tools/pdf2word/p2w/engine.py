@@ -104,43 +104,68 @@ def _unify_margins(doc: Doc):
             p.width, p.height = ref.width, ref.height
 
 
-def _split_order(ps, opts: Options):
-    """None for a normal page, else which halves to produce and in what order."""
+def _halves(w: float, h: float, opts: Options):
+    """None for something that stays one page, else which halves to make and in what order."""
     mode = opts.split
     if mode == "auto":
-        mode = "lr" if ps.width_pt >= 1.3 * ps.height_pt else "none"
+        mode = "lr" if w >= 1.3 * h else "none"
     return {"lr": ("L", "R"), "rl": ("R", "L")}.get(mode)
 
 
+def _regions(ps, opts: Options):
+    """[None] = the page as it is. Otherwise the pictures on it, one by one: a page of book
+    photos is a few photos with white around them, and each photo is what holds two book
+    pages, not the sheet."""
+    if opts.split == "none" or not hasattr(ps, "image_regions"):
+        return [None]
+    rs = ps.image_regions()
+    if not rs:
+        return [None]
+    area = ps.width_pt * ps.height_pt
+    if len(rs) == 1 and rs[0].width * rs[0].height >= 0.9 * area:
+        return [None]
+    if sum(r.width * r.height for r in rs) < 0.35 * area:      # a few illustrations on a text page
+        return [None]
+    return rs
+
+
 def _convert_sheet(ps, opts: Options, backend_for):
-    """One source page -> one or two Pages. Returns (pages, "native" | "ocr")."""
-    halves = _split_order(ps, opts)
+    """One source page -> one or more Pages. Returns (pages, "native" | "ocr")."""
+    import pymupdf
     has_layer = hasattr(ps, "page")
-    if opts.mode == "native" or (opts.mode == "auto" and has_layer and ps.native_ok()):
-        if not has_layer:
-            raise JobError("图片没有文字层,请把「识别方式」改成自动或强制 OCR")
-        if halves:
-            import pymupdf
-            r = ps.page.rect
-            x = layout_native.find_spine(ps.page)
-            clips = {"L": pymupdf.Rect(r.x0, r.y0, x, r.y1), "R": pymupdf.Rect(x, r.y0, r.x1, r.y1)}
-            pages = [layout_native.build_page(ps.page, opts.keep_images, clips[h]) for h in halves]
-        else:
-            pages = [layout_native.build_page(ps.page, opts.keep_images)]
+    regions = _regions(ps, opts)
+    photos = regions != [None]
+    native = opts.mode == "native" or (opts.mode == "auto" and has_layer and not photos and ps.native_ok())
+    if native and not has_layer:
+        raise JobError("图片没有文字层,请把「识别方式」改成自动或强制 OCR")
+
+    pages: List[Page] = []
+    if native:
+        for reg in regions:
+            r = reg if reg is not None else ps.page.rect
+            halves = _halves(r.width, r.height, opts)
+            if halves:
+                x = layout_native.find_spine(ps.page, reg)
+                clips = {"L": pymupdf.Rect(r.x0, r.y0, x, r.y1), "R": pymupdf.Rect(x, r.y0, r.x1, r.y1)}
+                pages += [layout_native.build_page(ps.page, opts.keep_images, clips[h]) for h in halves]
+            else:
+                pages.append(layout_native.build_page(ps.page, opts.keep_images, reg))
         for pg in pages:
             if not pg.blocks and opts.mode == "native":
                 pg.note = "此页没有文字层 (未做 OCR)"
         return pages, "native"
 
     be = backend_for()
-    img = ps.render(opts.dpi)
-    if halves:
-        x = find_spine_px(img)
-        crops = {"L": img.crop((0, 0, x, img.height)), "R": img.crop((x, 0, img.width, img.height))}
-        parts = [crops[h] for h in halves]
-    else:
-        parts = [img]
-    pages = [layout_ocr.build_page(be.recognize(c), c.width, c.height, ps.px_to_pt) for c in parts]
+    for reg in regions:
+        img = ps.render(opts.dpi, reg)
+        halves = _halves(img.width, img.height, opts)
+        if halves:
+            x = find_spine_px(img)
+            crops = {"L": img.crop((0, 0, x, img.height)), "R": img.crop((x, 0, img.width, img.height))}
+            parts = [crops[h] for h in halves]
+        else:
+            parts = [img]
+        pages += [layout_ocr.build_page(be.recognize(c), c.width, c.height, ps.px_to_pt) for c in parts]
     return pages, "ocr"
 
 
@@ -172,7 +197,7 @@ def convert_file(path: str, opts: Options, backend_for: Callable[[], object],
                 if how == "ocr":
                     ocr_pages += len(pages)
                 label += {"ocr": " · OCR", "native": " · 文字层"}.get(how, "") + \
-                    (f" · 拆成 {len(pages)} 页" if len(pages) > 1 else "")
+                    (f" · 得到 {len(pages)} 页" if len(pages) > 1 else "")
                 doc.pages.extend(pages)
             except (OcrUnavailable, JobError, Cancelled):
                 raise
@@ -186,7 +211,7 @@ def convert_file(path: str, opts: Options, backend_for: Callable[[], object],
         src.close()
 
     if opts.split == "auto" and len(doc.pages) == sheets:
-        warnings.append("「自动」只拆横向页面,这个文件的页面都是竖版,所以一页都没拆;要强制拆请选「左页在前」或「右页在前」")
+        warnings.append("「自动」只拆横向的页面或照片,这个文件里没有找到,所以一页都没拆;要强制拆请选「左页在前」或「右页在前」")
     elif opts.split in ("lr", "rl"):
         warnings.append(f"拆分: {sheets} 张纸 → {len(doc.pages)} 页")
     _unify_margins(doc)

@@ -53,7 +53,7 @@ class PageSource:
     def native_ok(self) -> bool:
         return False
 
-    def render(self, dpi: int):
+    def render(self, dpi: int, clip=None):
         raise NotImplementedError
 
 
@@ -86,11 +86,35 @@ class _DocPage(PageSource):
                 return False
         return True
 
-    def render(self, dpi: int):
+    def image_regions(self):
+        """Where the big pictures are on the page, top to bottom then left to
+        right: a page of book photos is a few of these, not one scan."""
+        import pymupdf
+        page = self.page
+        area = self.width_pt * self.height_pt
+        try:
+            infos = page.get_image_info()
+        except Exception:
+            return []
+        rects = []
+        for i in infos:
+            r = pymupdf.Rect(i["bbox"]) & page.rect
+            if not r.is_empty and r.width * r.height >= 0.10 * area:
+                rects.append(r)
+        rects = [r for r in rects if not any(o is not r and o.contains(r) and o != r for o in rects)]
+        uniq = []
+        for r in rects:
+            if not any(abs(r.x0 - u.x0) < 2 and abs(r.y0 - u.y0) < 2 and abs(r.x1 - u.x1) < 2 and abs(r.y1 - u.y1) < 2
+                       for u in uniq):
+                uniq.append(r)
+        return sorted(uniq, key=lambda r: (round(r.y0 / 20), r.x0))
+
+    def render(self, dpi: int, clip=None):
         from PIL import Image
-        side = max(self.width_pt, self.height_pt) / 72.0
+        w, h = (clip.width, clip.height) if clip is not None else (self.width_pt, self.height_pt)
+        side = max(w, h) / 72.0
         dpi = max(72, min(int(dpi), int(MAX_RENDER_SIDE / side)))
-        pix = self.page.get_pixmap(dpi=dpi, alpha=False)
+        pix = self.page.get_pixmap(dpi=dpi, alpha=False, clip=clip)
         img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
         self.px_to_pt = 72.0 / dpi
         return img
@@ -116,7 +140,7 @@ class _ImagePage(PageSource):
         self.px_to_pt = k
         self.width_pt, self.height_pt = w * k, h * k
 
-    def render(self, dpi: int):
+    def render(self, dpi: int, clip=None):
         return self.img
 
 

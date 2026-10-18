@@ -292,7 +292,32 @@ def build_page(lines: List[OLine], img_w: float, img_h: float, k: float) -> Page
         p.space_before = _gap(prev, top, k, size, pitch)
         page.blocks.append(p)
         prev = (g[-1].y0, max(i.y1 for i in g), False)
+    if body < 9.0:                                   # a crop of a photo: 5pt type on a 3in page
+        _rescale(page, min(3.0, 10.5 / body))
     return page
+
+
+def _rescale(page: Page, f: float):
+    """Scale a page and everything on it by f, so the type ends up a normal size."""
+    page.width *= f
+    page.height *= f
+    page.margins = tuple(m * f for m in page.margins)
+    for b in page.blocks:
+        if isinstance(b, Para):
+            b.left_indent *= f
+            b.first_indent *= f
+            b.right_indent *= f
+            b.space_before *= f
+            b.space_after *= f
+            if b.line_pitch:
+                b.line_pitch *= f
+            for r in b.runs:
+                if r.size:
+                    r.size = lc.clamp(lc.snap_half(r.size * f), 6.0, 48.0)
+        elif isinstance(b, Table):
+            b.space_before *= f
+            if b.col_widths:
+                b.col_widths = [w * f for w in b.col_widths]
 
 
 def _gap(prev, top, k, size, pitch) -> float:

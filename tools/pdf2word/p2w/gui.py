@@ -26,7 +26,7 @@ MODES = {"自动 (有文字层直接取,没有才 OCR)": "auto", "全部 OCR": "
 BACKENDS = {"自动 (RapidOCR > Windows OCR)": "auto", "RapidOCR": "rapidocr", "Windows OCR": "windows",
             "Tesseract": "tesseract"}
 SPLITS = {"不拆分": "none", "左页在前 (左半=前一页)": "lr", "右页在前 (右半=前一页)": "rl",
-          "自动 (横向页面按左页在前拆)": "auto"}
+          "自动 (横向的页面/照片按左页在前拆)": "auto"}
 COLLISIONS = {"自动改名": "rename", "覆盖": "overwrite", "跳过": "skip"}
 AUTO_LANG = "自动 (中文优先,中英混排)"
 

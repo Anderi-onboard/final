@@ -103,14 +103,15 @@ def _shift(d: dict, dx: float, dy: float):
                 sp["origin"] = (sp["origin"][0] + dx, sp["origin"][1] + dy)
 
 
-def find_spine(page) -> float:
-    """x of the fold on a sheet that carries two pages side by side: the empty
-    vertical gap between the two text areas if there is one near the middle,
-    else exactly the middle."""
-    W = page.rect.width
-    spans = [(b[0], b[2]) for b in page.get_text("blocks") if b[6] == 0 and b[4].strip()]
+def find_spine(page, clip=None) -> float:
+    """x of the fold on a sheet (or on `clip`, one picture of a spread) that carries two
+    pages side by side: the empty vertical gap between the two text areas if there is
+    one near the middle, else exactly the middle."""
+    r = clip if clip is not None else page.rect
+    spans = [(b[0], b[2]) for b in page.get_text("blocks", clip=clip) if b[6] == 0 and b[4].strip()]
     gx = lc.find_gutter(spans, 0.02)
-    return gx if gx is not None and 0.4 * W <= gx <= 0.6 * W else W / 2
+    mid = (r.x0 + r.x1) / 2
+    return gx if gx is not None and abs(gx - mid) <= 0.1 * r.width else mid
 
 
 def build_page(page, keep_images: bool = True, clip=None) -> Page:

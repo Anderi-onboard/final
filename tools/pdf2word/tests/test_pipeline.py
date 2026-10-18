@@ -303,6 +303,59 @@ class Native(unittest.TestCase):
         self.assertLess(text.index("First Page"), text.index("Second Page"))
         self.assertLess(text.index("第一页的正文"), text.index("第二页的正文"))
 
+    def test_photo_pages_are_cut_per_photo_then_per_half(self):
+        """A portrait page holding two photos of open books: 4 book pages, in reading order,
+        cut at the fold (which is not at the middle of the photo), white margins ignored."""
+        seen = []
+
+        class Fake:
+            name, language = "fake", "x"
+            def recognize(self, img):
+                seen.append(img.size)
+                return []
+        o = Options(out_dir=tempfile.mkdtemp(dir=self.tmp), formats=("txt",), collision="overwrite", split="lr")
+        res = convert_file(os.path.join(self.tmp, "book.pdf"), o, lambda: Fake())
+        self.assertEqual(res["pages"], 4)
+        self.assertEqual(len(seen), 4)
+        w, h = seen[0][0] + seen[1][0], seen[0][1]
+        self.assertEqual(seen[0][1], seen[1][1])
+        self.assertAlmostEqual(seen[0][0] / w, 550 / 1200, delta=0.04)      # cut at the fold, not at 50%
+        self.assertAlmostEqual(w / h, 1.5, delta=0.1)                       # the photo, not the white page
+        for a, b in ((seen[2], seen[0]), (seen[3], seen[1])):
+            self.assertLessEqual(max(abs(a[0] - b[0]), abs(a[1] - b[1])), 3)      # same photo shape, rounding aside
+
+    def test_photo_pages_auto_mode_works_on_a_portrait_page(self):
+        n = []
+
+        class Fake:
+            name, language = "fake", "x"
+            def recognize(self, img):
+                n.append(1)
+                return []
+        o = Options(out_dir=tempfile.mkdtemp(dir=self.tmp), formats=("txt",), collision="overwrite", split="auto")
+        self.assertEqual(convert_file(os.path.join(self.tmp, "book.pdf"), o, lambda: Fake())["pages"], 4)
+
+    def test_without_split_a_photo_page_stays_one_page(self):
+        class Fake:
+            name, language = "fake", "x"
+            def recognize(self, img):
+                return []
+        o = Options(out_dir=tempfile.mkdtemp(dir=self.tmp), formats=("txt",), collision="overwrite", split="none")
+        self.assertEqual(convert_file(os.path.join(self.tmp, "book.pdf"), o, lambda: Fake())["pages"], 1)
+
+    @unittest.skipUnless(HAVE_RAPID, "rapidocr not installed")
+    def test_photo_pages_read_in_order_with_rapidocr(self):
+        import docx
+        res, _ = self.convert("book.pdf", split="lr", backend="rapidocr")
+        self.assertEqual(res["pages"], 4)
+        d = docx.Document(res["outputs"][0])
+        text = "\n".join(p.text for p in d.paragraphs)
+        for a, b in (("甲页第1行", "乙页第1行"), ("乙页第1行", "丙页第1行"), ("丙页第1行", "丁页第1行")):
+            self.assertLess(text.index(a), text.index(b), (a, b))
+        self.assertGreater(d.sections[0].page_width.pt, 230)                # not a 3-inch page with 5pt type
+        sizes = [r.font.size.pt for p in d.paragraphs for r in p.runs if r.font.size]
+        self.assertTrue(8 <= sorted(sizes)[len(sizes) // 2] <= 14, sorted(sizes)[len(sizes) // 2])
+
     def test_spine_is_found_off_centre(self):
         from PIL import Image as PI, ImageDraw
         im = PI.new("L", (1000, 600), 255)
