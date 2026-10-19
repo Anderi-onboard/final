@@ -331,15 +331,17 @@ class JobQueue:
         self._backends = threading.local()
 
     # --- list management
-    def add(self, paths) -> List[Job]:
+    def add(self, paths, notes=None) -> List[Job]:
+        """`notes` maps a path to the text shown beside it until work starts."""
         added = []
+        notes = {os.path.abspath(k): v for k, v in (notes or {}).items()}
         with self._cv:
             have = {j.path for j in self.jobs if j.status in (QUEUED, RUNNING)}
             for p in paths:
                 p = os.path.abspath(p)
                 if p in have or not kind_of(p):
                     continue
-                j = Job(next(self._ids), p)
+                j = Job(next(self._ids), p, message=notes.get(p, ""))
                 self.jobs.append(j)
                 have.add(p)
                 added.append(j)

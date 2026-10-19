@@ -101,7 +101,7 @@ class App:
 
         bar = ttk.Frame(r, padding=(10, 8, 10, 4))
         bar.pack(fill="x")
-        for text, cmd in (("添加文件…", self.pick_files), ("添加文件夹…", self.pick_folder),
+        for text, cmd in (("添加文件…", self.pick_files), ("添加文件夹 (自动挑扫描件)…", self.pick_folder),
                           ("移除所选", self.remove_selected), ("清除已完成", self.clear_done),
                           ("上移", lambda: self.move(-1)), ("下移", lambda: self.move(1)),
                           ("重试失败项", self.retry_failed)):
@@ -184,7 +184,7 @@ class App:
             "pages": tk.StringVar(), "images": tk.BooleanVar(value=True),
             "pbreak": tk.BooleanVar(value=True), "exists": tk.StringVar(value=list(COLLISIONS)[0]),
             "workers": tk.IntVar(value=1), "split": tk.StringVar(value=list(SPLITS)[0]),
-            "llm": tk.BooleanVar(value=False), "llm_url": tk.StringVar(value=LLM_PRESETS[0][1]),
+            "autostart": tk.BooleanVar(value=True), "llm": tk.BooleanVar(value=False), "llm_url": tk.StringVar(value=LLM_PRESETS[0][1]),
             "llm_model": tk.StringVar(value=LLM_PRESETS[0][2]), "llm_key": tk.StringVar(),
             "llm_scope": tk.StringVar(value=list(LLM_SCOPES)[0]), "llm_log": tk.BooleanVar(value=True),
         }
@@ -221,6 +221,7 @@ class App:
         f.pack(fill="x", pady=(4, 0))
         ttk.Checkbutton(f, text="保留文字层 PDF 里的图片", variable=v["images"]).pack(anchor="w")
         ttk.Checkbutton(f, text="每页之间分页", variable=v["pbreak"]).pack(anchor="w")
+        ttk.Checkbutton(f, text="选文件夹后自动开始处理", variable=v["autostart"]).pack(anchor="w")
         row = ttk.Frame(f)
         row.pack(fill="x", pady=(4, 0))
         ttk.Label(row, text="同名文件").pack(side="left")
@@ -287,6 +288,7 @@ class App:
         v["images"].set(d.get("keep_images", True))
         v["pbreak"].set(d.get("page_breaks", True))
         v["workers"].set(d.get("workers", 1))
+        v["autostart"].set(d.get("auto_start", True))
         v["llm"].set(bool(d.get("llm", False)))
         for k in ("llm_url", "llm_model", "llm_key"):
             if d.get(k):
@@ -307,6 +309,7 @@ class App:
         try:
             d = self.options().to_dict()
             d["geometry"] = self.root.geometry()
+            d["auto_start"] = self.v["autostart"].get()
             with open(settings_path(), "w", encoding="utf-8") as f:
                 json.dump(d, f, ensure_ascii=False, indent=1)
         except Exception:
@@ -399,9 +402,9 @@ class App:
             self.add_paths(paths)
 
     def pick_folder(self):
-        d = filedialog.askdirectory(title="选择文件夹 (含子文件夹)")
+        d = filedialog.askdirectory(title="选择文件夹: 里面(含子文件夹)需要 OCR 的文件会自动挑出来")
         if d:
-            self.add_paths([d])
+            self.scan_dirs([d])
 
     def pick_out(self):
         d = filedialog.askdirectory(title="选择输出文件夹")
@@ -413,11 +416,12 @@ class App:
         self.add_paths(self.root.tk.splitlist(event.data))
 
     def add_paths(self, paths):
-        files, skipped = [], 0
+        """Files go straight into the queue. Folders are looked through and only what needs
+        OCR is queued (see scan.py for the rule)."""
+        files, dirs, skipped = [], [], 0
         for p in paths:
             if os.path.isdir(p):
-                for root_, _, names in os.walk(p):
-                    files += [os.path.join(root_, n) for n in sorted(names) if kind_of(n)]
+                dirs.append(p)
             elif kind_of(p):
                 files.append(p)
             else:
@@ -425,12 +429,55 @@ class App:
         added = self.q.add(files)
         for j in added:
             self._update_row(j)
-        self.hint.place_forget() if self.q.jobs else None
         if skipped:
             self._log(f"忽略 {skipped} 个不支持的文件")
         if added:
             self._log(f"已添加 {len(added)} 个文件")
+        if self.q.jobs:
+            self.hint.place_forget()
         self._refresh_summary()
+        if dirs:
+            self.scan_dirs(dirs)
+
+    def scan_dirs(self, dirs):
+        if getattr(self, "_scanning", False):
+            messagebox.showinfo("正在扫描", "上一个文件夹还在扫描,请稍等或点「停止」。")
+            return
+        from .scan import scan_folder
+        self._scanning = True
+        self._scan_cancel = threading.Event()
+        opts = self.options()                       # read here: worker threads must not touch Tk
+        cancel = self._scan_cancel
+        self._log("开始扫描: " + "、".join(dirs))
+
+        def work():
+            allv = []
+            try:
+                for d in dirs:
+                    allv += scan_folder(d, opts, cancel.is_set,
+                                        lambda a, b, name: self.events.put(("scanprog", (a, b, name))))
+            except Exception as e:
+                self.events.put(("log", f"扫描出错: {e}"))
+            self.events.put(("scandone", (allv, cancel.is_set())))
+        threading.Thread(target=work, daemon=True).start()
+
+    def _scan_done(self, verdicts, cancelled):
+        from .scan import summarize
+        self._scanning = False
+        self._log(("已取消。" if cancelled else "") + summarize(verdicts))
+        picked = [v for v in verdicts if v.needs_ocr]
+        added = self.q.add([v.path for v in picked], {v.path: v.reason for v in picked})
+        for j in added:
+            self._update_row(j)
+        if self.q.jobs:
+            self.hint.place_forget()
+        self._refresh_summary()
+        if not picked:
+            if not cancelled:
+                messagebox.showinfo("没有需要 OCR 的文件", summarize(verdicts))
+            return
+        if self.v["autostart"].get() and not cancelled and added and not self.q.busy():
+            self.start()
 
     def _selected_ids(self):
         return {int(i) for i in self.tree.selection()}
@@ -495,6 +542,8 @@ class App:
             self.btn_pause.config(text="继续")
 
     def stop(self):
+        if getattr(self, "_scanning", False):
+            self._scan_cancel.set()
         self.q.stop()
         self.btn_pause.config(text="暂停")
 
@@ -558,6 +607,11 @@ class App:
                     self._on_idle()
                 elif kind == "langs":
                     self._set_langs(*obj)
+                elif kind == "scanprog":
+                    a, b, name = obj
+                    self.summary.config(text=f"扫描 {a}/{b}")
+                elif kind == "scandone":
+                    self._scan_done(*obj)
                 elif kind == "llmtest":
                     label, (state, msg) = obj
                     try:

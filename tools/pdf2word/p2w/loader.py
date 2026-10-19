@@ -46,6 +46,9 @@ if _pillow_heif():
 
 
 class PageSource:
+    def needs_ocr(self) -> bool:
+        return True
+
     width_pt = 595.0
     height_pt = 842.0
     px_to_pt = 1.0              # for the image that render() returns
@@ -85,6 +88,25 @@ class _DocPage(PageSource):
             if area and cover / area > 0.6:
                 return False
         return True
+
+    def image_cover(self) -> float:
+        """Share of the page area taken up by pictures (0..1)."""
+        area = self.width_pt * self.height_pt
+        if not area:
+            return 0.0
+        try:
+            tot = 0.0
+            for i in self.page.get_image_info():
+                b = i["bbox"]
+                tot += max(0.0, min(b[2], self.width_pt) - max(b[0], 0)) * max(0.0, min(b[3], self.height_pt) - max(b[1], 0))
+            return min(1.0, tot / area)
+        except Exception:
+            return 0.0
+
+    def needs_ocr(self) -> bool:
+        """No usable text layer AND the page is mostly picture: a scan or a photo.
+        A blank page or a vector drawing has nothing for OCR to read."""
+        return not self.native_ok() and self.image_cover() >= 0.30
 
     def image_regions(self):
         """Where the big pictures are on the page, top to bottom then left to

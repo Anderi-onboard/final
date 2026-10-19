@@ -10,12 +10,18 @@ from p2w.engine import DONE, FAILED, Options, JobQueue
 from p2w.loader import ALL_EXTS, kind_of
 
 
-def expand(args):
+def expand(args, only_ocr=False, opts=None):
     out = []
     for a in args:
         if os.path.isdir(a):
-            for root, _, files in os.walk(a):
-                out += [os.path.join(root, f) for f in sorted(files) if kind_of(f)]
+            if only_ocr:
+                from p2w.scan import scan_folder, summarize
+                vs = scan_folder(a, opts)
+                print(f"[{a}] " + summarize(vs), file=sys.stderr)
+                out += [v.path for v in vs if v.needs_ocr]
+            else:
+                for root, _, files in os.walk(a):
+                    out += [os.path.join(root, f) for f in sorted(files) if kind_of(f)]
         elif any(c in a for c in "*?["):
             out += sorted(p for p in glob.glob(a) if kind_of(p))
         else:
@@ -46,6 +52,8 @@ def main(argv=None):
     ap.add_argument("--no-page-breaks", action="store_true")
     ap.add_argument("--exists", default="rename", choices=["rename", "overwrite", "skip"])
     ap.add_argument("-j", "--workers", type=int, default=1)
+    ap.add_argument("--only-ocr", action="store_true",
+                    help="文件夹参数只挑需要 OCR 的文件(扫描件 PDF、较大的图片),跳过有文字层的和已转换过的")
     ap.add_argument("--list-langs", action="store_true")
     a = ap.parse_args(argv)
 
@@ -56,16 +64,18 @@ def main(argv=None):
         for tag, name in be.languages():
             print(f"  {tag}\t{name}")
         return 0
-    files = expand(a.inputs)
-    if not files:
+    if not a.inputs:
         ap.error("没有输入文件。支持: " + " ".join(ALL_EXTS))
-
     opts = Options(formats=tuple(a.format), out_dir=os.path.abspath(a.out) if a.out else "",
                    ocr_lang=a.lang, backend=a.backend, mode=a.mode, dpi=a.dpi,
                    keep_images=not a.no_images, page_breaks=not a.no_page_breaks,
                    collision=a.exists, workers=a.workers, page_range=a.pages, split=a.split,
                    llm=a.llm, llm_url=a.llm_url, llm_model=a.llm_model, llm_key=a.llm_key,
                    llm_scope=a.llm_scope, llm_log=not a.no_tidy_log)
+    files = expand(a.inputs, a.only_ocr, opts)
+    if not files:
+        print("没有要处理的文件。")
+        return 0
     idle = threading.Event()
     last = {}
 
