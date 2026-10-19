@@ -35,7 +35,7 @@ def main(argv=None):
     ap.add_argument("-f", "--format", nargs="+", default=["docx"], choices=sorted(writers.WRITERS))
     ap.add_argument("-o", "--out", default="", help="输出文件夹 (默认与源文件同目录)")
     ap.add_argument("--lang", default="auto", help="OCR 语言标记,如 zh-Hans-CN / en-US (默认 auto: 中文优先)")
-    ap.add_argument("--backend", default="auto", choices=["auto", "rapidocr", "windows", "tesseract"])
+    ap.add_argument("--backend", default="auto", choices=["auto", "apple", "rapidocr", "windows", "tesseract"])
     ap.add_argument("--mode", default="auto", choices=["auto", "ocr", "native"],
                     help="auto: 有文字层就直接取,没有才 OCR; ocr: 一律 OCR; native: 只取文字层")
     ap.add_argument("--dpi", type=int, default=300)

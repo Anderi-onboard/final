@@ -535,6 +535,76 @@ class RapidOcrBackend(unittest.TestCase):
         self.assertEqual(ocr.make_backend("auto", "auto").name, "rapidocr")
 
 
+class AppleBackend(unittest.TestCase):
+    """Apple Vision needs a Mac. This runs the same calls against a stand-in with the same names
+    and shapes (PyObjC style), so the call sequence and the bottom-left -> top-left box
+    conversion are covered; whether the real engine reads well is for a Mac to say."""
+
+    def fake_modules(self):
+        calls = self.calls = {}
+        class Box:
+            def __init__(s, x, y, w, h):
+                s.origin = types.SimpleNamespace(x=x, y=y); s.size = types.SimpleNamespace(width=w, height=h)
+        class Cand:
+            def __init__(s, t, c): s._t, s._c = t, c
+            def string(s): return s._t
+            def confidence(s): return s._c
+        class Obs:
+            def __init__(s, t, c, box): s.c, s.box = Cand(t, c), box
+            def topCandidates_(s, n): return [s.c]
+            def boundingBox(s): return s.box
+        class Req:
+            def init(s): return s
+            @classmethod
+            def alloc(cls): return cls()
+            def setRecognitionLevel_(s, v): calls["level"] = v
+            def setUsesLanguageCorrection_(s, v): calls["corr"] = v
+            def setRevision_(s, v): calls["rev"] = v
+            def setRecognitionLanguages_(s, v): calls["langs"] = v
+            def supportedRecognitionLanguagesAndReturnError_(s, e): return (["zh-Hans", "en-US"], None)
+            def results(s):
+                return [Obs("季度报告 Report", 0.98, Box(0.1, 0.8, 0.5, 0.05)), Obs("噪点", 0.1, Box(0, 0, .1, .1)),
+                        Obs("", 0.9, Box(0, 0, .1, .1))]
+        class Handler:
+            @classmethod
+            def alloc(cls): return cls()
+            def initWithData_options_(s, d, o): calls["bytes"] = bytes(d); return s
+            def performRequests_error_(s, reqs, err): return (True, None)
+        class NSData:
+            @staticmethod
+            def dataWithBytes_length_(b, n): return b
+        V = types.SimpleNamespace(VNRecognizeTextRequest=Req, VNImageRequestHandler=Handler,
+                                  VNRequestTextRecognitionLevelAccurate=0, VNRecognizeTextRequestRevision3=3)
+        return {"Vision": V, "Foundation": types.SimpleNamespace(NSData=NSData)}
+
+    def test_flow_and_coordinates(self):
+        from PIL import Image as PI
+        with mock.patch.object(ocr.sys, "platform", "darwin"), mock.patch.dict(sys.modules, self.fake_modules()):
+            be = ocr.AppleVision("auto")
+            self.assertEqual(be.language, "zh-Hans,zh-Hant,en-US")
+            lines = be.recognize(PI.new("RGB", (1000, 2000), "white"))
+            self.assertEqual([l.text for l in lines], ["季度报告 Report"])          # low confidence + empty dropped
+            l = lines[0]
+            self.assertEqual((round(l.x0), round(l.x1)), (100, 600))
+            self.assertEqual((round(l.y0), round(l.y1)), (300, 400))                 # origin was bottom-left: y flipped
+            self.assertEqual(self.calls["level"], 0)
+            self.assertEqual(self.calls["rev"], 3)
+            self.assertEqual(self.calls["langs"], ["zh-Hans", "zh-Hant", "en-US"])
+            self.assertEqual(self.calls["bytes"][:4], b"\x89PNG")
+            self.assertEqual([t for t, _ in be.languages()], ["zh-Hans", "en-US"])
+
+    def test_custom_language_and_not_a_mac(self):
+        with mock.patch.object(ocr.sys, "platform", "darwin"), mock.patch.dict(sys.modules, self.fake_modules()):
+            self.assertEqual(ocr.AppleVision("ja-JP,en-US").langs, ["ja-JP", "en-US"])
+        if sys.platform != "darwin":
+            with self.assertRaises(ocr.OcrUnavailable):
+                ocr.make_backend("apple")
+
+    def test_auto_prefers_apple_on_a_mac(self):
+        with mock.patch.object(ocr.sys, "platform", "darwin"), mock.patch.dict(sys.modules, self.fake_modules()):
+            self.assertEqual(ocr.make_backend("auto").name, "apple")
+
+
 class WindowsEngineWithStand_in(unittest.TestCase):
     """Runs WindowsOcr against a fake of the WinRT projection with the same
     names and shapes, so the call sequence and coordinate handling are covered

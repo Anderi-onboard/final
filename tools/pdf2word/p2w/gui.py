@@ -23,8 +23,8 @@ except Exception:                       # pragma: no cover
 STATUS_TEXT = {QUEUED: "等待", RUNNING: "处理中", DONE: "完成", FAILED: "失败",
                CANCELLED: "已取消", SKIPPED: "已跳过"}
 MODES = {"自动 (有文字层直接取,没有才 OCR)": "auto", "全部 OCR": "ocr", "只取文字层 (不 OCR)": "native"}
-BACKENDS = {"自动 (RapidOCR > Windows OCR)": "auto", "RapidOCR": "rapidocr", "Windows OCR": "windows",
-            "Tesseract": "tesseract"}
+BACKENDS = {"自动 (Mac 苹果 > RapidOCR > Windows)": "auto", "苹果 Vision (仅 Mac)": "apple", "RapidOCR": "rapidocr",
+            "Windows OCR": "windows", "Tesseract": "tesseract"}
 SPLITS = {"不拆分": "none", "左页在前 (左半=前一页)": "lr", "右页在前 (右半=前一页)": "rl",
           "自动 (横向的页面/照片按左页在前拆)": "auto"}
 LLM_SCOPES = {"只整理 OCR 识别出来的页": "ocr", "所有页 (含文字层 PDF)": "all"}
@@ -93,7 +93,8 @@ class App:
         r = self.root
         try:
             st = ttk.Style()
-            st.theme_use("vista" if "vista" in st.theme_names() else "clam")
+            names = st.theme_names()
+            st.theme_use(next((t for t in ("vista", "aqua") if t in names), "clam"))
             st.configure("Treeview", rowheight=26)
             st.configure("Big.TButton", padding=(14, 6))
         except tk.TclError:

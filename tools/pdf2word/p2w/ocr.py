@@ -1,6 +1,7 @@
 """OCR backends. All of them return the same thing: a list of OLine, in the pixel
 coordinates of the image they were given.
 
+apple      Apple's Vision framework, the engine behind Preview / Live Text (macOS only).
 rapidocr   PaddleOCR models on ONNX Runtime; best for Chinese + English, offline.
 windows    The engine behind the Snipping Tool "Text actions" button
            (Windows.Media.Ocr). Offline, no install of its own, but each
@@ -256,6 +257,74 @@ class WindowsOcr(Backend):
         return await self._engine.recognize_async(bitmap)
 
 
+# ---------------------------------------------------------------------- Apple
+
+class AppleVision(Backend):
+    """VNRecognizeTextRequest through PyObjC (pip install pyobjc-framework-Vision), on a Mac.
+    One observation per text line, with a box in normalised coordinates whose origin is the
+    bottom-left corner; converted here to pixels from the top-left like every other engine."""
+    name = "apple"
+    DEFAULT_LANGS = ["zh-Hans", "zh-Hant", "en-US"]
+
+    def __init__(self, lang: str = "auto"):
+        if sys.platform != "darwin":
+            raise OcrUnavailable("苹果 Vision 只能在 Mac 上用")
+        try:
+            import Foundation
+            import Vision
+        except ImportError as e:
+            raise OcrUnavailable("缺少 PyObjC: pip install pyobjc-framework-Vision") from e
+        self._V, self._F = Vision, Foundation
+        self.langs = self.DEFAULT_LANGS if lang in (None, "", "auto") else [x for x in lang.replace("+", ",").split(",") if x]
+        self.language = ",".join(self.langs)
+
+    def languages(self):
+        try:
+            req = self._V.VNRecognizeTextRequest.alloc().init()
+            req.setRecognitionLevel_(self._V.VNRequestTextRecognitionLevelAccurate)
+            got = req.supportedRecognitionLanguagesAndReturnError_(None)
+            got = got[0] if isinstance(got, tuple) else got
+            return [(l, l) for l in (got or [])] or [(l, l) for l in self.DEFAULT_LANGS]
+        except Exception:
+            return [(l, l) for l in self.DEFAULT_LANGS]
+
+    def recognize(self, img) -> List[OLine]:
+        V, F = self._V, self._F
+        w, h = img.size
+        buf = io.BytesIO()
+        img.convert("RGB").save(buf, "PNG", compress_level=1)
+        data = F.NSData.dataWithBytes_length_(buf.getvalue(), len(buf.getvalue()))
+        handler = V.VNImageRequestHandler.alloc().initWithData_options_(data, None)
+        req = V.VNRecognizeTextRequest.alloc().init()
+        req.setRecognitionLevel_(V.VNRequestTextRecognitionLevelAccurate)
+        req.setUsesLanguageCorrection_(True)
+        try:                                              # newer revisions read CJK much better
+            req.setRevision_(V.VNRecognizeTextRequestRevision3)
+        except Exception:
+            pass
+        try:
+            req.setRecognitionLanguages_(self.langs)
+        except Exception:
+            pass
+        res = handler.performRequests_error_([req], None)
+        ok, err = res if isinstance(res, tuple) else (res, None)
+        if not ok:
+            raise OcrUnavailable(f"Vision 识别失败: {err}")
+        lines = []
+        for obs in (req.results() or []):
+            cands = obs.topCandidates_(1)
+            if not cands:
+                continue
+            txt = str(cands[0].string()).strip()
+            if not txt or float(cands[0].confidence()) < 0.3:
+                continue
+            bb = obs.boundingBox()
+            x0, x1 = bb.origin.x * w, (bb.origin.x + bb.size.width) * w
+            y0, y1 = (1 - bb.origin.y - bb.size.height) * h, (1 - bb.origin.y) * h
+            lines.append(OLine([OWord(txt, x0, y0, x1, y1)]))
+        return lines
+
+
 # -------------------------------------------------------------------- RapidOCR
 
 class RapidOcr(Backend):
@@ -348,9 +417,10 @@ class TesseractOcr(Backend):
 def make_backend(kind: str = "auto", lang: str = "auto") -> Backend:
     kind = (kind or "auto").lower()
     errors = []
-    order = {"auto": ["rapidocr", "windows", "tesseract"], "rapidocr": ["rapidocr"],
-             "windows": ["windows"], "tesseract": ["tesseract"]}.get(kind, ["rapidocr", "windows", "tesseract"])
-    makers = {"rapidocr": RapidOcr, "windows": WindowsOcr, "tesseract": TesseractOcr}
+    auto = ["apple", "rapidocr", "windows", "tesseract"] if sys.platform == "darwin" else ["rapidocr", "windows", "tesseract"]
+    order = {"auto": auto, "apple": ["apple"], "rapidocr": ["rapidocr"],
+             "windows": ["windows"], "tesseract": ["tesseract"]}.get(kind, auto)
+    makers = {"apple": AppleVision, "rapidocr": RapidOcr, "windows": WindowsOcr, "tesseract": TesseractOcr}
     for k in order:
         try:
             return makers[k](lang)
