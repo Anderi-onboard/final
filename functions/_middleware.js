@@ -44,7 +44,7 @@ const BLOCKED = [
   /^\/palette-guide\.html$/i,
   /^\/palette-overview\.html$/i,
   /^\/baoxianghua-compositions\.html$/i,
-  /^\/(tests|scripts|tools|eval|artifacts|copywriting|qa)(\/|$)/i,
+  /^\/(tests|scripts|tools|eval|artifacts|copywriting|qa|knowledge)(\/|$)/i,
   /^\/\.(git|env|dev\.vars)/i
 ];
 

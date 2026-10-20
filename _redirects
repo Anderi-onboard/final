@@ -40,6 +40,10 @@
 /artifacts/*     /404.html   404
 /tools/*         /404.html   404
 
+# The Obsidian vault of 断法. It explains how a reading is reasoned, which is
+# the same material as the prompt stack — the product. Not part of the site.
+/knowledge/*     /404.html   404
+
 # Internal colour references. palette-guide and palette-overview exist to show
 # the raw ramps to whoever is editing them; they are the one place where naked
 # hex is correct, and they are not part of the product.

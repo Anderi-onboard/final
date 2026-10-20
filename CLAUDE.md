@@ -37,6 +37,8 @@ functions/_middleware.js   拦住内部文件(_redirects 做不到,见 ARCHITECT
 functions/_lib/     prompt-engine.js(解读语气,服务端)db.js session.js password.js
 functions/api/      claude.js(模型代理) rates.js auth/ account/ billing/ checkout.js
 schema.sql  wrangler.toml  _headers  _redirects  version.json
+knowledge/          Obsidian 断法知识库(不公开,_middleware 拦截)
+                    07 卦库 / 08 类象库 由 scripts/build-knowledge-vault.mjs 生成
 ```
 
 ⚠️ 这张图 08-21 前是过期的,列了两个已经不在那儿的文件:
@@ -46,6 +48,15 @@ schema.sql  wrangler.toml  _headers  _redirects  version.json
 因为提示词栈就是产品本身,放在浏览器里等于开源它。
 
 **单一数据源**:账户/点数/历史一律走 `account.js`(BWAccount),不要在别处复制状态逻辑。
+
+**断法知识库 `knowledge/`**(Obsidian vault,2026-10-20):断法、分类占、推理陷阱、落笔规矩是手写的,
+讲的是 `functions/_lib/prompt-engine.js` 里那套规则**为什么**这样定 —— 改了提示词里的断法,回来同步这里。
+64 卦装卦和 38 个符号的类象**不许手写**:脚本用 `liuyao-engine.js` 和 `assets/xiangshu/lei-xiang.json` 生成,
+生成前先拿教科书的八宫卦表、六冲六合卦逐卦对引擎。`tests/knowledge-vault.mjs` 守着三件事:
+生成的笔记没过期、每个 `[[链接]]` 能打开、`/knowledge/*` 线上 404。
+⚠️ 它和提示词栈是同一份东西换了种写法,所以和 CLAUDE.md 一样**不许公开**。
+引擎和古法不一致的地方(土的进退神、暗动与日破、火土同宫……)记在 `knowledge/00 导览/引擎与断法对照.md`,
+改引擎之前先看那一页、先问 owner 取哪一派。
 
 ---
 
@@ -2425,7 +2436,7 @@ CI 还额外查一件 `build-tag.mjs` 查不到的事:**shipped 资产改了而�
 `free-reading-contract` `language-purity` `palette-contract` `prompt-coverage`
 `prompt-secrecy` `rates-contract` `request-contract` `session-contract`
 `private-files` `stream-recovery` `style-ownership` `texture-contract` `token-cap`
-`upstream-error` `xiang-trace`
+`upstream-error` `xiang-trace` `knowledge-vault`
 \+ 文案册审计。
 
 ⚠️ **仍然没有守卫的硬规则**(§3 里写着但没测试):`--pine` 不得用于 CTA、

@@ -1,0 +1,16 @@
+{
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "colorGroups": [
+    { "query": "path:\"01 基础\"", "color": { "a": 1, "rgb": 9399372 } },
+    { "query": "path:\"02 装卦\"", "color": { "a": 1, "rgb": 11042870 } },
+    { "query": "path:\"03 断法\"", "color": { "a": 1, "rgb": 11882540 } },
+    { "query": "path:\"04 分类占\"", "color": { "a": 1, "rgb": 2640002 } },
+    { "query": "path:\"05 推理陷阱\"", "color": { "a": 1, "rgb": 7240003 } },
+    { "query": "path:\"06 落笔\"", "color": { "a": 1, "rgb": 9076339 } },
+    { "query": "path:\"07 卦库\"", "color": { "a": 1, "rgb": 13092807 } },
+    { "query": "path:\"08 类象库\"", "color": { "a": 1, "rgb": 14212032 } }
+  ]
+}
